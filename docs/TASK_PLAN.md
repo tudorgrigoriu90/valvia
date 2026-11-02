@@ -13,7 +13,7 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
 | Last completed | FT-03.1 1 Chamber size & function (W1) |
-| Next up | FT-03.1: LV mass and geometry |
+| Next up | FT-03.1: RV dimensions |
 
 ## Next up: R0 sequence
 
@@ -318,3 +318,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-02 | FT-03.1 | LV dimensions & volumes (1.1.1) normal ranges by sex from ASE/EACVI 2015 Table 2; chamber parameter catalogue (LV, LA, RV) added | `FT-03.1: LV dimensions and volumes (ASE/EACVI 2015)` |
 | 2026-11-02 | FT-03.1 | LV global systolic function (1.1.3): sex-specific LVEF grading (normal, mildly, moderately, severely abnormal) from ASE/EACVI 2015 Table 4 + method note | `FT-03.1: LVEF grading by sex (ASE/EACVI 2015)` |
 | 2026-11-02 | FT-03.1 | Left atrium (1.2): maximum LA volume index grading (normal 16–34, mildly 35–41, moderately 42–48, severely >48 mL/m²) from ASE/EACVI 2015 Table 4 | `FT-03.1: LA volume index grading (ASE/EACVI 2015)` |
+| 2026-11-02 | FT-03.1 | LV wall thickness, mass & geometry (1.1.2): linear and 2D normal ranges by sex (LV mass, index, RWT, septal and posterior wall) from ASE/EACVI 2015 Table 6 + geometry note | `FT-03.1: LV mass, wall thickness and geometry (ASE/EACVI 2015)` |

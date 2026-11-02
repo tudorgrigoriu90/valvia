@@ -7,3 +7,238 @@ order: 1
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: linear-method
+    type: normal-range-table
+    tag: NORM
+    title: 'Normal ranges: linear method'
+    values:
+      - parameter: lv-mass
+        context: normal-range
+        operator: range
+        min: 88
+        max: 224
+        unit: g
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '6'
+            page: '17'
+      - parameter: lv-mass
+        context: normal-range
+        operator: range
+        min: 67
+        max: 162
+        unit: g
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '6'
+            page: '17'
+      - parameter: lv-mass-index
+        context: normal-range
+        operator: range
+        min: 49
+        max: 115
+        unit: g/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '6'
+            page: '17'
+      - parameter: lv-mass-index
+        context: normal-range
+        operator: range
+        min: 43
+        max: 95
+        unit: g/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '6'
+            page: '17'
+      - parameter: relative-wall-thickness
+        context: normal-range
+        operator: range
+        min: 0.24
+        max: 0.42
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - Dimensionless ratio (labelled cm in the source table).
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '6'
+            page: '17'
+      - parameter: relative-wall-thickness
+        context: normal-range
+        operator: range
+        min: 0.22
+        max: 0.42
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - Dimensionless ratio (labelled cm in the source table).
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '6'
+            page: '17'
+      - parameter: septal-wall-thickness
+        context: normal-range
+        operator: range
+        min: 0.6
+        max: 1.0
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '6'
+            page: '17'
+      - parameter: septal-wall-thickness
+        context: normal-range
+        operator: range
+        min: 0.6
+        max: 0.9
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '6'
+            page: '17'
+      - parameter: posterior-wall-thickness
+        context: normal-range
+        operator: range
+        min: 0.6
+        max: 1.0
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '6'
+            page: '17'
+      - parameter: posterior-wall-thickness
+        context: normal-range
+        operator: range
+        min: 0.6
+        max: 0.9
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '6'
+            page: '17'
+  - id: two-d-method
+    type: normal-range-table
+    tag: NORM
+    title: 'Normal ranges: 2D method'
+    values:
+      - parameter: lv-mass
+        context: normal-range
+        operator: range
+        min: 96
+        max: 200
+        unit: g
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '6'
+            page: '17'
+      - parameter: lv-mass
+        context: normal-range
+        operator: range
+        min: 66
+        max: 150
+        unit: g
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '6'
+            page: '17'
+      - parameter: lv-mass-index
+        context: normal-range
+        operator: range
+        min: 50
+        max: 102
+        unit: g/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '6'
+            page: '17'
+      - parameter: lv-mass-index
+        context: normal-range
+        operator: range
+        min: 44
+        max: 88
+        unit: g/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '6'
+            page: '17'
+  - id: geometry
+    type: note
+    tag: METH
+    title: Geometry
+    text: 'Relative wall thickness above 0.42 with normal LV mass indicates concentric remodelling, and with increased LV mass concentric hypertrophy; increased LV mass with relative wall thickness of 0.42 or less indicates eccentric hypertrophy (linear measurements).'
+    citation:
+      source: ase-eacvi-2015-chamber-quantification
+      locator:
+        figure: '6'
+        page: '17'

@@ -15,7 +15,7 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 |---|---|
 | Release | R0: Walking skeleton |
 | Last completed task | FT-03.1: 1 Chamber size & function (W1) |
-| Next task | FT-03.1: LV mass and geometry |
+| Next task | FT-03.1: RV dimensions |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
