@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && pagefind --site dist",
     "preview": "astro preview",
     "typecheck": "astro check",
     "lint": "eslint . --max-warnings 0",
@@ -37,6 +37,7 @@
     "eslint-plugin-astro": "3.2.1",
     "globals": "17.14.0",
     "json-schema-to-typescript": "16.0.0",
+    "pagefind": "1.6.0",
     "prettier": "3.9.10",
     "prettier-plugin-astro": "1.1.2",
     "tsx": "4.23.15",

@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | FT-03.5 3.3–3.5 VHD: tricuspid, pulmonary, multiple & mixed (W1) |
-| Next up | TS-04.4.1: search index (Pagefind) |
+| Last completed | TS-04.4.1 Pagefind index incl. synonyms, abbreviations and valve models |
+| Next up | TS-04.4.2: instant search UI |
 
 ## Next up: R0 sequence
 
@@ -147,7 +147,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-04.3.4 | Discrepancy marker + side-by-side comparison view | 5 | todo |  |
 | TS-04.3.5 | Society filter toggle (localStorage, wrapped in try/catch) | 2 | todo |  |
 | TS-04.3.6 | Caveats/footnotes rendering (e.g. "not valid in AF") | 1 | done |  |
-| TS-04.4.1 | Pagefind index incl. synonyms, abbreviations and valve models | 3 | todo |  |
+| TS-04.4.1 | Pagefind index incl. synonyms, abbreviations and valve models | 3 | done | Valve model names join with the prosthetic catalogue (TS-02.2.8) |
 | TS-04.4.2 | Instant search UI (mobile keyboard friendly) | 2 | todo |  |
 | TS-04.5.1 | Stable deep links to topics and parameter anchors | 1 | todo |  |
 | TS-04.5.2 | "Last reviewed" date and content version on every page | 1 | todo |  |
@@ -309,3 +309,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-02 | FT-03.3 | AR severity grading (3.1.2.1) from ASE 2017 Table 11 / Figure 25: quantitative grades I–IV (RVol, RF, EROA), central jet ratios, VCW and PHT, integration note, algorithm link; 3 new parameters; E2E tests made independent of content counts | `FT-03.3: aortic regurgitation severity grading from ASE 2017` |
 | 2026-11-02 | FT-03.5 | TR severity grading (3.3.2) from ASE 2017 Table 14 / Figure 31: EROA, RVol, VCW, PISA radius, jet area, 3D VCA, IVC diameter, tricuspid E; 4 new parameters | `FT-03.5: tricuspid regurgitation severity grading from ASE 2017` |
 | 2026-11-02 | FT-03.5 | PR grading (3.4.2) from ASE 2017 Table 16 / Figure 35: RF, jet width/annulus, PR index, deceleration time, PHT; 3 new parameters | `FT-03.5: pulmonary regurgitation grading from ASE 2017` |
+| 2026-11-02 | TS-04.4.1 | Pagefind post-build index of leaf pages with weighted synonyms, parameter names and abbreviations; html data-base for the client; E2E queries EROA, pressure half-time, PISA | `TS-04.4.1: Pagefind search index with synonyms` |

@@ -20,3 +20,11 @@ Configuration: [`astro.config.mjs`](../astro.config.mjs). Base path and origin c
 Colours are CSS custom properties on `:root`, redefined for dark mode; every text/background pair meets WCAG 2.2 AA
 (checked by axe in `tests/e2e/layout.spec.ts`). Touch targets use `--touch-target` (44 px, NFR-01). System font stack only.
 While content is unreviewed, every page carries `noindex, nofollow` and the review banner.
+
+## Search index (ADR 0004)
+
+`npm run build` runs `pagefind --site dist` after Astro. Only leaf topics are indexed (`data-pagefind-body` on the
+article); a visually hidden, `aria-hidden` line adds topic synonyms and the names, abbreviations and synonyms of every
+parameter on the page (`core/navigation/search-terms.ts`) with a higher weight. Header, banner and footer are not indexed.
+The index lives in `dist/pagefind/` and is loaded with a dynamic import from `<base>pagefind/pagefind.js` (CSP allows
+`'wasm-unsafe-eval'`).

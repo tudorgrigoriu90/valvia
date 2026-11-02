@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | FT-03.5: 3.3–3.5 VHD: tricuspid, pulmonary, multiple & mixed (W1) |
-| Next task | TS-04.4.1: search index (Pagefind) |
+| Last completed task | TS-04.4.1: Pagefind index incl. synonyms, abbreviations and valve models |
+| Next task | TS-04.4.2: instant search UI |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
