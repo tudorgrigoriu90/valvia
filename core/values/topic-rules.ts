@@ -99,7 +99,12 @@ function checkGradingTable(
   parameters: ReadonlyMap<string, Parameter>,
 ): ValueFinding[] {
   const findings: ValueFinding[] = [];
-  interface Entry { grade: number; label: string; number: string; path: PathSegment[] }
+  interface Entry {
+    grade: number;
+    label: string;
+    number: string;
+    path: PathSegment[];
+  }
   const groups = new Map<string, { parameter: Parameter; entries: Entry[] }>();
 
   for (const located of valuesOf(block, blockIndex)) {

@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-02.2.3: Content block types: grading table, normal range table, criteria check |
-| Next task | TS-02.2.4: plausibility checks |
+| Last completed task | CH-7: Fix: formatting pushed with TS-02.2.4; plan update missed |
+| Next task | CH-6: content loader and validate:content CLI |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

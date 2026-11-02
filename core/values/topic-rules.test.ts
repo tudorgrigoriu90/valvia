@@ -14,8 +14,11 @@ const PARAMETERS = new Map<string, Parameter>([
   ['ava', { id: 'ava', name: 'Aortic valve area', quantity: 'area', unit: 'cm²', modalities: ['Echo', 'CT'] }],
 ]);
 
-const value = (overrides: Partial<Value>): Value =>
-  ({
+type GradingTable = Extract<Block, { type: 'grading-table' }>;
+
+/** Test value factory; keys set to undefined are removed (e.g. `value: undefined` for ranges). */
+const value = (overrides: Record<string, unknown>): Value => {
+  const merged: Record<string, unknown> = {
     parameter: 'eroa',
     context: 'grading',
     grade: 'severe',
@@ -26,7 +29,10 @@ const value = (overrides: Partial<Value>): Value =>
     population: { ageGroup: 'adult' },
     citation: { source: 'esc', locator: { table: '8' } },
     ...overrides,
-  });
+  };
+  for (const key of Object.keys(merged)) if (merged[key] === undefined) Reflect.deleteProperty(merged, key);
+  return merged as unknown as Value;
+};
 
 const topic = (blocks: Block[]): TopicNode => ({
   id: 't',
@@ -44,8 +50,8 @@ const grading = (values: Value[], grades = ['mild', 'moderate', 'severe']): Bloc
   id: 'severity',
   type: 'grading-table',
   tag: 'GRADE',
-  grades,
-  values,
+  grades: grades as GradingTable['grades'],
+  values: values as GradingTable['values'],
 });
 
 describe('checkTopicValues: per-value rules', () => {
@@ -144,7 +150,8 @@ describe('checkTopicValues: per-value rules', () => {
   it('ignores blocks without values and topics without blocks', () => {
     const note: Block = { id: 'n', type: 'note', tag: 'METH', text: 'x' };
     expect(checkTopicValues(topic([note]), PARAMETERS)).toEqual([]);
-    const { blocks: _blocks, ...withoutBlocks } = topic([]);
+    const withoutBlocks = topic([]);
+    delete withoutBlocks.blocks;
     expect(checkTopicValues(withoutBlocks, PARAMETERS)).toEqual([]);
   });
 });

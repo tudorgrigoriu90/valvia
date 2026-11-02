@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-02.2.3 Content block types: grading table, normal range table, criteria check |
-| Next up | TS-02.2.4: plausibility checks |
+| Last completed | CH-7 Fix: formatting pushed with TS-02.2.4; plan update missed |
+| Next up | CH-6: content loader and validate:content CLI |
 
 ## Next up: R0 sequence
 
@@ -72,6 +72,8 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | CH-3 | Fix: Prettier formatting of 404 page pushed with TS-01.3.2 | 0 | done | Push was not gated on verify exit code; now always gated |
 | CH-4 | Generate TypeScript types from JSON Schema (`npm run gen:types`) with a staleness test | 1 | done | First part of TS-02.2.4 (types); plausibility checks stay in TS-02.2.4 |
 | CH-5 | Deploy via GitHub Actions Pages; drop `gh-pages` branch and hosted PR previews; PR site artifact | 1 | done | PO decision 2026-11-02 |
+| CH-6 | Content loader: read all YAML, keep published number text, cross-file integrity (ids, references, tree), run all rules; `npm run validate:content` in verify and CI | 3 | todo | Implements ADR 0003 step 3 and wires FT-02.2/02.3 rules |
+| CH-7 | Fix: formatting pushed with TS-02.2.4; plan update missed | 0 | done | Heredoc broke the verify-gated command chain; now plan edits run before the gate |
 | TS-01.3.1 | CI: build, schema validation, unit tests, Lighthouse CI, axe, broken-link check | 3 | done | Schema validation, axe, Lighthouse and link checks join CI with their own tasks (EP-02, CH-2, TS-07.4.2, TS-05.2.1) |
 | TS-01.3.2 | Deploy to GitHub Pages via Actions on merge to `main` | 1 | done | Actions Pages deploy since CH-5 ([ADR 0005](adr/0005-pages-actions-deploy-no-previews.md)) |
 | TS-01.3.3 | PR previews with `pr-preview-action` (deploy, comment link, clean up on close); exclude previews from search engines | 2 | dropped | PO decision 2026-11-02: no `gh-pages` branch; content PRs reviewed in the PR (ADR 0005) |
@@ -88,7 +90,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-02.2.1 | Parameter schema: name, abbreviation, unit, modality, view/method note | 2 | done | Unit/quantity consistency enforced in TS-02.2.7 |
 | TS-02.2.2 | Value schema: population qualifiers, grade, operator, value/range, unit, context, caveats, citation | 5 | done | Modality field added by TS-02.2.6; numeric plausibility in TS-02.2.4 |
 | TS-02.2.3 | Content block types: grading table, normal range table, criteria checklist (favourable / challenging / unsuitable), threshold list, note, algorithm reference (link to source) | 3 | done |  |
-| TS-02.2.4 | JSON Schema + generated TS types; plausibility checks (unit vs parameter, monotonic grades) | 3 | todo |  |
+| TS-02.2.4 | JSON Schema + generated TS types; plausibility checks (unit vs parameter, monotonic grades) | 3 | done | Generated types delivered in CH-4 |
 | TS-02.2.5 | Paediatric qualifiers: `ageGroup` (adult / paediatric), age band, BSA band, z-score reference (as published, no computation) | 1 | done |  |
 | TS-02.2.6 | Value-level `modality` (Echo / CT / CMR) | 1 | done |  |
 | TS-02.2.7 | Unit layer: store as published, display in house units (NFR-15), original on tap; exhaustive conversion tests | 2 | done | 100 % coverage; indexed-length and indexed-mass shown as published pending F4 |
@@ -286,3 +288,5 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-02 | TS-02.2.2 | Value definition: parameter, context, grade (required for grading/feasibility), operator with value or min/max (mutually exclusive), unit as published, population, caveats, citation | `TS-02.2.2: value schema` |
 | 2026-11-02 | TS-02.2.6 | Mandatory value-level modality (Echo/CT/CMR) + rule: value modality must be one of the parameter's modalities | `TS-02.2.6: value-level modality` |
 | 2026-11-02 | TS-02.2.3 | Block types (grading table, normal-range table, threshold list, criteria checklist, note, algorithm reference) with type/tag fit, discriminator-selected errors; topic.blocks | `TS-02.2.3: content block types` |
+| 2026-11-02 | TS-02.2.4 | Plausibility rules per topic: unit vs quantity, modality, non-negative sizes, ordered ranges, known grades, monotonic thresholds across grades (converted units, grouped by parameter/population/modality/source); generated types done in CH-4 | `TS-02.2.4: plausibility checks` |
+| 2026-11-02 | CH-7 | Prettier, lint and type fixes in topic-rules tests; TS-02.2.4 plan row and log entry restored | `CH-7: fix formatting, lint, types and plan entry from TS-02.2.4` |
