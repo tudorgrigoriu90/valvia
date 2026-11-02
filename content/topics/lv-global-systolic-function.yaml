@@ -7,3 +7,145 @@ order: 2
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: lvef-grading
+    type: grading-table
+    tag: GRADE
+    title: LV ejection fraction (2D biplane) by sex
+    grades: ['Normal range', 'Mildly abnormal', 'Moderately abnormal', 'Severely abnormal']
+    values:
+      - parameter: lvef
+        context: grading
+        grade: Normal range
+        operator: range
+        min: 52
+        max: 72
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '4'
+            page: '10'
+      - parameter: lvef
+        context: grading
+        grade: Mildly abnormal
+        operator: range
+        min: 41
+        max: 51
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '4'
+            page: '10'
+      - parameter: lvef
+        context: grading
+        grade: Moderately abnormal
+        operator: range
+        min: 30
+        max: 40
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '4'
+            page: '10'
+      - parameter: lvef
+        context: grading
+        grade: Severely abnormal
+        operator: '<'
+        value: 30
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '4'
+            page: '10'
+      - parameter: lvef
+        context: grading
+        grade: Normal range
+        operator: range
+        min: 54
+        max: 74
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '4'
+            page: '10'
+      - parameter: lvef
+        context: grading
+        grade: Mildly abnormal
+        operator: range
+        min: 41
+        max: 53
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '4'
+            page: '10'
+      - parameter: lvef
+        context: grading
+        grade: Moderately abnormal
+        operator: range
+        min: 30
+        max: 40
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '4'
+            page: '10'
+      - parameter: lvef
+        context: grading
+        grade: Severely abnormal
+        operator: '<'
+        value: 30
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '4'
+            page: '10'
+  - id: method
+    type: note
+    tag: METH
+    title: Measurement
+    text: 'LVEF is calculated from end-diastolic and end-systolic volumes by the biplane method of disks; 3D measurements are accurate and reproducible and should be used when available. LVEF below 52% in men and below 54% in women suggests abnormal LV systolic function.'
+    citation:
+      source: ase-eacvi-2015-chamber-quantification
+      locator:
+        page: '10'
