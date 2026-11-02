@@ -7,3 +7,69 @@ order: 1
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: la-volume-grading
+    type: grading-table
+    tag: GRADE
+    title: Maximum LA volume indexed to BSA
+    grades: ['Normal range', 'Mildly abnormal', 'Moderately abnormal', 'Severely abnormal']
+    values:
+      - parameter: la-volume-index
+        context: grading
+        grade: Normal range
+        operator: range
+        min: 16
+        max: 34
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '4'
+            page: '10'
+      - parameter: la-volume-index
+        context: grading
+        grade: Mildly abnormal
+        operator: range
+        min: 35
+        max: 41
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '4'
+            page: '10'
+      - parameter: la-volume-index
+        context: grading
+        grade: Moderately abnormal
+        operator: range
+        min: 42
+        max: 48
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '4'
+            page: '10'
+      - parameter: la-volume-index
+        context: grading
+        grade: Severely abnormal
+        operator: '>'
+        value: 48
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '4'
+            page: '10'
