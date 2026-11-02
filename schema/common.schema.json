@@ -144,6 +144,105 @@
         "angle",
         "age"
       ]
+    },
+    "populationQualifiers": {
+      "description": "Who a value applies to (TS-02.2.5). ageGroup is mandatory so adult and paediatric values are never mixed (hazard log). Bands use inclusive min and exclusive max.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ageGroup"],
+      "properties": {
+        "ageGroup": {
+          "description": "Population of this value: exactly one of adult or paediatric.",
+          "enum": ["adult", "paediatric"]
+        },
+        "sex": {
+          "description": "Sex-specific value; omit when the value applies to both sexes.",
+          "enum": ["male", "female"]
+        },
+        "ageBand": {
+          "description": "Age range the value applies to (min inclusive, max exclusive).",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["unit"],
+          "anyOf": [
+            {
+              "properties": {
+                "min": true
+              },
+              "required": ["min"]
+            },
+            {
+              "properties": {
+                "max": true
+              },
+              "required": ["max"]
+            }
+          ],
+          "properties": {
+            "min": {
+              "description": "Lower bound (inclusive).",
+              "type": "number",
+              "minimum": 0
+            },
+            "max": {
+              "description": "Upper bound (exclusive).",
+              "type": "number",
+              "minimum": 0
+            },
+            "unit": {
+              "description": "Unit of the bounds.",
+              "enum": ["days", "months", "years"]
+            },
+            "label": {
+              "description": "Band label as printed in the source, e.g. '40–59 years'.",
+              "$ref": "#/$defs/text"
+            }
+          }
+        },
+        "bsaBand": {
+          "description": "Body surface area range in m² (DuBois), min inclusive, max exclusive.",
+          "type": "object",
+          "additionalProperties": false,
+          "anyOf": [
+            {
+              "properties": {
+                "min": true
+              },
+              "required": ["min"]
+            },
+            {
+              "properties": {
+                "max": true
+              },
+              "required": ["max"]
+            }
+          ],
+          "properties": {
+            "min": {
+              "description": "Lower bound in m² (inclusive).",
+              "type": "number",
+              "minimum": 0
+            },
+            "max": {
+              "description": "Upper bound in m² (exclusive).",
+              "type": "number",
+              "minimum": 0
+            },
+            "label": {
+              "description": "Band label as printed in the source.",
+              "$ref": "#/$defs/text"
+            }
+          }
+        },
+        "rhythm": {
+          "description": "Rhythm-specific value (e.g. diastolic function in atrial fibrillation); omit when rhythm-independent.",
+          "enum": ["sinus", "atrial-fibrillation"]
+        },
+        "zScoreReference": {
+          "description": "Id of the cited z-score dataset (source of type z-score-dataset) a z-score value refers to. Shown as published; no patient z-score is computed.",
+          "$ref": "#/$defs/id"
+        }
+      }
     }
   }
 }

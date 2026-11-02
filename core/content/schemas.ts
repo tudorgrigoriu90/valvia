@@ -16,7 +16,7 @@ export const SCHEMA_IDS = {
 export type ContentKind = keyof typeof SCHEMA_IDS;
 
 /** Shared definitions that can be validated on their own (tests, future CMS forms). */
-export const DEFINITIONS = ['citation'] as const;
+export const DEFINITIONS = ['citation', 'populationQualifiers'] as const;
 export type DefinitionName = (typeof DEFINITIONS)[number];
 
 // ajv-formats ships CommonJS; normalise the default export across loaders.

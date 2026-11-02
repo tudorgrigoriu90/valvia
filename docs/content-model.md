@@ -42,6 +42,26 @@ TypeScript types are generated from the schemas into [`schema/generated/`](../sc
 | `unit` | units as published: `1` (dimensionless), `%`, `mm`, `cm`, `mm²`, `cm²`, `mL`, `mL/m²`, `g/m²`, `m/s`, `cm/s`, `mmHg`, `ms`, … (full list in the schema) |
 | `citation` | `source` (registered source id) + `locator` with at least one of `table`, `figure`, `section`, `page` (TS-02.3.2) |
 
+| `populationQualifiers` | who a value applies to (TS-02.2.5), see below |
+
+### Population qualifiers (every value)
+
+| Field | Required | Meaning |
+|---|---|---|
+| `ageGroup` | yes | `adult` or `paediatric` (never both): an adult value is never shown for a child by default |
+| `sex` | no | `male` / `female`; omit when the value applies to both |
+| `ageBand` | no | `{ min, max, unit: days \| months \| years, label }`, at least one bound; `min` inclusive, `max` exclusive |
+| `bsaBand` | no | `{ min, max, label }` in m² (DuBois), at least one bound |
+| `rhythm` | no | `sinus` / `atrial-fibrillation`; omit when rhythm-independent |
+| `zScoreReference` | no | id of the cited z-score dataset a z-score value refers to (shown as published, never computed) |
+
+```yaml
+population:
+  ageGroup: adult
+  sex: female
+  ageBand: { min: 40, max: 60, unit: years, label: 40–59 years }
+```
+
 Citation example (used by every value):
 
 ```yaml

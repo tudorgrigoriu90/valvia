@@ -84,6 +84,10 @@ function message(error: ErrorObject, label: string, prefix: string): string {
       }
       return `${label} ${error.message ?? 'has too few properties'}`;
     }
+    case 'requiredOneOf': {
+      const names = params.names as string[];
+      return `${label} must have at least one of ${names.slice(0, -1).join(', ')} or ${String(names.at(-1))}`;
+    }
     case 'uniqueItems':
       return `${label} must not contain duplicates (items ${String(params.j)} and ${String(params.i)} are equal)`;
     default:
@@ -107,7 +111,12 @@ function prune(errors: readonly ErrorObject[]): ErrorObject[] {
     const branch = before.filter((e) => e.instancePath === error.instancePath);
     result.push(...before.filter((e) => e.instancePath !== error.instancePath));
     const typeErrors = branch.filter((e) => e.keyword === 'type');
-    if (branch.length > typeErrors.length) {
+    const requiredErrors = branch.filter((e) => e.keyword === 'required');
+    if (requiredErrors.length > 1 && requiredErrors.length === branch.length) {
+      // e.g. anyOf: [{required: [min]}, {required: [max]}] → "must have at least one of 'min' or 'max'"
+      const names = requiredErrors.map((e) => `'${String((e.params as Record<string, unknown>).missingProperty)}'`);
+      result.push({ ...error, keyword: 'requiredOneOf', params: { names } });
+    } else if (branch.length > typeErrors.length) {
       result.push(...branch.filter((e) => e.keyword !== 'type'));
     } else {
       const types = typeErrors.map((e) => String((e.params as Record<string, unknown>).type));
