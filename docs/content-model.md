@@ -24,6 +24,8 @@ content/topics/primary-mr-grading.yaml:8:13 error schema population must be one 
 
 All problems are reported in one run, not only the first. Code: [`core/content/`](../core/content).
 
+TypeScript types are generated from the schemas into [`schema/generated/`](../schema/generated) (`npm run gen:types`); see [`schema/README.md`](../schema/README.md) for the change procedure.
+
 ## Shared definitions (`common.schema.json`)
 
 | Definition | Rule |

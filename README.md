@@ -14,8 +14,8 @@ Live site (after Pages is enabled on the `gh-pages` branch): <https://tudorgrigo
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-02.1.1: Topic node schema: id, slug, title, parent, order, synonyms, populatio |
-| Next task | CH-4: TypeScript types generated from JSON Schema |
+| Last completed task | CH-4: Generate TypeScript types from JSON Schema (npm run gen:types) with a  |
+| Next task | TS-02.3.1: source schema with allowlist |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
@@ -32,6 +32,7 @@ npm run format    # Prettier (code only; Markdown is hand-formatted)
 npm test          # unit tests with coverage (≥ 80 % global, 100 % safety-critical)
 npm run test:e2e  # Playwright E2E against the production build (run build first)
 npm run check:links -- --site  # internal links in docs and dist/
+npm run gen:types # regenerate TypeScript types after a schema change
 npm run verify    # everything above in order: run before every push
 ```
 

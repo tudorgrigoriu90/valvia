@@ -20,7 +20,8 @@
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "verify": "npm run format:check && npm run lint && npm run typecheck && npm test && npm run build && npm run check:links -- --site && npm run test:e2e",
-    "check:links": "tsx pipeline/links/cli.ts"
+    "check:links": "tsx pipeline/links/cli.ts",
+    "gen:types": "tsx pipeline/schema/cli.ts"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.12",
@@ -33,6 +34,7 @@
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-astro": "3.2.1",
     "globals": "17.14.0",
+    "json-schema-to-typescript": "16.0.0",
     "prettier": "3.9.10",
     "prettier-plugin-astro": "1.1.2",
     "tsx": "4.23.15",
