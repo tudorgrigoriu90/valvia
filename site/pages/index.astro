@@ -1,8 +1,50 @@
 ---
+import { withBase } from '../../core/site/base-path';
 import Base from '../layouts/Base.astro';
+import { getContent } from '../lib/content';
+
+const { navigation } = getContent();
+const base = import.meta.env.BASE_URL;
+const visible = navigation.visibleRoots();
+const upcoming = navigation.roots().filter((root) => !navigation.isVisible(root.id));
 ---
 
 <Base title="Valvia">
-  <h1>Valvia</h1>
-  <p>Echocardiography reference and cut-off values from ESC/EACVI and ASE documents.</p>
+  <h1>Echo reference values</h1>
+  <p class="lead">
+    Cut-off and reference values from ESC (incl. EACVI) and ASE documents, each with its source. Where societies
+    disagree, both values are shown.
+  </p>
+
+  <section aria-labelledby="categories-heading">
+    <h2 id="categories-heading" class="visually-hidden">
+      Categories
+    </h2>
+    <ul class="category-grid">
+      {visible.map((root) => {
+        const count = navigation.visibleLeafCount(root.id);
+        return (
+          <li>
+            <a class="category-card" href={withBase(base, navigation.urlPath(root.id))}>
+              <span class="category-card__title">{root.title}</span>
+              <span class="category-card__meta">
+                {count} {count === 1 ? 'topic' : 'topics'}
+              </span>
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </section>
+
+  {upcoming.length > 0 && (
+    <section aria-labelledby="upcoming-heading" class="upcoming">
+      <h2 id="upcoming-heading">In preparation</h2>
+      <ul>
+        {upcoming.map((root) => (
+          <li>{root.title}</li>
+        ))}
+      </ul>
+    </section>
+  )}
 </Base>
