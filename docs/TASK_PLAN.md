@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-01.1.3 ADR: content as code (YAML in Git) |
-| Next up | TS-01.1.4: ADR, client-side search (Pagefind) |
+| Last completed | TS-01.1.4 ADR: client-side search (Pagefind) |
+| Next up | TS-01.2.1: repository structure |
 
 ## Next up: R0 sequence
 
@@ -59,7 +59,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-01.1.1 | ADR: static site generator (Astro vs Eleventy) | 2 | done | Astro chosen ([ADR 0001](adr/0001-static-site-generator.md)) |
 | TS-01.1.2 | ADR: GitHub Pages hosting, PR previews, meta-CSP and static redirects | 1 | done | Deploy from `gh-pages` branch ([ADR 0002](adr/0002-hosting-github-pages.md)) |
 | TS-01.1.3 | ADR: content as code (YAML in Git) | 1 | done | [ADR 0003](adr/0003-content-as-code.md) |
-| TS-01.1.4 | ADR: client-side search (Pagefind) | 1 | todo |  |
+| TS-01.1.4 | ADR: client-side search (Pagefind) | 1 | done | [ADR 0004](adr/0004-client-side-search-pagefind.md) |
 | TS-01.2.1 | Repo structure: `/site`, `/content`, `/schema`, `/pipeline`, `/docs` | 2 | todo |  |
 | TS-01.2.2 | `CLAUDE.md`: architecture, coding conventions, content-modelling rules, units, DoD | 2 | done | Workflow rules from user: direct-to-main for code, PR for data only |
 | TS-01.2.3 | TypeScript strict, ESLint, Prettier | 1 | todo |  |
@@ -261,3 +261,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-02 | TS-01.1.1 | ADR 0001: Astro 7 static output; logic framework-free in /core; ADR index and template | `TS-01.1.1: ADR 0001 static site generator (Astro)` |
 | 2026-11-02 | TS-01.1.2 | ADR 0002: gh-pages branch deploy with PR previews, env-driven base path, meta CSP without inline scripts, static redirect pages | `TS-01.1.2: ADR 0002 hosting on GitHub Pages` |
 | 2026-11-02 | TS-01.1.3 | ADR 0003: YAML one entity per file, JSON Schema source of truth, generated types, shared loader with line-precise errors | `TS-01.1.3: ADR 0003 content as code` |
+| 2026-11-02 | TS-01.1.4 | ADR 0004: Pagefind post-build index with synonyms, own search UI, offline precache; CSP allows wasm | `TS-01.1.4: ADR 0004 client-side search (Pagefind)` |

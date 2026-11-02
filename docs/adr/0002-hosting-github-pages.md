@@ -35,11 +35,12 @@ slug is renamed (FT-02.1). GitHub Pages serves static files only: no custom head
 - **No indexing of previews:** preview builds (`VALVIA_PREVIEW=1`) add `<meta name="robots" content="noindex, nofollow">`;
   production `robots.txt` disallows `/pr-preview/`.
 - **CSP via `<meta http-equiv="Content-Security-Policy">`** in the base layout:
-  `default-src 'self'; script-src 'self' <analytics origin>; style-src 'self'; img-src 'self' data:; connect-src 'self' <analytics origin>; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests`.
+  `default-src 'self'; script-src 'self' 'wasm-unsafe-eval' <analytics origin>; style-src 'self'; img-src 'self' data:; connect-src 'self' <analytics origin>; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests`.
   Astro is configured not to inline scripts or stylesheets, and a build test fails if any page has inline
   `<script>`/`<style>` or event-handler attributes. `frame-ancestors` cannot be set by a meta tag (accepted).
 - **Renamed slugs:** each node keeps a list of former slugs; the build emits a static page at every old URL with
   `<meta http-equiv="refresh" content="0; url=…">`, `<link rel="canonical">`, `noindex`, and a visible link.
+  (`'wasm-unsafe-eval'` added by ADR 0004 for Pagefind's WASM.)
 - **HTTPS:** enforced in Pages settings; custom domain later (TS-08.2) only changes `VALVIA_SITE`/`VALVIA_BASE` and adds `CNAME`.
 
 ## Consequences

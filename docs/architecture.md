@@ -2,7 +2,7 @@
 
 > **Purpose:** how Valvia is built, deployed and updated, for maintenance and onboarding.
 > **Audience:** software engineer, Claude Code sessions, new contributors.
-> **Last updated:** 2026-11-02 | **Status:** target architecture; decisions marked *pending* await their ADR (`docs/adr/`).
+> **Last updated:** 2026-11-02 | **Status:** target architecture; decisions recorded in [`adr/`](adr/README.md).
 > **Source:** backlog §2 ([`product/valvia-backlog.md`](product/valvia-backlog.md)).
 
 ## 1. Principles

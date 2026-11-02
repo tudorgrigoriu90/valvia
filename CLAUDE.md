@@ -193,14 +193,14 @@ Update `README.md` on **every turn that changes the repository** (if nothing els
 
 ## 10. Architecture (target)
 
-Static first, near-zero cost (backlog §2). Decisions marked *pending* need their ADR before code depends on them.
+Static first, near-zero cost (backlog §2). Every row links to its ADR; new architectural choices need an ADR before code depends on them.
 
 | Concern | Choice | ADR |
 |---|---|---|
 | Site generator | Astro 7, static output, TypeScript strict; logic stays framework-free | [ADR 0001](docs/adr/0001-static-site-generator.md) |
 | Hosting | GitHub Pages from `gh-pages` branch; previews for content PRs; base path from env; meta CSP, no inline scripts; static redirect pages | [ADR 0002](docs/adr/0002-hosting-github-pages.md) |
 | Content | YAML in Git, one entity per file; JSON Schema 2020-12 is the source of truth; generated TS types; own loader with line-precise errors | [ADR 0003](docs/adr/0003-content-as-code.md) |
-| Search | Pagefind (static, client-side) | TS-01.1.4 *pending* |
+| Search | Pagefind post-build index, own search UI, synonyms indexed, precached offline | [ADR 0004](docs/adr/0004-client-side-search-pagefind.md) |
 | Offline | PWA service worker (Workbox) | — |
 | Analytics | Cookieless (Cloudflare Web Analytics or GoatCounter) | — |
 | Dependencies | Renovate, auto-merge patch/minor on green CI | — |
