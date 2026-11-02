@@ -1,0 +1,27 @@
+---
+import type { LoadedTopic } from '../../core/content/types';
+import { withBase } from '../../core/site/base-path';
+import { getContent } from '../lib/content';
+
+interface Props {
+  topic: LoadedTopic;
+}
+const { topic } = Astro.props;
+const { navigation } = getContent();
+const base = import.meta.env.BASE_URL;
+const trail = navigation.ancestors(topic.id);
+---
+
+<nav aria-label="Breadcrumb" class="breadcrumbs">
+  <ol>
+    <li>
+      <a href={withBase(base, '/')}>Home</a>
+    </li>
+    {trail.map((node) => (
+      <li>
+        <a href={withBase(base, navigation.urlPath(node.id))}>{node.title}</a>
+      </li>
+    ))}
+    <li aria-current="page">{topic.title}</li>
+  </ol>
+</nav>

@@ -14,7 +14,7 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-04.1.2: Design tokens, light/dark theme, system font stack, Valvia wordmark an |
+| Last completed task | TS-04.2.2: Drill-down list pages with breadcrumbs |
 | Next task | TS-04.2.1: home with root categories |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 

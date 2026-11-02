@@ -5,9 +5,10 @@ All domain logic (loading, validation, units, discrepancies, history) is importe
 
 | Path | Contents |
 |---|---|
-| `pages/` | Routes (`index.astro` = home, `404.astro`) |
+| `pages/` | Routes: `index.astro` (home), `[...path].astro` (one page per visible topic, URL = slugs from the root), `404.astro` |
+| `lib/content.ts` | Loads content once with the shared loader; the build fails on content errors |
 | `layouts/Base.astro` | Page shell: header with wordmark, review banner, main, footer disclaimer, CSP and robots meta |
-| `components/` | `Logo`, `ReviewBanner` (decision PO-3: "Not yet clinically reviewed") |
+| `components/` | `Logo`, `ReviewBanner` (decision PO-3: "Not yet clinically reviewed"), `Breadcrumbs`, `TopicList` |
 | `styles/global.css` | Design tokens (colours, spacing, radius, fonts) and base styles; light/dark via `prefers-color-scheme` |
 | `lib/csp.ts` | Content Security Policy (ADR 0002/0004), emitted only in production builds |
 | `public/` | Static files copied as-is (icons, `robots.txt`, manifest) |
