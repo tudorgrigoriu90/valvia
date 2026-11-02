@@ -155,6 +155,7 @@ docs/
 ├── product/                # backlog and taxonomy (owned by PO / SME, edit only when asked)
 ├── adr/                    # NNNN-title.md: context, decision, consequences, cost, exit strategy
 ├── decisions/              # SME decisions log
+├── content-model.md        # schema field reference and validation pipeline
 ├── content-guide.md        # how to model, cite and review content (FT-03.0)
 ├── runbooks/               # content update, emergency rollback, secret rotation, release
 └── onboarding.md           # engineer / SME / new-session onboarding

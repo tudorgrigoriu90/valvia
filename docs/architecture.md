@@ -90,7 +90,7 @@ The automated update pipeline (weekly watchers → issue → drafting → PR) is
 
 ## 5. Content model (outline)
 
-To be detailed by the schema tasks (TS-02.x); field lists below are from the backlog.
+Field-level reference: [`content-model.md`](content-model.md). The outline below is completed by the schema tasks (TS-02.x).
 
 ```mermaid
 erDiagram

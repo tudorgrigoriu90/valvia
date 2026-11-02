@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://valvia.invalid/schema/common.schema.json",
+  "title": "Valvia shared definitions",
+  "$defs": {
+    "id": {
+      "description": "Stable identifier: lowercase kebab-case, never changed or reused (ADR 0003).",
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "maxLength": 80,
+      "x-format-name": "lowercase kebab-case"
+    },
+    "slug": {
+      "description": "URL segment: lowercase kebab-case. May change; old slugs go to formerSlugs.",
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "maxLength": 80,
+      "x-format-name": "lowercase kebab-case"
+    },
+    "text": {
+      "description": "Non-empty single-line text.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 300,
+      "pattern": "^[^\\n]*\\S[^\\n]*$",
+      "x-format-name": "non-blank single-line text"
+    },
+    "longText": {
+      "description": "Non-empty text that may span lines (notes, caveats).",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4000,
+      "pattern": "\\S",
+      "x-format-name": "non-blank text"
+    },
+    "population": {
+      "description": "Population a node applies to (SME decision 1).",
+      "enum": ["adult", "paediatric", "both"]
+    },
+    "wave": {
+      "description": "Delivery wave (sequencing only; all content is P1).",
+      "enum": ["W1", "W2"]
+    }
+  }
+}

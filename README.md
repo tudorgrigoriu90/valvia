@@ -14,8 +14,8 @@ Live site (after Pages is enabled on the `gh-pages` branch): <https://tudorgrigo
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-3: Fix: Prettier formatting of 404 page pushed with TS-01.3.2 |
-| Next task | TS-02.1.1: topic node schema |
+| Last completed task | TS-02.1.1: Topic node schema: id, slug, title, parent, order, synonyms, populatio |
+| Next task | CH-4: TypeScript types generated from JSON Schema |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
@@ -68,6 +68,7 @@ Read [`CLAUDE.md`](CLAUDE.md) first. In short:
 - [Task plan](docs/TASK_PLAN.md)
 - [Architecture](docs/architecture.md)
 - [Architecture Decision Records](docs/adr/README.md)
+- [Content model reference](docs/content-model.md)
 - [Testing guide](docs/testing.md)
 - [CI/CD](docs/ci-cd.md)
 - [Product backlog](docs/product/valvia-backlog.md)
