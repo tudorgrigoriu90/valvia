@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-5: Deploy via GitHub Actions Pages; drop gh-pages branch and hosted PR pr |
-| Next task | TS-02.2.1: parameter schema |
+| Last completed task | TS-02.2.1: Parameter schema: name, abbreviation, unit, modality, view/method note |
+| Next task | TS-02.2.6: value-level modality |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

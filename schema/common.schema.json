@@ -84,6 +84,66 @@
           }
         }
       }
+    },
+    "modality": {
+      "description": "Imaging modality (SME decision 4: CT and CMR values are included and badged).",
+      "enum": ["Echo", "CT", "CMR"]
+    },
+    "unit": {
+      "description": "Units as published in ESC/EACVI/ASE documents. '1' means dimensionless (ratios, scores). Display units follow NFR-15; conversions live in core/units.",
+      "enum": [
+        "1",
+        "%",
+        "mm",
+        "cm",
+        "mm/m²",
+        "cm/m²",
+        "mm²",
+        "cm²",
+        "cm²/m²",
+        "mL",
+        "mL/m²",
+        "g",
+        "g/m²",
+        "g/m^2.7",
+        "m/s",
+        "cm/s",
+        "m/s²",
+        "mmHg",
+        "ms",
+        "s",
+        "bpm",
+        "mL/s",
+        "AU",
+        "°",
+        "years"
+      ]
+    },
+    "quantity": {
+      "description": "Physical quantity of a parameter; decides the display unit (NFR-15) and which units a value may use.",
+      "enum": [
+        "dimensionless",
+        "ratio",
+        "percent",
+        "length",
+        "indexed-length",
+        "area",
+        "indexed-area",
+        "volume",
+        "indexed-volume",
+        "mass",
+        "indexed-mass",
+        "velocity-blood",
+        "velocity-tissue",
+        "acceleration",
+        "pressure",
+        "time",
+        "heart-rate",
+        "flow-rate",
+        "calcium-score",
+        "angle",
+        "age"
+      ]
     }
   }
 }

@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-5 Deploy via GitHub Actions Pages; drop gh-pages branch and hosted PR pr |
-| Next up | TS-02.2.1: parameter schema |
+| Last completed | TS-02.2.1 Parameter schema: name, abbreviation, unit, modality, view/method note |
+| Next up | TS-02.2.6: value-level modality |
 
 ## Next up: R0 sequence
 
@@ -85,7 +85,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-02.1.1 | Topic node schema: `id`, `slug`, `title`, `parent`, `order`, `synonyms`, `population`, `wave`, `status` | 2 | done |  |
 | TS-02.1.2 | Encode taxonomy v0.2 as content tree (unpopulated nodes hidden) | 2 | todo |  |
 | TS-02.1.3 | Stable ID & URL policy; static redirect pages on slug rename | 2 | todo |  |
-| TS-02.2.1 | Parameter schema: name, abbreviation, unit, modality, view/method note | 2 | todo |  |
+| TS-02.2.1 | Parameter schema: name, abbreviation, unit, modality, view/method note | 2 | done | Unit/quantity consistency enforced in TS-02.2.7 |
 | TS-02.2.2 | Value schema: population qualifiers, grade, operator, value/range, unit, context, caveats, citation | 5 | todo |  |
 | TS-02.2.3 | Content block types: grading table, normal range table, criteria checklist (favourable / challenging / unsuitable), threshold list, note, algorithm reference (link to source) | 3 | todo |  |
 | TS-02.2.4 | JSON Schema + generated TS types; plausibility checks (unit vs parameter, monotonic grades) | 3 | todo |  |
@@ -206,7 +206,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 
 | Key | Summary | SP | Status | Notes |
 |---|---|---|---|---|
-| TS-08.1 | Create public repo `valvia`; enable GitHub Pages (source: GitHub Actions); enable secret scanning + push protection | 1 | manual | Pages enabled by the engineer 2026-11-02; source must be GitHub Actions (docs/ci-cd.md); secret scanning/push protection still to confirm |
+| TS-08.1 | Create public repo `valvia`; enable GitHub Pages (source: GitHub Actions); enable secret scanning + push protection | 1 | manual | Pages enabled (Source: GitHub Actions) and `gh-pages` deleted 2026-11-02; secret scanning/push protection still to confirm |
 | TS-08.2 | Check name availability (domain, EUIPO trademark search); buy domain; DNS; custom domain on Pages; enforce HTTPS | 1 | manual |  |
 | TS-08.3 | Install Claude Code GitHub Action; add credentials as repo secret; set spending limit | 1 | manual |  |
 | TS-08.4 | SME onboarding: GitHub account with 2FA, GitHub mobile app, notification settings, 15-min walkthrough of a sample PR | 1 | manual |  |
@@ -280,3 +280,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-02 | TS-02.3.1 | Source schema (issuers, type, year, DOI, https URL, status, supersededBy, citedBy) + registry rules: allowlist, F3 warning, cited z-score datasets, supersession integrity and cycles (100 % coverage) | `TS-02.3.1: source schema and registry rules` |
 | 2026-11-02 | TS-02.3.2 | Citation definition (source id + locator with ≥ 1 of table/figure/section/page, text-only locators), validateDefinition for shared definitions, readable minProperties message | `TS-02.3.2: per-value citation locator` |
 | 2026-11-02 | CH-5 | ADR 0005: GitHub Actions Pages deploy (upload-pages-artifact + deploy-pages), no gh-pages branch, TS-01.3.3 dropped, PR builds attach site artifact, .nojekyll removed; docs updated | `CH-5: deploy via GitHub Actions Pages, drop gh-pages and previews` |
+| 2026-11-02 | TS-02.2.1 | Parameter schema (name, abbreviation, quantity, display unit, modalities, synonyms, method) + shared modality/unit/quantity definitions | `TS-02.2.1: parameter schema` |

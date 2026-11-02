@@ -37,6 +37,9 @@ TypeScript types are generated from the schemas into [`schema/generated/`](../sc
 | `population` | `adult` · `paediatric` · `both` |
 | `wave` | `W1` · `W2` |
 | `locatorText` | non-blank single line, ≤ 40 chars; always a string so `1.10` is never read as `1.1` |
+| `modality` | `Echo` · `CT` · `CMR` (SME decision 4) |
+| `quantity` | physical quantity (`length`, `area`, `velocity-blood`, `velocity-tissue`, `indexed-volume`, `ratio`, …) |
+| `unit` | units as published: `1` (dimensionless), `%`, `mm`, `cm`, `mm²`, `cm²`, `mL`, `mL/m²`, `g/m²`, `m/s`, `cm/s`, `mmHg`, `ms`, … (full list in the schema) |
 | `citation` | `source` (registered source id) + `locator` with at least one of `table`, `figure`, `section`, `page` (TS-02.3.2) |
 
 Citation example (used by every value):
@@ -84,6 +87,34 @@ population: adult
 wave: W1
 status: draft
 ```
+
+## Parameter (`parameter.schema.json`, TS-02.2.1)
+
+One file per parameter: `content/parameters/<id>.yaml`. Values reference a parameter by id.
+
+| Field | Required | Type | Meaning |
+|---|---|---|---|
+| `id` | yes | `id` | e.g. `eroa` |
+| `name` | yes | `text` | Full name |
+| `abbreviation` | no | `text` | Shown in tables, indexed by search |
+| `quantity` | yes | `quantity` | Decides the display unit and the units values may use |
+| `unit` | yes | `unit` | Display (house) unit, NFR-15: lengths mm, areas cm², blood velocities m/s, tissue Doppler cm/s |
+| `modalities` | yes | `modality[]` (≥ 1) | Modalities in which it is measured |
+| `synonyms` | no | `text[]` | Search synonyms |
+| `method` | no | `longText` | View / method note and pitfalls |
+
+```yaml
+id: eroa
+name: Effective regurgitant orifice area
+abbreviation: EROA
+quantity: area
+unit: cm²
+modalities: [Echo]
+synonyms: [ERO]
+method: PISA method, apical 4-chamber zoom; single frame at peak regurgitant velocity.
+```
+
+Unit/quantity consistency (e.g. `quantity: area` with `unit: cm²`) is enforced by the unit layer (TS-02.2.7).
 
 ## Source document (`source.schema.json`, TS-02.3.1)
 

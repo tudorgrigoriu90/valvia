@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://valvia.invalid/schema/parameter.schema.json",
+  "title": "Parameter",
+  "description": "A measured or derived echocardiographic parameter (TS-02.2.1). One file per parameter: content/parameters/<id>.yaml. Values reference parameters by id.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "quantity", "unit", "modalities"],
+  "properties": {
+    "id": {
+      "$ref": "common.schema.json#/$defs/id"
+    },
+    "name": {
+      "description": "Full name, e.g. 'Effective regurgitant orifice area'.",
+      "$ref": "common.schema.json#/$defs/text"
+    },
+    "abbreviation": {
+      "description": "Abbreviation shown in tables and indexed by search, e.g. 'EROA'.",
+      "$ref": "common.schema.json#/$defs/text"
+    },
+    "quantity": {
+      "$ref": "common.schema.json#/$defs/quantity"
+    },
+    "unit": {
+      "description": "Display unit of the parameter (house unit per NFR-15). Values may be published in another unit of the same quantity and are converted for display.",
+      "$ref": "common.schema.json#/$defs/unit"
+    },
+    "modalities": {
+      "description": "Modalities in which the parameter is measured; each value names one of them.",
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common.schema.json#/$defs/modality"
+      }
+    },
+    "synonyms": {
+      "description": "Alternative names and abbreviations indexed by search (ADR 0004).",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common.schema.json#/$defs/text"
+      }
+    },
+    "method": {
+      "description": "View / method note: how and where it is measured, pitfalls (METH).",
+      "$ref": "common.schema.json#/$defs/longText"
+    }
+  }
+}

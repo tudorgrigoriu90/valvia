@@ -5,9 +5,10 @@ Field reference: [`docs/content-model.md`](../docs/content-model.md).
 
 | File | Entity | Generated type |
 |---|---|---|
-| `common.schema.json` | Shared `$defs` (id, slug, text, population, wave) | none |
+| `common.schema.json` | Shared `$defs` (id, slug, text, population, wave, modality, unit, quantity, citation) | none |
 | `topic.schema.json` | Taxonomy node | `TopicNode` in `generated/topic.ts` |
 | `source.schema.json` | Source document (registry) | `SourceDocument` in `generated/source.ts` |
+| `parameter.schema.json` | Measured parameter | `Parameter` in `generated/parameter.ts` |
 
 ## Changing a schema
 
