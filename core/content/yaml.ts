@@ -14,6 +14,8 @@ export interface ParsedYaml {
   locate: (path: readonly PathSegment[]) => Position;
   /** Position of the key `key` inside the mapping at `path` (e.g. an unknown property). */
   locateKey: (path: readonly PathSegment[], key: string) => Position;
+  /** Exact source text of the scalar at `path` (e.g. '0.40' for a number parsed as 0.4). */
+  sourceText: (path: readonly PathSegment[]) => string | undefined;
 }
 
 export type ParseResult =
@@ -21,7 +23,13 @@ export type ParseResult =
 
 export function parseYaml(text: string): ParseResult {
   const lineCounter = new LineCounter();
-  const doc: Document = parseDocument(text, { lineCounter, version: '1.2', schema: 'core', uniqueKeys: true });
+  const doc: Document = parseDocument(text, {
+    lineCounter,
+    version: '1.2',
+    schema: 'core',
+    uniqueKeys: true,
+    keepSourceTokens: true,
+  });
   if (doc.errors.length > 0) {
     return {
       ok: false,
@@ -56,5 +64,11 @@ export function parseYaml(text: string): ParseResult {
     return locate(path);
   };
 
-  return { ok: true, value: { data: doc.toJS({ maxAliasCount: 0 }) as unknown, locate, locateKey } };
+  const sourceText = (path: readonly PathSegment[]): string | undefined => {
+    const node: unknown = doc.getIn(path, true);
+    if (!isScalar(node) || node.srcToken === undefined || !('source' in node.srcToken)) return undefined;
+    return node.srcToken.source;
+  };
+
+  return { ok: true, value: { data: doc.toJS({ maxAliasCount: 0 }) as unknown, locate, locateKey, sourceText } };
 }

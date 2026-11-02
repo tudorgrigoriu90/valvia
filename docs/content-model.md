@@ -11,7 +11,7 @@ flowchart LR
     yaml["content/**/*.yaml"] --> syntax["1 YAML syntax<br/>(YAML 1.2 core, unique keys)"]
     syntax --> schema["2 JSON Schema per file<br/>Ajv 2020, allErrors"]
     schema --> name["file name = id"]
-    name --> cross["3 Cross-file integrity<br/>(planned)"]
+    name --> cross["3 Cross-file integrity<br/>tree, slugs, references"]
     cross --> rules["4 Content rules<br/>source allowlist + supersession<br/>units, modality, plausibility"]
     rules --> out["file:line:column severity rule message"]
 ```
@@ -23,6 +23,24 @@ content/topics/primary-mr-grading.yaml:8:13 error schema population must be one 
 ```
 
 All problems are reported in one run, not only the first. Code: [`core/content/`](../core/content).
+
+Run it with `npm run validate:content` (part of `npm run verify` and CI; in CI problems appear as file annotations).
+Errors fail the run; warnings (e.g. ESC association sources pending SME F3) are printed only.
+
+### Cross-file integrity (`core/content/integrity.ts`)
+
+| Rule | Checks |
+|---|---|
+| `topic-reference` | `parent` and `seeAlso` point to existing topics |
+| `topic-cycle` | the parent chain never loops |
+| `topic-slug` | slugs are unique among siblings; former slugs are not reused by a sibling |
+| `topic-blocks` | only leaf topics have blocks |
+| `block-id` | block ids are unique within a topic |
+| `value-reference` | values name existing parameters; `zScoreReference` points to a z-score dataset |
+| `citation-reference` | every citation (values, criteria, notes, algorithm references) names a registered source |
+
+References to a file that exists but failed its own validation are not reported twice.
+The loader also keeps the exact published text of every number (`published: { value: '0.40' }`) for display.
 
 TypeScript types are generated from the schemas into [`schema/generated/`](../schema/generated) (`npm run gen:types`); see [`schema/README.md`](../schema/README.md) for the change procedure.
 

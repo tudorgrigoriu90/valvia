@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-7: Fix: formatting pushed with TS-02.2.4; plan update missed |
-| Next task | CH-6: content loader and validate:content CLI |
+| Last completed task | CH-6: Content loader: read all YAML, keep published number text, cross-file  |
+| Next task | TS-02.4.1: build-time discrepancy detection |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
@@ -33,6 +33,7 @@ npm test          # unit tests with coverage (≥ 80 % global, 100 % safety-crit
 npm run test:e2e  # Playwright E2E against the production build (run build first)
 npm run check:links -- --site  # internal links in docs and dist/
 npm run gen:types # regenerate TypeScript types after a schema change
+npm run validate:content  # validate all YAML under content/ (file:line:column messages)
 npm run verify    # everything above in order: run before every push
 ```
 

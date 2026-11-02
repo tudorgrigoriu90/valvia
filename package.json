@@ -19,9 +19,10 @@
     "test": "vitest run --coverage",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
-    "verify": "npm run format:check && npm run lint && npm run typecheck && npm test && npm run build && npm run check:links -- --site && npm run test:e2e",
+    "verify": "npm run format:check && npm run lint && npm run typecheck && npm test && npm run validate:content && npm run build && npm run check:links -- --site && npm run test:e2e",
     "check:links": "tsx pipeline/links/cli.ts",
-    "gen:types": "tsx pipeline/schema/cli.ts"
+    "gen:types": "tsx pipeline/schema/cli.ts",
+    "validate:content": "tsx pipeline/content/cli.ts"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.12",

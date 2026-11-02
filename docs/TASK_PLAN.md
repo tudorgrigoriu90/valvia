@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-7 Fix: formatting pushed with TS-02.2.4; plan update missed |
-| Next up | CH-6: content loader and validate:content CLI |
+| Last completed | CH-6 Content loader: read all YAML, keep published number text, cross-file  |
+| Next up | TS-02.4.1: build-time discrepancy detection |
 
 ## Next up: R0 sequence
 
@@ -72,7 +72,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | CH-3 | Fix: Prettier formatting of 404 page pushed with TS-01.3.2 | 0 | done | Push was not gated on verify exit code; now always gated |
 | CH-4 | Generate TypeScript types from JSON Schema (`npm run gen:types`) with a staleness test | 1 | done | First part of TS-02.2.4 (types); plausibility checks stay in TS-02.2.4 |
 | CH-5 | Deploy via GitHub Actions Pages; drop `gh-pages` branch and hosted PR previews; PR site artifact | 1 | done | PO decision 2026-11-02 |
-| CH-6 | Content loader: read all YAML, keep published number text, cross-file integrity (ids, references, tree), run all rules; `npm run validate:content` in verify and CI | 3 | todo | Implements ADR 0003 step 3 and wires FT-02.2/02.3 rules |
+| CH-6 | Content loader: read all YAML, keep published number text, cross-file integrity (ids, references, tree), run all rules; `npm run validate:content` in verify and CI | 3 | done | ADR 0003 step 3; implements FT-02.2/02.3 rule wiring |
 | CH-7 | Fix: formatting pushed with TS-02.2.4; plan update missed | 0 | done | Heredoc broke the verify-gated command chain; now plan edits run before the gate |
 | TS-01.3.1 | CI: build, schema validation, unit tests, Lighthouse CI, axe, broken-link check | 3 | done | Schema validation, axe, Lighthouse and link checks join CI with their own tasks (EP-02, CH-2, TS-07.4.2, TS-05.2.1) |
 | TS-01.3.2 | Deploy to GitHub Pages via Actions on merge to `main` | 1 | done | Actions Pages deploy since CH-5 ([ADR 0005](adr/0005-pages-actions-deploy-no-previews.md)) |
@@ -290,3 +290,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-02 | TS-02.2.3 | Block types (grading table, normal-range table, threshold list, criteria checklist, note, algorithm reference) with type/tag fit, discriminator-selected errors; topic.blocks | `TS-02.2.3: content block types` |
 | 2026-11-02 | TS-02.2.4 | Plausibility rules per topic: unit vs quantity, modality, non-negative sizes, ordered ranges, known grades, monotonic thresholds across grades (converted units, grouped by parameter/population/modality/source); generated types done in CH-4 | `TS-02.2.4: plausibility checks` |
 | 2026-11-02 | CH-7 | Prettier, lint and type fixes in topic-rules tests; TS-02.2.4 plan row and log entry restored | `CH-7: fix formatting, lint, types and plan entry from TS-02.2.4` |
+| 2026-11-02 | CH-6 | Content loader (published number text, invalid-file aware), cross-file integrity (tree, cycles, sibling/former slugs, leaf-only blocks, block ids, parameter/source/z-score references), registry/unit/plausibility rules mapped to file positions; validate:content CLI with GitHub annotations in verify and CI | `CH-6: content loader and validate:content` |

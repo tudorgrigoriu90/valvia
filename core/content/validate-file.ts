@@ -3,7 +3,7 @@ import { basename } from 'node:path';
 import type { Problem } from './problem';
 import { getDefinitionValidator, getValidator, type ContentKind, type DefinitionName } from './schemas';
 import { schemaProblems } from './schema-errors';
-import { parseYaml, type Position } from './yaml';
+import { parseYaml, type ParsedYaml, type Position } from './yaml';
 
 const syntaxProblems = (file: string, errors: readonly { message: string; position: Position }[]): Problem[] =>
   errors.map(({ message, position }) => ({ file, ...position, severity: 'error', rule: 'yaml-syntax', message }));
@@ -11,6 +11,8 @@ const syntaxProblems = (file: string, errors: readonly { message: string; positi
 export interface FileValidation {
   /** Parsed data when the YAML was syntactically valid (even if the schema failed). */
   data?: unknown;
+  /** Parsed document with positions, for follow-up rules. */
+  parsed?: ParsedYaml;
   problems: Problem[];
 }
 
@@ -41,7 +43,7 @@ export function validateContentFile(kind: ContentKind, file: string, text: strin
       });
     }
   }
-  return { data, problems };
+  return { data, parsed: parsed.value, problems };
 }
 
 /** Validates a YAML fragment against a shared definition such as `citation` (no file-name rule). */

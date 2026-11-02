@@ -13,3 +13,9 @@ export interface Problem {
 
 export const formatProblem = (p: Problem): string =>
   `${p.file}:${String(p.line)}:${String(p.column)} ${p.severity} ${p.rule} ${p.message}`;
+
+const escapeData = (value: string): string => value.replace(/%/g, '%25').replace(/\r/g, '%0D').replace(/\n/g, '%0A');
+
+/** GitHub Actions workflow command, shown as an annotation on the file in the run and PR. */
+export const formatGithubAnnotation = (p: Problem): string =>
+  `::${p.severity} file=${p.file},line=${String(p.line)},col=${String(p.column)},title=${p.rule}::${escapeData(p.message)}`;

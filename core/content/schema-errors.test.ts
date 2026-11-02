@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { formatProblem } from './problem';
+import { formatGithubAnnotation, formatProblem } from './problem';
 import { pathLabel, pointerToPath, schemaProblems } from './schema-errors';
 import type { ErrorObject } from './schemas';
 import { parseYaml, type ParsedYaml } from './yaml';
@@ -119,5 +119,15 @@ describe('formatProblem', () => {
     expect(
       formatProblem({ file: 'a.yaml', line: 2, column: 5, severity: 'warning', rule: 'schema', message: 'x' }),
     ).toBe('a.yaml:2:5 warning schema x');
+  });
+});
+
+describe('formatGithubAnnotation', () => {
+  it('formats errors and warnings as workflow commands with escaped data', () => {
+    const base = { file: 'content/a.yaml', line: 2, column: 5, rule: 'schema', message: 'a%b\nc' };
+    expect(formatGithubAnnotation({ ...base, severity: 'error' })).toBe(
+      '::error file=content/a.yaml,line=2,col=5,title=schema::a%25b%0Ac',
+    );
+    expect(formatGithubAnnotation({ ...base, severity: 'warning' })).toMatch(/^::warning /);
   });
 });

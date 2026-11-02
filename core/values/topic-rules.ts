@@ -9,7 +9,7 @@ import type { PathSegment } from '../content/yaml';
 import { allowedUnits, convert, isUnitAllowed, type Quantity } from '../units/units';
 import { checkValueModality } from './modality';
 
-type Block = NonNullable<TopicNode['blocks']>[number];
+export type Block = NonNullable<TopicNode['blocks']>[number];
 type GradingTable = Extract<Block, { type: 'grading-table' }>;
 export type Value = GradingTable['values'][number];
 
@@ -22,12 +22,13 @@ export interface ValueFinding {
 
 const CAN_BE_NEGATIVE: ReadonlySet<Quantity> = new Set(['percent', 'ratio', 'dimensionless', 'angle', 'acceleration']);
 
-interface LocatedValue {
+export interface LocatedValue {
   value: Value;
   path: PathSegment[];
 }
 
-function valuesOf(block: Block, blockIndex: number): LocatedValue[] {
+/** All values of a block with their paths inside the topic file. */
+export function valuesOf(block: Block, blockIndex: number): LocatedValue[] {
   const base: PathSegment[] = ['blocks', blockIndex];
   switch (block.type) {
     case 'grading-table':
