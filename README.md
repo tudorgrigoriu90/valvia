@@ -12,8 +12,8 @@ Mobile first, works offline, static site on GitHub Pages.
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-01.2.3: TypeScript strict, ESLint, Prettier |
-| Next task | CH-1: test tooling with coverage thresholds |
+| Last completed task | CH-1: Test tooling: Vitest + coverage thresholds (≥ 80 % global, 100 % safet |
+| Next task | TS-01.3.1: CI workflow |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
@@ -27,9 +27,12 @@ npm run build     # static output in dist/
 npm run lint      # ESLint, zero warnings
 npm run typecheck # astro check (TypeScript strictest, incl. .astro files)
 npm run format    # Prettier (code only; Markdown is hand-formatted)
+npm test          # unit tests with coverage (≥ 80 % global, 100 % safety-critical)
+npm run test:e2e  # Playwright E2E against the production build (run build first)
+npm run verify    # everything above in order: run before every push
 ```
 
-Coming with the next task: `npm test` (coverage ≥ 80 %) and `npm run verify` (lint + typecheck + tests + build).
+Local Playwright browsers: `npx playwright install chromium` once. See [testing guide](docs/testing.md).
 
 ## Repository layout
 
@@ -61,6 +64,7 @@ Read [`CLAUDE.md`](CLAUDE.md) first. In short:
 - [Task plan](docs/TASK_PLAN.md)
 - [Architecture](docs/architecture.md)
 - [Architecture Decision Records](docs/adr/README.md)
+- [Testing guide](docs/testing.md)
 - [Product backlog](docs/product/valvia-backlog.md)
 - [Content taxonomy](docs/product/valvia-taxonomy.md)
 

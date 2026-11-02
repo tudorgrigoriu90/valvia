@@ -129,13 +129,13 @@ Rules:
 
 | Layer | Tool | Scope |
 |---|---|---|
-| Unit / integration | Vitest + `@vitest/coverage-v8` | Schema, content loading, unit conversion, discrepancy and history logic, pipeline scripts, components |
-| E2E | Playwright (mobile viewport 360 px first) | Browse, search, compare, history, adult/paediatric switch, prosthetic picker, offline |
+| Unit / integration | Vitest 5 + `@vitest/coverage-v8`, tests next to code (`*.test.ts`) | Schema, content loading, unit conversion, discrepancy and history logic, pipeline scripts, components |
+| E2E | Playwright 1.63 in `tests/e2e/`, projects `mobile-360` and `desktop`, against the production build | Browse, search, compare, history, adult/paediatric switch, prosthetic picker, offline |
 | Accessibility | axe (in Playwright) | WCAG 2.2 AA |
 | Performance | Lighthouse CI | NFR-02 budgets, blocking |
 | Content | JSON Schema validation + plausibility checks | Every file under `/content` |
 
-Coverage thresholds (configured in the test runner so `npm test` fails below them, and enforced in CI):
+Coverage thresholds (configured in `vitest.config.ts` so `npm test` fails below them, and enforced in CI). Details: [`docs/testing.md`](docs/testing.md).
 
 - **Global: ≥ 80 %** for lines, branches, functions and statements.
 - **100 %** for the unit conversion layer, citation/source-allowlist checks, population filtering,
