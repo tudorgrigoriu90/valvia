@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-01.2.2 `CLAUDE.md` |
-| Next up | TS-01.1.1 ADR: static site generator |
+| Last completed | TS-01.1.1 ADR: static site generator (Astro vs Eleventy) |
+| Next up | TS-01.1.2: ADR, GitHub Pages hosting |
 
 ## Next up: R0 sequence
 
@@ -56,7 +56,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 
 | Key | Summary | SP | Status | Notes |
 |---|---|---|---|---|
-| TS-01.1.1 | ADR: static site generator (Astro vs Eleventy) | 2 | todo |  |
+| TS-01.1.1 | ADR: static site generator (Astro vs Eleventy) | 2 | done | Astro chosen ([ADR 0001](adr/0001-static-site-generator.md)) |
 | TS-01.1.2 | ADR: GitHub Pages hosting, PR previews, meta-CSP and static redirects | 1 | todo |  |
 | TS-01.1.3 | ADR: content as code (YAML in Git) | 1 | todo |  |
 | TS-01.1.4 | ADR: client-side search (Pagefind) | 1 | todo |  |
@@ -258,3 +258,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | Date | Task | Summary | Commit / PR |
 |---|---|---|---|
 | 2026-11-02 | TS-01.2.2 | Add `CLAUDE.md` (workflow, TDD, coverage, docs, README and plan rules, architecture, content rules); README; task plan; architecture overview; product docs imported | `TS-01.2.2: add CLAUDE.md engineering guidelines` |
+| 2026-11-02 | TS-01.1.1 | ADR 0001: Astro 7 static output; logic framework-free in /core; ADR index and template | `TS-01.1.1: ADR 0001 static site generator (Astro)` |

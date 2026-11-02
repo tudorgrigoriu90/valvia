@@ -12,8 +12,8 @@ Mobile first, works offline, static site on GitHub Pages.
 | | |
 |---|---|
 | Release | R0: Walking skeleton (not yet started in code) |
-| Last completed task | TS-01.2.2: `CLAUDE.md` engineering guidelines |
-| Next task | TS-01.1.1: ADR, static site generator |
+| Last completed task | TS-01.1.1: ADR: static site generator (Astro vs Eleventy) |
+| Next task | TS-01.1.2: ADR, GitHub Pages hosting |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
@@ -34,6 +34,7 @@ npm run verify    # lint + typecheck + tests + build (run before every push)
 | `CLAUDE.md` | Engineering guidelines every contributor and Claude session follows |
 | `docs/TASK_PLAN.md` | Task status and push log |
 | `docs/architecture.md` | Architecture overview with diagrams |
+| `docs/adr/` | Architecture Decision Records |
 | `docs/product/` | Product backlog and content taxonomy |
 | `/site`, `/content`, `/schema`, `/pipeline` | Planned (TS-01.2.1) |
 
@@ -50,6 +51,7 @@ Read [`CLAUDE.md`](CLAUDE.md) first. In short:
 - [Engineering guidelines](CLAUDE.md)
 - [Task plan](docs/TASK_PLAN.md)
 - [Architecture](docs/architecture.md)
+- [Architecture Decision Records](docs/adr/README.md)
 - [Product backlog](docs/product/valvia-backlog.md)
 - [Content taxonomy](docs/product/valvia-taxonomy.md)
 
