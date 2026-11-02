@@ -12,7 +12,7 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-01.3.2 Deploy to GitHub Pages via Actions on merge to main |
+| Last completed | CH-3 Fix: Prettier formatting of 404 page pushed with TS-01.3.2 |
 | Next up | TS-02.1.1: topic node schema |
 
 ## Next up: R0 sequence
@@ -67,6 +67,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-01.2.5 | PR templates: code PR; content PR (clinical change summary table, sources, preview link, reviewer checklist) | 1 | todo | Only the content PR template is needed (code goes to main directly) |
 | CH-1 | Test tooling: Vitest + coverage thresholds (≥ 80 % global, 100 % safety-critical modules), Playwright, `npm run verify` | 2 | done | Added for CLAUDE.md rules (TDD, coverage); not in backlog |
 | CH-2 | Internal link checker (Markdown docs + built site, offline), run in CI | 1 | done | Built test-first; external URLs deliberately not checked |
+| CH-3 | Fix: Prettier formatting of 404 page pushed with TS-01.3.2 | 0 | done | Push was not gated on verify exit code; now always gated |
 | TS-01.3.1 | CI: build, schema validation, unit tests, Lighthouse CI, axe, broken-link check | 3 | done | Schema validation, axe, Lighthouse and link checks join CI with their own tasks (EP-02, CH-2, TS-07.4.2, TS-05.2.1) |
 | TS-01.3.2 | Deploy to GitHub Pages via Actions on merge to `main` | 1 | done | Engineer must switch Pages source to the gh-pages branch once (docs/ci-cd.md) |
 | TS-01.3.3 | PR previews with `pr-preview-action` (deploy, comment link, clean up on close); exclude previews from search engines | 2 | todo |  |
@@ -269,3 +270,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-02 | TS-01.3.1 | CI workflow on push to main and PRs: format, lint, typecheck, unit tests with coverage, build, Playwright E2E, artefacts; CI/CD doc | `TS-01.3.1: CI workflow` |
 | 2026-11-02 | CH-2 | Offline internal link checker (Markdown links + GitHub heading anchors; built pages under base path, files and ids), GitHub annotations, in verify and CI | `CH-2: internal link checker for docs and built site` |
 | 2026-11-02 | TS-01.3.2 | Deploy job after green verify on main: site artefact to gh-pages root (keeps pr-preview/), env-driven base via repo variables, .nojekyll, 404 page, E2E hosting tests | `TS-01.3.2: deploy to GitHub Pages from CI` |
+| 2026-11-02 | CH-3 | Format 404 page; verify green | `CH-3: format 404 page` |

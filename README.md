@@ -14,7 +14,7 @@ Live site (after Pages is enabled on the `gh-pages` branch): <https://tudorgrigo
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-01.3.2: Deploy to GitHub Pages via Actions on merge to main |
+| Last completed task | CH-3: Fix: Prettier formatting of 404 page pushed with TS-01.3.2 |
 | Next task | TS-02.1.1: topic node schema |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
