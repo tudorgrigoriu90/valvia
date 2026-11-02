@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-9: Give generic leaf titles their parent context (search results, tabs) a |
-| Next task | TS-04.4.2: instant search UI |
+| Last completed task | TS-04.4.2: Instant search UI (mobile keyboard friendly) |
+| Next task | TS-04.2.3: jump menu, deep links and last-reviewed info |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

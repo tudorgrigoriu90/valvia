@@ -25,13 +25,20 @@ const { topic } = Astro.props;
 const { bundle, navigation } = getContent();
 const indexed = navigation.hasContent(topic.id);
 const terms = indexed ? searchTerms(topic, bundle.parameters) : [];
+const context = navigation
+  .ancestors(topic.id)
+  .map((node) => node.title)
+  .join(' › ');
 const children = navigation.visibleChildren(topic.id);
 const blocks = topic.blocks ?? [];
 ---
 
 <Base title={topic.title}>
   <Breadcrumbs topic={topic} />
-  <article data-pagefind-body={indexed ? '' : undefined}>
+  <article
+    data-pagefind-body={indexed ? '' : undefined}
+    data-pagefind-meta={indexed ? `context:${context}` : undefined}
+  >
     <h1 data-pagefind-meta="title">{topic.title}</h1>
     {terms.length > 0 && (
       <p class="visually-hidden" aria-hidden="true" data-pagefind-weight="5">

@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-9 Give generic leaf titles their parent context (search results, tabs) a |
-| Next up | TS-04.4.2: instant search UI |
+| Last completed | TS-04.4.2 Instant search UI (mobile keyboard friendly) |
+| Next up | TS-04.2.3: jump menu, deep links and last-reviewed info |
 
 ## Next up: R0 sequence
 
@@ -149,7 +149,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-04.3.5 | Society filter toggle (localStorage, wrapped in try/catch) | 2 | todo |  |
 | TS-04.3.6 | Caveats/footnotes rendering (e.g. "not valid in AF") | 1 | done |  |
 | TS-04.4.1 | Pagefind index incl. synonyms, abbreviations and valve models | 3 | done | Valve model names join with the prosthetic catalogue (TS-02.2.8) |
-| TS-04.4.2 | Instant search UI (mobile keyboard friendly) | 2 | todo |  |
+| TS-04.4.2 | Instant search UI (mobile keyboard friendly) | 2 | done |  |
 | TS-04.5.1 | Stable deep links to topics and parameter anchors | 1 | todo |  |
 | TS-04.5.2 | "Last reviewed" date and content version on every page | 1 | todo |  |
 | TS-04.6.1 | Last 10 viewed topics on home screen (localStorage) | 2 | todo |  |
@@ -312,3 +312,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-02 | FT-03.5 | PR grading (3.4.2) from ASE 2017 Table 16 / Figure 35: RF, jet width/annulus, PR index, deceleration time, PHT; 3 new parameters | `FT-03.5: pulmonary regurgitation grading from ASE 2017` |
 | 2026-11-02 | TS-04.4.1 | Pagefind post-build index of leaf pages with weighted synonyms, parameter names and abbreviations; html data-base for the client; E2E queries EROA, pressure half-time, PISA | `TS-04.4.1: Pagefind search index with synonyms` |
 | 2026-11-02 | CH-9 | 19 leaf titles prefixed with their parent context (e.g. 'Aortic regurgitation: severity grading'); truncated HCM title fixed; ids and slugs unchanged | `CH-9: contextual leaf titles` |
+| 2026-11-02 | TS-04.4.2 | Instant search box on home (debounced, lazy-loads Pagefind, top 10 results with breadcrumb context, live result count, Enter safe, no-JS notice); CSP-clean bundled script | `TS-04.4.2: instant search UI` |

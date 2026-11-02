@@ -1,5 +1,6 @@
 ---
 import { withBase } from '../../core/site/base-path';
+import Search from '../components/Search.astro';
 import Base from '../layouts/Base.astro';
 import { getContent } from '../lib/content';
 
@@ -15,6 +16,8 @@ const upcoming = navigation.roots().filter((root) => !navigation.isVisible(root.
     Cut-off and reference values from ESC (incl. EACVI) and ASE documents, each with its source. Where societies
     disagree, both values are shown.
   </p>
+
+  <Search />
 
   <section aria-labelledby="categories-heading">
     <h2 id="categories-heading" class="visually-hidden">
