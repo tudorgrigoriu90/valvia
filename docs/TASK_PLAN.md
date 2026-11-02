@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-02.4.1 Build-time discrepancy detection |
-| Next up | TS-02.4.2: supersession history |
+| Last completed | CH-8 Record PO decisions (direct-to-main, no previews, initial content seed |
+| Next up | TS-02.4.2: supersession history (content seeding blocked on network access) |
 
 ## Next up: R0 sequence
 
@@ -38,6 +38,8 @@ The user set the following rules on 2026-11-02 (recorded in `CLAUDE.md`); they s
 - One task per push; TDD; coverage ≥ 80 %; README updated every turn; this plan updated every push.
 
 Content PRs target `main` as base and are reviewed in the PR (summary + diff); no hosted previews and no `gh-pages` branch (ADR 0005, 2026-11-02).
+
+Initial content seed (PO-3, 2026-11-02): Claude fetches the sources and pushes the first content directly to `main` as `status: draft`, labelled "Not yet clinically reviewed" on the site; later changes go through SME-reviewed PRs.
 
 Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must allow direct pushes to `main` while a CI path guard rejects direct changes to `/content/**`; the engineer reviews code after it lands on `main`.
 
@@ -74,6 +76,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | CH-5 | Deploy via GitHub Actions Pages; drop `gh-pages` branch and hosted PR previews; PR site artifact | 1 | done | PO decision 2026-11-02 |
 | CH-6 | Content loader: read all YAML, keep published number text, cross-file integrity (ids, references, tree), run all rules; `npm run validate:content` in verify and CI | 3 | done | ADR 0003 step 3; implements FT-02.2/02.3 rule wiring |
 | CH-7 | Fix: formatting pushed with TS-02.2.4; plan update missed | 0 | done | Heredoc broke the verify-gated command chain; now plan edits run before the gate |
+| CH-8 | Record PO decisions (direct-to-main, no previews, initial content seed without approval) and the seed rules | 0 | done | Starts TS-00.2 (decision log) |
 | TS-01.3.1 | CI: build, schema validation, unit tests, Lighthouse CI, axe, broken-link check | 3 | done | Schema validation, axe, Lighthouse and link checks join CI with their own tasks (EP-02, CH-2, TS-07.4.2, TS-05.2.1) |
 | TS-01.3.2 | Deploy to GitHub Pages via Actions on merge to `main` | 1 | done | Actions Pages deploy since CH-5 ([ADR 0005](adr/0005-pages-actions-deploy-no-previews.md)) |
 | TS-01.3.3 | PR previews with `pr-preview-action` (deploy, comment link, clean up on close); exclude previews from search engines | 2 | dropped | PO decision 2026-11-02: no `gh-pages` branch; content PRs reviewed in the PR (ADR 0005) |
@@ -292,3 +295,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-02 | CH-7 | Prettier, lint and type fixes in topic-rules tests; TS-02.2.4 plan row and log entry restored | `CH-7: fix formatting, lint, types and plan entry from TS-02.2.4` |
 | 2026-11-02 | CH-6 | Content loader (published number text, invalid-file aware), cross-file integrity (tree, cycles, sibling/former slugs, leaf-only blocks, block ids, parameter/source/z-score references), registry/unit/plausibility rules mapped to file positions; validate:content CLI with GitHub annotations in verify and CI | `CH-6: content loader and validate:content` |
 | 2026-11-02 | TS-02.4.1 | Discrepancy detection across topics for current sources (display-unit comparison, operator and range aware, key-order-insensitive populations), value formatter, loaded-value walker; listed by validate:content | `TS-02.4.1: build-time discrepancy detection` |
+| 2026-11-02 | CH-8 | Decision log docs/decisions (PO-1..PO-3); CLAUDE.md §3.3 initial content seed rules: direct to main, status draft, site label, values only from documents read in session | `CH-8: decision log and initial content seed rules` |

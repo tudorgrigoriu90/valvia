@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-02.4.1: Build-time discrepancy detection |
-| Next task | TS-02.4.2: supersession history |
+| Last completed task | CH-8: Record PO decisions (direct-to-main, no previews, initial content seed |
+| Next task | TS-02.4.2: supersession history (content seeding blocked on network access) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
@@ -74,6 +74,7 @@ Read [`CLAUDE.md`](CLAUDE.md) first. In short:
 - [Units and conversions](docs/units.md)
 - [Testing guide](docs/testing.md)
 - [CI/CD](docs/ci-cd.md)
+- [Decision log](docs/decisions/README.md)
 - [Product backlog](docs/product/valvia-backlog.md)
 - [Content taxonomy](docs/product/valvia-taxonomy.md)
 

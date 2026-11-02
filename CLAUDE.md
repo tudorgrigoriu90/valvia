@@ -35,7 +35,8 @@ Read these before starting any task:
 7. **`docs/TASK_PLAN.md` is updated in every push** (§9).
 
 These rules supersede backlog §0 working rules 1–2 ("every change is a PR", "one task = one PR").
-Code no longer goes through PRs; content still does, and the SME remains the only content approver.
+Code no longer goes through PRs; content still does, and the SME remains the only content approver
+(except the initial content seed, §3.3).
 
 ## 3. Git workflow
 
@@ -79,7 +80,18 @@ Rules:
 - Emergency exception (engineer only): revert a published content change via the admin bypass.
   A revert only removes content; corrections go through a normal content PR.
 
-### 3.3 Commit messages
+### 3.3 Exception: initial content seed (decision PO-3)
+
+For the **initial** content the product owner waived approval (2026-11-02, [`docs/decisions/`](docs/decisions/README.md)):
+
+- Claude Code fetches the source documents (or uses PDFs supplied in the session), builds the content and pushes it
+  **directly to `main`**, one subcategory per push, recorded in the task plan like any task.
+- Every seeded topic has `status: draft`; the site must label draft topics **"Not yet clinically reviewed"**.
+- Values are transcribed only from a document actually read in the session, each with its locator. If a document
+  cannot be obtained, its values are not entered (no values from memory, no placeholders).
+- Once seeded, any change to existing content goes through the PR flow in §3.2, and a topic becomes `published` only after SME review.
+
+### 3.4 Commit messages
 
 ```
 <TASK-KEY>: <imperative summary, ≤ 72 chars>
