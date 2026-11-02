@@ -1,0 +1,22 @@
+---
+import type { LoadedBlock } from '../../core/content/types';
+import { describeLocator } from '../../core/values/criteria';
+import { getContent } from '../lib/content';
+
+interface Props {
+  block: Extract<LoadedBlock, { type: 'algorithm-reference' }>;
+}
+const { block } = Astro.props;
+const { bundle } = getContent();
+const source = bundle.sources.get(block.citation.source);
+const href = block.url ?? source?.url;
+---
+
+<p class="algorithm">
+  {source?.shortTitle ?? source?.title}, {describeLocator(block.citation.locator)}.
+  {href !== undefined && (
+    <a href={href} rel="noopener" target="_blank">
+      Open the algorithm in the source<span class="visually-hidden"> (opens in a new tab)</span>
+    </a>
+  )}
+</p>

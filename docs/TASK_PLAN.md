@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-04.3.6 Caveats/footnotes rendering (e.g. "not valid in AF") |
-| Next up | TS-04.3.2: criteria checklist, note and algorithm blocks |
+| Last completed | TS-04.3.2 Criteria checklist component (e.g. TEER feasibility) |
+| Next up | TS-04.3.3: source chips and original-unit popovers |
 
 ## Next up: R0 sequence
 
@@ -142,7 +142,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-04.2.2 | Drill-down list pages with breadcrumbs | 3 | done |  |
 | TS-04.2.3 | Leaf page with section anchors and "jump to" menu | 3 | todo |  |
 | TS-04.3.1 | Responsive grading / normal-range table component | 5 | done | Normal-range table layout follows with NORM content |
-| TS-04.3.2 | Criteria checklist component (e.g. TEER feasibility) | 3 | todo |  |
+| TS-04.3.2 | Criteria checklist component (e.g. TEER feasibility) | 3 | done |  |
 | TS-04.3.3 | Source chip + citation popover; original-unit popover | 3 | todo |  |
 | TS-04.3.4 | Discrepancy marker + side-by-side comparison view | 5 | todo |  |
 | TS-04.3.5 | Society filter toggle (localStorage, wrapped in try/catch) | 2 | todo |  |
@@ -304,3 +304,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-02 | TS-04.2.1 | Home: intro, responsive card grid of root categories with content (topic counts), 'In preparation' list of empty categories without links; axe-clean | `TS-04.2.1: home with root categories` |
 | 2026-11-02 | TS-04.3.1 | Grading table model (parameter rows × grade columns, display units, original kept) and component: sticky first column, own scroll region at 360 px, unit in row header, abbr with full name; leaf blocks rendered as anchored sections | `TS-04.3.1: responsive grading table` |
 | 2026-11-02 | TS-04.3.6 | Caveats rendered as numbered footnotes per table (shared numbers for identical text), superscript links from values to the notes list | `TS-04.3.6: caveats and footnotes` |
+| 2026-11-02 | TS-04.3.2 | Criteria checklist (feasibility badges = text + symbol, nested values formatted), note paragraphs, algorithm references linking to the source with locator (FT-04.3) | `TS-04.3.2: criteria checklist, notes and algorithm links` |

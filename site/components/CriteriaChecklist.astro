@@ -1,0 +1,32 @@
+---
+import type { LoadedBlock } from '../../core/content/types';
+import { CATEGORY_LABELS } from '../../core/values/criteria';
+import { formatValue } from '../../core/values/format';
+import { getContent } from '../lib/content';
+
+interface Props {
+  block: Extract<LoadedBlock, { type: 'criteria-checklist' }>;
+}
+const { block } = Astro.props;
+const { bundle } = getContent();
+---
+
+<ul class="checklist">
+  {block.criteria.map((criterion) => {
+    const category = criterion.category === undefined ? undefined : CATEGORY_LABELS[criterion.category];
+    return (
+      <li class={category === undefined ? undefined : `checklist__item--${criterion.category}`}>
+        {category !== undefined && (
+          <span class="checklist__badge">
+            <span aria-hidden="true">{category.symbol}</span> {category.label}
+          </span>
+        )}
+        <span>{criterion.text}</span>
+        {(criterion.values ?? []).map((value) => {
+          const parameter = bundle.parameters.get(value.parameter);
+          return parameter === undefined ? null : <span class="checklist__value">{formatValue(value, parameter)}</span>;
+        })}
+      </li>
+    );
+  })}
+</ul>

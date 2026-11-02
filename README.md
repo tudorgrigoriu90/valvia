@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-04.3.6: Caveats/footnotes rendering (e.g. "not valid in AF") |
-| Next task | TS-04.3.2: criteria checklist, note and algorithm blocks |
+| Last completed task | TS-04.3.2: Criteria checklist component (e.g. TEER feasibility) |
+| Next task | TS-04.3.3: source chips and original-unit popovers |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

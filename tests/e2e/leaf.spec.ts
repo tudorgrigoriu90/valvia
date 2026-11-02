@@ -55,3 +55,20 @@ test('shows caveats as numbered footnotes linked from the values', async ({ page
   await marker.click();
   await expect(page).toHaveURL(/#quantitative-grading-fn-\d$/);
 });
+
+// TS-04.3.2: criteria checklist; note and algorithm reference blocks (FT-04.3).
+
+test('renders criteria checklists as lists', async ({ page }) => {
+  await page.goto(LEAF);
+  const severe = page.locator('#specific-criteria-severe').getByRole('list');
+  await expect(severe.getByRole('listitem')).toHaveCount(6);
+  await expect(severe).toContainText('Flail leaflet');
+});
+
+test('renders notes as text and algorithm references as links to the source', async ({ page }) => {
+  await page.goto(LEAF);
+  await expect(page.locator('#integration')).toContainText('integrating several parameters');
+  const link = page.locator('#algorithm').getByRole('link', { name: /Open the algorithm in the source/ });
+  await expect(link).toHaveAttribute('href', 'https://doi.org/10.1016/j.echo.2017.01.007');
+  await expect(page.locator('#algorithm')).toContainText('Figure 18');
+});
