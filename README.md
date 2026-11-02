@@ -12,8 +12,8 @@ Mobile first, works offline, static site on GitHub Pages.
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-01.2.1: Repo structure: /site, /content, /schema, /pipeline, /docs |
-| Next task | TS-01.2.3: TypeScript strict, ESLint, Prettier |
+| Last completed task | TS-01.2.3: TypeScript strict, ESLint, Prettier |
+| Next task | CH-1: test tooling with coverage thresholds |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
@@ -24,9 +24,12 @@ Prerequisites: Node.js version in [`.nvmrc`](.nvmrc) (22.23.4 or later) and npm.
 npm install
 npm run dev       # local site at http://localhost:4321/valvia/
 npm run build     # static output in dist/
+npm run lint      # ESLint, zero warnings
+npm run typecheck # astro check (TypeScript strictest, incl. .astro files)
+npm run format    # Prettier (code only; Markdown is hand-formatted)
 ```
 
-Coming with the next tasks: `npm test` (coverage ≥ 80 %) and `npm run verify` (lint + typecheck + tests + build).
+Coming with the next task: `npm test` (coverage ≥ 80 %) and `npm run verify` (lint + typecheck + tests + build).
 
 ## Repository layout
 

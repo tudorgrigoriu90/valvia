@@ -219,8 +219,12 @@ Repository layout (TS-01.2.1). Node version in `.nvmrc`; single root `package.js
 
 ## 11. Coding conventions
 
-- TypeScript `strict: true`; no `any` (use `unknown` + narrowing); no non-null assertions without a comment.
-- ESLint + Prettier; no lint warnings on `main`.
+- TypeScript: `astro/tsconfigs/strictest` (strict, `noUncheckedIndexedAccess`, `exactOptionalPropertyTypes`, …);
+  no `any` (use `unknown` + narrowing); no non-null assertions (lint error).
+- ESLint (`typescript-eslint` strict + stylistic, type-checked; `eslint-plugin-astro`) with zero warnings:
+  `npm run lint`. Type check including `.astro` files: `npm run typecheck`.
+- Prettier (single quotes, width 120, trailing commas): `npm run format` / `npm run format:check`.
+  Markdown is excluded from Prettier (hand-formatted, avoids table re-padding noise in diffs).
 - Pure functions for logic (conversion, discrepancy, history, filtering); keep I/O at the edges.
 - Ship ~0 KB JS by default; client-side islands only where interaction requires it; ≤ 50 KB gzipped JS per topic page.
 - System font stack, SVG icons; the analytics beacon is the only third-party script.

@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-01.2.1 Repo structure: /site, /content, /schema, /pipeline, /docs |
-| Next up | TS-01.2.3: TypeScript strict, ESLint, Prettier |
+| Last completed | TS-01.2.3 TypeScript strict, ESLint, Prettier |
+| Next up | CH-1: test tooling with coverage thresholds |
 
 ## Next up: R0 sequence
 
@@ -62,7 +62,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-01.1.4 | ADR: client-side search (Pagefind) | 1 | done | [ADR 0004](adr/0004-client-side-search-pagefind.md) |
 | TS-01.2.1 | Repo structure: `/site`, `/content`, `/schema`, `/pipeline`, `/docs` | 2 | done | Added `/core` for framework-free domain logic |
 | TS-01.2.2 | `CLAUDE.md`: architecture, coding conventions, content-modelling rules, units, DoD | 2 | done | Workflow rules from user: direct-to-main for code, PR for data only |
-| TS-01.2.3 | TypeScript strict, ESLint, Prettier | 1 | todo |  |
+| TS-01.2.3 | TypeScript strict, ESLint, Prettier | 1 | done | TS 6 (typescript-eslint not yet compatible with TS 7); 13 moderate dev-only audit findings via minimatch, left to Renovate |
 | TS-01.2.4 | Renovate config with auto-merge for patch/minor on green CI | 1 | todo |  |
 | TS-01.2.5 | PR templates: code PR; content PR (clinical change summary table, sources, preview link, reviewer checklist) | 1 | todo | Only the content PR template is needed (code goes to main directly) |
 | CH-1 | Test tooling: Vitest + coverage thresholds (≥ 80 % global, 100 % safety-critical modules), Playwright, `npm run verify` | 2 | todo | Added for CLAUDE.md rules (TDD, coverage); not in backlog |
@@ -263,3 +263,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-02 | TS-01.1.3 | ADR 0003: YAML one entity per file, JSON Schema source of truth, generated types, shared loader with line-precise errors | `TS-01.1.3: ADR 0003 content as code` |
 | 2026-11-02 | TS-01.1.4 | ADR 0004: Pagefind post-build index with synonyms, own search UI, offline precache; CSP allows wasm | `TS-01.1.4: ADR 0004 client-side search (Pagefind)` |
 | 2026-11-02 | TS-01.2.1 | Folders site/core/content/schema/pipeline with READMEs; package.json, .nvmrc, .gitignore, .editorconfig; Astro 7 config (env base path, no inlining) and placeholder home page | `TS-01.2.1: repository structure and Astro skeleton` |
+| 2026-11-02 | TS-01.2.3 | TypeScript 6 strictest, ESLint 10 flat config (typescript-eslint strict type-checked, astro plugin), Prettier with astro plugin; lint/typecheck/format scripts | `TS-01.2.3: TypeScript strictest, ESLint and Prettier` |
