@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-04.3.2: Criteria checklist component (e.g. TEER feasibility) |
-| Next task | TS-04.3.3: source chips and original-unit popovers |
+| Last completed task | TS-04.3.3: Source chip + citation popover; original-unit popover |
+| Next task | TS-04.2.3: jump menu and stable anchors |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

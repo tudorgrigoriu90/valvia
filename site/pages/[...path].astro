@@ -4,6 +4,7 @@ import AlgorithmReference from '../components/AlgorithmReference.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CriteriaChecklist from '../components/CriteriaChecklist.astro';
 import GradingTable from '../components/GradingTable.astro';
+import SourceChips from '../components/SourceChips.astro';
 import TopicList from '../components/TopicList.astro';
 import Base from '../layouts/Base.astro';
 import { getContent } from '../lib/content';
@@ -34,6 +35,7 @@ const blocks = topic.blocks ?? [];
     return (
       <section class="block" id={block.id} aria-labelledby={`${block.id}-heading`}>
         <h2 id={`${block.id}-heading`}>{heading}</h2>
+        <SourceChips block={block} />
         {block.type === 'grading-table' && <GradingTable block={block} label={heading} />}
         {block.type === 'criteria-checklist' && <CriteriaChecklist block={block} />}
         {block.type === 'note' && <p class="note">{block.text}</p>}

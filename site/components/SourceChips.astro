@@ -1,0 +1,48 @@
+---
+import type { LoadedBlock } from '../../core/content/types';
+import { blockCitations } from '../../core/values/citations';
+import { getContent } from '../lib/content';
+
+interface Props {
+  block: LoadedBlock;
+}
+const { block } = Astro.props;
+const { bundle } = getContent();
+const citations = blockCitations(block);
+---
+
+{citations.length > 0 && (
+  <div class="source-chips">
+    {citations.map(({ source: id, locators }) => {
+      const source = bundle.sources.get(id);
+      if (source === undefined) return null;
+      return (
+        <details class="source-chip">
+          <summary>
+            <span class="visually-hidden">Source: </span>
+            {source.issuers.map((issuer) => (
+              <span class="society-badge">{issuer}</span>
+            ))}
+            <span>
+              {source.shortTitle ?? source.title} · {locators.join('; ')}
+            </span>
+          </summary>
+          <div class="source-chip__body">
+            <p>
+              {source.title}. <em>{source.journal}</em> {source.year}.
+            </p>
+            {source.doi !== undefined && (
+              <p>
+                <a href={`https://doi.org/${source.doi}`} rel="noopener" target="_blank">
+                  doi:{source.doi}
+                  <span class="visually-hidden"> (opens in a new tab)</span>
+                </a>
+              </p>
+            )}
+            {source.status !== 'current' && <p>Status: {source.status}</p>}
+          </div>
+        </details>
+      );
+    })}
+  </div>
+)}

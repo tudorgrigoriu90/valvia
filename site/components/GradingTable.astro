@@ -36,7 +36,14 @@ const table = buildGradingTable(block, bundle.parameters);
               ) : (
                 cell.map((entry) => (
                   <span class="value">
-                    {entry.text}
+                    {entry.converted ? (
+                      <details class="original">
+                        <summary>{entry.text}</summary>
+                        <span class="original__body">Published as {entry.original}</span>
+                      </details>
+                    ) : (
+                      entry.text
+                    )}
                     {entry.footnotes.map((n) => (
                       <sup>
                         <a href={`#${block.id}-fn-${String(n)}`} aria-label={`Footnote ${String(n)}`}>

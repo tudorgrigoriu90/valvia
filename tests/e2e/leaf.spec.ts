@@ -72,3 +72,28 @@ test('renders notes as text and algorithm references as links to the source', as
   await expect(link).toHaveAttribute('href', 'https://doi.org/10.1016/j.echo.2017.01.007');
   await expect(page.locator('#algorithm')).toContainText('Figure 18');
 });
+
+// TS-04.3.3: source chips and original-unit popovers.
+
+test('each block shows its sources; tapping a chip reveals the full citation and DOI', async ({ page }) => {
+  await page.goto(LEAF);
+  const chip = page.locator('#quantitative-grading').getByText(/ASE native regurgitation 2017 · Table 8, p\. 332/);
+  await chip.click();
+  const citation = page.locator('#quantitative-grading .source-chip__body');
+  await expect(citation).toContainText('Recommendations for Noninvasive Evaluation of Native Valvular Regurgitation');
+  await expect(citation.getByRole('link', { name: /10\.1016\/j\.echo\.2017\.01\.007/ })).toHaveAttribute(
+    'href',
+    'https://doi.org/10.1016/j.echo.2017.01.007',
+  );
+});
+
+test('tapping a converted value shows the value and unit as published', async ({ page }) => {
+  await page.goto(LEAF);
+  const cell = page
+    .getByRole('table', { name: 'Semiquantitative signs' })
+    .getByRole('row', { name: /VCW/ })
+    .getByRole('cell')
+    .nth(1);
+  await cell.getByText('≥ 7', { exact: true }).click();
+  await expect(cell).toContainText('Published as ≥ 0.7 cm');
+});
