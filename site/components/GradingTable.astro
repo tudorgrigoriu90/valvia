@@ -1,0 +1,45 @@
+---
+import type { LoadedBlock } from '../../core/content/types';
+import { buildGradingTable } from '../../core/values/table';
+import { getContent } from '../lib/content';
+
+interface Props {
+  block: Extract<LoadedBlock, { type: 'grading-table' }>;
+  label: string;
+}
+const { block, label } = Astro.props;
+const { bundle } = getContent();
+const table = buildGradingTable(block, bundle.parameters);
+---
+
+<div class="table-scroll" role="region" aria-label={`${label} (scrollable table)`} tabindex="0">
+  <table class="grading-table" aria-label={label}>
+    <thead>
+      <tr>
+        <th scope="col">Parameter</th>
+        {table.columns.map((column) => (
+          <th scope="col">{column}</th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {table.rows.map((row) => (
+        <tr>
+          <th scope="row">
+            <abbr title={row.name}>{row.label}</abbr>
+            {row.unit !== undefined && <span class="unit">{row.unit}</span>}
+          </th>
+          {row.cells.map((cell) => (
+            <td>
+              {cell.length === 0 ? (
+                <span aria-label="No value">–</span>
+              ) : (
+                cell.map((entry) => <span class="value">{entry.text}</span>)
+              )}
+            </td>
+          ))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

@@ -1,6 +1,7 @@
 ---
 import type { LoadedTopic } from '../../core/content/types';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import GradingTable from '../components/GradingTable.astro';
 import TopicList from '../components/TopicList.astro';
 import Base from '../layouts/Base.astro';
 import { getContent } from '../lib/content';
@@ -19,19 +20,20 @@ interface Props {
 const { topic } = Astro.props;
 const { navigation } = getContent();
 const children = navigation.visibleChildren(topic.id);
+const blocks = topic.blocks ?? [];
 ---
 
 <Base title={topic.title}>
   <Breadcrumbs topic={topic} />
   <h1>{topic.title}</h1>
   {children.length > 0 && <TopicList topics={children} />}
-  {navigation.hasContent(topic.id) && (
-    <section aria-label="Content">
-      <ul>
-        {(topic.blocks ?? []).map((block) => (
-          <li>{block.title ?? block.id}</li>
-        ))}
-      </ul>
-    </section>
-  )}
+  {blocks.map((block) => {
+    const heading = block.title ?? block.id;
+    return (
+      <section class="block" id={block.id} aria-labelledby={`${block.id}-heading`}>
+        <h2 id={`${block.id}-heading`}>{heading}</h2>
+        {block.type === 'grading-table' && <GradingTable block={block} label={heading} />}
+      </section>
+    );
+  })}
 </Base>

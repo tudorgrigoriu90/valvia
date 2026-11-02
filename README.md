@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-04.2.1: Home: grid of root categories + search bar |
-| Next task | TS-04.2.3 + TS-04.3.1: leaf page with grading table |
+| Last completed task | TS-04.3.1: Responsive grading / normal-range table component |
+| Next task | TS-04.3.6: caveats and footnotes |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

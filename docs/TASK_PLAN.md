@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-04.2.1 Home: grid of root categories + search bar |
-| Next up | TS-04.2.3 + TS-04.3.1: leaf page with grading table |
+| Last completed | TS-04.3.1 Responsive grading / normal-range table component |
+| Next up | TS-04.3.6: caveats and footnotes |
 
 ## Next up: R0 sequence
 
@@ -141,7 +141,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-04.2.1 | Home: grid of root categories + search bar | 2 | done | Search bar deferred to TS-04.4.2 |
 | TS-04.2.2 | Drill-down list pages with breadcrumbs | 3 | done |  |
 | TS-04.2.3 | Leaf page with section anchors and "jump to" menu | 3 | todo |  |
-| TS-04.3.1 | Responsive grading / normal-range table component | 5 | todo |  |
+| TS-04.3.1 | Responsive grading / normal-range table component | 5 | done | Normal-range table layout follows with NORM content |
 | TS-04.3.2 | Criteria checklist component (e.g. TEER feasibility) | 3 | todo |  |
 | TS-04.3.3 | Source chip + citation popover; original-unit popover | 3 | todo |  |
 | TS-04.3.4 | Discrepancy marker + side-by-side comparison view | 5 | todo |  |
@@ -302,3 +302,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-02 | TS-04.1.2 | Design tokens (light/dark, AA contrast), system fonts, base layout (header wordmark + mark, skip link, footer disclaimer), review banner (PO-3), meta CSP without inline assets, noindex while draft; axe WCAG 2.2 AA E2E in both themes | `TS-04.1.2: design tokens, base layout and review banner` |
 | 2026-11-02 | TS-04.2.2 | Navigation module (order, visibility = content in subtree, slug URLs, ancestors, leaf counts) + one static page per visible topic with breadcrumbs and 44 px topic list; build fails on content errors; E2E incl. axe | `TS-04.2.2: drill-down pages with breadcrumbs` |
 | 2026-11-02 | TS-04.2.1 | Home: intro, responsive card grid of root categories with content (topic counts), 'In preparation' list of empty categories without links; axe-clean | `TS-04.2.1: home with root categories` |
+| 2026-11-02 | TS-04.3.1 | Grading table model (parameter rows × grade columns, display units, original kept) and component: sticky first column, own scroll region at 360 px, unit in row header, abbr with full name; leaf blocks rendered as anchored sections | `TS-04.3.1: responsive grading table` |
