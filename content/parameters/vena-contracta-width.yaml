@@ -1,0 +1,8 @@
+id: vena-contracta-width
+name: Vena contracta width
+abbreviation: VCW
+quantity: length
+unit: mm
+modalities: [Echo]
+synonyms: [VC, vena contracta]
+method: Narrowest width of the regurgitant jet at or just downstream of the orifice, measured in a zoomed view perpendicular to the commissural line; biplane value is the average of apical two- and four-chamber views.

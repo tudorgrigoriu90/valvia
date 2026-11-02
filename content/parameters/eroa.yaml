@@ -1,0 +1,8 @@
+id: eroa
+name: Effective regurgitant orifice area
+abbreviation: EROA
+quantity: area
+unit: cm²
+modalities: [Echo]
+synonyms: [ERO, regurgitant orifice area, PISA EROA]
+method: Usually measured with the 2D PISA (proximal isovelocity surface area) method; describes lesion severity.

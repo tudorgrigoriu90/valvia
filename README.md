@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-02.3.3: Seed registry from taxonomy Appendix A (content PR, SME verifies) |
-| Next task | FT-03.4: primary MR severity grading (ASE 2017) |
+| Last completed task | FT-03.4: 3.2 VHD: mitral valve (primary/secondary MR, TEER feasibility, repair  |
+| Next task | TS-04.1.2: design tokens, base layout and draft banner |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

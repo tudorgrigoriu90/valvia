@@ -1,0 +1,8 @@
+id: regurgitant-fraction
+name: Regurgitant fraction
+abbreviation: RF
+quantity: percent
+unit: '%'
+modalities: [Echo, CMR]
+synonyms: [regurgitant fraction percent]
+method: Regurgitant volume as a percentage of the total stroke volume through the regurgitant valve.

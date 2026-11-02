@@ -7,3 +7,392 @@ order: 1
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: quantitative-grading
+    type: grading-table
+    tag: GRADE
+    title: Quantitative grading of chronic MR
+    grades: ['Mild (grade I)', 'Moderate (grade II)', 'Moderate (grade III)', 'Severe (grade IV)']
+    values:
+      - parameter: eroa
+        context: grading
+        grade: Mild (grade I)
+        operator: '<'
+        value: 0.20
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '8'
+            page: '332'
+      - parameter: eroa
+        context: grading
+        grade: Moderate (grade II)
+        operator: range
+        min: 0.20
+        max: 0.29
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '8'
+            page: '332'
+      - parameter: eroa
+        context: grading
+        grade: Moderate (grade III)
+        operator: range
+        min: 0.30
+        max: 0.39
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '8'
+            page: '332'
+      - parameter: eroa
+        context: grading
+        grade: Severe (grade IV)
+        operator: '>='
+        value: 0.40
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - May be lower in secondary MR with an elliptical regurgitant orifice.
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '8'
+            page: '332'
+      - parameter: regurgitant-volume
+        context: grading
+        grade: Mild (grade I)
+        operator: '<'
+        value: 30
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '8'
+            page: '332'
+      - parameter: regurgitant-volume
+        context: grading
+        grade: Moderate (grade II)
+        operator: range
+        min: 30
+        max: 44
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '8'
+            page: '332'
+      - parameter: regurgitant-volume
+        context: grading
+        grade: Moderate (grade III)
+        operator: range
+        min: 45
+        max: 59
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Discrepancies among EROA, RF and RVol may arise in low- or high-flow states.'
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '8'
+            page: '332'
+      - parameter: regurgitant-volume
+        context: grading
+        grade: Severe (grade IV)
+        operator: '>='
+        value: 60
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - May be lower in low-flow conditions.
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '8'
+            page: '332'
+      - parameter: regurgitant-fraction
+        context: grading
+        grade: Mild (grade I)
+        operator: '<'
+        value: 30
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '8'
+            page: '332'
+      - parameter: regurgitant-fraction
+        context: grading
+        grade: Moderate (grade II)
+        operator: range
+        min: 30
+        max: 39
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '8'
+            page: '332'
+      - parameter: regurgitant-fraction
+        context: grading
+        grade: Moderate (grade III)
+        operator: range
+        min: 40
+        max: 49
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '8'
+            page: '332'
+      - parameter: regurgitant-fraction
+        context: grading
+        grade: Severe (grade IV)
+        operator: '>='
+        value: 50
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '8'
+            page: '332'
+  - id: semiquantitative-grading
+    type: grading-table
+    tag: GRADE
+    title: Semiquantitative signs
+    grades: ['Mild', 'Severe']
+    values:
+      - parameter: vena-contracta-width
+        context: grading
+        grade: Mild
+        operator: '<'
+        value: 0.3
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '8'
+            page: '332'
+      - parameter: vena-contracta-width
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 0.7
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '8'
+            page: '332'
+      - parameter: vena-contracta-width
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 0.8
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Biplane: average of apical two- and four-chamber views.'
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '8'
+            page: '332'
+      - parameter: pisa-radius
+        context: grading
+        grade: Mild
+        operator: '<'
+        value: 0.3
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Small flow convergence is usually below this radius.
+          - At a Nyquist limit of 30–40 cm/s.
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '8'
+            page: '332'
+      - parameter: pisa-radius
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 1
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Large flow convergence throughout systole.
+          - At a Nyquist limit of 30–40 cm/s.
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '8'
+            page: '332'
+      - parameter: mitral-e-velocity
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 1.2
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - E-wave dominant mitral inflow.
+          - Most valid in patients older than 50 years; influenced by other causes of elevated LA pressure.
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '8'
+            page: '332'
+  - id: specific-criteria-severe
+    type: criteria-checklist
+    tag: CRIT
+    title: Specific criteria for severe MR
+    criteria:
+      - text: Flail leaflet
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            figure: '18'
+            page: '333'
+      - text: 'VCW ≥ 0.7 cm'
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            figure: '18'
+            page: '333'
+      - text: 'PISA radius ≥ 1.0 cm at a Nyquist limit of 30–40 cm/s'
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            figure: '18'
+            page: '333'
+      - text: 'Central large jet > 50% of LA area'
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            figure: '18'
+            page: '333'
+      - text: Pulmonary vein systolic flow reversal
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            figure: '18'
+            page: '333'
+      - text: Enlarged LV with normal function
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            figure: '18'
+            page: '333'
+  - id: specific-criteria-mild
+    type: criteria-checklist
+    tag: CRIT
+    title: Specific criteria for mild MR
+    criteria:
+      - text: 'Small, narrow central jet'
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            figure: '18'
+            page: '333'
+      - text: 'VCW ≤ 0.3 cm'
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            figure: '18'
+            page: '333'
+      - text: 'PISA radius absent or ≤ 0.3 cm at a Nyquist limit of 30–40 cm/s'
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            figure: '18'
+            page: '333'
+      - text: Mitral A-wave dominant inflow
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            figure: '18'
+            page: '333'
+      - text: Soft or incomplete jet by continuous-wave Doppler
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            figure: '18'
+            page: '333'
+      - text: Normal LV and LA size
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            figure: '18'
+            page: '333'
+  - id: integration
+    type: note
+    tag: METH
+    text: 'Grade MR by integrating several parameters: every measure has limitations and must be interpreted for the individual patient (body size, sex, other characteristics). Four or more specific criteria make MR definitely mild or definitely severe; otherwise use quantitative methods whenever possible, which also subclassify moderate MR into grades II and III.'
+    citation:
+      source: ase-2017-native-regurgitation
+      locator:
+        figure: '18'
+        page: '333'
+  - id: algorithm
+    type: algorithm-reference
+    tag: ALG
+    title: Algorithm for integrating multiple parameters of MR severity
+    citation:
+      source: ase-2017-native-regurgitation
+      locator:
+        figure: '18'
+        page: '333'
+    url: 'https://doi.org/10.1016/j.echo.2017.01.007'

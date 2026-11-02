@@ -1,0 +1,8 @@
+id: pisa-radius
+name: Flow convergence (PISA) radius
+abbreviation: PISA radius
+quantity: length
+unit: mm
+modalities: [Echo]
+synonyms: [flow convergence radius, PISA, proximal isovelocity surface area radius]
+method: Radius of the proximal flow convergence hemisphere; interpret only at the stated Nyquist limit.

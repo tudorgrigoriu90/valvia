@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-02.3.3 Seed registry from taxonomy Appendix A (content PR, SME verifies) |
-| Next up | FT-03.4: primary MR severity grading (ASE 2017) |
+| Last completed | FT-03.4 3.2 VHD: mitral valve (primary/secondary MR, TEER feasibility, repair  |
+| Next up | TS-04.1.2: design tokens, base layout and draft banner |
 
 ## Next up: R0 sequence
 
@@ -114,7 +114,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | FT-03.1 | 1 Chamber size & function (W1) | 8 | todo |  |
 | FT-03.2 | 2 Diastolic function & filling pressures (W1) | 5 | todo |  |
 | FT-03.3 | 3.1 VHD: aortic valve (incl. TAVI considerations, AR TAVI) (W1) | 10 | todo |  |
-| FT-03.4 | 3.2 VHD: mitral valve (primary/secondary MR, TEER feasibility, repair likelihood, MS, MAC) (W1) | 10 | todo |  |
+| FT-03.4 | 3.2 VHD: mitral valve (primary/secondary MR, TEER feasibility, repair likelihood, MS, MAC) (W1) | 10 | in progress | Primary MR (ASE 2017) done; ESC/EACVI and CMR values pending document access |
 | FT-03.5 | 3.3–3.5 VHD: tricuspid, pulmonary, multiple & mixed (W1) | 5 | todo |  |
 | FT-03.6 | 3.6 VHD: infective endocarditis (W1) | 3 | todo |  |
 | FT-03.7 | 4.2–4.6 Prosthetic valves & valve interventions (grading, PPM, post-repair, BVD) (W1) | 8 | todo |  |
@@ -298,3 +298,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-02 | CH-8 | Decision log docs/decisions (PO-1..PO-3); CLAUDE.md §3.3 initial content seed rules: direct to main, status draft, site label, values only from documents read in session | `CH-8: decision log and initial content seed rules` |
 | 2026-11-02 | TS-02.1.2 | Taxonomy v0.3 encoded as 164 topic files (stable curated ids for ambiguous/long nodes, short-title slugs, ref, order, population, wave, seeAlso cross-links, status draft); validate:content clean | `TS-02.1.2: encode taxonomy tree as topic files` |
 | 2026-11-02 | TS-02.3.3 | Source registry seeded with 29 Appendix A documents from PubMed records (title, journal, DOI, year, issuers, type, status; ASE/EACVI 2016 diastolic superseded by ASE 2025); source titles allow 600 chars | `TS-02.3.3: seed source registry from PubMed records` |
+| 2026-11-02 | FT-03.4 | Primary MR severity grading (3.2.1.2) from ASE 2017 Table 8 / Figure 18: 6 parameters, quantitative (EROA, RVol, RF) and semiquantitative (VCW, PISA radius, E velocity) grading, specific criteria, method note, algorithm link; draft | `FT-03.4: primary MR severity grading from ASE 2017` |

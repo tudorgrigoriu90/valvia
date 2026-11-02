@@ -1,0 +1,8 @@
+id: regurgitant-volume
+name: Regurgitant volume
+abbreviation: RVol
+quantity: volume
+unit: mL
+modalities: [Echo, CMR]
+synonyms: [RV, regurgitant stroke volume]
+method: Volume regurgitated per beat; describes volume overload. Echo by PISA or by stroke-volume difference; CMR by volumetric and phase-contrast methods.

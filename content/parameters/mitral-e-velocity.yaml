@@ -1,0 +1,8 @@
+id: mitral-e-velocity
+name: Mitral inflow E-wave peak velocity
+abbreviation: E velocity
+quantity: velocity-blood
+unit: m/s
+modalities: [Echo]
+synonyms: [mitral E, E wave, peak E]
+method: Pulsed-wave Doppler at the mitral leaflet tips.
