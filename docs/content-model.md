@@ -75,6 +75,7 @@ One published number or range. Values live inside content blocks of leaf topics 
 | `value` | unless `range` | the published number (not allowed with `range`) |
 | `min`, `max` | with `range` | the published range ends (not allowed otherwise) |
 | `unit` | yes | unit as published |
+| `modality` | yes | `Echo` · `CT` · `CMR`; must be one of the parameter's `modalities` (TS-02.2.6, `core/values/modality.ts`) |
 | `population` | yes | population qualifiers |
 | `caveats` | no | footnotes printed with the value |
 | `citation` | yes | source + locator |
@@ -88,6 +89,7 @@ grade: severe
 operator: ">="
 value: 0.40
 unit: cm²
+modality: Echo
 population: { ageGroup: adult }
 citation: { source: esc-eacts-2025-vhd, locator: { table: "8" } }
 ```

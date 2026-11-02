@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-02.2.2: Value schema: population qualifiers, grade, operator, value/range, uni |
-| Next task | TS-02.2.6: value-level modality |
+| Last completed task | TS-02.2.6: Value-level modality (Echo / CT / CMR) |
+| Next task | TS-02.2.3: content block types |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

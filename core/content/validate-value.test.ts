@@ -10,6 +10,7 @@ grade: severe
 operator: ">="
 value: 0.40
 unit: cm²
+modality: Echo
 population:
   ageGroup: adult
 citation:
@@ -29,6 +30,7 @@ operator: range
 min: 42
 max: 58
 unit: mm
+modality: Echo
 population: { ageGroup: adult, sex: male }
 caveats:
   - Not valid in atrial fibrillation.
@@ -66,9 +68,10 @@ citation: { source: ase-eacvi-2015-chambers, locator: { table: "2" } }
     ]);
   });
 
-  it('requires population and citation on every value (no orphan numbers)', () => {
+  it('requires modality, population and citation on every value (no orphan numbers)', () => {
     const text = 'parameter: eroa\ncontext: grading\ngrade: severe\noperator: ">="\nvalue: 0.4\nunit: cm²\n';
     expect(messages(text)).toEqual([
+      "1: missing required property 'modality'",
       "1: missing required property 'population'",
       "1: missing required property 'citation'",
     ]);
@@ -83,6 +86,7 @@ citation: { source: ase-eacvi-2015-chambers, locator: { table: "2" } }
       'context: grade',
       "context must be one of: grading, normal-range, intervention-threshold, feasibility, diagnostic-criterion, prognostic-marker (got 'grade')",
     ],
+    ['modality: Echo', 'modality: echo', "modality must be one of: Echo, CT, CMR (got 'echo')"],
     ['  ageGroup: adult', '  ageGroup: kids', "population.ageGroup must be one of: adult, paediatric (got 'kids')"],
     [
       '  locator: { table: "8" }',

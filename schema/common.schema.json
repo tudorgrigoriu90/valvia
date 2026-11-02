@@ -248,7 +248,7 @@
       "description": "One published number (or range) for a parameter, with who it applies to and where it comes from (TS-02.2.2). Stored exactly as published.",
       "type": "object",
       "additionalProperties": false,
-      "required": ["parameter", "context", "operator", "unit", "population", "citation"],
+      "required": ["parameter", "context", "operator", "unit", "modality", "population", "citation"],
       "properties": {
         "parameter": {
           "description": "Id of the parameter (content/parameters/<id>.yaml).",
@@ -288,6 +288,10 @@
         "unit": {
           "description": "Unit as published (converted for display by core/units).",
           "$ref": "#/$defs/unit"
+        },
+        "modality": {
+          "description": "Modality the value was defined for (Echo, CT or CMR); CT/CMR values are badged (SME decision 4). Must be one of the parameter's modalities.",
+          "$ref": "#/$defs/modality"
         },
         "population": {
           "$ref": "#/$defs/populationQualifiers"
