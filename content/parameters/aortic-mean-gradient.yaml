@@ -1,0 +1,8 @@
+id: aortic-mean-gradient
+name: Aortic valve mean gradient
+abbreviation: MG
+quantity: pressure
+unit: mmHg
+modalities: [Echo]
+synonyms: [mean pressure gradient, AV mean gradient, MPG]
+method: Average of instantaneous gradients (simplified Bernoulli equation) over the systolic ejection period.

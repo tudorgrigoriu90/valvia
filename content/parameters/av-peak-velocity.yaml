@@ -1,0 +1,8 @@
+id: av-peak-velocity
+name: Aortic valve peak velocity
+abbreviation: Vmax
+quantity: velocity-blood
+unit: m/s
+modalities: [Echo]
+synonyms: [AS jet velocity, peak aortic velocity, AV Vmax]
+method: Continuous-wave Doppler from the window giving the highest velocity (apical, right parasternal, suprasternal).

@@ -1,0 +1,8 @@
+id: aortic-valve-area
+name: Aortic valve area (continuity equation)
+abbreviation: AVA
+quantity: area
+unit: cm²
+modalities: [Echo]
+synonyms: [effective orifice area, continuity equation AVA]
+method: Stroke volume in the LVOT divided by the aortic jet VTI.

@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | FT-03.1: 1 Chamber size & function (W1) |
-| Next task | TS-04.2.3: jump menu and last-reviewed info |
+| Last completed task | FT-03.3: 3.1 VHD: aortic valve (incl. TAVI considerations, AR TAVI) (W1) |
+| Next task | FT-03.9: right heart and PH (ASE 2025) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

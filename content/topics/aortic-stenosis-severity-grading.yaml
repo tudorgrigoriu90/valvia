@@ -7,3 +7,251 @@ order: 0
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: severity-grading
+    type: grading-table
+    tag: GRADE
+    title: Grading of aortic stenosis severity
+    grades: ['Aortic sclerosis', 'Mild', 'Moderate', 'Severe']
+    values:
+      - parameter: av-peak-velocity
+        context: grading
+        grade: Aortic sclerosis
+        operator: '<='
+        value: 2.5
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            table: '3'
+            page: '383'
+      - parameter: av-peak-velocity
+        context: grading
+        grade: Mild
+        operator: range
+        min: 2.6
+        max: 2.9
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            table: '3'
+            page: '383'
+      - parameter: av-peak-velocity
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 3.0
+        max: 4.0
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            table: '3'
+            page: '383'
+      - parameter: av-peak-velocity
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 4.0
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            table: '3'
+            page: '383'
+      - parameter: aortic-mean-gradient
+        context: grading
+        grade: Mild
+        operator: '<'
+        value: 20
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            table: '3'
+            page: '383'
+      - parameter: aortic-mean-gradient
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 20
+        max: 40
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            table: '3'
+            page: '383'
+      - parameter: aortic-mean-gradient
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 40
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            table: '3'
+            page: '383'
+      - parameter: aortic-valve-area
+        context: grading
+        grade: Mild
+        operator: '>'
+        value: 1.5
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            table: '3'
+            page: '383'
+      - parameter: aortic-valve-area
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 1.0
+        max: 1.5
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            table: '3'
+            page: '383'
+      - parameter: aortic-valve-area
+        context: grading
+        grade: Severe
+        operator: '<'
+        value: 1.0
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            table: '3'
+            page: '383'
+      - parameter: aortic-valve-area-index
+        context: grading
+        grade: Mild
+        operator: '>'
+        value: 0.85
+        unit: cm²/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            table: '3'
+            page: '383'
+      - parameter: aortic-valve-area-index
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 0.60
+        max: 0.85
+        unit: cm²/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            table: '3'
+            page: '383'
+      - parameter: aortic-valve-area-index
+        context: grading
+        grade: Severe
+        operator: '<'
+        value: 0.6
+        unit: cm²/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Indexing is suggested for unusually small or large body size and is important in children, adolescents and small adults; its role in obesity is controversial.'
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            table: '3'
+            page: '383'
+      - parameter: av-velocity-ratio
+        context: grading
+        grade: Mild
+        operator: '>'
+        value: 0.50
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            table: '3'
+            page: '383'
+      - parameter: av-velocity-ratio
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 0.25
+        max: 0.50
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            table: '3'
+            page: '383'
+      - parameter: av-velocity-ratio
+        context: grading
+        grade: Severe
+        operator: '<'
+        value: 0.25
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            table: '3'
+            page: '383'
+  - id: integration
+    type: note
+    tag: METH
+    title: How to use these thresholds
+    text: 'Any one of peak velocity of 4.0 m/s or more, mean gradient of 40 mmHg or more, or AVA below 1.0 cm² suggests severe AS; ideally all criteria agree. When they are discordant, integrate additional imaging findings and clinical data, and consider low-flow states (e.g. stroke volume index below 35 mL/m²). Record blood pressure, as hypertension alters velocity and gradient.'
+    citation:
+      source: eacvi-ase-2017-aortic-stenosis
+      locator:
+        page: '383'

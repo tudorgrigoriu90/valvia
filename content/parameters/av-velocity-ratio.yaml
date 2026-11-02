@@ -1,0 +1,8 @@
+id: av-velocity-ratio
+name: Velocity ratio (LVOT / aortic valve)
+abbreviation: VR
+quantity: ratio
+unit: '1'
+modalities: [Echo]
+synonyms: [dimensionless index, DVI, dimensionless velocity index]
+method: LVOT velocity (or VTI) divided by the aortic valve velocity (or VTI).
