@@ -13,6 +13,8 @@ export default defineConfig({
       exclude: [
         '**/*.test.ts',
         '**/__fixtures__/**',
+        // Thin argv/exit wrappers; the logic they call is unit-tested.
+        '**/cli.ts',
         // Generated from JSON Schema (ADR 0003); covered by the staleness test, not unit tests.
         'schema/generated/**',
       ],

@@ -19,7 +19,8 @@
     "test": "vitest run --coverage",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
-    "verify": "npm run format:check && npm run lint && npm run typecheck && npm run test && npm run build && npm run test:e2e"
+    "verify": "npm run format:check && npm run lint && npm run typecheck && npm test && npm run build && npm run check:links -- --site && npm run test:e2e",
+    "check:links": "tsx pipeline/links/cli.ts"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.12",
@@ -34,6 +35,7 @@
     "globals": "17.14.0",
     "prettier": "3.9.10",
     "prettier-plugin-astro": "1.1.2",
+    "tsx": "4.23.15",
     "typescript": "6.0.3",
     "typescript-eslint": "8.72.1",
     "vitest": "5.1.0"

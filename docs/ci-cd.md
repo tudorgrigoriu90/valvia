@@ -18,7 +18,7 @@ flowchart LR
     trig(["push to main / PR"]) --> install["npm ci"]
     install --> fmt["Prettier check"] --> lint["ESLint"] --> types["astro check"]
     types --> unit["Vitest + coverage gates"] --> build["astro build"]
-    build --> e2e["Playwright E2E<br/>mobile-360 + desktop"]
+    build --> links["Internal link check<br/>docs + dist"] --> e2e["Playwright E2E<br/>mobile-360 + desktop"]
     unit -. artefact .-> cov[("coverage report")]
     e2e -. on failure .-> pw[("Playwright report")]
 ```

@@ -6,7 +6,7 @@
 Valvia is built test-first (TDD, `CLAUDE.md` §5). Every push runs the full local gate:
 
 ```bash
-npm run verify   # format:check → lint → typecheck → test (coverage) → build → test:e2e
+npm run verify   # format:check → lint → typecheck → test (coverage) → build → check:links --site → test:e2e
 ```
 
 ## Test layers
@@ -22,6 +22,7 @@ flowchart LR
 |---|---|---|---|
 | Unit / integration | `npm test` (`npm run test:watch` while developing) | next to the code: `foo.ts` + `foo.test.ts` | Node environment, deterministic, no network |
 | E2E | `npm run test:e2e` | `tests/e2e/` | Runs against `astro preview` of the production build at `/valvia/`; build first |
+| Internal links | `npm run check:links` (add `-- --site` after a build) | `pipeline/links/` | Markdown relative links + heading anchors; built pages stay under the base path and resolve to built files/ids. External URLs are not checked (offline, deterministic) |
 | Content validation | `npm run validate:content` (coming with EP-02) | `/content` | Schema, references, allowlist, plausibility |
 
 ## Coverage

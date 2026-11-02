@@ -45,6 +45,9 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Internal links (docs and built site)
+        run: npm run check:links -- --site
+
       - name: Install Playwright browser
         run: npx playwright install --with-deps chromium
 

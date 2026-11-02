@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-01.3.1 CI: build, schema validation, unit tests, Lighthouse CI, axe, broken-l |
-| Next up | CH-2: internal link checker |
+| Last completed | CH-2 Internal link checker (Markdown docs + built site, offline), run in CI |
+| Next up | TS-01.3.2: deploy to GitHub Pages |
 
 ## Next up: R0 sequence
 
@@ -66,7 +66,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-01.2.4 | Renovate config with auto-merge for patch/minor on green CI | 1 | todo |  |
 | TS-01.2.5 | PR templates: code PR; content PR (clinical change summary table, sources, preview link, reviewer checklist) | 1 | todo | Only the content PR template is needed (code goes to main directly) |
 | CH-1 | Test tooling: Vitest + coverage thresholds (≥ 80 % global, 100 % safety-critical modules), Playwright, `npm run verify` | 2 | done | Added for CLAUDE.md rules (TDD, coverage); not in backlog |
-| CH-2 | Internal link checker (Markdown docs + built site, offline), run in CI | 1 | todo | Replaces an external link-check binary; part of TS-01.3.1 scope |
+| CH-2 | Internal link checker (Markdown docs + built site, offline), run in CI | 1 | done | Built test-first; external URLs deliberately not checked |
 | TS-01.3.1 | CI: build, schema validation, unit tests, Lighthouse CI, axe, broken-link check | 3 | done | Schema validation, axe, Lighthouse and link checks join CI with their own tasks (EP-02, CH-2, TS-07.4.2, TS-05.2.1) |
 | TS-01.3.2 | Deploy to GitHub Pages via Actions on merge to `main` | 1 | todo |  |
 | TS-01.3.3 | PR previews with `pr-preview-action` (deploy, comment link, clean up on close); exclude previews from search engines | 2 | todo |  |
@@ -267,3 +267,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-02 | TS-01.2.3 | TypeScript 6 strictest, ESLint 10 flat config (typescript-eslint strict type-checked, astro plugin), Prettier with astro plugin; lint/typecheck/format scripts | `TS-01.2.3: TypeScript strictest, ESLint and Prettier` |
 | 2026-11-02 | CH-1 | Vitest 5 with v8 coverage gates (80 % global, 100 % safety-critical globs, verified to fail), Playwright 1.63 (360 px + desktop) smoke tests, npm run verify, base-path helper built test-first, testing guide | `CH-1: test tooling with coverage gates and verify script` |
 | 2026-11-02 | TS-01.3.1 | CI workflow on push to main and PRs: format, lint, typecheck, unit tests with coverage, build, Playwright E2E, artefacts; CI/CD doc | `TS-01.3.1: CI workflow` |
+| 2026-11-02 | CH-2 | Offline internal link checker (Markdown links + GitHub heading anchors; built pages under base path, files and ids), GitHub annotations, in verify and CI | `CH-2: internal link checker for docs and built site` |

@@ -12,8 +12,8 @@ Mobile first, works offline, static site on GitHub Pages.
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-01.3.1: CI: build, schema validation, unit tests, Lighthouse CI, axe, broken-l |
-| Next task | CH-2: internal link checker |
+| Last completed task | CH-2: Internal link checker (Markdown docs + built site, offline), run in CI |
+| Next task | TS-01.3.2: deploy to GitHub Pages |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
@@ -29,6 +29,7 @@ npm run typecheck # astro check (TypeScript strictest, incl. .astro files)
 npm run format    # Prettier (code only; Markdown is hand-formatted)
 npm test          # unit tests with coverage (≥ 80 % global, 100 % safety-critical)
 npm run test:e2e  # Playwright E2E against the production build (run build first)
+npm run check:links -- --site  # internal links in docs and dist/
 npm run verify    # everything above in order: run before every push
 ```
 
