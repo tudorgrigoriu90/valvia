@@ -1,7 +1,7 @@
 id: hcm-sudden-death-risk-markers
 ref: '6.2.3'
 slug: hcm-sudden-death-risk-markers
-title: Echo variables in sudden-death risk assessment
+title: 'HCM: echo variables in sudden-death risk assessment'
 parent: hypertrophic-cardiomyopathy
 order: 2
 population: adult

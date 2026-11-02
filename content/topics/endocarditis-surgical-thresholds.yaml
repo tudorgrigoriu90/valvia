@@ -1,7 +1,7 @@
 id: endocarditis-surgical-thresholds
 ref: '3.6.2'
 slug: endocarditis-surgical-thresholds
-title: 'Imaging-related surgical thresholds (vegetation size, embolic risk)'
+title: 'Endocarditis: imaging-related surgical thresholds'
 parent: infective-endocarditis
 order: 1
 population: adult

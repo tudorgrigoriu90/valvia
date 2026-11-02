@@ -14,7 +14,7 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-04.4.1: Pagefind index incl. synonyms, abbreviations and valve models |
+| Last completed task | CH-9: Give generic leaf titles their parent context (search results, tabs) a |
 | Next task | TS-04.4.2: instant search UI |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 

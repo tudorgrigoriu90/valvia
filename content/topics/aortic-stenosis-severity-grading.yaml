@@ -1,7 +1,7 @@
 id: aortic-stenosis-severity-grading
 ref: '3.1.1.1'
 slug: aortic-stenosis-severity-grading
-title: 'Severity grading (concordant, high-gradient)'
+title: 'Aortic stenosis: severity grading (concordant, high-gradient)'
 parent: aortic-stenosis
 order: 0
 population: adult

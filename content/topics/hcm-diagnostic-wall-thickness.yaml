@@ -1,7 +1,7 @@
 id: hcm-diagnostic-wall-thickness
 ref: '6.2.1'
 slug: hcm-diagnostic-wall-thickness
-title: 'Diagnostic wall-thickness criteria (adults, relatives; children'
+title: 'HCM: diagnostic wall-thickness criteria (adults, relatives)'
 parent: hypertrophic-cardiomyopathy
 order: 0
 population: adult

@@ -1,7 +1,7 @@
 id: prosthetic-mitral-valve-ppm
 ref: '4.3.3'
 slug: prosthetic-mitral-valve-ppm
-title: Patient–prosthesis mismatch
+title: 'Prosthetic mitral valve: patient–prosthesis mismatch'
 parent: prosthetic-mitral-valve
 order: 2
 population: adult

@@ -1,7 +1,7 @@
 id: aortic-regurgitation-intervention-thresholds
 ref: '3.1.2.2'
 slug: aortic-regurgitation-intervention-thresholds
-title: 'Intervention thresholds (LV dimensions, LVEF)'
+title: 'Aortic regurgitation: intervention thresholds (LV dimensions, LVEF)'
 parent: aortic-regurgitation
 order: 1
 population: adult
