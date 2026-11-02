@@ -1,0 +1,9 @@
+id: hfpef-diagnosis
+ref: '2.4'
+slug: hfpef-diagnosis
+title: 'HFpEF diagnosis: echo components and scores'
+parent: diastolic-function-and-filling-pressures
+order: 3
+population: adult
+wave: W1
+status: draft

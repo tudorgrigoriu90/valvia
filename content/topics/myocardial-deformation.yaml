@@ -1,0 +1,9 @@
+id: myocardial-deformation
+ref: '1.7'
+slug: myocardial-deformation
+title: Myocardial deformation (strain)
+parent: chamber-size-and-function
+order: 6
+population: adult
+wave: W1
+status: draft

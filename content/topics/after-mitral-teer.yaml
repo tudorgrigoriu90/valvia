@@ -1,0 +1,9 @@
+id: after-mitral-teer
+ref: '4.5.1'
+slug: after-mitral-teer
+title: After mitral TEER
+parent: after-valve-repair
+order: 0
+population: adult
+wave: W1
+status: draft

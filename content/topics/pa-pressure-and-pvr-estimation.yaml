@@ -1,0 +1,9 @@
+id: pa-pressure-and-pvr-estimation
+ref: '5.4'
+slug: pa-pressure-and-pvr-estimation
+title: Estimation of PA pressures and PVR
+parent: pulmonary-hypertension-and-right-heart
+order: 3
+population: adult
+wave: W1
+status: draft

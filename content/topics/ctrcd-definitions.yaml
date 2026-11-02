@@ -1,0 +1,9 @@
+id: ctrcd-definitions
+ref: '11.2'
+slug: ctrcd-definitions
+title: 'Cancer therapy-related cardiac dysfunction: LVEF and GLS definitions'
+parent: cardio-oncology
+order: 1
+population: adult
+wave: W2
+status: draft

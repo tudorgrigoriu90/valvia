@@ -1,0 +1,9 @@
+id: ventricular-secondary-mr-severity-grading
+ref: '3.2.1.5'
+slug: ventricular-secondary-mr-severity-grading
+title: 'Ventricular secondary MR: severity grading'
+parent: mitral-regurgitation
+order: 4
+population: adult
+wave: W1
+status: draft

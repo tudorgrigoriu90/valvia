@@ -1,0 +1,9 @@
+id: rheumatic-ms-severity-grading
+ref: '3.2.2.1'
+slug: rheumatic-ms-severity-grading
+title: 'Rheumatic MS: severity grading'
+parent: mitral-stenosis
+order: 0
+population: adult
+wave: W1
+status: draft

@@ -1,0 +1,10 @@
+id: exercise-echo-in-mr
+ref: '3.2.1.9'
+slug: exercise-echo-in-mr
+title: Exercise echocardiography in MR
+parent: mitral-regurgitation
+order: 8
+population: adult
+wave: W1
+status: draft
+seeAlso: [exercise-echo-in-valvular-disease]

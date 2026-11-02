@@ -1,0 +1,9 @@
+id: prosthetic-valve-reference-values
+ref: '4.1'
+slug: prosthetic-valve-reference-values
+title: Prosthetic valve reference values by model and size
+parent: prosthetic-valves-and-valve-interventions
+order: 0
+population: adult
+wave: W2
+status: draft

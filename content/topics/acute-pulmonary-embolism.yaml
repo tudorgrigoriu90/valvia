@@ -1,0 +1,9 @@
+id: acute-pulmonary-embolism
+ref: '5.6'
+slug: acute-pulmonary-embolism
+title: 'Acute pulmonary embolism: echo signs of RV dysfunction'
+parent: pulmonary-hypertension-and-right-heart
+order: 5
+population: adult
+wave: W1
+status: draft

@@ -1,0 +1,9 @@
+id: paediatric-cardiomyopathies
+ref: '15.5'
+slug: paediatric-cardiomyopathies
+title: Paediatric cardiomyopathies (incl. HCM thresholds in children)
+parent: paediatric-echocardiography
+order: 4
+population: paediatric
+wave: W2
+status: draft

@@ -1,0 +1,10 @@
+id: diastolic-stress-echocardiography
+ref: '2.5'
+slug: diastolic-stress-echocardiography
+title: Diastolic stress echocardiography
+parent: diastolic-function-and-filling-pressures
+order: 4
+population: adult
+wave: W1
+status: draft
+seeAlso: [diastolic-stress-test]

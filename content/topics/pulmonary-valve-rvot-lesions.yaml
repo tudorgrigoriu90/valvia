@@ -1,0 +1,10 @@
+id: pulmonary-valve-rvot-lesions
+ref: '8.12'
+slug: pulmonary-valve-rvot-lesions
+title: Pulmonary valve / RVOT lesions
+parent: congenital-heart-disease-paediatric-and-adult
+order: 12
+population: both
+wave: W2
+status: draft
+seeAlso: [pulmonary-valve-disease]

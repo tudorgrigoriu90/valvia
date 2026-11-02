@@ -1,0 +1,9 @@
+id: paediatric-normal-dimensions
+ref: '15.2'
+slug: paediatric-normal-dimensions
+title: Normal cardiac dimensions in children
+parent: paediatric-echocardiography
+order: 1
+population: paediatric
+wave: W2
+status: draft

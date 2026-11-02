@@ -1,0 +1,9 @@
+id: aortic-regurgitation-severity-grading
+ref: '3.1.2.1'
+slug: aortic-regurgitation-severity-grading
+title: Severity grading (incl. CMR quantification)
+parent: aortic-regurgitation
+order: 0
+population: adult
+wave: W1
+status: draft

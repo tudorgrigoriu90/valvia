@@ -1,0 +1,10 @@
+id: eisenmenger-and-chd-associated-pah
+ref: '8.11'
+slug: eisenmenger-and-chd-associated-pah
+title: Eisenmenger / PAH associated with CHD
+parent: congenital-heart-disease-paediatric-and-adult
+order: 11
+population: both
+wave: W2
+status: draft
+seeAlso: [pulmonary-hypertension-and-right-heart]

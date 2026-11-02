@@ -1,0 +1,9 @@
+id: leaflet-thrombosis-halt
+ref: '4.2.4'
+slug: leaflet-thrombosis-halt
+title: 'Leaflet thrombosis / HALT: imaging criteria'
+parent: prosthetic-aortic-valve
+order: 3
+population: adult
+wave: W1
+status: draft

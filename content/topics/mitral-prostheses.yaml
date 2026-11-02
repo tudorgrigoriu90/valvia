@@ -1,0 +1,9 @@
+id: mitral-prostheses
+ref: '4.1.4'
+slug: mitral-prostheses
+title: 'Mitral prostheses (biological, mechanical, transcatheter)'
+parent: prosthetic-valve-reference-values
+order: 3
+population: adult
+wave: W2
+status: draft

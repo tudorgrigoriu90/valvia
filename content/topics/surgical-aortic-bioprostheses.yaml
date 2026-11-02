@@ -1,0 +1,9 @@
+id: surgical-aortic-bioprostheses
+ref: '4.1.1'
+slug: surgical-aortic-bioprostheses
+title: 'Surgical aortic bioprostheses (stented, stentless)'
+parent: prosthetic-valve-reference-values
+order: 0
+population: adult
+wave: W2
+status: draft

@@ -1,0 +1,10 @@
+id: aortic-root-and-ascending-aorta
+ref: '1.5'
+slug: aortic-root-and-ascending-aorta
+title: 'Aortic root & ascending aorta: normal dimensions'
+parent: chamber-size-and-function
+order: 4
+population: adult
+wave: W1
+status: draft
+seeAlso: [normal-aortic-dimensions]

@@ -1,0 +1,10 @@
+id: athletes
+ref: '13.2'
+slug: athletes
+title: Athletes
+parent: special-populations
+order: 1
+population: adult
+wave: W2
+status: draft
+seeAlso: [athletes-heart-vs-cardiomyopathy]

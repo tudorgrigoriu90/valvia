@@ -1,0 +1,10 @@
+id: low-flow-as-dobutamine-stress
+ref: '9.2'
+slug: low-flow-as-dobutamine-stress
+title: 'Low-flow AS: dobutamine stress'
+parent: stress-echocardiography
+order: 1
+population: adult
+wave: W2
+status: draft
+seeAlso: [classical-low-flow-low-gradient-as]

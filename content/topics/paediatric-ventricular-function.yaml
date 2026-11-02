@@ -1,0 +1,9 @@
+id: paediatric-ventricular-function
+ref: '15.3'
+slug: paediatric-ventricular-function
+title: 'Ventricular systolic & diastolic function in children'
+parent: paediatric-echocardiography
+order: 2
+population: paediatric
+wave: W2
+status: draft

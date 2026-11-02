@@ -1,0 +1,9 @@
+id: after-surgical-mitral-repair
+ref: '4.5.3'
+slug: after-surgical-mitral-repair
+title: After surgical repair / annuloplasty ring
+parent: after-valve-repair
+order: 2
+population: adult
+wave: W1
+status: draft

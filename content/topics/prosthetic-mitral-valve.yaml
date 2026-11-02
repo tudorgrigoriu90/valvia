@@ -1,0 +1,9 @@
+id: prosthetic-mitral-valve
+ref: '4.3'
+slug: prosthetic-mitral-valve
+title: Prosthetic mitral valve (surgical and transcatheter)
+parent: prosthetic-valves-and-valve-interventions
+order: 2
+population: adult
+wave: W1
+status: draft

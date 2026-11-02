@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-8: Record PO decisions (direct-to-main, no previews, initial content seed |
-| Next task | TS-02.4.2: supersession history (content seeding blocked on network access) |
+| Last completed task | TS-02.1.2: Encode taxonomy v0.2 as content tree (unpopulated nodes hidden) |
+| Next task | TS-02.3.3: seed source registry |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

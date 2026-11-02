@@ -1,0 +1,9 @@
+id: lv-hypertrabeculation
+ref: '6.6'
+slug: lv-hypertrabeculation
+title: LV hypertrabeculation (non-compaction)
+parent: cardiomyopathies-and-heart-failure
+order: 5
+population: adult
+wave: W1
+status: draft

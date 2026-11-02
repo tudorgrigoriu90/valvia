@@ -1,0 +1,10 @@
+id: normal-aortic-dimensions
+ref: '10.1'
+slug: normal-aortic-dimensions
+title: Normal aortic dimensions
+parent: aortic-disease
+order: 0
+population: adult
+wave: W2
+status: draft
+seeAlso: [aortic-root-and-ascending-aorta]

@@ -1,0 +1,9 @@
+id: tavi-imaging
+ref: '3.1.1.6'
+slug: tavi-imaging
+title: TAVI imaging / anatomical considerations (incl. CT)
+parent: aortic-stenosis
+order: 5
+population: adult
+wave: W1
+status: draft

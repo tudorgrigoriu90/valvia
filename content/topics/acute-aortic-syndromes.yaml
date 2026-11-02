@@ -1,0 +1,9 @@
+id: acute-aortic-syndromes
+ref: '10.3'
+slug: acute-aortic-syndromes
+title: 'Acute aortic syndromes: echo signs'
+parent: aortic-disease
+order: 2
+population: adult
+wave: W2
+status: draft

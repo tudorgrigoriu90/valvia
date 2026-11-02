@@ -1,0 +1,9 @@
+id: tr-severity-grading
+ref: '3.3.2'
+slug: tr-severity-grading
+title: 'TR severity grading, incl. extended grades (massive / torrential)'
+parent: tricuspid-valve-disease
+order: 1
+population: adult
+wave: W1
+status: draft

@@ -1,0 +1,9 @@
+id: patent-ductus-arteriosus
+ref: '8.5'
+slug: patent-ductus-arteriosus
+title: Patent ductus arteriosus
+parent: congenital-heart-disease-paediatric-and-adult
+order: 5
+population: both
+wave: W2
+status: draft

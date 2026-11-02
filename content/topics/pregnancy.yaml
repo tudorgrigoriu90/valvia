@@ -1,0 +1,9 @@
+id: pregnancy
+ref: '13.1'
+slug: pregnancy
+title: 'Pregnancy: expected echo changes and risk-relevant thresholds'
+parent: special-populations
+order: 0
+population: adult
+wave: W2
+status: draft

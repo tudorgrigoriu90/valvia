@@ -1,0 +1,9 @@
+id: lv-regional-function
+ref: '1.1.4'
+slug: lv-regional-function
+title: LV regional function
+parent: left-ventricle
+order: 3
+population: adult
+wave: W1
+status: draft

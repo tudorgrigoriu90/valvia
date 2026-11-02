@@ -1,0 +1,9 @@
+id: aortic-dilatation-intervention-thresholds
+ref: '10.2'
+slug: aortic-dilatation-intervention-thresholds
+title: 'Aortic dilatation & aneurysm: intervention thresholds'
+parent: aortic-disease
+order: 1
+population: adult
+wave: W2
+status: draft

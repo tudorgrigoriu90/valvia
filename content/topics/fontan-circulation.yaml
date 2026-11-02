@@ -1,0 +1,9 @@
+id: fontan-circulation
+ref: '8.10'
+slug: fontan-circulation
+title: Fontan circulation
+parent: congenital-heart-disease-paediatric-and-adult
+order: 10
+population: both
+wave: W2
+status: draft

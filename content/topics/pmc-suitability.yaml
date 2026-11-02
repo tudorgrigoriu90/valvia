@@ -1,0 +1,9 @@
+id: pmc-suitability
+ref: '3.2.2.2'
+slug: pmc-suitability
+title: Suitability for percutaneous mitral commissurotomy (e.g. Wilkins score)
+parent: mitral-stenosis
+order: 1
+population: adult
+wave: W1
+status: draft

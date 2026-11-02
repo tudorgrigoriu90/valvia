@@ -1,0 +1,9 @@
+id: rv-pa-coupling
+ref: '5.3'
+slug: rv-pa-coupling
+title: 'RV function & RV–PA coupling (e.g. TAPSE/sPAP)'
+parent: pulmonary-hypertension-and-right-heart
+order: 2
+population: adult
+wave: W1
+status: draft

@@ -1,0 +1,9 @@
+id: prosthetic-mitral-valve-regurgitation-grading
+ref: '4.3.2'
+slug: prosthetic-mitral-valve-regurgitation-grading
+title: Regurgitation grading
+parent: prosthetic-mitral-valve
+order: 1
+population: adult
+wave: W1
+status: draft

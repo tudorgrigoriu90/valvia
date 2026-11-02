@@ -1,0 +1,9 @@
+id: lv-wall-thickness-mass-and-geometry
+ref: '1.1.2'
+slug: lv-wall-thickness-mass-and-geometry
+title: 'LV wall thickness, mass & geometry'
+parent: left-ventricle
+order: 1
+population: adult
+wave: W1
+status: draft

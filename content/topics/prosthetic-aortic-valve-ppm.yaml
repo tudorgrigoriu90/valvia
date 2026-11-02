@@ -1,0 +1,9 @@
+id: prosthetic-aortic-valve-ppm
+ref: '4.2.2'
+slug: prosthetic-aortic-valve-ppm
+title: 'Patient–prosthesis mismatch, incl. obesity-adjusted thresholds'
+parent: prosthetic-aortic-valve
+order: 1
+population: adult
+wave: W1
+status: draft

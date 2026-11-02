@@ -1,0 +1,9 @@
+id: prosthetic-aortic-valve-obstruction-grading
+ref: '4.2.1'
+slug: prosthetic-aortic-valve-obstruction-grading
+title: 'Stenosis / obstruction grading (normal, possible, significant)'
+parent: prosthetic-aortic-valve
+order: 0
+population: adult
+wave: W1
+status: draft

@@ -1,0 +1,9 @@
+id: atrial-septal-defect
+ref: '8.2'
+slug: atrial-septal-defect
+title: Atrial septal defect
+parent: congenital-heart-disease-paediatric-and-adult
+order: 2
+population: both
+wave: W2
+status: draft

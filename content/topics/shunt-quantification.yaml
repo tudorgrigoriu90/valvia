@@ -1,0 +1,9 @@
+id: shunt-quantification
+ref: '8.1'
+slug: shunt-quantification
+title: 'Shunt quantification (Qp:Qs)'
+parent: congenital-heart-disease-paediatric-and-adult
+order: 1
+population: both
+wave: W2
+status: draft

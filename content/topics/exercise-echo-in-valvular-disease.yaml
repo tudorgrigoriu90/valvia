@@ -1,0 +1,9 @@
+id: exercise-echo-in-valvular-disease
+ref: '9.3'
+slug: exercise-echo-in-valvular-disease
+title: 'Exercise echo in valvular disease (MR, MS, AS, AR)'
+parent: stress-echocardiography
+order: 2
+population: adult
+wave: W2
+status: draft

@@ -1,0 +1,9 @@
+id: primary-mr-repair-likelihood
+ref: '3.2.1.4'
+slug: primary-mr-repair-likelihood
+title: 'Primary MR: likelihood of durable surgical repair'
+parent: mitral-regurgitation
+order: 3
+population: adult
+wave: W1
+status: draft

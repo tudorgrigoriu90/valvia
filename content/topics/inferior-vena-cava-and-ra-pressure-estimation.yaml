@@ -1,0 +1,9 @@
+id: inferior-vena-cava-and-ra-pressure-estimation
+ref: '1.6'
+slug: inferior-vena-cava-and-ra-pressure-estimation
+title: 'Inferior vena cava & RA pressure estimation'
+parent: chamber-size-and-function
+order: 5
+population: adult
+wave: W1
+status: draft

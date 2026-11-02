@@ -1,0 +1,9 @@
+id: diastolic-dysfunction-grading
+ref: '2.2'
+slug: diastolic-dysfunction-grading
+title: 'LA pressure estimation & diastolic dysfunction grading (sinus rhythm)'
+parent: diastolic-function-and-filling-pressures
+order: 1
+population: adult
+wave: W1
+status: draft

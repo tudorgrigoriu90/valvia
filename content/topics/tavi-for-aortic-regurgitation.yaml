@@ -1,0 +1,9 @@
+id: tavi-for-aortic-regurgitation
+ref: '3.1.2.3'
+slug: tavi-for-aortic-regurgitation
+title: 'TAVI for AR: anatomical suitability'
+parent: aortic-regurgitation
+order: 2
+population: adult
+wave: W1
+status: draft

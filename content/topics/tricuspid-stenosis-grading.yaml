@@ -1,0 +1,9 @@
+id: tricuspid-stenosis-grading
+ref: '3.3.5'
+slug: tricuspid-stenosis-grading
+title: 'Tricuspid stenosis: grading'
+parent: tricuspid-valve-disease
+order: 4
+population: adult
+wave: W1
+status: draft

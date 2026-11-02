@@ -1,0 +1,10 @@
+id: diastolic-stress-test
+ref: '9.4'
+slug: diastolic-stress-test
+title: Diastolic stress test
+parent: stress-echocardiography
+order: 3
+population: adult
+wave: W2
+status: draft
+seeAlso: [diastolic-stress-echocardiography]

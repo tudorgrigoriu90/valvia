@@ -1,0 +1,9 @@
+id: paediatric-quantification-methods
+ref: '15.1'
+slug: paediatric-quantification-methods
+title: 'Quantification methods & indexing in children (BSA, z-scores)'
+parent: paediatric-echocardiography
+order: 0
+population: paediatric
+wave: W2
+status: draft

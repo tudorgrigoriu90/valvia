@@ -1,0 +1,9 @@
+id: lv-dimensions-and-volumes
+ref: '1.1.1'
+slug: lv-dimensions-and-volumes
+title: 'LV dimensions & volumes'
+parent: left-ventricle
+order: 0
+population: adult
+wave: W1
+status: draft

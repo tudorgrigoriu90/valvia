@@ -1,0 +1,9 @@
+id: rv-dimensions
+ref: '1.3.1'
+slug: rv-dimensions
+title: RV dimensions
+parent: right-ventricle
+order: 0
+population: adult
+wave: W1
+status: draft

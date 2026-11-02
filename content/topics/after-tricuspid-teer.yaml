@@ -1,0 +1,9 @@
+id: after-tricuspid-teer
+ref: '4.5.2'
+slug: after-tricuspid-teer
+title: After tricuspid TEER
+parent: after-valve-repair
+order: 1
+population: adult
+wave: W1
+status: draft

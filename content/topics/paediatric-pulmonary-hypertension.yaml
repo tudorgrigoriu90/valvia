@@ -1,0 +1,9 @@
+id: paediatric-pulmonary-hypertension
+ref: '15.4'
+slug: paediatric-pulmonary-hypertension
+title: Paediatric pulmonary hypertension
+parent: paediatric-echocardiography
+order: 3
+population: paediatric
+wave: W2
+status: draft

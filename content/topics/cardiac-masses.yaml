@@ -1,0 +1,9 @@
+id: cardiac-masses
+ref: '12.3'
+slug: cardiac-masses
+title: 'Masses: features of tumour vs thrombus vs vegetation'
+parent: cardiac-masses-and-embolic-sources
+order: 2
+population: adult
+wave: W2
+status: draft

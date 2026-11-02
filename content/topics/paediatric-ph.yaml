@@ -1,0 +1,10 @@
+id: paediatric-ph
+ref: '5.7'
+slug: paediatric-ph
+title: Paediatric PH
+parent: pulmonary-hypertension-and-right-heart
+order: 6
+population: adult
+wave: W1
+status: draft
+seeAlso: [paediatric-pulmonary-hypertension]
