@@ -119,7 +119,8 @@ export function schemaProblems(
 ): Problem[] {
   const seen = new Set<string>();
   const problems: Problem[] = [];
-  for (const error of prune(errors)) {
+  // `if` errors only say "must match then schema"; the `then` branch reports the real problem.
+  for (const error of prune(errors.filter((e) => e.keyword !== 'if'))) {
     const path = pointerToPath(error.instancePath);
     const label = pathLabel(path, rootLabel);
     const prefix = path.length === 0 ? '' : `${label}: `;

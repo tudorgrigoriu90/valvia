@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://valvia.invalid/schema/source.schema.json",
+  "title": "SourceDocument",
+  "description": "A registered source document: an ESC (incl. EACVI) or ASE document, or a paediatric z-score dataset cited by one (TS-02.3.1). One file per source: content/sources/<id>.yaml.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title", "issuers", "type", "year", "status"],
+  "properties": {
+    "id": {
+      "$ref": "common.schema.json#/$defs/id"
+    },
+    "title": {
+      "$ref": "common.schema.json#/$defs/text"
+    },
+    "shortTitle": {
+      "description": "Short label for source chips (e.g. 'ESC/EACTS VHD 2025').",
+      "$ref": "common.schema.json#/$defs/text"
+    },
+    "issuers": {
+      "description": "Issuing societies as acronyms (e.g. [ESC, EACTS]). Only ESC, EACVI and ASE documents are allowed, except cited z-score datasets (SME decision 2, F1).",
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Z][A-Za-z0-9&-]{1,15}$",
+        "x-format-name": "an upper-case acronym such as ESC"
+      }
+    },
+    "type": {
+      "description": "Document type.",
+      "enum": [
+        "guideline",
+        "recommendation",
+        "consensus-statement",
+        "position-statement",
+        "focused-update",
+        "standardized-definitions",
+        "z-score-dataset"
+      ]
+    },
+    "year": {
+      "description": "Publication year.",
+      "type": "integer",
+      "minimum": 1990,
+      "maximum": 2100
+    },
+    "journal": {
+      "description": "Journal name.",
+      "$ref": "common.schema.json#/$defs/text"
+    },
+    "doi": {
+      "description": "Digital Object Identifier, without the https://doi.org/ prefix.",
+      "type": "string",
+      "pattern": "^10\\.[0-9]{4,9}/\\S+$",
+      "x-format-name": "a DOI such as 10.1093/eurheartj/ehab395"
+    },
+    "url": {
+      "description": "Landing page of the document (https).",
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://",
+      "x-format-name": "an https URL"
+    },
+    "status": {
+      "description": "Current documents are shown as recommendations; superseded and withdrawn ones only as history (SME decision 3).",
+      "enum": ["current", "superseded", "withdrawn"]
+    },
+    "supersededBy": {
+      "description": "Id of the document that replaces this one (required when status is superseded).",
+      "$ref": "common.schema.json#/$defs/id"
+    },
+    "citedBy": {
+      "description": "For z-score datasets: ids of the registered ESC/ASE documents that cite this dataset.",
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common.schema.json#/$defs/id"
+      }
+    },
+    "notes": {
+      "description": "Internal notes for maintainers.",
+      "$ref": "common.schema.json#/$defs/longText"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "superseded"
+          }
+        },
+        "required": ["status"]
+      },
+      "then": {
+        "properties": {
+          "supersededBy": true
+        },
+        "required": ["supersededBy"]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "z-score-dataset"
+          }
+        },
+        "required": ["type"]
+      },
+      "then": {
+        "properties": {
+          "citedBy": true
+        },
+        "required": ["citedBy"]
+      }
+    }
+  ]
+}

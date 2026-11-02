@@ -12,7 +12,7 @@ flowchart LR
     syntax --> schema["2 JSON Schema per file<br/>Ajv 2020, allErrors"]
     schema --> name["file name = id"]
     name --> cross["3 Cross-file integrity<br/>(planned)"]
-    cross --> rules["4 Content rules<br/>allowlist, units, plausibility (planned)"]
+    cross --> rules["4 Content rules<br/>source allowlist + supersession (done)<br/>units, plausibility (planned)"]
     rules --> out["file:line:column severity rule message"]
 ```
 
@@ -69,4 +69,55 @@ synonyms: [primary mitral regurgitation, degenerative MR]
 population: adult
 wave: W1
 status: draft
+```
+
+## Source document (`source.schema.json`, TS-02.3.1)
+
+One file per source: `content/sources/<id>.yaml`. Every value cites a source id plus a locator.
+
+| Field | Required | Type | Meaning |
+|---|---|---|---|
+| `id` | yes | `id` | e.g. `esc-eacts-2025-vhd` |
+| `title` | yes | `text` | Full title |
+| `shortTitle` | no | `text` | Label for source chips |
+| `issuers` | yes | acronym[] (≥ 1) | Issuing societies, e.g. `[ESC, EACTS]` |
+| `type` | yes | enum | `guideline` · `recommendation` · `consensus-statement` · `position-statement` · `focused-update` · `standardized-definitions` · `z-score-dataset` |
+| `year` | yes | integer 1990–2100 | Publication year |
+| `journal` | no | `text` | Journal |
+| `doi` | no | DOI | Without `https://doi.org/` |
+| `url` | no | https URL | Landing page |
+| `status` | yes | `current` · `superseded` · `withdrawn` | Only `current` sources supply current recommendations |
+| `supersededBy` | when superseded | `id` | Successor document |
+| `citedBy` | for z-score datasets | `id[]` | Registered ESC/ASE documents citing the dataset |
+| `notes` | no | `longText` | Maintainer notes |
+
+### Registry rules (`core/sources/registry-rules.ts`, 100 % coverage)
+
+```mermaid
+flowchart TD
+    s["source"] --> z{"type = z-score-dataset?"}
+    z -- no --> a{"issuers include<br/>ESC, EACVI or ASE?"}
+    a -- yes --> ok(["allowed"])
+    a -- no --> assoc{"ESC association?<br/>EAPCI, HFA, EHRA, EAPC, ACVC, ACNAP"}
+    assoc -- yes --> warn(["warning: pending SME F3"])
+    assoc -- no --> err(["error: not an allowed body"])
+    z -- yes --> c{"every citedBy is a registered,<br/>allowed, non-dataset document?"}
+    c -- yes --> ok
+    c -- no --> err2(["error"])
+```
+
+Also enforced: unique ids; `supersededBy` only with status `superseded`, must exist, must not be the source itself,
+must not be older, and supersession chains must not form cycles; `citedBy` only on z-score datasets.
+
+Example:
+
+```yaml
+id: esc-eacts-2025-vhd
+title: ESC/EACTS Guidelines for the management of valvular heart disease
+shortTitle: ESC/EACTS VHD 2025
+issuers: [ESC, EACTS]
+type: guideline
+year: 2025
+journal: European Heart Journal
+status: current
 ```

@@ -2,11 +2,13 @@
 import { Ajv2020, type ErrorObject, type ValidateFunction } from 'ajv/dist/2020.js';
 import addFormatsModule from 'ajv-formats';
 import common from '../../schema/common.schema.json' with { type: 'json' };
+import source from '../../schema/source.schema.json' with { type: 'json' };
 import topic from '../../schema/topic.schema.json' with { type: 'json' };
 
 /** Content kinds and their schema ids. */
 export const SCHEMA_IDS = {
   topic: topic.$id,
+  source: source.$id,
 } as const;
 
 export type ContentKind = keyof typeof SCHEMA_IDS;
@@ -20,7 +22,7 @@ function createAjv(): Ajv2020 {
   addFormats(ajv);
   // Human-readable name of a pattern, used in error messages ("must be lowercase kebab-case").
   ajv.addKeyword({ keyword: 'x-format-name', schemaType: 'string' });
-  ajv.addSchema([common, topic]);
+  ajv.addSchema([common, topic, source]);
   return ajv;
 }
 

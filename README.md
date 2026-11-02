@@ -14,8 +14,8 @@ Live site (after Pages is enabled on the `gh-pages` branch): <https://tudorgrigo
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-4: Generate TypeScript types from JSON Schema (npm run gen:types) with a  |
-| Next task | TS-02.3.1: source schema with allowlist |
+| Last completed task | TS-02.3.1: Source schema incl. status, supersession, allowed-society check and ci |
+| Next task | TS-02.3.2: per-value citation locator |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
