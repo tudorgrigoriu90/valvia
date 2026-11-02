@@ -1,0 +1,260 @@
+# Valvia: Task plan
+
+> **Purpose:** single source of truth for task status and the push log. Updated in **every push** (see `CLAUDE.md` §9).
+> **Audience:** Claude Code sessions, software engineer, product owner.
+> **Last updated:** 2026-11-02
+> **Task details and acceptance criteria:** [`product/valvia-backlog.md`](product/valvia-backlog.md)
+
+Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `manual` (engineer task; Claude prepares checklists and verifies where possible).
+
+## Current status
+
+| | |
+|---|---|
+| Release in progress | **R0: Walking skeleton** |
+| Last completed | TS-01.2.2 `CLAUDE.md` |
+| Next up | TS-01.1.1 ADR: static site generator |
+
+## Next up: R0 sequence
+
+R0 exit criterion: the SME approves a real content PR from the phone and sees it live on GitHub Pages.
+Suggested order (one push each):
+
+1. TS-01.1.1 → TS-01.1.4: ADRs (site generator, hosting, content as code, search)
+2. TS-01.2.1: repository structure
+3. TS-01.2.3 + CH-1: TypeScript/ESLint/Prettier, then test tooling with coverage thresholds (two pushes)
+4. TS-01.3.1, TS-01.3.2: CI (on push to `main` and on PRs) and deploy to GitHub Pages
+5. TS-01.3.3, TS-01.3.4, TS-01.2.5: PR previews, CODEOWNERS, content PR template
+6. TS-02.1.1, TS-02.2.1–TS-02.2.7, TS-02.3.1–TS-02.3.2: core schemas (one task per push)
+7. Minimal leaf page for one node (e.g. 3.2.1.2 *Primary MR → severity grading*)
+8. First content PR (SME approval) → live
+9. In parallel, engineer: TS-08.1, TS-08.3, TS-08.4, TS-01.3.5 (`manual`)
+
+## Workflow changes vs backlog v0.3
+
+The user set the following rules on 2026-11-02 (recorded in `CLAUDE.md`); they supersede backlog §0 working rules 1–2:
+
+- Code, config, tests and docs are committed **directly to `main`**; only **data updates** (`/content/**`, source registry) go through PRs, approved by the SME.
+- One task per push; TDD; coverage ≥ 80 %; README updated every turn; this plan updated every push.
+
+Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must allow direct pushes to `main` while a CI path guard rejects direct changes to `/content/**`; the engineer reviews code after it lands on `main`.
+
+## Backlog
+
+### EP-00: Discovery & SME validation (MVP)
+
+| Key | Summary | SP | Status | Notes |
+|---|---|---|---|---|
+| TS-00.1 | Taxonomy validation with SME | 2 | in progress | SME answers applied (taxonomy v0.3); F2–F5 open |
+| TS-00.2 | Record SME decisions in `/docs/decisions` (✅ answers received 2 Nov 2026; F1 answered: z-score datasets cited by ESC/ASE included; follow-ups F2–F5 open) | 1 | todo |  |
+| TS-00.3 | Competitor scan (ESC Pocket Guidelines app, ASE app, others); define differentiation | 2 | todo |  |
+| TS-00.4 | Confirm delivery waves (all content P1) and success metrics | 1 | todo |  |
+| TS-00.5 | Agree emergency-rollback rule with SME (engineer may revert, never add or change values) | 1 | todo |  |
+| TS-00.6 | Usability test of clickable prototype with 3 echocardiographers (incl. 1 paediatric) | 1 | todo |  |
+
+### EP-01: Foundation, CI/CD & Claude Code workflow (MVP)
+
+| Key | Summary | SP | Status | Notes |
+|---|---|---|---|---|
+| TS-01.1.1 | ADR: static site generator (Astro vs Eleventy) | 2 | todo |  |
+| TS-01.1.2 | ADR: GitHub Pages hosting, PR previews, meta-CSP and static redirects | 1 | todo |  |
+| TS-01.1.3 | ADR: content as code (YAML in Git) | 1 | todo |  |
+| TS-01.1.4 | ADR: client-side search (Pagefind) | 1 | todo |  |
+| TS-01.2.1 | Repo structure: `/site`, `/content`, `/schema`, `/pipeline`, `/docs` | 2 | todo |  |
+| TS-01.2.2 | `CLAUDE.md`: architecture, coding conventions, content-modelling rules, units, DoD | 2 | done | Workflow rules from user: direct-to-main for code, PR for data only |
+| TS-01.2.3 | TypeScript strict, ESLint, Prettier | 1 | todo |  |
+| TS-01.2.4 | Renovate config with auto-merge for patch/minor on green CI | 1 | todo |  |
+| TS-01.2.5 | PR templates: code PR; content PR (clinical change summary table, sources, preview link, reviewer checklist) | 1 | todo | Only the content PR template is needed (code goes to main directly) |
+| CH-1 | Test tooling: Vitest + coverage thresholds (≥ 80 % global, 100 % safety-critical modules), Playwright, `npm run verify` | 2 | todo | Added for CLAUDE.md rules (TDD, coverage); not in backlog |
+| TS-01.3.1 | CI: build, schema validation, unit tests, Lighthouse CI, axe, broken-link check | 3 | todo | Must also run on push to `main` |
+| TS-01.3.2 | Deploy to GitHub Pages via Actions on merge to `main` | 1 | todo |  |
+| TS-01.3.3 | PR previews with `pr-preview-action` (deploy, comment link, clean up on close); exclude previews from search engines | 2 | todo |  |
+| TS-01.3.4 | CODEOWNERS: `/content/**` → SME only; everything else → engineer | 1 | todo | CODEOWNERS now only matters for `/content/**` PRs |
+| TS-01.3.5 | Branch ruleset on `main`: PR required, required checks, CODEOWNER review, auto-merge allowed, delete branch on merge; admin bypass reserved for emergency reverts | 1 | manual | Adapt: allow direct pushes for code; block direct changes to `/content/**` (CI path guard) |
+
+### EP-02: Content model & source registry (MVP)
+
+| Key | Summary | SP | Status | Notes |
+|---|---|---|---|---|
+| TS-02.1.1 | Topic node schema: `id`, `slug`, `title`, `parent`, `order`, `synonyms`, `population`, `wave`, `status` | 2 | todo |  |
+| TS-02.1.2 | Encode taxonomy v0.2 as content tree (unpopulated nodes hidden) | 2 | todo |  |
+| TS-02.1.3 | Stable ID & URL policy; static redirect pages on slug rename | 2 | todo |  |
+| TS-02.2.1 | Parameter schema: name, abbreviation, unit, modality, view/method note | 2 | todo |  |
+| TS-02.2.2 | Value schema: population qualifiers, grade, operator, value/range, unit, context, caveats, citation | 5 | todo |  |
+| TS-02.2.3 | Content block types: grading table, normal range table, criteria checklist (favourable / challenging / unsuitable), threshold list, note, algorithm reference (link to source) | 3 | todo |  |
+| TS-02.2.4 | JSON Schema + generated TS types; plausibility checks (unit vs parameter, monotonic grades) | 3 | todo |  |
+| TS-02.2.5 | Paediatric qualifiers: `ageGroup` (adult / paediatric), age band, BSA band, z-score reference (as published, no computation) | 1 | todo |  |
+| TS-02.2.6 | Value-level `modality` (Echo / CT / CMR) | 1 | todo |  |
+| TS-02.2.7 | Unit layer: store as published, display in house units (NFR-15), original on tap; exhaustive conversion tests | 2 | todo |  |
+| TS-02.2.8 | Prosthetic valve catalogue schema: position, type, model, size → expected values with citation | 2 | todo |  |
+| TS-02.3.1 | Source schema incl. status, supersession, allowed-society check and `citedBy` for cited z-score datasets | 2 | todo |  |
+| TS-02.3.2 | Per-value citation locator (table, figure, section, page) | 1 | todo |  |
+| TS-02.3.3 | Seed registry from taxonomy Appendix A (content PR, SME verifies) | 2 | todo |  |
+| TS-02.4.1 | Build-time discrepancy detection | 3 | todo |  |
+| TS-02.4.2 | Supersession → history data (current vs previous recommendations) | 2 | todo |  |
+| TS-02.4.3 | Unit tests with fixtures (agreement, disagreement, superseded) | 2 | todo |  |
+
+### EP-03: Clinical content production (MVP)
+
+| Key | Summary | SP | Status | Notes |
+|---|---|---|---|---|
+| TS-03.0.1 | Content YAML templates + content guide (modelling, citing, units, history, modality, paediatric values) | 2 | todo |  |
+| TS-03.0.2 | Content status page (per node: draft / in review / published; wave) | 2 | todo |  |
+| FT-03.1 | 1 Chamber size & function (W1) | 8 | todo |  |
+| FT-03.2 | 2 Diastolic function & filling pressures (W1) | 5 | todo |  |
+| FT-03.3 | 3.1 VHD: aortic valve (incl. TAVI considerations, AR TAVI) (W1) | 10 | todo |  |
+| FT-03.4 | 3.2 VHD: mitral valve (primary/secondary MR, TEER feasibility, repair likelihood, MS, MAC) (W1) | 10 | todo |  |
+| FT-03.5 | 3.3–3.5 VHD: tricuspid, pulmonary, multiple & mixed (W1) | 5 | todo |  |
+| FT-03.6 | 3.6 VHD: infective endocarditis (W1) | 3 | todo |  |
+| FT-03.7 | 4.2–4.6 Prosthetic valves & valve interventions (grading, PPM, post-repair, BVD) (W1) | 8 | todo |  |
+| FT-03.8 | 4.1 Prosthetic valve reference values by model and size (W2) | 8 | todo |  |
+| FT-03.9 | 5 Pulmonary hypertension & right heart (W1) | 6 | todo |  |
+| FT-03.10 | 6 Cardiomyopathies & heart failure (W1) | 8 | todo |  |
+| FT-03.11 | 7 Pericardial disease (W1) | 3 | todo |  |
+| FT-03.12 | 8 Congenital heart disease, paediatric & adult (W2) | 10 | todo |  |
+| FT-03.13 | 15 Paediatric echocardiography (normal values, function, PH, cardiomyopathies) (W2) | 8 | todo |  |
+| FT-03.14 | 9 Stress echocardiography (W2) | 5 | todo |  |
+| FT-03.15 | 10 Aortic disease (W2) | 3 | todo |  |
+| FT-03.16 | 11 Cardio-oncology (W2) | 3 | todo |  |
+| FT-03.17 | 12 Cardiac masses & embolic sources (W2) | 3 | todo |  |
+| FT-03.18 | 13 Special populations (W2) | 3 | todo |  |
+| FT-03.19 | 14 Reference & methodology (glossary, units, DuBois BSA, formulas) (W1) | 2 | todo |  |
+
+### EP-04: Navigation & lookup UX (MVP)
+
+| Key | Summary | SP | Status | Notes |
+|---|---|---|---|---|
+| TS-04.1.1 | Mobile-first clickable prototype: home, category list, leaf page, compare view, history, search | 3 | todo |  |
+| TS-04.1.2 | Design tokens, light/dark theme, system font stack, Valvia wordmark and icon | 2 | todo |  |
+| TS-04.1.3 | Society badges (ESC, EACVI, ASE, joint) with text label + colour | 1 | todo |  |
+| TS-04.2.1 | Home: grid of root categories + search bar | 2 | todo |  |
+| TS-04.2.2 | Drill-down list pages with breadcrumbs | 3 | todo |  |
+| TS-04.2.3 | Leaf page with section anchors and "jump to" menu | 3 | todo |  |
+| TS-04.3.1 | Responsive grading / normal-range table component | 5 | todo |  |
+| TS-04.3.2 | Criteria checklist component (e.g. TEER feasibility) | 3 | todo |  |
+| TS-04.3.3 | Source chip + citation popover; original-unit popover | 3 | todo |  |
+| TS-04.3.4 | Discrepancy marker + side-by-side comparison view | 5 | todo |  |
+| TS-04.3.5 | Society filter toggle (localStorage, wrapped in try/catch) | 2 | todo |  |
+| TS-04.3.6 | Caveats/footnotes rendering (e.g. "not valid in AF") | 1 | todo |  |
+| TS-04.4.1 | Pagefind index incl. synonyms, abbreviations and valve models | 3 | todo |  |
+| TS-04.4.2 | Instant search UI (mobile keyboard friendly) | 2 | todo |  |
+| TS-04.5.1 | Stable deep links to topics and parameter anchors | 1 | todo |  |
+| TS-04.5.2 | "Last reviewed" date and content version on every page | 1 | todo |  |
+| TS-04.6.1 | Last 10 viewed topics on home screen (localStorage) | 2 | todo |  |
+| TS-04.7.1 | Adult / paediatric switch (global, persisted) | 2 | todo |  |
+| TS-04.7.2 | "Previous recommendations" history view (source, year, superseded by) | 2 | todo |  |
+| TS-04.7.3 | Modality badges (Echo / CT / CMR) | 1 | todo |  |
+| TS-04.7.4 | Prosthetic valve picker (lookup only) | 3 | todo |  |
+
+### EP-05: Mobile, performance & offline (MVP)
+
+| Key | Summary | SP | Status | Notes |
+|---|---|---|---|---|
+| TS-05.1.1 | Breakpoints (360 / 768 / 1024) + real-device test matrix (iOS Safari, Android Chrome) | 3 | todo |  |
+| TS-05.2.1 | Lighthouse CI budgets (LCP, JS weight, CLS) as blocking checks | 2 | todo |  |
+| TS-05.2.2 | System fonts, SVG-only icons; analytics beacon is the only third-party script | 1 | todo |  |
+| TS-05.3.1 | Web app manifest ("Valvia"), icons, installability | 1 | todo |  |
+| TS-05.3.2 | Service worker precaching all content pages + search index | 3 | todo |  |
+| TS-05.3.3 | Update prompt + content version display | 2 | todo |  |
+| TS-05.3.4 | Offline indicator | 1 | todo |  |
+
+### EP-06: Guideline update pipeline with PR-based approval (MVP; watchers in R1.1)
+
+| Key | Summary | SP | Status | Notes |
+|---|---|---|---|---|
+| TS-06.1.1 | Scheduled GitHub Action (weekly) with failure notification | 1 | todo |  |
+| TS-06.1.2 | PubMed E-utilities / Crossref queries: EHJ, EHJ-CI, JASE (+ ESC journals for paediatric/CHD); guideline / recommendation / consensus types; echo keywords | 5 | todo |  |
+| TS-06.1.3 | Page-change watchers: ESC guideline list, EACVI recommendations page, ASE guidelines page | 3 | todo |  |
+| TS-06.1.4 | Deduplication and state (JSON state file in repo) | 2 | todo |  |
+| TS-06.1.5 | Errata/corrigendum detection for registered sources (Crossref update relations) | 3 | todo |  |
+| TS-06.2.1 | Issue per candidate with metadata and mapped affected topics | 3 | todo |  |
+| TS-06.2.2 | Claude Code GitHub Action triggered by `new-source` label; prompt references `CLAUDE.md` content rules; monthly spending cap | 3 | todo |  |
+| TS-06.2.3 | Source acquisition: download open-access PDF, else request attachment in the issue | 2 | todo |  |
+| TS-06.2.4 | Clinical change-summary generator for the PR body | 3 | todo |  |
+| TS-06.3.1 | Content PR template with reviewer checklist ("values match source", "population/units correct", "discrepancies labelled", "history correct") | 1 | todo |  |
+| TS-06.3.2 | Enable auto-merge on content PRs once approved and green | 1 | todo |  |
+| TS-06.3.3 | Stale-PR reminder and escalation job | 2 | todo |  |
+| TS-06.3.4 | Verification run: fresh Claude context re-reads the source and compares every changed value; required status check; the SME can override a false mismatch with a PR comment | 3 | todo |  |
+| TS-06.3.5 | SME quick guide (1 page): reviewing a content PR in the GitHub mobile app | 1 | todo |  |
+| TS-06.3.6 | Claude clinical-reviewer persona (built and maintained by the engineer with SME input): echocardiography-expert review prompt and checklist, run as the verification run on every content PR; second reviewer, advisory only, never approves | 2 | todo |  |
+| TS-06.4.1 | Auto-generated "What's new" page from merged content PRs | 3 | todo |  |
+| TS-06.4.2 | Audit trail: approver, timestamp, source recorded in CHANGELOG + Git history | 1 | todo |  |
+| TS-06.4.3 | Rollback runbook (revert PR → redeploy) | 1 | todo |  |
+| TS-06.5.1 | "Report an issue" link per value: prefilled GitHub issue form, with a `mailto:` fallback for users without GitHub | 2 | todo |  |
+
+### EP-07: Quality, compliance & legal (MVP)
+
+| Key | Summary | SP | Status | Notes |
+|---|---|---|---|---|
+| TS-07.1.1 | EU MDR qualification memo (MDCG 2019-11 reasoning), incl. paediatric z-score references shown as published without patient computation; external review if unclear | 3 | todo |  |
+| TS-07.1.2 | Intended-use statement + disclaimer ("verify against the original guideline") | 1 | todo |  |
+| TS-07.2.1 | Copyright assessment: numeric values vs reproduced tables (incl. prosthetic model/size tables from guideline appendices); algorithms linked only; request permissions from ESC (OUP) / ASE (Elsevier) where needed | 3 | todo |  |
+| TS-07.2.2 | Content policy: own-format tables, no copied figures, always cite and link | 1 | todo |  |
+| TS-07.3.1 | Hazard log (wrong value, wrong unit or conversion, missing indexation, adult value shown for a child, superseded value shown as current, wrong population) + mitigations | 2 | todo |  |
+| TS-07.3.2 | Pre-release content audit per wave: 100 % of values verified by the verification run and approved; SME spot-checks a random 10 % sample against the PDFs | 3 | todo |  |
+| TS-07.4.1 | Manual screen-reader pass (VoiceOver, TalkBack) | 2 | todo |  |
+| TS-07.4.2 | Playwright E2E at mobile viewport (browse, search, compare, history, adult/paediatric switch, prosthetic picker, offline) | 3 | todo |  |
+| TS-07.5.1 | Cookieless analytics + privacy notice | 1 | todo |  |
+
+### EP-08: Engineer setup, release & operations (MVP)
+
+| Key | Summary | SP | Status | Notes |
+|---|---|---|---|---|
+| TS-08.1 | Create public repo `valvia`; enable GitHub Pages (source: GitHub Actions); enable secret scanning + push protection | 1 | manual |  |
+| TS-08.2 | Check name availability (domain, EUIPO trademark search); buy domain; DNS; custom domain on Pages; enforce HTTPS | 1 | manual |  |
+| TS-08.3 | Install Claude Code GitHub Action; add credentials as repo secret; set spending limit | 1 | manual |  |
+| TS-08.4 | SME onboarding: GitHub account with 2FA, GitHub mobile app, notification settings, 15-min walkthrough of a sample PR | 1 | manual |  |
+| TS-08.5 | Analytics account + uptime monitor (free tiers) | 1 | manual |  |
+| TS-08.6 | Runbooks: content update, emergency rollback, rotating secrets | 2 | todo |  |
+| TS-08.7 | Closed beta (SME + 3–5 colleagues), feedback collection, triage | 3 | todo |  |
+| TS-08.8 | Go-live checklist | 2 | todo |  |
+
+### EP-09: User accounts (v2)
+
+| Key | Summary | SP | Status | Notes |
+|---|---|---|---|---|
+| TS-09.1 | Spike: Supabase vs Firebase (cost, EU data residency, free-tier limits; Supabase free projects pause when inactive) | 2 | todo |  |
+| TS-09.2 | Google sign-in | 2 | todo |  |
+| TS-09.3 | Microsoft sign-in (personal + work accounts) | 3 | todo |  |
+| TS-09.4 | Facebook sign-in (needs Meta app review + business verification; confirm value first) | 3 | todo |  |
+| TS-09.5 | Account page: sign out, delete account (GDPR art. 17), export data | 3 | todo |  |
+| TS-09.6 | Privacy notice update, DPA with provider, record of processing (`manual` parts by engineer) | 2 | todo |  |
+| TS-09.7 | Auth as isolated client-side island so content pages stay within the performance budget | 2 | todo |  |
+
+### EP-10: Favourites (v2)
+
+| Key | Summary | SP | Status | Notes |
+|---|---|---|---|---|
+| TS-10.1 | Star/unstar any node (category, subcategory, leaf) | 3 | todo |  |
+| TS-10.2 | Favourites section on home + dedicated screen | 2 | todo |  |
+| TS-10.3 | Cross-device sync with offline queue | 3 | todo |  |
+| TS-10.4 | Import device-local "recently viewed" on first sign-in | 1 | todo |  |
+
+### EP-11: Admin content management (v2)
+
+| Key | Summary | SP | Status | Notes |
+|---|---|---|---|---|
+| TS-11.1 | Roles: reader, editor (admin, GitHub collaborator), approver (content CODEOWNER) | 2 | todo |  |
+| TS-11.2 | Git-based CMS at `/admin` with forms generated from the content schema | 5 | todo |  |
+| TS-11.3 | Add / rename / move categories with stable IDs and generated redirects | 3 | todo |  |
+| TS-11.4 | Edit values with source picker from registry; cannot save without citation | 3 | todo |  |
+| TS-11.5 | CMS editorial workflow opens a PR; verification run + approval apply | 2 | todo |  |
+| TS-11.6 | Manage source registry (mark superseded, add errata) | 2 | todo |  |
+
+### EP-12: Notifications for favourites (v2)
+
+| Key | Summary | SP | Status | Notes |
+|---|---|---|---|---|
+| TS-12.1 | On merge to `main`, GitHub Action computes changed node IDs from the content diff | 2 | todo |  |
+| TS-12.2 | Per-user preference per favourite: instant / weekly digest / off | 3 | todo |  |
+| TS-12.3 | Digest email via free email tier (e.g. Resend), one-click unsubscribe, batching | 3 | todo |  |
+| TS-12.4 | In-app "updated since your last visit" badge | 2 | todo |  |
+| TS-12.5 | Optional web push (stretch) | 3 | todo |  |
+
+## Push log
+
+One row per push (newest last). Content PRs are logged when opened and when merged.
+
+| Date | Task | Summary | Commit / PR |
+|---|---|---|---|
+| 2026-11-02 | TS-01.2.2 | Add `CLAUDE.md` (workflow, TDD, coverage, docs, README and plan rules, architecture, content rules); README; task plan; architecture overview; product docs imported | `TS-01.2.2: add CLAUDE.md engineering guidelines` |
