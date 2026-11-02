@@ -1,0 +1,46 @@
+---
+import type { ValueTable } from '../../core/values/table';
+import Footnotes from './Footnotes.astro';
+import ValueText from './ValueText.astro';
+
+interface Props {
+  table: ValueTable;
+  label: string;
+  blockId: string;
+}
+const { table, label, blockId } = Astro.props;
+---
+
+<div class="table-scroll" role="region" aria-label={`${label} (scrollable table)`} tabindex="0">
+  <table class="grading-table" aria-label={label}>
+    <thead>
+      <tr>
+        <th scope="col">Parameter</th>
+        {table.columns.map((column) => (
+          <th scope="col">{column}</th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {table.rows.map((row) => (
+        <tr>
+          <th scope="row">
+            <abbr title={row.name}>{row.label}</abbr>
+            {row.population !== '' && <span class="population">{row.population}</span>}
+            {row.unit !== undefined && <span class="unit">{row.unit}</span>}
+          </th>
+          {row.cells.map((cell) => (
+            <td>
+              {cell.length === 0 ? (
+                <span aria-label="No value">–</span>
+              ) : (
+                cell.map((entry) => <ValueText entry={entry} blockId={blockId} />)
+              )}
+            </td>
+          ))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+<Footnotes notes={table.footnotes} blockId={blockId} label={label} />

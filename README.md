@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-04.4.2: Instant search UI (mobile keyboard friendly) |
-| Next task | TS-04.2.3: jump menu, deep links and last-reviewed info |
+| Last completed task | CH-10: Population-aware tables: grading rows per population, normal-range tab |
+| Next task | FT-03.1: LV size and function normal values (ASE/EACVI 2015) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

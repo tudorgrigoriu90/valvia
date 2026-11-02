@@ -1,0 +1,16 @@
+---
+interface Props {
+  notes: string[];
+  blockId: string;
+  label: string;
+}
+const { notes, blockId, label } = Astro.props;
+---
+
+{notes.length > 0 && (
+  <ol class="footnotes" aria-label={`Notes for ${label}`}>
+    {notes.map((text, index) => (
+      <li id={`${blockId}-fn-${String(index + 1)}`}>{text}</li>
+    ))}
+  </ol>
+)}

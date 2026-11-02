@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-04.4.2 Instant search UI (mobile keyboard friendly) |
-| Next up | TS-04.2.3: jump menu, deep links and last-reviewed info |
+| Last completed | CH-10 Population-aware tables: grading rows per population, normal-range tab |
+| Next up | FT-03.1: LV size and function normal values (ASE/EACVI 2015) |
 
 ## Next up: R0 sequence
 
@@ -78,6 +78,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | CH-7 | Fix: formatting pushed with TS-02.2.4; plan update missed | 0 | done | Heredoc broke the verify-gated command chain; now plan edits run before the gate |
 | CH-8 | Record PO decisions (direct-to-main, no previews, initial content seed without approval) and the seed rules | 0 | done | Starts TS-00.2 (decision log) |
 | CH-9 | Give generic leaf titles their parent context (search results, tabs) and fix a truncated title | 0 | done | Ids and slugs unchanged |
+| CH-10 | Population-aware tables: grading rows per population, normal-range tables (population columns), threshold lists | 1 | done | Completes the normal-range part of TS-04.3.1 |
 | TS-01.3.1 | CI: build, schema validation, unit tests, Lighthouse CI, axe, broken-link check | 3 | done | Schema validation, axe, Lighthouse and link checks join CI with their own tasks (EP-02, CH-2, TS-07.4.2, TS-05.2.1) |
 | TS-01.3.2 | Deploy to GitHub Pages via Actions on merge to `main` | 1 | done | Actions Pages deploy since CH-5 ([ADR 0005](adr/0005-pages-actions-deploy-no-previews.md)) |
 | TS-01.3.3 | PR previews with `pr-preview-action` (deploy, comment link, clean up on close); exclude previews from search engines | 2 | dropped | PO decision 2026-11-02: no `gh-pages` branch; content PRs reviewed in the PR (ADR 0005) |
@@ -313,3 +314,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-02 | TS-04.4.1 | Pagefind post-build index of leaf pages with weighted synonyms, parameter names and abbreviations; html data-base for the client; E2E queries EROA, pressure half-time, PISA | `TS-04.4.1: Pagefind search index with synonyms` |
 | 2026-11-02 | CH-9 | 19 leaf titles prefixed with their parent context (e.g. 'Aortic regurgitation: severity grading'); truncated HCM title fixed; ids and slugs unchanged | `CH-9: contextual leaf titles` |
 | 2026-11-02 | TS-04.4.2 | Instant search box on home (debounced, lazy-loads Pagefind, top 10 results with breadcrumb context, live result count, Enter safe, no-JS notice); CSP-clean bundled script | `TS-04.4.2: instant search UI` |
+| 2026-11-02 | CH-10 | Population labels; grading rows per parameter + population; normal-range tables with population columns; threshold lists; shared ValueTable/ValueText/Footnotes components | `CH-10: population-aware tables, normal ranges and threshold lists` |

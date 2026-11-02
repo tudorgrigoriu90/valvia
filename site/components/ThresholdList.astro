@@ -1,0 +1,29 @@
+---
+import type { LoadedBlock } from '../../core/content/types';
+import { buildThresholdList } from '../../core/values/table';
+import { getContent } from '../lib/content';
+import Footnotes from './Footnotes.astro';
+import ValueText from './ValueText.astro';
+
+interface Props {
+  block: Extract<LoadedBlock, { type: 'threshold-list' }>;
+  label: string;
+}
+const { block, label } = Astro.props;
+const { bundle } = getContent();
+const list = buildThresholdList(block, bundle.parameters);
+---
+
+<ul class="threshold-list">
+  {list.items.map((item) => (
+    <li>
+      <span class="threshold-list__parameter">
+        <abbr title={item.name}>{item.label}</abbr>
+        {item.population !== '' && <span class="population">{item.population}</span>}
+      </span>
+      <ValueText entry={item} blockId={block.id} />
+      {item.value.grade !== undefined && <span class="threshold-list__grade">{item.value.grade}</span>}
+    </li>
+  ))}
+</ul>
+<Footnotes notes={list.footnotes} blockId={block.id} label={label} />

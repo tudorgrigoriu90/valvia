@@ -1,0 +1,28 @@
+---
+import type { TableValue } from '../../core/values/table';
+
+interface Props {
+  entry: TableValue;
+  text?: string;
+  blockId: string;
+}
+const { entry, text = entry.text, blockId } = Astro.props;
+---
+
+<span class="value">
+  {entry.converted ? (
+    <details class="original">
+      <summary>{text}</summary>
+      <span class="original__body">Published as {entry.original}</span>
+    </details>
+  ) : (
+    text
+  )}
+  {entry.footnotes.map((n) => (
+    <sup>
+      <a href={`#${blockId}-fn-${String(n)}`} aria-label={`Footnote ${String(n)}`}>
+        {n}
+      </a>
+    </sup>
+  ))}
+</span>

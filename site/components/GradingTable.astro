@@ -1,70 +1,19 @@
 ---
 import type { LoadedBlock } from '../../core/content/types';
-import { buildGradingTable } from '../../core/values/table';
+import { buildGradingTable, buildNormalRangeTable } from '../../core/values/table';
 import { getContent } from '../lib/content';
+import ValueTable from './ValueTable.astro';
 
 interface Props {
-  block: Extract<LoadedBlock, { type: 'grading-table' }>;
+  block: Extract<LoadedBlock, { type: 'grading-table' | 'normal-range-table' }>;
   label: string;
 }
 const { block, label } = Astro.props;
 const { bundle } = getContent();
-const table = buildGradingTable(block, bundle.parameters);
+const table =
+  block.type === 'grading-table'
+    ? buildGradingTable(block, bundle.parameters)
+    : buildNormalRangeTable(block, bundle.parameters);
 ---
 
-<div class="table-scroll" role="region" aria-label={`${label} (scrollable table)`} tabindex="0">
-  <table class="grading-table" aria-label={label}>
-    <thead>
-      <tr>
-        <th scope="col">Parameter</th>
-        {table.columns.map((column) => (
-          <th scope="col">{column}</th>
-        ))}
-      </tr>
-    </thead>
-    <tbody>
-      {table.rows.map((row) => (
-        <tr>
-          <th scope="row">
-            <abbr title={row.name}>{row.label}</abbr>
-            {row.unit !== undefined && <span class="unit">{row.unit}</span>}
-          </th>
-          {row.cells.map((cell) => (
-            <td>
-              {cell.length === 0 ? (
-                <span aria-label="No value">–</span>
-              ) : (
-                cell.map((entry) => (
-                  <span class="value">
-                    {entry.converted ? (
-                      <details class="original">
-                        <summary>{entry.text}</summary>
-                        <span class="original__body">Published as {entry.original}</span>
-                      </details>
-                    ) : (
-                      entry.text
-                    )}
-                    {entry.footnotes.map((n) => (
-                      <sup>
-                        <a href={`#${block.id}-fn-${String(n)}`} aria-label={`Footnote ${String(n)}`}>
-                          {n}
-                        </a>
-                      </sup>
-                    ))}
-                  </span>
-                ))
-              )}
-            </td>
-          ))}
-        </tr>
-      ))}
-    </tbody>
-  </table>
-</div>
-{table.footnotes.length > 0 && (
-  <ol class="footnotes" aria-label={`Notes for ${label}`}>
-    {table.footnotes.map((text, index) => (
-      <li id={`${block.id}-fn-${String(index + 1)}`}>{text}</li>
-    ))}
-  </ol>
-)}
+<ValueTable table={table} label={label} blockId={block.id} />

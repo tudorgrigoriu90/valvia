@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import type { Parameter } from '../../schema/generated/parameter';
 import type { LoadedBlock, LoadedValue } from '../content/types';
-import { buildGradingTable } from './table';
+import { buildGradingTable, buildNormalRangeTable, buildThresholdList } from './table';
 
 const PARAMETERS = new Map<string, Parameter>([
   [
@@ -144,5 +144,115 @@ describe('buildGradingTable (TS-04.3.1)', () => {
     expect(table.rows[0]?.cells[2]?.[0]?.footnotes).toEqual([1, 2]);
     expect(table.rows[1]?.cells[0]?.[0]?.footnotes).toEqual([2]);
     expect(table.rows[1]?.cells[2]?.[0]?.footnotes).toEqual([]);
+  });
+
+  it('keeps separate rows per population (e.g. sex-specific LV EF grades)', () => {
+    const table = buildGradingTable(
+      block([
+        value({
+          parameter: 'eroa',
+          grade: 'Mild',
+          operator: '<',
+          unit: 'cm²',
+          published: { value: '0.2' },
+          population: { ageGroup: 'adult', sex: 'male' },
+        }),
+        value({
+          parameter: 'eroa',
+          grade: 'Mild',
+          operator: '<',
+          unit: 'cm²',
+          published: { value: '0.3' },
+          population: { ageGroup: 'adult', sex: 'female' },
+        }),
+      ]),
+      PARAMETERS,
+    );
+    expect(table.rows.map((r) => [r.label, r.population])).toEqual([
+      ['EROA', 'Male'],
+      ['EROA', 'Female'],
+    ]);
+  });
+});
+
+const normal = (values: LoadedValue[]): Extract<LoadedBlock, { type: 'normal-range-table' }> => ({
+  id: 'n',
+  type: 'normal-range-table',
+  tag: 'NORM',
+  values,
+});
+
+describe('buildNormalRangeTable', () => {
+  it('uses populations as columns in order of appearance', () => {
+    const table = buildNormalRangeTable(
+      normal([
+        value({
+          parameter: 'vcw',
+          context: 'normal-range',
+          operator: 'range',
+          unit: 'mm',
+          published: { min: '42.0', max: '58.4' },
+          population: { ageGroup: 'adult', sex: 'male' },
+        }),
+        value({
+          parameter: 'vcw',
+          context: 'normal-range',
+          operator: 'range',
+          unit: 'mm',
+          published: { min: '37.8', max: '52.2' },
+          population: { ageGroup: 'adult', sex: 'female' },
+        }),
+        value({
+          parameter: 'eroa',
+          context: 'normal-range',
+          operator: '<',
+          unit: 'cm²',
+          published: { value: '0.1' },
+          caveats: ['x'],
+        }),
+      ]),
+      PARAMETERS,
+    );
+    expect(table.columns).toEqual(['Male', 'Female', 'All']);
+    expect(table.rows.map((r) => r.cells.map((c) => c.map((v) => v.text)))).toEqual([
+      [['42.0–58.4'], ['37.8–52.2'], []],
+      [[], [], ['< 0.1']],
+    ]);
+    expect(table.footnotes).toEqual(['x']);
+  });
+});
+
+describe('buildThresholdList', () => {
+  it('lists each value with parameter, display text with unit, grade and population', () => {
+    const list = buildThresholdList(
+      {
+        id: 't',
+        type: 'threshold-list',
+        tag: 'INTV',
+        values: [
+          value({
+            parameter: 'vcw',
+            context: 'intervention-threshold',
+            operator: '>=',
+            unit: 'cm',
+            published: { value: '0.7' },
+            population: { ageGroup: 'adult', sex: 'male' },
+            caveats: ['c'],
+          }),
+          value({ parameter: 'nope', operator: '>=', unit: 'cm', published: { value: '1' } }),
+        ],
+      } as unknown as Extract<LoadedBlock, { type: 'threshold-list' }>,
+      PARAMETERS,
+    );
+    expect(list.items).toEqual([
+      expect.objectContaining({
+        label: 'VCW',
+        name: 'Vena contracta width',
+        population: 'Male',
+        text: '≥ 7 mm',
+        footnotes: [1],
+      }),
+    ]);
+    expect(list.footnotes).toEqual(['c']);
   });
 });

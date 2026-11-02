@@ -610,3 +610,62 @@ main {
   font-size: 0.8125rem;
   color: var(--color-text-muted);
 }
+
+.grading-table .population {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.threshold-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.threshold-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-variant-numeric: tabular-nums;
+}
+
+.threshold-list__parameter {
+  min-width: 8rem;
+  font-weight: 700;
+}
+
+.threshold-list__parameter abbr {
+  text-decoration: none;
+}
+
+.threshold-list .population {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.threshold-list .value {
+  font-weight: 600;
+}
+
+.threshold-list__grade {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.threshold-list sup a {
+  display: inline-block;
+  min-width: 24px;
+  min-height: 24px;
+  line-height: 24px;
+  text-align: center;
+  text-decoration: none;
+}
