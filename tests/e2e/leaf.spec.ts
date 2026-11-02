@@ -16,7 +16,7 @@ test('renders the quantitative grading table with grade columns and parameter ro
     'Severe (grade IV)',
   ]);
   const eroa = table.getByRole('row', { name: /EROA/ });
-  await expect(eroa.getByRole('cell')).toHaveText(['< 0.20', '0.20–0.29', '0.30–0.39', '≥ 0.40']);
+  await expect(eroa.getByRole('cell')).toHaveText([/^< 0\.20/, /^0\.20–0\.29/, /^0\.30–0\.39/, /^≥ 0\.40/]);
   await expect(eroa.getByRole('rowheader')).toContainText('cm²');
 });
 
@@ -41,4 +41,17 @@ test('leaf page has no detectable accessibility violations', async ({ page }) =>
   await page.goto(LEAF);
   const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze();
   expect(results.violations.map((v) => v.id)).toEqual([]);
+});
+
+// TS-04.3.6: caveats and footnotes.
+
+test('shows caveats as numbered footnotes linked from the values', async ({ page }) => {
+  await page.goto(LEAF);
+  const section = page.locator('#quantitative-grading');
+  const notes = section.getByRole('list', { name: 'Notes for Quantitative grading of chronic MR' });
+  await expect(notes).toContainText('May be lower in secondary MR with an elliptical regurgitant orifice.');
+  const eroaSevere = section.getByRole('row', { name: /EROA/ }).getByRole('cell').nth(3);
+  const marker = eroaSevere.getByRole('link', { name: /Footnote \d/ });
+  await marker.click();
+  await expect(page).toHaveURL(/#quantitative-grading-fn-\d$/);
 });

@@ -10,6 +10,8 @@ export interface TableValue {
   converted: boolean;
   /** Published value with unit, e.g. '≥ 0.7 cm' (shown on tap when converted). */
   original: string;
+  /** 1-based footnote numbers of this value's caveats (see GradingTable.footnotes). */
+  footnotes: number[];
   value: LoadedValue;
 }
 
@@ -27,6 +29,8 @@ export interface TableRow {
 export interface GradingTable {
   columns: string[];
   rows: TableRow[];
+  /** Caveat texts in order of first appearance; identical texts share one number (TS-04.3.6). */
+  footnotes: string[];
 }
 
 const prefix = (value: LoadedValue): string =>
@@ -37,6 +41,13 @@ export function buildGradingTable(
   parameters: ReadonlyMap<string, Parameter>,
 ): GradingTable {
   const rows = new Map<string, TableRow>();
+  const footnotes: string[] = [];
+  const footnoteNumber = (text: string): number => {
+    const index = footnotes.indexOf(text);
+    if (index !== -1) return index + 1;
+    footnotes.push(text);
+    return footnotes.length;
+  };
   for (const value of block.values) {
     const parameter = parameters.get(value.parameter);
     const column = value.grade === undefined ? -1 : block.grades.indexOf(value.grade);
@@ -55,9 +66,10 @@ export function buildGradingTable(
       text: `${prefix(value)}${display.numbers.join('–')}`,
       converted: display.converted,
       original: `${prefix(value)}${published.join('–')}${value.unit === '1' ? '' : ` ${value.unit}`}`,
+      footnotes: (value.caveats ?? []).map(footnoteNumber),
       value,
     });
     rows.set(parameter.id, row);
   }
-  return { columns: [...block.grades], rows: [...rows.values()] };
+  return { columns: [...block.grades], rows: [...rows.values()], footnotes };
 }

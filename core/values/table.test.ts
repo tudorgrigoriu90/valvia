@@ -116,4 +116,33 @@ describe('buildGradingTable (TS-04.3.1)', () => {
     );
     expect(table.rows).toEqual([]);
   });
+
+  it('numbers caveats as footnotes per table, sharing numbers for identical text', () => {
+    const table = buildGradingTable(
+      block([
+        value({
+          parameter: 'eroa',
+          grade: 'Severe',
+          operator: '>=',
+          unit: 'cm²',
+          published: { value: '0.40' },
+          caveats: ['Lower in secondary MR.', 'Nyquist 30–40 cm/s.'],
+        }),
+        value({
+          parameter: 'vcw',
+          grade: 'Mild',
+          operator: '<',
+          unit: 'cm',
+          published: { value: '0.3' },
+          caveats: ['Nyquist 30–40 cm/s.'],
+        }),
+        value({ parameter: 'vcw', grade: 'Severe', operator: '>=', unit: 'cm', published: { value: '0.7' } }),
+      ]),
+      PARAMETERS,
+    );
+    expect(table.footnotes).toEqual(['Lower in secondary MR.', 'Nyquist 30–40 cm/s.']);
+    expect(table.rows[0]?.cells[2]?.[0]?.footnotes).toEqual([1, 2]);
+    expect(table.rows[1]?.cells[0]?.[0]?.footnotes).toEqual([2]);
+    expect(table.rows[1]?.cells[2]?.[0]?.footnotes).toEqual([]);
+  });
 });

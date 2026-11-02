@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-04.3.1: Responsive grading / normal-range table component |
-| Next task | TS-04.3.6: caveats and footnotes |
+| Last completed task | TS-04.3.6: Caveats/footnotes rendering (e.g. "not valid in AF") |
+| Next task | TS-04.3.2: criteria checklist, note and algorithm blocks |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

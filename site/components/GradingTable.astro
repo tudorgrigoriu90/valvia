@@ -34,7 +34,18 @@ const table = buildGradingTable(block, bundle.parameters);
               {cell.length === 0 ? (
                 <span aria-label="No value">–</span>
               ) : (
-                cell.map((entry) => <span class="value">{entry.text}</span>)
+                cell.map((entry) => (
+                  <span class="value">
+                    {entry.text}
+                    {entry.footnotes.map((n) => (
+                      <sup>
+                        <a href={`#${block.id}-fn-${String(n)}`} aria-label={`Footnote ${String(n)}`}>
+                          {n}
+                        </a>
+                      </sup>
+                    ))}
+                  </span>
+                ))
               )}
             </td>
           ))}
@@ -43,3 +54,10 @@ const table = buildGradingTable(block, bundle.parameters);
     </tbody>
   </table>
 </div>
+{table.footnotes.length > 0 && (
+  <ol class="footnotes" aria-label={`Notes for ${label}`}>
+    {table.footnotes.map((text, index) => (
+      <li id={`${block.id}-fn-${String(index + 1)}`}>{text}</li>
+    ))}
+  </ol>
+)}
