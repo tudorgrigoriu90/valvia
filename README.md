@@ -5,6 +5,8 @@ Quick lookup of echocardiography reference and cut-off values (adult and paediat
 are shown side by side, and superseded values stay visible as "Previous recommendations".
 Mobile first, works offline, static site on GitHub Pages.
 
+Live site (after Pages is enabled on the `gh-pages` branch): <https://tudorgrigoriu90.github.io/valvia/>
+
 > **Disclaimer:** Valvia is a reference aid, not a medical device. Always verify values against the original guideline.
 
 ## Current status
@@ -12,8 +14,8 @@ Mobile first, works offline, static site on GitHub Pages.
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-2: Internal link checker (Markdown docs + built site, offline), run in CI |
-| Next task | TS-01.3.2: deploy to GitHub Pages |
+| Last completed task | TS-01.3.2: Deploy to GitHub Pages via Actions on merge to main |
+| Next task | TS-02.1.1: topic node schema |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
@@ -49,7 +51,7 @@ Local Playwright browsers: `npx playwright install chromium` once. See [testing 
 | `content/` | Clinical content as YAML (changes via SME-approved PR) |
 | `schema/` | JSON Schemas and generated types |
 | `pipeline/` | Update pipeline scripts |
-| `.github/workflows/` | GitHub Actions (CI) |
+| `.github/workflows/` | GitHub Actions (CI and deploy) |
 | `astro.config.mjs` | Site configuration (base path from `VALVIA_BASE`) |
 
 ## How to contribute

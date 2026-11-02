@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-2 Internal link checker (Markdown docs + built site, offline), run in CI |
-| Next up | TS-01.3.2: deploy to GitHub Pages |
+| Last completed | TS-01.3.2 Deploy to GitHub Pages via Actions on merge to main |
+| Next up | TS-02.1.1: topic node schema |
 
 ## Next up: R0 sequence
 
@@ -68,7 +68,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | CH-1 | Test tooling: Vitest + coverage thresholds (≥ 80 % global, 100 % safety-critical modules), Playwright, `npm run verify` | 2 | done | Added for CLAUDE.md rules (TDD, coverage); not in backlog |
 | CH-2 | Internal link checker (Markdown docs + built site, offline), run in CI | 1 | done | Built test-first; external URLs deliberately not checked |
 | TS-01.3.1 | CI: build, schema validation, unit tests, Lighthouse CI, axe, broken-link check | 3 | done | Schema validation, axe, Lighthouse and link checks join CI with their own tasks (EP-02, CH-2, TS-07.4.2, TS-05.2.1) |
-| TS-01.3.2 | Deploy to GitHub Pages via Actions on merge to `main` | 1 | todo |  |
+| TS-01.3.2 | Deploy to GitHub Pages via Actions on merge to `main` | 1 | done | Engineer must switch Pages source to the gh-pages branch once (docs/ci-cd.md) |
 | TS-01.3.3 | PR previews with `pr-preview-action` (deploy, comment link, clean up on close); exclude previews from search engines | 2 | todo |  |
 | TS-01.3.4 | CODEOWNERS: `/content/**` → SME only; everything else → engineer | 1 | todo | CODEOWNERS now only matters for `/content/**` PRs |
 | TS-01.3.5 | Branch ruleset on `main`: PR required, required checks, CODEOWNER review, auto-merge allowed, delete branch on merge; admin bypass reserved for emergency reverts | 1 | manual | Adapt: allow direct pushes for code; block direct changes to `/content/**` (CI path guard) |
@@ -268,3 +268,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-02 | CH-1 | Vitest 5 with v8 coverage gates (80 % global, 100 % safety-critical globs, verified to fail), Playwright 1.63 (360 px + desktop) smoke tests, npm run verify, base-path helper built test-first, testing guide | `CH-1: test tooling with coverage gates and verify script` |
 | 2026-11-02 | TS-01.3.1 | CI workflow on push to main and PRs: format, lint, typecheck, unit tests with coverage, build, Playwright E2E, artefacts; CI/CD doc | `TS-01.3.1: CI workflow` |
 | 2026-11-02 | CH-2 | Offline internal link checker (Markdown links + GitHub heading anchors; built pages under base path, files and ids), GitHub annotations, in verify and CI | `CH-2: internal link checker for docs and built site` |
+| 2026-11-02 | TS-01.3.2 | Deploy job after green verify on main: site artefact to gh-pages root (keeps pr-preview/), env-driven base via repo variables, .nojekyll, 404 page, E2E hosting tests | `TS-01.3.2: deploy to GitHub Pages from CI` |

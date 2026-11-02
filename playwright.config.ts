@@ -1,7 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
 const PORT = '4322';
-const BASE = '/valvia/';
+const BASE = process.env.VALVIA_BASE ?? '/valvia/';
 
 /** E2E at mobile viewport first (NFR-01, TS-07.4.2). Runs against the production build. */
 export default defineConfig({

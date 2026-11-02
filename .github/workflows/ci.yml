@@ -1,4 +1,6 @@
 # CI (TS-01.3.1): runs the same gate as `npm run verify` on every push to main and on every pull request.
+# Deploy (TS-01.3.2, ADR 0002): after a green run on main, publishes dist/ to the gh-pages branch root,
+# leaving PR previews in pr-preview/ untouched.
 name: CI
 
 on:
@@ -13,6 +15,11 @@ permissions:
 concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
+
+env:
+  # Repository variables override the defaults (e.g. VALVIA_BASE=/ once a custom domain is set, TS-08.2).
+  VALVIA_SITE: ${{ vars.VALVIA_SITE || 'https://tudorgrigoriu90.github.io' }}
+  VALVIA_BASE: ${{ vars.VALVIA_BASE || '/valvia/' }}
 
 jobs:
   verify:
@@ -69,3 +76,44 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 14
+
+      - name: Upload site for deployment
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: site
+          path: dist/
+          include-hidden-files: true
+          retention-days: 7
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: verify
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    concurrency:
+      group: pages-deploy
+      cancel-in-progress: false
+    environment:
+      name: production
+      url: ${{ env.VALVIA_SITE }}${{ env.VALVIA_BASE }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Download site
+        uses: actions/download-artifact@v8
+        with:
+          name: site
+          path: dist/
+
+      - name: Publish to gh-pages
+        uses: JamesIves/github-pages-deploy-action@fa24774553152dd7873cd16ebd8d959b010c5445 # v4.9.0
+        with:
+          folder: dist
+          branch: gh-pages
+          clean-exclude: pr-preview/
+          force: false
+          commit-message: 'deploy: ${{ github.sha }}'
