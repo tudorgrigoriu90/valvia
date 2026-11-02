@@ -13,7 +13,7 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
 | Last completed | FT-03.5 3.3–3.5 VHD: tricuspid, pulmonary, multiple & mixed (W1) |
-| Next up | FT-03.5: pulmonary regurgitation grading from ASE 2017 |
+| Next up | TS-04.4.1: search index (Pagefind) |
 
 ## Next up: R0 sequence
 
@@ -115,7 +115,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | FT-03.2 | 2 Diastolic function & filling pressures (W1) | 5 | todo |  |
 | FT-03.3 | 3.1 VHD: aortic valve (incl. TAVI considerations, AR TAVI) (W1) | 10 | in progress | AR grading (ASE 2017) done; AS, AR thresholds, TAVI pending sources |
 | FT-03.4 | 3.2 VHD: mitral valve (primary/secondary MR, TEER feasibility, repair likelihood, MS, MAC) (W1) | 10 | in progress | Primary MR (ASE 2017) done; ESC/EACVI and CMR values pending document access |
-| FT-03.5 | 3.3–3.5 VHD: tricuspid, pulmonary, multiple & mixed (W1) | 5 | in progress | TR grading (ASE 2017); extended grades pending ESC |
+| FT-03.5 | 3.3–3.5 VHD: tricuspid, pulmonary, multiple & mixed (W1) | 5 | in progress | TR and PR grading (ASE 2017); stenosis grading pending sources |
 | FT-03.6 | 3.6 VHD: infective endocarditis (W1) | 3 | todo |  |
 | FT-03.7 | 4.2–4.6 Prosthetic valves & valve interventions (grading, PPM, post-repair, BVD) (W1) | 8 | todo |  |
 | FT-03.8 | 4.1 Prosthetic valve reference values by model and size (W2) | 8 | todo |  |
@@ -308,3 +308,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-02 | TS-04.3.3 | Per-block source chips (society badge text + short title + locators; full citation, journal, year, DOI on tap) and original-value popovers on converted values, both no-JS details; WCAG 2.2 target sizes | `TS-04.3.3: source chips and original-unit popovers` |
 | 2026-11-02 | FT-03.3 | AR severity grading (3.1.2.1) from ASE 2017 Table 11 / Figure 25: quantitative grades I–IV (RVol, RF, EROA), central jet ratios, VCW and PHT, integration note, algorithm link; 3 new parameters; E2E tests made independent of content counts | `FT-03.3: aortic regurgitation severity grading from ASE 2017` |
 | 2026-11-02 | FT-03.5 | TR severity grading (3.3.2) from ASE 2017 Table 14 / Figure 31: EROA, RVol, VCW, PISA radius, jet area, 3D VCA, IVC diameter, tricuspid E; 4 new parameters | `FT-03.5: tricuspid regurgitation severity grading from ASE 2017` |
+| 2026-11-02 | FT-03.5 | PR grading (3.4.2) from ASE 2017 Table 16 / Figure 35: RF, jet width/annulus, PR index, deceleration time, PHT; 3 new parameters | `FT-03.5: pulmonary regurgitation grading from ASE 2017` |

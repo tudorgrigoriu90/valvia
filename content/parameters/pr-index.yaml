@@ -1,0 +1,8 @@
+id: pr-index
+name: PR index
+abbreviation: PR index
+quantity: ratio
+unit: '1'
+modalities: [Echo]
+synonyms: [pulmonary regurgitation index]
+method: Duration of the PR continuous-wave Doppler signal divided by the total duration of diastole.

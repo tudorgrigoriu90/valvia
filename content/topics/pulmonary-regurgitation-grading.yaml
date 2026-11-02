@@ -7,3 +7,159 @@ order: 1
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: doppler-grading
+    type: grading-table
+    tag: GRADE
+    title: Doppler parameters for grading PR
+    grades: ['Mild', 'Moderate', 'Severe']
+    values:
+      - parameter: regurgitant-fraction
+        context: grading
+        grade: Mild
+        operator: '<'
+        value: 20
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'RF data are derived mainly from CMR, with limited application in echocardiography.'
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '16'
+            page: '358'
+      - parameter: regurgitant-fraction
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 20
+        max: 40
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'RF data are derived mainly from CMR, with limited application in echocardiography.'
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '16'
+            page: '358'
+      - parameter: regurgitant-fraction
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 40
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'RF data are derived mainly from CMR, with limited application in echocardiography.'
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '16'
+            page: '358'
+      - parameter: pr-jet-width-to-annulus
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 0.7
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Identifies a CMR-derived PR fraction of 40% or more.'
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '16'
+            page: '358'
+      - parameter: pr-index
+        context: grading
+        grade: Moderate
+        operator: '<'
+        value: 0.77
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'PR signal duration divided by total diastolic duration; identifies a CMR-derived PR fraction above 25%.'
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '16'
+            page: '358'
+      - parameter: pr-index
+        context: grading
+        grade: Severe
+        operator: '<'
+        value: 0.77
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'PR signal duration divided by total diastolic duration; identifies a CMR-derived PR fraction above 25%.'
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '16'
+            page: '358'
+      - parameter: pr-deceleration-time
+        context: grading
+        grade: Severe
+        operator: '<'
+        value: 260
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Steep deceleration is not specific for severe PR.
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '16'
+            page: '358'
+      - parameter: pressure-half-time
+        context: grading
+        grade: Severe
+        operator: '<'
+        value: 100
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - PR jet. Not reliable with high RV end-diastolic pressure.
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '16'
+            page: '358'
+  - id: integration
+    type: note
+    tag: METH
+    title: How to use these thresholds
+    text: 'Integrate valve morphology, RV size, colour and spectral Doppler signs; individual cut-offs have limited validation. CMR is currently the best method to quantify PR and follow it over time.'
+    citation:
+      source: ase-2017-native-regurgitation
+      locator:
+        figure: '35'
+        page: '359'
+  - id: algorithm
+    type: algorithm-reference
+    tag: ALG
+    title: Algorithm for integrating multiple parameters of PR severity
+    citation:
+      source: ase-2017-native-regurgitation
+      locator:
+        figure: '35'
+        page: '359'
+    url: 'https://doi.org/10.1016/j.echo.2017.01.007'

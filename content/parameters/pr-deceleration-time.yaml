@@ -1,0 +1,8 @@
+id: pr-deceleration-time
+name: Deceleration time of the PR spectral Doppler signal
+abbreviation: PR DT
+quantity: time
+unit: ms
+modalities: [Echo]
+synonyms: [PR deceleration time]
+method: Continuous-wave Doppler deceleration time of the pulmonary regurgitant jet.

@@ -1,0 +1,8 @@
+id: pr-jet-width-to-annulus
+name: PR jet width / pulmonary annulus diameter
+abbreviation: PR jet width/annulus
+quantity: ratio
+unit: '1'
+modalities: [Echo]
+synonyms: [PR jet width ratio]
+method: Colour Doppler width of the PR jet at its origin divided by the pulmonary annulus diameter.
