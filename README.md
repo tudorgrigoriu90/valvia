@@ -11,21 +11,22 @@ Mobile first, works offline, static site on GitHub Pages.
 
 | | |
 |---|---|
-| Release | R0: Walking skeleton (not yet started in code) |
-| Last completed task | TS-01.1.4: ADR: client-side search (Pagefind) |
-| Next task | TS-01.2.1: repository structure |
+| Release | R0: Walking skeleton |
+| Last completed task | TS-01.2.1: Repo structure: /site, /content, /schema, /pipeline, /docs |
+| Next task | TS-01.2.3: TypeScript strict, ESLint, Prettier |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
 
-No application code exists yet. Once the tooling tasks land (TS-01.2.1, TS-01.2.3, CH-1), local setup will be:
+Prerequisites: Node.js version in [`.nvmrc`](.nvmrc) (22.23.4 or later) and npm.
 
 ```bash
 npm install
-npm run dev       # local site
-npm test          # unit tests with coverage (≥ 80 %)
-npm run verify    # lint + typecheck + tests + build (run before every push)
+npm run dev       # local site at http://localhost:4321/valvia/
+npm run build     # static output in dist/
 ```
+
+Coming with the next tasks: `npm test` (coverage ≥ 80 %) and `npm run verify` (lint + typecheck + tests + build).
 
 ## Repository layout
 
@@ -36,7 +37,12 @@ npm run verify    # lint + typecheck + tests + build (run before every push)
 | `docs/architecture.md` | Architecture overview with diagrams |
 | `docs/adr/` | Architecture Decision Records |
 | `docs/product/` | Product backlog and content taxonomy |
-| `/site`, `/content`, `/schema`, `/pipeline` | Planned (TS-01.2.1) |
+| `site/` | Astro app (rendering only) |
+| `core/` | Framework-free domain logic |
+| `content/` | Clinical content as YAML (changes via SME-approved PR) |
+| `schema/` | JSON Schemas and generated types |
+| `pipeline/` | Update pipeline scripts |
+| `astro.config.mjs` | Site configuration (base path from `VALVIA_BASE`) |
 
 ## How to contribute
 

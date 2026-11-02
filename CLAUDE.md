@@ -59,8 +59,9 @@ git push origin main
 
 "Data" means anything that changes clinical content or what users see as clinical fact:
 
-- `/content/**` (topic nodes, parameters, values, blocks, prosthetic catalogue)
-- the source registry (wherever it lives under `/content/`)
+- YAML files under `/content/**` (topic nodes, parameters, values, blocks, sources, prosthetic catalogue)
+
+`README.md` and `.gitkeep` files under `/content` are documentation/structure, not data.
 
 Rules:
 
@@ -126,7 +127,7 @@ Rules:
 
 ## 6. Testing and coverage
 
-| Layer | Tool (pending ADR TS-01.1.1 where relevant) | Scope |
+| Layer | Tool | Scope |
 |---|---|---|
 | Unit / integration | Vitest + `@vitest/coverage-v8` | Schema, content loading, unit conversion, discrepancy and history logic, pipeline scripts, components |
 | E2E | Playwright (mobile viewport 360 px first) | Browse, search, compare, history, adult/paediatric switch, prosthetic picker, offline |
@@ -205,12 +206,13 @@ Static first, near-zero cost (backlog §2). Every row links to its ADR; new arch
 | Analytics | Cookieless (Cloudflare Web Analytics or GoatCounter) | — |
 | Dependencies | Renovate, auto-merge patch/minor on green CI | — |
 
-Repository layout (TS-01.2.1):
+Repository layout (TS-01.2.1). Node version in `.nvmrc`; single root `package.json`:
 
 ```
-/site       Astro app (pages, components, styles)
+/site       Astro app: pages, layouts, components, styles (rendering only)
+/core       Framework-free TypeScript domain logic: loader, validation, units, discrepancies, history
 /content    YAML content: topic tree, parameters, values, sources, prosthetic catalogue  ← PR + SME only
-/schema     JSON Schemas, generated TS types, plausibility rules
+/schema     JSON Schemas (source of truth) and generated TS types
 /pipeline   Source watchers, drafting and verification scripts (GitHub Actions)
 /docs       Documentation (§7)
 ```

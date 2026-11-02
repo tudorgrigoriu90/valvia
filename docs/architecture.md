@@ -45,7 +45,8 @@ flowchart LR
 | Path | Contents | Change path |
 |---|---|---|
 | `/site` | Astro app: pages, components, styles ([ADR 0001](adr/0001-static-site-generator.md)) | Direct to `main` |
-| `/content` | Topic tree, parameters, values, source registry, prosthetic catalogue (YAML) | **PR + SME approval** |
+| `/core` | Framework-free TypeScript domain logic (loader, validation, units, discrepancies, history) | Direct to `main` |
+| `/content` | Topic tree, parameters, values, source registry, prosthetic catalogue (YAML) | **PR + SME approval** (YAML files) |
 | `/schema` | JSON Schemas, generated TS types, plausibility rules | Direct to `main` |
 | `/pipeline` | Source watchers, drafting and verification scripts | Direct to `main` |
 | `/docs` | Documentation, ADRs, runbooks, task plan | Direct to `main` |
