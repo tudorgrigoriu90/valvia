@@ -1,0 +1,8 @@
+id: ivc-diameter
+name: Inferior vena cava diameter
+abbreviation: IVC diameter
+quantity: length
+unit: mm
+modalities: [Echo]
+synonyms: [IVC, inferior vena cava]
+method: Measured from the subcostal view just proximal to the hepatic vein junction.

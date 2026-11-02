@@ -1,0 +1,8 @@
+id: tricuspid-e-velocity
+name: Tricuspid inflow E-wave peak velocity
+abbreviation: Tricuspid E
+quantity: velocity-blood
+unit: m/s
+modalities: [Echo]
+synonyms: [tricuspid E wave, TV E velocity]
+method: Pulsed-wave Doppler at the tricuspid leaflet tips.

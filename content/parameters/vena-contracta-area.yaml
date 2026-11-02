@@ -1,0 +1,8 @@
+id: vena-contracta-area
+name: Vena contracta area
+abbreviation: VCA
+quantity: area
+unit: cm²
+modalities: [Echo]
+synonyms: [3D vena contracta area]
+method: Cross-sectional area of the vena contracta measured on 3D colour Doppler.

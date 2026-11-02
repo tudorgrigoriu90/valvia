@@ -1,0 +1,8 @@
+id: colour-jet-area
+name: Colour Doppler jet area
+abbreviation: Jet area
+quantity: area
+unit: cm²
+modalities: [Echo]
+synonyms: [color flow jet area, regurgitant jet area]
+method: Maximal area of the regurgitant colour jet in the receiving chamber; eccentric wall-impinging jets appear smaller than central jets of the same volume.

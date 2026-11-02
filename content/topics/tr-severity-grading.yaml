@@ -7,3 +7,327 @@ order: 1
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: quantitative-grading
+    type: grading-table
+    tag: GRADE
+    title: Quantitative grading of chronic TR
+    grades: ['Mild', 'Moderate', 'Severe']
+    values:
+      - parameter: eroa
+        context: grading
+        grade: Mild
+        operator: '<'
+        value: 0.20
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '14'
+            page: '350'
+      - parameter: eroa
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 0.20
+        max: 0.39
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Little data support further separation of moderate values.
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '14'
+            page: '350'
+      - parameter: eroa
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 0.40
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '14'
+            page: '350'
+      - parameter: regurgitant-volume
+        context: grading
+        grade: Mild
+        operator: '<'
+        value: 30
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - '2D PISA method.'
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '14'
+            page: '350'
+      - parameter: regurgitant-volume
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 30
+        max: 44
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - '2D PISA method.'
+          - Little data support further separation of moderate values.
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '14'
+            page: '350'
+      - parameter: regurgitant-volume
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 45
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - '2D PISA method.'
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '14'
+            page: '350'
+  - id: semiquantitative-grading
+    type: grading-table
+    tag: GRADE
+    title: Semiquantitative and structural signs
+    grades: ['Mild', 'Moderate', 'Severe']
+    values:
+      - parameter: vena-contracta-width
+        context: grading
+        grade: Mild
+        operator: '<'
+        value: 0.3
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - With a Nyquist limit above 50–70 cm/s.
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '14'
+            page: '350'
+      - parameter: vena-contracta-width
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 0.3
+        max: 0.69
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - With a Nyquist limit above 50–70 cm/s.
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '14'
+            page: '350'
+      - parameter: vena-contracta-width
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 0.7
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - With a Nyquist limit above 50–70 cm/s.
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '14'
+            page: '350'
+      - parameter: pisa-radius
+        context: grading
+        grade: Mild
+        operator: '<='
+        value: 0.5
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - With a baseline Nyquist limit shift of 28 cm/s.
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '14'
+            page: '350'
+      - parameter: pisa-radius
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 0.6
+        max: 0.9
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - With a baseline Nyquist limit shift of 28 cm/s.
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '14'
+            page: '350'
+      - parameter: pisa-radius
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 0.9
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - With a baseline Nyquist limit shift of 28 cm/s.
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '14'
+            page: '350'
+      - parameter: colour-jet-area
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 10
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - With a Nyquist limit above 50–70 cm/s.
+          - Not defined for mild and moderate TR.
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '14'
+            page: '350'
+      - parameter: vena-contracta-area
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 0.4
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - '3D colour Doppler; a reasonable cut-off from current data.'
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            page: '350'
+      - parameter: ivc-diameter
+        context: grading
+        grade: Mild
+        operator: '<'
+        value: 2
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Normal.
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '14'
+            page: '350'
+      - parameter: ivc-diameter
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 2.1
+        max: 2.5
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Normal or mildly dilated.
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '14'
+            page: '350'
+      - parameter: ivc-diameter
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 2.5
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Dilated.
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '14'
+            page: '350'
+      - parameter: tricuspid-e-velocity
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 1.0
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - E-wave dominant tricuspid inflow.
+          - 'Nonspecific; influenced by RV diastolic function, atrial fibrillation and RA pressure.'
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '14'
+            page: '350'
+  - id: integration
+    type: note
+    tag: METH
+    title: How to use these thresholds
+    text: 'Integrate several parameters; signs specific for a grade carry most weight. RV and RA size can be within the normal range in acute severe TR, and hepatic vein and tricuspid inflow patterns are nonspecific.'
+    citation:
+      source: ase-2017-native-regurgitation
+      locator:
+        figure: '31'
+        page: '352'
+  - id: algorithm
+    type: algorithm-reference
+    tag: ALG
+    title: Algorithm for integrating multiple parameters of TR severity
+    citation:
+      source: ase-2017-native-regurgitation
+      locator:
+        figure: '31'
+        page: '352'
+    url: 'https://doi.org/10.1016/j.echo.2017.01.007'
