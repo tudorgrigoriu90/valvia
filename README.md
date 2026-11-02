@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-02.2.6: Value-level modality (Echo / CT / CMR) |
-| Next task | TS-02.2.3: content block types |
+| Last completed task | TS-02.2.3: Content block types: grading table, normal range table, criteria check |
+| Next task | TS-02.2.4: plausibility checks |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

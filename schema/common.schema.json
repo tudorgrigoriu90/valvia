@@ -352,6 +352,265 @@
           }
         }
       ]
+    },
+    "gradingTableBlock": {
+      "description": "Severity grading table: one column per grade, in order.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "tag", "grades", "values"],
+      "properties": {
+        "id": {
+          "description": "Anchor id of the block, unique within the topic (deep links, jump menu).",
+          "$ref": "#/$defs/id"
+        },
+        "type": {
+          "const": "grading-table"
+        },
+        "tag": {
+          "description": "Taxonomy content tag.",
+          "enum": ["GRADE"]
+        },
+        "title": {
+          "description": "Heading shown above the block.",
+          "$ref": "#/$defs/text"
+        },
+        "grades": {
+          "description": "Grades in display order, from least to most severe (as printed).",
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/text"
+          }
+        },
+        "values": {
+          "description": "Values shown in the block.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/value"
+          }
+        }
+      }
+    },
+    "normalRangeTableBlock": {
+      "description": "Normal reference ranges (sex/age/BSA specific via population qualifiers).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "tag", "values"],
+      "properties": {
+        "id": {
+          "description": "Anchor id of the block, unique within the topic (deep links, jump menu).",
+          "$ref": "#/$defs/id"
+        },
+        "type": {
+          "const": "normal-range-table"
+        },
+        "tag": {
+          "description": "Taxonomy content tag.",
+          "enum": ["NORM"]
+        },
+        "title": {
+          "description": "Heading shown above the block.",
+          "$ref": "#/$defs/text"
+        },
+        "values": {
+          "description": "Values shown in the block.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/value"
+          }
+        }
+      }
+    },
+    "thresholdListBlock": {
+      "description": "List of thresholds (intervention triggers, prognostic markers, criteria).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "tag", "values"],
+      "properties": {
+        "id": {
+          "description": "Anchor id of the block, unique within the topic (deep links, jump menu).",
+          "$ref": "#/$defs/id"
+        },
+        "type": {
+          "const": "threshold-list"
+        },
+        "tag": {
+          "description": "Taxonomy content tag.",
+          "enum": ["INTV", "PROG", "CRIT"]
+        },
+        "title": {
+          "description": "Heading shown above the block.",
+          "$ref": "#/$defs/text"
+        },
+        "values": {
+          "description": "Values shown in the block.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/value"
+          }
+        }
+      }
+    },
+    "criteriaChecklistBlock": {
+      "description": "Checklist of criteria, e.g. TEER feasibility (favourable / challenging / unsuitable).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "tag", "criteria"],
+      "properties": {
+        "id": {
+          "description": "Anchor id of the block, unique within the topic (deep links, jump menu).",
+          "$ref": "#/$defs/id"
+        },
+        "type": {
+          "const": "criteria-checklist"
+        },
+        "tag": {
+          "description": "Taxonomy content tag.",
+          "enum": ["FEAS", "CRIT"]
+        },
+        "title": {
+          "description": "Heading shown above the block.",
+          "$ref": "#/$defs/text"
+        },
+        "criteria": {
+          "description": "Criteria in display order.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["text", "citation"],
+            "properties": {
+              "text": {
+                "description": "Criterion as printed.",
+                "$ref": "#/$defs/longText"
+              },
+              "category": {
+                "description": "Feasibility category, when the source assigns one.",
+                "enum": ["favourable", "challenging", "unsuitable"]
+              },
+              "values": {
+                "description": "Numeric thresholds belonging to the criterion.",
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/value"
+                }
+              },
+              "citation": {
+                "$ref": "#/$defs/citation"
+              }
+            }
+          }
+        }
+      }
+    },
+    "noteBlock": {
+      "description": "Free-text note, e.g. measurement method or pitfalls.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "tag", "text"],
+      "properties": {
+        "id": {
+          "description": "Anchor id of the block, unique within the topic (deep links, jump menu).",
+          "$ref": "#/$defs/id"
+        },
+        "type": {
+          "const": "note"
+        },
+        "tag": {
+          "description": "Taxonomy content tag.",
+          "enum": ["METH", "CRIT"]
+        },
+        "title": {
+          "description": "Heading shown above the block.",
+          "$ref": "#/$defs/text"
+        },
+        "text": {
+          "description": "Note text.",
+          "$ref": "#/$defs/longText"
+        },
+        "citation": {
+          "$ref": "#/$defs/citation"
+        }
+      }
+    },
+    "algorithmReferenceBlock": {
+      "description": "Link to an algorithm in the source document; never redrawn (SME decision 5).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "tag", "title", "citation"],
+      "properties": {
+        "id": {
+          "description": "Anchor id of the block, unique within the topic (deep links, jump menu).",
+          "$ref": "#/$defs/id"
+        },
+        "type": {
+          "const": "algorithm-reference"
+        },
+        "tag": {
+          "description": "Taxonomy content tag.",
+          "enum": ["ALG"]
+        },
+        "title": {
+          "description": "Heading shown above the block.",
+          "$ref": "#/$defs/text"
+        },
+        "citation": {
+          "$ref": "#/$defs/citation"
+        },
+        "url": {
+          "description": "Direct https link to the algorithm, when available.",
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://",
+          "x-format-name": "an https URL"
+        }
+      }
+    },
+    "block": {
+      "description": "A content block on a leaf topic (TS-02.2.3). The type selects the block shape.",
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "description": "Block type.",
+          "enum": [
+            "grading-table",
+            "normal-range-table",
+            "threshold-list",
+            "criteria-checklist",
+            "note",
+            "algorithm-reference"
+          ]
+        }
+      },
+      "discriminator": {
+        "propertyName": "type"
+      },
+      "oneOf": [
+        {
+          "$ref": "#/$defs/gradingTableBlock"
+        },
+        {
+          "$ref": "#/$defs/normalRangeTableBlock"
+        },
+        {
+          "$ref": "#/$defs/thresholdListBlock"
+        },
+        {
+          "$ref": "#/$defs/criteriaChecklistBlock"
+        },
+        {
+          "$ref": "#/$defs/noteBlock"
+        },
+        {
+          "$ref": "#/$defs/algorithmReferenceBlock"
+        }
+      ]
     }
   }
 }

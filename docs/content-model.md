@@ -124,6 +124,7 @@ One file per node: `content/topics/<id>.yaml`. The tree is built from `parent` l
 | `wave` | yes | `wave` | Delivery wave (sequencing only) |
 | `status` | yes | `draft` · `in-review` · `published` | Editorial status (content status page) |
 | `seeAlso` | no | `id[]` | Cross-links (→ in the taxonomy) |
+| `blocks` | no | block[] | Content blocks of a leaf (see below) |
 
 Example:
 
@@ -138,6 +139,52 @@ synonyms: [primary mitral regurgitation, degenerative MR]
 population: adult
 wave: W1
 status: draft
+```
+
+## Content blocks (`$defs/block`, TS-02.2.3)
+
+Leaf topics hold `blocks:` in display order. The `type` selects the block shape (Ajv discriminator), so errors only come from the selected shape.
+
+| `type` | Allowed `tag` | Specific fields | Renders as |
+|---|---|---|---|
+| `grading-table` | GRADE | `grades` (≥ 2, least → most severe), `values` (≥ 1) | Grading table, one column per grade |
+| `normal-range-table` | NORM | `values` | Normal-range table (sex/age/BSA columns from population qualifiers) |
+| `threshold-list` | INTV · PROG · CRIT | `values` | List of thresholds |
+| `criteria-checklist` | FEAS · CRIT | `criteria[]`: `text`, optional `category` (favourable · challenging · unsuitable), optional `values`, `citation` | Checklist |
+| `note` | METH · CRIT | `text`, optional `citation` | Paragraph |
+| `algorithm-reference` | ALG | `title`, `citation`, optional https `url` | Link to the source algorithm (never redrawn) |
+
+Every block has `id` (anchor, unique within the topic), `type`, `tag` and an optional `title`.
+
+```mermaid
+classDiagram
+    class TopicNode { id; slug; title; parent; blocks[] }
+    class Block { id; type; tag; title }
+    class Value { parameter; context; grade; operator; value / min,max; unit; modality }
+    class Citation { source; locator }
+    TopicNode "1" o-- "*" Block
+    Block "1" o-- "*" Value : values / criteria[].values
+    Value "1" *-- "1" Citation
+    Value "1" *-- "1" PopulationQualifiers
+```
+
+```yaml
+blocks:
+  - id: severity
+    type: grading-table
+    tag: GRADE
+    title: Severity of primary MR
+    grades: [mild, moderate, severe]
+    values:
+      - parameter: eroa
+        context: grading
+        grade: severe
+        operator: ">="
+        value: 0.40
+        unit: cm²
+        modality: Echo
+        population: { ageGroup: adult }
+        citation: { source: esc-eacts-2025-vhd, locator: { table: "8" } }
 ```
 
 ## Parameter (`parameter.schema.json`, TS-02.2.1)

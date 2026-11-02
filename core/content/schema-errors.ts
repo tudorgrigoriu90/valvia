@@ -139,7 +139,9 @@ export function schemaProblems(
   const seen = new Set<string>();
   const problems: Problem[] = [];
   // `if` errors only say "must match then schema"; the `then` branch reports the real problem.
-  for (const error of prune(errors.filter((e) => e.keyword !== 'if'))) {
+  // `discriminator` errors duplicate the enum error on the `type` property; the enum lists the allowed types.
+  const relevant = errors.filter((e) => e.keyword !== 'if' && e.keyword !== 'discriminator');
+  for (const error of prune(relevant)) {
     const path = pointerToPath(error.instancePath);
     const label = pathLabel(path, rootLabel);
     const prefix = path.length === 0 ? '' : `${label}: `;

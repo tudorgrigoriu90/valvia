@@ -7,34 +7,59 @@
   "additionalProperties": false,
   "required": ["id", "slug", "title", "parent", "order", "population", "wave", "status"],
   "properties": {
-    "id": { "$ref": "common.schema.json#/$defs/id" },
+    "id": {
+      "$ref": "common.schema.json#/$defs/id"
+    },
     "ref": {
       "description": "Taxonomy number for humans (e.g. 3.2.1.2). May change when the tree is reorganised; never used in URLs.",
       "type": "string",
       "pattern": "^[0-9]+(?:\\.[0-9]+)*$",
       "x-format-name": "a dotted taxonomy number such as 3.2.1.2"
     },
-    "slug": { "$ref": "common.schema.json#/$defs/slug" },
+    "slug": {
+      "$ref": "common.schema.json#/$defs/slug"
+    },
     "formerSlugs": {
       "description": "Previous slugs of this node; each gets a static redirect page (TS-02.1.3).",
       "type": "array",
-      "items": { "$ref": "common.schema.json#/$defs/slug" },
+      "items": {
+        "$ref": "common.schema.json#/$defs/slug"
+      },
       "uniqueItems": true
     },
-    "title": { "$ref": "common.schema.json#/$defs/text" },
+    "title": {
+      "$ref": "common.schema.json#/$defs/text"
+    },
     "parent": {
       "description": "Parent node id, or null for a root category.",
-      "anyOf": [{ "$ref": "common.schema.json#/$defs/id" }, { "type": "null" }]
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/id"
+        },
+        {
+          "type": "null"
+        }
+      ]
     },
-    "order": { "description": "Sort position among siblings.", "type": "integer", "minimum": 0 },
+    "order": {
+      "description": "Sort position among siblings.",
+      "type": "integer",
+      "minimum": 0
+    },
     "synonyms": {
       "description": "Alternative names and abbreviations indexed by search (ADR 0004).",
       "type": "array",
-      "items": { "$ref": "common.schema.json#/$defs/text" },
+      "items": {
+        "$ref": "common.schema.json#/$defs/text"
+      },
       "uniqueItems": true
     },
-    "population": { "$ref": "common.schema.json#/$defs/population" },
-    "wave": { "$ref": "common.schema.json#/$defs/wave" },
+    "population": {
+      "$ref": "common.schema.json#/$defs/population"
+    },
+    "wave": {
+      "$ref": "common.schema.json#/$defs/wave"
+    },
     "status": {
       "description": "Editorial status shown on the content status page (TS-03.0.2).",
       "enum": ["draft", "in-review", "published"]
@@ -42,8 +67,17 @@
     "seeAlso": {
       "description": "Cross-links (→ in the taxonomy): ids of nodes whose content is also relevant here.",
       "type": "array",
-      "items": { "$ref": "common.schema.json#/$defs/id" },
+      "items": {
+        "$ref": "common.schema.json#/$defs/id"
+      },
       "uniqueItems": true
+    },
+    "blocks": {
+      "description": "Content blocks of a leaf node, in display order. Only leaves have blocks; nodes without published blocks are hidden.",
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/block"
+      }
     }
   }
 }
