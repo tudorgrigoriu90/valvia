@@ -5,7 +5,7 @@ Quick lookup of echocardiography reference and cut-off values (adult and paediat
 are shown side by side, and superseded values stay visible as "Previous recommendations".
 Mobile first, works offline, static site on GitHub Pages.
 
-Live site (after Pages is enabled on the `gh-pages` branch): <https://tudorgrigoriu90.github.io/valvia/>
+Live site: <https://tudorgrigoriu90.github.io/valvia/>
 
 > **Disclaimer:** Valvia is a reference aid, not a medical device. Always verify values against the original guideline.
 
@@ -14,8 +14,8 @@ Live site (after Pages is enabled on the `gh-pages` branch): <https://tudorgrigo
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-02.3.2: Per-value citation locator (table, figure, section, page) |
-| Next task | TS-02.2.1: parameter schema (pending your gh-pages decision for TS-01.3.3) |
+| Last completed task | CH-5: Deploy via GitHub Actions Pages; drop gh-pages branch and hosted PR pr |
+| Next task | TS-02.2.1: parameter schema |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

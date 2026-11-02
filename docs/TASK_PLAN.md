@@ -5,15 +5,15 @@
 > **Last updated:** 2026-11-02
 > **Task details and acceptance criteria:** [`product/valvia-backlog.md`](product/valvia-backlog.md)
 
-Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `manual` (engineer task; Claude prepares checklists and verifies where possible).
+Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `dropped` (with reason) · `manual` (engineer task; Claude prepares checklists and verifies where possible).
 
 ## Current status
 
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-02.3.2 Per-value citation locator (table, figure, section, page) |
-| Next up | TS-02.2.1: parameter schema (pending your gh-pages decision for TS-01.3.3) |
+| Last completed | CH-5 Deploy via GitHub Actions Pages; drop gh-pages branch and hosted PR pr |
+| Next up | TS-02.2.1: parameter schema |
 
 ## Next up: R0 sequence
 
@@ -24,7 +24,7 @@ Suggested order (one push each):
 2. TS-01.2.1: repository structure
 3. TS-01.2.3 + CH-1: TypeScript/ESLint/Prettier, then test tooling with coverage thresholds (two pushes)
 4. TS-01.3.1, TS-01.3.2: CI (on push to `main` and on PRs) and deploy to GitHub Pages
-5. TS-01.3.3, TS-01.3.4, TS-01.2.5: PR previews, CODEOWNERS, content PR template
+5. TS-01.3.4, TS-01.2.5: CODEOWNERS, content PR template (no hosted previews, ADR 0005)
 6. TS-02.1.1, TS-02.2.1–TS-02.2.7, TS-02.3.1–TS-02.3.2: core schemas (one task per push)
 7. Minimal leaf page for one node (e.g. 3.2.1.2 *Primary MR → severity grading*)
 8. First content PR (SME approval) → live
@@ -36,6 +36,8 @@ The user set the following rules on 2026-11-02 (recorded in `CLAUDE.md`); they s
 
 - Code, config, tests and docs are committed **directly to `main`**; only **data updates** (`/content/**`, source registry) go through PRs, approved by the SME.
 - One task per push; TDD; coverage ≥ 80 %; README updated every turn; this plan updated every push.
+
+Content PRs target `main` as base and are reviewed in the PR (summary + diff); no hosted previews and no `gh-pages` branch (ADR 0005, 2026-11-02).
 
 Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must allow direct pushes to `main` while a CI path guard rejects direct changes to `/content/**`; the engineer reviews code after it lands on `main`.
 
@@ -57,7 +59,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | Key | Summary | SP | Status | Notes |
 |---|---|---|---|---|
 | TS-01.1.1 | ADR: static site generator (Astro vs Eleventy) | 2 | done | Astro chosen ([ADR 0001](adr/0001-static-site-generator.md)) |
-| TS-01.1.2 | ADR: GitHub Pages hosting, PR previews, meta-CSP and static redirects | 1 | done | Deploy from `gh-pages` branch ([ADR 0002](adr/0002-hosting-github-pages.md)) |
+| TS-01.1.2 | ADR: GitHub Pages hosting, PR previews, meta-CSP and static redirects | 1 | done | Deployment/preview parts superseded by [ADR 0005](adr/0005-pages-actions-deploy-no-previews.md) |
 | TS-01.1.3 | ADR: content as code (YAML in Git) | 1 | done | [ADR 0003](adr/0003-content-as-code.md) |
 | TS-01.1.4 | ADR: client-side search (Pagefind) | 1 | done | [ADR 0004](adr/0004-client-side-search-pagefind.md) |
 | TS-01.2.1 | Repo structure: `/site`, `/content`, `/schema`, `/pipeline`, `/docs` | 2 | done | Added `/core` for framework-free domain logic |
@@ -69,9 +71,10 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | CH-2 | Internal link checker (Markdown docs + built site, offline), run in CI | 1 | done | Built test-first; external URLs deliberately not checked |
 | CH-3 | Fix: Prettier formatting of 404 page pushed with TS-01.3.2 | 0 | done | Push was not gated on verify exit code; now always gated |
 | CH-4 | Generate TypeScript types from JSON Schema (`npm run gen:types`) with a staleness test | 1 | done | First part of TS-02.2.4 (types); plausibility checks stay in TS-02.2.4 |
+| CH-5 | Deploy via GitHub Actions Pages; drop `gh-pages` branch and hosted PR previews; PR site artifact | 1 | done | PO decision 2026-11-02 |
 | TS-01.3.1 | CI: build, schema validation, unit tests, Lighthouse CI, axe, broken-link check | 3 | done | Schema validation, axe, Lighthouse and link checks join CI with their own tasks (EP-02, CH-2, TS-07.4.2, TS-05.2.1) |
-| TS-01.3.2 | Deploy to GitHub Pages via Actions on merge to `main` | 1 | done | Engineer must switch Pages source to the gh-pages branch once (docs/ci-cd.md) |
-| TS-01.3.3 | PR previews with `pr-preview-action` (deploy, comment link, clean up on close); exclude previews from search engines | 2 | todo |  |
+| TS-01.3.2 | Deploy to GitHub Pages via Actions on merge to `main` | 1 | done | Actions Pages deploy since CH-5 ([ADR 0005](adr/0005-pages-actions-deploy-no-previews.md)) |
+| TS-01.3.3 | PR previews with `pr-preview-action` (deploy, comment link, clean up on close); exclude previews from search engines | 2 | dropped | PO decision 2026-11-02: no `gh-pages` branch; content PRs reviewed in the PR (ADR 0005) |
 | TS-01.3.4 | CODEOWNERS: `/content/**` → SME only; everything else → engineer | 1 | todo | CODEOWNERS now only matters for `/content/**` PRs |
 | TS-01.3.5 | Branch ruleset on `main`: PR required, required checks, CODEOWNER review, auto-merge allowed, delete branch on merge; admin bypass reserved for emergency reverts | 1 | manual | Adapt: allow direct pushes for code; block direct changes to `/content/**` (CI path guard) |
 
@@ -203,7 +206,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 
 | Key | Summary | SP | Status | Notes |
 |---|---|---|---|---|
-| TS-08.1 | Create public repo `valvia`; enable GitHub Pages (source: GitHub Actions); enable secret scanning + push protection | 1 | manual | Pages source must be the `gh-pages` branch (ADR 0002), not "GitHub Actions" |
+| TS-08.1 | Create public repo `valvia`; enable GitHub Pages (source: GitHub Actions); enable secret scanning + push protection | 1 | manual | Pages enabled by the engineer 2026-11-02; source must be GitHub Actions (docs/ci-cd.md); secret scanning/push protection still to confirm |
 | TS-08.2 | Check name availability (domain, EUIPO trademark search); buy domain; DNS; custom domain on Pages; enforce HTTPS | 1 | manual |  |
 | TS-08.3 | Install Claude Code GitHub Action; add credentials as repo secret; set spending limit | 1 | manual |  |
 | TS-08.4 | SME onboarding: GitHub account with 2FA, GitHub mobile app, notification settings, 15-min walkthrough of a sample PR | 1 | manual |  |
@@ -276,3 +279,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-02 | CH-4 | json-schema-to-typescript generator (gen:types), committed schema/generated/topic.ts, staleness test, schema change procedure | `CH-4: generate TypeScript types from JSON Schema` |
 | 2026-11-02 | TS-02.3.1 | Source schema (issuers, type, year, DOI, https URL, status, supersededBy, citedBy) + registry rules: allowlist, F3 warning, cited z-score datasets, supersession integrity and cycles (100 % coverage) | `TS-02.3.1: source schema and registry rules` |
 | 2026-11-02 | TS-02.3.2 | Citation definition (source id + locator with ≥ 1 of table/figure/section/page, text-only locators), validateDefinition for shared definitions, readable minProperties message | `TS-02.3.2: per-value citation locator` |
+| 2026-11-02 | CH-5 | ADR 0005: GitHub Actions Pages deploy (upload-pages-artifact + deploy-pages), no gh-pages branch, TS-01.3.3 dropped, PR builds attach site artifact, .nojekyll removed; docs updated | `CH-5: deploy via GitHub Actions Pages, drop gh-pages and previews` |

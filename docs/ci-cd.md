@@ -8,9 +8,11 @@
 | Workflow | File | Trigger | Purpose | Backlog |
 |---|---|---|---|---|
 | CI | [`ci.yml`](../.github/workflows/ci.yml) job `verify` | push to `main`, every PR, manual | Same gate as `npm run verify` | TS-01.3.1 |
-| Deploy | [`ci.yml`](../.github/workflows/ci.yml) job `deploy` | green `verify` on push to `main` | Publishes `dist/` to the `gh-pages` branch root, keeping `pr-preview/` | TS-01.3.2 |
+| Deploy | [`ci.yml`](../.github/workflows/ci.yml) job `deploy` | green `verify` on push to `main` | GitHub Actions Pages deployment of `dist/` ([ADR 0005](adr/0005-pages-actions-deploy-no-previews.md)) | TS-01.3.2 |
 
-Planned: content PR previews (TS-01.3.3), content path guard, Lighthouse budgets (TS-05.2.1).
+Pull requests: the `verify` job attaches the built site as artifact `site-pr-N` (14 days). No hosted previews.
+
+Planned: content path guard, Lighthouse budgets (TS-05.2.1).
 
 ## CI pipeline
 
@@ -22,23 +24,22 @@ flowchart LR
     build --> links["Internal link check<br/>docs + dist"] --> e2e["Playwright E2E<br/>mobile-360 + desktop"]
     unit -. artefact .-> cov[("coverage report")]
     e2e -. on failure .-> pw[("Playwright report")]
-    e2e -- "main only" --> art[("site artefact<br/>dist/")]
-    art --> deploy["deploy job<br/>JamesIves/github-pages-deploy-action"]
-    deploy --> ghp[("gh-pages branch<br/>root = production<br/>pr-preview/ kept")]
-    ghp --> pages(["GitHub Pages"])
+    e2e -- "PR" --> prart[("site-pr-N artifact")]
+    e2e -- "main" --> art[("Pages artifact<br/>upload-pages-artifact")]
+    art --> deploy["deploy job<br/>actions/deploy-pages"]
+    deploy --> pages(["GitHub Pages"])
 ```
 
 ## Deployment
 
 - Production URL: `VALVIA_SITE` + `VALVIA_BASE` (defaults `https://tudorgrigoriu90.github.io` + `/valvia/`).
   Override with repository **variables** of the same names (Settings → Secrets and variables → Actions → Variables), e.g. `VALVIA_BASE=/` after a custom domain is configured.
-- The deploy job is the only job with `contents: write`; it runs only after `verify` succeeds on `main`, one at a time (`pages-deploy` concurrency group, never cancelled mid-deploy).
-- `force: false` and `clean-exclude: pr-preview/` keep PR previews alive across production deploys (ADR 0002).
-- `site/public/.nojekyll` stops GitHub Pages from hiding Astro's `_astro/` folder; `404.html` is served for unknown URLs.
+- The deploy job alone has `pages: write` and `id-token: write`; it runs only after `verify` succeeds on `main`, one at a time (`pages-deploy` concurrency group, never cancelled mid-deploy).
+- No `gh-pages` branch exists; GitHub stores deployments itself. `404.html` is served for unknown URLs.
 - Deploy time target: < 5 min from push (FT-01.3).
 
-**One-time engineer setup (TS-08.1, `manual`):** after the first successful deploy has created the `gh-pages` branch,
-set *Settings → Pages → Build and deployment → Source* to **Deploy from a branch**, branch `gh-pages`, folder `/ (root)`, and enable *Enforce HTTPS*.
+**One-time engineer setup (TS-08.1, `manual`, Pages enabled 2026-11-02):** *Settings → Pages → Build and deployment → Source* must be **GitHub Actions**, with *Enforce HTTPS* on.
+If the deploy job fails with a Pages configuration error, check this setting first.
 
 ## Conventions
 

@@ -1,6 +1,6 @@
 # 0002. Hosting: GitHub Pages, PR previews, meta CSP, static redirects
 
-- **Status:** Accepted
+- **Status:** Accepted; deployment and PR previews superseded by [ADR 0005](0005-pages-actions-deploy-no-previews.md)
 - **Date:** 2026-11-02
 - **Backlog:** TS-01.1.2
 

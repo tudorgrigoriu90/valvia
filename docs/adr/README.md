@@ -9,9 +9,10 @@ to change a decision, add a new ADR that supersedes the old one and update the o
 | ADR | Title | Status | Backlog |
 |---|---|---|---|
 | [0001](0001-static-site-generator.md) | Static site generator: Astro | Accepted | TS-01.1.1 |
-| [0002](0002-hosting-github-pages.md) | Hosting: GitHub Pages, PR previews, meta CSP, static redirects | Accepted | TS-01.1.2 |
+| [0002](0002-hosting-github-pages.md) | Hosting: GitHub Pages, PR previews, meta CSP, static redirects | Partly superseded by 0005 | TS-01.1.2 |
 | [0003](0003-content-as-code.md) | Content as code: YAML in Git, JSON Schema, own loader | Accepted | TS-01.1.3 |
 | [0004](0004-client-side-search-pagefind.md) | Client-side search: Pagefind | Accepted | TS-01.1.4 |
+| [0005](0005-pages-actions-deploy-no-previews.md) | Deploy with GitHub Actions Pages; no hosted PR previews | Accepted | TS-01.3.2, TS-01.3.3 |
 
 ## Template
 

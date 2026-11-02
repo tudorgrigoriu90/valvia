@@ -29,7 +29,7 @@ Use **Pagefind**, run as a post-build step over `dist/`.
 - Filters (`data-pagefind-filter`) for root category and population (adult / paediatric) enable scoped search later.
 - The search UI is our own small TS module using the Pagefind JS API (not the default UI) to stay within the JS budget and design system.
 - The service worker precaches the Pagefind index and fragments for offline search (TS-05.3.2).
-- PR previews build their own index under their base path.
+- Every build (including the PR site artifact, ADR 0005) builds its own index under its base path.
 
 ## Consequences
 

@@ -73,17 +73,18 @@ flowchart LR
 sequenceDiagram
     autonumber
     participant CC as Claude Code
-    participant PR as Content PR + preview
+    participant PR as Content PR (base: main)
     participant Ver as Verification run (clinical-reviewer persona)
     participant SME as SME
     participant Pages as GitHub Pages
 
     CC->>PR: Branch content/<node-id>-<slug>, YAML + clinical change summary
+    Note over PR: CI builds the site and attaches it as an artifact (no hosted preview, ADR 0005)
     PR->>Ver: Required check: re-read source, compare every value
     Ver-->>PR: Pass / mismatch table (advisory, can block, never approves)
     PR->>SME: Review requested (CODEOWNERS)
-    SME->>PR: Approve or request changes
-    PR->>Pages: Auto-merge, build, deploy
+    SME->>PR: Review summary + diff, approve or request changes
+    PR->>Pages: Merge to main, build, deploy (Actions Pages)
 ```
 
 The automated update pipeline (weekly watchers → issue → drafting → PR) is described in backlog §2 and EP-06.

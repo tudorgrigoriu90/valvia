@@ -65,12 +65,13 @@ git push origin main
 
 Rules:
 
-- Branch from `main`: `content/<node-id>-<short-slug>` (e.g. `content/3.2.1.2-primary-mr-grading`),
+- Branch from `main` and open the PR **with `main` as base**: `content/<node-id>-<short-slug>` (e.g. `content/3.2.1.2-primary-mr-grading`),
   or `source/<source-id>` for registry changes.
 - **One PR per subcategory** (backlog FT-03 flow). The PR contains only data (plus its generated
   artefacts, if any). Schema or code changes needed by the data are pushed to `main` first, as their own task.
 - Use the content PR template; the body starts with the clinical change summary table
-  (parameter, population, society, old → new, locator) and the preview link.
+  (parameter, population, society, old → new, locator). There are no hosted previews (ADR 0005): the summary
+  and the YAML diff must make the clinical change reviewable on their own; the built site is attached as a CI artifact.
 - The verification run (Claude clinical-reviewer persona) is a required check. It is advisory:
   it can block, never approve.
 - **Only the SME approves content.** Claude Code never approves, merges or force-merges a content PR,
@@ -200,7 +201,7 @@ Static first, near-zero cost (backlog §2). Every row links to its ADR; new arch
 | Concern | Choice | ADR |
 |---|---|---|
 | Site generator | Astro 7, static output, TypeScript strict; logic stays framework-free | [ADR 0001](docs/adr/0001-static-site-generator.md) |
-| Hosting | GitHub Pages from `gh-pages` branch; previews for content PRs; base path from env; meta CSP, no inline scripts; static redirect pages | [ADR 0002](docs/adr/0002-hosting-github-pages.md) |
+| Hosting | GitHub Pages via Actions deploy (no `gh-pages` branch, no hosted previews); base path from env; meta CSP, no inline scripts; static redirect pages | [ADR 0002](docs/adr/0002-hosting-github-pages.md), [ADR 0005](docs/adr/0005-pages-actions-deploy-no-previews.md) |
 | Content | YAML in Git, one entity per file; JSON Schema 2020-12 is the source of truth; generated TS types; own loader with line-precise errors | [ADR 0003](docs/adr/0003-content-as-code.md) |
 | Search | Pagefind post-build index, own search UI, synonyms indexed, precached offline | [ADR 0004](docs/adr/0004-client-side-search-pagefind.md) |
 | Offline | PWA service worker (Workbox) | — |
