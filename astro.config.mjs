@@ -17,6 +17,8 @@ export default defineConfig({
   publicDir: './site/public',
   outDir: './dist',
   trailingSlash: 'always',
+  // The dev toolbar injects inline scripts that the CSP forbids; keep dev and production alike.
+  devToolbar: { enabled: false },
   build: {
     format: 'directory',
     // ADR 0002: no inline styles or scripts, so the meta CSP can forbid them.

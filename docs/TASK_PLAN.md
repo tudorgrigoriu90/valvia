@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | FT-03.4 3.2 VHD: mitral valve (primary/secondary MR, TEER feasibility, repair  |
-| Next up | TS-04.1.2: design tokens, base layout and draft banner |
+| Last completed | TS-04.1.2 Design tokens, light/dark theme, system font stack, Valvia wordmark an |
+| Next up | TS-04.2.1: home with root categories |
 
 ## Next up: R0 sequence
 
@@ -136,7 +136,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | Key | Summary | SP | Status | Notes |
 |---|---|---|---|---|
 | TS-04.1.1 | Mobile-first clickable prototype: home, category list, leaf page, compare view, history, search | 3 | todo |  |
-| TS-04.1.2 | Design tokens, light/dark theme, system font stack, Valvia wordmark and icon | 2 | todo |  |
+| TS-04.1.2 | Design tokens, light/dark theme, system font stack, Valvia wordmark and icon | 2 | done | Wordmark/icon included; society badges are TS-04.1.3 |
 | TS-04.1.3 | Society badges (ESC, EACVI, ASE, joint) with text label + colour | 1 | todo |  |
 | TS-04.2.1 | Home: grid of root categories + search bar | 2 | todo |  |
 | TS-04.2.2 | Drill-down list pages with breadcrumbs | 3 | todo |  |
@@ -299,3 +299,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-02 | TS-02.1.2 | Taxonomy v0.3 encoded as 164 topic files (stable curated ids for ambiguous/long nodes, short-title slugs, ref, order, population, wave, seeAlso cross-links, status draft); validate:content clean | `TS-02.1.2: encode taxonomy tree as topic files` |
 | 2026-11-02 | TS-02.3.3 | Source registry seeded with 29 Appendix A documents from PubMed records (title, journal, DOI, year, issuers, type, status; ASE/EACVI 2016 diastolic superseded by ASE 2025); source titles allow 600 chars | `TS-02.3.3: seed source registry from PubMed records` |
 | 2026-11-02 | FT-03.4 | Primary MR severity grading (3.2.1.2) from ASE 2017 Table 8 / Figure 18: 6 parameters, quantitative (EROA, RVol, RF) and semiquantitative (VCW, PISA radius, E velocity) grading, specific criteria, method note, algorithm link; draft | `FT-03.4: primary MR severity grading from ASE 2017` |
+| 2026-11-02 | TS-04.1.2 | Design tokens (light/dark, AA contrast), system fonts, base layout (header wordmark + mark, skip link, footer disclaimer), review banner (PO-3), meta CSP without inline assets, noindex while draft; axe WCAG 2.2 AA E2E in both themes | `TS-04.1.2: design tokens, base layout and review banner` |

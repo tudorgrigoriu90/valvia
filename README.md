@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | FT-03.4: 3.2 VHD: mitral valve (primary/secondary MR, TEER feasibility, repair  |
-| Next task | TS-04.1.2: design tokens, base layout and draft banner |
+| Last completed task | TS-04.1.2: Design tokens, light/dark theme, system font stack, Valvia wordmark an |
+| Next task | TS-04.2.1: home with root categories |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

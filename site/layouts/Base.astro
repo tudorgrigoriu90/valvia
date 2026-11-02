@@ -1,0 +1,60 @@
+---
+import '../styles/global.css';
+import { withBase } from '../../core/site/base-path';
+import Logo from '../components/Logo.astro';
+import ReviewBanner from '../components/ReviewBanner.astro';
+import { CONTENT_SECURITY_POLICY } from '../lib/csp';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Echocardiography reference and cut-off values from ESC/EACVI and ASE documents.' } =
+  Astro.props;
+const base = import.meta.env.BASE_URL;
+const pageTitle = title === 'Valvia' ? title : `${title} · Valvia`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {import.meta.env.PROD && <meta http-equiv="Content-Security-Policy" content={CONTENT_SECURITY_POLICY} />}
+    <!-- Decision PO-3: draft content is not indexed until clinically reviewed. -->
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f6f7f9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0f1217" media="(prefers-color-scheme: dark)" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">
+      Skip to content
+    </a>
+    <header class="site-header">
+      <div class="container">
+        <a class="wordmark" href={withBase(base, '/')} aria-label="Valvia home">
+          <Logo />
+          <span>Valvia</span>
+        </a>
+      </div>
+    </header>
+    <ReviewBanner />
+    <main id="main">
+      <div class="container">
+        <slot />
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          Valvia is a reference aid, not a medical device. Verify values against the original guideline before clinical
+          use.
+        </p>
+        <p>Sources: European Society of Cardiology (incl. EACVI) and American Society of Echocardiography documents.</p>
+      </div>
+    </footer>
+  </body>
+</html>

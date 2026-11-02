@@ -1,27 +1,8 @@
 ---
-import { withBase } from '../../core/site/base-path';
-
-const base = import.meta.env.BASE_URL;
+import Base from '../layouts/Base.astro';
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Valvia</title>
-    <meta
-      name="description"
-      content="Echocardiography reference and cut-off values from ESC/EACVI and ASE documents."
-    />
-  </head>
-  <body>
-    <main>
-      <h1>Valvia</h1>
-      <p>Echocardiography reference values. Work in progress.</p>
-      <p>
-        <a href={withBase(base, '/')}>Home</a>
-      </p>
-    </main>
-  </body>
-</html>
+<Base title="Valvia">
+  <h1>Valvia</h1>
+  <p>Echocardiography reference and cut-off values from ESC/EACVI and ASE documents.</p>
+</Base>

@@ -1,0 +1,16 @@
+---
+/** Decision PO-3: unreviewed (draft) content is labelled until the SME has reviewed it. */
+interface Props {
+  scope?: 'site' | 'page';
+}
+const { scope = 'site' } = Astro.props;
+---
+
+<div class="review-banner" role="status">
+  <div class="container">
+    <strong>Not yet clinically reviewed.</strong>
+    {scope === 'site'
+      ? ' Content is a draft pending review by a clinical expert. Always verify against the cited guideline.'
+      : ' The values on this page are a draft pending clinical review. Always verify against the cited guideline.'}
+  </div>
+</div>
