@@ -114,7 +114,7 @@ synonyms: [ERO]
 method: PISA method, apical 4-chamber zoom; single frame at peak regurgitant velocity.
 ```
 
-Unit/quantity consistency (e.g. `quantity: area` with `unit: cm²`) is enforced by the unit layer (TS-02.2.7).
+Unit/quantity consistency (e.g. `quantity: area` with `unit: cm²`) is enforced by the unit layer: see [`units.md`](units.md).
 
 ## Source document (`source.schema.json`, TS-02.3.1)
 

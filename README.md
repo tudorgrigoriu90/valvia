@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-02.2.1: Parameter schema: name, abbreviation, unit, modality, view/method note |
-| Next task | TS-02.2.6: value-level modality |
+| Last completed task | TS-02.2.7: Unit layer: store as published, display in house units (NFR-15), origi |
+| Next task | TS-02.2.5: paediatric and population qualifiers |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
@@ -70,6 +70,7 @@ Read [`CLAUDE.md`](CLAUDE.md) first. In short:
 - [Architecture](docs/architecture.md)
 - [Architecture Decision Records](docs/adr/README.md)
 - [Content model reference](docs/content-model.md)
+- [Units and conversions](docs/units.md)
 - [Testing guide](docs/testing.md)
 - [CI/CD](docs/ci-cd.md)
 - [Product backlog](docs/product/valvia-backlog.md)

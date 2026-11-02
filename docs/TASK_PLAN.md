@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-02.2.1 Parameter schema: name, abbreviation, unit, modality, view/method note |
-| Next up | TS-02.2.6: value-level modality |
+| Last completed | TS-02.2.7 Unit layer: store as published, display in house units (NFR-15), origi |
+| Next up | TS-02.2.5: paediatric and population qualifiers |
 
 ## Next up: R0 sequence
 
@@ -91,7 +91,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-02.2.4 | JSON Schema + generated TS types; plausibility checks (unit vs parameter, monotonic grades) | 3 | todo |  |
 | TS-02.2.5 | Paediatric qualifiers: `ageGroup` (adult / paediatric), age band, BSA band, z-score reference (as published, no computation) | 1 | todo |  |
 | TS-02.2.6 | Value-level `modality` (Echo / CT / CMR) | 1 | todo |  |
-| TS-02.2.7 | Unit layer: store as published, display in house units (NFR-15), original on tap; exhaustive conversion tests | 2 | todo |  |
+| TS-02.2.7 | Unit layer: store as published, display in house units (NFR-15), original on tap; exhaustive conversion tests | 2 | done | 100 % coverage; indexed-length and indexed-mass shown as published pending F4 |
 | TS-02.2.8 | Prosthetic valve catalogue schema: position, type, model, size → expected values with citation | 2 | todo |  |
 | TS-02.3.1 | Source schema incl. status, supersession, allowed-society check and `citedBy` for cited z-score datasets | 2 | done |  |
 | TS-02.3.2 | Per-value citation locator (table, figure, section, page) | 1 | done | Source existence is checked by the cross-file loader (planned) |
@@ -281,3 +281,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-02 | TS-02.3.2 | Citation definition (source id + locator with ≥ 1 of table/figure/section/page, text-only locators), validateDefinition for shared definitions, readable minProperties message | `TS-02.3.2: per-value citation locator` |
 | 2026-11-02 | CH-5 | ADR 0005: GitHub Actions Pages deploy (upload-pages-artifact + deploy-pages), no gh-pages branch, TS-01.3.3 dropped, PR builds attach site artifact, .nojekyll removed; docs updated | `CH-5: deploy via GitHub Actions Pages, drop gh-pages and previews` |
 | 2026-11-02 | TS-02.2.1 | Parameter schema (name, abbreviation, quantity, display unit, modalities, synonyms, method) + shared modality/unit/quantity definitions | `TS-02.2.1: parameter schema` |
+| 2026-11-02 | TS-02.2.7 | Unit layer: house unit per quantity, exact decimal-shift conversions, original-on-tap display model, parameter unit rule; exhaustive round-trip tests; docs/units.md | `TS-02.2.7: unit layer with exact conversions` |

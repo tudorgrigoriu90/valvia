@@ -157,6 +157,7 @@ docs/
 ├── adr/                    # NNNN-title.md: context, decision, consequences, cost, exit strategy
 ├── decisions/              # SME decisions log
 ├── content-model.md        # schema field reference and validation pipeline
+├── units.md                # house units, conversions, original-on-tap
 ├── content-guide.md        # how to model, cite and review content (FT-03.0)
 ├── runbooks/               # content update, emergency rollback, secret rotation, release
 └── onboarding.md           # engineer / SME / new-session onboarding
@@ -250,7 +251,7 @@ Applies to every content PR and every piece of code that handles content.
 - **Units:** store values **as published**. Display: lengths **mm**, areas **cm²**, blood-flow velocities
   **m/s**, tissue Doppler (e′, s′, a′) **cm/s**. Proposed (pending F4): volumes mL, indexed volumes mL/m²,
   mass g/m², pressures mmHg, time ms, strain %. Converted values show the original on tap.
-  Every conversion is unit-tested.
+  Every conversion is unit-tested; conversions are exact decimal shifts in `core/units` ([`docs/units.md`](docs/units.md)).
 - **BSA:** DuBois formula, for indexation conventions only (display; no patient calculation).
 - **History:** values from superseded sources are kept and shown under "Previous recommendations"
   with year and superseding document. Never delete a superseded value.
