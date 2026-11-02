@@ -7,3 +7,207 @@ order: 0
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: normal-values
+    type: normal-range-table
+    tag: NORM
+    title: Normal values for RV size
+    values:
+      - parameter: rv-basal-diameter
+        context: normal-range
+        operator: range
+        min: 25
+        max: 41
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '8'
+            page: '20'
+      - parameter: rv-mid-diameter
+        context: normal-range
+        operator: range
+        min: 19
+        max: 35
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '8'
+            page: '20'
+      - parameter: rv-longitudinal-diameter
+        context: normal-range
+        operator: range
+        min: 59
+        max: 83
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '8'
+            page: '20'
+      - parameter: rvot-plax-diameter
+        context: normal-range
+        operator: range
+        min: 20
+        max: 30
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '8'
+            page: '20'
+      - parameter: rvot-proximal-diameter
+        context: normal-range
+        operator: range
+        min: 21
+        max: 35
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '8'
+            page: '20'
+      - parameter: rvot-distal-diameter
+        context: normal-range
+        operator: range
+        min: 17
+        max: 27
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '8'
+            page: '20'
+      - parameter: rv-wall-thickness
+        context: normal-range
+        operator: range
+        min: 1
+        max: 5
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '8'
+            page: '20'
+      - parameter: rv-eda-index
+        context: normal-range
+        operator: range
+        min: 5
+        max: 12.6
+        unit: cm²/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '8'
+            page: '20'
+      - parameter: rv-eda-index
+        context: normal-range
+        operator: range
+        min: 4.5
+        max: 11.5
+        unit: cm²/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '8'
+            page: '20'
+      - parameter: rv-edv-index
+        context: normal-range
+        operator: range
+        min: 35
+        max: 87
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '8'
+            page: '20'
+      - parameter: rv-edv-index
+        context: normal-range
+        operator: range
+        min: 32
+        max: 74
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '8'
+            page: '20'
+      - parameter: rv-esv-index
+        context: normal-range
+        operator: range
+        min: 10
+        max: 44
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '8'
+            page: '20'
+      - parameter: rv-esv-index
+        context: normal-range
+        operator: range
+        min: 8
+        max: 36
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '8'
+            page: '20'
+  - id: method
+    type: note
+    tag: METH
+    title: Measurement
+    text: Measure RV linear dimensions in a dedicated RV-focused apical view; RV volumes require 3D echocardiography.
+    citation:
+      source: ase-eacvi-2015-chamber-quantification
+      locator:
+        table: '7'
+        page: '19'
