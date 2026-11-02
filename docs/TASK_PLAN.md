@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-02.2.5 Paediatric qualifiers: ageGroup (adult / paediatric), age band, BSA ba |
-| Next up | TS-02.2.2: value schema |
+| Last completed | TS-02.2.2 Value schema: population qualifiers, grade, operator, value/range, uni |
+| Next up | TS-02.2.6: value-level modality |
 
 ## Next up: R0 sequence
 
@@ -86,7 +86,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-02.1.2 | Encode taxonomy v0.2 as content tree (unpopulated nodes hidden) | 2 | todo |  |
 | TS-02.1.3 | Stable ID & URL policy; static redirect pages on slug rename | 2 | todo |  |
 | TS-02.2.1 | Parameter schema: name, abbreviation, unit, modality, view/method note | 2 | done | Unit/quantity consistency enforced in TS-02.2.7 |
-| TS-02.2.2 | Value schema: population qualifiers, grade, operator, value/range, unit, context, caveats, citation | 5 | todo |  |
+| TS-02.2.2 | Value schema: population qualifiers, grade, operator, value/range, unit, context, caveats, citation | 5 | done | Modality field added by TS-02.2.6; numeric plausibility in TS-02.2.4 |
 | TS-02.2.3 | Content block types: grading table, normal range table, criteria checklist (favourable / challenging / unsuitable), threshold list, note, algorithm reference (link to source) | 3 | todo |  |
 | TS-02.2.4 | JSON Schema + generated TS types; plausibility checks (unit vs parameter, monotonic grades) | 3 | todo |  |
 | TS-02.2.5 | Paediatric qualifiers: `ageGroup` (adult / paediatric), age band, BSA band, z-score reference (as published, no computation) | 1 | done |  |
@@ -283,3 +283,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-02 | TS-02.2.1 | Parameter schema (name, abbreviation, quantity, display unit, modalities, synonyms, method) + shared modality/unit/quantity definitions | `TS-02.2.1: parameter schema` |
 | 2026-11-02 | TS-02.2.7 | Unit layer: house unit per quantity, exact decimal-shift conversions, original-on-tap display model, parameter unit rule; exhaustive round-trip tests; docs/units.md | `TS-02.2.7: unit layer with exact conversions` |
 | 2026-11-02 | TS-02.2.5 | populationQualifiers definition: mandatory ageGroup (adult|paediatric), sex, age band (days/months/years), BSA band, rhythm, z-score dataset reference; readable 'at least one of' messages | `TS-02.2.5: population qualifiers incl. paediatric` |
+| 2026-11-02 | TS-02.2.2 | Value definition: parameter, context, grade (required for grading/feasibility), operator with value or min/max (mutually exclusive), unit as published, population, caveats, citation | `TS-02.2.2: value schema` |

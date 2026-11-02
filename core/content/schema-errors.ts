@@ -84,6 +84,8 @@ function message(error: ErrorObject, label: string, prefix: string): string {
       }
       return `${label} ${error.message ?? 'has too few properties'}`;
     }
+    case 'false schema':
+      return `${label} is not allowed here`;
     case 'requiredOneOf': {
       const names = params.names as string[];
       return `${label} must have at least one of ${names.slice(0, -1).join(', ')} or ${String(names.at(-1))}`;

@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-02.2.5: Paediatric qualifiers: ageGroup (adult / paediatric), age band, BSA ba |
-| Next task | TS-02.2.2: value schema |
+| Last completed task | TS-02.2.2: Value schema: population qualifiers, grade, operator, value/range, uni |
+| Next task | TS-02.2.6: value-level modality |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

@@ -243,6 +243,111 @@
           "$ref": "#/$defs/id"
         }
       }
+    },
+    "value": {
+      "description": "One published number (or range) for a parameter, with who it applies to and where it comes from (TS-02.2.2). Stored exactly as published.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["parameter", "context", "operator", "unit", "population", "citation"],
+      "properties": {
+        "parameter": {
+          "description": "Id of the parameter (content/parameters/<id>.yaml).",
+          "$ref": "#/$defs/id"
+        },
+        "context": {
+          "description": "What the value is used for: grading (GRADE), normal-range (NORM), intervention-threshold (INTV), feasibility (FEAS), diagnostic-criterion (CRIT), prognostic-marker (PROG).",
+          "enum": [
+            "grading",
+            "normal-range",
+            "intervention-threshold",
+            "feasibility",
+            "diagnostic-criterion",
+            "prognostic-marker"
+          ]
+        },
+        "grade": {
+          "description": "Grade or category as printed, e.g. 'severe', 'moderate', 'favourable'. Required for grading and feasibility values.",
+          "$ref": "#/$defs/text"
+        },
+        "operator": {
+          "description": "Comparison as published. 'range' uses min and max; all others use value.",
+          "enum": ["<", "<=", ">", ">=", "=", "range"]
+        },
+        "value": {
+          "description": "The published number (single bound).",
+          "type": "number"
+        },
+        "min": {
+          "description": "Lower end of a published range.",
+          "type": "number"
+        },
+        "max": {
+          "description": "Upper end of a published range.",
+          "type": "number"
+        },
+        "unit": {
+          "description": "Unit as published (converted for display by core/units).",
+          "$ref": "#/$defs/unit"
+        },
+        "population": {
+          "$ref": "#/$defs/populationQualifiers"
+        },
+        "caveats": {
+          "description": "Conditions and footnotes printed with the value, e.g. 'Not valid in atrial fibrillation.'",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/longText"
+          }
+        },
+        "citation": {
+          "$ref": "#/$defs/citation"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "context": {
+                "enum": ["grading", "feasibility"]
+              }
+            },
+            "required": ["context"]
+          },
+          "then": {
+            "properties": {
+              "grade": true
+            },
+            "required": ["grade"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "operator": {
+                "const": "range"
+              }
+            },
+            "required": ["operator"]
+          },
+          "then": {
+            "properties": {
+              "min": true,
+              "max": true,
+              "value": false
+            },
+            "required": ["min", "max"]
+          },
+          "else": {
+            "properties": {
+              "value": true,
+              "min": false,
+              "max": false
+            },
+            "required": ["value"]
+          }
+        }
+      ]
     }
   }
 }

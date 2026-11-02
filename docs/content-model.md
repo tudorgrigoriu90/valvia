@@ -62,6 +62,36 @@ population:
   ageBand: { min: 40, max: 60, unit: years, label: 40–59 years }
 ```
 
+### Value (`$defs/value`, TS-02.2.2)
+
+One published number or range. Values live inside content blocks of leaf topics (TS-02.2.3).
+
+| Field | Required | Meaning |
+|---|---|---|
+| `parameter` | yes | parameter id |
+| `context` | yes | `grading` · `normal-range` · `intervention-threshold` · `feasibility` · `diagnostic-criterion` · `prognostic-marker` |
+| `grade` | for grading / feasibility | grade or category as printed (`severe`, `favourable`, …) |
+| `operator` | yes | `<` · `<=` · `>` · `>=` · `=` · `range` |
+| `value` | unless `range` | the published number (not allowed with `range`) |
+| `min`, `max` | with `range` | the published range ends (not allowed otherwise) |
+| `unit` | yes | unit as published |
+| `population` | yes | population qualifiers |
+| `caveats` | no | footnotes printed with the value |
+| `citation` | yes | source + locator |
+
+Numbers are YAML numbers; the loader keeps their exact source text (e.g. `0.40`) for display, so precision is never lost.
+
+```yaml
+parameter: eroa
+context: grading
+grade: severe
+operator: ">="
+value: 0.40
+unit: cm²
+population: { ageGroup: adult }
+citation: { source: esc-eacts-2025-vhd, locator: { table: "8" } }
+```
+
 Citation example (used by every value):
 
 ```yaml
