@@ -198,7 +198,7 @@ Static first, near-zero cost (backlog §2). Decisions marked *pending* need thei
 | Concern | Choice | ADR |
 |---|---|---|
 | Site generator | Astro 7, static output, TypeScript strict; logic stays framework-free | [ADR 0001](docs/adr/0001-static-site-generator.md) |
-| Hosting | GitHub Pages via Actions; PR previews for content PRs; CSP via `<meta>`; static redirects | TS-01.1.2 *pending* |
+| Hosting | GitHub Pages from `gh-pages` branch; previews for content PRs; base path from env; meta CSP, no inline scripts; static redirect pages | [ADR 0002](docs/adr/0002-hosting-github-pages.md) |
 | Content | YAML in Git, validated by JSON Schema; TS types generated from schema | TS-01.1.3 *pending* |
 | Search | Pagefind (static, client-side) | TS-01.1.4 *pending* |
 | Offline | PWA service worker (Workbox) | — |

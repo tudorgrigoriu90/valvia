@@ -9,6 +9,7 @@ to change a decision, add a new ADR that supersedes the old one and update the o
 | ADR | Title | Status | Backlog |
 |---|---|---|---|
 | [0001](0001-static-site-generator.md) | Static site generator: Astro | Accepted | TS-01.1.1 |
+| [0002](0002-hosting-github-pages.md) | Hosting: GitHub Pages, PR previews, meta CSP, static redirects | Accepted | TS-01.1.2 |
 
 ## Template
 

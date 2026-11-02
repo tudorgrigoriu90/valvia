@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-01.1.1 ADR: static site generator (Astro vs Eleventy) |
-| Next up | TS-01.1.2: ADR, GitHub Pages hosting |
+| Last completed | TS-01.1.2 ADR: GitHub Pages hosting, PR previews, meta-CSP and static redirects |
+| Next up | TS-01.1.3: ADR, content as code |
 
 ## Next up: R0 sequence
 
@@ -57,7 +57,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | Key | Summary | SP | Status | Notes |
 |---|---|---|---|---|
 | TS-01.1.1 | ADR: static site generator (Astro vs Eleventy) | 2 | done | Astro chosen ([ADR 0001](adr/0001-static-site-generator.md)) |
-| TS-01.1.2 | ADR: GitHub Pages hosting, PR previews, meta-CSP and static redirects | 1 | todo |  |
+| TS-01.1.2 | ADR: GitHub Pages hosting, PR previews, meta-CSP and static redirects | 1 | done | Deploy from `gh-pages` branch ([ADR 0002](adr/0002-hosting-github-pages.md)) |
 | TS-01.1.3 | ADR: content as code (YAML in Git) | 1 | todo |  |
 | TS-01.1.4 | ADR: client-side search (Pagefind) | 1 | todo |  |
 | TS-01.2.1 | Repo structure: `/site`, `/content`, `/schema`, `/pipeline`, `/docs` | 2 | todo |  |
@@ -200,7 +200,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 
 | Key | Summary | SP | Status | Notes |
 |---|---|---|---|---|
-| TS-08.1 | Create public repo `valvia`; enable GitHub Pages (source: GitHub Actions); enable secret scanning + push protection | 1 | manual |  |
+| TS-08.1 | Create public repo `valvia`; enable GitHub Pages (source: GitHub Actions); enable secret scanning + push protection | 1 | manual | Pages source must be the `gh-pages` branch (ADR 0002), not "GitHub Actions" |
 | TS-08.2 | Check name availability (domain, EUIPO trademark search); buy domain; DNS; custom domain on Pages; enforce HTTPS | 1 | manual |  |
 | TS-08.3 | Install Claude Code GitHub Action; add credentials as repo secret; set spending limit | 1 | manual |  |
 | TS-08.4 | SME onboarding: GitHub account with 2FA, GitHub mobile app, notification settings, 15-min walkthrough of a sample PR | 1 | manual |  |
@@ -259,3 +259,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 |---|---|---|---|
 | 2026-11-02 | TS-01.2.2 | Add `CLAUDE.md` (workflow, TDD, coverage, docs, README and plan rules, architecture, content rules); README; task plan; architecture overview; product docs imported | `TS-01.2.2: add CLAUDE.md engineering guidelines` |
 | 2026-11-02 | TS-01.1.1 | ADR 0001: Astro 7 static output; logic framework-free in /core; ADR index and template | `TS-01.1.1: ADR 0001 static site generator (Astro)` |
+| 2026-11-02 | TS-01.1.2 | ADR 0002: gh-pages branch deploy with PR previews, env-driven base path, meta CSP without inline scripts, static redirect pages | `TS-01.1.2: ADR 0002 hosting on GitHub Pages` |

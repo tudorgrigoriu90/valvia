@@ -12,8 +12,8 @@ Mobile first, works offline, static site on GitHub Pages.
 | | |
 |---|---|
 | Release | R0: Walking skeleton (not yet started in code) |
-| Last completed task | TS-01.1.1: ADR: static site generator (Astro vs Eleventy) |
-| Next task | TS-01.1.2: ADR, GitHub Pages hosting |
+| Last completed task | TS-01.1.2: ADR: GitHub Pages hosting, PR previews, meta-CSP and static redirects |
+| Next task | TS-01.1.3: ADR, content as code |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
