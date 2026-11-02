@@ -12,8 +12,8 @@ Mobile first, works offline, static site on GitHub Pages.
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-1: Test tooling: Vitest + coverage thresholds (≥ 80 % global, 100 % safet |
-| Next task | TS-01.3.1: CI workflow |
+| Last completed task | TS-01.3.1: CI: build, schema validation, unit tests, Lighthouse CI, axe, broken-l |
+| Next task | CH-2: internal link checker |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
@@ -48,6 +48,7 @@ Local Playwright browsers: `npx playwright install chromium` once. See [testing 
 | `content/` | Clinical content as YAML (changes via SME-approved PR) |
 | `schema/` | JSON Schemas and generated types |
 | `pipeline/` | Update pipeline scripts |
+| `.github/workflows/` | GitHub Actions (CI) |
 | `astro.config.mjs` | Site configuration (base path from `VALVIA_BASE`) |
 
 ## How to contribute
@@ -65,6 +66,7 @@ Read [`CLAUDE.md`](CLAUDE.md) first. In short:
 - [Architecture](docs/architecture.md)
 - [Architecture Decision Records](docs/adr/README.md)
 - [Testing guide](docs/testing.md)
+- [CI/CD](docs/ci-cd.md)
 - [Product backlog](docs/product/valvia-backlog.md)
 - [Content taxonomy](docs/product/valvia-taxonomy.md)
 
