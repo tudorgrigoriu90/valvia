@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-10 Population-aware tables: grading rows per population, normal-range tab |
-| Next up | FT-03.1: LV size and function normal values (ASE/EACVI 2015) |
+| Last completed | FT-03.1 1 Chamber size & function (W1) |
+| Next up | FT-03.1: LV systolic function (LVEF grading) |
 
 ## Next up: R0 sequence
 
@@ -113,7 +113,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 |---|---|---|---|---|
 | TS-03.0.1 | Content YAML templates + content guide (modelling, citing, units, history, modality, paediatric values) | 2 | todo |  |
 | TS-03.0.2 | Content status page (per node: draft / in review / published; wave) | 2 | todo |  |
-| FT-03.1 | 1 Chamber size & function (W1) | 8 | todo |  |
+| FT-03.1 | 1 Chamber size & function (W1) | 8 | in progress | Chamber quantification (ASE/EACVI 2015) in progress |
 | FT-03.2 | 2 Diastolic function & filling pressures (W1) | 5 | todo |  |
 | FT-03.3 | 3.1 VHD: aortic valve (incl. TAVI considerations, AR TAVI) (W1) | 10 | in progress | AR grading (ASE 2017) done; AS, AR thresholds, TAVI pending sources |
 | FT-03.4 | 3.2 VHD: mitral valve (primary/secondary MR, TEER feasibility, repair likelihood, MS, MAC) (W1) | 10 | in progress | Primary MR (ASE 2017) done; ESC/EACVI and CMR values pending document access |
@@ -315,3 +315,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-02 | CH-9 | 19 leaf titles prefixed with their parent context (e.g. 'Aortic regurgitation: severity grading'); truncated HCM title fixed; ids and slugs unchanged | `CH-9: contextual leaf titles` |
 | 2026-11-02 | TS-04.4.2 | Instant search box on home (debounced, lazy-loads Pagefind, top 10 results with breadcrumb context, live result count, Enter safe, no-JS notice); CSP-clean bundled script | `TS-04.4.2: instant search UI` |
 | 2026-11-02 | CH-10 | Population labels; grading rows per parameter + population; normal-range tables with population columns; threshold lists; shared ValueTable/ValueText/Footnotes components | `CH-10: population-aware tables, normal ranges and threshold lists` |
+| 2026-11-02 | FT-03.1 | LV dimensions & volumes (1.1.1) normal ranges by sex from ASE/EACVI 2015 Table 2; chamber parameter catalogue (LV, LA, RV) added | `FT-03.1: LV dimensions and volumes (ASE/EACVI 2015)` |

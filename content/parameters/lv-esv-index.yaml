@@ -1,0 +1,7 @@
+id: lv-esv-index
+name: LV end-systolic volume index
+abbreviation: LV ESVi
+quantity: indexed-volume
+unit: mL/m²
+modalities: [Echo]
+synonyms: [ESVi, indexed ESV]

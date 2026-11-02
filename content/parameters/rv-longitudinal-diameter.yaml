@@ -1,0 +1,6 @@
+id: rv-longitudinal-diameter
+name: RV longitudinal diameter
+abbreviation: RVD3
+quantity: length
+unit: mm
+modalities: [Echo]

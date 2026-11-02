@@ -1,0 +1,7 @@
+id: septal-wall-thickness
+name: Interventricular septal thickness
+abbreviation: IVSd
+quantity: length
+unit: mm
+modalities: [Echo]
+synonyms: [septal thickness, IVS]

@@ -1,0 +1,7 @@
+id: posterior-wall-thickness
+name: Posterior wall thickness
+abbreviation: PWd
+quantity: length
+unit: mm
+modalities: [Echo]
+synonyms: [LV posterior wall, PW]

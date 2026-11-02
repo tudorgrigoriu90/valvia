@@ -1,0 +1,6 @@
+id: rvot-proximal-diameter
+name: RVOT proximal diameter
+abbreviation: RVOT prox
+quantity: length
+unit: mm
+modalities: [Echo]

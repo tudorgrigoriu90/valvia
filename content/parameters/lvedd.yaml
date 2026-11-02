@@ -1,0 +1,8 @@
+id: lvedd
+name: LV end-diastolic diameter
+abbreviation: LVEDD
+quantity: length
+unit: mm
+modalities: [Echo]
+synonyms: [LVIDd, LV internal diameter in diastole, diastolic dimension]
+method: Linear measurement at the level of the mitral leaflet tips, perpendicular to the LV long axis, at end-diastole.

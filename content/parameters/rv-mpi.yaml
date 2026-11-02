@@ -1,0 +1,7 @@
+id: rv-mpi
+name: RV myocardial performance index
+abbreviation: RV MPI
+quantity: ratio
+unit: '1'
+modalities: [Echo]
+synonyms: [Tei index, RIMP]

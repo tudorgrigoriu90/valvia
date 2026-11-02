@@ -1,0 +1,7 @@
+id: lv-esv
+name: LV end-systolic volume
+abbreviation: LV ESV
+quantity: volume
+unit: mL
+modalities: [Echo]
+synonyms: [ESV, end-systolic volume]

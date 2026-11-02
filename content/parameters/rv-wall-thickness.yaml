@@ -1,0 +1,6 @@
+id: rv-wall-thickness
+name: RV wall thickness
+abbreviation: RV wall
+quantity: length
+unit: mm
+modalities: [Echo]

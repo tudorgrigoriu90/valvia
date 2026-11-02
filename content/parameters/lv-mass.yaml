@@ -1,0 +1,6 @@
+id: lv-mass
+name: LV mass
+abbreviation: LV mass
+quantity: mass
+unit: g
+modalities: [Echo]

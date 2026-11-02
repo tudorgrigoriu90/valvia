@@ -1,0 +1,8 @@
+id: lvesd
+name: LV end-systolic diameter
+abbreviation: LVESD
+quantity: length
+unit: mm
+modalities: [Echo]
+synonyms: [LVIDs, LV internal diameter in systole, systolic dimension]
+method: Linear measurement at the level of the mitral leaflet tips, perpendicular to the LV long axis, at end-systole.

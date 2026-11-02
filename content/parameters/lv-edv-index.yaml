@@ -1,0 +1,7 @@
+id: lv-edv-index
+name: LV end-diastolic volume index
+abbreviation: LV EDVi
+quantity: indexed-volume
+unit: mL/m²
+modalities: [Echo]
+synonyms: [EDVi, indexed EDV]

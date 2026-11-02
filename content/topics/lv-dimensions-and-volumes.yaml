@@ -7,3 +7,223 @@ order: 0
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: normal-values-2d
+    type: normal-range-table
+    tag: NORM
+    title: Normal values by 2D echocardiography
+    values:
+      - parameter: lvedd
+        context: normal-range
+        operator: range
+        min: 42.0
+        max: 58.4
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Normal range = mean ± 2 SD.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '2'
+            page: '7'
+      - parameter: lvedd
+        context: normal-range
+        operator: range
+        min: 37.8
+        max: 52.2
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Normal range = mean ± 2 SD.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '2'
+            page: '7'
+      - parameter: lvesd
+        context: normal-range
+        operator: range
+        min: 25.0
+        max: 39.8
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Normal range = mean ± 2 SD.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '2'
+            page: '7'
+      - parameter: lvesd
+        context: normal-range
+        operator: range
+        min: 21.6
+        max: 34.8
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Normal range = mean ± 2 SD.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '2'
+            page: '7'
+      - parameter: lv-edv
+        context: normal-range
+        operator: range
+        min: 62
+        max: 150
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Normal range = mean ± 2 SD.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '2'
+            page: '7'
+      - parameter: lv-edv
+        context: normal-range
+        operator: range
+        min: 46
+        max: 106
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Normal range = mean ± 2 SD.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '2'
+            page: '7'
+      - parameter: lv-esv
+        context: normal-range
+        operator: range
+        min: 21
+        max: 61
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Normal range = mean ± 2 SD.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '2'
+            page: '7'
+      - parameter: lv-esv
+        context: normal-range
+        operator: range
+        min: 14
+        max: 42
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Normal range = mean ± 2 SD.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '2'
+            page: '7'
+      - parameter: lv-edv-index
+        context: normal-range
+        operator: range
+        min: 34
+        max: 74
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Normal range = mean ± 2 SD.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '2'
+            page: '7'
+      - parameter: lv-edv-index
+        context: normal-range
+        operator: range
+        min: 29
+        max: 61
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Normal range = mean ± 2 SD.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '2'
+            page: '7'
+      - parameter: lv-esv-index
+        context: normal-range
+        operator: range
+        min: 11
+        max: 31
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Normal range = mean ± 2 SD.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '2'
+            page: '7'
+      - parameter: lv-esv-index
+        context: normal-range
+        operator: range
+        min: 8
+        max: 24
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Normal range = mean ± 2 SD.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '2'
+            page: '7'
+  - id: method
+    type: note
+    tag: METH
+    title: Measurement
+    text: "Volumes by the biplane method of disks (modified Simpson's rule); indexed volumes are divided by body surface area."
+    citation:
+      source: ase-eacvi-2015-chamber-quantification
+      locator:
+        table: '2'
+        page: '7'

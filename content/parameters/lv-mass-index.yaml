@@ -1,0 +1,7 @@
+id: lv-mass-index
+name: LV mass index
+abbreviation: LVMi
+quantity: indexed-mass
+unit: g/m²
+modalities: [Echo]
+synonyms: [LV mass/BSA, LVMI]

@@ -1,0 +1,7 @@
+id: rv-3d-ef
+name: RV ejection fraction (3D)
+abbreviation: RV 3D EF
+quantity: percent
+unit: '%'
+modalities: [Echo]
+synonyms: [RVEF]

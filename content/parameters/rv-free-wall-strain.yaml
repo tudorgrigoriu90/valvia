@@ -1,0 +1,8 @@
+id: rv-free-wall-strain
+name: RV free-wall longitudinal strain
+abbreviation: RV FWS
+quantity: percent
+unit: '%'
+modalities: [Echo]
+synonyms: [RV strain, RVFWLS]
+method: 2D speckle-tracking of the RV free wall; values are negative.

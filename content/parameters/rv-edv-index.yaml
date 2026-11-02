@@ -1,0 +1,7 @@
+id: rv-edv-index
+name: RV end-diastolic volume indexed to BSA
+abbreviation: RV EDVi
+quantity: indexed-volume
+unit: mL/m²
+modalities: [Echo]
+method: 3D echocardiography.

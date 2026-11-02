@@ -1,0 +1,6 @@
+id: rv-mid-diameter
+name: RV mid diameter
+abbreviation: RVD2
+quantity: length
+unit: mm
+modalities: [Echo]

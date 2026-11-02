@@ -1,0 +1,8 @@
+id: la-volume-index
+name: Maximum LA volume indexed to BSA
+abbreviation: LAVi
+quantity: indexed-volume
+unit: mL/m²
+modalities: [Echo]
+synonyms: [LA volume index, LAVI, left atrial volume]
+method: Maximum LA volume at end-systole by the biplane disk summation or area-length method, indexed to body surface area.

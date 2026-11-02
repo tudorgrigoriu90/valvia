@@ -1,0 +1,7 @@
+id: relative-wall-thickness
+name: Relative wall thickness
+abbreviation: RWT
+quantity: ratio
+unit: '1'
+modalities: [Echo]
+method: Twice the posterior wall thickness divided by the LV end-diastolic diameter.

@@ -1,0 +1,6 @@
+id: rvot-plax-diameter
+name: RVOT diameter (parasternal long-axis)
+abbreviation: RVOT PLAX
+quantity: length
+unit: mm
+modalities: [Echo]

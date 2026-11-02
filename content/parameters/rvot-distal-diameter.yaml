@@ -1,0 +1,6 @@
+id: rvot-distal-diameter
+name: RVOT distal diameter
+abbreviation: RVOT distal
+quantity: length
+unit: mm
+modalities: [Echo]

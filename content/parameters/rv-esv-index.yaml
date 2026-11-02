@@ -1,0 +1,7 @@
+id: rv-esv-index
+name: RV end-systolic volume indexed to BSA
+abbreviation: RV ESVi
+quantity: indexed-volume
+unit: mL/m²
+modalities: [Echo]
+method: 3D echocardiography.

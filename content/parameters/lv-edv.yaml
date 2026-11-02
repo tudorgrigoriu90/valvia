@@ -1,0 +1,7 @@
+id: lv-edv
+name: LV end-diastolic volume
+abbreviation: LV EDV
+quantity: volume
+unit: mL
+modalities: [Echo]
+synonyms: [EDV, end-diastolic volume]

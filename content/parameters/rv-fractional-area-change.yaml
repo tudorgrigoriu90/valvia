@@ -1,0 +1,7 @@
+id: rv-fractional-area-change
+name: RV fractional area change
+abbreviation: FAC
+quantity: percent
+unit: '%'
+modalities: [Echo]
+synonyms: [RV FAC]

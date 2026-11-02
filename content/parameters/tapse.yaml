@@ -1,0 +1,7 @@
+id: tapse
+name: Tricuspid annular plane systolic excursion
+abbreviation: TAPSE
+quantity: length
+unit: mm
+modalities: [Echo]
+method: M-mode of the lateral tricuspid annulus in the apical four-chamber view.

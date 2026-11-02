@@ -1,0 +1,7 @@
+id: lvef
+name: LV ejection fraction
+abbreviation: LVEF
+quantity: percent
+unit: '%'
+modalities: [Echo]
+synonyms: [EF, ejection fraction, biplane Simpson EF]

@@ -16,7 +16,8 @@ test('shows root categories with content as cards that open the category', async
 test('lists categories without content as in preparation, without links', async ({ page }) => {
   await page.goto('./');
   const upcoming = page.getByRole('region', { name: 'In preparation' });
-  await expect(upcoming).toContainText('Chamber size & function');
+  // Stays empty until ESC documents are supplied (no ASE source covers it).
+  await expect(upcoming).toContainText('Special populations');
   await expect(upcoming.getByRole('link')).toHaveCount(0);
 });
 

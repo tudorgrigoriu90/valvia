@@ -1,0 +1,6 @@
+id: rv-basal-diameter
+name: RV basal diameter
+abbreviation: RVD1
+quantity: length
+unit: mm
+modalities: [Echo]

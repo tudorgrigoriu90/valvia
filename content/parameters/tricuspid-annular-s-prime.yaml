@@ -1,0 +1,7 @@
+id: tricuspid-annular-s-prime
+name: Tricuspid lateral annular systolic velocity
+abbreviation: RV S′
+quantity: velocity-tissue
+unit: cm/s
+modalities: [Echo]
+synonyms: [S', S wave, RV s prime, TDI S']
