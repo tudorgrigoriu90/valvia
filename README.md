@@ -12,8 +12,8 @@ Mobile first, works offline, static site on GitHub Pages.
 | | |
 |---|---|
 | Release | R0: Walking skeleton (not yet started in code) |
-| Last completed task | TS-01.1.2: ADR: GitHub Pages hosting, PR previews, meta-CSP and static redirects |
-| Next task | TS-01.1.3: ADR, content as code |
+| Last completed task | TS-01.1.3: ADR: content as code (YAML in Git) |
+| Next task | TS-01.1.4: ADR, client-side search (Pagefind) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

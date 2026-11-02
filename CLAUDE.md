@@ -199,7 +199,7 @@ Static first, near-zero cost (backlog §2). Decisions marked *pending* need thei
 |---|---|---|
 | Site generator | Astro 7, static output, TypeScript strict; logic stays framework-free | [ADR 0001](docs/adr/0001-static-site-generator.md) |
 | Hosting | GitHub Pages from `gh-pages` branch; previews for content PRs; base path from env; meta CSP, no inline scripts; static redirect pages | [ADR 0002](docs/adr/0002-hosting-github-pages.md) |
-| Content | YAML in Git, validated by JSON Schema; TS types generated from schema | TS-01.1.3 *pending* |
+| Content | YAML in Git, one entity per file; JSON Schema 2020-12 is the source of truth; generated TS types; own loader with line-precise errors | [ADR 0003](docs/adr/0003-content-as-code.md) |
 | Search | Pagefind (static, client-side) | TS-01.1.4 *pending* |
 | Offline | PWA service worker (Workbox) | — |
 | Analytics | Cookieless (Cloudflare Web Analytics or GoatCounter) | — |
