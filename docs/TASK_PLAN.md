@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-02.1.2 Encode taxonomy v0.2 as content tree (unpopulated nodes hidden) |
-| Next up | TS-02.3.3: seed source registry |
+| Last completed | TS-02.3.3 Seed registry from taxonomy Appendix A (content PR, SME verifies) |
+| Next up | FT-03.4: primary MR severity grading (ASE 2017) |
 
 ## Next up: R0 sequence
 
@@ -100,7 +100,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-02.2.8 | Prosthetic valve catalogue schema: position, type, model, size → expected values with citation | 2 | todo |  |
 | TS-02.3.1 | Source schema incl. status, supersession, allowed-society check and `citedBy` for cited z-score datasets | 2 | done |  |
 | TS-02.3.2 | Per-value citation locator (table, figure, section, page) | 1 | done | Source existence is checked by the cross-file loader (planned) |
-| TS-02.3.3 | Seed registry from taxonomy Appendix A (content PR, SME verifies) | 2 | todo |  |
+| TS-02.3.3 | Seed registry from taxonomy Appendix A (content PR, SME verifies) | 2 | done | Initial seed per PO-3; values only from documents read in full |
 | TS-02.4.1 | Build-time discrepancy detection | 3 | done | 100 % coverage |
 | TS-02.4.2 | Supersession → history data (current vs previous recommendations) | 2 | todo |  |
 | TS-02.4.3 | Unit tests with fixtures (agreement, disagreement, superseded) | 2 | todo |  |
@@ -297,3 +297,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-02 | TS-02.4.1 | Discrepancy detection across topics for current sources (display-unit comparison, operator and range aware, key-order-insensitive populations), value formatter, loaded-value walker; listed by validate:content | `TS-02.4.1: build-time discrepancy detection` |
 | 2026-11-02 | CH-8 | Decision log docs/decisions (PO-1..PO-3); CLAUDE.md §3.3 initial content seed rules: direct to main, status draft, site label, values only from documents read in session | `CH-8: decision log and initial content seed rules` |
 | 2026-11-02 | TS-02.1.2 | Taxonomy v0.3 encoded as 164 topic files (stable curated ids for ambiguous/long nodes, short-title slugs, ref, order, population, wave, seeAlso cross-links, status draft); validate:content clean | `TS-02.1.2: encode taxonomy tree as topic files` |
+| 2026-11-02 | TS-02.3.3 | Source registry seeded with 29 Appendix A documents from PubMed records (title, journal, DOI, year, issuers, type, status; ASE/EACVI 2016 diastolic superseded by ASE 2025); source titles allow 600 chars | `TS-02.3.3: seed source registry from PubMed records` |

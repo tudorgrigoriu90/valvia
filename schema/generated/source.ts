@@ -12,11 +12,11 @@ export type SourceDocument = {
    */
   id: string;
   /**
-   * Non-empty single-line text.
+   * Full title as published (single line; publication titles can be long).
    */
   title: string;
   /**
-   * Non-empty single-line text.
+   * Short label for source chips (e.g. 'ESC/EACTS VHD 2025').
    */
   shortTitle?: string;
   /**
@@ -41,7 +41,7 @@ export type SourceDocument = {
    */
   year: number;
   /**
-   * Non-empty single-line text.
+   * Journal name.
    */
   journal?: string;
   /**

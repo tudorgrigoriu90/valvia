@@ -11,7 +11,12 @@
       "$ref": "common.schema.json#/$defs/id"
     },
     "title": {
-      "$ref": "common.schema.json#/$defs/text"
+      "description": "Full title as published (single line; publication titles can be long).",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 600,
+      "pattern": "^[^\\n]*\\S[^\\n]*$",
+      "x-format-name": "non-blank single-line text"
     },
     "shortTitle": {
       "description": "Short label for source chips (e.g. 'ESC/EACTS VHD 2025').",

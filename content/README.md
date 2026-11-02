@@ -23,3 +23,14 @@ rename a URL by changing `slug` and adding the old one to `formerSlugs`.
 - `wave` comes from the root (4.1 is W2).
 - Cross-links (→) are `seeAlso`.
 - Every node is `status: draft`; nodes without blocks are hidden on the site until content is added.
+
+## Source registry
+
+`sources/` holds the 29 documents of taxonomy Appendix A whose PubMed record could be retrieved (TS-02.3.3, initial seed).
+Title, journal, DOI and year come from the PubMed record named in each file's `notes`; `year` is the year in the
+document title (print year may differ). Entries marked "verify" in Appendix A note that they were the most recent
+version found on 2026-11-02. Not yet registered: the 2026 ESC heart failure guideline (no PubMed record yet) and the
+NORRE papers (registered when their values are used).
+
+Values are only entered from documents that could be read in full. ASE documents are downloaded from asecho.org;
+ESC/EACVI full texts (academic.oup.com) cannot be fetched automatically and are added when supplied.

@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-02.1.2: Encode taxonomy v0.2 as content tree (unpopulated nodes hidden) |
-| Next task | TS-02.3.3: seed source registry |
+| Last completed task | TS-02.3.3: Seed registry from taxonomy Appendix A (content PR, SME verifies) |
+| Next task | FT-03.4: primary MR severity grading (ASE 2017) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

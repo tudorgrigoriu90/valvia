@@ -20,6 +20,15 @@ describe('validateContentFile(source)', () => {
     expect(validate(VALID_SOURCE).problems).toEqual([]);
   });
 
+  it('allows long publication titles up to 600 characters', () => {
+    const long = VALID_SOURCE.replace(/^title: .*$/m, `title: ${'x'.repeat(600)}`);
+    expect(validate(long).problems).toEqual([]);
+    const tooLong = VALID_SOURCE.replace(/^title: .*$/m, `title: ${'x'.repeat(601)}`);
+    expect(validate(tooLong).problems).toEqual([
+      expect.objectContaining({ message: 'title must be at most 600 characters (got 601)' }),
+    ]);
+  });
+
   it('requires supersededBy when the status is superseded', () => {
     const result = validate(VALID_SOURCE.replace('status: current', 'status: superseded'));
     expect(result.problems).toEqual([
