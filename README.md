@@ -14,8 +14,8 @@ Live site (after Pages is enabled on the `gh-pages` branch): <https://tudorgrigo
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-02.3.1: Source schema incl. status, supersession, allowed-society check and ci |
-| Next task | TS-02.3.2: per-value citation locator |
+| Last completed task | TS-02.3.2: Per-value citation locator (table, figure, section, page) |
+| Next task | TS-02.2.1: parameter schema (pending your gh-pages decision for TS-01.3.3) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

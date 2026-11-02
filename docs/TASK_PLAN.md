@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-02.3.1 Source schema incl. status, supersession, allowed-society check and ci |
-| Next up | TS-02.3.2: per-value citation locator |
+| Last completed | TS-02.3.2 Per-value citation locator (table, figure, section, page) |
+| Next up | TS-02.2.1: parameter schema (pending your gh-pages decision for TS-01.3.3) |
 
 ## Next up: R0 sequence
 
@@ -91,7 +91,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-02.2.7 | Unit layer: store as published, display in house units (NFR-15), original on tap; exhaustive conversion tests | 2 | todo |  |
 | TS-02.2.8 | Prosthetic valve catalogue schema: position, type, model, size → expected values with citation | 2 | todo |  |
 | TS-02.3.1 | Source schema incl. status, supersession, allowed-society check and `citedBy` for cited z-score datasets | 2 | done |  |
-| TS-02.3.2 | Per-value citation locator (table, figure, section, page) | 1 | todo |  |
+| TS-02.3.2 | Per-value citation locator (table, figure, section, page) | 1 | done | Source existence is checked by the cross-file loader (planned) |
 | TS-02.3.3 | Seed registry from taxonomy Appendix A (content PR, SME verifies) | 2 | todo |  |
 | TS-02.4.1 | Build-time discrepancy detection | 3 | todo |  |
 | TS-02.4.2 | Supersession → history data (current vs previous recommendations) | 2 | todo |  |
@@ -275,3 +275,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-02 | TS-02.1.1 | Topic node JSON Schema + shared defs; core/content validator (YAML positions, readable Ajv messages incl. anyOf, file name = id, all errors); content model reference doc | `TS-02.1.1: topic node schema and file validator` |
 | 2026-11-02 | CH-4 | json-schema-to-typescript generator (gen:types), committed schema/generated/topic.ts, staleness test, schema change procedure | `CH-4: generate TypeScript types from JSON Schema` |
 | 2026-11-02 | TS-02.3.1 | Source schema (issuers, type, year, DOI, https URL, status, supersededBy, citedBy) + registry rules: allowlist, F3 warning, cited z-score datasets, supersession integrity and cycles (100 % coverage) | `TS-02.3.1: source schema and registry rules` |
+| 2026-11-02 | TS-02.3.2 | Citation definition (source id + locator with ≥ 1 of table/figure/section/page, text-only locators), validateDefinition for shared definitions, readable minProperties message | `TS-02.3.2: per-value citation locator` |

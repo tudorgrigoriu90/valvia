@@ -13,6 +13,10 @@ export const SCHEMA_IDS = {
 
 export type ContentKind = keyof typeof SCHEMA_IDS;
 
+/** Shared definitions that can be validated on their own (tests, future CMS forms). */
+export const DEFINITIONS = ['citation'] as const;
+export type DefinitionName = (typeof DEFINITIONS)[number];
+
 // ajv-formats ships CommonJS; normalise the default export across loaders.
 const addFormats = ((addFormatsModule as unknown as { default?: typeof addFormatsModule }).default ??
   addFormatsModule) as unknown as (ajv: Ajv2020) => Ajv2020;
@@ -29,10 +33,18 @@ function createAjv(): Ajv2020 {
 let ajvInstance: Ajv2020 | undefined;
 
 export function getValidator(kind: ContentKind): ValidateFunction {
+  return schemaById(SCHEMA_IDS[kind]);
+}
+
+export function getDefinitionValidator(name: DefinitionName): ValidateFunction {
+  return schemaById(`${common.$id}#/$defs/${name}`);
+}
+
+function schemaById(id: string): ValidateFunction {
   ajvInstance ??= createAjv();
-  const validate = ajvInstance.getSchema(SCHEMA_IDS[kind]);
+  const validate = ajvInstance.getSchema(id);
   /* v8 ignore next */
-  if (validate === undefined) throw new Error(`Schema not registered for ${kind}`);
+  if (validate === undefined) throw new Error(`Schema not registered: ${id}`);
   return validate;
 }
 

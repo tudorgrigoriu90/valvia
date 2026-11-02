@@ -40,6 +40,50 @@
     "wave": {
       "description": "Delivery wave (sequencing only; all content is P1).",
       "enum": ["W1", "W2"]
+    },
+    "locatorText": {
+      "description": "Short locator label as printed in the source (kept as text so '1.10' stays '1.10').",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "pattern": "^[^\\n]*\\S[^\\n]*$",
+      "x-format-name": "non-blank single-line text"
+    },
+    "citation": {
+      "description": "Where a value comes from: a registered source plus a locator inside it (TS-02.3.2). Every value has one.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "locator"],
+      "properties": {
+        "source": {
+          "description": "Id of a registered source document.",
+          "$ref": "#/$defs/id"
+        },
+        "locator": {
+          "description": "Position in the source; at least one field is required.",
+          "type": "object",
+          "additionalProperties": false,
+          "minProperties": 1,
+          "properties": {
+            "table": {
+              "description": "Table number or label (e.g. '8', 'S3').",
+              "$ref": "#/$defs/locatorText"
+            },
+            "figure": {
+              "description": "Figure number or label (e.g. '2B').",
+              "$ref": "#/$defs/locatorText"
+            },
+            "section": {
+              "description": "Section number (e.g. '6.2.1').",
+              "$ref": "#/$defs/locatorText"
+            },
+            "page": {
+              "description": "Page (e.g. 'e45').",
+              "$ref": "#/$defs/locatorText"
+            }
+          }
+        }
+      }
     }
   }
 }

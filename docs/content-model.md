@@ -36,6 +36,20 @@ TypeScript types are generated from the schemas into [`schema/generated/`](../sc
 | `longText` | non-blank, may span lines, ≤ 4000 chars |
 | `population` | `adult` · `paediatric` · `both` |
 | `wave` | `W1` · `W2` |
+| `locatorText` | non-blank single line, ≤ 40 chars; always a string so `1.10` is never read as `1.1` |
+| `citation` | `source` (registered source id) + `locator` with at least one of `table`, `figure`, `section`, `page` (TS-02.3.2) |
+
+Citation example (used by every value):
+
+```yaml
+citation:
+  source: esc-eacts-2025-vhd
+  locator:
+    table: "8"
+    section: "6.2.1"
+```
+
+Shared definitions can be validated on their own with `validateDefinition('citation', yaml)` (`core/content/validate-file.ts`).
 
 ## Topic node (`topic.schema.json`, TS-02.1.1)
 

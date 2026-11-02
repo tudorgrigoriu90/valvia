@@ -1,9 +1,12 @@
 /** Single-file validation: YAML syntax, JSON Schema and file naming (ADR 0003 steps 1–2). */
 import { basename } from 'node:path';
 import type { Problem } from './problem';
-import { getValidator, type ContentKind } from './schemas';
+import { getDefinitionValidator, getValidator, type ContentKind, type DefinitionName } from './schemas';
 import { schemaProblems } from './schema-errors';
-import { parseYaml } from './yaml';
+import { parseYaml, type Position } from './yaml';
+
+const syntaxProblems = (file: string, errors: readonly { message: string; position: Position }[]): Problem[] =>
+  errors.map(({ message, position }) => ({ file, ...position, severity: 'error', rule: 'yaml-syntax', message }));
 
 export interface FileValidation {
   /** Parsed data when the YAML was syntactically valid (even if the schema failed). */
@@ -19,15 +22,7 @@ export function validateContentFile(kind: ContentKind, file: string, text: strin
   }
   const parsed = parseYaml(text);
   if (!parsed.ok) {
-    return {
-      problems: parsed.errors.map(({ message, position }) => ({
-        file,
-        ...position,
-        severity: 'error' as const,
-        rule: 'yaml-syntax',
-        message,
-      })),
-    };
+    return { problems: syntaxProblems(file, parsed.errors) };
   }
 
   const { data } = parsed.value;
@@ -47,4 +42,16 @@ export function validateContentFile(kind: ContentKind, file: string, text: strin
     }
   }
   return { data, problems };
+}
+
+/** Validates a YAML fragment against a shared definition such as `citation` (no file-name rule). */
+export function validateDefinition(name: DefinitionName, text: string): FileValidation {
+  const file = `<definition:${name}>`;
+  const parsed = parseYaml(text);
+  if (!parsed.ok) {
+    return { problems: syntaxProblems(file, parsed.errors) };
+  }
+  const validate = getDefinitionValidator(name);
+  const { data } = parsed.value;
+  return { data, problems: validate(data) ? [] : schemaProblems(validate.errors ?? [], parsed.value, file, name) };
 }

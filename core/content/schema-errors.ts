@@ -76,6 +76,14 @@ function message(error: ErrorObject, label: string, prefix: string): string {
         ? `${label} must match ${String(params.pattern)} (got ${quoted(error.data)})`
         : `${label} must be ${name} (got ${quoted(error.data)})`;
     }
+    case 'minProperties': {
+      const properties = Object.keys((error.parentSchema as { properties?: object } | undefined)?.properties ?? {});
+      if (params.limit === 1 && properties.length > 1) {
+        const list = `${properties.slice(0, -1).join(', ')} or ${String(properties.at(-1))}`;
+        return `${label} must name at least one of ${list}`;
+      }
+      return `${label} ${error.message ?? 'has too few properties'}`;
+    }
     case 'uniqueItems':
       return `${label} must not contain duplicates (items ${String(params.j)} and ${String(params.i)} are equal)`;
     default:
