@@ -8,7 +8,7 @@ test('shows root categories with content as cards that open the category', async
   const categories = page.getByRole('region', { name: 'Categories' });
   const card = categories.getByRole('link', { name: /Valvular heart disease/ });
   await expect(card).toBeVisible();
-  await expect(card).toContainText(/1 topic/);
+  await expect(card).toContainText(/\d+ topics?/);
   await card.click();
   await expect(page.getByRole('heading', { level: 1, name: 'Valvular heart disease' })).toBeVisible();
 });

@@ -7,3 +7,438 @@ order: 0
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: quantitative-grading
+    type: grading-table
+    tag: GRADE
+    title: Quantitative grading of chronic AR
+    grades: ['Mild (grade I)', 'Moderate (grade II)', 'Moderate (grade III)', 'Severe (grade IV)']
+    values:
+      - parameter: regurgitant-volume
+        context: grading
+        grade: Mild (grade I)
+        operator: '<'
+        value: 30
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '11'
+            page: '340'
+      - parameter: regurgitant-volume
+        context: grading
+        grade: Moderate (grade II)
+        operator: range
+        min: 30
+        max: 44
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '11'
+            page: '340'
+      - parameter: regurgitant-volume
+        context: grading
+        grade: Moderate (grade III)
+        operator: range
+        min: 45
+        max: 59
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '11'
+            page: '340'
+      - parameter: regurgitant-volume
+        context: grading
+        grade: Severe (grade IV)
+        operator: '>='
+        value: 60
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '11'
+            page: '340'
+      - parameter: regurgitant-fraction
+        context: grading
+        grade: Mild (grade I)
+        operator: '<'
+        value: 30
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '11'
+            page: '340'
+      - parameter: regurgitant-fraction
+        context: grading
+        grade: Moderate (grade II)
+        operator: range
+        min: 30
+        max: 39
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '11'
+            page: '340'
+      - parameter: regurgitant-fraction
+        context: grading
+        grade: Moderate (grade III)
+        operator: range
+        min: 40
+        max: 49
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '11'
+            page: '340'
+      - parameter: regurgitant-fraction
+        context: grading
+        grade: Severe (grade IV)
+        operator: '>='
+        value: 50
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '11'
+            page: '340'
+      - parameter: eroa
+        context: grading
+        grade: Mild (grade I)
+        operator: '<'
+        value: 0.10
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '11'
+            page: '340'
+      - parameter: eroa
+        context: grading
+        grade: Moderate (grade II)
+        operator: range
+        min: 0.10
+        max: 0.19
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '11'
+            page: '340'
+      - parameter: eroa
+        context: grading
+        grade: Moderate (grade III)
+        operator: range
+        min: 0.20
+        max: 0.29
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '11'
+            page: '340'
+      - parameter: eroa
+        context: grading
+        grade: Severe (grade IV)
+        operator: '>='
+        value: 0.30
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '11'
+            page: '340'
+  - id: central-jet-ratios
+    type: grading-table
+    tag: GRADE
+    title: Colour Doppler jet ratios (central jets)
+    grades: ['Mild (grade I)', 'Moderate (grade II)', 'Moderate (grade III)', 'Severe (grade IV)']
+    values:
+      - parameter: ar-jet-width-to-lvot-width
+        context: grading
+        grade: Mild (grade I)
+        operator: '<'
+        value: 25
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Central jets only.
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '11'
+            page: '340'
+      - parameter: ar-jet-width-to-lvot-width
+        context: grading
+        grade: Moderate (grade II)
+        operator: range
+        min: 25
+        max: 45
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Central jets only.
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '11'
+            page: '340'
+      - parameter: ar-jet-width-to-lvot-width
+        context: grading
+        grade: Moderate (grade III)
+        operator: range
+        min: 46
+        max: 64
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Central jets only.
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '11'
+            page: '340'
+      - parameter: ar-jet-width-to-lvot-width
+        context: grading
+        grade: Severe (grade IV)
+        operator: '>='
+        value: 65
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Central jets only.
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '11'
+            page: '340'
+      - parameter: ar-jet-area-to-lvot-area
+        context: grading
+        grade: Mild (grade I)
+        operator: '<'
+        value: 5
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Central jets only.
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '11'
+            page: '340'
+      - parameter: ar-jet-area-to-lvot-area
+        context: grading
+        grade: Moderate (grade II)
+        operator: range
+        min: 5
+        max: 20
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Central jets only.
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '11'
+            page: '340'
+      - parameter: ar-jet-area-to-lvot-area
+        context: grading
+        grade: Moderate (grade III)
+        operator: range
+        min: 21
+        max: 59
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Central jets only.
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '11'
+            page: '340'
+      - parameter: ar-jet-area-to-lvot-area
+        context: grading
+        grade: Severe (grade IV)
+        operator: '>='
+        value: 60
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Central jets only.
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '11'
+            page: '340'
+  - id: semiquantitative-grading
+    type: grading-table
+    tag: GRADE
+    title: Vena contracta and pressure half-time
+    grades: ['Mild', 'Moderate', 'Severe']
+    values:
+      - parameter: vena-contracta-width
+        context: grading
+        grade: Mild
+        operator: '<'
+        value: 0.3
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '11'
+            page: '340'
+      - parameter: vena-contracta-width
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 0.3
+        max: 0.6
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '11'
+            page: '340'
+      - parameter: vena-contracta-width
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 0.6
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '11'
+            page: '340'
+      - parameter: pressure-half-time
+        context: grading
+        grade: Mild
+        operator: '>'
+        value: 500
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Slow deceleration; an incomplete or faint jet also suggests mild AR.
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '11'
+            page: '340'
+      - parameter: pressure-half-time
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 200
+        max: 500
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '11'
+            page: '340'
+      - parameter: pressure-half-time
+        context: grading
+        grade: Severe
+        operator: '<'
+        value: 200
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - PHT shortens with increasing LV diastolic pressure and may lengthen with chronic adaptation to severe AR.
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '11'
+            page: '340'
+  - id: integration
+    type: note
+    tag: METH
+    title: How to use these thresholds
+    text: 'Integrate several parameters; qualitative and semiquantitative signs that are specific for a grade carry most weight, and quantitative parameters subclassify moderate AR into grades II and III. Colour Doppler is usually performed at a Nyquist limit of 50–70 cm/s.'
+    citation:
+      source: ase-2017-native-regurgitation
+      locator:
+        figure: '25'
+        page: '344'
+  - id: algorithm
+    type: algorithm-reference
+    tag: ALG
+    title: Algorithm for integrating multiple parameters of AR severity
+    citation:
+      source: ase-2017-native-regurgitation
+      locator:
+        figure: '25'
+        page: '344'
+    url: 'https://doi.org/10.1016/j.echo.2017.01.007'

@@ -1,0 +1,8 @@
+id: ar-jet-width-to-lvot-width
+name: AR jet width / LVOT width
+abbreviation: Jet width/LVOT width
+quantity: percent
+unit: '%'
+modalities: [Echo]
+synonyms: [jet height ratio, jet width ratio]
+method: Colour Doppler width of a central AR jet just below the valve as a percentage of the LVOT diameter (parasternal long-axis view).

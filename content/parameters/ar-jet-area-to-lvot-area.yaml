@@ -1,0 +1,8 @@
+id: ar-jet-area-to-lvot-area
+name: AR jet area / LVOT area
+abbreviation: Jet CSA/LVOT CSA
+quantity: percent
+unit: '%'
+modalities: [Echo]
+synonyms: [jet cross-sectional area ratio]
+method: Colour Doppler cross-sectional area of a central AR jet as a percentage of the LVOT area (parasternal short-axis view).

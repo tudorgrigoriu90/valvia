@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-04.3.3: Source chip + citation popover; original-unit popover |
-| Next task | TS-04.2.3: jump menu and stable anchors |
+| Last completed task | FT-03.3: 3.1 VHD: aortic valve (incl. TAVI considerations, AR TAVI) (W1) |
+| Next task | FT-03.5: tricuspid regurgitation severity grading from ASE 2017 |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

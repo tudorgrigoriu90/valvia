@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-04.3.3 Source chip + citation popover; original-unit popover |
-| Next up | TS-04.2.3: jump menu and stable anchors |
+| Last completed | FT-03.3 3.1 VHD: aortic valve (incl. TAVI considerations, AR TAVI) (W1) |
+| Next up | FT-03.5: tricuspid regurgitation severity grading from ASE 2017 |
 
 ## Next up: R0 sequence
 
@@ -113,7 +113,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-03.0.2 | Content status page (per node: draft / in review / published; wave) | 2 | todo |  |
 | FT-03.1 | 1 Chamber size & function (W1) | 8 | todo |  |
 | FT-03.2 | 2 Diastolic function & filling pressures (W1) | 5 | todo |  |
-| FT-03.3 | 3.1 VHD: aortic valve (incl. TAVI considerations, AR TAVI) (W1) | 10 | todo |  |
+| FT-03.3 | 3.1 VHD: aortic valve (incl. TAVI considerations, AR TAVI) (W1) | 10 | in progress | AR grading (ASE 2017) done; AS, AR thresholds, TAVI pending sources |
 | FT-03.4 | 3.2 VHD: mitral valve (primary/secondary MR, TEER feasibility, repair likelihood, MS, MAC) (W1) | 10 | in progress | Primary MR (ASE 2017) done; ESC/EACVI and CMR values pending document access |
 | FT-03.5 | 3.3–3.5 VHD: tricuspid, pulmonary, multiple & mixed (W1) | 5 | todo |  |
 | FT-03.6 | 3.6 VHD: infective endocarditis (W1) | 3 | todo |  |
@@ -306,3 +306,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-02 | TS-04.3.6 | Caveats rendered as numbered footnotes per table (shared numbers for identical text), superscript links from values to the notes list | `TS-04.3.6: caveats and footnotes` |
 | 2026-11-02 | TS-04.3.2 | Criteria checklist (feasibility badges = text + symbol, nested values formatted), note paragraphs, algorithm references linking to the source with locator (FT-04.3) | `TS-04.3.2: criteria checklist, notes and algorithm links` |
 | 2026-11-02 | TS-04.3.3 | Per-block source chips (society badge text + short title + locators; full citation, journal, year, DOI on tap) and original-value popovers on converted values, both no-JS details; WCAG 2.2 target sizes | `TS-04.3.3: source chips and original-unit popovers` |
+| 2026-11-02 | FT-03.3 | AR severity grading (3.1.2.1) from ASE 2017 Table 11 / Figure 25: quantitative grades I–IV (RVol, RF, EROA), central jet ratios, VCW and PHT, integration note, algorithm link; 3 new parameters; E2E tests made independent of content counts | `FT-03.3: aortic regurgitation severity grading from ASE 2017` |

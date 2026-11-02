@@ -1,0 +1,8 @@
+id: pressure-half-time
+name: Pressure half-time
+abbreviation: PHT
+quantity: time
+unit: ms
+modalities: [Echo]
+synonyms: [P1/2t, deceleration of regurgitant jet]
+method: Time for the continuous-wave Doppler pressure gradient to fall to half its initial value; depends on chamber compliance and pressures.

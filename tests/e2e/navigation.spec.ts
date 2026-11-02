@@ -23,14 +23,15 @@ test('drills down from a root category to a leaf with breadcrumbs on every level
   await expect(crumbs.locator('[aria-current="page"]')).toHaveText(/Primary MR: severity grading/);
 });
 
+// Nodes used below stay empty until ESC documents are supplied (no ASE source covers them).
 test('category pages only list children that have content', async ({ page }) => {
   await page.goto('valvular-heart-disease/');
   await expect(page.getByRole('link', { name: /Mitral valve disease/ })).toBeVisible();
-  await expect(page.getByRole('link', { name: /Aortic valve disease/ })).toHaveCount(0);
+  await expect(page.getByRole('link', { name: /Multiple & mixed valve disease/ })).toHaveCount(0);
 });
 
 test('nodes without content have no page', async ({ request }) => {
-  const response = await request.get('chamber-size-and-function/');
+  const response = await request.get('special-populations/');
   expect(response.status()).toBe(404);
 });
 
