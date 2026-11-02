@@ -13,7 +13,7 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
 | Last completed | FT-03.1 1 Chamber size & function (W1) |
-| Next up | FT-03.1: RV systolic function thresholds |
+| Next up | TS-04.2.3: jump menu and last-reviewed info |
 
 ## Next up: R0 sequence
 
@@ -113,7 +113,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 |---|---|---|---|---|
 | TS-03.0.1 | Content YAML templates + content guide (modelling, citing, units, history, modality, paediatric values) | 2 | todo |  |
 | TS-03.0.2 | Content status page (per node: draft / in review / published; wave) | 2 | todo |  |
-| FT-03.1 | 1 Chamber size & function (W1) | 8 | in progress | Chamber quantification (ASE/EACVI 2015) in progress |
+| FT-03.1 | 1 Chamber size & function (W1) | 8 | in progress | Chamber quantification (ASE/EACVI 2015): LV, LA, RV done; RA and aortic root are mean ± SD only |
 | FT-03.2 | 2 Diastolic function & filling pressures (W1) | 5 | todo |  |
 | FT-03.3 | 3.1 VHD: aortic valve (incl. TAVI considerations, AR TAVI) (W1) | 10 | in progress | AR grading (ASE 2017) done; AS, AR thresholds, TAVI pending sources |
 | FT-03.4 | 3.2 VHD: mitral valve (primary/secondary MR, TEER feasibility, repair likelihood, MS, MAC) (W1) | 10 | in progress | Primary MR (ASE 2017) done; ESC/EACVI and CMR values pending document access |
@@ -320,3 +320,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-02 | FT-03.1 | Left atrium (1.2): maximum LA volume index grading (normal 16–34, mildly 35–41, moderately 42–48, severely >48 mL/m²) from ASE/EACVI 2015 Table 4 | `FT-03.1: LA volume index grading (ASE/EACVI 2015)` |
 | 2026-11-02 | FT-03.1 | LV wall thickness, mass & geometry (1.1.2): linear and 2D normal ranges by sex (LV mass, index, RWT, septal and posterior wall) from ASE/EACVI 2015 Table 6 + geometry note | `FT-03.1: LV mass, wall thickness and geometry (ASE/EACVI 2015)` |
 | 2026-11-02 | FT-03.1 | RV dimensions (1.3.1): normal ranges for RV diameters, RVOT, wall thickness and sex-specific indexed EDA/EDV/ESV from ASE/EACVI 2015 Table 8 | `FT-03.1: RV dimensions (ASE/EACVI 2015)` |
+| 2026-11-02 | FT-03.1 | RV systolic function (1.3.2): abnormality thresholds for TAPSE, S′ (PW and colour DTI), FAC, free-wall strain, 3D RVEF, MPI from ASE/EACVI 2015 Table 10 | `FT-03.1: RV systolic function thresholds (ASE/EACVI 2015)` |

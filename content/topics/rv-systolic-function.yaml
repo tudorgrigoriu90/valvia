@@ -7,3 +7,134 @@ order: 1
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: abnormality-thresholds
+    type: threshold-list
+    tag: CRIT
+    title: Thresholds for abnormal RV systolic function
+    values:
+      - parameter: tapse
+        context: diagnostic-criterion
+        operator: '<'
+        value: 17
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Abnormality threshold.
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '10'
+            page: '23'
+      - parameter: tricuspid-annular-s-prime
+        context: diagnostic-criterion
+        operator: '<'
+        value: 9.5
+        unit: cm/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Abnormality threshold.
+          - Pulsed-wave tissue Doppler.
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '10'
+            page: '23'
+      - parameter: tricuspid-annular-s-prime
+        context: diagnostic-criterion
+        operator: '<'
+        value: 6.0
+        unit: cm/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Abnormality threshold.
+          - Colour-coded tissue Doppler.
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '10'
+            page: '23'
+      - parameter: rv-fractional-area-change
+        context: diagnostic-criterion
+        operator: '<'
+        value: 35
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Abnormality threshold.
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '10'
+            page: '23'
+      - parameter: rv-free-wall-strain
+        context: diagnostic-criterion
+        operator: '>'
+        value: -20
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Abnormality threshold.
+          - 'Abnormal when below 20% in magnitude; limited data, values vary with vendor and software.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '10'
+            page: '23'
+      - parameter: rv-3d-ef
+        context: diagnostic-criterion
+        operator: '<'
+        value: 45
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Abnormality threshold.
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '10'
+            page: '23'
+      - parameter: rv-mpi
+        context: diagnostic-criterion
+        operator: '>'
+        value: 0.43
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Abnormality threshold.
+          - Pulsed Doppler.
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '10'
+            page: '23'
+      - parameter: rv-mpi
+        context: diagnostic-criterion
+        operator: '>'
+        value: 0.54
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Abnormality threshold.
+          - Tissue Doppler.
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: '10'
+            page: '23'
