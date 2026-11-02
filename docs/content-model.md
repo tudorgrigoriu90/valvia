@@ -12,7 +12,7 @@ flowchart LR
     syntax --> schema["2 JSON Schema per file<br/>Ajv 2020, allErrors"]
     schema --> name["file name = id"]
     name --> cross["3 Cross-file integrity<br/>(planned)"]
-    cross --> rules["4 Content rules<br/>source allowlist + supersession (done)<br/>units, plausibility (planned)"]
+    cross --> rules["4 Content rules<br/>source allowlist + supersession<br/>units, modality, plausibility"]
     rules --> out["file:line:column severity rule message"]
 ```
 
@@ -186,6 +186,21 @@ blocks:
         population: { ageGroup: adult }
         citation: { source: esc-eacts-2025-vhd, locator: { table: "8" } }
 ```
+
+## Plausibility rules (`core/values/topic-rules.ts`, TS-02.2.4)
+
+Run on every topic after schema validation; they catch transcription errors before the SME review.
+
+| Rule | Checks | Example message |
+|---|---|---|
+| `value-unit` | published unit belongs to the parameter's quantity | `unit 'mm' is not valid for parameter 'eroa' (area: mm², cm²)` |
+| `value-modality` | value modality is one of the parameter's modalities | `modality 'CT' is not listed for parameter 'regurgitant-volume' (Echo, CMR)` |
+| `value-sign` | no negative numbers for sizes, velocities, pressures, times (strain/percent may be negative) | `value (-0.1) must not be negative for area` |
+| `value-range` | `max` greater than `min` | `max (0.2) must be greater than min (0.4)` |
+| `grade-unknown` | grading-table values use one of the table's `grades` | `grade 'torrential' is not one of the table grades: mild, moderate, severe` |
+| `grade-monotonic` | per parameter + population + modality + source, thresholds (value, or range min, converted to the parameter unit) only rise or only fall from mild to severe | `eroa thresholds are not monotonic across grades: mild 0.2, moderate 0.5, severe 0.4 (cm²)` |
+
+The monotonic check is skipped for a group that repeats a grade or whose units cannot be compared (e.g. g/m² vs g/m^2.7).
 
 ## Parameter (`parameter.schema.json`, TS-02.2.1)
 
