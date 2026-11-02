@@ -76,7 +76,7 @@ function checkValue({ value, path }: LocatedValue, parameter: Parameter): ValueF
 }
 
 /** JSON with sorted keys, so qualifiers written in a different order still group together. */
-function stableKey(input: unknown): string {
+export function stableKey(input: unknown): string {
   if (input === null || typeof input !== 'object') return JSON.stringify(input);
   if (Array.isArray(input)) return `[${input.map(stableKey).join(',')}]`;
   const entries = Object.entries(input as Record<string, unknown>).sort(([a], [b]) => a.localeCompare(b));

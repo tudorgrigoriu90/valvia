@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-6: Content loader: read all YAML, keep published number text, cross-file  |
-| Next task | TS-02.4.1: build-time discrepancy detection |
+| Last completed task | TS-02.4.1: Build-time discrepancy detection |
+| Next task | TS-02.4.2: supersession history |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

@@ -220,6 +220,25 @@ Run on every topic after schema validation; they catch transcription errors befo
 
 The monotonic check is skipped for a group that repeats a grade or whose units cannot be compared (e.g. g/m² vs g/m^2.7).
 
+## Discrepancies between sources (`core/discrepancy/`, TS-02.4.1, 100 % coverage)
+
+When ESC/EACVI and ASE (or two current documents) disagree, both values are shown side by side; Valvia never picks one.
+
+```mermaid
+flowchart LR
+    v["all values of all topics"] --> cur{"source status<br/>= current?"}
+    cur -- no --> hist(["history only (TS-02.4.2)"])
+    cur -- yes --> grp["group by parameter + context + grade<br/>+ modality + population"]
+    grp --> cmp{"≥ 2 sources and<br/>operator or number differs<br/>(in display units)?"}
+    cmp -- yes --> flag(["Discrepancy: entries side by side<br/>'Differs by society' marker"])
+    cmp -- no --> ok(["agreement"])
+```
+
+- Numbers are compared after conversion to the display unit, so `40 mm²` and `0.40 cm²` agree.
+- Population qualifiers must match exactly (key order does not matter); different sexes, age bands or modalities are never compared.
+- Values from the same source are never compared with each other; content shown in two topics is compared once per value.
+- `npm run validate:content` lists discrepancy groups for information; they are not errors.
+
 ## Parameter (`parameter.schema.json`, TS-02.2.1)
 
 One file per parameter: `content/parameters/<id>.yaml`. Values reference a parameter by id.

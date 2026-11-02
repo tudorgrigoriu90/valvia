@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-6 Content loader: read all YAML, keep published number text, cross-file  |
-| Next up | TS-02.4.1: build-time discrepancy detection |
+| Last completed | TS-02.4.1 Build-time discrepancy detection |
+| Next up | TS-02.4.2: supersession history |
 
 ## Next up: R0 sequence
 
@@ -98,7 +98,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-02.3.1 | Source schema incl. status, supersession, allowed-society check and `citedBy` for cited z-score datasets | 2 | done |  |
 | TS-02.3.2 | Per-value citation locator (table, figure, section, page) | 1 | done | Source existence is checked by the cross-file loader (planned) |
 | TS-02.3.3 | Seed registry from taxonomy Appendix A (content PR, SME verifies) | 2 | todo |  |
-| TS-02.4.1 | Build-time discrepancy detection | 3 | todo |  |
+| TS-02.4.1 | Build-time discrepancy detection | 3 | done | 100 % coverage |
 | TS-02.4.2 | Supersession → history data (current vs previous recommendations) | 2 | todo |  |
 | TS-02.4.3 | Unit tests with fixtures (agreement, disagreement, superseded) | 2 | todo |  |
 
@@ -291,3 +291,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-02 | TS-02.2.4 | Plausibility rules per topic: unit vs quantity, modality, non-negative sizes, ordered ranges, known grades, monotonic thresholds across grades (converted units, grouped by parameter/population/modality/source); generated types done in CH-4 | `TS-02.2.4: plausibility checks` |
 | 2026-11-02 | CH-7 | Prettier, lint and type fixes in topic-rules tests; TS-02.2.4 plan row and log entry restored | `CH-7: fix formatting, lint, types and plan entry from TS-02.2.4` |
 | 2026-11-02 | CH-6 | Content loader (published number text, invalid-file aware), cross-file integrity (tree, cycles, sibling/former slugs, leaf-only blocks, block ids, parameter/source/z-score references), registry/unit/plausibility rules mapped to file positions; validate:content CLI with GitHub annotations in verify and CI | `CH-6: content loader and validate:content` |
+| 2026-11-02 | TS-02.4.1 | Discrepancy detection across topics for current sources (display-unit comparison, operator and range aware, key-order-insensitive populations), value formatter, loaded-value walker; listed by validate:content | `TS-02.4.1: build-time discrepancy detection` |
