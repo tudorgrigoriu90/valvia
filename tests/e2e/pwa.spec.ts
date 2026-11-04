@@ -51,3 +51,13 @@ test('after one online visit, pages and search work in airplane mode', async ({ 
   await expect(page.getByRole('search').getByRole('link').first()).toBeVisible();
   await context.setOffline(false);
 });
+
+// TS-05.3.3: the update prompt stays hidden on a first visit (shown only when a new version is waiting).
+
+test('the update prompt is present but hidden on a first visit', async ({ page }) => {
+  await page.goto('./');
+  const prompt = page.locator('[data-update-prompt]');
+  await expect(prompt).toHaveCount(1);
+  await expect(prompt).toBeHidden();
+  await expect(prompt.locator('button', { hasText: 'Refresh' })).toHaveCount(1);
+});

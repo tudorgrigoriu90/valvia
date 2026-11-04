@@ -756,3 +756,29 @@ main {
   border-radius: var(--radius);
   color: var(--color-text-muted);
 }
+
+.update-prompt {
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+}
+
+.update-prompt .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-top: var(--space-2);
+  padding-bottom: var(--space-2);
+}
+
+.update-prompt button {
+  min-height: var(--touch-target);
+  padding: 0 var(--space-4);
+  font: inherit;
+  font-weight: 700;
+  color: var(--color-accent);
+  background: var(--color-accent-contrast);
+  border: 0;
+  border-radius: var(--radius);
+  cursor: pointer;
+}

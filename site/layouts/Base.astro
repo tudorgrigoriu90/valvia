@@ -47,6 +47,12 @@ const pageTitle = title === 'Valvia' ? title : `${title} · Valvia`;
       </div>
     </header>
     <ReviewBanner />
+    <div class="update-prompt" role="status" data-update-prompt hidden>
+      <div class="container">
+        <span>New content available.</span>
+        <button type="button">Refresh</button>
+      </div>
+    </div>
     <main id="main">
       <div class="container">
         <slot />
