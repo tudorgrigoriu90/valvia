@@ -7,3 +7,610 @@ order: 3
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: pulmonary-stenosis-bioprosthesis
+    type: grading-table
+    tag: GRADE
+    title: 'Prosthetic pulmonary valve stenosis: bioprosthesis'
+    grades: ['Normal', 'Possible obstruction']
+    values:
+      - parameter: pulmonary-peak-velocity
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 3.2
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Assumes normal RV stroke volume; use off-axis parasternal and suprasternal views.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '15'
+            page: '33'
+      - parameter: pulmonary-peak-velocity
+        context: grading
+        grade: Possible obstruction
+        operator: '>='
+        value: 3.2
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Assumes normal RV stroke volume; use off-axis parasternal and suprasternal views.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '15'
+            page: '33'
+      - parameter: pulmonary-mean-gradient
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 20
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Assumes normal RV stroke volume; use off-axis parasternal and suprasternal views.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '15'
+            page: '33'
+      - parameter: pulmonary-mean-gradient
+        context: grading
+        grade: Possible obstruction
+        operator: '>='
+        value: 20
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Assumes normal RV stroke volume; use off-axis parasternal and suprasternal views.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '15'
+            page: '33'
+  - id: pulmonary-stenosis-homograft
+    type: grading-table
+    tag: GRADE
+    title: 'Prosthetic pulmonary valve stenosis: homograft'
+    grades: ['Normal', 'Possible obstruction']
+    values:
+      - parameter: pulmonary-peak-velocity
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 2.5
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Assumes normal RV stroke volume; use off-axis parasternal and suprasternal views.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '15'
+            page: '33'
+      - parameter: pulmonary-peak-velocity
+        context: grading
+        grade: Possible obstruction
+        operator: '>='
+        value: 2.5
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Assumes normal RV stroke volume; use off-axis parasternal and suprasternal views.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '15'
+            page: '33'
+      - parameter: pulmonary-mean-gradient
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 15
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Assumes normal RV stroke volume; use off-axis parasternal and suprasternal views.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '15'
+            page: '33'
+      - parameter: pulmonary-mean-gradient
+        context: grading
+        grade: Possible obstruction
+        operator: '>='
+        value: 15
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Assumes normal RV stroke volume; use off-axis parasternal and suprasternal views.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '15'
+            page: '33'
+  - id: pulmonary-regurgitation
+    type: grading-table
+    tag: GRADE
+    title: Prosthetic pulmonary regurgitation
+    grades: ['Mild', 'Moderate', 'Severe']
+    values:
+      - parameter: pr-jet-width-percent-annulus
+        context: grading
+        grade: Mild
+        operator: '<='
+        value: 25
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Central jets; Nyquist limit 50–60 cm/s.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '16'
+            page: '34'
+      - parameter: pr-jet-width-percent-annulus
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 26
+        max: 50
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Central jets; Nyquist limit 50–60 cm/s.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '16'
+            page: '34'
+      - parameter: pr-jet-width-percent-annulus
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 50
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Central jets; Nyquist limit 50–60 cm/s.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '16'
+            page: '34'
+      - parameter: regurgitant-fraction
+        context: grading
+        grade: Mild
+        operator: '<'
+        value: 26
+        unit: '%'
+        modality: CMR
+        population:
+          ageGroup: adult
+        caveats:
+          - CMR phase contrast.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            page: '36'
+      - parameter: regurgitant-fraction
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 26
+        max: 35
+        unit: '%'
+        modality: CMR
+        population:
+          ageGroup: adult
+        caveats:
+          - CMR phase contrast.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            page: '36'
+      - parameter: regurgitant-fraction
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 35
+        unit: '%'
+        modality: CMR
+        population:
+          ageGroup: adult
+        caveats:
+          - 'CMR phase contrast; other investigators consider more than 40% severe.'
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            page: '36'
+  - id: tricuspid-stenosis-bioprosthetic
+    type: threshold-list
+    tag: CRIT
+    title: 'Prosthetic tricuspid stenosis: bioprosthetic valve'
+    values:
+      - parameter: tricuspid-e-velocity
+        context: diagnostic-criterion
+        operator: '>='
+        value: 2.1
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Suggestive of prosthetic tricuspid stenosis.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '19'
+            page: '36'
+      - parameter: tricuspid-mean-gradient
+        context: diagnostic-criterion
+        operator: '>='
+        value: 9
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Suggestive of prosthetic tricuspid stenosis.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '19'
+            page: '36'
+      - parameter: pressure-half-time
+        context: diagnostic-criterion
+        operator: '>='
+        value: 200
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Suggestive of prosthetic tricuspid stenosis.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '19'
+            page: '36'
+      - parameter: prosthetic-eoa
+        context: diagnostic-criterion
+        operator: '<'
+        value: 1.5
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Suggestive of prosthetic tricuspid stenosis.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '19'
+            page: '36'
+      - parameter: prosthetic-tricuspid-vti-ratio
+        context: diagnostic-criterion
+        operator: '>='
+        value: 3.3
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Suggestive of prosthetic tricuspid stenosis.
+          - Assessed in the absence of AR or TR; upper limits vary by valve size and type.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '19'
+            page: '36'
+  - id: tricuspid-stenosis-mechanical
+    type: threshold-list
+    tag: CRIT
+    title: 'Prosthetic tricuspid stenosis: mechanical valve'
+    values:
+      - parameter: tricuspid-e-velocity
+        context: diagnostic-criterion
+        operator: '>='
+        value: 1.9
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Suggestive of prosthetic tricuspid stenosis.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '19'
+            page: '36'
+      - parameter: tricuspid-mean-gradient
+        context: diagnostic-criterion
+        operator: '>='
+        value: 6
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Suggestive of prosthetic tricuspid stenosis.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '19'
+            page: '36'
+      - parameter: pressure-half-time
+        context: diagnostic-criterion
+        operator: '>='
+        value: 130
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Suggestive of prosthetic tricuspid stenosis.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '19'
+            page: '36'
+      - parameter: prosthetic-eoa
+        context: diagnostic-criterion
+        operator: '<'
+        value: 2.0
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Suggestive of prosthetic tricuspid stenosis.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '19'
+            page: '36'
+      - parameter: prosthetic-tricuspid-vti-ratio
+        context: diagnostic-criterion
+        operator: '>='
+        value: 2.1
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Suggestive of prosthetic tricuspid stenosis.
+          - Assessed in the absence of AR or TR; upper limits vary by valve size and type.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '19'
+            page: '36'
+  - id: tr-after-tvr-or-repair
+    type: grading-table
+    tag: GRADE
+    title: TR after tricuspid valve replacement or repair
+    grades: ['Mild', 'Moderate', 'Severe']
+    values:
+      - parameter: vena-contracta-width
+        context: grading
+        grade: Mild
+        operator: '<'
+        value: 0.3
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Nyquist limit above 50–60 cm/s.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '21'
+            page: '39'
+      - parameter: vena-contracta-width
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 0.3
+        max: 0.69
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Nyquist limit above 50–60 cm/s.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '21'
+            page: '39'
+      - parameter: vena-contracta-width
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 0.7
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Nyquist limit above 50–60 cm/s.
+          - Or two or more moderate jets.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '21'
+            page: '39'
+      - parameter: pisa-radius
+        context: grading
+        grade: Mild
+        operator: '<='
+        value: 0.5
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Not well validated in TVR; baseline Nyquist shift to 25–35 cm/s.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '21'
+            page: '39'
+      - parameter: pisa-radius
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 0.6
+        max: 0.9
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Not well validated in TVR; baseline Nyquist shift to 25–35 cm/s.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '21'
+            page: '39'
+      - parameter: pisa-radius
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 0.9
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Not well validated in TVR; baseline Nyquist shift to 25–35 cm/s.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '21'
+            page: '39'
+      - parameter: eroa
+        context: grading
+        grade: Mild
+        operator: '<'
+        value: 0.20
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Cut-offs from 2D PISA need further validation.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '21'
+            page: '39'
+      - parameter: eroa
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 0.20
+        max: 0.39
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Cut-offs from 2D PISA need further validation.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '21'
+            page: '39'
+      - parameter: eroa
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 0.40
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Cut-offs from 2D PISA need further validation.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '21'
+            page: '39'
+      - parameter: regurgitant-volume
+        context: grading
+        grade: Mild
+        operator: '<'
+        value: 30
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Cut-offs from 2D PISA need further validation.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '21'
+            page: '39'
+      - parameter: regurgitant-volume
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 30
+        max: 44
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Cut-offs from 2D PISA need further validation.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '21'
+            page: '39'
+      - parameter: regurgitant-volume
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 45
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Cut-offs from 2D PISA need further validation.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '21'
+            page: '39'

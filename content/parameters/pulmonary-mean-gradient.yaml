@@ -1,0 +1,6 @@
+id: pulmonary-mean-gradient
+name: Pulmonary valve mean gradient
+abbreviation: PV MG
+quantity: pressure
+unit: 'mmHg'
+modalities: [Echo]

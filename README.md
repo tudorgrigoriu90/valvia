@@ -15,7 +15,7 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 |---|---|
 | Release | R0: Walking skeleton |
 | Last completed task | FT-03.7: 4.2–4.6 Prosthetic valves & valve interventions (grading, PPM, post-re |
-| Next task | FT-03.7: prosthetic tricuspid and pulmonary valves (ASE 2024) |
+| Next task | TS-04.7.3: modality badges |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

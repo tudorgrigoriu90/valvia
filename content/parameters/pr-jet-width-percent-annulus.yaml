@@ -1,0 +1,6 @@
+id: pr-jet-width-percent-annulus
+name: PR jet width as % of pulmonary annulus
+abbreviation: PR jet width/annulus
+quantity: percent
+unit: '%'
+modalities: [Echo]

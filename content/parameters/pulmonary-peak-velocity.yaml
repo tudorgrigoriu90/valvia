@@ -1,0 +1,6 @@
+id: pulmonary-peak-velocity
+name: Pulmonary valve peak velocity
+abbreviation: PV Vmax
+quantity: velocity-blood
+unit: 'm/s'
+modalities: [Echo]

@@ -1,0 +1,6 @@
+id: tricuspid-mean-gradient
+name: Tricuspid valve mean gradient
+abbreviation: TV MG
+quantity: pressure
+unit: 'mmHg'
+modalities: [Echo]

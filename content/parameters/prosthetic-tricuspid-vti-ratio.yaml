@@ -1,0 +1,6 @@
+id: prosthetic-tricuspid-vti-ratio
+name: VTI prosthetic tricuspid valve / VTI LVOT
+abbreviation: VTI PrTV/LVOT
+quantity: ratio
+unit: '1'
+modalities: [Echo]
