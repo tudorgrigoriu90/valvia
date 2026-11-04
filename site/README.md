@@ -28,3 +28,10 @@ article); a visually hidden, `aria-hidden` line adds topic synonyms and the name
 parameter on the page (`core/navigation/search-terms.ts`) with a higher weight. Header, banner and footer are not indexed.
 The index lives in `dist/pagefind/` and is loaded with a dynamic import from `<base>pagefind/pagefind.js` (CSP allows
 `'wasm-unsafe-eval'`).
+
+## Offline (TS-05.3.1–05.3.2)
+
+`npm run build` ends with `tsx pipeline/pwa/cli.ts`, which writes `dist/sw.js`: every built page, asset and the
+Pagefind index are precached (version = hash of all file contents). Pages are network-first with the cache as fallback;
+assets are cache-first. `site/scripts/register-sw.ts` registers the worker with the base path as scope.
+`manifest.webmanifest` is generated (`site/pages/manifest.webmanifest.ts`) so its URLs follow the base path.

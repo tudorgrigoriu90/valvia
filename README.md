@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-05.3.1: Web app manifest ("Valvia"), icons, installability |
-| Next task | TS-05.3.2: service worker precaching for offline use |
+| Last completed task | TS-05.3.2: Service worker precaching all content pages + search index |
+| Next task | TS-05.3.3: update prompt |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

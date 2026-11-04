@@ -34,3 +34,20 @@ test('pages declare an icon and theme colour', async ({ page }) => {
   await expect(page.locator('link[rel="icon"]')).toHaveAttribute('href', '/valvia/icon.svg');
   await expect(page.locator('meta[name="theme-color"]').first()).toHaveAttribute('content', /#[0-9a-f]{6}/i);
 });
+
+// TS-05.3.2: all pages and search work offline after one online visit.
+
+test('after one online visit, pages and search work in airplane mode', async ({ page, context }) => {
+  await page.goto('./');
+  await page.evaluate(async () => {
+    await navigator.serviceWorker.ready;
+  });
+  await page.reload();
+  await context.setOffline(true);
+  await page.goto('valvular-heart-disease/mitral-valve-disease/mitral-regurgitation/primary-mr-severity-grading/');
+  await expect(page.getByRole('heading', { level: 1, name: /Primary MR: severity grading/ })).toBeVisible();
+  await page.goto('./');
+  await page.getByRole('searchbox', { name: 'Search' }).fill('TAPSE');
+  await expect(page.getByRole('search').getByRole('link').first()).toBeVisible();
+  await context.setOffline(false);
+});

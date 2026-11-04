@@ -217,7 +217,7 @@ Static first, near-zero cost (backlog §2). Every row links to its ADR; new arch
 | Hosting | GitHub Pages via Actions deploy (no `gh-pages` branch, no hosted previews); base path from env; meta CSP, no inline scripts; static redirect pages | [ADR 0002](docs/adr/0002-hosting-github-pages.md), [ADR 0005](docs/adr/0005-pages-actions-deploy-no-previews.md) |
 | Content | YAML in Git, one entity per file; JSON Schema 2020-12 is the source of truth; generated TS types; own loader with line-precise errors | [ADR 0003](docs/adr/0003-content-as-code.md) |
 | Search | Pagefind post-build index, own search UI, synonyms indexed, precached offline | [ADR 0004](docs/adr/0004-client-side-search-pagefind.md) |
-| Offline | PWA service worker (Workbox) | — |
+| Offline | Own generated service worker (`pipeline/pwa`): precache all pages, assets and the search index; pages network-first | — |
 | Analytics | Cookieless (Cloudflare Web Analytics or GoatCounter) | — |
 | Dependencies | Renovate, auto-merge patch/minor on green CI | — |
 
