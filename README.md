@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | FT-03.9: 5 Pulmonary hypertension & right heart (W1) |
-| Next task | FT-03.2: diastolic function (ASE 2025) |
+| Last completed task | FT-03.2: 2 Diastolic function & filling pressures (W1) |
+| Next task | FT-03.7: prosthetic valve grading (ASE 2024) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

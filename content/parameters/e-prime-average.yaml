@@ -1,0 +1,7 @@
+id: e-prime-average
+name: Average mitral annular e′ velocity
+abbreviation: Average e′
+quantity: velocity-tissue
+unit: 'cm/s'
+modalities: [Echo]
+synonyms: [mean e prime]

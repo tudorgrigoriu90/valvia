@@ -1,0 +1,7 @@
+id: mitral-e-a-ratio
+name: Mitral E/A ratio
+abbreviation: E/A
+quantity: ratio
+unit: '1'
+modalities: [Echo]
+synonyms: [E to A ratio]

@@ -1,0 +1,7 @@
+id: e-prime-lateral
+name: Lateral mitral annular e′ velocity
+abbreviation: Lateral e′
+quantity: velocity-tissue
+unit: 'cm/s'
+modalities: [Echo]
+synonyms: [lateral e prime, e' lateral]

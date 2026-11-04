@@ -1,0 +1,7 @@
+id: e-over-e-prime-average
+name: E/e′ ratio (average)
+abbreviation: Average E/e′
+quantity: ratio
+unit: '1'
+modalities: [Echo]
+synonyms: [E/e', E over e prime, average E/e']

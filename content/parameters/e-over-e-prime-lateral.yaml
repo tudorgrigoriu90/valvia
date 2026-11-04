@@ -1,0 +1,7 @@
+id: e-over-e-prime-lateral
+name: E/e′ ratio (lateral)
+abbreviation: Lateral E/e′
+quantity: ratio
+unit: '1'
+modalities: [Echo]
+synonyms: [E/e' lateral]

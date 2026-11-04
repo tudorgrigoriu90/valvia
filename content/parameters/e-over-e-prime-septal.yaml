@@ -1,0 +1,7 @@
+id: e-over-e-prime-septal
+name: E/e′ ratio (septal)
+abbreviation: Septal E/e′
+quantity: ratio
+unit: '1'
+modalities: [Echo]
+synonyms: [E/e' septal]

@@ -1,0 +1,7 @@
+id: la-reservoir-strain
+name: LA reservoir strain
+abbreviation: LARS
+quantity: percent
+unit: '%'
+modalities: [Echo]
+synonyms: [LA strain, LASr, left atrial strain]

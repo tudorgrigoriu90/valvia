@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | FT-03.9 5 Pulmonary hypertension & right heart (W1) |
-| Next up | FT-03.2: diastolic function (ASE 2025) |
+| Last completed | FT-03.2 2 Diastolic function & filling pressures (W1) |
+| Next up | FT-03.7: prosthetic valve grading (ASE 2024) |
 
 ## Next up: R0 sequence
 
@@ -115,7 +115,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-03.0.1 | Content YAML templates + content guide (modelling, citing, units, history, modality, paediatric values) | 2 | todo |  |
 | TS-03.0.2 | Content status page (per node: draft / in review / published; wave) | 2 | todo |  |
 | FT-03.1 | 1 Chamber size & function (W1) | 8 | in progress | Chamber quantification (ASE/EACVI 2015): LV, LA, RV done; RA and aortic root are mean ± SD only |
-| FT-03.2 | 2 Diastolic function & filling pressures (W1) | 5 | todo |  |
+| FT-03.2 | 2 Diastolic function & filling pressures (W1) | 5 | in progress | Diastolic (ASE 2025): 2.1 and 2.2 done; special populations and HFpEF pending |
 | FT-03.3 | 3.1 VHD: aortic valve (incl. TAVI considerations, AR TAVI) (W1) | 10 | in progress | AR and AS grading done (ASE/EACVI); intervention thresholds and TAVI pending ESC |
 | FT-03.4 | 3.2 VHD: mitral valve (primary/secondary MR, TEER feasibility, repair likelihood, MS, MAC) (W1) | 10 | in progress | Primary MR (ASE 2017) done; ESC/EACVI and CMR values pending document access |
 | FT-03.5 | 3.3–3.5 VHD: tricuspid, pulmonary, multiple & mixed (W1) | 5 | in progress | TR and PR grading (ASE 2017); stenosis grading pending sources |
@@ -325,3 +325,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-02 | FT-03.3 | AS severity grading (3.1.1.1) from EACVI/ASE 2017 Table 3: Vmax, mean gradient, AVA, indexed AVA, velocity ratio (sclerosis/mild/moderate/severe) + integration note; registry entry switched to the JASE publication read | `FT-03.3: aortic stenosis severity grading (EACVI/ASE 2017)` |
 | 2026-11-04 | CH-11 | Optional minExclusive/maxExclusive on ranges; shared valueText formatter renders '> 5.8 to ≤ 6.3' (or 'a–b' when inclusive); tables, originals and discrepancy signatures respect inclusivity | `CH-11: exclusive range bounds` |
 | 2026-11-04 | FT-03.9 | Right heart reference limits and mild/moderate/severe grading from ASE 2025 Table 1: RA size (1.4), RV size incl. PA diameter (1.3.1), RV systolic function (1.3.2), haemodynamics TRV/RVSP/RAP/RVOT AccT (5.4); 21 new parameters | `FT-03.9: right heart grading from ASE 2025` |
+| 2026-11-04 | FT-03.2 | Diastolic function from ASE 2025: normal ranges by age (2.1, Table 5) for E, A, E/A, e′, E/e′, LAVi, TRV, LARS; dysfunction criteria (2.2, Figure 2/key points) with LAP algorithm link; 9 new parameters | `FT-03.2: diastolic normal ranges and dysfunction criteria (ASE 2025)` |

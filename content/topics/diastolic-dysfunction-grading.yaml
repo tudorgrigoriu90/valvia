@@ -7,3 +7,163 @@ order: 1
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: reduced-relaxation
+    type: threshold-list
+    tag: CRIT
+    title: 'Step 1: reduced e′ velocity'
+    values:
+      - parameter: e-prime-septal
+        context: diagnostic-criterion
+        operator: '<'
+        value: 6
+        unit: cm/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Indicates abnormal LV relaxation irrespective of age.
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            figure: '2'
+            page: '553'
+      - parameter: e-prime-lateral
+        context: diagnostic-criterion
+        operator: '<'
+        value: 7
+        unit: cm/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Indicates abnormal LV relaxation irrespective of age.
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            figure: '2'
+            page: '553'
+      - parameter: e-prime-average
+        context: diagnostic-criterion
+        operator: '<'
+        value: 6.5
+        unit: cm/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Indicates abnormal LV relaxation irrespective of age.
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            figure: '2'
+            page: '553'
+  - id: lap-markers
+    type: threshold-list
+    tag: CRIT
+    title: 'Step 2: markers of remodelling and elevated LA pressure'
+    values:
+      - parameter: e-over-e-prime-average
+        context: diagnostic-criterion
+        operator: '>'
+        value: 14
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Marker of LA/LV remodelling or elevated LA pressure (step 2).
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            figure: '2'
+            page: '553'
+      - parameter: la-reservoir-strain
+        context: diagnostic-criterion
+        operator: '<='
+        value: 18
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Marker of LA/LV remodelling or elevated LA pressure (step 2).
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            figure: '2'
+            page: '553'
+      - parameter: mitral-e-a-ratio
+        context: diagnostic-criterion
+        operator: '<='
+        value: 0.8
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Marker of LA/LV remodelling or elevated LA pressure (step 2).
+          - Or use age-specific cut-offs for an abnormally reduced E/A ratio.
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            figure: '2'
+            page: '553'
+      - parameter: mitral-e-a-ratio
+        context: diagnostic-criterion
+        operator: '>='
+        value: 2
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Marker of LA/LV remodelling or elevated LA pressure (step 2).
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            figure: '2'
+            page: '553'
+      - parameter: la-volume-index
+        context: diagnostic-criterion
+        operator: '>'
+        value: 34
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Marker of LA/LV remodelling or elevated LA pressure (step 2).
+          - 'Exclude other causes of LA enlargement (athletes, anaemia, atrial arrhythmias, mitral valve disease).'
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            figure: '2'
+            page: '553'
+  - id: diagnosis
+    type: criteria-checklist
+    tag: CRIT
+    title: Diastolic dysfunction is present if
+    criteria:
+      - text: e′ is reduced and one or more step-2 markers are present
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            figure: '2'
+            page: '553'
+      - text: e′ is preserved but two or more step-2 markers are present
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            figure: '2'
+            page: '553'
+  - id: lap-algorithm
+    type: algorithm-reference
+    tag: ALG
+    title: Algorithm for estimating mean LA pressure in sinus rhythm
+    citation:
+      source: ase-2025-diastolic-function
+      locator:
+        figure: '3'
+        page: '554'
+    url: 'https://doi.org/10.1016/j.echo.2025.03.011'

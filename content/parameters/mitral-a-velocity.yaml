@@ -1,0 +1,7 @@
+id: mitral-a-velocity
+name: Mitral inflow A-wave peak velocity
+abbreviation: A velocity
+quantity: velocity-blood
+unit: 'm/s'
+modalities: [Echo]
+synonyms: [mitral A, A wave]
