@@ -1,0 +1,46 @@
+---
+import { contentStatus } from '../../core/view/status';
+import Base from '../layouts/Base.astro';
+import { getContent } from '../lib/content';
+
+const { navigation } = getContent();
+const { categories, totals } = contentStatus(navigation);
+const percent = (part: number, whole: number): string =>
+  whole === 0 ? '0%' : `${String(Math.round((part / whole) * 100))}%`;
+---
+
+<Base title="Content status" description="Coverage and review status of Valvia content.">
+  <h1>Content status</h1>
+  <p class="lead">
+    {totals.populated} of {totals.leaves} topics have content ({percent(totals.populated, totals.leaves)}).
+    {totals.published} reviewed, {totals.inReview} in review, {totals.draft} draft.
+  </p>
+  <div class="table-scroll" role="region" aria-label="Content status by category (scrollable table)" tabindex="0">
+    <table class="grading-table" aria-label="Content status by category">
+      <thead>
+        <tr>
+          <th scope="col">Category</th>
+          <th scope="col">Wave</th>
+          <th scope="col">Topics with content</th>
+          <th scope="col">Draft</th>
+          <th scope="col">In review</th>
+          <th scope="col">Reviewed</th>
+        </tr>
+      </thead>
+      <tbody>
+        {categories.map((c) => (
+          <tr>
+            <th scope="row">{c.title}</th>
+            <td>{c.wave}</td>
+            <td>
+              {c.populated} / {c.leaves}
+            </td>
+            <td>{c.draft}</td>
+            <td>{c.inReview}</td>
+            <td>{c.published}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</Base>

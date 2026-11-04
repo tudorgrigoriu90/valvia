@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-07.1.2 Intended-use statement + disclaimer ("verify against the original guid |
-| Next up | TS-03.0.2: content status page |
+| Last completed | TS-03.0.2 Content status page (per node: draft / in review / published; wave) |
+| Next up | TS-01.2.5: content PR template |
 
 ## Next up: R0 sequence
 
@@ -116,7 +116,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | Key | Summary | SP | Status | Notes |
 |---|---|---|---|---|
 | TS-03.0.1 | Content YAML templates + content guide (modelling, citing, units, history, modality, paediatric values) | 2 | todo |  |
-| TS-03.0.2 | Content status page (per node: draft / in review / published; wave) | 2 | todo |  |
+| TS-03.0.2 | Content status page (per node: draft / in review / published; wave) | 2 | done |  |
 | FT-03.1 | 1 Chamber size & function (W1) | 8 | in progress | Chamber, LV/RV/LA strain done |
 | FT-03.2 | 2 Diastolic function & filling pressures (W1) | 5 | in progress | Diastolic (ASE 2025): 2.1 and 2.2 done; special populations and HFpEF pending |
 | FT-03.3 | 3.1 VHD: aortic valve (incl. TAVI considerations, AR TAVI) (W1) | 10 | in progress | AR and AS grading done (ASE/EACVI); intervention thresholds and TAVI pending ESC |
@@ -349,3 +349,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-04 | TS-05.3.3 | 'New content available' status bar when an updated worker waits; Refresh activates it and reloads; no reload on first install (fixes a mid-test reload found by E2E) | `TS-05.3.3: update prompt for new content` |
 | 2026-11-04 | TS-05.3.4 | Offline indicator ('Offline: showing saved content.') driven by navigator.onLine and online/offline events | `TS-05.3.4: offline indicator` |
 | 2026-11-04 | TS-07.1.2 | About page: intended use (reference aid, not a medical device, no patient calculation), disclaimer incl. draft status, source policy, how values are shown, report-a-problem link; linked from every footer | `TS-07.1.2: intended use and disclaimer page` |
+| 2026-11-04 | TS-03.0.2 | Content status page: per root category wave, topics with content / total leaves, draft / in review / reviewed counts, totals; linked from the footer | `TS-03.0.2: content status page` |
