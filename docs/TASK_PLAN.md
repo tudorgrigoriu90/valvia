@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-14 Velocity-time integral quantity displayed in cm |
-| Next up | FT-03.5: tricuspid and pulmonary stenosis grading (EAE/ASE 2009) |
+| Last completed | FT-03.5 3.3–3.5 VHD: tricuspid, pulmonary, multiple & mixed (W1) |
+| Next up | TS-04.7.1: adult/paediatric switch |
 
 ## Next up: R0 sequence
 
@@ -121,7 +121,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | FT-03.2 | 2 Diastolic function & filling pressures (W1) | 5 | in progress | Diastolic (ASE 2025): 2.1 and 2.2 done; special populations and HFpEF pending |
 | FT-03.3 | 3.1 VHD: aortic valve (incl. TAVI considerations, AR TAVI) (W1) | 10 | in progress | AR and AS grading done (ASE/EACVI); intervention thresholds and TAVI pending ESC |
 | FT-03.4 | 3.2 VHD: mitral valve (primary/secondary MR, TEER feasibility, repair likelihood, MS, MAC) (W1) | 10 | in progress | Primary MR (ASE 2017) done; ESC/EACVI and CMR values pending document access |
-| FT-03.5 | 3.3–3.5 VHD: tricuspid, pulmonary, multiple & mixed (W1) | 5 | in progress | TR and PR grading (ASE 2017); stenosis grading pending sources |
+| FT-03.5 | 3.3–3.5 VHD: tricuspid, pulmonary, multiple & mixed (W1) | 5 | in progress | TR, PR, TS, PS done (ASE) |
 | FT-03.6 | 3.6 VHD: infective endocarditis (W1) | 3 | todo |  |
 | FT-03.7 | 4.2–4.6 Prosthetic valves & valve interventions (grading, PPM, post-repair, BVD) (W1) | 8 | in progress | Prosthetic grading (ASE 2024) done; reference values by model (4.1) pending |
 | FT-03.8 | 4.1 Prosthetic valve reference values by model and size (W2) | 8 | todo |  |
@@ -340,3 +340,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-04 | TS-02.4.2 | History logic: withoutHistory removes superseded/withdrawn-source values from blocks; previousRecommendations lists them with year, status and current successor (cycle-safe chain); 100 % coverage | `TS-02.4.2: supersession history logic` |
 | 2026-11-04 | TS-04.7.2 | Leaf view model (current values vs previous recommendations per block, gap flag); collapsed 'Previous recommendations' section with source, year and current successor; 'No current society-endorsed value' gap message | `TS-04.7.2: previous recommendations view` |
 | 2026-11-04 | CH-14 | New quantity velocity-time-integral (unit cm, displayed in cm, never converted to mm) | `CH-14: velocity-time integral quantity` |
+| 2026-11-04 | FT-03.5 | EAE/ASE 2009 valve stenosis (registered, PMID 19130998): tricuspid stenosis criteria (3.3.5, Table 10), pulmonary stenosis grading (3.4.1, Table 11), Wilkins score for PMC suitability (3.2.2.2, Table 5); MS classification deliberately not used (ASE note) | `FT-03.5: tricuspid/pulmonary stenosis and Wilkins score (EAE/ASE 2009)` |

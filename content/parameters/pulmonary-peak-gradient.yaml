@@ -1,0 +1,6 @@
+id: pulmonary-peak-gradient
+name: Pulmonary valve peak gradient
+abbreviation: PV peak gradient
+quantity: pressure
+unit: mmHg
+modalities: [Echo]

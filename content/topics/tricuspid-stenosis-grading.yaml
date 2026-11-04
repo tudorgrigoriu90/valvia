@@ -7,3 +7,80 @@ order: 4
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: significant-ts
+    type: threshold-list
+    tag: CRIT
+    title: Findings indicative of haemodynamically significant TS
+    values:
+      - parameter: tricuspid-mean-gradient
+        context: diagnostic-criterion
+        operator: '>='
+        value: 5
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: eae-ase-2009-valve-stenosis
+          locator:
+            table: '10'
+            page: '19'
+      - parameter: tricuspid-inflow-vti
+        context: diagnostic-criterion
+        operator: '>'
+        value: 60
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: eae-ase-2009-valve-stenosis
+          locator:
+            table: '10'
+            page: '19'
+      - parameter: pressure-half-time
+        context: diagnostic-criterion
+        operator: '>='
+        value: 190
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: eae-ase-2009-valve-stenosis
+          locator:
+            table: '10'
+            page: '19'
+      - parameter: tricuspid-valve-area
+        context: diagnostic-criterion
+        operator: '<='
+        value: 1
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Stroke volume from LV or RV outflow; underestimated with more than mild TR, but a value of 1 cm² or less still implies a significant haemodynamic burden.'
+        citation:
+          source: eae-ase-2009-valve-stenosis
+          locator:
+            table: '10'
+            page: '19'
+  - id: supportive
+    type: criteria-checklist
+    tag: CRIT
+    title: Supportive findings
+    criteria:
+      - text: 'Right atrium enlarged, at least moderately'
+        citation:
+          source: eae-ase-2009-valve-stenosis
+          locator:
+            table: '10'
+            page: '19'
+      - text: Dilated inferior vena cava
+        citation:
+          source: eae-ase-2009-valve-stenosis
+          locator:
+            table: '10'
+            page: '19'

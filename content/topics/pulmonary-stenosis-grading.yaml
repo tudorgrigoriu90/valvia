@@ -7,3 +7,106 @@ order: 0
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: severity-grading
+    type: grading-table
+    tag: GRADE
+    title: Grading of pulmonary stenosis
+    grades: ['Mild', 'Moderate', 'Severe']
+    values:
+      - parameter: pulmonary-peak-velocity
+        context: grading
+        grade: Mild
+        operator: '<'
+        value: 3
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: eae-ase-2009-valve-stenosis
+          locator:
+            table: '11'
+            page: '20'
+      - parameter: pulmonary-peak-velocity
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 3
+        max: 4
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: eae-ase-2009-valve-stenosis
+          locator:
+            table: '11'
+            page: '20'
+      - parameter: pulmonary-peak-velocity
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 4
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: eae-ase-2009-valve-stenosis
+          locator:
+            table: '11'
+            page: '20'
+      - parameter: pulmonary-peak-gradient
+        context: grading
+        grade: Mild
+        operator: '<'
+        value: 36
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: eae-ase-2009-valve-stenosis
+          locator:
+            table: '11'
+            page: '20'
+      - parameter: pulmonary-peak-gradient
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 36
+        max: 64
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: eae-ase-2009-valve-stenosis
+          locator:
+            table: '11'
+            page: '20'
+      - parameter: pulmonary-peak-gradient
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 64
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: eae-ase-2009-valve-stenosis
+          locator:
+            table: '11'
+            page: '20'
+  - id: measurement
+    type: note
+    tag: METH
+    title: Measurement
+    text: 'Use the highest velocity from several windows (parasternal short axis, subcostal, modified apical). With stenoses in series, for example subvalvular plus valvular, the simplified Bernoulli gradient cannot separate the contribution of each; estimate RV systolic pressure from the TR velocity as a cross-check.'
+    citation:
+      source: eae-ase-2009-valve-stenosis
+      locator:
+        table: '11'
+        page: '20'

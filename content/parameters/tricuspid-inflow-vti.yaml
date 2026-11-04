@@ -1,0 +1,6 @@
+id: tricuspid-inflow-vti
+name: Tricuspid inflow velocity-time integral
+abbreviation: TV inflow VTI
+quantity: velocity-time-integral
+unit: cm
+modalities: [Echo]

@@ -1,0 +1,7 @@
+id: tricuspid-valve-area
+name: Tricuspid valve area (continuity equation)
+abbreviation: TVA
+quantity: area
+unit: 'cm²'
+modalities: [Echo]
+method: Stroke volume from the LV or RV outflow divided by the tricuspid inflow VTI; underestimated with more than mild TR.

@@ -7,3 +7,130 @@ order: 1
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: wilkins-mobility
+    type: criteria-checklist
+    tag: FEAS
+    title: 'Wilkins score: leaflet mobility'
+    criteria:
+      - text: 'Grade 1: highly mobile valve with only the leaflet tips restricted'
+        citation:
+          source: eae-ase-2009-valve-stenosis
+          locator:
+            table: '5'
+            page: '14'
+      - text: 'Grade 2: mid and basal leaflet portions have normal mobility'
+        citation:
+          source: eae-ase-2009-valve-stenosis
+          locator:
+            table: '5'
+            page: '14'
+      - text: 'Grade 3: valve still moves forward in diastole, mainly from the base'
+        citation:
+          source: eae-ase-2009-valve-stenosis
+          locator:
+            table: '5'
+            page: '14'
+      - text: 'Grade 4: no or minimal forward movement of the leaflets in diastole'
+        citation:
+          source: eae-ase-2009-valve-stenosis
+          locator:
+            table: '5'
+            page: '14'
+  - id: wilkins-thickening
+    type: criteria-checklist
+    tag: FEAS
+    title: 'Wilkins score: leaflet thickening'
+    criteria:
+      - text: 'Grade 1: leaflets near normal in thickness (4–5 mm)'
+        citation:
+          source: eae-ase-2009-valve-stenosis
+          locator:
+            table: '5'
+            page: '14'
+      - text: 'Grade 2: mid-leaflets normal, considerable thickening of the margins (5–8 mm)'
+        citation:
+          source: eae-ase-2009-valve-stenosis
+          locator:
+            table: '5'
+            page: '14'
+      - text: 'Grade 3: thickening through the entire leaflet (5–8 mm)'
+        citation:
+          source: eae-ase-2009-valve-stenosis
+          locator:
+            table: '5'
+            page: '14'
+      - text: 'Grade 4: considerable thickening of all leaflet tissue (more than 8–10 mm)'
+        citation:
+          source: eae-ase-2009-valve-stenosis
+          locator:
+            table: '5'
+            page: '14'
+  - id: wilkins-calcification
+    type: criteria-checklist
+    tag: FEAS
+    title: 'Wilkins score: calcification'
+    criteria:
+      - text: 'Grade 1: a single area of increased echo brightness'
+        citation:
+          source: eae-ase-2009-valve-stenosis
+          locator:
+            table: '5'
+            page: '14'
+      - text: 'Grade 2: scattered areas of brightness confined to the leaflet margins'
+        citation:
+          source: eae-ase-2009-valve-stenosis
+          locator:
+            table: '5'
+            page: '14'
+      - text: 'Grade 3: brightness extending into the mid-portions of the leaflets'
+        citation:
+          source: eae-ase-2009-valve-stenosis
+          locator:
+            table: '5'
+            page: '14'
+      - text: 'Grade 4: extensive brightness throughout much of the leaflet tissue'
+        citation:
+          source: eae-ase-2009-valve-stenosis
+          locator:
+            table: '5'
+            page: '14'
+  - id: wilkins-subvalvular
+    type: criteria-checklist
+    tag: FEAS
+    title: 'Wilkins score: subvalvular thickening'
+    criteria:
+      - text: 'Grade 1: minimal thickening just below the leaflets'
+        citation:
+          source: eae-ase-2009-valve-stenosis
+          locator:
+            table: '5'
+            page: '14'
+      - text: 'Grade 2: chordal thickening extending to one third of the chordal length'
+        citation:
+          source: eae-ase-2009-valve-stenosis
+          locator:
+            table: '5'
+            page: '14'
+      - text: 'Grade 3: thickening extending to the distal third of the chords'
+        citation:
+          source: eae-ase-2009-valve-stenosis
+          locator:
+            table: '5'
+            page: '14'
+      - text: 'Grade 4: extensive thickening and shortening of all chordal structures down to the papillary muscles'
+        citation:
+          source: eae-ase-2009-valve-stenosis
+          locator:
+            table: '5'
+            page: '14'
+  - id: wilkins-total
+    type: note
+    tag: METH
+    title: Total score
+    text: 'The Wilkins score is the sum of the four components and ranges from 4 to 16. No anatomical score has been proven superior, and all have limited predictive value for the result of balloon commissurotomy, which depends on other clinical and echocardiographic findings.'
+    citation:
+      source: eae-ase-2009-valve-stenosis
+      locator:
+        table: '5'
+        page: '14'
