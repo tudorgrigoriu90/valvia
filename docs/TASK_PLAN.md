@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | FT-03.11 7 Pericardial disease (W1) |
-| Next up | TS-04.7.1: adult/paediatric switch |
+| Last completed | TS-05.3.1 Web app manifest ("Valvia"), icons, installability |
+| Next up | TS-05.3.2: service worker precaching for offline use |
 
 ## Next up: R0 sequence
 
@@ -170,7 +170,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-05.1.1 | Breakpoints (360 / 768 / 1024) + real-device test matrix (iOS Safari, Android Chrome) | 3 | todo |  |
 | TS-05.2.1 | Lighthouse CI budgets (LCP, JS weight, CLS) as blocking checks | 2 | todo |  |
 | TS-05.2.2 | System fonts, SVG-only icons; analytics beacon is the only third-party script | 1 | todo |  |
-| TS-05.3.1 | Web app manifest ("Valvia"), icons, installability | 1 | todo |  |
+| TS-05.3.1 | Web app manifest ("Valvia"), icons, installability | 1 | done | PNG icon sizes can be added if a store or older browser needs them |
 | TS-05.3.2 | Service worker precaching all content pages + search index | 3 | todo |  |
 | TS-05.3.3 | Update prompt + content version display | 2 | todo |  |
 | TS-05.3.4 | Offline indicator | 1 | todo |  |
@@ -344,3 +344,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-04 | FT-03.1 | Strain from ASE/EACVI 2025 consensus: LV GLS normal/borderline/abnormal, RV free-wall strain LLN by sex, LA reservoir strain limits (1.7, p. 995/1007); relative GLS decline >12% in cardio-oncology (11.2, p. 1000); 2 new parameters | `FT-03.1: myocardial strain and CTRCD surveillance (ASE 2025 strain)` |
 | 2026-11-04 | FT-03.10 | HCM from ASE 2022 (registered, PMID 35659037): diagnostic wall thickness (6.2.1), LVOT/midventricular obstruction + provocation note (6.2.2), SCD imaging risk markers incl. CMR LGE (6.2.3), gradient threshold for septal reduction (6.2.4); 4 new parameters | `FT-03.10: hypertrophic cardiomyopathy imaging thresholds (ASE 2022)` |
 | 2026-11-04 | FT-03.11 | Pericardial disease from ASE 2013 (registered, PMID 23998693): effusion size grading (7.1), tamponade respiratory variation + Table 6 signs (7.2), constriction findings incl. CT pericardial thickness and differentiation note (7.3); 6 new parameters | `FT-03.11: pericardial effusion, tamponade and constriction (ASE 2013)` |
+| 2026-11-04 | TS-05.3.1 | Web app manifest endpoint (name/short_name Valvia, start_url and scope follow the base path, standalone, theme colours) and SVG icon (any + maskable) linked from every page | `TS-05.3.1: web app manifest and icon` |
