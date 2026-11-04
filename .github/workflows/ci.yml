@@ -64,12 +64,23 @@ jobs:
       - name: E2E tests
         run: npm run test:e2e
 
+      - name: Lighthouse budgets
+        run: npm run lighthouse
+
       - name: Upload coverage report
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v7
         with:
           name: coverage
           path: coverage/
+          retention-days: 14
+
+      - name: Upload Lighthouse reports
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: lighthouse
+          path: .lighthouseci/
           retention-days: 14
 
       - name: Upload Playwright report

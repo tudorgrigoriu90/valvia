@@ -22,12 +22,14 @@
     "verify": "npm run format:check && npm run lint && npm run typecheck && npm test && npm run validate:content && npm run build && npm run check:links -- --site && npm run test:e2e",
     "check:links": "tsx pipeline/links/cli.ts",
     "gen:types": "tsx pipeline/schema/cli.ts",
-    "validate:content": "tsx pipeline/content/cli.ts"
+    "validate:content": "tsx pipeline/content/cli.ts",
+    "lighthouse": "lhci autorun --config=lighthouserc.cjs"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.12",
     "@axe-core/playwright": "4.14.0",
     "@eslint/js": "10.0.1",
+    "@lhci/cli": "0.16.0",
     "@playwright/test": "1.63.0",
     "@types/node": "22.20.5",
     "@vitest/coverage-v8": "5.1.0",
