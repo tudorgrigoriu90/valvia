@@ -1,4 +1,5 @@
 ---
+import { modalityBadge } from '../../core/values/modality-badge';
 import type { TableValue } from '../../core/values/table';
 
 interface Props {
@@ -7,6 +8,7 @@ interface Props {
   blockId: string;
 }
 const { entry, text = entry.text, blockId } = Astro.props;
+const badge = modalityBadge(entry.value.modality);
 ---
 
 <span class="value">
@@ -17,6 +19,12 @@ const { entry, text = entry.text, blockId } = Astro.props;
     </details>
   ) : (
     text
+  )}
+  {badge !== undefined && (
+    <span class="modality-badge" title={badge.description}>
+      {badge.label}
+      <span class="visually-hidden"> ({badge.description})</span>
+    </span>
   )}
   {entry.footnotes.map((n) => (
     <sup>

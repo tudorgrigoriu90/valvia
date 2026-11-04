@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-13: Own static server for E2E (Astro 7 preview can detach into the backgro |
-| Next task | TS-04.7.3: modality badges |
+| Last completed task | TS-04.7.3: Modality badges (Echo / CT / CMR) |
+| Next task | TS-04.2.3: jump menu, anchors and last-reviewed info |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

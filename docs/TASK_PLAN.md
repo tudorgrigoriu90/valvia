@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-13 Own static server for E2E (Astro 7 preview can detach into the backgro |
-| Next up | TS-04.7.3: modality badges |
+| Last completed | TS-04.7.3 Modality badges (Echo / CT / CMR) |
+| Next up | TS-04.2.3: jump menu, anchors and last-reviewed info |
 
 ## Next up: R0 sequence
 
@@ -159,7 +159,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-04.6.1 | Last 10 viewed topics on home screen (localStorage) | 2 | todo |  |
 | TS-04.7.1 | Adult / paediatric switch (global, persisted) | 2 | todo |  |
 | TS-04.7.2 | "Previous recommendations" history view (source, year, superseded by) | 2 | todo |  |
-| TS-04.7.3 | Modality badges (Echo / CT / CMR) | 1 | todo |  |
+| TS-04.7.3 | Modality badges (Echo / CT / CMR) | 1 | done |  |
 | TS-04.7.4 | Prosthetic valve picker (lookup only) | 3 | todo |  |
 
 ### EP-05: Mobile, performance & offline (MVP)
@@ -333,3 +333,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-04 | FT-03.7 | Prosthetic mitral valve (4.3) from ASE 2024: obstruction (Table 11), regurgitation (Table 13), PPM by indexed EOA and BMI (Table 7); 4 new parameters | `FT-03.7: prosthetic mitral valve grading (ASE 2024)` |
 | 2026-11-04 | FT-03.7 | Prosthetic tricuspid & pulmonary valves (4.4) from ASE 2024: pulmonary stenosis by valve type (Table 15), prosthetic PR incl. CMR RF (Table 16, p. 36), tricuspid stenosis by valve type (Table 19), TR after TVR/repair (Table 21); 5 new parameters | `FT-03.7: prosthetic tricuspid and pulmonary valves (ASE 2024)` |
 | 2026-11-04 | CH-13 | E2E tests served by tests/e2e/static-server.ts (base path, directory index, 404.html with status 404) instead of astro preview, which detached into the background locally | `CH-13: own static server for E2E tests` |
+| 2026-11-04 | TS-04.7.3 | CT/CMR values carry a text badge with an accessible description in tables and threshold lists; echo is the unbadged default | `TS-04.7.3: modality badges for CT and CMR values` |
