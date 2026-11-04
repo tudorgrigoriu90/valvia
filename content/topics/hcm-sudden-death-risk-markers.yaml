@@ -7,3 +7,69 @@ order: 2
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: imaging-risk-markers
+    type: threshold-list
+    tag: PROG
+    title: Imaging findings associated with higher SCD risk
+    values:
+      - parameter: max-lv-wall-thickness
+        context: prognostic-marker
+        operator: '>='
+        value: 30
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Massive hypertrophy; risk rises continuously with wall thickness.
+        citation:
+          source: ase-2022-hcm
+          locator:
+            page: '555'
+      - parameter: lvef
+        context: prognostic-marker
+        operator: '<='
+        value: 50
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2022-hcm
+          locator:
+            page: '555'
+      - parameter: lge-extent
+        context: prognostic-marker
+        operator: '>='
+        value: 15
+        unit: '%'
+        modality: CMR
+        population:
+          ageGroup: adult
+        caveats:
+          - Percentage of LV mass.
+        citation:
+          source: ase-2022-hcm
+          locator:
+            page: '555'
+  - id: other-markers
+    type: criteria-checklist
+    tag: CRIT
+    title: Other imaging risk markers
+    criteria:
+      - text: Apical aneurysm (use an ultrasound enhancing agent in MVO or apical HCM)
+        citation:
+          source: ase-2022-hcm
+          locator:
+            page: '555'
+      - text: LVOT obstruction
+        citation:
+          source: ase-2022-hcm
+          locator:
+            page: '555'
+      - text: Enlarged left atrium
+        citation:
+          source: ase-2022-hcm
+          locator:
+            page: '555'

@@ -12,7 +12,7 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | FT-03.1 1 Chamber size & function (W1) |
+| Last completed | FT-03.10 6 Cardiomyopathies & heart failure (W1) |
 | Next up | TS-04.7.1: adult/paediatric switch |
 
 ## Next up: R0 sequence
@@ -126,7 +126,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | FT-03.7 | 4.2–4.6 Prosthetic valves & valve interventions (grading, PPM, post-repair, BVD) (W1) | 8 | in progress | Prosthetic grading (ASE 2024) done; reference values by model (4.1) pending |
 | FT-03.8 | 4.1 Prosthetic valve reference values by model and size (W2) | 8 | todo |  |
 | FT-03.9 | 5 Pulmonary hypertension & right heart (W1) | 6 | in progress | Right heart (ASE 2025) done; PH probability and ESC/ERS 2022 pending |
-| FT-03.10 | 6 Cardiomyopathies & heart failure (W1) | 8 | todo |  |
+| FT-03.10 | 6 Cardiomyopathies & heart failure (W1) | 8 | in progress | HCM (ASE 2022) done; other cardiomyopathies pending ESC 2023 |
 | FT-03.11 | 7 Pericardial disease (W1) | 3 | todo |  |
 | FT-03.12 | 8 Congenital heart disease, paediatric & adult (W2) | 10 | todo |  |
 | FT-03.13 | 15 Paediatric echocardiography (normal values, function, PH, cardiomyopathies) (W2) | 8 | todo |  |
@@ -342,3 +342,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-04 | CH-14 | New quantity velocity-time-integral (unit cm, displayed in cm, never converted to mm) | `CH-14: velocity-time integral quantity` |
 | 2026-11-04 | FT-03.5 | EAE/ASE 2009 valve stenosis (registered, PMID 19130998): tricuspid stenosis criteria (3.3.5, Table 10), pulmonary stenosis grading (3.4.1, Table 11), Wilkins score for PMC suitability (3.2.2.2, Table 5); MS classification deliberately not used (ASE note) | `FT-03.5: tricuspid/pulmonary stenosis and Wilkins score (EAE/ASE 2009)` |
 | 2026-11-04 | FT-03.1 | Strain from ASE/EACVI 2025 consensus: LV GLS normal/borderline/abnormal, RV free-wall strain LLN by sex, LA reservoir strain limits (1.7, p. 995/1007); relative GLS decline >12% in cardio-oncology (11.2, p. 1000); 2 new parameters | `FT-03.1: myocardial strain and CTRCD surveillance (ASE 2025 strain)` |
+| 2026-11-04 | FT-03.10 | HCM from ASE 2022 (registered, PMID 35659037): diagnostic wall thickness (6.2.1), LVOT/midventricular obstruction + provocation note (6.2.2), SCD imaging risk markers incl. CMR LGE (6.2.3), gradient threshold for septal reduction (6.2.4); 4 new parameters | `FT-03.10: hypertrophic cardiomyopathy imaging thresholds (ASE 2022)` |

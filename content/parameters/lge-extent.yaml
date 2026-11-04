@@ -1,0 +1,7 @@
+id: lge-extent
+name: Late gadolinium enhancement extent (0f LV mass)
+abbreviation: LGE
+quantity: percent
+unit: '%'
+modalities: [CMR]
+synonyms: [late gadolinium enhancement, myocardial fibrosis]

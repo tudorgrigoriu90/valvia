@@ -7,3 +7,46 @@ order: 1
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: obstruction-thresholds
+    type: threshold-list
+    tag: CRIT
+    title: Obstruction
+    values:
+      - parameter: lvot-peak-gradient
+        context: diagnostic-criterion
+        operator: '>='
+        value: 30
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - At rest; associated with increased SCD risk and progression to NYHA class III–IV heart failure.
+        citation:
+          source: ase-2022-hcm
+          locator:
+            page: '543'
+      - parameter: midventricular-gradient
+        context: diagnostic-criterion
+        operator: '>='
+        value: 30
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'At rest, with systolic obliteration of the LV unrelated to SAM (midventricular obstruction).'
+        citation:
+          source: ase-2022-hcm
+          locator:
+            page: '549'
+  - id: provocation
+    type: note
+    tag: METH
+    title: Provocation
+    text: 'In symptomatic patients without a peak instantaneous gradient of 50 mmHg or more at rest, pursue provocative manoeuvres (Valsalva, standing, exercise echocardiography). LVOT obstruction is labile and dynamic; do not withhold beta-blockers or non-dihydropyridine calcium channel blockers before exercise testing.'
+    citation:
+      source: ase-2022-hcm
+      locator:
+        page: '549'

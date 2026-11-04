@@ -8,3 +8,37 @@ population: adult
 wave: W1
 status: draft
 seeAlso: [paediatric-cardiomyopathies]
+blocks:
+  - id: diagnostic-thresholds
+    type: threshold-list
+    tag: CRIT
+    title: Wall thickness defining HCM
+    values:
+      - parameter: max-lv-wall-thickness
+        context: diagnostic-criterion
+        operator: '>='
+        value: 15
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'In a non-dilated LV, without other causes of hypertrophy.'
+        citation:
+          source: ase-2022-hcm
+          locator:
+            page: '535'
+      - parameter: max-lv-wall-thickness
+        context: diagnostic-criterion
+        operator: '>='
+        value: 13
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - End-diastolic; with a family history of HCM or a known disease-causing variant.
+        citation:
+          source: ase-2022-hcm
+          locator:
+            page: '535'

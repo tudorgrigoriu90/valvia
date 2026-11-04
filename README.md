@@ -14,7 +14,7 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | FT-03.1: 1 Chamber size & function (W1) |
+| Last completed task | FT-03.10: 6 Cardiomyopathies & heart failure (W1) |
 | Next task | TS-04.7.1: adult/paediatric switch |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 

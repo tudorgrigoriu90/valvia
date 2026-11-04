@@ -1,0 +1,8 @@
+id: lvot-peak-gradient
+name: LVOT peak instantaneous gradient
+abbreviation: LVOT gradient
+quantity: pressure
+unit: mmHg
+modalities: [Echo]
+synonyms: [LVOTO, LVOT obstruction gradient, dynamic LVOT gradient]
+method: Continuous-wave Doppler at rest and with provocation (Valsalva, standing, exercise).

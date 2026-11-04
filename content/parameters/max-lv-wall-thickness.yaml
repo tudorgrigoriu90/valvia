@@ -1,0 +1,8 @@
+id: max-lv-wall-thickness
+name: Maximal LV wall thickness
+abbreviation: MWT
+quantity: length
+unit: mm
+modalities: [Echo, CMR]
+synonyms: [maximum wall thickness, LV wall thickness]
+method: End-diastolic maximal thickness of any LV segment.

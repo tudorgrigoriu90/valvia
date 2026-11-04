@@ -30,7 +30,12 @@ test('finds leaves by abbreviation, parameter name and synonym', async ({ page }
   expect(await search(page, 'PISA')).toEqual(expect.arrayContaining([expect.stringMatching(/TR severity grading/)]));
 });
 
-test('does not index navigation, banner or footer text', async ({ page }) => {
-  await page.goto('./');
-  expect(await search(page, 'medical device')).toEqual([]);
+test('only the topic article is marked for indexing, never navigation, banner or footer', async ({ page }) => {
+  await page.goto('valvular-heart-disease/mitral-valve-disease/mitral-regurgitation/primary-mr-severity-grading/');
+  const indexed = page.locator('[data-pagefind-body]');
+  await expect(indexed).toHaveCount(1);
+  await expect(indexed).toHaveJSProperty('tagName', 'ARTICLE');
+  for (const chrome of ['header', 'footer', '.review-banner', 'nav[aria-label="Breadcrumb"]']) {
+    await expect(page.locator(`${chrome} [data-pagefind-body], ${chrome}[data-pagefind-body]`)).toHaveCount(0);
+  }
 });

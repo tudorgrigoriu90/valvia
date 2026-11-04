@@ -1,0 +1,6 @@
+id: midventricular-gradient
+name: Midventricular systolic pressure gradient
+abbreviation: MV gradient
+quantity: pressure
+unit: mmHg
+modalities: [Echo]
