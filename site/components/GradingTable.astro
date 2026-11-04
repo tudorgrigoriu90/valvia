@@ -1,5 +1,5 @@
 ---
-import type { LoadedBlock } from '../../core/content/types';
+import type { LoadedBlock, LoadedValue } from '../../core/content/types';
 import { buildGradingTable, buildNormalRangeTable } from '../../core/values/table';
 import { getContent } from '../lib/content';
 import ValueTable from './ValueTable.astro';
@@ -7,8 +7,9 @@ import ValueTable from './ValueTable.astro';
 interface Props {
   block: Extract<LoadedBlock, { type: 'grading-table' | 'normal-range-table' }>;
   label: string;
+  differing?: ReadonlySet<LoadedValue>;
 }
-const { block, label } = Astro.props;
+const { block, label, differing = new Set<LoadedValue>() } = Astro.props;
 const { bundle } = getContent();
 const table =
   block.type === 'grading-table'
@@ -16,4 +17,4 @@ const table =
     : buildNormalRangeTable(block, bundle.parameters);
 ---
 
-<ValueTable table={table} label={label} blockId={block.id} />
+<ValueTable table={table} label={label} blockId={block.id} differing={differing} />

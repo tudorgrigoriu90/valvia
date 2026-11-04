@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-04.3.5: Society filter toggle (localStorage, wrapped in try/catch) |
-| Next task | TS-04.3.4: discrepancy marker and comparison |
+| Last completed task | TS-04.3.4: Discrepancy marker + side-by-side comparison view |
+| Next task | TS-02.1.3: static redirects for renamed slugs |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

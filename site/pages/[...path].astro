@@ -6,6 +6,7 @@ import CriteriaChecklist from '../components/CriteriaChecklist.astro';
 import GradingTable from '../components/GradingTable.astro';
 import JumpMenu from '../components/JumpMenu.astro';
 import SocietyFilter from '../components/SocietyFilter.astro';
+import Comparisons from '../components/Comparisons.astro';
 import PreviousRecommendations from '../components/PreviousRecommendations.astro';
 import SourceChips from '../components/SourceChips.astro';
 import ThresholdList from '../components/ThresholdList.astro';
@@ -14,7 +15,7 @@ import Base from '../layouts/Base.astro';
 import { blockHeading } from '../../core/navigation/block-heading';
 import { searchTerms } from '../../core/navigation/search-terms';
 import { reviewStatus } from '../../core/site/version';
-import { leafView } from '../../core/view/leaf';
+import { differingValues, leafView } from '../../core/view/leaf';
 import { getContent } from '../lib/content';
 
 export function getStaticPaths() {
@@ -73,7 +74,9 @@ const pageAgeGroups = new Set(sections.flatMap((s) => s.ageGroups));
     )}
     {blocks.length > 0 && <SocietyFilter />}
     <JumpMenu blocks={blocks} />
-    {sections.map(({ block, history, noCurrentValue, ageGroups }) => {
+    {sections.map((section) => {
+      const { block, history, noCurrentValue, ageGroups, comparisons } = section;
+      const differing = differingValues(section);
       const heading = blockHeading(block);
       return (
         <section
@@ -86,12 +89,15 @@ const pageAgeGroups = new Set(sections.flatMap((s) => s.ageGroups));
           <SourceChips block={block} />
           {noCurrentValue && <p class="gap">No current society-endorsed value.</p>}
           {!noCurrentValue && (block.type === 'grading-table' || block.type === 'normal-range-table') && (
-            <GradingTable block={block} label={heading} />
+            <GradingTable block={block} label={heading} differing={differing} />
           )}
-          {!noCurrentValue && block.type === 'threshold-list' && <ThresholdList block={block} label={heading} />}
+          {!noCurrentValue && block.type === 'threshold-list' && (
+            <ThresholdList block={block} label={heading} differing={differing} />
+          )}
           {block.type === 'criteria-checklist' && <CriteriaChecklist block={block} />}
           {block.type === 'note' && <p class="note">{block.text}</p>}
           {block.type === 'algorithm-reference' && <AlgorithmReference block={block} />}
+          <Comparisons comparisons={comparisons} />
           <PreviousRecommendations items={history} />
         </section>
       );

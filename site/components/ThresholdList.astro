@@ -1,5 +1,5 @@
 ---
-import type { LoadedBlock } from '../../core/content/types';
+import type { LoadedBlock, LoadedValue } from '../../core/content/types';
 import { buildThresholdList } from '../../core/values/table';
 import { getContent } from '../lib/content';
 import Footnotes from './Footnotes.astro';
@@ -8,8 +8,9 @@ import ValueText from './ValueText.astro';
 interface Props {
   block: Extract<LoadedBlock, { type: 'threshold-list' }>;
   label: string;
+  differing?: ReadonlySet<LoadedValue>;
 }
-const { block, label } = Astro.props;
+const { block, label, differing = new Set<LoadedValue>() } = Astro.props;
 const { bundle } = getContent();
 const list = buildThresholdList(block, bundle.parameters);
 ---
@@ -21,7 +22,7 @@ const list = buildThresholdList(block, bundle.parameters);
         <abbr title={item.name}>{item.label}</abbr>
         {item.population !== '' && <span class="population">{item.population}</span>}
       </span>
-      <ValueText entry={item} blockId={block.id} />
+      <ValueText entry={item} blockId={block.id} differs={differing.has(item.value)} />
       {item.value.grade !== undefined && <span class="threshold-list__grade">{item.value.grade}</span>}
     </li>
   ))}

@@ -8,8 +8,9 @@ interface Props {
   entry: TableValue;
   text?: string;
   blockId: string;
+  differs?: boolean;
 }
-const { entry, text = entry.text, blockId } = Astro.props;
+const { entry, text = entry.text, blockId, differs = false } = Astro.props;
 const badge = modalityBadge(entry.value.modality);
 const source = getContent().bundle.sources.get(entry.value.citation.source);
 const societies = societiesOf(source?.issuers ?? []).join(' ');
@@ -23,6 +24,11 @@ const societies = societiesOf(source?.issuers ?? []).join(' ');
     </details>
   ) : (
     text
+  )}
+  {differs && (
+    <span class="differs-marker" title="Differs between sources">
+      ≠<span class="visually-hidden"> (differs between sources)</span>
+    </span>
   )}
   {badge !== undefined && (
     <span class="modality-badge" title={badge.description}>

@@ -1,0 +1,26 @@
+---
+import type { Comparison } from '../../core/view/leaf';
+
+interface Props {
+  comparisons: Comparison[];
+}
+const { comparisons } = Astro.props;
+---
+
+{comparisons.length > 0 && (
+  <div class="comparisons">
+    <p class="comparisons__title">
+      <span aria-hidden="true">≠</span> Differs between sources: values shown side by side, none is preferred.
+    </p>
+    {comparisons.map((comparison) => (
+      <dl class="comparison">
+        <dt>{comparison.label}</dt>
+        {comparison.entries.map((entry) => (
+          <dd>
+            <strong>{entry.display}</strong> · {entry.source}
+          </dd>
+        ))}
+      </dl>
+    ))}
+  </div>
+)}

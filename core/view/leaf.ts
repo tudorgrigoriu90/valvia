@@ -1,5 +1,6 @@
 /** View model of a leaf page (TS-04.7.2): per block, current values and "Previous recommendations". */
-import type { ContentBundle, LoadedBlock, LoadedTopic } from '../content/types';
+import type { ContentBundle, LoadedBlock, LoadedTopic, LoadedValue } from '../content/types';
+import { detectDiscrepancies, valueKey } from '../discrepancy/discrepancy';
 import { loadedValuesOf } from '../content/walk';
 import { previousRecommendations, withoutHistory } from '../history/history';
 import { formatValue } from '../values/format';
@@ -20,10 +21,31 @@ export interface LeafSection {
   noCurrentValue: boolean;
   /** Age groups among the current values (empty for blocks without values), sorted. */
   ageGroups: ('adult' | 'paediatric')[];
+  /** Per current value (in block order): true when another current source differs (TS-04.3.4). */
+  differs: boolean[];
+  /** Side-by-side comparisons for the discrepancies in this block. */
+  comparisons: Comparison[];
+}
+
+export interface Comparison {
+  label: string;
+  entries: { source: string; display: string }[];
+}
+
+/** The current values of a section that differ between sources, for value markers. */
+export function differingValues(section: LeafSection): ReadonlySet<LoadedValue> {
+  const values = loadedValuesOf(section.block, 0).map(({ value }) => value);
+  return new Set(values.filter((_value, index) => section.differs[index] === true));
 }
 
 export function leafView(topic: LoadedTopic, bundle: ContentBundle): LeafSection[] {
-  return (topic.blocks ?? []).map((original) => {
+  const discrepancies = detectDiscrepancies({ ...bundle, topics: new Map([[topic.id, topic]]) });
+  const differingKeys = new Set(discrepancies.flatMap((d) => d.entries.map((e) => valueKey(e.topicId, e.path))));
+  const sourceLabel = (id: string): string => {
+    const source = bundle.sources.get(id);
+    return source === undefined ? id : `${source.shortTitle ?? source.title} (${String(source.year)})`;
+  };
+  return (topic.blocks ?? []).map((original, blockIndex) => {
     const block = withoutHistory(original, bundle.sources);
     const history: HistoryItem[] = [];
     for (const item of previousRecommendations(original, bundle.sources)) {
@@ -45,6 +67,18 @@ export function leafView(topic: LoadedTopic, bundle: ContentBundle): LeafSection
     const current = loadedValuesOf(block, 0);
     const noCurrentValue = hadValues && current.length === 0;
     const ageGroups = [...new Set(current.map(({ value }) => value.population.ageGroup))].sort();
-    return { block, history, noCurrentValue, ageGroups };
+    const currentSet = new Set(current.map(({ value }) => value));
+    const originalCurrent = loadedValuesOf(original, blockIndex).filter(({ value }) => currentSet.has(value));
+    const differs = originalCurrent.map(({ path }) => differingKeys.has(valueKey(topic.id, path)));
+    const comparisons: Comparison[] = discrepancies
+      .filter((d) => d.entries.some((e) => e.path[1] === blockIndex))
+      .map((d) => {
+        const parameter = bundle.parameters.get(d.parameter);
+        return {
+          label: parameter?.abbreviation ?? parameter?.name ?? d.parameter,
+          entries: d.entries.map((e) => ({ source: sourceLabel(e.source), display: e.display })),
+        };
+      });
+    return { block, history, noCurrentValue, ageGroups, differs, comparisons };
   });
 }

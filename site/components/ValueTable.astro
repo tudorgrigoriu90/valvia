@@ -1,4 +1,5 @@
 ---
+import type { LoadedValue } from '../../core/content/types';
 import type { ValueTable } from '../../core/values/table';
 import Footnotes from './Footnotes.astro';
 import ValueText from './ValueText.astro';
@@ -7,8 +8,9 @@ interface Props {
   table: ValueTable;
   label: string;
   blockId: string;
+  differing?: ReadonlySet<LoadedValue>;
 }
-const { table, label, blockId } = Astro.props;
+const { table, label, blockId, differing = new Set<LoadedValue>() } = Astro.props;
 ---
 
 <div class="table-scroll" role="region" aria-label={`${label} (scrollable table)`} tabindex="0">
@@ -34,7 +36,7 @@ const { table, label, blockId } = Astro.props;
               {cell.length === 0 ? (
                 <span aria-label="No value">–</span>
               ) : (
-                cell.map((entry) => <ValueText entry={entry} blockId={blockId} />)
+                cell.map((entry) => <ValueText entry={entry} blockId={blockId} differs={differing.has(entry.value)} />)
               )}
             </td>
           ))}

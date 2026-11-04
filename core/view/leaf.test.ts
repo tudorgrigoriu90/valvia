@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import type { Parameter } from '../../schema/generated/parameter';
 import type { SourceDocument } from '../../schema/generated/source';
 import type { ContentBundle, LoadedBlock, LoadedTopic, LoadedValue } from '../content/types';
-import { leafView } from './leaf';
+import { differingValues, leafView } from './leaf';
 
 const src = (
   id: string,
@@ -71,7 +71,7 @@ describe('leafView (TS-04.7.2)', () => {
   it('keeps blocks without values as they are', () => {
     const note = { id: 'n', type: 'note', tag: 'METH', text: 'x' } as LoadedBlock;
     expect(leafView(topic([note]), bundle)).toEqual([
-      { block: note, history: [], noCurrentValue: false, ageGroups: [] },
+      { block: note, history: [], noCurrentValue: false, ageGroups: [], differs: [], comparisons: [] },
     ]);
     const bare = topic([]);
     delete bare.blocks;
@@ -85,5 +85,39 @@ describe('leafView (TS-04.7.2)', () => {
     expect(section?.history).toEqual([
       { label: 'E/e′', text: '> 12', source: 'gone (2012)', status: 'withdrawn', supersededBy: undefined },
     ]);
+  });
+
+  it('marks values that differ between current sources and lists the comparison per block', () => {
+    const sources = new Map([
+      ...SOURCES,
+      ['esc', src('esc', 'current', 2025, { shortTitle: 'ESC 2025', issuers: ['ESC'] })],
+    ]);
+    const esc = { ...value('esc', '15') } as LoadedValue;
+    const [section] = leafView(topic([list('a', [value('new', '14'), esc])]), { ...bundle, sources });
+    expect(section?.differs).toEqual([true, true]);
+    expect(section?.comparisons).toEqual([
+      {
+        label: 'E/e′',
+        entries: [
+          { source: 'ASE 2025 (2025)', display: '> 14' },
+          { source: 'ESC 2025 (2025)', display: '> 15' },
+        ],
+      },
+    ]);
+  });
+
+  it('reports no differences when sources agree', () => {
+    const [section] = leafView(topic([list('a', [value('new', '14')])]), bundle);
+    expect(section?.differs).toEqual([false]);
+    expect(section?.comparisons).toEqual([]);
+  });
+
+  it('exposes the differing values as a set for value markers', () => {
+    const sources = new Map([...SOURCES, ['esc', src('esc', 'current', 2025, { issuers: ['ESC'] })]]);
+    const ase = value('new', '14');
+    const esc = value('esc', '15');
+    const [section] = leafView(topic([list('a', [ase, esc])]), { ...bundle, sources });
+    expect(section === undefined ? [] : [...differingValues(section)]).toEqual([ase, esc]);
+    expect(section?.comparisons[0]?.entries.map((e) => e.source)).toEqual(['ASE 2025 (2025)', 'esc (2025)']);
   });
 });
