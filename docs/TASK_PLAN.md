@@ -12,7 +12,7 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | FT-03.5 3.3–3.5 VHD: tricuspid, pulmonary, multiple & mixed (W1) |
+| Last completed | FT-03.1 1 Chamber size & function (W1) |
 | Next up | TS-04.7.1: adult/paediatric switch |
 
 ## Next up: R0 sequence
@@ -117,7 +117,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 |---|---|---|---|---|
 | TS-03.0.1 | Content YAML templates + content guide (modelling, citing, units, history, modality, paediatric values) | 2 | todo |  |
 | TS-03.0.2 | Content status page (per node: draft / in review / published; wave) | 2 | todo |  |
-| FT-03.1 | 1 Chamber size & function (W1) | 8 | in progress | Chamber quantification (ASE/EACVI 2015): LV, LA, RV done; RA and aortic root are mean ± SD only |
+| FT-03.1 | 1 Chamber size & function (W1) | 8 | in progress | Chamber, LV/RV/LA strain done |
 | FT-03.2 | 2 Diastolic function & filling pressures (W1) | 5 | in progress | Diastolic (ASE 2025): 2.1 and 2.2 done; special populations and HFpEF pending |
 | FT-03.3 | 3.1 VHD: aortic valve (incl. TAVI considerations, AR TAVI) (W1) | 10 | in progress | AR and AS grading done (ASE/EACVI); intervention thresholds and TAVI pending ESC |
 | FT-03.4 | 3.2 VHD: mitral valve (primary/secondary MR, TEER feasibility, repair likelihood, MS, MAC) (W1) | 10 | in progress | Primary MR (ASE 2017) done; ESC/EACVI and CMR values pending document access |
@@ -341,3 +341,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-04 | TS-04.7.2 | Leaf view model (current values vs previous recommendations per block, gap flag); collapsed 'Previous recommendations' section with source, year and current successor; 'No current society-endorsed value' gap message | `TS-04.7.2: previous recommendations view` |
 | 2026-11-04 | CH-14 | New quantity velocity-time-integral (unit cm, displayed in cm, never converted to mm) | `CH-14: velocity-time integral quantity` |
 | 2026-11-04 | FT-03.5 | EAE/ASE 2009 valve stenosis (registered, PMID 19130998): tricuspid stenosis criteria (3.3.5, Table 10), pulmonary stenosis grading (3.4.1, Table 11), Wilkins score for PMC suitability (3.2.2.2, Table 5); MS classification deliberately not used (ASE note) | `FT-03.5: tricuspid/pulmonary stenosis and Wilkins score (EAE/ASE 2009)` |
+| 2026-11-04 | FT-03.1 | Strain from ASE/EACVI 2025 consensus: LV GLS normal/borderline/abnormal, RV free-wall strain LLN by sex, LA reservoir strain limits (1.7, p. 995/1007); relative GLS decline >12% in cardio-oncology (11.2, p. 1000); 2 new parameters | `FT-03.1: myocardial strain and CTRCD surveillance (ASE 2025 strain)` |

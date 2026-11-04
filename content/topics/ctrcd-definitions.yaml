@@ -7,3 +7,32 @@ order: 1
 population: adult
 wave: W2
 status: draft
+blocks:
+  - id: strain-surveillance
+    type: threshold-list
+    tag: INTV
+    title: Strain-guided surveillance during cancer therapy
+    values:
+      - parameter: gls-relative-decline
+        context: intervention-threshold
+        operator: '>'
+        value: 12
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - "Relative decline from the patient's baseline; it is reasonable to consider cardioprotective therapy whatever the change in LVEF."
+        citation:
+          source: ase-2025-strain
+          locator:
+            page: '1000'
+  - id: surveillance-note
+    type: note
+    tag: METH
+    title: Surveillance
+    text: 'Obtain baseline GLS before cardiotoxic therapy. Patients with baseline strain below normal limits should have echocardiography with strain at mid-treatment, and strain should be part of follow-up examinations.'
+    citation:
+      source: ase-2025-strain
+      locator:
+        page: '1000'

@@ -1,0 +1,8 @@
+id: gls-relative-decline
+name: Relative decline in LV GLS from baseline
+abbreviation: ΔGLS (relative)
+quantity: percent
+unit: '%'
+modalities: [Echo]
+synonyms: [relative GLS change, GLS drop]
+method: (baseline GLS minus follow-up GLS) divided by baseline GLS, using the same vendor and software.

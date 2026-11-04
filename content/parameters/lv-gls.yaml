@@ -1,0 +1,8 @@
+id: lv-gls
+name: LV global longitudinal strain
+abbreviation: LV GLS
+quantity: percent
+unit: '%'
+modalities: [Echo]
+synonyms: [GLS, global longitudinal strain, LVGLS]
+method: 2D speckle-tracking averaged over the three apical views; values are negative.

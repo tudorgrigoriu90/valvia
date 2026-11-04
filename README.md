@@ -14,7 +14,7 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | FT-03.5: 3.3–3.5 VHD: tricuspid, pulmonary, multiple & mixed (W1) |
+| Last completed task | FT-03.1: 1 Chamber size & function (W1) |
 | Next task | TS-04.7.1: adult/paediatric switch |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 

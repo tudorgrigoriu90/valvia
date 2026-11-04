@@ -7,3 +7,131 @@ order: 6
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: lv-gls
+    type: grading-table
+    tag: GRADE
+    title: LV global longitudinal strain
+    grades: ['Normal', 'Borderline', 'Abnormal']
+    values:
+      - parameter: lv-gls
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: -18
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'More negative than −18%.'
+          - Compare values with the same vendor and software version.
+        citation:
+          source: ase-2025-strain
+          locator:
+            page: '995'
+      - parameter: lv-gls
+        context: grading
+        grade: Borderline
+        operator: range
+        min: -18
+        max: -16
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Compare values with the same vendor and software version.
+        citation:
+          source: ase-2025-strain
+          locator:
+            page: '995'
+      - parameter: lv-gls
+        context: grading
+        grade: Abnormal
+        operator: '>'
+        value: -16
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Less negative than −16%.'
+          - Compare values with the same vendor and software version.
+        citation:
+          source: ase-2025-strain
+          locator:
+            page: '995'
+  - id: rv-and-la-strain
+    type: threshold-list
+    tag: CRIT
+    title: RV free-wall and LA reservoir strain
+    values:
+      - parameter: rv-free-wall-strain
+        context: diagnostic-criterion
+        operator: '>'
+        value: -20
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - Lower limit of normal; less negative values are pathological.
+        citation:
+          source: ase-2025-strain
+          locator:
+            page: '995'
+      - parameter: rv-free-wall-strain
+        context: diagnostic-criterion
+        operator: '>'
+        value: -21
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - Lower limit of normal; less negative values are pathological.
+        citation:
+          source: ase-2025-strain
+          locator:
+            page: '995'
+      - parameter: la-reservoir-strain
+        context: normal-range
+        operator: range
+        min: 23
+        max: 60
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Upper and lower limits of normal; 23–30% is borderline.'
+        citation:
+          source: ase-2025-strain
+          locator:
+            page: '995'
+      - parameter: la-reservoir-strain
+        context: diagnostic-criterion
+        operator: '<'
+        value: 18
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Associated with elevated LV filling pressures.
+        citation:
+          source: ase-2025-strain
+          locator:
+            page: '1007'
+  - id: use
+    type: note
+    tag: METH
+    title: Using strain values
+    text: "LV GLS is most useful in sequential follow-up compared with the patient's own baseline, where a relative change of 10–15% is likely to be significant. Use R-R gating in the apical four-chamber view for LA strain. 3D strain, regional strain values and RA strain are not endorsed for routine clinical use."
+    citation:
+      source: ase-2025-strain
+      locator:
+        page: '995'
