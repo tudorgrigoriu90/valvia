@@ -795,3 +795,15 @@ main {
 .offline-indicator .container {
   display: block;
 }
+
+.prose {
+  max-width: 44rem;
+}
+
+.prose h2 {
+  margin-top: var(--space-5);
+}
+
+.prose li {
+  margin-bottom: var(--space-1);
+}

@@ -1,0 +1,63 @@
+---
+import { withBase } from '../../core/site/base-path';
+import Base from '../layouts/Base.astro';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<Base title="About Valvia" description="Intended use, sources and limitations of Valvia.">
+  <article class="prose">
+    <h1>About Valvia</h1>
+
+    <h2 id="intended-use">Intended use</h2>
+    <p>
+      Valvia is a quick-reference aid for echocardiographers, cardiologists, fellows and sonographers. It displays
+      reference ranges and cut-off values exactly as published in documents of the European Society of Cardiology
+      (including the European Association of Cardiovascular Imaging) and the American Society of Echocardiography, each
+      with its source and location in the document.
+    </p>
+    <p>
+      Valvia is <strong>not a medical device</strong>. It does not calculate, interpret or classify measurements of
+      individual patients, does not compute z-scores or risk scores, and does not give diagnostic or treatment advice.
+      Clinical decisions remain the responsibility of the clinician.
+    </p>
+
+    <h2 id="disclaimer">Disclaimer</h2>
+    <p>
+      Values are transcribed from the cited documents and may contain errors. Always verify a value against the original
+      guideline before clinical use. Content marked <strong>"Not yet clinically reviewed"</strong> is a draft that has
+      not been checked by a clinical expert.
+    </p>
+
+    <h2 id="sources">Sources</h2>
+    <p>
+      Only ESC (including EACVI) and ASE documents are used, plus paediatric z-score datasets that one of these
+      documents cites. Algorithms and figures are linked to the source, never redrawn. Each value shows its society,
+      document, year and table, figure, section or page.
+    </p>
+
+    <h2 id="how-values-are-shown">How values are shown</h2>
+    <ul>
+      <li>
+        Lengths in mm, areas in cm², blood-flow velocities in m/s, tissue Doppler velocities in cm/s. Tap a converted
+        value to see it as published.
+      </li>
+      <li>CT and CMR values carry a badge; all other values are echocardiographic.</li>
+      <li>When current documents disagree, both values are shown; Valvia never picks one.</li>
+      <li>Values from superseded documents appear under "Previous recommendations".</li>
+    </ul>
+
+    <h2 id="report">Report a problem</h2>
+    <p>
+      If a value looks wrong, please report it with the page and the source location:
+      <a href="https://github.com/tudorgrigoriu90/valvia/issues/new" rel="noopener" target="_blank">
+        open an issue on GitHub<span class="visually-hidden"> (opens in a new tab)</span>
+      </a>
+      .
+    </p>
+
+    <p>
+      <a href={withBase(base, '/')}>Back to the home page</a>
+    </p>
+  </article>
+</Base>

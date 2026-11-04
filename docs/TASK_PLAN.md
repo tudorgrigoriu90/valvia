@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-05.3.4 Offline indicator |
-| Next up | TS-07.1.2: intended use and disclaimer page |
+| Last completed | TS-07.1.2 Intended-use statement + disclaimer ("verify against the original guid |
+| Next up | TS-03.0.2: content status page |
 
 ## Next up: R0 sequence
 
@@ -204,7 +204,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | Key | Summary | SP | Status | Notes |
 |---|---|---|---|---|
 | TS-07.1.1 | EU MDR qualification memo (MDCG 2019-11 reasoning), incl. paediatric z-score references shown as published without patient computation; external review if unclear | 3 | todo |  |
-| TS-07.1.2 | Intended-use statement + disclaimer ("verify against the original guideline") | 1 | todo |  |
+| TS-07.1.2 | Intended-use statement + disclaimer ("verify against the original guideline") | 1 | done | Legal wording to be reviewed with the MDR memo (TS-07.1.1) |
 | TS-07.2.1 | Copyright assessment: numeric values vs reproduced tables (incl. prosthetic model/size tables from guideline appendices); algorithms linked only; request permissions from ESC (OUP) / ASE (Elsevier) where needed | 3 | todo |  |
 | TS-07.2.2 | Content policy: own-format tables, no copied figures, always cite and link | 1 | todo |  |
 | TS-07.3.1 | Hazard log (wrong value, wrong unit or conversion, missing indexation, adult value shown for a child, superseded value shown as current, wrong population) + mitigations | 2 | todo |  |
@@ -348,3 +348,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-04 | TS-05.3.2 | Generated service worker precaching all pages, assets and Pagefind index (content-hash version, old caches removed, pages network-first, assets cache-first); registration script; offline E2E (pages + search in airplane mode) | `TS-05.3.2: service worker for offline use` |
 | 2026-11-04 | TS-05.3.3 | 'New content available' status bar when an updated worker waits; Refresh activates it and reloads; no reload on first install (fixes a mid-test reload found by E2E) | `TS-05.3.3: update prompt for new content` |
 | 2026-11-04 | TS-05.3.4 | Offline indicator ('Offline: showing saved content.') driven by navigator.onLine and online/offline events | `TS-05.3.4: offline indicator` |
+| 2026-11-04 | TS-07.1.2 | About page: intended use (reference aid, not a medical device, no patient calculation), disclaimer incl. draft status, source policy, how values are shown, report-a-problem link; linked from every footer | `TS-07.1.2: intended use and disclaimer page` |
