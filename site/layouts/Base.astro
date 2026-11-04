@@ -47,6 +47,9 @@ const pageTitle = title === 'Valvia' ? title : `${title} · Valvia`;
       </div>
     </header>
     <ReviewBanner />
+    <p class="offline-indicator" role="status" data-offline-indicator hidden>
+      <span class="container">Offline: showing saved content.</span>
+    </p>
     <div class="update-prompt" role="status" data-update-prompt hidden>
       <div class="container">
         <span>New content available.</span>
@@ -72,6 +75,7 @@ const pageTitle = title === 'Valvia' ? title : `${title} · Valvia`;
     </footer>
     <script>
       import '../scripts/register-sw';
+      import '../scripts/offline-indicator';
     </script>
   </body>
 </html>

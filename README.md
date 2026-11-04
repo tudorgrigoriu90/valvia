@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-05.3.3: Update prompt + content version display |
-| Next task | TS-05.3.4: offline indicator |
+| Last completed task | TS-05.3.4: Offline indicator |
+| Next task | TS-07.1.2: intended use and disclaimer page |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

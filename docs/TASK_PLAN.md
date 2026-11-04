@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-05.3.3 Update prompt + content version display |
-| Next up | TS-05.3.4: offline indicator |
+| Last completed | TS-05.3.4 Offline indicator |
+| Next up | TS-07.1.2: intended use and disclaimer page |
 
 ## Next up: R0 sequence
 
@@ -173,7 +173,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-05.3.1 | Web app manifest ("Valvia"), icons, installability | 1 | done | PNG icon sizes can be added if a store or older browser needs them |
 | TS-05.3.2 | Service worker precaching all content pages + search index | 3 | done |  |
 | TS-05.3.3 | Update prompt + content version display | 2 | done |  |
-| TS-05.3.4 | Offline indicator | 1 | todo |  |
+| TS-05.3.4 | Offline indicator | 1 | done |  |
 
 ### EP-06: Guideline update pipeline with PR-based approval (MVP; watchers in R1.1)
 
@@ -347,3 +347,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-04 | TS-05.3.1 | Web app manifest endpoint (name/short_name Valvia, start_url and scope follow the base path, standalone, theme colours) and SVG icon (any + maskable) linked from every page | `TS-05.3.1: web app manifest and icon` |
 | 2026-11-04 | TS-05.3.2 | Generated service worker precaching all pages, assets and Pagefind index (content-hash version, old caches removed, pages network-first, assets cache-first); registration script; offline E2E (pages + search in airplane mode) | `TS-05.3.2: service worker for offline use` |
 | 2026-11-04 | TS-05.3.3 | 'New content available' status bar when an updated worker waits; Refresh activates it and reloads; no reload on first install (fixes a mid-test reload found by E2E) | `TS-05.3.3: update prompt for new content` |
+| 2026-11-04 | TS-05.3.4 | Offline indicator ('Offline: showing saved content.') driven by navigator.onLine and online/offline events | `TS-05.3.4: offline indicator` |

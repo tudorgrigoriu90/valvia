@@ -61,3 +61,16 @@ test('the update prompt is present but hidden on a first visit', async ({ page }
   await expect(prompt).toBeHidden();
   await expect(prompt.locator('button', { hasText: 'Refresh' })).toHaveCount(1);
 });
+
+// TS-05.3.4: offline indicator.
+
+test('shows an offline indicator while the connection is lost', async ({ page, context }) => {
+  await page.goto('./');
+  const indicator = page.locator('[data-offline-indicator]');
+  await expect(indicator).toBeHidden();
+  await context.setOffline(true);
+  await expect(indicator).toBeVisible();
+  await expect(indicator).toHaveText('Offline: showing saved content.');
+  await context.setOffline(false);
+  await expect(indicator).toBeHidden();
+});

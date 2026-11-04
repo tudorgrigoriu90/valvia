@@ -782,3 +782,16 @@ main {
   border-radius: var(--radius);
   cursor: pointer;
 }
+
+.offline-indicator {
+  margin: 0;
+  padding: var(--space-1) 0;
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.offline-indicator .container {
+  display: block;
+}
