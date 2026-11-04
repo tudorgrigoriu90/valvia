@@ -13,7 +13,7 @@
     "build": "astro build && tsx pipeline/csp/cli.ts && pagefind --site dist && tsx pipeline/pwa/cli.ts",
     "preview": "astro preview",
     "typecheck": "astro check",
-    "lint": "eslint . --max-warnings 0",
+    "lint": "astro sync >/dev/null && eslint . --max-warnings 0",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "test": "vitest run --coverage",

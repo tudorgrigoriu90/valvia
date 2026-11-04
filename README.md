@@ -14,7 +14,7 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-04.7.1: Adult / paediatric switch (global, persisted) |
+| Last completed task | CH-16: Fix: CI lint failed since TS-05.3.1 (Astro env types missing before bu |
 | Next task | TS-04.3.5: society filter |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
