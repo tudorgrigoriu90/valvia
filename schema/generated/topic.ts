@@ -666,6 +666,10 @@ export interface TopicNode {
    */
   status: 'draft' | 'in-review' | 'published';
   /**
+   * Date of the last SME review (YYYY-MM-DD); shown on the page (TS-04.5.2).
+   */
+  lastReviewed?: string;
+  /**
    * Cross-links (→ in the taxonomy): ids of nodes whose content is also relevant here.
    *
    * Items: Stable identifier: lowercase kebab-case, never changed or reused (ADR 0003).

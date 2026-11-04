@@ -11,6 +11,7 @@ import TopicList from '../components/TopicList.astro';
 import Base from '../layouts/Base.astro';
 import { blockHeading } from '../../core/navigation/block-heading';
 import { searchTerms } from '../../core/navigation/search-terms';
+import { reviewStatus } from '../../core/site/version';
 import { getContent } from '../lib/content';
 
 export function getStaticPaths() {
@@ -34,6 +35,7 @@ const context = navigation
   .join(' › ');
 const children = navigation.visibleChildren(topic.id);
 const blocks = topic.blocks ?? [];
+const review = reviewStatus(topic);
 ---
 
 <Base title={topic.title}>
@@ -43,6 +45,11 @@ const blocks = topic.blocks ?? [];
     data-pagefind-meta={indexed ? `context:${context}` : undefined}
   >
     <h1 data-pagefind-meta="title">{topic.title}</h1>
+    {blocks.length > 0 && (
+      <p class:list={['review-status', { 'review-status--draft': !review.reviewed }]} data-pagefind-ignore>
+        {review.label}
+      </p>
+    )}
     {terms.length > 0 && (
       <p class="visually-hidden" aria-hidden="true" data-pagefind-weight="5">
         {terms.join(' · ')}

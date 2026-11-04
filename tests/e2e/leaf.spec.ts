@@ -114,3 +114,11 @@ test('leaf pages with several sections have an "On this page" menu that jumps to
   await menu.getByRole('link', { name: 'Specific criteria for mild MR' }).click();
   await expect(page).toHaveURL(/#specific-criteria-mild$/);
 });
+
+// TS-04.5.2: review status and content version.
+
+test('leaf pages state their review status and the footer shows the content version', async ({ page }) => {
+  await page.goto(LEAF);
+  await expect(page.locator('.review-status')).toHaveText('Draft: not yet clinically reviewed');
+  await expect(page.getByRole('contentinfo')).toContainText(/Content version \S+ · built \d{4}-\d{2}-\d{2}/);
+});

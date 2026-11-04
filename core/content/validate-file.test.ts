@@ -29,6 +29,13 @@ describe('validateContentFile(topic)', () => {
     expect(validate(root, 'content/topics/valvular-heart-disease.yaml').problems).toEqual([]);
   });
 
+  it('accepts a last-reviewed date and rejects malformed dates', () => {
+    expect(validate(`${VALID_TOPIC}lastReviewed: "2026-11-10"\n`).problems).toEqual([]);
+    expect(validate(`${VALID_TOPIC}lastReviewed: "10/11/2026"\n`).problems).toEqual([
+      expect.objectContaining({ line: 11, message: 'lastReviewed must match format "date"' }),
+    ]);
+  });
+
   it('reports a missing required property at the object, naming the property', () => {
     const result = validate(VALID_TOPIC.replace('slug: severity-grading\n', ''));
     expect(result.problems).toEqual([

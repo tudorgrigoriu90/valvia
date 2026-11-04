@@ -141,7 +141,8 @@ One file per node: `content/topics/<id>.yaml`. The tree is built from `parent` l
 | `synonyms` | no | `text[]` | Alternative names/abbreviations indexed by search |
 | `population` | yes | `population` | Adult, paediatric or both (drives the adult/paediatric switch) |
 | `wave` | yes | `wave` | Delivery wave (sequencing only) |
-| `status` | yes | `draft` · `in-review` · `published` | Editorial status (content status page) |
+| `status` | yes | `draft` · `in-review` · `published` | Editorial status; shown on the page (draft = "not yet clinically reviewed") |
+| `lastReviewed` | no | date `YYYY-MM-DD` | Date of the last SME review, shown on published pages |
 | `seeAlso` | no | `id[]` | Cross-links (→ in the taxonomy) |
 | `blocks` | no | block[] | Content blocks of a leaf (see below) |
 

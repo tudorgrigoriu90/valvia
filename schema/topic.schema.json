@@ -64,6 +64,11 @@
       "description": "Editorial status shown on the content status page (TS-03.0.2).",
       "enum": ["draft", "in-review", "published"]
     },
+    "lastReviewed": {
+      "description": "Date of the last SME review (YYYY-MM-DD); shown on the page (TS-04.5.2).",
+      "type": "string",
+      "format": "date"
+    },
     "seeAlso": {
       "description": "Cross-links (→ in the taxonomy): ids of nodes whose content is also relevant here.",
       "type": "array",

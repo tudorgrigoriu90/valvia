@@ -3,6 +3,7 @@ import '../styles/global.css';
 import { withBase } from '../../core/site/base-path';
 import Logo from '../components/Logo.astro';
 import ReviewBanner from '../components/ReviewBanner.astro';
+import { contentVersion } from '../../core/site/version';
 import { CONTENT_SECURITY_POLICY } from '../lib/csp';
 
 interface Props {
@@ -13,6 +14,8 @@ interface Props {
 const { title, description = 'Echocardiography reference and cut-off values from ESC/EACVI and ASE documents.' } =
   Astro.props;
 const base = import.meta.env.BASE_URL;
+const version = contentVersion(process.env);
+const builtOn = new Date().toISOString().slice(0, 10);
 const pageTitle = title === 'Valvia' ? title : `${title} · Valvia`;
 ---
 
@@ -54,6 +57,9 @@ const pageTitle = title === 'Valvia' ? title : `${title} · Valvia`;
           use.
         </p>
         <p>Sources: European Society of Cardiology (incl. EACVI) and American Society of Echocardiography documents.</p>
+        <p class="site-footer__version">
+          Content version {version} · built {builtOn}
+        </p>
       </div>
     </footer>
   </body>

@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-04.2.3 Leaf page with section anchors and "jump to" menu |
-| Next up | TS-04.5.2: last-reviewed date and content version |
+| Last completed | TS-04.5.2 "Last reviewed" date and content version on every page |
+| Next up | TS-04.7.2: previous recommendations (history) |
 
 ## Next up: R0 sequence
 
@@ -155,7 +155,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-04.4.1 | Pagefind index incl. synonyms, abbreviations and valve models | 3 | done | Valve model names join with the prosthetic catalogue (TS-02.2.8) |
 | TS-04.4.2 | Instant search UI (mobile keyboard friendly) | 2 | done |  |
 | TS-04.5.1 | Stable deep links to topics and parameter anchors | 1 | todo |  |
-| TS-04.5.2 | "Last reviewed" date and content version on every page | 1 | todo |  |
+| TS-04.5.2 | "Last reviewed" date and content version on every page | 1 | done |  |
 | TS-04.6.1 | Last 10 viewed topics on home screen (localStorage) | 2 | todo |  |
 | TS-04.7.1 | Adult / paediatric switch (global, persisted) | 2 | todo |  |
 | TS-04.7.2 | "Previous recommendations" history view (source, year, superseded by) | 2 | todo |  |
@@ -335,3 +335,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-04 | CH-13 | E2E tests served by tests/e2e/static-server.ts (base path, directory index, 404.html with status 404) instead of astro preview, which detached into the background locally | `CH-13: own static server for E2E tests` |
 | 2026-11-04 | TS-04.7.3 | CT/CMR values carry a text badge with an accessible description in tables and threshold lists; echo is the unbadged default | `TS-04.7.3: modality badges for CT and CMR values` |
 | 2026-11-04 | TS-04.2.3 | 'On this page' jump menu on leaves with several blocks; readable default headings per block type; stable block anchors | `TS-04.2.3: jump menu and block headings` |
+| 2026-11-04 | TS-04.5.2 | Per-leaf review status badge (draft / in review / last reviewed date), optional lastReviewed topic field, content version (env/commit) and build date in the footer | `TS-04.5.2: review status and content version` |
