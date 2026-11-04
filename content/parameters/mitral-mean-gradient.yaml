@@ -1,0 +1,7 @@
+id: mitral-mean-gradient
+name: Mitral mean gradient
+abbreviation: Mitral MG
+quantity: pressure
+unit: 'mmHg'
+modalities: [Echo]
+method: Continuous-wave Doppler across the mitral valve; report heart rate.

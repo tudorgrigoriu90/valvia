@@ -1,0 +1,7 @@
+id: prosthetic-eoa
+name: Prosthetic valve effective orifice area
+abbreviation: EOA
+quantity: area
+unit: 'cm²'
+modalities: [Echo]
+method: Continuity equation.

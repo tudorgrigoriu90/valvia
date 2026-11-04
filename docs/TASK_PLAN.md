@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-12 Compare discrepancies within a topic only (thresholds are condition-sp |
-| Next up | FT-03.7: prosthetic mitral valve (ASE 2024) |
+| Last completed | FT-03.7 4.2–4.6 Prosthetic valves & valve interventions (grading, PPM, post-re |
+| Next up | FT-03.7: prosthetic tricuspid and pulmonary valves (ASE 2024) |
 
 ## Next up: R0 sequence
 
@@ -121,7 +121,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | FT-03.4 | 3.2 VHD: mitral valve (primary/secondary MR, TEER feasibility, repair likelihood, MS, MAC) (W1) | 10 | in progress | Primary MR (ASE 2017) done; ESC/EACVI and CMR values pending document access |
 | FT-03.5 | 3.3–3.5 VHD: tricuspid, pulmonary, multiple & mixed (W1) | 5 | in progress | TR and PR grading (ASE 2017); stenosis grading pending sources |
 | FT-03.6 | 3.6 VHD: infective endocarditis (W1) | 3 | todo |  |
-| FT-03.7 | 4.2–4.6 Prosthetic valves & valve interventions (grading, PPM, post-repair, BVD) (W1) | 8 | in progress | Prosthetic aortic (ASE 2024) done; mitral, tricuspid, pulmonary next |
+| FT-03.7 | 4.2–4.6 Prosthetic valves & valve interventions (grading, PPM, post-repair, BVD) (W1) | 8 | in progress | Prosthetic aortic and mitral (ASE 2024) done |
 | FT-03.8 | 4.1 Prosthetic valve reference values by model and size (W2) | 8 | todo |  |
 | FT-03.9 | 5 Pulmonary hypertension & right heart (W1) | 6 | in progress | Right heart (ASE 2025) done; PH probability and ESC/ERS 2022 pending |
 | FT-03.10 | 6 Cardiomyopathies & heart failure (W1) | 8 | todo |  |
@@ -329,3 +329,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-04 | FT-03.2 | Diastolic function from ASE 2025: normal ranges by age (2.1, Table 5) for E, A, E/A, e′, E/e′, LAVi, TRV, LARS; dysfunction criteria (2.2, Figure 2/key points) with LAP algorithm link; 9 new parameters | `FT-03.2: diastolic normal ranges and dysfunction criteria (ASE 2025)` |
 | 2026-11-04 | FT-03.7 | Prosthetic aortic valve (4.2) from ASE 2024: obstruction grading (Table 5, all valves + SAVR), PPM by indexed EOA and BMI (Table 7), regurgitation incl. paravalvular extent (Table 8), algorithm link; 4 new parameters | `FT-03.7: prosthetic aortic valve grading (ASE 2024)` |
 | 2026-11-04 | CH-12 | Discrepancy groups now include the topic: the same parameter has condition-specific thresholds (VC width in MR vs TR vs prosthetic AR were false positives) | `CH-12: compare discrepancies within a topic only` |
+| 2026-11-04 | FT-03.7 | Prosthetic mitral valve (4.3) from ASE 2024: obstruction (Table 11), regurgitation (Table 13), PPM by indexed EOA and BMI (Table 7); 4 new parameters | `FT-03.7: prosthetic mitral valve grading (ASE 2024)` |

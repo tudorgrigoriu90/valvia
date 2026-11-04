@@ -7,3 +7,253 @@ order: 0
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: stenosis-grading
+    type: grading-table
+    tag: GRADE
+    title: Doppler findings in prosthetic mitral stenosis
+    grades: ['Normal', 'Possible stenosis', 'Suggests significant stenosis']
+    values:
+      - parameter: mitral-peak-velocity
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 1.9
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Also abnormal with significant prosthetic MR; slightly higher values may be seen in some bioprostheses.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '11'
+            page: '27'
+      - parameter: mitral-peak-velocity
+        context: grading
+        grade: Possible stenosis
+        operator: range
+        min: 1.9
+        max: 2.5
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Also abnormal with significant prosthetic MR; slightly higher values may be seen in some bioprostheses.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '11'
+            page: '27'
+      - parameter: mitral-peak-velocity
+        context: grading
+        grade: Suggests significant stenosis
+        operator: '>='
+        value: 2.5
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Also abnormal with significant prosthetic MR; slightly higher values may be seen in some bioprostheses.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '11'
+            page: '27'
+      - parameter: mitral-mean-gradient
+        context: grading
+        grade: Normal
+        operator: '<='
+        value: 5
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Also abnormal with significant prosthetic MR; slightly higher values may be seen in some bioprostheses.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '11'
+            page: '27'
+      - parameter: mitral-mean-gradient
+        context: grading
+        grade: Possible stenosis
+        operator: range
+        min: 6
+        max: 10
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Also abnormal with significant prosthetic MR; slightly higher values may be seen in some bioprostheses.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '11'
+            page: '27'
+      - parameter: mitral-mean-gradient
+        context: grading
+        grade: Suggests significant stenosis
+        operator: '>'
+        value: 10
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Also abnormal with significant prosthetic MR; slightly higher values may be seen in some bioprostheses.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '11'
+            page: '27'
+      - parameter: prosthetic-mitral-vti-ratio
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 2.2
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Also abnormal with significant prosthetic MR; slightly higher values may be seen in some bioprostheses.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '11'
+            page: '27'
+      - parameter: prosthetic-mitral-vti-ratio
+        context: grading
+        grade: Possible stenosis
+        operator: range
+        min: 2.2
+        max: 2.5
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Also abnormal with significant prosthetic MR; slightly higher values may be seen in some bioprostheses.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '11'
+            page: '27'
+      - parameter: prosthetic-mitral-vti-ratio
+        context: grading
+        grade: Suggests significant stenosis
+        operator: '>'
+        value: 2.5
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Also abnormal with significant prosthetic MR; slightly higher values may be seen in some bioprostheses.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '11'
+            page: '27'
+      - parameter: prosthetic-eoa
+        context: grading
+        grade: Normal
+        operator: '>='
+        value: 2.0
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '11'
+            page: '27'
+      - parameter: prosthetic-eoa
+        context: grading
+        grade: Possible stenosis
+        operator: range
+        min: 1
+        max: 2
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '11'
+            page: '27'
+      - parameter: prosthetic-eoa
+        context: grading
+        grade: Suggests significant stenosis
+        operator: '<'
+        value: 1
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '11'
+            page: '27'
+      - parameter: pressure-half-time
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 130
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '11'
+            page: '27'
+      - parameter: pressure-half-time
+        context: grading
+        grade: Possible stenosis
+        operator: range
+        min: 130
+        max: 200
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '11'
+            page: '27'
+      - parameter: pressure-half-time
+        context: grading
+        grade: Suggests significant stenosis
+        operator: '>'
+        value: 200
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '11'
+            page: '27'
+  - id: interpretation
+    type: note
+    tag: METH
+    title: Interpretation
+    text: 'Applies to mechanical and biological valves; accuracy is best when most parameters agree. Values in the possible-stenosis range should prompt closer evaluation and consideration of increased flow, increased heart rate or patient–prosthesis mismatch.'
+    citation:
+      source: ase-2024-prosthetic-valves
+      locator:
+        table: '11'
+        page: '27'

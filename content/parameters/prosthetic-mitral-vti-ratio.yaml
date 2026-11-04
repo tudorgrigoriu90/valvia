@@ -1,0 +1,6 @@
+id: prosthetic-mitral-vti-ratio
+name: VTI prosthetic mitral valve / VTI LVOT
+abbreviation: VTI PrMV/LVOT
+quantity: ratio
+unit: '1'
+modalities: [Echo]

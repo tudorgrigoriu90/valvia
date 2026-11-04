@@ -1,0 +1,6 @@
+id: mitral-peak-velocity
+name: Mitral (prosthetic) peak early velocity
+abbreviation: Mitral Vmax
+quantity: velocity-blood
+unit: 'm/s'
+modalities: [Echo]

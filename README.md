@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-12: Compare discrepancies within a topic only (thresholds are condition-sp |
-| Next task | FT-03.7: prosthetic mitral valve (ASE 2024) |
+| Last completed task | FT-03.7: 4.2–4.6 Prosthetic valves & valve interventions (grading, PPM, post-re |
+| Next task | FT-03.7: prosthetic tricuspid and pulmonary valves (ASE 2024) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
