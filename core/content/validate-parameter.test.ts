@@ -39,7 +39,7 @@ describe('validateContentFile(parameter) (TS-02.2.1)', () => {
     [
       'quantity: area',
       'quantity: surface',
-      "quantity must be one of: dimensionless, ratio, percent, length, indexed-length, area, indexed-area, volume, indexed-volume, mass, indexed-mass, velocity-blood, velocity-tissue, acceleration, pressure, time, heart-rate, flow-rate, calcium-score, angle, age (got 'surface')",
+      "quantity must be one of: dimensionless, ratio, percent, length, indexed-length, area, indexed-area, volume, indexed-volume, mass, indexed-mass, velocity-blood, velocity-tissue, velocity-time-integral, acceleration, pressure, time, heart-rate, flow-rate, calcium-score, angle, age (got 'surface')",
     ],
     ['abbreviation: EROA', 'abbreviation: ""', 'abbreviation must not be empty'],
   ])('rejects %s replaced by %s', (from, to, message) => {

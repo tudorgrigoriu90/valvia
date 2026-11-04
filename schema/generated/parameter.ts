@@ -36,6 +36,7 @@ export interface Parameter {
     | 'indexed-mass'
     | 'velocity-blood'
     | 'velocity-tissue'
+    | 'velocity-time-integral'
     | 'acceleration'
     | 'pressure'
     | 'time'

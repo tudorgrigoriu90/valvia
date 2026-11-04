@@ -27,6 +27,7 @@ flowchart LR
 | `area` | mm², cm² | **cm²** (SME decision 8) |
 | `velocity-blood` | m/s, cm/s | **m/s** (SME decision 8) |
 | `velocity-tissue` | cm/s, m/s | **cm/s** (SME F4 answered) |
+| `velocity-time-integral` | cm | cm (VTI is reported in cm clinically; not converted to mm) |
 | `volume` | mL | mL (proposed, F4) |
 | `indexed-volume` | mL/m² | mL/m² (proposed, F4) |
 | `mass` | g | g |

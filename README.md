@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-04.7.2: "Previous recommendations" history view (source, year, superseded by) |
-| Next task | TS-04.7.1: adult/paediatric switch |
+| Last completed task | CH-14: Velocity-time integral quantity displayed in cm |
+| Next task | FT-03.5: tricuspid and pulmonary stenosis grading (EAE/ASE 2009) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

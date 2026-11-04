@@ -30,6 +30,7 @@ export const QUANTITY_UNITS: Readonly<Record<Quantity, QuantityUnits>> = {
   'indexed-mass': { units: ['g/m²', 'g/m^2.7'], display: undefined },
   'velocity-blood': { units: ['m/s', 'cm/s'], display: 'm/s' },
   'velocity-tissue': { units: ['cm/s', 'm/s'], display: 'cm/s' },
+  'velocity-time-integral': { units: ['cm'], display: 'cm' },
   acceleration: { units: ['m/s²'], display: 'm/s²' },
   pressure: { units: ['mmHg'], display: 'mmHg' },
   time: { units: ['ms', 's'], display: 'ms' },

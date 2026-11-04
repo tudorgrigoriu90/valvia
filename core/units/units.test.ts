@@ -56,6 +56,7 @@ describe('quantity units (NFR-15, taxonomy 14.2)', () => {
     ['time', 'ms'],
     ['percent', '%'],
     ['indexed-length', undefined],
+    ['velocity-time-integral', 'cm'],
   ] as const)('house unit for %s is %s', (quantity, unit) => {
     expect(QUANTITY_UNITS[quantity].display).toBe(unit);
   });
@@ -63,6 +64,15 @@ describe('quantity units (NFR-15, taxonomy 14.2)', () => {
   it('allows cm/s and m/s for both blood-flow and tissue velocities', () => {
     expect(isUnitAllowed('velocity-blood', 'cm/s')).toBe(true);
     expect(isUnitAllowed('velocity-tissue', 'm/s')).toBe(true);
+  });
+
+  it('keeps velocity-time integrals in cm, as reported clinically (not converted to mm)', () => {
+    expect(allowedUnits('velocity-time-integral')).toEqual(['cm']);
+    expect(toDisplay('velocity-time-integral', '60', 'cm')).toMatchObject({
+      value: '60',
+      unit: 'cm',
+      converted: false,
+    });
   });
 
   it('rejects units of a different quantity', () => {

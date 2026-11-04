@@ -93,7 +93,7 @@ describe('loadContent', () => {
     writeValidTree();
     write('parameters/eroa.yaml', PARAMETER.replace('quantity: area', 'quantity: surface'));
     expect(problems()).toEqual([
-      "content/parameters/eroa.yaml:4 error schema quantity must be one of: dimensionless, ratio, percent, length, indexed-length, area, indexed-area, volume, indexed-volume, mass, indexed-mass, velocity-blood, velocity-tissue, acceleration, pressure, time, heart-rate, flow-rate, calcium-score, angle, age (got 'surface')",
+      "content/parameters/eroa.yaml:4 error schema quantity must be one of: dimensionless, ratio, percent, length, indexed-length, area, indexed-area, volume, indexed-volume, mass, indexed-mass, velocity-blood, velocity-tissue, velocity-time-integral, acceleration, pressure, time, heart-rate, flow-rate, calcium-score, angle, age (got 'surface')",
     ]);
   });
 
