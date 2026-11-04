@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-01.2.4 Renovate config with auto-merge for patch/minor on green CI |
-| Next up | TS-03.0.1: content guide |
+| Last completed | TS-03.0.1 Content YAML templates + content guide (modelling, citing, units, hist |
+| Next up | TS-05.2.1: Lighthouse budgets in CI |
 
 ## Next up: R0 sequence
 
@@ -115,7 +115,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 
 | Key | Summary | SP | Status | Notes |
 |---|---|---|---|---|
-| TS-03.0.1 | Content YAML templates + content guide (modelling, citing, units, history, modality, paediatric values) | 2 | todo |  |
+| TS-03.0.1 | Content YAML templates + content guide (modelling, citing, units, history, modality, paediatric values) | 2 | done |  |
 | TS-03.0.2 | Content status page (per node: draft / in review / published; wave) | 2 | done |  |
 | FT-03.1 | 1 Chamber size & function (W1) | 8 | in progress | Chamber, LV/RV/LA strain done |
 | FT-03.2 | 2 Diastolic function & filling pressures (W1) | 5 | in progress | Diastolic (ASE 2025): 2.1 and 2.2 done; special populations and HFpEF pending |
@@ -352,3 +352,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-04 | TS-03.0.2 | Content status page: per root category wave, topics with content / total leaves, draft / in review / reviewed counts, totals; linked from the footer | `TS-03.0.2: content status page` |
 | 2026-11-04 | TS-01.2.5 | Content PR template: clinical change summary table, sources and acquisition, SME reviewer checklist (values, population, units, modality, discrepancies, history, locators), checks | `TS-01.2.5: content PR template with reviewer checklist` |
 | 2026-11-04 | TS-01.2.4 | renovate.json: weekly schedule, auto-merge patch/minor/pin/digest on green CI, majors manual, Playwright pinned, ESLint group; setup steps in CI/CD doc | `TS-01.2.4: Renovate configuration` |
+| 2026-11-04 | TS-03.0.1 | Content guide: workflow diagram (seed vs PR), source rules, table-reading pitfalls learned (image tables, lost signs, exclusive bounds, strata, magnitudes), leaf template, pre-push checks | `TS-03.0.1: content guide` |

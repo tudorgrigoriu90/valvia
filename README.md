@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-01.2.4: Renovate config with auto-merge for patch/minor on green CI |
-| Next task | TS-03.0.1: content guide |
+| Last completed task | TS-03.0.1: Content YAML templates + content guide (modelling, citing, units, hist |
+| Next task | TS-05.2.1: Lighthouse budgets in CI |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
@@ -70,6 +70,7 @@ Read [`CLAUDE.md`](CLAUDE.md) first. In short:
 - [Task plan](docs/TASK_PLAN.md)
 - [Architecture](docs/architecture.md)
 - [Architecture Decision Records](docs/adr/README.md)
+- [Content guide](docs/content-guide.md)
 - [Content model reference](docs/content-model.md)
 - [Units and conversions](docs/units.md)
 - [Testing guide](docs/testing.md)
