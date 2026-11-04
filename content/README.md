@@ -19,6 +19,8 @@ encoded once by TS-02.1.2 (initial seed, decision PO-3). From now on edit the fi
 rename a URL by changing `slug` and adding the old one to `formerSlugs`.
 
 - `ref` is the taxonomy number; `order` follows the taxonomy order among siblings.
+- Renaming a URL: change `slug` and add the old slug to `formerSlugs`; the build writes a redirect page for the old URL
+  and for the old URLs of all descendants (`pipeline/redirects`).
 - `population`: root 8 (congenital) and 14 (reference) are `both`, root 15 (paediatric) is `paediatric`, all others `adult`.
 - `wave` comes from the root (4.1 is W2).
 - Cross-links (→) are `seeAlso`.

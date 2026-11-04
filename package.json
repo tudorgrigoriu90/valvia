@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && tsx pipeline/csp/cli.ts && pagefind --site dist && tsx pipeline/pwa/cli.ts",
+    "build": "astro build && tsx pipeline/redirects/cli.ts && tsx pipeline/csp/cli.ts && pagefind --site dist && tsx pipeline/pwa/cli.ts",
     "preview": "astro preview",
     "typecheck": "astro check",
     "lint": "astro sync >/dev/null && eslint . --max-warnings 0",

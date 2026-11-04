@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-04.3.4: Discrepancy marker + side-by-side comparison view |
-| Next task | TS-02.1.3: static redirects for renamed slugs |
+| Last completed task | TS-02.1.3: Stable ID & URL policy; static redirect pages on slug rename |
+| Next task | TS-07.5.1: privacy notice |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

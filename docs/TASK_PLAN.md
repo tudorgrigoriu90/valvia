@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-04.3.4 Discrepancy marker + side-by-side comparison view |
-| Next up | TS-02.1.3: static redirects for renamed slugs |
+| Last completed | TS-02.1.3 Stable ID & URL policy; static redirect pages on slug rename |
+| Next up | TS-07.5.1: privacy notice |
 
 ## Next up: R0 sequence
 
@@ -97,7 +97,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 |---|---|---|---|---|
 | TS-02.1.1 | Topic node schema: `id`, `slug`, `title`, `parent`, `order`, `synonyms`, `population`, `wave`, `status` | 2 | done |  |
 | TS-02.1.2 | Encode taxonomy v0.2 as content tree (unpopulated nodes hidden) | 2 | done | Direct to main per PO-3; hiding of unpopulated nodes is a site behaviour (EP-04) |
-| TS-02.1.3 | Stable ID & URL policy; static redirect pages on slug rename | 2 | todo |  |
+| TS-02.1.3 | Stable ID & URL policy; static redirect pages on slug rename | 2 | done |  |
 | TS-02.2.1 | Parameter schema: name, abbreviation, unit, modality, view/method note | 2 | done | Unit/quantity consistency enforced in TS-02.2.7 |
 | TS-02.2.2 | Value schema: population qualifiers, grade, operator, value/range, unit, context, caveats, citation | 5 | done | Modality field added by TS-02.2.6; numeric plausibility in TS-02.2.4 |
 | TS-02.2.3 | Content block types: grading table, normal range table, criteria checklist (favourable / challenging / unsuitable), threshold list, note, algorithm reference (link to source) | 3 | done |  |
@@ -361,3 +361,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-04 | CH-16 | lint runs astro sync first so import.meta.env types exist in CI; local gate now deletes .astro/ and dist/ before verify | `CH-16: generate Astro types before lint (CI red since TS-05.3.1)` |
 | 2026-11-04 | TS-04.3.5 | Society filter (All / ESC/EACVI / ASE) on leaf pages, persisted on the device with try/catch; values tagged with society groups from source issuers (joint documents count for both) | `TS-04.3.5: society filter` |
 | 2026-11-04 | TS-04.3.4 | Leaf view maps values to topic discrepancies: ≠ marker (text + screen-reader label) on differing values and a 'Differs between sources' side-by-side panel per block; no value preferred | `TS-04.3.4: discrepancy marker and side-by-side comparison` |
+| 2026-11-04 | TS-02.1.3 | Redirects for renamed slugs: core/navigation/redirects computes old→new URLs for visible nodes and descendants; post-build step writes meta-refresh pages (canonical, noindex, strict CSP, visible link) | `TS-02.1.3: static redirects for renamed slugs` |
