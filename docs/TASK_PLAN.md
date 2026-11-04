@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-02.4.2 Supersession → history data (current vs previous recommendations) |
-| Next up | TS-04.7.2: previous recommendations view |
+| Last completed | TS-04.7.2 "Previous recommendations" history view (source, year, superseded by) |
+| Next up | TS-04.7.1: adult/paediatric switch |
 
 ## Next up: R0 sequence
 
@@ -158,7 +158,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-04.5.2 | "Last reviewed" date and content version on every page | 1 | done |  |
 | TS-04.6.1 | Last 10 viewed topics on home screen (localStorage) | 2 | todo |  |
 | TS-04.7.1 | Adult / paediatric switch (global, persisted) | 2 | todo |  |
-| TS-04.7.2 | "Previous recommendations" history view (source, year, superseded by) | 2 | todo |  |
+| TS-04.7.2 | "Previous recommendations" history view (source, year, superseded by) | 2 | done | E2E pending superseded content |
 | TS-04.7.3 | Modality badges (Echo / CT / CMR) | 1 | done |  |
 | TS-04.7.4 | Prosthetic valve picker (lookup only) | 3 | todo |  |
 
@@ -337,3 +337,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-04 | TS-04.2.3 | 'On this page' jump menu on leaves with several blocks; readable default headings per block type; stable block anchors | `TS-04.2.3: jump menu and block headings` |
 | 2026-11-04 | TS-04.5.2 | Per-leaf review status badge (draft / in review / last reviewed date), optional lastReviewed topic field, content version (env/commit) and build date in the footer | `TS-04.5.2: review status and content version` |
 | 2026-11-04 | TS-02.4.2 | History logic: withoutHistory removes superseded/withdrawn-source values from blocks; previousRecommendations lists them with year, status and current successor (cycle-safe chain); 100 % coverage | `TS-02.4.2: supersession history logic` |
+| 2026-11-04 | TS-04.7.2 | Leaf view model (current values vs previous recommendations per block, gap flag); collapsed 'Previous recommendations' section with source, year and current successor; 'No current society-endorsed value' gap message | `TS-04.7.2: previous recommendations view` |

@@ -1,0 +1,26 @@
+---
+import type { HistoryItem } from '../../core/view/leaf';
+
+interface Props {
+  items: HistoryItem[];
+}
+const { items } = Astro.props;
+---
+
+{items.length > 0 && (
+  <details class="history">
+    <summary>Previous recommendations ({items.length})</summary>
+    <ul>
+      {items.map((item) => (
+        <li>
+          <strong>{item.label}</strong> {item.text} · {item.source}
+          {item.status === 'withdrawn'
+            ? ' · withdrawn'
+            : item.supersededBy === undefined
+              ? ' · superseded'
+              : ` · superseded by ${item.supersededBy}`}
+        </li>
+      ))}
+    </ul>
+  </details>
+)}

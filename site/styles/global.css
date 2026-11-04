@@ -728,3 +728,31 @@ main {
 .site-footer__version {
   font-variant-numeric: tabular-nums;
 }
+
+.history {
+  margin-top: var(--space-3);
+  font-size: 0.9375rem;
+}
+
+.history summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch-target);
+  cursor: pointer;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.history ul {
+  margin: var(--space-2) 0 0;
+  padding-left: var(--space-5);
+  color: var(--color-text-muted);
+}
+
+.gap {
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text-muted);
+}

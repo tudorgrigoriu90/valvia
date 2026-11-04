@@ -5,6 +5,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CriteriaChecklist from '../components/CriteriaChecklist.astro';
 import GradingTable from '../components/GradingTable.astro';
 import JumpMenu from '../components/JumpMenu.astro';
+import PreviousRecommendations from '../components/PreviousRecommendations.astro';
 import SourceChips from '../components/SourceChips.astro';
 import ThresholdList from '../components/ThresholdList.astro';
 import TopicList from '../components/TopicList.astro';
@@ -12,6 +13,7 @@ import Base from '../layouts/Base.astro';
 import { blockHeading } from '../../core/navigation/block-heading';
 import { searchTerms } from '../../core/navigation/search-terms';
 import { reviewStatus } from '../../core/site/version';
+import { leafView } from '../../core/view/leaf';
 import { getContent } from '../lib/content';
 
 export function getStaticPaths() {
@@ -36,6 +38,7 @@ const context = navigation
 const children = navigation.visibleChildren(topic.id);
 const blocks = topic.blocks ?? [];
 const review = reviewStatus(topic);
+const sections = leafView(topic, bundle);
 ---
 
 <Base title={topic.title}>
@@ -57,19 +60,21 @@ const review = reviewStatus(topic);
     )}
     {children.length > 0 && <TopicList topics={children} />}
     <JumpMenu blocks={blocks} />
-    {blocks.map((block) => {
+    {sections.map(({ block, history, noCurrentValue }) => {
       const heading = blockHeading(block);
       return (
         <section class="block" id={block.id} aria-labelledby={`${block.id}-heading`}>
           <h2 id={`${block.id}-heading`}>{heading}</h2>
           <SourceChips block={block} />
-          {(block.type === 'grading-table' || block.type === 'normal-range-table') && (
+          {noCurrentValue && <p class="gap">No current society-endorsed value.</p>}
+          {!noCurrentValue && (block.type === 'grading-table' || block.type === 'normal-range-table') && (
             <GradingTable block={block} label={heading} />
           )}
-          {block.type === 'threshold-list' && <ThresholdList block={block} label={heading} />}
+          {!noCurrentValue && block.type === 'threshold-list' && <ThresholdList block={block} label={heading} />}
           {block.type === 'criteria-checklist' && <CriteriaChecklist block={block} />}
           {block.type === 'note' && <p class="note">{block.text}</p>}
           {block.type === 'algorithm-reference' && <AlgorithmReference block={block} />}
+          <PreviousRecommendations items={history} />
         </section>
       );
     })}
