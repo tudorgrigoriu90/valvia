@@ -7,3 +7,64 @@ order: 1
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: doppler
+    type: threshold-list
+    tag: CRIT
+    title: Respiratory variation
+    values:
+      - parameter: mitral-e-respiratory-variation
+        context: diagnostic-criterion
+        operator: '>='
+        value: 30
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Inspiratory reduction in mitral peak E velocity considered diagnostic in research studies; greatest on the first beats of inspiration and expiration.
+        citation:
+          source: ase-2013-pericardial-disease
+          locator:
+            page: '988'
+  - id: signs
+    type: criteria-checklist
+    tag: CRIT
+    title: Echocardiographic signs of tamponade
+    criteria:
+      - text: Pericardial effusion with reduced LV size (apparent LV hypertrophy)
+        citation:
+          source: ase-2013-pericardial-disease
+          locator:
+            table: '6'
+            page: '985'
+      - text: Dilated IVC and hepatic veins
+        citation:
+          source: ase-2013-pericardial-disease
+          locator:
+            table: '6'
+            page: '985'
+      - text: Cardiac chamber collapses
+        citation:
+          source: ase-2013-pericardial-disease
+          locator:
+            table: '6'
+            page: '985'
+      - text: 'Respiratory variation in chamber size: RV increases and LV decreases with inspiration'
+        citation:
+          source: ase-2013-pericardial-disease
+          locator:
+            table: '6'
+            page: '985'
+      - text: 'Respiratory variation in transvalvular velocities: tricuspid and pulmonic increase, mitral and aortic decrease with inspiration; IVRT increases'
+        citation:
+          source: ase-2013-pericardial-disease
+          locator:
+            table: '6'
+            page: '985'
+      - text: 'Low hepatic vein velocities, decreased expiratory diastolic hepatic vein velocities with large reversals'
+        citation:
+          source: ase-2013-pericardial-disease
+          locator:
+            table: '6'
+            page: '985'

@@ -1,0 +1,8 @@
+id: pericardial-effusion-size
+name: Pericardial effusion size (echo-free space at end-diastole)
+abbreviation: PEff size
+quantity: length
+unit: mm
+modalities: [Echo]
+synonyms: [pericardial effusion, effusion depth]
+method: Largest echo-free space between parietal and visceral pericardium at end-diastole, from several views.

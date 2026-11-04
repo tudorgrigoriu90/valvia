@@ -1,0 +1,7 @@
+id: mitral-e-respiratory-variation
+name: Respiratory variation in mitral E velocity
+abbreviation: Mitral E variation
+quantity: percent
+unit: '%'
+modalities: [Echo]
+method: (expiration − inspiration) / expiration, first beats of inspiration and expiration.

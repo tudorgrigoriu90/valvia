@@ -1,0 +1,6 @@
+id: pericardial-thickness
+name: Pericardial thickness
+abbreviation: Pericardial thickness
+quantity: length
+unit: mm
+modalities: [Echo, CT, CMR]

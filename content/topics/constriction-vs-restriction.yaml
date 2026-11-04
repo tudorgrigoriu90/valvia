@@ -7,3 +7,90 @@ order: 2
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: constriction-findings
+    type: threshold-list
+    tag: CRIT
+    title: Findings of constrictive pericarditis
+    values:
+      - parameter: mitral-e-respiratory-variation
+        context: diagnostic-criterion
+        operator: '>'
+        value: 25
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Fall in mitral inflow velocity on the first beat after inspiration, with opposite changes in expiration.'
+        citation:
+          source: ase-2013-pericardial-disease
+          locator:
+            table: '8'
+            page: '998'
+      - parameter: tricuspid-e-respiratory-variation
+        context: diagnostic-criterion
+        operator: '>'
+        value: 40
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Increase in tricuspid velocity on the first beat after inspiration.
+        citation:
+          source: ase-2013-pericardial-disease
+          locator:
+            table: '8'
+            page: '998'
+      - parameter: mitral-annular-e-prime
+        context: diagnostic-criterion
+        operator: '>'
+        value: 7
+        unit: cm/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Normal or increased mitral annular velocity; annulus paradoxus and annulus reversus may be present.
+        citation:
+          source: ase-2013-pericardial-disease
+          locator:
+            table: '8'
+            page: '998'
+      - parameter: flow-propagation-velocity
+        context: diagnostic-criterion
+        operator: '>'
+        value: 100
+        unit: cm/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Normal or increased; often above this value.
+        citation:
+          source: ase-2013-pericardial-disease
+          locator:
+            page: '994'
+      - parameter: pericardial-thickness
+        context: diagnostic-criterion
+        operator: '>'
+        value: 4
+        unit: mm
+        modality: CT
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2013-pericardial-disease
+          locator:
+            table: '8'
+            page: '998'
+  - id: differentiation
+    type: note
+    tag: METH
+    title: Constriction vs restriction
+    text: Marked respiratory variation reflects enhanced ventricular interaction and is absent in normal subjects and in restrictive cardiomyopathy. Expiratory hepatic vein diastolic flow reversal supports constriction; inspiratory reversal suggests restrictive cardiomyopathy. Calculate respiratory variation as (expiration − inspiration) / expiration.
+    citation:
+      source: ase-2013-pericardial-disease
+      locator:
+        page: '994'

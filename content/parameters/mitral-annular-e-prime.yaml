@@ -1,0 +1,7 @@
+id: mitral-annular-e-prime
+name: Mitral annular e′ velocity
+abbreviation: e′
+quantity: velocity-tissue
+unit: cm/s
+modalities: [Echo]
+synonyms: [mitral annular velocity, e prime]

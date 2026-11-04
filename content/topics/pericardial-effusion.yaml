@@ -7,3 +7,72 @@ order: 0
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: size-grading
+    type: grading-table
+    tag: GRADE
+    title: Semiquantitative size of a pericardial effusion
+    grades: ['Small', 'Moderate', 'Large', 'Very large']
+    values:
+      - parameter: pericardial-effusion-size
+        context: grading
+        grade: Small
+        operator: '<'
+        value: 10
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2013-pericardial-disease
+          locator:
+            page: '981'
+      - parameter: pericardial-effusion-size
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 10
+        max: 20
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2013-pericardial-disease
+          locator:
+            page: '981'
+      - parameter: pericardial-effusion-size
+        context: grading
+        grade: Large
+        operator: '>'
+        value: 20
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2013-pericardial-disease
+          locator:
+            page: '981'
+      - parameter: pericardial-effusion-size
+        context: grading
+        grade: Very large
+        operator: '>'
+        value: 25
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2013-pericardial-disease
+          locator:
+            page: '981'
+  - id: method
+    type: note
+    tag: METH
+    title: Measurement
+    text: Measure the echo-free space between parietal and visceral pericardium at end-diastole; an effusion seen only in systole is trivial. An evenly distributed effusion seen from several transducer positions makes the size estimate more reliable.
+    citation:
+      source: ase-2013-pericardial-disease
+      locator:
+        page: '981'

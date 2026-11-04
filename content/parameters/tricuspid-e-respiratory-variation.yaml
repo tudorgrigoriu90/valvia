@@ -1,0 +1,7 @@
+id: tricuspid-e-respiratory-variation
+name: Respiratory variation in tricuspid E velocity
+abbreviation: Tricuspid E variation
+quantity: percent
+unit: '%'
+modalities: [Echo]
+method: (expiration − inspiration) / expiration; the calculated value is negative for the inspiratory increase.

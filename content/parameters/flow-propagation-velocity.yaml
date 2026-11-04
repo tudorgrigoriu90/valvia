@@ -1,0 +1,7 @@
+id: flow-propagation-velocity
+name: Colour M-mode flow propagation velocity
+abbreviation: Vp
+quantity: velocity-blood
+unit: m/s
+modalities: [Echo]
+synonyms: [propagation velocity]
