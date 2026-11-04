@@ -1,0 +1,21 @@
+---
+import type { LoadedBlock } from '../../core/content/types';
+import { blockHeading } from '../../core/navigation/block-heading';
+
+interface Props {
+  blocks: LoadedBlock[];
+}
+const { blocks } = Astro.props;
+---
+
+{blocks.length > 1 && (
+  <nav class="jump-menu" aria-label="On this page">
+    <ul>
+      {blocks.map((block) => (
+        <li>
+          <a href={`#${block.id}`}>{blockHeading(block)}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+)}

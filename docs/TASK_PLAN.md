@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-04.7.3 Modality badges (Echo / CT / CMR) |
-| Next up | TS-04.2.3: jump menu, anchors and last-reviewed info |
+| Last completed | TS-04.2.3 Leaf page with section anchors and "jump to" menu |
+| Next up | TS-04.5.2: last-reviewed date and content version |
 
 ## Next up: R0 sequence
 
@@ -145,7 +145,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-04.1.3 | Society badges (ESC, EACVI, ASE, joint) with text label + colour | 1 | todo |  |
 | TS-04.2.1 | Home: grid of root categories + search bar | 2 | done | Search bar deferred to TS-04.4.2 |
 | TS-04.2.2 | Drill-down list pages with breadcrumbs | 3 | done |  |
-| TS-04.2.3 | Leaf page with section anchors and "jump to" menu | 3 | todo |  |
+| TS-04.2.3 | Leaf page with section anchors and "jump to" menu | 3 | done |  |
 | TS-04.3.1 | Responsive grading / normal-range table component | 5 | done | Normal-range table layout follows with NORM content |
 | TS-04.3.2 | Criteria checklist component (e.g. TEER feasibility) | 3 | done |  |
 | TS-04.3.3 | Source chip + citation popover; original-unit popover | 3 | done | Society badges are text-only for now (TS-04.1.3) |
@@ -334,3 +334,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-04 | FT-03.7 | Prosthetic tricuspid & pulmonary valves (4.4) from ASE 2024: pulmonary stenosis by valve type (Table 15), prosthetic PR incl. CMR RF (Table 16, p. 36), tricuspid stenosis by valve type (Table 19), TR after TVR/repair (Table 21); 5 new parameters | `FT-03.7: prosthetic tricuspid and pulmonary valves (ASE 2024)` |
 | 2026-11-04 | CH-13 | E2E tests served by tests/e2e/static-server.ts (base path, directory index, 404.html with status 404) instead of astro preview, which detached into the background locally | `CH-13: own static server for E2E tests` |
 | 2026-11-04 | TS-04.7.3 | CT/CMR values carry a text badge with an accessible description in tables and threshold lists; echo is the unbadged default | `TS-04.7.3: modality badges for CT and CMR values` |
+| 2026-11-04 | TS-04.2.3 | 'On this page' jump menu on leaves with several blocks; readable default headings per block type; stable block anchors | `TS-04.2.3: jump menu and block headings` |

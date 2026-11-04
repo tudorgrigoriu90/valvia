@@ -4,10 +4,12 @@ import AlgorithmReference from '../components/AlgorithmReference.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CriteriaChecklist from '../components/CriteriaChecklist.astro';
 import GradingTable from '../components/GradingTable.astro';
+import JumpMenu from '../components/JumpMenu.astro';
 import SourceChips from '../components/SourceChips.astro';
 import ThresholdList from '../components/ThresholdList.astro';
 import TopicList from '../components/TopicList.astro';
 import Base from '../layouts/Base.astro';
+import { blockHeading } from '../../core/navigation/block-heading';
 import { searchTerms } from '../../core/navigation/search-terms';
 import { getContent } from '../lib/content';
 
@@ -47,8 +49,9 @@ const blocks = topic.blocks ?? [];
       </p>
     )}
     {children.length > 0 && <TopicList topics={children} />}
+    <JumpMenu blocks={blocks} />
     {blocks.map((block) => {
-      const heading = block.title ?? block.id;
+      const heading = blockHeading(block);
       return (
         <section class="block" id={block.id} aria-labelledby={`${block.id}-heading`}>
           <h2 id={`${block.id}-heading`}>{heading}</h2>

@@ -97,3 +97,20 @@ test('tapping a converted value shows the value and unit as published', async ({
   await cell.getByText('≥ 7', { exact: true }).click();
   await expect(cell).toContainText('Published as ≥ 0.7 cm');
 });
+
+// TS-04.2.3: jump menu with section anchors.
+
+test('leaf pages with several sections have an "On this page" menu that jumps to each section', async ({ page }) => {
+  await page.goto(LEAF);
+  const menu = page.getByRole('navigation', { name: 'On this page' });
+  await expect(menu.getByRole('link')).toHaveText([
+    'Quantitative grading of chronic MR',
+    'Semiquantitative signs',
+    'Specific criteria for severe MR',
+    'Specific criteria for mild MR',
+    'Note',
+    'Algorithm for integrating multiple parameters of MR severity',
+  ]);
+  await menu.getByRole('link', { name: 'Specific criteria for mild MR' }).click();
+  await expect(page).toHaveURL(/#specific-criteria-mild$/);
+});
