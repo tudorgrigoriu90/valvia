@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-15: Inline critical CSS with CSP hashes to remove the render-blocking roun |
-| Next task | TS-04.7.1: adult/paediatric switch |
+| Last completed task | TS-04.7.1: Adult / paediatric switch (global, persisted) |
+| Next task | TS-04.3.5: society filter |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

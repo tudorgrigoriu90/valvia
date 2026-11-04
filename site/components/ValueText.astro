@@ -11,7 +11,7 @@ const { entry, text = entry.text, blockId } = Astro.props;
 const badge = modalityBadge(entry.value.modality);
 ---
 
-<span class="value">
+<span class="value" data-age-group={entry.value.population.ageGroup}>
   {entry.converted ? (
     <details class="original">
       <summary>{text}</summary>

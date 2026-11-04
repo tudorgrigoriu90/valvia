@@ -15,7 +15,7 @@ const base = import.meta.env.BASE_URL;
   {topics.map((topic) => {
     const count = navigation.visibleLeafCount(topic.id);
     return (
-      <li>
+      <li data-population={topic.population}>
         <a href={withBase(base, navigation.urlPath(topic.id))}>
           <span class="topic-list__title">{topic.title}</span>
           {!navigation.hasContent(topic.id) && (

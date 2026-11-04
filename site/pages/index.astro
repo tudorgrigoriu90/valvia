@@ -27,7 +27,7 @@ const upcoming = navigation.roots().filter((root) => !navigation.isVisible(root.
       {visible.map((root) => {
         const count = navigation.visibleLeafCount(root.id);
         return (
-          <li>
+          <li data-population={root.population}>
             <a class="category-card" href={withBase(base, navigation.urlPath(root.id))}>
               <span class="category-card__title">{root.title}</span>
               <span class="category-card__meta">

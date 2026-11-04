@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-15 Inline critical CSS with CSP hashes to remove the render-blocking roun |
-| Next up | TS-04.7.1: adult/paediatric switch |
+| Last completed | TS-04.7.1 Adult / paediatric switch (global, persisted) |
+| Next up | TS-04.3.5: society filter |
 
 ## Next up: R0 sequence
 
@@ -159,7 +159,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-04.5.1 | Stable deep links to topics and parameter anchors | 1 | todo |  |
 | TS-04.5.2 | "Last reviewed" date and content version on every page | 1 | done |  |
 | TS-04.6.1 | Last 10 viewed topics on home screen (localStorage) | 2 | todo |  |
-| TS-04.7.1 | Adult / paediatric switch (global, persisted) | 2 | todo |  |
+| TS-04.7.1 | Adult / paediatric switch (global, persisted) | 2 | done |  |
 | TS-04.7.2 | "Previous recommendations" history view (source, year, superseded by) | 2 | done | E2E pending superseded content |
 | TS-04.7.3 | Modality badges (Echo / CT / CMR) | 1 | done |  |
 | TS-04.7.4 | Prosthetic valve picker (lookup only) | 3 | todo |  |
@@ -356,3 +356,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-04 | TS-03.0.1 | Content guide: workflow diagram (seed vs PR), source rules, table-reading pitfalls learned (image tables, lost signs, exclusive bounds, strata, magnitudes), leaf template, pre-push checks | `TS-03.0.1: content guide` |
 | 2026-11-04 | TS-05.2.1 | Lighthouse CI on home + two leaves (mobile): performance ≥ 0.95, CLS ≤ 0.1, JS ≤ 50 KB blocking; LCP ≤ 1.5 s warning pending CH-15; CI step + report artefact | `TS-05.2.1: Lighthouse budgets in CI` |
 | 2026-11-04 | CH-15 | Stylesheet inlined (Astro inlineStylesheets always) with per-page SHA-256 hashes added to CSP style-src by pipeline/csp; LCP ≤ 1.5 s now a blocking Lighthouse assertion; CSP E2E checks hashes | `CH-15: inline critical CSS with CSP hashes` |
+| 2026-11-04 | TS-04.7.1 | Adults/Children switch in the header (aria-pressed, persisted in localStorage with try/catch); values, sections and topic links tagged by population and hidden by CSS; notice when a page has no values for the chosen population | `TS-04.7.1: adult/paediatric switch` |

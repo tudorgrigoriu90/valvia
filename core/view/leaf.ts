@@ -18,6 +18,8 @@ export interface LeafSection {
   history: HistoryItem[];
   /** True when the block had values but none from a current source remain. */
   noCurrentValue: boolean;
+  /** Age groups among the current values (empty for blocks without values), sorted. */
+  ageGroups: ('adult' | 'paediatric')[];
 }
 
 export function leafView(topic: LoadedTopic, bundle: ContentBundle): LeafSection[] {
@@ -40,7 +42,9 @@ export function leafView(topic: LoadedTopic, bundle: ContentBundle): LeafSection
       });
     }
     const hadValues = loadedValuesOf(original, 0).length > 0;
-    const noCurrentValue = hadValues && loadedValuesOf(block, 0).length === 0;
-    return { block, history, noCurrentValue };
+    const current = loadedValuesOf(block, 0);
+    const noCurrentValue = hadValues && current.length === 0;
+    const ageGroups = [...new Set(current.map(({ value }) => value.population.ageGroup))].sort();
+    return { block, history, noCurrentValue, ageGroups };
   });
 }

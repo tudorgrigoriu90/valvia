@@ -44,6 +44,14 @@ const pageTitle = title === 'Valvia' ? title : `${title} · Valvia`;
           <Logo />
           <span>Valvia</span>
         </a>
+        <div class="population-switch" role="group" aria-label="Population">
+          <button type="button" data-population-choice="adult" aria-pressed="true">
+            Adults
+          </button>
+          <button type="button" data-population-choice="paediatric" aria-pressed="false">
+            Children
+          </button>
+        </div>
       </div>
     </header>
     <ReviewBanner />
@@ -80,6 +88,7 @@ const pageTitle = title === 'Valvia' ? title : `${title} · Valvia`;
     <script>
       import '../scripts/register-sw';
       import '../scripts/offline-indicator';
+      import '../scripts/population-switch';
     </script>
   </body>
 </html>

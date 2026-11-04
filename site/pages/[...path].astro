@@ -39,6 +39,7 @@ const children = navigation.visibleChildren(topic.id);
 const blocks = topic.blocks ?? [];
 const review = reviewStatus(topic);
 const sections = leafView(topic, bundle);
+const pageAgeGroups = new Set(sections.flatMap((s) => s.ageGroups));
 ---
 
 <Base title={topic.title}>
@@ -59,11 +60,26 @@ const sections = leafView(topic, bundle);
       </p>
     )}
     {children.length > 0 && <TopicList topics={children} />}
+    {pageAgeGroups.size > 0 && !pageAgeGroups.has('paediatric') && (
+      <p class="population-notice" data-population-notice="paediatric">
+        No paediatric values on this page yet. Switch to Adults to see the adult values.
+      </p>
+    )}
+    {pageAgeGroups.size > 0 && !pageAgeGroups.has('adult') && (
+      <p class="population-notice" data-population-notice="adult">
+        This page holds paediatric values. Switch to Children to see them.
+      </p>
+    )}
     <JumpMenu blocks={blocks} />
-    {sections.map(({ block, history, noCurrentValue }) => {
+    {sections.map(({ block, history, noCurrentValue, ageGroups }) => {
       const heading = blockHeading(block);
       return (
-        <section class="block" id={block.id} aria-labelledby={`${block.id}-heading`}>
+        <section
+          class="block"
+          id={block.id}
+          aria-labelledby={`${block.id}-heading`}
+          data-age-groups={ageGroups.length > 0 ? ageGroups.join(' ') : undefined}
+        >
           <h2 id={`${block.id}-heading`}>{heading}</h2>
           <SourceChips block={block} />
           {noCurrentValue && <p class="gap">No current society-endorsed value.</p>}
