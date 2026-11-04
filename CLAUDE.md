@@ -70,7 +70,7 @@ Rules:
   or `source/<source-id>` for registry changes.
 - **One PR per subcategory** (backlog FT-03 flow). The PR contains only data (plus its generated
   artefacts, if any). Schema or code changes needed by the data are pushed to `main` first, as their own task.
-- Use the content PR template; the body starts with the clinical change summary table
+- Use the content PR template ([`.github/pull_request_template.md`](.github/pull_request_template.md)); the body starts with the clinical change summary table
   (parameter, population, society, old → new, locator). There are no hosted previews (ADR 0005): the summary
   and the YAML diff must make the clinical change reviewable on their own; the built site is attached as a CI artifact.
 - The verification run (Claude clinical-reviewer persona) is a required check. It is advisory:
