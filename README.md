@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-16: Fix: CI lint failed since TS-05.3.1 (Astro env types missing before bu |
-| Next task | TS-04.3.5: society filter |
+| Last completed task | TS-04.3.5: Society filter toggle (localStorage, wrapped in try/catch) |
+| Next task | TS-04.3.4: discrepancy marker and comparison |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

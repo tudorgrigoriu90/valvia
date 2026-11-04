@@ -1,0 +1,21 @@
+---
+/** Society filter (TS-04.3.5): show values from all societies, the ESC family or ASE. */
+---
+
+<div class="society-filter" role="group" aria-label="Show values from">
+  <span class="society-filter__label" aria-hidden="true">
+    Show:
+  </span>
+  <button type="button" data-society-choice="all" aria-pressed="true">
+    All
+  </button>
+  <button type="button" data-society-choice="esc" aria-pressed="false">
+    ESC/EACVI
+  </button>
+  <button type="button" data-society-choice="ase" aria-pressed="false">
+    ASE
+  </button>
+</div>
+<script>
+  import '../scripts/society-filter';
+</script>

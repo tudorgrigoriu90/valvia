@@ -5,6 +5,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CriteriaChecklist from '../components/CriteriaChecklist.astro';
 import GradingTable from '../components/GradingTable.astro';
 import JumpMenu from '../components/JumpMenu.astro';
+import SocietyFilter from '../components/SocietyFilter.astro';
 import PreviousRecommendations from '../components/PreviousRecommendations.astro';
 import SourceChips from '../components/SourceChips.astro';
 import ThresholdList from '../components/ThresholdList.astro';
@@ -70,6 +71,7 @@ const pageAgeGroups = new Set(sections.flatMap((s) => s.ageGroups));
         This page holds paediatric values. Switch to Children to see them.
       </p>
     )}
+    {blocks.length > 0 && <SocietyFilter />}
     <JumpMenu blocks={blocks} />
     {sections.map(({ block, history, noCurrentValue, ageGroups }) => {
       const heading = blockHeading(block);

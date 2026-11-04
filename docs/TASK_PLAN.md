@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-16 Fix: CI lint failed since TS-05.3.1 (Astro env types missing before bu |
-| Next up | TS-04.3.5: society filter |
+| Last completed | TS-04.3.5 Society filter toggle (localStorage, wrapped in try/catch) |
+| Next up | TS-04.3.4: discrepancy marker and comparison |
 
 ## Next up: R0 sequence
 
@@ -153,7 +153,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-04.3.2 | Criteria checklist component (e.g. TEER feasibility) | 3 | done |  |
 | TS-04.3.3 | Source chip + citation popover; original-unit popover | 3 | done | Society badges are text-only for now (TS-04.1.3) |
 | TS-04.3.4 | Discrepancy marker + side-by-side comparison view | 5 | todo |  |
-| TS-04.3.5 | Society filter toggle (localStorage, wrapped in try/catch) | 2 | todo |  |
+| TS-04.3.5 | Society filter toggle (localStorage, wrapped in try/catch) | 2 | done |  |
 | TS-04.3.6 | Caveats/footnotes rendering (e.g. "not valid in AF") | 1 | done |  |
 | TS-04.4.1 | Pagefind index incl. synonyms, abbreviations and valve models | 3 | done | Valve model names join with the prosthetic catalogue (TS-02.2.8) |
 | TS-04.4.2 | Instant search UI (mobile keyboard friendly) | 2 | done |  |
@@ -359,3 +359,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-04 | CH-15 | Stylesheet inlined (Astro inlineStylesheets always) with per-page SHA-256 hashes added to CSP style-src by pipeline/csp; LCP ≤ 1.5 s now a blocking Lighthouse assertion; CSP E2E checks hashes | `CH-15: inline critical CSS with CSP hashes` |
 | 2026-11-04 | TS-04.7.1 | Adults/Children switch in the header (aria-pressed, persisted in localStorage with try/catch); values, sections and topic links tagged by population and hidden by CSS; notice when a page has no values for the chosen population | `TS-04.7.1: adult/paediatric switch` |
 | 2026-11-04 | CH-16 | lint runs astro sync first so import.meta.env types exist in CI; local gate now deletes .astro/ and dist/ before verify | `CH-16: generate Astro types before lint (CI red since TS-05.3.1)` |
+| 2026-11-04 | TS-04.3.5 | Society filter (All / ESC/EACVI / ASE) on leaf pages, persisted on the device with try/catch; values tagged with society groups from source issuers (joint documents count for both) | `TS-04.3.5: society filter` |

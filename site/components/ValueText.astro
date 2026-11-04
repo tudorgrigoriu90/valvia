@@ -1,5 +1,7 @@
 ---
 import { modalityBadge } from '../../core/values/modality-badge';
+import { societiesOf } from '../../core/values/society';
+import { getContent } from '../lib/content';
 import type { TableValue } from '../../core/values/table';
 
 interface Props {
@@ -9,9 +11,11 @@ interface Props {
 }
 const { entry, text = entry.text, blockId } = Astro.props;
 const badge = modalityBadge(entry.value.modality);
+const source = getContent().bundle.sources.get(entry.value.citation.source);
+const societies = societiesOf(source?.issuers ?? []).join(' ');
 ---
 
-<span class="value" data-age-group={entry.value.population.ageGroup}>
+<span class="value" data-age-group={entry.value.population.ageGroup} data-societies={societies}>
   {entry.converted ? (
     <details class="original">
       <summary>{text}</summary>
