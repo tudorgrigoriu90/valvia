@@ -242,6 +242,16 @@ flowchart LR
 - Values from the same source are never compared with each other.
 - `npm run validate:content` lists discrepancy groups for information; they are not errors.
 
+## Previous recommendations (`core/history/`, TS-02.4.2, 100 % coverage)
+
+Values cited from a `superseded` or `withdrawn` source are never shown as current (SME decision 3):
+
+- `withoutHistory(block)` removes them from tables, lists and checklists;
+- `previousRecommendations(block)` returns them with the source, its year, its status and the **current**
+  document at the end of the supersession chain (`currentSuccessor`, cycle-safe).
+
+The leaf page shows them in a collapsed "Previous recommendations" section (TS-04.7.2).
+
 ## Parameter (`parameter.schema.json`, TS-02.2.1)
 
 One file per parameter: `content/parameters/<id>.yaml`. Values reference a parameter by id.

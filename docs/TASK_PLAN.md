@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-04.5.2 "Last reviewed" date and content version on every page |
-| Next up | TS-04.7.2: previous recommendations (history) |
+| Last completed | TS-02.4.2 Supersession → history data (current vs previous recommendations) |
+| Next up | TS-04.7.2: previous recommendations view |
 
 ## Next up: R0 sequence
 
@@ -107,7 +107,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-02.3.2 | Per-value citation locator (table, figure, section, page) | 1 | done | Source existence is checked by the cross-file loader (planned) |
 | TS-02.3.3 | Seed registry from taxonomy Appendix A (content PR, SME verifies) | 2 | done | Initial seed per PO-3; values only from documents read in full |
 | TS-02.4.1 | Build-time discrepancy detection | 3 | done | 100 % coverage |
-| TS-02.4.2 | Supersession → history data (current vs previous recommendations) | 2 | todo |  |
+| TS-02.4.2 | Supersession → history data (current vs previous recommendations) | 2 | done |  |
 | TS-02.4.3 | Unit tests with fixtures (agreement, disagreement, superseded) | 2 | todo |  |
 
 ### EP-03: Clinical content production (MVP)
@@ -336,3 +336,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-04 | TS-04.7.3 | CT/CMR values carry a text badge with an accessible description in tables and threshold lists; echo is the unbadged default | `TS-04.7.3: modality badges for CT and CMR values` |
 | 2026-11-04 | TS-04.2.3 | 'On this page' jump menu on leaves with several blocks; readable default headings per block type; stable block anchors | `TS-04.2.3: jump menu and block headings` |
 | 2026-11-04 | TS-04.5.2 | Per-leaf review status badge (draft / in review / last reviewed date), optional lastReviewed topic field, content version (env/commit) and build date in the footer | `TS-04.5.2: review status and content version` |
+| 2026-11-04 | TS-02.4.2 | History logic: withoutHistory removes superseded/withdrawn-source values from blocks; previousRecommendations lists them with year, status and current successor (cycle-safe chain); 100 % coverage | `TS-02.4.2: supersession history logic` |

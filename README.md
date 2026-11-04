@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-04.5.2: "Last reviewed" date and content version on every page |
-| Next task | TS-04.7.2: previous recommendations (history) |
+| Last completed task | TS-02.4.2: Supersession → history data (current vs previous recommendations) |
+| Next task | TS-04.7.2: previous recommendations view |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
