@@ -12,7 +12,7 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | FT-03.7 4.2–4.6 Prosthetic valves & valve interventions (grading, PPM, post-re |
+| Last completed | CH-13 Own static server for E2E (Astro 7 preview can detach into the backgro |
 | Next up | TS-04.7.3: modality badges |
 
 ## Next up: R0 sequence
@@ -81,6 +81,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | CH-10 | Population-aware tables: grading rows per population, normal-range tables (population columns), threshold lists | 1 | done | Completes the normal-range part of TS-04.3.1 |
 | CH-11 | Exclusive range bounds (minExclusive/maxExclusive) in schema, display, tables and discrepancy comparison | 1 | done | Needed for ASE 2025 right heart grading (> x to ≤ y) |
 | CH-12 | Compare discrepancies within a topic only (thresholds are condition-specific) | 0 | done | False positives seen between MR, TR, AR and prosthetic AR vena contracta |
+| CH-13 | Own static server for E2E (Astro 7 preview can detach into the background) | 0 | done | Mirrors GitHub Pages: base path, directory index, 404.html |
 | TS-01.3.1 | CI: build, schema validation, unit tests, Lighthouse CI, axe, broken-link check | 3 | done | Schema validation, axe, Lighthouse and link checks join CI with their own tasks (EP-02, CH-2, TS-07.4.2, TS-05.2.1) |
 | TS-01.3.2 | Deploy to GitHub Pages via Actions on merge to `main` | 1 | done | Actions Pages deploy since CH-5 ([ADR 0005](adr/0005-pages-actions-deploy-no-previews.md)) |
 | TS-01.3.3 | PR previews with `pr-preview-action` (deploy, comment link, clean up on close); exclude previews from search engines | 2 | dropped | PO decision 2026-11-02: no `gh-pages` branch; content PRs reviewed in the PR (ADR 0005) |
@@ -331,3 +332,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-04 | CH-12 | Discrepancy groups now include the topic: the same parameter has condition-specific thresholds (VC width in MR vs TR vs prosthetic AR were false positives) | `CH-12: compare discrepancies within a topic only` |
 | 2026-11-04 | FT-03.7 | Prosthetic mitral valve (4.3) from ASE 2024: obstruction (Table 11), regurgitation (Table 13), PPM by indexed EOA and BMI (Table 7); 4 new parameters | `FT-03.7: prosthetic mitral valve grading (ASE 2024)` |
 | 2026-11-04 | FT-03.7 | Prosthetic tricuspid & pulmonary valves (4.4) from ASE 2024: pulmonary stenosis by valve type (Table 15), prosthetic PR incl. CMR RF (Table 16, p. 36), tricuspid stenosis by valve type (Table 19), TR after TVR/repair (Table 21); 5 new parameters | `FT-03.7: prosthetic tricuspid and pulmonary valves (ASE 2024)` |
+| 2026-11-04 | CH-13 | E2E tests served by tests/e2e/static-server.ts (base path, directory index, 404.html with status 404) instead of astro preview, which detached into the background locally | `CH-13: own static server for E2E tests` |

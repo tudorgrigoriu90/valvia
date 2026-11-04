@@ -25,9 +25,10 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: `npx astro preview --port ${PORT}`,
+    // Own static server mirroring GitHub Pages (see tests/e2e/static-server.ts).
+    command: 'npx tsx tests/e2e/static-server.ts',
     url: `http://localhost:${PORT}${BASE}`,
     reuseExistingServer: !process.env.CI,
-    env: { VALVIA_BASE: BASE },
+    env: { VALVIA_BASE: BASE, PORT },
   },
 });
