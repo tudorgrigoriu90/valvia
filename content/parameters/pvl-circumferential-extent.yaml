@@ -1,0 +1,7 @@
+id: pvl-circumferential-extent
+name: Circumferential extent of paravalvular regurgitation
+abbreviation: PVL extent
+quantity: percent
+unit: '%'
+modalities: [Echo]
+method: Sum of the circumferential lengths of each paravalvular jet vena contracta divided by the circumference of the valve's outer edge.

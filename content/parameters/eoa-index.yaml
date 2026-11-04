@@ -1,0 +1,7 @@
+id: eoa-index
+name: Indexed effective orifice area
+abbreviation: EOAi
+quantity: indexed-area
+unit: 'cm²/m²'
+modalities: [Echo]
+method: Prosthetic valve EOA by the continuity equation divided by body surface area.

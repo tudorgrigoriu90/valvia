@@ -7,3 +7,114 @@ order: 1
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: bmi-below-30
+    type: grading-table
+    tag: GRADE
+    title: 'Indexed EOA: BMI below 30 kg/m²'
+    grades: ['Normal', 'Moderate', 'Severe']
+    values:
+      - parameter: eoa-index
+        context: grading
+        grade: Normal
+        operator: '>'
+        value: 0.85
+        unit: cm²/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Valve structure and motion are normal; measured EOA within 1 SD of the reference EOA.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '7'
+            page: '20'
+      - parameter: eoa-index
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 0.66
+        max: 0.85
+        unit: cm²/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Valve structure and motion are normal; measured EOA within 1 SD of the reference EOA.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '7'
+            page: '20'
+      - parameter: eoa-index
+        context: grading
+        grade: Severe
+        operator: '<='
+        value: 0.65
+        unit: cm²/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Valve structure and motion are normal; measured EOA within 1 SD of the reference EOA.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '7'
+            page: '20'
+  - id: bmi-30-or-more
+    type: grading-table
+    tag: GRADE
+    title: 'Indexed EOA: BMI 30 kg/m² or more'
+    grades: ['Normal', 'Moderate', 'Severe']
+    values:
+      - parameter: eoa-index
+        context: grading
+        grade: Normal
+        operator: '>'
+        value: 0.70
+        unit: cm²/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Valve structure and motion are normal; measured EOA within 1 SD of the reference EOA.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '7'
+            page: '20'
+      - parameter: eoa-index
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 0.56
+        max: 0.70
+        unit: cm²/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Valve structure and motion are normal; measured EOA within 1 SD of the reference EOA.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '7'
+            page: '20'
+      - parameter: eoa-index
+        context: grading
+        grade: Severe
+        operator: '<='
+        value: 0.55
+        unit: cm²/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Valve structure and motion are normal; measured EOA within 1 SD of the reference EOA.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '7'
+            page: '20'

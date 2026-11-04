@@ -7,3 +7,275 @@ order: 0
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: all-aortic-prostheses
+    type: grading-table
+    tag: GRADE
+    title: All prosthetic aortic valves
+    grades: ['Normal', 'Possible stenosis', 'Suggests significant stenosis']
+    values:
+      - parameter: prosthetic-acceleration-time
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 80
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Affected by LV function and heart rate.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '5'
+            page: '19'
+      - parameter: prosthetic-acceleration-time
+        context: grading
+        grade: Possible stenosis
+        operator: range
+        min: 80
+        max: 100
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Affected by LV function and heart rate.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '5'
+            page: '19'
+      - parameter: prosthetic-acceleration-time
+        context: grading
+        grade: Suggests significant stenosis
+        operator: '>'
+        value: 100
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Affected by LV function and heart rate.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '5'
+            page: '19'
+      - parameter: at-et-ratio
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 0.32
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '5'
+            page: '19'
+      - parameter: at-et-ratio
+        context: grading
+        grade: Possible stenosis
+        operator: range
+        min: 0.32
+        max: 0.37
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '5'
+            page: '19'
+      - parameter: at-et-ratio
+        context: grading
+        grade: Suggests significant stenosis
+        operator: '>'
+        value: 0.37
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '5'
+            page: '19'
+      - parameter: av-peak-velocity
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 3
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Flow dependent; valid with normal stroke volume (50–90 mL) and flow rate (200–300 mL/s).
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '5'
+            page: '19'
+      - parameter: av-peak-velocity
+        context: grading
+        grade: Possible stenosis
+        operator: range
+        min: 3
+        max: 4
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Flow dependent; valid with normal stroke volume (50–90 mL) and flow rate (200–300 mL/s).
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '5'
+            page: '19'
+      - parameter: av-peak-velocity
+        context: grading
+        grade: Suggests significant stenosis
+        operator: '>='
+        value: 4
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Flow dependent; valid with normal stroke volume (50–90 mL) and flow rate (200–300 mL/s).
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '5'
+            page: '19'
+  - id: savr
+    type: grading-table
+    tag: GRADE
+    title: Surgical aortic valve replacement
+    grades: ['Normal', 'Possible stenosis', 'Suggests significant stenosis']
+    values:
+      - parameter: aortic-mean-gradient
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 20
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Flow dependent.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '5'
+            page: '19'
+      - parameter: aortic-mean-gradient
+        context: grading
+        grade: Possible stenosis
+        operator: range
+        min: 20
+        max: 34
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Flow dependent.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '5'
+            page: '19'
+      - parameter: aortic-mean-gradient
+        context: grading
+        grade: Suggests significant stenosis
+        operator: '>='
+        value: 35
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Flow dependent.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '5'
+            page: '19'
+      - parameter: av-velocity-ratio
+        context: grading
+        grade: Normal
+        operator: '>'
+        value: 0.35
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Doppler velocity index from VTIs; flow independent.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '5'
+            page: '19'
+      - parameter: av-velocity-ratio
+        context: grading
+        grade: Possible stenosis
+        operator: range
+        min: 0.25
+        max: 0.35
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Doppler velocity index from VTIs; flow independent.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '5'
+            page: '19'
+      - parameter: av-velocity-ratio
+        context: grading
+        grade: Suggests significant stenosis
+        operator: '<'
+        value: 0.25
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Doppler velocity index from VTIs; flow independent.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '5'
+            page: '19'
+  - id: interpretation
+    type: note
+    tag: METH
+    title: Interpretation
+    text: 'Significant stenosis should meet at least one flow-dependent parameter (velocity or mean gradient) and one flow-independent parameter (EOA or DVI). For SAVR, compare the EOA with the reference EOA for the model and size. For TAVI, compare mean gradient, DVI and EOA with the post-procedural baseline study.'
+    citation:
+      source: ase-2024-prosthetic-valves
+      locator:
+        table: '5'
+        page: '19'
+  - id: algorithm
+    type: algorithm-reference
+    tag: ALG
+    title: Algorithm for evaluating an elevated prosthetic aortic jet velocity
+    citation:
+      source: ase-2024-prosthetic-valves
+      locator:
+        figure: '13'
+        page: '19'
+    url: 'https://doi.org/10.1016/j.echo.2023.10.004'

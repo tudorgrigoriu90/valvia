@@ -1,0 +1,6 @@
+id: at-et-ratio
+name: Acceleration time / LV ejection time
+abbreviation: AT/ET
+quantity: ratio
+unit: '1'
+modalities: [Echo]

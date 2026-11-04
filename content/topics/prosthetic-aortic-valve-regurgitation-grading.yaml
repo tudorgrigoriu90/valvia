@@ -7,3 +7,335 @@ order: 2
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: severity-grading
+    type: grading-table
+    tag: GRADE
+    title: Severity of prosthetic aortic regurgitation
+    grades: ['Mild', 'Moderate', 'Severe']
+    values:
+      - parameter: ar-jet-width-to-lvot-width
+        context: grading
+        grade: Mild
+        operator: '<='
+        value: 25
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Central jets; less accurate in eccentric jets. Nyquist limit 50–60 cm/s.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '8'
+            page: '23'
+      - parameter: ar-jet-width-to-lvot-width
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 26
+        max: 64
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Central jets; less accurate in eccentric jets. Nyquist limit 50–60 cm/s.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '8'
+            page: '23'
+      - parameter: ar-jet-width-to-lvot-width
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 65
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Central jets; less accurate in eccentric jets. Nyquist limit 50–60 cm/s.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '8'
+            page: '23'
+      - parameter: vena-contracta-width
+        context: grading
+        grade: Mild
+        operator: '<'
+        value: 0.3
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '8'
+            page: '23'
+      - parameter: vena-contracta-width
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 0.3
+        max: 0.6
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '8'
+            page: '23'
+      - parameter: vena-contracta-width
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 0.6
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '8'
+            page: '23'
+      - parameter: vena-contracta-area
+        context: grading
+        grade: Mild
+        operator: '<'
+        value: 0.10
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Planimetry of the jet vena contracta on 2D or 3D colour Doppler (short axis).
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '8'
+            page: '23'
+      - parameter: vena-contracta-area
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 0.10
+        max: 0.29
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Planimetry of the jet vena contracta on 2D or 3D colour Doppler (short axis).
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '8'
+            page: '23'
+      - parameter: vena-contracta-area
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 0.30
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Planimetry of the jet vena contracta on 2D or 3D colour Doppler (short axis).
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '8'
+            page: '23'
+      - parameter: pvl-circumferential-extent
+        context: grading
+        grade: Mild
+        operator: '<'
+        value: 10
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Use with VC width and/or area, not alone.'
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '8'
+            page: '23'
+      - parameter: pvl-circumferential-extent
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 10
+        max: 29
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Use with VC width and/or area, not alone.'
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '8'
+            page: '23'
+      - parameter: pvl-circumferential-extent
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 30
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Use with VC width and/or area, not alone.'
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '8'
+            page: '23'
+      - parameter: pressure-half-time
+        context: grading
+        grade: Mild
+        operator: '>'
+        value: 500
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Influenced by LV compliance.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '8'
+            page: '23'
+      - parameter: pressure-half-time
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 200
+        max: 500
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Influenced by LV compliance.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '8'
+            page: '23'
+      - parameter: pressure-half-time
+        context: grading
+        grade: Severe
+        operator: '<'
+        value: 200
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Influenced by LV compliance.
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '8'
+            page: '23'
+      - parameter: regurgitant-volume
+        context: grading
+        grade: Mild
+        operator: '<'
+        value: 30
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '8'
+            page: '23'
+      - parameter: regurgitant-volume
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 30
+        max: 59
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '8'
+            page: '23'
+      - parameter: regurgitant-volume
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 60
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '8'
+            page: '23'
+      - parameter: regurgitant-fraction
+        context: grading
+        grade: Mild
+        operator: '<'
+        value: 30
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '8'
+            page: '23'
+      - parameter: regurgitant-fraction
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 30
+        max: 50
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '8'
+            page: '23'
+      - parameter: regurgitant-fraction
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 50
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2024-prosthetic-valves
+          locator:
+            table: '8'
+            page: '23'

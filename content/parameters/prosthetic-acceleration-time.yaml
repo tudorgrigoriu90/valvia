@@ -1,0 +1,7 @@
+id: prosthetic-acceleration-time
+name: Acceleration time of the prosthetic aortic jet
+abbreviation: AT
+quantity: time
+unit: 'ms'
+modalities: [Echo]
+method: Time from onset of flow to peak velocity on the continuous-wave Doppler signal.
