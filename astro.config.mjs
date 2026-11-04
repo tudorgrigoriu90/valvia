@@ -21,8 +21,9 @@ export default defineConfig({
   devToolbar: { enabled: false },
   build: {
     format: 'directory',
-    // ADR 0002: no inline styles or scripts, so the meta CSP can forbid them.
-    inlineStylesheets: 'never',
+    // CH-15: styles are inlined to avoid a render-blocking request; pipeline/csp adds their hashes to the
+    // CSP (no 'unsafe-inline'). Scripts are never inlined (ADR 0002).
+    inlineStylesheets: 'always',
   },
   vite: {
     build: {

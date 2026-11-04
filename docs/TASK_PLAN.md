@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-05.2.1 Lighthouse CI budgets (LCP, JS weight, CLS) as blocking checks |
-| Next up | CH-15: inline critical CSS with CSP hashes |
+| Last completed | CH-15 Inline critical CSS with CSP hashes to remove the render-blocking roun |
+| Next up | TS-04.7.1: adult/paediatric switch |
 
 ## Next up: R0 sequence
 
@@ -83,7 +83,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | CH-12 | Compare discrepancies within a topic only (thresholds are condition-specific) | 0 | done | False positives seen between MR, TR, AR and prosthetic AR vena contracta |
 | CH-13 | Own static server for E2E (Astro 7 preview can detach into the background) | 0 | done | Mirrors GitHub Pages: base path, directory index, 404.html |
 | CH-14 | Velocity-time integral quantity displayed in cm | 0 | done | VTI thresholds (e.g. tricuspid inflow > 60 cm) |
-| CH-15 | Inline critical CSS with CSP hashes to remove the render-blocking round-trip; make LCP ≤ 1.5 s blocking | 1 | todo | LCP ~1.5 s on Lighthouse slow 4G (TS-05.2.1) |
+| CH-15 | Inline critical CSS with CSP hashes to remove the render-blocking round-trip; make LCP ≤ 1.5 s blocking | 1 | done | LCP ~1.5 s on Lighthouse slow 4G (TS-05.2.1) |
 | TS-01.3.1 | CI: build, schema validation, unit tests, Lighthouse CI, axe, broken-link check | 3 | done | Schema validation, axe, Lighthouse and link checks join CI with their own tasks (EP-02, CH-2, TS-07.4.2, TS-05.2.1) |
 | TS-01.3.2 | Deploy to GitHub Pages via Actions on merge to `main` | 1 | done | Actions Pages deploy since CH-5 ([ADR 0005](adr/0005-pages-actions-deploy-no-previews.md)) |
 | TS-01.3.3 | PR previews with `pr-preview-action` (deploy, comment link, clean up on close); exclude previews from search engines | 2 | dropped | PO decision 2026-11-02: no `gh-pages` branch; content PRs reviewed in the PR (ADR 0005) |
@@ -355,3 +355,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-04 | TS-01.2.4 | renovate.json: weekly schedule, auto-merge patch/minor/pin/digest on green CI, majors manual, Playwright pinned, ESLint group; setup steps in CI/CD doc | `TS-01.2.4: Renovate configuration` |
 | 2026-11-04 | TS-03.0.1 | Content guide: workflow diagram (seed vs PR), source rules, table-reading pitfalls learned (image tables, lost signs, exclusive bounds, strata, magnitudes), leaf template, pre-push checks | `TS-03.0.1: content guide` |
 | 2026-11-04 | TS-05.2.1 | Lighthouse CI on home + two leaves (mobile): performance ≥ 0.95, CLS ≤ 0.1, JS ≤ 50 KB blocking; LCP ≤ 1.5 s warning pending CH-15; CI step + report artefact | `TS-05.2.1: Lighthouse budgets in CI` |
+| 2026-11-04 | CH-15 | Stylesheet inlined (Astro inlineStylesheets always) with per-page SHA-256 hashes added to CSP style-src by pipeline/csp; LCP ≤ 1.5 s now a blocking Lighthouse assertion; CSP E2E checks hashes | `CH-15: inline critical CSS with CSP hashes` |

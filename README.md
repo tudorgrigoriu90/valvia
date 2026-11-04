@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-05.2.1: Lighthouse CI budgets (LCP, JS weight, CLS) as blocking checks |
-| Next task | CH-15: inline critical CSS with CSP hashes |
+| Last completed task | CH-15: Inline critical CSS with CSP hashes to remove the render-blocking roun |
+| Next task | TS-04.7.1: adult/paediatric switch |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

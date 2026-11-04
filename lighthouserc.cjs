@@ -23,8 +23,7 @@ module.exports = {
     assert: {
       assertions: {
         'categories:performance': ['error', { minScore: 0.95 }],
-        // NFR-02 target. Warn until CH-15 removes the render-blocking stylesheet round-trip (currently ~1.5 s on slow 4G).
-        'largest-contentful-paint': ['warn', { maxNumericValue: 1500 }],
+        'largest-contentful-paint': ['error', { maxNumericValue: 1500 }],
         'cumulative-layout-shift': ['error', { maxNumericValue: 0.1 }],
         'resource-summary:script:size': ['error', { maxNumericValue: 51200 }],
       },

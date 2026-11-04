@@ -18,8 +18,17 @@ test('pages declare a strict Content Security Policy and contain no inline scrip
   expect(csp).not.toContain("'unsafe-inline'");
   const inlineScripts = await page.locator('script:not([src])').count();
   expect(inlineScripts).toBe(0);
-  const inlineStyles = await page.locator('style').count();
-  expect(inlineStyles).toBe(0);
+  // Inline styles are allowed only when their SHA-256 hash is listed in style-src (CH-15).
+  const styles = await page.locator('style').allTextContents();
+  const hashes = await page.evaluate(async (texts) => {
+    const out: string[] = [];
+    for (const text of texts) {
+      const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+      out.push(btoa(String.fromCharCode(...new Uint8Array(digest))));
+    }
+    return out;
+  }, styles);
+  for (const hash of hashes) expect(csp).toContain(`'sha256-${hash}'`);
 });
 
 test('unreviewed content is not indexed by search engines', async ({ page }) => {

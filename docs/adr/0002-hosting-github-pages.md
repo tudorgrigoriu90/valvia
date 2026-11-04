@@ -41,6 +41,8 @@ slug is renamed (FT-02.1). GitHub Pages serves static files only: no custom head
 - **Renamed slugs:** each node keeps a list of former slugs; the build emits a static page at every old URL with
   `<meta http-equiv="refresh" content="0; url=…">`, `<link rel="canonical">`, `noindex`, and a visible link.
   (`'wasm-unsafe-eval'` added by ADR 0004 for Pagefind's WASM.)
+  Amendment (CH-15, 2026-11-04): the stylesheet is inlined to remove a render-blocking request; a post-build step
+  (`pipeline/csp`) adds the SHA-256 of each inline `<style>` to `style-src`. Scripts are still never inlined.
 - **HTTPS:** enforced in Pages settings; custom domain later (TS-08.2) only changes `VALVIA_SITE`/`VALVIA_BASE` and adds `CNAME`.
 
 ## Consequences

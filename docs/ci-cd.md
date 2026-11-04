@@ -12,7 +12,7 @@
 
 Pull requests: the `verify` job attaches the built site as artifact `site-pr-N` (14 days). No hosted previews.
 
-CI also runs **Lighthouse budgets** ([`lighthouserc.cjs`](../lighthouserc.cjs), TS-05.2.1) on the home page and two leaf pages at mobile settings: performance score ≥ 0.95, CLS ≤ 0.1 and JavaScript ≤ 50 KB are blocking; LCP ≤ 1.5 s is a warning until CH-15 (currently about 1.5 s on Lighthouse's slow-4G profile). Run locally with `CHROME_PATH=/opt/pw-browsers/chromium npm run lighthouse` after a build.
+CI also runs **Lighthouse budgets** ([`lighthouserc.cjs`](../lighthouserc.cjs), TS-05.2.1) on the home page and two leaf pages at mobile settings: performance score ≥ 0.95, LCP ≤ 1.5 s, CLS ≤ 0.1 and JavaScript ≤ 50 KB are all blocking. Run locally with `CHROME_PATH=/opt/pw-browsers/chromium npm run lighthouse` after a build.
 
 Planned: content path guard.
 
