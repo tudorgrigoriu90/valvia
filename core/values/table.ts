@@ -6,7 +6,7 @@
 import type { Parameter } from '../../schema/generated/parameter';
 import type { LoadedBlock, LoadedValue } from '../content/types';
 import type { Unit } from '../units/units';
-import { displayNumbers, OPERATOR_SYMBOLS } from './format';
+import { displayNumbers, valueText } from './format';
 import { populationLabel } from './population-label';
 
 export interface TableValue {
@@ -51,8 +51,6 @@ export interface ThresholdList {
   footnotes: string[];
 }
 
-const prefix = (value: LoadedValue): string =>
-  value.operator === 'range' ? '' : `${OPERATOR_SYMBOLS[value.operator]} `;
 const unitSuffix = (unit: Unit): string => (unit === '1' ? '' : ` ${unit}`);
 
 function footnoteCounter(): { numbers: (caveats: readonly string[] | undefined) => number[]; list: string[] } {
@@ -89,9 +87,9 @@ function prepare(
     parameter,
     unit: display.unit,
     entry: {
-      text: `${prefix(value)}${display.numbers.join('–')}`,
+      text: valueText(value, display.numbers),
       converted: display.converted,
-      original: `${prefix(value)}${published.join('–')}${unitSuffix(value.unit)}`,
+      original: `${valueText(value, published)}${unitSuffix(value.unit)}`,
       footnotes: footnotes.numbers(value.caveats),
       value,
     },

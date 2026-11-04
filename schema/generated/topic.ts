@@ -59,81 +59,13 @@ export type Value = {
    */
   max?: number;
   /**
-   * Unit as published (converted for display by core/units).
+   * Range only: the lower bound is exclusive (published as '> min'). Default: inclusive.
    */
-  unit:
-    | '1'
-    | '%'
-    | 'mm'
-    | 'cm'
-    | 'mm/m²'
-    | 'cm/m²'
-    | 'mm²'
-    | 'cm²'
-    | 'cm²/m²'
-    | 'mL'
-    | 'mL/m²'
-    | 'g'
-    | 'g/m²'
-    | 'g/m^2.7'
-    | 'm/s'
-    | 'cm/s'
-    | 'm/s²'
-    | 'mmHg'
-    | 'ms'
-    | 's'
-    | 'bpm'
-    | 'mL/s'
-    | 'AU'
-    | '°'
-    | 'years';
+  minExclusive?: boolean;
   /**
-   * Modality the value was defined for (Echo, CT or CMR); CT/CMR values are badged (SME decision 4). Must be one of the parameter's modalities.
+   * Range only: the upper bound is exclusive (published as '< max'). Default: inclusive.
    */
-  modality: 'Echo' | 'CT' | 'CMR';
-  population: PopulationQualifiers;
-  /**
-   * Conditions and footnotes printed with the value, e.g. 'Not valid in atrial fibrillation.'
-   *
-   * Items: Non-empty text that may span lines (notes, caveats).
-   */
-  caveats?: string[];
-  citation: Citation;
-} & {
-  /**
-   * Stable identifier: lowercase kebab-case, never changed or reused (ADR 0003).
-   */
-  parameter: string;
-  /**
-   * What the value is used for: grading (GRADE), normal-range (NORM), intervention-threshold (INTV), feasibility (FEAS), diagnostic-criterion (CRIT), prognostic-marker (PROG).
-   */
-  context:
-    | 'grading'
-    | 'normal-range'
-    | 'intervention-threshold'
-    | 'feasibility'
-    | 'diagnostic-criterion'
-    | 'prognostic-marker';
-  /**
-   * Non-empty single-line text.
-   */
-  grade?: string;
-  /**
-   * Comparison as published. 'range' uses min and max; all others use value.
-   */
-  operator: '<' | '<=' | '>' | '>=' | '=' | 'range';
-  /**
-   * The published number (single bound).
-   */
-  value?: number;
-  /**
-   * Lower end of a published range.
-   */
-  min?: number;
-  /**
-   * Upper end of a published range.
-   */
-  max?: number;
+  maxExclusive?: boolean;
   /**
    * Unit as published (converted for display by core/units).
    */
@@ -211,81 +143,13 @@ export type Value = {
    */
   max?: number;
   /**
-   * Unit as published (converted for display by core/units).
+   * Range only: the lower bound is exclusive (published as '> min'). Default: inclusive.
    */
-  unit:
-    | '1'
-    | '%'
-    | 'mm'
-    | 'cm'
-    | 'mm/m²'
-    | 'cm/m²'
-    | 'mm²'
-    | 'cm²'
-    | 'cm²/m²'
-    | 'mL'
-    | 'mL/m²'
-    | 'g'
-    | 'g/m²'
-    | 'g/m^2.7'
-    | 'm/s'
-    | 'cm/s'
-    | 'm/s²'
-    | 'mmHg'
-    | 'ms'
-    | 's'
-    | 'bpm'
-    | 'mL/s'
-    | 'AU'
-    | '°'
-    | 'years';
+  minExclusive?: boolean;
   /**
-   * Modality the value was defined for (Echo, CT or CMR); CT/CMR values are badged (SME decision 4). Must be one of the parameter's modalities.
+   * Range only: the upper bound is exclusive (published as '< max'). Default: inclusive.
    */
-  modality: 'Echo' | 'CT' | 'CMR';
-  population: PopulationQualifiers;
-  /**
-   * Conditions and footnotes printed with the value, e.g. 'Not valid in atrial fibrillation.'
-   *
-   * Items: Non-empty text that may span lines (notes, caveats).
-   */
-  caveats?: string[];
-  citation: Citation;
-} & {
-  /**
-   * Stable identifier: lowercase kebab-case, never changed or reused (ADR 0003).
-   */
-  parameter: string;
-  /**
-   * What the value is used for: grading (GRADE), normal-range (NORM), intervention-threshold (INTV), feasibility (FEAS), diagnostic-criterion (CRIT), prognostic-marker (PROG).
-   */
-  context:
-    | 'grading'
-    | 'normal-range'
-    | 'intervention-threshold'
-    | 'feasibility'
-    | 'diagnostic-criterion'
-    | 'prognostic-marker';
-  /**
-   * Non-empty single-line text.
-   */
-  grade?: string;
-  /**
-   * Comparison as published. 'range' uses min and max; all others use value.
-   */
-  operator: '<' | '<=' | '>' | '>=' | '=' | 'range';
-  /**
-   * The published number (single bound).
-   */
-  value?: number;
-  /**
-   * Lower end of a published range.
-   */
-  min?: number;
-  /**
-   * Upper end of a published range.
-   */
-  max?: number;
+  maxExclusive?: boolean;
   /**
    * Unit as published (converted for display by core/units).
    */
@@ -363,81 +227,13 @@ export type Value = {
    */
   max?: number;
   /**
-   * Unit as published (converted for display by core/units).
+   * Range only: the lower bound is exclusive (published as '> min'). Default: inclusive.
    */
-  unit:
-    | '1'
-    | '%'
-    | 'mm'
-    | 'cm'
-    | 'mm/m²'
-    | 'cm/m²'
-    | 'mm²'
-    | 'cm²'
-    | 'cm²/m²'
-    | 'mL'
-    | 'mL/m²'
-    | 'g'
-    | 'g/m²'
-    | 'g/m^2.7'
-    | 'm/s'
-    | 'cm/s'
-    | 'm/s²'
-    | 'mmHg'
-    | 'ms'
-    | 's'
-    | 'bpm'
-    | 'mL/s'
-    | 'AU'
-    | '°'
-    | 'years';
+  minExclusive?: boolean;
   /**
-   * Modality the value was defined for (Echo, CT or CMR); CT/CMR values are badged (SME decision 4). Must be one of the parameter's modalities.
+   * Range only: the upper bound is exclusive (published as '< max'). Default: inclusive.
    */
-  modality: 'Echo' | 'CT' | 'CMR';
-  population: PopulationQualifiers;
-  /**
-   * Conditions and footnotes printed with the value, e.g. 'Not valid in atrial fibrillation.'
-   *
-   * Items: Non-empty text that may span lines (notes, caveats).
-   */
-  caveats?: string[];
-  citation: Citation;
-} & {
-  /**
-   * Stable identifier: lowercase kebab-case, never changed or reused (ADR 0003).
-   */
-  parameter: string;
-  /**
-   * What the value is used for: grading (GRADE), normal-range (NORM), intervention-threshold (INTV), feasibility (FEAS), diagnostic-criterion (CRIT), prognostic-marker (PROG).
-   */
-  context:
-    | 'grading'
-    | 'normal-range'
-    | 'intervention-threshold'
-    | 'feasibility'
-    | 'diagnostic-criterion'
-    | 'prognostic-marker';
-  /**
-   * Non-empty single-line text.
-   */
-  grade?: string;
-  /**
-   * Comparison as published. 'range' uses min and max; all others use value.
-   */
-  operator: '<' | '<=' | '>' | '>=' | '=' | 'range';
-  /**
-   * The published number (single bound).
-   */
-  value?: number;
-  /**
-   * Lower end of a published range.
-   */
-  min?: number;
-  /**
-   * Upper end of a published range.
-   */
-  max?: number;
+  maxExclusive?: boolean;
   /**
    * Unit as published (converted for display by core/units).
    */
@@ -514,6 +310,266 @@ export type Value = {
    * Upper end of a published range.
    */
   max?: number;
+  /**
+   * Range only: the lower bound is exclusive (published as '> min'). Default: inclusive.
+   */
+  minExclusive?: boolean;
+  /**
+   * Range only: the upper bound is exclusive (published as '< max'). Default: inclusive.
+   */
+  maxExclusive?: boolean;
+  /**
+   * Unit as published (converted for display by core/units).
+   */
+  unit:
+    | '1'
+    | '%'
+    | 'mm'
+    | 'cm'
+    | 'mm/m²'
+    | 'cm/m²'
+    | 'mm²'
+    | 'cm²'
+    | 'cm²/m²'
+    | 'mL'
+    | 'mL/m²'
+    | 'g'
+    | 'g/m²'
+    | 'g/m^2.7'
+    | 'm/s'
+    | 'cm/s'
+    | 'm/s²'
+    | 'mmHg'
+    | 'ms'
+    | 's'
+    | 'bpm'
+    | 'mL/s'
+    | 'AU'
+    | '°'
+    | 'years';
+  /**
+   * Modality the value was defined for (Echo, CT or CMR); CT/CMR values are badged (SME decision 4). Must be one of the parameter's modalities.
+   */
+  modality: 'Echo' | 'CT' | 'CMR';
+  population: PopulationQualifiers;
+  /**
+   * Conditions and footnotes printed with the value, e.g. 'Not valid in atrial fibrillation.'
+   *
+   * Items: Non-empty text that may span lines (notes, caveats).
+   */
+  caveats?: string[];
+  citation: Citation;
+} & {
+  /**
+   * Stable identifier: lowercase kebab-case, never changed or reused (ADR 0003).
+   */
+  parameter: string;
+  /**
+   * What the value is used for: grading (GRADE), normal-range (NORM), intervention-threshold (INTV), feasibility (FEAS), diagnostic-criterion (CRIT), prognostic-marker (PROG).
+   */
+  context:
+    | 'grading'
+    | 'normal-range'
+    | 'intervention-threshold'
+    | 'feasibility'
+    | 'diagnostic-criterion'
+    | 'prognostic-marker';
+  /**
+   * Non-empty single-line text.
+   */
+  grade?: string;
+  /**
+   * Comparison as published. 'range' uses min and max; all others use value.
+   */
+  operator: '<' | '<=' | '>' | '>=' | '=' | 'range';
+  /**
+   * The published number (single bound).
+   */
+  value?: number;
+  /**
+   * Lower end of a published range.
+   */
+  min?: number;
+  /**
+   * Upper end of a published range.
+   */
+  max?: number;
+  /**
+   * Range only: the lower bound is exclusive (published as '> min'). Default: inclusive.
+   */
+  minExclusive?: boolean;
+  /**
+   * Range only: the upper bound is exclusive (published as '< max'). Default: inclusive.
+   */
+  maxExclusive?: boolean;
+  /**
+   * Unit as published (converted for display by core/units).
+   */
+  unit:
+    | '1'
+    | '%'
+    | 'mm'
+    | 'cm'
+    | 'mm/m²'
+    | 'cm/m²'
+    | 'mm²'
+    | 'cm²'
+    | 'cm²/m²'
+    | 'mL'
+    | 'mL/m²'
+    | 'g'
+    | 'g/m²'
+    | 'g/m^2.7'
+    | 'm/s'
+    | 'cm/s'
+    | 'm/s²'
+    | 'mmHg'
+    | 'ms'
+    | 's'
+    | 'bpm'
+    | 'mL/s'
+    | 'AU'
+    | '°'
+    | 'years';
+  /**
+   * Modality the value was defined for (Echo, CT or CMR); CT/CMR values are badged (SME decision 4). Must be one of the parameter's modalities.
+   */
+  modality: 'Echo' | 'CT' | 'CMR';
+  population: PopulationQualifiers;
+  /**
+   * Conditions and footnotes printed with the value, e.g. 'Not valid in atrial fibrillation.'
+   *
+   * Items: Non-empty text that may span lines (notes, caveats).
+   */
+  caveats?: string[];
+  citation: Citation;
+} & {
+  /**
+   * Stable identifier: lowercase kebab-case, never changed or reused (ADR 0003).
+   */
+  parameter: string;
+  /**
+   * What the value is used for: grading (GRADE), normal-range (NORM), intervention-threshold (INTV), feasibility (FEAS), diagnostic-criterion (CRIT), prognostic-marker (PROG).
+   */
+  context:
+    | 'grading'
+    | 'normal-range'
+    | 'intervention-threshold'
+    | 'feasibility'
+    | 'diagnostic-criterion'
+    | 'prognostic-marker';
+  /**
+   * Non-empty single-line text.
+   */
+  grade?: string;
+  /**
+   * Comparison as published. 'range' uses min and max; all others use value.
+   */
+  operator: '<' | '<=' | '>' | '>=' | '=' | 'range';
+  /**
+   * The published number (single bound).
+   */
+  value?: number;
+  /**
+   * Lower end of a published range.
+   */
+  min?: number;
+  /**
+   * Upper end of a published range.
+   */
+  max?: number;
+  /**
+   * Range only: the lower bound is exclusive (published as '> min'). Default: inclusive.
+   */
+  minExclusive?: boolean;
+  /**
+   * Range only: the upper bound is exclusive (published as '< max'). Default: inclusive.
+   */
+  maxExclusive?: boolean;
+  /**
+   * Unit as published (converted for display by core/units).
+   */
+  unit:
+    | '1'
+    | '%'
+    | 'mm'
+    | 'cm'
+    | 'mm/m²'
+    | 'cm/m²'
+    | 'mm²'
+    | 'cm²'
+    | 'cm²/m²'
+    | 'mL'
+    | 'mL/m²'
+    | 'g'
+    | 'g/m²'
+    | 'g/m^2.7'
+    | 'm/s'
+    | 'cm/s'
+    | 'm/s²'
+    | 'mmHg'
+    | 'ms'
+    | 's'
+    | 'bpm'
+    | 'mL/s'
+    | 'AU'
+    | '°'
+    | 'years';
+  /**
+   * Modality the value was defined for (Echo, CT or CMR); CT/CMR values are badged (SME decision 4). Must be one of the parameter's modalities.
+   */
+  modality: 'Echo' | 'CT' | 'CMR';
+  population: PopulationQualifiers;
+  /**
+   * Conditions and footnotes printed with the value, e.g. 'Not valid in atrial fibrillation.'
+   *
+   * Items: Non-empty text that may span lines (notes, caveats).
+   */
+  caveats?: string[];
+  citation: Citation;
+} & {
+  /**
+   * Stable identifier: lowercase kebab-case, never changed or reused (ADR 0003).
+   */
+  parameter: string;
+  /**
+   * What the value is used for: grading (GRADE), normal-range (NORM), intervention-threshold (INTV), feasibility (FEAS), diagnostic-criterion (CRIT), prognostic-marker (PROG).
+   */
+  context:
+    | 'grading'
+    | 'normal-range'
+    | 'intervention-threshold'
+    | 'feasibility'
+    | 'diagnostic-criterion'
+    | 'prognostic-marker';
+  /**
+   * Non-empty single-line text.
+   */
+  grade?: string;
+  /**
+   * Comparison as published. 'range' uses min and max; all others use value.
+   */
+  operator: '<' | '<=' | '>' | '>=' | '=' | 'range';
+  /**
+   * The published number (single bound).
+   */
+  value?: number;
+  /**
+   * Lower end of a published range.
+   */
+  min?: number;
+  /**
+   * Upper end of a published range.
+   */
+  max?: number;
+  /**
+   * Range only: the lower bound is exclusive (published as '> min'). Default: inclusive.
+   */
+  minExclusive?: boolean;
+  /**
+   * Range only: the upper bound is exclusive (published as '< max'). Default: inclusive.
+   */
+  maxExclusive?: boolean;
   /**
    * Unit as published (converted for display by core/units).
    */

@@ -285,6 +285,14 @@
           "description": "Upper end of a published range.",
           "type": "number"
         },
+        "minExclusive": {
+          "description": "Range only: the lower bound is exclusive (published as '> min'). Default: inclusive.",
+          "type": "boolean"
+        },
+        "maxExclusive": {
+          "description": "Range only: the upper bound is exclusive (published as '< max'). Default: inclusive.",
+          "type": "boolean"
+        },
         "unit": {
           "description": "Unit as published (converted for display by core/units).",
           "$ref": "#/$defs/unit"
@@ -346,7 +354,9 @@
             "properties": {
               "value": true,
               "min": false,
-              "max": false
+              "max": false,
+              "minExclusive": false,
+              "maxExclusive": false
             },
             "required": ["value"]
           }

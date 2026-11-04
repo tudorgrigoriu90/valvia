@@ -19,6 +19,21 @@ describe('formatValue', () => {
     );
   });
 
+  it('spells out exclusive bounds as published', () => {
+    expect(
+      formatValue(
+        value({ operator: 'range', unit: 'cm²', minExclusive: true, published: { min: '0.30', max: '0.39' } }),
+        area,
+      ),
+    ).toBe('> 0.30 to ≤ 0.39 cm²');
+    expect(
+      formatValue(
+        value({ operator: 'range', unit: 'cm²', maxExclusive: true, published: { min: '0.30', max: '0.39' } }),
+        area,
+      ),
+    ).toBe('≥ 0.30 to < 0.39 cm²');
+  });
+
   it('omits the unit of dimensionless values', () => {
     expect(formatValue(value({ operator: '>', unit: '1', published: { value: '14' } }), ratio)).toBe('> 14');
   });

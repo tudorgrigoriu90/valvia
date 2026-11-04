@@ -45,7 +45,12 @@ export function detectDiscrepancies(bundle: ContentBundle): Discrepancy[] {
       const numbers = displayNumbers(value, parameter);
       const display = formatValue(value, parameter);
       if (numbers === undefined || display === undefined) continue;
-      const signature = [value.operator, ...numbers.numbers.map((n) => String(Number(n)))].join('|');
+      const signature = [
+        value.operator,
+        value.minExclusive === true ? 'min-exclusive' : '',
+        value.maxExclusive === true ? 'max-exclusive' : '',
+        ...numbers.numbers.map((n) => String(Number(n))),
+      ].join('|');
       const key = stableKey([value.parameter, value.context, value.grade ?? null, value.modality, value.population]);
       const group = groups.get(key) ?? [];
       group.push({ value, signature, entry: { source: source.id, topicId: topic.id, path, display } });

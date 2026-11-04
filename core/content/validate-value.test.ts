@@ -98,4 +98,18 @@ citation: { source: ase-eacvi-2015-chambers, locator: { table: "2" } }
     expect(result).toHaveLength(1);
     expect(result[0]).toContain(message);
   });
+
+  it('accepts exclusive range bounds as published (e.g. "> 5.8 to ≤ 6.3")', () => {
+    const text = SEVERE_EROA.replace(
+      'operator: ">="\nvalue: 0.40',
+      'operator: range\nmin: 0.30\nmax: 0.39\nminExclusive: true',
+    );
+    expect(messages(text)).toEqual([]);
+  });
+
+  it('only allows exclusive flags on ranges', () => {
+    expect(messages(SEVERE_EROA.replace('value: 0.40', 'value: 0.40\nmaxExclusive: true'))).toEqual([
+      '1: maxExclusive is not allowed here'.replace('1:', '6:'),
+    ]);
+  });
 });

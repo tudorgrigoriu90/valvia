@@ -2,7 +2,7 @@
 
 > **Purpose:** single source of truth for task status and the push log. Updated in **every push** (see `CLAUDE.md` §9).
 > **Audience:** Claude Code sessions, software engineer, product owner.
-> **Last updated:** 2026-11-02
+> **Last updated:** 2026-11-04
 > **Task details and acceptance criteria:** [`product/valvia-backlog.md`](product/valvia-backlog.md)
 
 Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `dropped` (with reason) · `manual` (engineer task; Claude prepares checklists and verifies where possible).
@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | FT-03.3 3.1 VHD: aortic valve (incl. TAVI considerations, AR TAVI) (W1) |
-| Next up | FT-03.9: right heart and PH (ASE 2025) |
+| Last completed | CH-11 Exclusive range bounds (minExclusive/maxExclusive) in schema, display, |
+| Next up | FT-03.9: right heart grading (ASE 2025) |
 
 ## Next up: R0 sequence
 
@@ -79,6 +79,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | CH-8 | Record PO decisions (direct-to-main, no previews, initial content seed without approval) and the seed rules | 0 | done | Starts TS-00.2 (decision log) |
 | CH-9 | Give generic leaf titles their parent context (search results, tabs) and fix a truncated title | 0 | done | Ids and slugs unchanged |
 | CH-10 | Population-aware tables: grading rows per population, normal-range tables (population columns), threshold lists | 1 | done | Completes the normal-range part of TS-04.3.1 |
+| CH-11 | Exclusive range bounds (minExclusive/maxExclusive) in schema, display, tables and discrepancy comparison | 1 | done | Needed for ASE 2025 right heart grading (> x to ≤ y) |
 | TS-01.3.1 | CI: build, schema validation, unit tests, Lighthouse CI, axe, broken-link check | 3 | done | Schema validation, axe, Lighthouse and link checks join CI with their own tasks (EP-02, CH-2, TS-07.4.2, TS-05.2.1) |
 | TS-01.3.2 | Deploy to GitHub Pages via Actions on merge to `main` | 1 | done | Actions Pages deploy since CH-5 ([ADR 0005](adr/0005-pages-actions-deploy-no-previews.md)) |
 | TS-01.3.3 | PR previews with `pr-preview-action` (deploy, comment link, clean up on close); exclude previews from search engines | 2 | dropped | PO decision 2026-11-02: no `gh-pages` branch; content PRs reviewed in the PR (ADR 0005) |
@@ -322,3 +323,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-02 | FT-03.1 | RV dimensions (1.3.1): normal ranges for RV diameters, RVOT, wall thickness and sex-specific indexed EDA/EDV/ESV from ASE/EACVI 2015 Table 8 | `FT-03.1: RV dimensions (ASE/EACVI 2015)` |
 | 2026-11-02 | FT-03.1 | RV systolic function (1.3.2): abnormality thresholds for TAPSE, S′ (PW and colour DTI), FAC, free-wall strain, 3D RVEF, MPI from ASE/EACVI 2015 Table 10 | `FT-03.1: RV systolic function thresholds (ASE/EACVI 2015)` |
 | 2026-11-02 | FT-03.3 | AS severity grading (3.1.1.1) from EACVI/ASE 2017 Table 3: Vmax, mean gradient, AVA, indexed AVA, velocity ratio (sclerosis/mild/moderate/severe) + integration note; registry entry switched to the JASE publication read | `FT-03.3: aortic stenosis severity grading (EACVI/ASE 2017)` |
+| 2026-11-04 | CH-11 | Optional minExclusive/maxExclusive on ranges; shared valueText formatter renders '> 5.8 to ≤ 6.3' (or 'a–b' when inclusive); tables, originals and discrepancy signatures respect inclusivity | `CH-11: exclusive range bounds` |

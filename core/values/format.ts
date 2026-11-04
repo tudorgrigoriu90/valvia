@@ -22,10 +22,20 @@ export function displayNumbers(value: LoadedValue, parameter: Parameter): Displa
   return { unit: first.unit, numbers: shown.map((d) => d.value), converted: first.converted };
 }
 
+/**
+ * Value text without unit: '≥ 0.40', '0.20–0.29', or with exclusive bounds as published '> 5.8 to ≤ 6.3'.
+ * `numbers` are the (display or published) numbers: one for single bounds, [min, max] for ranges.
+ */
+export function valueText(value: LoadedValue, numbers: readonly (string | undefined)[]): string {
+  if (value.operator !== 'range') return `${OPERATOR_SYMBOLS[value.operator]} ${String(numbers[0])}`;
+  const [min, max] = numbers;
+  if (value.minExclusive !== true && value.maxExclusive !== true) return `${String(min)}–${String(max)}`;
+  return `${value.minExclusive === true ? '>' : '≥'} ${String(min)} to ${value.maxExclusive === true ? '<' : '≤'} ${String(max)}`;
+}
+
 export function formatValue(value: LoadedValue, parameter: Parameter): string | undefined {
   const display = displayNumbers(value, parameter);
   if (display === undefined) return undefined;
   const unit = display.unit === '1' ? '' : ` ${display.unit}`;
-  const numbers = display.numbers.join('–');
-  return value.operator === 'range' ? `${numbers}${unit}` : `${OPERATOR_SYMBOLS[value.operator]} ${numbers}${unit}`;
+  return `${valueText(value, display.numbers)}${unit}`;
 }

@@ -120,6 +120,28 @@ describe('detectDiscrepancies (TS-02.4.1)', () => {
     expect(found[0]?.grade).toBeUndefined();
   });
 
+  it('treats ranges with different bound inclusivity as different', () => {
+    const range = (id: string, extra: Record<string, unknown>): LoadedValue =>
+      value(id, {
+        parameter: 'lvedd',
+        unit: 'mm',
+        context: 'normal-range',
+        grade: undefined,
+        operator: 'range',
+        value: undefined,
+        min: 42,
+        max: 58,
+        published: { min: '42', max: '58' },
+        ...extra,
+      });
+    expect(
+      detectDiscrepancies(bundle(topic('t', [range('esc', {}), range('ase', { minExclusive: true })]))),
+    ).toHaveLength(1);
+    expect(
+      detectDiscrepancies(bundle(topic('t', [range('esc', {}), range('ase', { maxExclusive: true })]))),
+    ).toHaveLength(1);
+  });
+
   it('ignores superseded sources (they belong to the history, not to the comparison)', () => {
     const old = value('esc-old', { value: 0.3, published: { value: '0.30' } });
     expect(detectDiscrepancies(bundle(topic('t', [value('esc'), old])))).toEqual([]);

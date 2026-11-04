@@ -92,6 +92,7 @@ One published number or range. Values live inside content blocks of leaf topics 
 | `operator` | yes | `<` · `<=` · `>` · `>=` · `=` · `range` |
 | `value` | unless `range` | the published number (not allowed with `range`) |
 | `min`, `max` | with `range` | the published range ends (not allowed otherwise) |
+| `minExclusive`, `maxExclusive` | no (range only) | `true` when the source prints `> min` or `< max`; shown as `> 5.8 to ≤ 6.3`. Default: both bounds inclusive, shown as `5.4–5.8` |
 | `unit` | yes | unit as published |
 | `modality` | yes | `Echo` · `CT` · `CMR`; must be one of the parameter's `modalities` (TS-02.2.6, `core/values/modality.ts`) |
 | `population` | yes | population qualifiers |

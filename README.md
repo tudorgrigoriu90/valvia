@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | FT-03.3: 3.1 VHD: aortic valve (incl. TAVI considerations, AR TAVI) (W1) |
-| Next task | FT-03.9: right heart and PH (ASE 2025) |
+| Last completed task | CH-11: Exclusive range bounds (minExclusive/maxExclusive) in schema, display, |
+| Next task | FT-03.9: right heart grading (ASE 2025) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

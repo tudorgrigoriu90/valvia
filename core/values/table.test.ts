@@ -96,6 +96,23 @@ describe('buildGradingTable (TS-04.3.1)', () => {
     expect(table.rows[0]?.cells[2]?.[1]?.value.caveats).toEqual(['Biplane.']);
   });
 
+  it('spells out exclusive range bounds in cells and originals', () => {
+    const table = buildGradingTable(
+      block([
+        value({
+          parameter: 'vcw',
+          grade: 'Moderate',
+          operator: 'range',
+          unit: 'cm',
+          minExclusive: true,
+          published: { min: '0.58', max: '0.63' },
+        }),
+      ]),
+      PARAMETERS,
+    );
+    expect(table.rows[0]?.cells[1]?.[0]).toMatchObject({ text: '> 5.8 to ≤ 6.3', original: '> 0.58 to ≤ 0.63 cm' });
+  });
+
   it('shows dimensionless rows without a unit', () => {
     const table = buildGradingTable(
       block([value({ parameter: 'ee', grade: 'Severe', operator: '>', unit: '1', published: { value: '14' } })]),
