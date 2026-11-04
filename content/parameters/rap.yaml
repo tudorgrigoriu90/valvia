@@ -1,0 +1,7 @@
+id: rap
+name: Right atrial pressure (estimated)
+abbreviation: RAP
+quantity: pressure
+unit: 'mmHg'
+modalities: [Echo]
+method: Estimated from IVC size and collapsibility, with secondary signs.

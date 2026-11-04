@@ -1,0 +1,7 @@
+id: rvot-acceleration-time
+name: RVOT acceleration time
+abbreviation: RVOT AccT
+quantity: time
+unit: 'ms'
+modalities: [Echo]
+method: Pulsed-wave Doppler in the RVOT just below the pulmonary valve.

@@ -1,0 +1,6 @@
+id: ra-esv-index-3d
+name: RA end-systolic volume index (3D)
+abbreviation: RA ESVi 3D
+quantity: indexed-volume
+unit: 'mL/m²'
+modalities: [Echo]

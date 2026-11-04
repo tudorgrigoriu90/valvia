@@ -1,0 +1,7 @@
+id: rvsp
+name: RV systolic pressure
+abbreviation: RVSP
+quantity: pressure
+unit: 'mmHg'
+modalities: [Echo]
+method: 'Simplified Bernoulli equation (4 × TRV²) plus estimated RA pressure.'

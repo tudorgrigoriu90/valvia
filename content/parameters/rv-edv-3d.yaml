@@ -1,0 +1,6 @@
+id: rv-edv-3d
+name: RV end-diastolic volume (3D)
+abbreviation: RV EDV
+quantity: volume
+unit: 'mL'
+modalities: [Echo]

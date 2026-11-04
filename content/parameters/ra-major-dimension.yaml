@@ -1,0 +1,7 @@
+id: ra-major-dimension
+name: RA major-axis dimension
+abbreviation: RA major
+quantity: length
+unit: 'mm'
+modalities: [Echo]
+method: Apical four-chamber view at end-systole.

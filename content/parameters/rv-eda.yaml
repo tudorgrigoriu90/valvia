@@ -1,0 +1,6 @@
+id: rv-eda
+name: RV end-diastolic area
+abbreviation: RV EDA
+quantity: area
+unit: 'cm²'
+modalities: [Echo]

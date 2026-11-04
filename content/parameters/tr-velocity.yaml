@@ -1,0 +1,7 @@
+id: tr-velocity
+name: Peak tricuspid regurgitant velocity
+abbreviation: TRV
+quantity: velocity-blood
+unit: 'm/s'
+modalities: [Echo]
+method: Continuous-wave Doppler, highest velocity from several views.

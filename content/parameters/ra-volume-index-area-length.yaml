@@ -1,0 +1,6 @@
+id: ra-volume-index-area-length
+name: RA volume index (area-length method)
+abbreviation: RAVi (area-length)
+quantity: indexed-volume
+unit: 'mL/m²'
+modalities: [Echo]

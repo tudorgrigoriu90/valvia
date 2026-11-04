@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-11 Exclusive range bounds (minExclusive/maxExclusive) in schema, display, |
-| Next up | FT-03.9: right heart grading (ASE 2025) |
+| Last completed | FT-03.9 5 Pulmonary hypertension & right heart (W1) |
+| Next up | FT-03.2: diastolic function (ASE 2025) |
 
 ## Next up: R0 sequence
 
@@ -122,7 +122,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | FT-03.6 | 3.6 VHD: infective endocarditis (W1) | 3 | todo |  |
 | FT-03.7 | 4.2–4.6 Prosthetic valves & valve interventions (grading, PPM, post-repair, BVD) (W1) | 8 | todo |  |
 | FT-03.8 | 4.1 Prosthetic valve reference values by model and size (W2) | 8 | todo |  |
-| FT-03.9 | 5 Pulmonary hypertension & right heart (W1) | 6 | todo |  |
+| FT-03.9 | 5 Pulmonary hypertension & right heart (W1) | 6 | in progress | Right heart (ASE 2025) done; PH probability and ESC/ERS 2022 pending |
 | FT-03.10 | 6 Cardiomyopathies & heart failure (W1) | 8 | todo |  |
 | FT-03.11 | 7 Pericardial disease (W1) | 3 | todo |  |
 | FT-03.12 | 8 Congenital heart disease, paediatric & adult (W2) | 10 | todo |  |
@@ -324,3 +324,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-02 | FT-03.1 | RV systolic function (1.3.2): abnormality thresholds for TAPSE, S′ (PW and colour DTI), FAC, free-wall strain, 3D RVEF, MPI from ASE/EACVI 2015 Table 10 | `FT-03.1: RV systolic function thresholds (ASE/EACVI 2015)` |
 | 2026-11-02 | FT-03.3 | AS severity grading (3.1.1.1) from EACVI/ASE 2017 Table 3: Vmax, mean gradient, AVA, indexed AVA, velocity ratio (sclerosis/mild/moderate/severe) + integration note; registry entry switched to the JASE publication read | `FT-03.3: aortic stenosis severity grading (EACVI/ASE 2017)` |
 | 2026-11-04 | CH-11 | Optional minExclusive/maxExclusive on ranges; shared valueText formatter renders '> 5.8 to ≤ 6.3' (or 'a–b' when inclusive); tables, originals and discrepancy signatures respect inclusivity | `CH-11: exclusive range bounds` |
+| 2026-11-04 | FT-03.9 | Right heart reference limits and mild/moderate/severe grading from ASE 2025 Table 1: RA size (1.4), RV size incl. PA diameter (1.3.1), RV systolic function (1.3.2), haemodynamics TRV/RVSP/RAP/RVOT AccT (5.4); 21 new parameters | `FT-03.9: right heart grading from ASE 2025` |

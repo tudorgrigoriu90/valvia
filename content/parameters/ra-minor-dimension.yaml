@@ -1,0 +1,7 @@
+id: ra-minor-dimension
+name: RA minor-axis dimension
+abbreviation: RA minor
+quantity: length
+unit: 'mm'
+modalities: [Echo]
+method: Apical four-chamber view at end-systole.

@@ -1,0 +1,6 @@
+id: rv-basal-diameter-index
+name: RV basal diameter indexed to BSA
+abbreviation: RVD1 index
+quantity: indexed-length
+unit: 'cm/m²'
+modalities: [Echo]

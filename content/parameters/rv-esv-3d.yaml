@@ -1,0 +1,6 @@
+id: rv-esv-3d
+name: RV end-systolic volume (3D)
+abbreviation: RV ESV
+quantity: volume
+unit: 'mL'
+modalities: [Echo]

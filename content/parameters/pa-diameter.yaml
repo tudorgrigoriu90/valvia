@@ -1,0 +1,6 @@
+id: pa-diameter
+name: Main pulmonary artery diameter
+abbreviation: PA diameter
+quantity: length
+unit: 'mm'
+modalities: [Echo]

@@ -1,0 +1,6 @@
+id: ra-edv-index-3d
+name: RA end-diastolic volume index (3D)
+abbreviation: RA EDVi 3D
+quantity: indexed-volume
+unit: 'mL/m²'
+modalities: [Echo]

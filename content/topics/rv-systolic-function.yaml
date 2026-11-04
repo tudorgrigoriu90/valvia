@@ -138,3 +138,519 @@ blocks:
           locator:
             table: '10'
             page: '23'
+  - id: ase-2025-grading
+    type: grading-table
+    tag: GRADE
+    title: 'RV systolic function: reference limits and abnormality grading (ASE 2025)'
+    grades: ['Normal', 'Mild', 'Moderate', 'Severe']
+    values:
+      - parameter: tapse
+        context: grading
+        grade: Normal
+        operator: '>'
+        value: 1.7
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: tapse
+        context: grading
+        grade: Mild
+        operator: range
+        min: 1.3
+        max: 1.7
+        minExclusive: true
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: tapse
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 1.0
+        max: 1.3
+        minExclusive: true
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: tapse
+        context: grading
+        grade: Severe
+        operator: '<='
+        value: 1.0
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: tricuspid-annular-s-prime
+        context: grading
+        grade: Normal
+        operator: '>'
+        value: 9.5
+        unit: cm/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Tissue Doppler.
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: tricuspid-annular-s-prime
+        context: grading
+        grade: Mild
+        operator: range
+        min: 7.2
+        max: 9.5
+        minExclusive: true
+        unit: cm/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Tissue Doppler.
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: tricuspid-annular-s-prime
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 5.0
+        max: 7.2
+        minExclusive: true
+        unit: cm/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Tissue Doppler.
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: tricuspid-annular-s-prime
+        context: grading
+        grade: Severe
+        operator: '<='
+        value: 5.0
+        unit: cm/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Tissue Doppler.
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-mpi-tissue-doppler
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 0.55
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-mpi-tissue-doppler
+        context: grading
+        grade: Mild
+        operator: range
+        min: 0.55
+        max: 0.62
+        maxExclusive: true
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-mpi-tissue-doppler
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 0.62
+        max: 0.70
+        maxExclusive: true
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-mpi-tissue-doppler
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 0.70
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-mpi-pulsed-doppler
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 0.40
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-mpi-pulsed-doppler
+        context: grading
+        grade: Mild
+        operator: range
+        min: 0.40
+        max: 0.49
+        maxExclusive: true
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-mpi-pulsed-doppler
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 0.49
+        max: 0.57
+        maxExclusive: true
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-mpi-pulsed-doppler
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 0.57
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-fractional-area-change
+        context: grading
+        grade: Normal
+        operator: '>'
+        value: 35
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-fractional-area-change
+        context: grading
+        grade: Mild
+        operator: range
+        min: 29
+        max: 35
+        minExclusive: true
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-fractional-area-change
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 22
+        max: 29
+        minExclusive: true
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-fractional-area-change
+        context: grading
+        grade: Severe
+        operator: '<='
+        value: 22
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-3d-ef
+        context: grading
+        grade: Normal
+        operator: '>'
+        value: 45
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-3d-ef
+        context: grading
+        grade: Mild
+        operator: range
+        min: 39
+        max: 45
+        minExclusive: true
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-3d-ef
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 32
+        max: 39
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-3d-ef
+        context: grading
+        grade: Severe
+        operator: '<'
+        value: 32
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-free-wall-strain
+        context: grading
+        grade: Normal
+        operator: '>'
+        value: 20
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Absolute value (magnitude) of strain.
+          - Three-segment free wall.
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-free-wall-strain
+        context: grading
+        grade: Mild
+        operator: range
+        min: 15
+        max: 20
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Absolute value (magnitude) of strain.
+          - Three-segment free wall.
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-free-wall-strain
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 11
+        max: 15
+        maxExclusive: true
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Absolute value (magnitude) of strain.
+          - Three-segment free wall.
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-free-wall-strain
+        context: grading
+        grade: Severe
+        operator: '<'
+        value: 11
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Absolute value (magnitude) of strain.
+          - Three-segment free wall.
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-global-longitudinal-strain
+        context: grading
+        grade: Normal
+        operator: '>'
+        value: 17
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Absolute value (magnitude) of strain.
+          - Six-segment.
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-global-longitudinal-strain
+        context: grading
+        grade: Mild
+        operator: range
+        min: 13
+        max: 17
+        minExclusive: true
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Absolute value (magnitude) of strain.
+          - Six-segment.
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-global-longitudinal-strain
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 9
+        max: 13
+        minExclusive: true
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Absolute value (magnitude) of strain.
+          - Six-segment.
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-global-longitudinal-strain
+        context: grading
+        grade: Severe
+        operator: '<='
+        value: 9
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Absolute value (magnitude) of strain.
+          - Six-segment.
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'

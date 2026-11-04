@@ -211,3 +211,1013 @@ blocks:
       locator:
         table: '7'
         page: '19'
+  - id: ase-2025-grading
+    type: grading-table
+    tag: GRADE
+    title: 'RV size: reference limits and abnormality grading (ASE 2025)'
+    grades: ['Normal', 'Mild', 'Moderate', 'Severe']
+    values:
+      - parameter: rv-basal-diameter
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 4.1
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-basal-diameter
+        context: grading
+        grade: Mild
+        operator: range
+        min: 4.1
+        max: 4.4
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-basal-diameter
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 4.4
+        max: 4.9
+        minExclusive: true
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-basal-diameter
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 4.9
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-basal-diameter-index
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 2.4
+        unit: cm/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-basal-diameter-index
+        context: grading
+        grade: Mild
+        operator: range
+        min: 2.4
+        max: 2.6
+        unit: cm/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-basal-diameter-index
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 2.6
+        max: 2.9
+        minExclusive: true
+        unit: cm/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-basal-diameter-index
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 2.9
+        unit: cm/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-mid-diameter
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 3.5
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-mid-diameter
+        context: grading
+        grade: Mild
+        operator: range
+        min: 3.5
+        max: 3.8
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-mid-diameter
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 3.8
+        max: 4.2
+        minExclusive: true
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-mid-diameter
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 4.2
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-longitudinal-diameter
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 8.2
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-longitudinal-diameter
+        context: grading
+        grade: Mild
+        operator: range
+        min: 8.2
+        max: 8.9
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-longitudinal-diameter
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 8.9
+        max: 9.6
+        minExclusive: true
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-longitudinal-diameter
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 9.6
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rvot-plax-diameter
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 3.3
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rvot-plax-diameter
+        context: grading
+        grade: Mild
+        operator: range
+        min: 3.3
+        max: 3.5
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rvot-plax-diameter
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 3.5
+        max: 3.9
+        minExclusive: true
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rvot-plax-diameter
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 3.9
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rvot-proximal-diameter
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 3.4
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rvot-proximal-diameter
+        context: grading
+        grade: Mild
+        operator: range
+        min: 3.4
+        max: 3.8
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rvot-proximal-diameter
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 3.8
+        max: 4.1
+        minExclusive: true
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rvot-proximal-diameter
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 4.1
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rvot-distal-diameter
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 2.9
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rvot-distal-diameter
+        context: grading
+        grade: Mild
+        operator: range
+        min: 2.9
+        max: 3.0
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rvot-distal-diameter
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 3.0
+        max: 3.3
+        minExclusive: true
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rvot-distal-diameter
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 3.3
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-wall-thickness
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 0.5
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-wall-thickness
+        context: grading
+        grade: Mild
+        operator: range
+        min: 0.5
+        max: 0.7
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-wall-thickness
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 0.7
+        max: 0.9
+        minExclusive: true
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-wall-thickness
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 0.9
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-esa
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 14
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-esa
+        context: grading
+        grade: Mild
+        operator: range
+        min: 14
+        max: 16
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-esa
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 16
+        max: 19
+        minExclusive: true
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-esa
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 19
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-esa-index
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 8
+        unit: cm²/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-esa-index
+        context: grading
+        grade: Mild
+        operator: range
+        min: 8
+        max: 9
+        unit: cm²/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-esa-index
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 9
+        max: 11
+        minExclusive: true
+        unit: cm²/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-esa-index
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 11
+        unit: cm²/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-eda
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 25
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-eda
+        context: grading
+        grade: Mild
+        operator: range
+        min: 25
+        max: 28
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-eda
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 28
+        max: 32
+        minExclusive: true
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-eda
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 32
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-eda-index
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 14
+        unit: cm²/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-eda-index
+        context: grading
+        grade: Mild
+        operator: range
+        min: 14
+        max: 15
+        unit: cm²/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-eda-index
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 15
+        max: 17
+        minExclusive: true
+        unit: cm²/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-eda-index
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 17
+        unit: cm²/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-esv-3d
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 66
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-esv-3d
+        context: grading
+        grade: Mild
+        operator: range
+        min: 66
+        max: 77
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-esv-3d
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 77
+        max: 89
+        minExclusive: true
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-esv-3d
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 89
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-esv-index
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 41
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-esv-index
+        context: grading
+        grade: Mild
+        operator: range
+        min: 41
+        max: 48
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-esv-index
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 48
+        max: 55
+        minExclusive: true
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-esv-index
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 55
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-edv-3d
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 130
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-edv-3d
+        context: grading
+        grade: Mild
+        operator: range
+        min: 130
+        max: 150
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-edv-3d
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 150
+        max: 170
+        minExclusive: true
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-edv-3d
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 170
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-edv-index
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 90
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-edv-index
+        context: grading
+        grade: Mild
+        operator: range
+        min: 90
+        max: 103
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-edv-index
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 103
+        max: 115
+        minExclusive: true
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rv-edv-index
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 115
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: pa-diameter
+        context: grading
+        grade: Normal
+        operator: '<='
+        value: 2.5
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: pa-diameter
+        context: grading
+        grade: Mild
+        operator: range
+        min: 2.5
+        max: 3.0
+        minExclusive: true
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: pa-diameter
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 3.0
+        max: 3.5
+        minExclusive: true
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: pa-diameter
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 3.5
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'

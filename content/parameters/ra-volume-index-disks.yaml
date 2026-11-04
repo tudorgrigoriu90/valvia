@@ -1,0 +1,6 @@
+id: ra-volume-index-disks
+name: RA volume index (method of disks)
+abbreviation: RAVi (disks)
+quantity: indexed-volume
+unit: 'mL/m²'
+modalities: [Echo]

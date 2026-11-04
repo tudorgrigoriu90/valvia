@@ -1,0 +1,6 @@
+id: rv-mpi-tissue-doppler
+name: RV myocardial performance index (tissue Doppler)
+abbreviation: RV MPI (TDI)
+quantity: ratio
+unit: '1'
+modalities: [Echo]

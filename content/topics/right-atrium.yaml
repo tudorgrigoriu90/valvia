@@ -7,3 +7,423 @@ order: 3
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: ra-size-grading
+    type: grading-table
+    tag: GRADE
+    title: 'RA size: reference limits and abnormality grading'
+    grades: ['Normal', 'Mild', 'Moderate', 'Severe']
+    values:
+      - parameter: ra-major-dimension
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 5.4
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: ra-major-dimension
+        context: grading
+        grade: Mild
+        operator: range
+        min: 5.4
+        max: 5.8
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: ra-major-dimension
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 5.8
+        max: 6.3
+        minExclusive: true
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: ra-major-dimension
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 6.3
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: ra-minor-dimension
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 4.2
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: ra-minor-dimension
+        context: grading
+        grade: Mild
+        operator: range
+        min: 4.2
+        max: 4.7
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: ra-minor-dimension
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 4.7
+        max: 5.1
+        minExclusive: true
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: ra-minor-dimension
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 5.1
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: ra-area
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 19
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: ra-area
+        context: grading
+        grade: Mild
+        operator: range
+        min: 19
+        max: 22
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: ra-area
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 22
+        max: 24
+        minExclusive: true
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: ra-area
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 24
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: ra-volume-index-disks
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 30
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: ra-volume-index-disks
+        context: grading
+        grade: Mild
+        operator: range
+        min: 30
+        max: 36
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: ra-volume-index-disks
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 36
+        max: 41
+        minExclusive: true
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: ra-volume-index-disks
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 41
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: ra-volume-index-area-length
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 33
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: ra-volume-index-area-length
+        context: grading
+        grade: Mild
+        operator: range
+        min: 33
+        max: 38
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: ra-volume-index-area-length
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 38
+        max: 44
+        minExclusive: true
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: ra-volume-index-area-length
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 44
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: ra-esv-index-3d
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 42
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: ra-esv-index-3d
+        context: grading
+        grade: Mild
+        operator: range
+        min: 42
+        max: 49
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: ra-esv-index-3d
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 49
+        max: 57
+        minExclusive: true
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: ra-esv-index-3d
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 57
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: ra-edv-index-3d
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 20
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: ra-edv-index-3d
+        context: grading
+        grade: Mild
+        operator: range
+        min: 20
+        max: 23
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: ra-edv-index-3d
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 23
+        max: 27
+        minExclusive: true
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: ra-edv-index-3d
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 27
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'

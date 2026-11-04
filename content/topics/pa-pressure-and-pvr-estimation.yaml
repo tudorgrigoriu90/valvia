@@ -7,3 +7,253 @@ order: 3
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: haemodynamic-grading
+    type: grading-table
+    tag: GRADE
+    title: 'Haemodynamics: reference limits and abnormality grading'
+    grades: ['Normal', 'Mild', 'Moderate', 'Severe']
+    values:
+      - parameter: tr-velocity
+        context: grading
+        grade: Normal
+        operator: '<'
+        value: 2.8
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: tr-velocity
+        context: grading
+        grade: Mild
+        operator: range
+        min: 2.8
+        max: 3.1
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - A resting peak TRV of 2.9 or 2.8 m/s or more with at least two adjunctive echocardiographic signs suggests PH.
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: tr-velocity
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 3.2
+        max: 3.5
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: tr-velocity
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 3.6
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rvsp
+        context: grading
+        grade: Normal
+        operator: '<='
+        value: 34
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rvsp
+        context: grading
+        grade: Mild
+        operator: range
+        min: 35
+        max: 49
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rvsp
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 50
+        max: 69
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rvsp
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 70
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rap
+        context: grading
+        grade: Normal
+        operator: range
+        min: 0
+        max: 5
+        maxExclusive: true
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Mean 3 mmHg.
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rap
+        context: grading
+        grade: Mild
+        operator: range
+        min: 5
+        max: 10
+        maxExclusive: true
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Mean 8 mmHg.
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rap
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 10
+        max: 15
+        maxExclusive: true
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rap
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 15
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rvot-acceleration-time
+        context: grading
+        grade: Normal
+        operator: '>'
+        value: 105
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rvot-acceleration-time
+        context: grading
+        grade: Mild
+        operator: range
+        min: 80
+        max: 105
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rvot-acceleration-time
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 60
+        max: 80
+        maxExclusive: true
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'
+      - parameter: rvot-acceleration-time
+        context: grading
+        grade: Severe
+        operator: '<'
+        value: 60
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '1'
+            page: '145'

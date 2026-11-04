@@ -1,0 +1,7 @@
+id: rv-global-longitudinal-strain
+name: RV global longitudinal strain (six-segment)
+abbreviation: RV GLS
+quantity: percent
+unit: '%'
+modalities: [Echo]
+method: Includes the septum (six segments); values are negative.

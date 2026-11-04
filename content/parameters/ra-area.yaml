@@ -1,0 +1,7 @@
+id: ra-area
+name: RA area
+abbreviation: RA area
+quantity: area
+unit: 'cm²'
+modalities: [Echo]
+method: End-systolic area in the RV-focused apical view.

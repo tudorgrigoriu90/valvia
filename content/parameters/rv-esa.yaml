@@ -1,0 +1,6 @@
+id: rv-esa
+name: RV end-systolic area
+abbreviation: RV ESA
+quantity: area
+unit: 'cm²'
+modalities: [Echo]

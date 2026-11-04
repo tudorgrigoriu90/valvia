@@ -1,0 +1,6 @@
+id: rv-mpi-pulsed-doppler
+name: RV myocardial performance index (pulsed Doppler)
+abbreviation: RV MPI (PW)
+quantity: ratio
+unit: '1'
+modalities: [Echo]
