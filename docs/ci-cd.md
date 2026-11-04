@@ -53,3 +53,12 @@ If the deploy job fails with a Pages configuration error, check this setting fir
 1. Reproduce locally with `npm run verify` (or the failing step's script).
 2. Fix test-first; the fix is the next push and gets its own entry in the task plan push log.
 3. Artefacts (`coverage`, `playwright-report`) are attached to the workflow run for diagnosis.
+
+## Dependency updates (Renovate, TS-01.2.4)
+
+[`renovate.json`](../renovate.json): weekly (Monday morning) update PRs; patch, minor, pin and digest updates
+auto-merge once CI is green; majors are labelled `major` and need a planned task; `@playwright/test` is pinned to the
+browser installed in the cloud environment and not updated automatically.
+
+**One-time engineer setup (`manual`):** install the Renovate GitHub App on the repository and allow auto-merge
+(Settings → General → Allow auto-merge).

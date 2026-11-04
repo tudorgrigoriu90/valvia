@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-01.2.5 PR templates: code PR; content PR (clinical change summary table, sour |
-| Next up | TS-01.2.4: Renovate configuration |
+| Last completed | TS-01.2.4 Renovate config with auto-merge for patch/minor on green CI |
+| Next up | TS-03.0.1: content guide |
 
 ## Next up: R0 sequence
 
@@ -67,7 +67,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-01.2.1 | Repo structure: `/site`, `/content`, `/schema`, `/pipeline`, `/docs` | 2 | done | Added `/core` for framework-free domain logic |
 | TS-01.2.2 | `CLAUDE.md`: architecture, coding conventions, content-modelling rules, units, DoD | 2 | done | Workflow rules from user: direct-to-main for code, PR for data only |
 | TS-01.2.3 | TypeScript strict, ESLint, Prettier | 1 | done | TS 6 (typescript-eslint not yet compatible with TS 7); 13 moderate dev-only audit findings via minimatch, left to Renovate |
-| TS-01.2.4 | Renovate config with auto-merge for patch/minor on green CI | 1 | todo |  |
+| TS-01.2.4 | Renovate config with auto-merge for patch/minor on green CI | 1 | done | Engineer installs the Renovate app (manual) |
 | TS-01.2.5 | PR templates: code PR; content PR (clinical change summary table, sources, preview link, reviewer checklist) | 1 | done | Also covers the TS-06.3.1 reviewer checklist |
 | CH-1 | Test tooling: Vitest + coverage thresholds (≥ 80 % global, 100 % safety-critical modules), Playwright, `npm run verify` | 2 | done | Added for CLAUDE.md rules (TDD, coverage); not in backlog |
 | CH-2 | Internal link checker (Markdown docs + built site, offline), run in CI | 1 | done | Built test-first; external URLs deliberately not checked |
@@ -351,3 +351,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-04 | TS-07.1.2 | About page: intended use (reference aid, not a medical device, no patient calculation), disclaimer incl. draft status, source policy, how values are shown, report-a-problem link; linked from every footer | `TS-07.1.2: intended use and disclaimer page` |
 | 2026-11-04 | TS-03.0.2 | Content status page: per root category wave, topics with content / total leaves, draft / in review / reviewed counts, totals; linked from the footer | `TS-03.0.2: content status page` |
 | 2026-11-04 | TS-01.2.5 | Content PR template: clinical change summary table, sources and acquisition, SME reviewer checklist (values, population, units, modality, discrepancies, history, locators), checks | `TS-01.2.5: content PR template with reviewer checklist` |
+| 2026-11-04 | TS-01.2.4 | renovate.json: weekly schedule, auto-merge patch/minor/pin/digest on green CI, majors manual, Playwright pinned, ESLint group; setup steps in CI/CD doc | `TS-01.2.4: Renovate configuration` |

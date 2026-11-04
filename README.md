@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-01.2.5: PR templates: code PR; content PR (clinical change summary table, sour |
-| Next task | TS-01.2.4: Renovate configuration |
+| Last completed task | TS-01.2.4: Renovate config with auto-merge for patch/minor on green CI |
+| Next task | TS-03.0.1: content guide |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
