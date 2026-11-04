@@ -1,6 +1,6 @@
 /**
- * Build-time discrepancy detection (TS-02.4.1, principle 2): values for the same parameter, population, grade,
- * context and modality from different *current* sources that differ in operator or number (compared in display
+ * Build-time discrepancy detection (TS-02.4.1, principle 2): values in the same topic for the same parameter,
+ * population, grade, context and modality from different *current* sources that differ in operator or number (compared in display
  * units) are reported side by side. Never resolved by picking one. Safety-critical: 100 % coverage.
  */
 import type { ContentBundle, LoadedValue } from '../content/types';
@@ -51,7 +51,14 @@ export function detectDiscrepancies(bundle: ContentBundle): Discrepancy[] {
         value.maxExclusive === true ? 'max-exclusive' : '',
         ...numbers.numbers.map((n) => String(Number(n))),
       ].join('|');
-      const key = stableKey([value.parameter, value.context, value.grade ?? null, value.modality, value.population]);
+      const key = stableKey([
+        topic.id,
+        value.parameter,
+        value.context,
+        value.grade ?? null,
+        value.modality,
+        value.population,
+      ]);
       const group = groups.get(key) ?? [];
       group.push({ value, signature, entry: { source: source.id, topicId: topic.id, path, display } });
       groups.set(key, group);

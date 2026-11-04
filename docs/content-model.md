@@ -229,7 +229,7 @@ When ESC/EACVI and ASE (or two current documents) disagree, both values are show
 flowchart LR
     v["all values of all topics"] --> cur{"source status<br/>= current?"}
     cur -- no --> hist(["history only (TS-02.4.2)"])
-    cur -- yes --> grp["group by parameter + context + grade<br/>+ modality + population"]
+    cur -- yes --> grp["group by topic + parameter + context<br/>+ grade + modality + population"]
     grp --> cmp{"≥ 2 sources and<br/>operator or number differs<br/>(in display units)?"}
     cmp -- yes --> flag(["Discrepancy: entries side by side<br/>'Differs by society' marker"])
     cmp -- no --> ok(["agreement"])
@@ -237,7 +237,8 @@ flowchart LR
 
 - Numbers are compared after conversion to the display unit, so `40 mm²` and `0.40 cm²` agree.
 - Population qualifiers must match exactly (key order does not matter); different sexes, age bands or modalities are never compared.
-- Values from the same source are never compared with each other; content shown in two topics is compared once per value.
+- Values are compared only within one topic: the same parameter has different thresholds for different conditions (e.g. vena contracta in MR vs TR).
+- Values from the same source are never compared with each other.
 - `npm run validate:content` lists discrepancy groups for information; they are not errors.
 
 ## Parameter (`parameter.schema.json`, TS-02.2.1)

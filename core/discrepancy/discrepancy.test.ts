@@ -174,10 +174,12 @@ describe('detectDiscrepancies (TS-02.4.1)', () => {
     expect(detectDiscrepancies(bundle(topic('t', [a, b])))).toHaveLength(1);
   });
 
-  it('compares values across topics (content shown in two places is stored once)', () => {
+  it('compares values only within one topic: the same parameter means different things for different conditions', () => {
+    // e.g. a vena contracta of 7 mm is "severe" for MR but the TR or prosthetic AR thresholds differ by design.
     const ase = value('ase', { value: 0.3, published: { value: '0.30' } });
-    const found = detectDiscrepancies(bundle(topic('a', [value('esc')]), topic('b', [ase])));
-    expect(found[0]?.entries.map((e) => e.topicId)).toEqual(['a', 'b']);
+    expect(detectDiscrepancies(bundle(topic('mr', [value('esc')]), topic('tr', [ase])))).toEqual([]);
+    const found = detectDiscrepancies(bundle(topic('mr', [value('esc'), ase])));
+    expect(found[0]?.entries.map((e) => e.topicId)).toEqual(['mr', 'mr']);
   });
 
   it('includes every disagreeing source, also three-way', () => {
