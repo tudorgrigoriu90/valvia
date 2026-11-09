@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-22: PO-6, content: abnormality grades (normal, mildly, moderately, severel |
-| Next task | CH-23: audit other seeded leaves for published severity grades |
+| Last completed task | CH-23: PO-6, content: audit the other seeded leaves (right heart 2025, diasto |
+| Next task | CH-24: stress echo in ischaemic heart disease (ASE 2020) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

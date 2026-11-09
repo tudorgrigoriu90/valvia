@@ -300,6 +300,7 @@ Only ESC (incl. EACVI and other ESC associations, see F3) and ASE documents, plu
 1. ~~**F1 Paediatric normal values.**~~ **Answered:** yes, include z-score datasets that an ESC or ASE document cites; shown as published tables or equations, without computing a patient's z-score.
 2. **F2 Paediatric scope.** Are the new nodes 8.0, 8.13, 8.14 and root 15 right? Is fetal echocardiography in scope?
 3. **F3 ESC associations.** Do documents from ESC associations other than EACVI (e.g. EAPCI, HFA, EHRA) count as "ESC"?
-4. **F4 Units.** Tissue Doppler in cm/s: **answered**. Still open: confirm the other proposed units in 14.2, and that converted values may be shown with the original on tap (e.g. an EROA published as 40 mm² shown as 0.40 cm²).
+4. ~~**F4 Units.**~~ **Resolved by the product owner (PO-4, 9 Nov 2026):** every value is shown in the unit printed in the guideline; no conversion for display.
 5. **F5 Prosthetic coverage.** With manufacturer charts excluded, some valve models or sizes will have no reference values. Acceptable?
 6. ~~**F6 Backup approvals.**~~ **Resolved:** the SME is the only content approver; the Claude persona is an advisory second reviewer.
+7. **F7 RV diastolic function grading (ASE 2025 right heart).** Table 1 grades RV E/A, e′/a′, E/e′ and deceleration time as mild / moderate / severe, but these rows conflict with Table 6 of the same document (e.g. mildly abnormal DT ≥ 87 to < 120 ms in Table 1 vs impaired relaxation DT > 230 ms in Table 6; moderate E/A 0.8–2.1 equals the normal range). Not entered (CH-23). Which table should Valvia show, if any?
