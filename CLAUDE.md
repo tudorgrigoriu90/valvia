@@ -218,7 +218,7 @@ Static first, near-zero cost (backlog §2). Every row links to its ADR; new arch
 | Content | YAML in Git, one entity per file; JSON Schema 2020-12 is the source of truth; generated TS types; own loader with line-precise errors | [ADR 0003](docs/adr/0003-content-as-code.md) |
 | Search | Pagefind post-build index, own search UI, synonyms indexed, precached offline | [ADR 0004](docs/adr/0004-client-side-search-pagefind.md) |
 | Offline | Own generated service worker (`pipeline/pwa`): precache all pages, assets and the search index; pages network-first | — |
-| Analytics | Cookieless (Cloudflare Web Analytics or GoatCounter) | — |
+| Analytics | Cookieless (GoatCounter or Cloudflare Web Analytics), opt-in per build via a repository variable; CSP admits only its origins (`core/site/analytics.ts`) | — |
 | Dependencies | Renovate, auto-merge patch/minor on green CI | — |
 
 Repository layout (TS-01.2.1). Node version in `.nvmrc`; single root `package.json`:

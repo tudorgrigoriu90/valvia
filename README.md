@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-17: Plan update: record PO-4 to PO-6 and plan the tasks below |
-| Next task | TS-07.5.1: cookieless analytics + privacy notice |
+| Last completed task | TS-07.5.1: Cookieless analytics + privacy notice |
+| Next task | CH-18: values in the units printed in the guidelines (PO-4) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

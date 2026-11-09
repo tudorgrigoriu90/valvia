@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-17 Plan update: record PO-4 to PO-6 and plan the tasks below |
-| Next up | TS-07.5.1: cookieless analytics + privacy notice |
+| Last completed | TS-07.5.1 Cookieless analytics + privacy notice |
+| Next up | CH-18: values in the units printed in the guidelines (PO-4) |
 
 ## Next up: R0 sequence
 
@@ -213,7 +213,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-07.3.2 | Pre-release content audit per wave: 100 % of values verified by the verification run and approved; SME spot-checks a random 10 % sample against the PDFs | 3 | todo |  |
 | TS-07.4.1 | Manual screen-reader pass (VoiceOver, TalkBack) | 2 | todo |  |
 | TS-07.4.2 | Playwright E2E at mobile viewport (browse, search, compare, history, adult/paediatric switch, prosthetic picker, offline) | 3 | todo |  |
-| TS-07.5.1 | Cookieless analytics + privacy notice | 1 | todo |  |
+| TS-07.5.1 | Cookieless analytics + privacy notice | 1 | done |  |
 
 ### EP-08: Engineer setup, release & operations (MVP)
 
@@ -385,3 +385,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-04 | TS-04.3.4 | Leaf view maps values to topic discrepancies: ≠ marker (text + screen-reader label) on differing values and a 'Differs between sources' side-by-side panel per block; no value preferred | `TS-04.3.4: discrepancy marker and side-by-side comparison` |
 | 2026-11-04 | TS-02.1.3 | Redirects for renamed slugs: core/navigation/redirects computes old→new URLs for visible nodes and descendants; post-build step writes meta-refresh pages (canonical, noindex, strict CSP, visible link) | `TS-02.1.3: static redirects for renamed slugs` |
 | 2026-11-09 | CH-17 | Record PO-4 (units as published), PO-5 (Adults/Children/TEE/Stress echo categories), PO-6 (mild/moderate/severe abnormality grades) and plan CH-18 to CH-29; TS-08.2 domain note | `CH-17: plan units as published, TEE and stress categories, grades` |
+| 2026-11-09 | TS-07.5.1 | Opt-in cookieless analytics (GoatCounter or Cloudflare via repository variable; validated, CSP admits only its origins; CSP moved to core/site/analytics.ts) and privacy page linked from every footer; E2E for link, no third-party script/cookies by default, axe | `TS-07.5.1: opt-in cookieless analytics and privacy notice` |

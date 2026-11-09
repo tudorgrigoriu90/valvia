@@ -36,6 +36,10 @@ flowchart LR
 
 - Production URL: `VALVIA_SITE` + `VALVIA_BASE` (defaults `https://tudorgrigoriu90.github.io` + `/valvia/`).
   Override with repository **variables** of the same names (Settings → Secrets and variables → Actions → Variables), e.g. `VALVIA_BASE=/` after a custom domain is configured.
+- **Analytics (TS-07.5.1):** off by default. To turn on cookieless counting after creating the account (TS-08.5, `manual`), set **one**
+  repository variable: `VALVIA_GOATCOUNTER` (GoatCounter site code, e.g. `valvia`) or `VALVIA_CF_BEACON_TOKEN` (Cloudflare Web Analytics token).
+  The build adds the beacon script and its origins to the CSP (`core/site/analytics.ts`), and the privacy page names the provider.
+  A malformed value or both variables at once fail the build.
 - The deploy job alone has `pages: write` and `id-token: write`; it runs only after `verify` succeeds on `main`, one at a time (`pages-deploy` concurrency group, never cancelled mid-deploy).
 - No `gh-pages` branch exists; GitHub stores deployments itself. `404.html` is served for unknown URLs.
 - Deploy time target: < 5 min from push (FT-01.3).

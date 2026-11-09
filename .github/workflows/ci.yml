@@ -20,6 +20,9 @@ env:
   # Repository variables override the defaults (e.g. VALVIA_BASE=/ once a custom domain is set, TS-08.2).
   VALVIA_SITE: ${{ vars.VALVIA_SITE || 'https://tudorgrigoriu90.github.io' }}
   VALVIA_BASE: ${{ vars.VALVIA_BASE || '/valvia/' }}
+  # Cookieless analytics (TS-07.5.1), off unless one is set (TS-08.5): GoatCounter site code or Cloudflare token.
+  VALVIA_GOATCOUNTER: ${{ vars.VALVIA_GOATCOUNTER }}
+  VALVIA_CF_BEACON_TOKEN: ${{ vars.VALVIA_CF_BEACON_TOKEN }}
 
 jobs:
   verify:

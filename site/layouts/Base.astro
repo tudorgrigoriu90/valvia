@@ -4,7 +4,7 @@ import { withBase } from '../../core/site/base-path';
 import Logo from '../components/Logo.astro';
 import ReviewBanner from '../components/ReviewBanner.astro';
 import { contentVersion } from '../../core/site/version';
-import { CONTENT_SECURITY_POLICY } from '../lib/csp';
+import { analyticsConfig, contentSecurityPolicy } from '../../core/site/analytics';
 
 interface Props {
   title: string;
@@ -16,6 +16,8 @@ const { title, description = 'Echocardiography reference and cut-off values from
 const base = import.meta.env.BASE_URL;
 const version = contentVersion(process.env);
 const builtOn = new Date().toISOString().slice(0, 10);
+const analytics = analyticsConfig(process.env);
+const csp = contentSecurityPolicy(analytics);
 const pageTitle = title === 'Valvia' ? title : `${title} · Valvia`;
 ---
 
@@ -24,7 +26,7 @@ const pageTitle = title === 'Valvia' ? title : `${title} · Valvia`;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    {import.meta.env.PROD && <meta http-equiv="Content-Security-Policy" content={CONTENT_SECURITY_POLICY} />}
+    {import.meta.env.PROD && <meta http-equiv="Content-Security-Policy" content={csp} />}
     <!-- Decision PO-3: draft content is not indexed until clinically reviewed. -->
     <meta name="robots" content="noindex, nofollow" />
     <meta name="description" content={description} />
@@ -33,6 +35,9 @@ const pageTitle = title === 'Valvia' ? title : `${title} · Valvia`;
     <meta name="theme-color" content="#f6f7f9" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#0f1217" media="(prefers-color-scheme: dark)" />
     <title>{pageTitle}</title>
+    {import.meta.env.PROD && analytics !== undefined && (
+      <script is:inline defer src={analytics.src} {...analytics.attributes} />
+    )}
   </head>
   <body>
     <a class="skip-link" href="#main">
@@ -78,7 +83,7 @@ const pageTitle = title === 'Valvia' ? title : `${title} · Valvia`;
         <p>Sources: European Society of Cardiology (incl. EACVI) and American Society of Echocardiography documents.</p>
         <p>
           <a href={withBase(base, 'about/')}>About Valvia: intended use and disclaimer</a> ·
-          <a href={withBase(base, 'status/')}>Content status</a>
+          <a href={withBase(base, 'status/')}>Content status</a> ·<a href={withBase(base, 'privacy/')}>Privacy</a>
         </p>
         <p class="site-footer__version">
           Content version {version} · built {builtOn}

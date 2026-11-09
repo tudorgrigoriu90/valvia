@@ -1,0 +1,53 @@
+---
+import { withBase } from '../../core/site/base-path';
+import { analyticsConfig } from '../../core/site/analytics';
+import Base from '../layouts/Base.astro';
+
+const base = import.meta.env.BASE_URL;
+const analytics = analyticsConfig(process.env);
+---
+
+<Base title="Privacy" description="What Valvia stores and measures: no accounts, no cookies, no personal data.">
+  <article class="prose">
+    <h1>Privacy</h1>
+
+    <h2 id="summary">Summary</h2>
+    <p>
+      Valvia has no accounts, sets no cookies and collects no personal data. You do not enter any patient information.
+    </p>
+
+    <h2 id="on-your-device">Stored on your device</h2>
+    <p>
+      Your choices (adults or children, which society's values to show) are kept in your browser's local storage so they
+      persist between visits. Pages and the search index are saved by the browser so Valvia works offline. None of this
+      is sent anywhere; clearing your browser data removes it.
+    </p>
+
+    <h2 id="analytics">Usage statistics</h2>
+    {analytics === undefined ? (
+      <p>Valvia currently does not measure usage.</p>
+    ) : (
+      <p>
+        Valvia counts page views with {analytics.provider}, a cookieless service. It records the page, the referring
+        site, browser type, screen size and country, without cookies, without identifying you and without tracking you
+        across sites.
+      </p>
+    )}
+
+    <h2 id="hosting">Hosting</h2>
+    <p>
+      Valvia is a static website hosted on GitHub Pages. GitHub, as the host, may process technical data such as your IP
+      address to deliver the pages and protect the service, under its own privacy statement.
+    </p>
+
+    <h2 id="reports">Problem reports</h2>
+    <p>
+      If you report a problem through GitHub, your report and GitHub username are public on GitHub. Do not include
+      patient data in a report.
+    </p>
+
+    <p>
+      <a href={withBase(base, '/')}>Back to the home page</a>
+    </p>
+  </article>
+</Base>
