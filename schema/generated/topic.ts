@@ -99,6 +99,10 @@ export type Value = {
    * Modality the value was defined for (Echo, CT or CMR); CT/CMR values are badged (SME decision 4). Must be one of the parameter's modalities.
    */
   modality: 'Echo' | 'CT' | 'CMR';
+  /**
+   * TTE (default when absent), TEE or stress; TEE and stress values form their own categories on the site (decision PO-5). Only for modality Echo.
+   */
+  technique?: 'TTE' | 'TEE' | 'stress';
   population: PopulationQualifiers;
   /**
    * Conditions and footnotes printed with the value, e.g. 'Not valid in atrial fibrillation.'
@@ -183,6 +187,10 @@ export type Value = {
    * Modality the value was defined for (Echo, CT or CMR); CT/CMR values are badged (SME decision 4). Must be one of the parameter's modalities.
    */
   modality: 'Echo' | 'CT' | 'CMR';
+  /**
+   * TTE (default when absent), TEE or stress; TEE and stress values form their own categories on the site (decision PO-5). Only for modality Echo.
+   */
+  technique?: 'TTE' | 'TEE' | 'stress';
   population: PopulationQualifiers;
   /**
    * Conditions and footnotes printed with the value, e.g. 'Not valid in atrial fibrillation.'
@@ -267,6 +275,10 @@ export type Value = {
    * Modality the value was defined for (Echo, CT or CMR); CT/CMR values are badged (SME decision 4). Must be one of the parameter's modalities.
    */
   modality: 'Echo' | 'CT' | 'CMR';
+  /**
+   * TTE (default when absent), TEE or stress; TEE and stress values form their own categories on the site (decision PO-5). Only for modality Echo.
+   */
+  technique?: 'TTE' | 'TEE' | 'stress';
   population: PopulationQualifiers;
   /**
    * Conditions and footnotes printed with the value, e.g. 'Not valid in atrial fibrillation.'
@@ -351,6 +363,10 @@ export type Value = {
    * Modality the value was defined for (Echo, CT or CMR); CT/CMR values are badged (SME decision 4). Must be one of the parameter's modalities.
    */
   modality: 'Echo' | 'CT' | 'CMR';
+  /**
+   * TTE (default when absent), TEE or stress; TEE and stress values form their own categories on the site (decision PO-5). Only for modality Echo.
+   */
+  technique?: 'TTE' | 'TEE' | 'stress';
   population: PopulationQualifiers;
   /**
    * Conditions and footnotes printed with the value, e.g. 'Not valid in atrial fibrillation.'
@@ -435,6 +451,10 @@ export type Value = {
    * Modality the value was defined for (Echo, CT or CMR); CT/CMR values are badged (SME decision 4). Must be one of the parameter's modalities.
    */
   modality: 'Echo' | 'CT' | 'CMR';
+  /**
+   * TTE (default when absent), TEE or stress; TEE and stress values form their own categories on the site (decision PO-5). Only for modality Echo.
+   */
+  technique?: 'TTE' | 'TEE' | 'stress';
   population: PopulationQualifiers;
   /**
    * Conditions and footnotes printed with the value, e.g. 'Not valid in atrial fibrillation.'
@@ -519,6 +539,10 @@ export type Value = {
    * Modality the value was defined for (Echo, CT or CMR); CT/CMR values are badged (SME decision 4). Must be one of the parameter's modalities.
    */
   modality: 'Echo' | 'CT' | 'CMR';
+  /**
+   * TTE (default when absent), TEE or stress; TEE and stress values form their own categories on the site (decision PO-5). Only for modality Echo.
+   */
+  technique?: 'TTE' | 'TEE' | 'stress';
   population: PopulationQualifiers;
   /**
    * Conditions and footnotes printed with the value, e.g. 'Not valid in atrial fibrillation.'
@@ -603,6 +627,10 @@ export type Value = {
    * Modality the value was defined for (Echo, CT or CMR); CT/CMR values are badged (SME decision 4). Must be one of the parameter's modalities.
    */
   modality: 'Echo' | 'CT' | 'CMR';
+  /**
+   * TTE (default when absent), TEE or stress; TEE and stress values form their own categories on the site (decision PO-5). Only for modality Echo.
+   */
+  technique?: 'TTE' | 'TEE' | 'stress';
   population: PopulationQualifiers;
   /**
    * Conditions and footnotes printed with the value, e.g. 'Not valid in atrial fibrillation.'

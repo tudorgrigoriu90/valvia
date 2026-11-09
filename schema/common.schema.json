@@ -89,6 +89,10 @@
       "description": "Imaging modality (SME decision 4: CT and CMR values are included and badged).",
       "enum": ["Echo", "CT", "CMR"]
     },
+    "technique": {
+      "description": "Echocardiographic technique (decision PO-5): TTE (transthoracic, the default), TEE (transoesophageal) or stress (exercise or pharmacological stress echocardiography).",
+      "enum": ["TTE", "TEE", "stress"]
+    },
     "unit": {
       "description": "Units as published in ESC/EACVI/ASE documents. '1' means dimensionless (ratios, scores). Values are displayed in the published unit (decision PO-4); core/units converts only to compare values.",
       "enum": [
@@ -302,6 +306,10 @@
           "description": "Modality the value was defined for (Echo, CT or CMR); CT/CMR values are badged (SME decision 4). Must be one of the parameter's modalities.",
           "$ref": "#/$defs/modality"
         },
+        "technique": {
+          "description": "TTE (default when absent), TEE or stress; TEE and stress values form their own categories on the site (decision PO-5). Only for modality Echo.",
+          "$ref": "#/$defs/technique"
+        },
         "population": {
           "$ref": "#/$defs/populationQualifiers"
         },
@@ -318,6 +326,23 @@
         }
       },
       "allOf": [
+        {
+          "if": {
+            "properties": {
+              "technique": {
+                "enum": ["TEE", "stress"]
+              }
+            },
+            "required": ["technique"]
+          },
+          "then": {
+            "properties": {
+              "modality": {
+                "const": "Echo"
+              }
+            }
+          }
+        },
         {
           "if": {
             "properties": {

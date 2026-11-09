@@ -1,6 +1,6 @@
 /**
  * Build-time discrepancy detection (TS-02.4.1, principle 2): values in the same topic for the same parameter,
- * population, grade, context and modality from different *current* sources that differ in operator or number (compared in a
+ * population, grade, context, modality and technique from different *current* sources that differ in operator or number (compared in a
  * common unit) are reported side by side. Never resolved by picking one. Safety-critical: 100 % coverage.
  */
 import type { ContentBundle, LoadedValue } from '../content/types';
@@ -57,6 +57,7 @@ export function detectDiscrepancies(bundle: ContentBundle): Discrepancy[] {
         value.context,
         value.grade ?? null,
         value.modality,
+        value.technique ?? 'TTE',
         value.population,
       ]);
       const group = groups.get(key) ?? [];

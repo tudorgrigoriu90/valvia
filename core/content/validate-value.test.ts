@@ -46,6 +46,24 @@ citation: { source: ase-eacvi-2015-chambers, locator: { table: "2" } }
     },
   );
 
+  it('accepts a technique (TTE, TEE or stress) for echo values; absent means TTE (PO-5)', () => {
+    for (const technique of ['TTE', 'TEE', 'stress']) {
+      expect(messages(SEVERE_EROA.replace('modality: Echo', `modality: Echo\ntechnique: ${technique}`))).toEqual([]);
+    }
+  });
+
+  it('rejects an unknown technique', () => {
+    expect(messages(SEVERE_EROA.replace('modality: Echo', 'modality: Echo\ntechnique: ICE'))).toEqual([
+      "8: technique must be one of: TTE, TEE, stress (got 'ICE')",
+    ]);
+  });
+
+  it('allows TEE and stress only for echocardiographic values', () => {
+    expect(messages(SEVERE_EROA.replace('modality: Echo', 'modality: CT\ntechnique: TEE'))).toEqual([
+      "7: modality must be 'Echo' (got 'CT')",
+    ]);
+  });
+
   it('requires a grade for grading and feasibility values', () => {
     expect(messages(SEVERE_EROA.replace('grade: severe\n', ''))).toEqual(["1: missing required property 'grade'"]);
     expect(messages(SEVERE_EROA.replace('context: grading\ngrade: severe', 'context: feasibility'))).toEqual([

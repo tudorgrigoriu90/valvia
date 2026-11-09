@@ -152,6 +152,30 @@ describe('detectDiscrepancies (TS-02.4.1)', () => {
     expect(detectDiscrepancies(bundle(topic('t', [value('esc'), second])))).toEqual([]);
   });
 
+  it('keeps TEE and stress values apart from TTE values; an absent technique counts as TTE (PO-5)', () => {
+    expect(
+      detectDiscrepancies(
+        bundle(
+          topic('t', [value('esc'), value('ase', { technique: 'TEE', value: 0.3, published: { value: '0.30' } })]),
+        ),
+      ),
+    ).toEqual([]);
+    expect(
+      detectDiscrepancies(
+        bundle(
+          topic('t', [value('esc'), value('ase', { technique: 'stress', value: 0.3, published: { value: '0.30' } })]),
+        ),
+      ),
+    ).toEqual([]);
+    expect(
+      detectDiscrepancies(
+        bundle(
+          topic('t', [value('esc'), value('ase', { technique: 'TTE', value: 0.3, published: { value: '0.30' } })]),
+        ),
+      ),
+    ).toHaveLength(1);
+  });
+
   it('keeps different populations, grades, contexts and modalities apart', () => {
     const values = [
       value('esc'),

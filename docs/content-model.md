@@ -95,6 +95,7 @@ One published number or range. Values live inside content blocks of leaf topics 
 | `minExclusive`, `maxExclusive` | no (range only) | `true` when the source prints `> min` or `< max`; shown as `> 5.8 to ≤ 6.3`. Default: both bounds inclusive, shown as `5.4–5.8` |
 | `unit` | yes | unit as published |
 | `modality` | yes | `Echo` · `CT` · `CMR`; must be one of the parameter's `modalities` (TS-02.2.6, `core/values/modality.ts`) |
+| `technique` | no | `TTE` (default when absent) · `TEE` · `stress`; only with `modality: Echo`. TEE and stress values form their own categories on the site (decision PO-5) |
 | `population` | yes | population qualifiers |
 | `caveats` | no | footnotes printed with the value |
 | `citation` | yes | source + locator |
@@ -230,14 +231,14 @@ When ESC/EACVI and ASE (or two current documents) disagree, both values are show
 flowchart LR
     v["all values of all topics"] --> cur{"source status<br/>= current?"}
     cur -- no --> hist(["history only (TS-02.4.2)"])
-    cur -- yes --> grp["group by topic + parameter + context<br/>+ grade + modality + population"]
+    cur -- yes --> grp["group by topic + parameter + context<br/>+ grade + modality + technique + population"]
     grp --> cmp{"≥ 2 sources and<br/>operator or number differs<br/>(in a common unit)?"}
     cmp -- yes --> flag(["Discrepancy: entries side by side<br/>'Differs by society' marker"])
     cmp -- no --> ok(["agreement"])
 ```
 
 - Numbers are compared after conversion to a common unit, so `40 mm²` and `0.40 cm²` agree; each is shown as published.
-- Population qualifiers must match exactly (key order does not matter); different sexes, age bands or modalities are never compared.
+- Population qualifiers must match exactly (key order does not matter); different sexes, age bands, modalities or techniques (TTE, TEE, stress) are never compared.
 - Values are compared only within one topic: the same parameter has different thresholds for different conditions (e.g. vena contracta in MR vs TR).
 - Values from the same source are never compared with each other.
 - `npm run validate:content` lists discrepancy groups for information; they are not errors.
