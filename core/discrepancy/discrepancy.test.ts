@@ -176,16 +176,22 @@ describe('detectDiscrepancies (TS-02.4.1)', () => {
     ).toHaveLength(1);
   });
 
-  it('keeps different populations, grades, contexts and modalities apart', () => {
-    const values = [
-      value('esc'),
-      value('ase', { population: { ageGroup: 'paediatric' }, value: 0.3 }),
-      value('ase', { grade: 'moderate', value: 0.3 }),
-      value('ase', { context: 'intervention-threshold', value: 0.3 }),
-      value('ase', { modality: 'CMR', value: 0.3 }),
-      value('ase', { population: { ageGroup: 'adult', sex: 'male' }, value: 0.3 }),
-    ];
-    expect(detectDiscrepancies(bundle(topic('t', values)))).toEqual([]);
+  const DIFFERENT = { value: 0.3, published: { value: '0.30' } };
+
+  it('flags the differing number used by the separation tests below (control)', () => {
+    expect(detectDiscrepancies(bundle(topic('t', [value('esc'), value('ase', DIFFERENT)])))).toHaveLength(1);
+  });
+
+  it.each<[string, Record<string, unknown>]>([
+    ['population', { population: { ageGroup: 'paediatric' } }],
+    ['sex', { population: { ageGroup: 'adult', sex: 'male' } }],
+    ['grade', { grade: 'moderate' }],
+    ['context', { context: 'intervention-threshold' }],
+    ['modality', { modality: 'CMR' }],
+  ])('keeps values with a different %s apart', (_field, override) => {
+    expect(
+      detectDiscrepancies(bundle(topic('t', [value('esc'), value('ase', { ...DIFFERENT, ...override })]))),
+    ).toEqual([]);
   });
 
   it('groups population qualifiers regardless of key order', () => {

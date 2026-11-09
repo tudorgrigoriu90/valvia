@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-29: TS-08.2 checklist: custom domain valvia-echo.se (Loopia DNS → GitHub P |
-| Next task | CH-30: strengthen a weak discrepancy test |
+| Last completed task | CH-30: Strengthen the discrepancy test 'keeps different populations, grades,  |
+| Next task | Plan complete; next: remaining backlog (TS-07.3.1 hazard log) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
