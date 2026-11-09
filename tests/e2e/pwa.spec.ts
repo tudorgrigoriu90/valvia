@@ -1,6 +1,7 @@
 import { expect, test } from '@playwright/test';
 
-// TS-05.3.1: web app manifest ("Valvia"), icon, installability basics.
+// TS-05.3.1: web app manifest ("Valvia"), icon, installability basics. Paths follow the build's base path.
+const BASE = process.env.VALVIA_BASE ?? '/valvia/';
 
 interface Manifest {
   name: string;
@@ -14,24 +15,24 @@ interface Manifest {
 test('pages link a valid web app manifest scoped to the base path', async ({ page, request }) => {
   await page.goto('./');
   const href = await page.locator('link[rel="manifest"]').getAttribute('href');
-  expect(href).toBe('/valvia/manifest.webmanifest');
+  expect(href).toBe(`${BASE}manifest.webmanifest`);
   const response = await request.get('manifest.webmanifest');
   expect(response.status()).toBe(200);
   const manifest = (await response.json()) as Manifest;
   expect(manifest).toMatchObject({
     name: 'Valvia',
     short_name: 'Valvia',
-    start_url: '/valvia/',
-    scope: '/valvia/',
+    start_url: BASE,
+    scope: BASE,
     display: 'standalone',
   });
   expect(manifest.icons.length).toBeGreaterThan(0);
-  for (const icon of manifest.icons) expect((await request.get(icon.src.replace('/valvia/', ''))).status()).toBe(200);
+  for (const icon of manifest.icons) expect((await request.get(icon.src.slice(BASE.length))).status()).toBe(200);
 });
 
 test('pages declare an icon and theme colour', async ({ page }) => {
   await page.goto('./');
-  await expect(page.locator('link[rel="icon"]')).toHaveAttribute('href', '/valvia/icon.svg');
+  await expect(page.locator('link[rel="icon"]')).toHaveAttribute('href', `${BASE}icon.svg`);
   await expect(page.locator('meta[name="theme-color"]').first()).toHaveAttribute('content', /#[0-9a-f]{6}/i);
 });
 

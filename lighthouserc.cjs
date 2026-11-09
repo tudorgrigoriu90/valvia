@@ -2,7 +2,7 @@
  * Lighthouse CI budgets (TS-05.2.1, NFR-02): blocking in CI.
  * Pages are served by the E2E static server under the production base path.
  */
-const base = 'http://localhost:4323/valvia/';
+const base = `http://localhost:4323${process.env.VALVIA_BASE ?? '/valvia/'}`;
 module.exports = {
   ci: {
     collect: {

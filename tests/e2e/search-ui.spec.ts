@@ -29,7 +29,7 @@ test('pressing Enter does not reload the page', async ({ page }) => {
   const box = page.getByRole('searchbox', { name: 'Search' });
   await box.fill('PISA');
   await box.press('Enter');
-  await expect(page).toHaveURL(/\/valvia\/$/);
+  await expect(page).toHaveURL(new URL(process.env.VALVIA_BASE ?? '/valvia/', page.url()).href);
   await expect(page.getByRole('search').getByRole('link').first()).toBeVisible();
 });
 

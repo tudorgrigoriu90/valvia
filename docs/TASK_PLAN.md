@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-30 Strengthen the discrepancy test 'keeps different populations, grades,  |
-| Next up | Plan complete; next: remaining backlog (TS-07.3.1 hazard log) |
+| Last completed | CH-31 Fix: E2E tests hard-coded the /valvia/ base path; CI red once VALVIA_B |
+| Next up | Remaining backlog: TS-07.3.1 hazard log |
 
 ## Next up: R0 sequence
 
@@ -291,6 +291,7 @@ Order: one push each, top to bottom (TS-07.5.1 was finished locally first and sh
 | CH-27 | PO-5, content: TEE, regurgitation after percutaneous valve repair or replacement (ASE 2019) and intraprocedural TEER imaging | 3 | done |  |
 | CH-28 | PO-5, content: TEE screening before structural heart interventions (ASE) | 2 | done | Only values the document publishes |
 | CH-30 | Strengthen the discrepancy test 'keeps different populations, grades, contexts and modalities apart': its overrides change `value` but not the published text that is compared, so it passes trivially | 0 | done | Found during CH-19 |
+| CH-31 | Fix: E2E tests hard-coded the `/valvia/` base path; CI red once `VALVIA_BASE=/` was set for the custom domain | 0 | done | Found on CI run of CH-30 |
 | CH-29 | TS-08.2 checklist: custom domain `valvia-echo.se` (Loopia DNS → GitHub Pages, `VALVIA_SITE`/`VALVIA_BASE` variables) in `docs/ci-cd.md` | 0 | done | Engineer performs the DNS change (`manual`) |
 
 ## Push log
@@ -400,3 +401,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-09 | CH-28 | TEE screening before structural interventions (ASE 2022, technique: TEE): mitral prolapse ≥ 2 mm, aortic arch end-diastolic reversal > 20 cm/s, Ebstein > 8 mm/m², ASD rim < 5 mm; septal evaluation note; source from PubMed; 4 parameters | `CH-28: TEE screening criteria before structural interventions (ASE 2022)` |
 | 2026-11-09 | CH-29 | Custom domain checklist for valvia-echo.se in docs/ci-cd.md: GitHub domain verification, Loopia DNS records (verified live), Pages custom domain + HTTPS, VALVIA_SITE/VALVIA_BASE variables, checks; diagram | `CH-29: document the valvia-echo.se custom domain setup` |
 | 2026-11-09 | CH-30 | Discrepancy separation test now changes the published text that is compared, with a control case and one case per field (population, sex, grade, context, modality); mutation check: dropping modality from the grouping key now fails the test | `CH-30: make the discrepancy separation test meaningful` |
+| 2026-11-09 | CH-31 | E2E (manifest, icon, search URL) and Lighthouse URLs derive the base path from VALVIA_BASE instead of hard-coding /valvia/; CI was red once VALVIA_BASE=/ was set for valvia-echo.se. Verified: 112 E2E pass and Lighthouse budgets pass with VALVIA_BASE=/; default base still verified | `CH-31: derive the base path in E2E and Lighthouse from VALVIA_BASE` |
