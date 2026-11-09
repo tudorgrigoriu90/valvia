@@ -34,7 +34,7 @@ flowchart LR
 
 ## Deployment
 
-- Production URL: `VALVIA_SITE` + `VALVIA_BASE` (defaults `https://tudorgrigoriu90.github.io` + `/valvia/`).
+- Production URL: `VALVIA_SITE` + `VALVIA_BASE` (defaults `https://tudorgrigoriu90.github.io` + `/valvia/`; `https://valvia-echo.se` + `/` once the custom domain below is set up).
   Override with repository **variables** of the same names (Settings → Secrets and variables → Actions → Variables), e.g. `VALVIA_BASE=/` after a custom domain is configured.
 - **Analytics (TS-07.5.1):** off by default. To turn on cookieless counting after creating the account (TS-08.5, `manual`), set **one**
   repository variable: `VALVIA_GOATCOUNTER` (GoatCounter site code, e.g. `valvia`) or `VALVIA_CF_BEACON_TOKEN` (Cloudflare Web Analytics token).
@@ -43,6 +43,38 @@ flowchart LR
 - The deploy job alone has `pages: write` and `id-token: write`; it runs only after `verify` succeeds on `main`, one at a time (`pages-deploy` concurrency group, never cancelled mid-deploy).
 - No `gh-pages` branch exists; GitHub stores deployments itself. `404.html` is served for unknown URLs.
 - Deploy time target: < 5 min from push (FT-01.3).
+
+## Custom domain `valvia-echo.se` (TS-08.2, `manual`)
+
+The domain is registered at Loopia (2026-11-09). Steps, in order:
+
+1. **Verify the domain for the account:** GitHub → profile *Settings → Pages → Add a domain* → `valvia-echo.se`;
+   GitHub shows a TXT record `_github-pages-challenge-tudorgrigoriu90` with a value.
+2. **DNS at Loopia** (*Customer zone → Domain names → valvia-echo.se → DNS editor*): remove Loopia's parking records
+   (A/AAAA on `@`, the `*` wildcard; keep MX if the domain has e-mail), then add:
+
+   | Name | Type | Value |
+   |---|---|---|
+   | `@` | A | `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` |
+   | `@` | AAAA | `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153` |
+   | `www` | CNAME | `tudorgrigoriu90.github.io.` |
+   | `_github-pages-challenge-tudorgrigoriu90` | TXT | value from step 1 |
+
+   Then click *Verify* on the GitHub page from step 1. (Records checked live on 2026-11-09.)
+3. **Repository Pages settings** (*Settings → Pages*): *Custom domain* `valvia-echo.se` → Save; when the DNS check is green,
+   tick *Enforce HTTPS* (the certificate can take up to about 24 h). No `CNAME` file is needed with the Actions deploy.
+4. **Repository variables** (*Settings → Secrets and variables → Actions → Variables*): `VALVIA_SITE=https://valvia-echo.se`
+   and `VALVIA_BASE=/`, then re-run the latest CI run on `main` (or push) so the site is rebuilt for the root path.
+   Without this step the build still targets `/valvia/` and links break on the new domain.
+5. **Check:** `https://valvia-echo.se/` loads with working links; `www.` and the old
+   `tudorgrigoriu90.github.io/valvia/` redirect to it; the footer shows the latest content version.
+
+```mermaid
+flowchart LR
+    user(["Browser"]) -->|valvia-echo.se| dns["Loopia DNS<br/>A/AAAA → GitHub Pages"]
+    dns --> pages["GitHub Pages<br/>custom domain + HTTPS"]
+    ci["CI build<br/>VALVIA_SITE, VALVIA_BASE=/"] -->|deploy-pages| pages
+```
 
 **One-time engineer setup (TS-08.1, `manual`, Pages enabled 2026-11-02):** *Settings → Pages → Build and deployment → Source* must be **GitHub Actions**, with *Enforce HTTPS* on.
 If the deploy job fails with a Pages configuration error, check this setting first.

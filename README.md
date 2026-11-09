@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-28: PO-5, content: TEE screening before structural heart interventions (AS |
-| Next task | CH-29: custom domain checklist (valvia-echo.se) |
+| Last completed task | CH-29: TS-08.2 checklist: custom domain valvia-echo.se (Loopia DNS → GitHub P |
+| Next task | CH-30: strengthen a weak discrepancy test |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
