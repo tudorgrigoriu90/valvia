@@ -54,13 +54,14 @@ describe('leafView (TS-04.7.2)', () => {
       { label: 'E/e′', text: '> 13', source: 'old (2016)', status: 'superseded', supersededBy: 'ASE 2025 (2025)' },
     ]);
     expect(section?.noCurrentValue).toBe(false);
-    expect(section?.ageGroups).toEqual(['adult']);
+    expect(section?.categories).toEqual(['adult']);
   });
 
-  it('lists the age groups present among current values (for the adult/paediatric switch)', () => {
+  it('lists the categories present among current values, in switch order (PO-5)', () => {
     const child = { ...value('new', '10'), population: { ageGroup: 'paediatric' } } as LoadedValue;
-    const [section] = leafView(topic([list('a', [value('new', '14'), child])]), bundle);
-    expect(section?.ageGroups).toEqual(['adult', 'paediatric']);
+    const stress = { ...value('new', '11'), technique: 'stress' } as LoadedValue;
+    const [section] = leafView(topic([list('a', [stress, value('new', '14'), child])]), bundle);
+    expect(section?.categories).toEqual(['adult', 'paediatric', 'stress']);
   });
 
   it('flags blocks whose values are all superseded (show "no current society-endorsed value")', () => {
@@ -71,7 +72,7 @@ describe('leafView (TS-04.7.2)', () => {
   it('keeps blocks without values as they are', () => {
     const note = { id: 'n', type: 'note', tag: 'METH', text: 'x' } as LoadedBlock;
     expect(leafView(topic([note]), bundle)).toEqual([
-      { block: note, history: [], noCurrentValue: false, ageGroups: [], differs: [], comparisons: [] },
+      { block: note, history: [], noCurrentValue: false, categories: [], differs: [], comparisons: [] },
     ]);
     const bare = topic([]);
     delete bare.blocks;

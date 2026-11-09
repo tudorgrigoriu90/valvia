@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-19: PO-5, schema: value-level technique (TTE default, TEE, stress; TEE and |
-| Next task | CH-20: category switch Adults · Children · TEE · Stress echo |
+| Last completed task | CH-20: PO-5, category switch: header switch Adults · Children · TEE · Stress  |
+| Next task | CH-21: TEE branch in the taxonomy; tag existing stress values |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

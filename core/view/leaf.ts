@@ -4,6 +4,7 @@ import { detectDiscrepancies, valueKey } from '../discrepancy/discrepancy';
 import { loadedValuesOf } from '../content/walk';
 import { previousRecommendations, withoutHistory } from '../history/history';
 import { formatValue } from '../values/format';
+import { sortCategories, valueCategory, type Category } from '../population/category';
 
 export interface HistoryItem {
   label: string;
@@ -19,8 +20,8 @@ export interface LeafSection {
   history: HistoryItem[];
   /** True when the block had values but none from a current source remain. */
   noCurrentValue: boolean;
-  /** Age groups among the current values (empty for blocks without values), sorted. */
-  ageGroups: ('adult' | 'paediatric')[];
+  /** Categories (PO-5) among the current values (empty for blocks without values), in switch order. */
+  categories: Category[];
   /** Per current value (in block order): true when another current source differs (TS-04.3.4). */
   differs: boolean[];
   /** Side-by-side comparisons for the discrepancies in this block. */
@@ -66,7 +67,7 @@ export function leafView(topic: LoadedTopic, bundle: ContentBundle): LeafSection
     const hadValues = loadedValuesOf(original, 0).length > 0;
     const current = loadedValuesOf(block, 0);
     const noCurrentValue = hadValues && current.length === 0;
-    const ageGroups = [...new Set(current.map(({ value }) => value.population.ageGroup))].sort();
+    const categories = sortCategories(current.map(({ value }) => valueCategory(value)));
     const currentSet = new Set(current.map(({ value }) => value));
     const originalCurrent = loadedValuesOf(original, blockIndex).filter(({ value }) => currentSet.has(value));
     const differs = originalCurrent.map(({ path }) => differingKeys.has(valueKey(topic.id, path)));
@@ -79,6 +80,6 @@ export function leafView(topic: LoadedTopic, bundle: ContentBundle): LeafSection
           entries: d.entries.map((e) => ({ source: sourceLabel(e.source), display: e.display })),
         };
       });
-    return { block, history, noCurrentValue, ageGroups, differs, comparisons };
+    return { block, history, noCurrentValue, categories, differs, comparisons };
   });
 }

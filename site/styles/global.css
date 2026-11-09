@@ -784,18 +784,20 @@ main {
 }
 
 .site-header .container {
+  flex-wrap: wrap;
   justify-content: space-between;
-  gap: var(--space-3);
+  gap: var(--space-1) var(--space-3);
+  padding-block: var(--space-1);
 }
 
-.population-switch {
+.category-switch {
   display: inline-flex;
   border: 1px solid var(--color-border);
   border-radius: 999px;
   overflow: hidden;
 }
 
-.population-switch button {
+.category-switch button {
   min-height: 36px;
   min-width: 44px;
   padding: 0 var(--space-3);
@@ -808,22 +810,27 @@ main {
   cursor: pointer;
 }
 
-.population-switch button[aria-pressed='true'] {
+.category-switch button[aria-pressed='true'] {
   color: var(--color-accent-contrast);
   background: var(--color-accent);
 }
 
-/* Adult is the default; paediatric content is hidden unless the switch says otherwise (TS-04.7.1). */
-html:not([data-population='paediatric']) [data-age-group='paediatric'],
-html:not([data-population='paediatric']) [data-age-groups='paediatric'],
-html:not([data-population='paediatric']) li[data-population='paediatric'],
-html[data-population='paediatric'] [data-age-group='adult'],
-html[data-population='paediatric'] [data-age-groups='adult'],
-html[data-population='paediatric'] li[data-population='adult'] {
+/*
+ * Categories (decision PO-5): <html data-category> is 'adult' by default and set from the header switch. Content
+ * tagged with other categories is hidden; untagged content (notes, navigation) always shows.
+ */
+html[data-category='adult'] [data-categories]:not([data-categories~='adult']),
+html[data-category='adult'] [data-value-category]:not([data-value-category='adult']),
+html[data-category='paediatric'] [data-categories]:not([data-categories~='paediatric']),
+html[data-category='paediatric'] [data-value-category]:not([data-value-category='paediatric']),
+html[data-category='TEE'] [data-categories]:not([data-categories~='TEE']),
+html[data-category='TEE'] [data-value-category]:not([data-value-category='TEE']),
+html[data-category='stress'] [data-categories]:not([data-categories~='stress']),
+html[data-category='stress'] [data-value-category]:not([data-value-category='stress']) {
   display: none;
 }
 
-.population-notice {
+.category-notice {
   display: none;
   margin: 0 0 var(--space-4);
   padding: var(--space-3) var(--space-4);
@@ -832,9 +839,22 @@ html[data-population='paediatric'] li[data-population='adult'] {
   color: var(--color-text-muted);
 }
 
-html[data-population='paediatric'] [data-population-notice='paediatric'],
-html:not([data-population='paediatric']) [data-population-notice='adult'] {
+html[data-category='adult'] [data-category-notice='adult'],
+html[data-category='paediatric'] [data-category-notice='paediatric'],
+html[data-category='TEE'] [data-category-notice='TEE'],
+html[data-category='stress'] [data-category-notice='stress'] {
   display: block;
+}
+
+[data-count-for] {
+  display: none;
+}
+
+html[data-category='adult'] [data-count-for='adult'],
+html[data-category='paediatric'] [data-count-for='paediatric'],
+html[data-category='TEE'] [data-count-for='TEE'],
+html[data-category='stress'] [data-count-for='stress'] {
+  display: inline;
 }
 
 .society-filter {

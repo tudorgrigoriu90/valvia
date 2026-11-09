@@ -143,7 +143,7 @@ Rules:
 | Layer | Tool | Scope |
 |---|---|---|
 | Unit / integration | Vitest 5 + `@vitest/coverage-v8`, tests next to code (`*.test.ts`) | Schema, content loading, unit conversion, discrepancy and history logic, pipeline scripts, components |
-| E2E | Playwright 1.63 in `tests/e2e/`, projects `mobile-360` and `desktop`, against the production build | Browse, search, compare, history, adult/paediatric switch, prosthetic picker, offline |
+| E2E | Playwright 1.63 in `tests/e2e/`, projects `mobile-360` and `desktop`, against the production build | Browse, search, compare, history, category switch (Adults · Children · TEE · Stress echo), prosthetic picker, offline |
 | Accessibility | axe (in Playwright) | WCAG 2.2 AA |
 | Performance | Lighthouse CI | NFR-02 budgets, blocking |
 | Content | JSON Schema validation + plausibility checks | Every file under `/content` |
@@ -257,6 +257,9 @@ Applies to every content PR and every piece of code that handles content.
   No manufacturer charts, no other societies. CI rejects anything else.
 - **Citation:** every value cites a source ID plus a locator (table / figure / section / page).
   No orphan numbers.
+- **Categories (decision PO-5):** the site has four main categories, Adults, Children, TEE and Stress echo. Transthoracic
+  values belong to their age group; values with `technique: TEE` or `technique: stress` form their own category
+  (`core/population/category.ts`, 100 % coverage).
 - **Population:** every value has an `ageGroup` (adult / paediatric) and any applicable qualifiers
   (sex, age band, BSA band, rhythm). The schema rejects values without population.
 - **Modality:** every value has `modality` (Echo / CT / CMR); CT and CMR values are badged.

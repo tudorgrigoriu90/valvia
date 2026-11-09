@@ -4,6 +4,7 @@ import { withBase } from '../../core/site/base-path';
 import Logo from '../components/Logo.astro';
 import ReviewBanner from '../components/ReviewBanner.astro';
 import { contentVersion } from '../../core/site/version';
+import { CATEGORIES } from '../../core/population/category';
 import { analyticsConfig, contentSecurityPolicy } from '../../core/site/analytics';
 
 interface Props {
@@ -22,7 +23,7 @@ const pageTitle = title === 'Valvia' ? title : `${title} · Valvia`;
 ---
 
 <!doctype html>
-<html lang="en" data-base={base}>
+<html lang="en" data-base={base} data-category="adult">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -49,13 +50,12 @@ const pageTitle = title === 'Valvia' ? title : `${title} · Valvia`;
           <Logo />
           <span>Valvia</span>
         </a>
-        <div class="population-switch" role="group" aria-label="Population">
-          <button type="button" data-population-choice="adult" aria-pressed="true">
-            Adults
-          </button>
-          <button type="button" data-population-choice="paediatric" aria-pressed="false">
-            Children
-          </button>
+        <div class="category-switch" role="group" aria-label="Category">
+          {CATEGORIES.map(({ id, label }) => (
+            <button type="button" data-category-choice={id} aria-pressed={id === 'adult' ? 'true' : 'false'}>
+              {label}
+            </button>
+          ))}
         </div>
       </div>
     </header>
@@ -93,7 +93,7 @@ const pageTitle = title === 'Valvia' ? title : `${title} · Valvia`;
     <script>
       import '../scripts/register-sw';
       import '../scripts/offline-indicator';
-      import '../scripts/population-switch';
+      import '../scripts/category-switch';
     </script>
   </body>
 </html>

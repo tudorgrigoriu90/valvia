@@ -73,6 +73,32 @@ describe('buildNavigation (TS-04.2.2)', () => {
     expect(nav.visibleNodes().map((t) => t.id)).toEqual(['vhd', 'mitral', 'mr', 'mr-grading']);
   });
 
+  it("derives each node's categories from the values below it, else from the topic population (PO-5)", () => {
+    const list = (id: string, values: Record<string, unknown>[]): NonNullable<LoadedTopic['blocks']> =>
+      [{ id, type: 'threshold-list', tag: 'CRIT', values }] as unknown as NonNullable<LoadedTopic['blocks']>;
+    const tte = { population: { ageGroup: 'adult' } };
+    const tee = { population: { ageGroup: 'adult' }, technique: 'TEE' };
+    const child = { population: { ageGroup: 'paediatric' }, technique: 'TTE' };
+    const tree = buildNavigation(
+      new Map(
+        [
+          node('root', null, 0),
+          node('a', 'root', 0, { blocks: list('x', [tte, tee]) }),
+          node('b', 'root', 1, { blocks: list('y', [child]) }),
+          node('notes', 'root', 2, { population: 'both', blocks: NOTE }),
+          node('other', null, 1, { population: 'paediatric' }),
+        ].map((t) => [t.id, t]),
+      ),
+    );
+    expect(tree.categories('a')).toEqual(['adult', 'TEE']);
+    expect(tree.categories('notes')).toEqual(['adult', 'paediatric']);
+    expect(tree.categories('root')).toEqual(['adult', 'paediatric', 'TEE']);
+    expect(tree.categories('other')).toEqual(['paediatric']);
+    expect(tree.leafCountIn('root', 'TEE')).toBe(1);
+    expect(tree.leafCountIn('root', 'paediatric')).toBe(2);
+    expect(tree.leafCountIn('root', 'stress')).toBe(0);
+  });
+
   it('throws for unknown ids where a page needs the node', () => {
     expect(() => nav.urlPath('missing')).toThrow("unknown topic 'missing'");
   });

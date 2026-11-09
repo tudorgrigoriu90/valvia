@@ -140,7 +140,7 @@ One file per node: `content/topics/<id>.yaml`. The tree is built from `parent` l
 | `parent` | yes | `id` or `null` | Parent node; `null` for a root category |
 | `order` | yes | integer ≥ 0 | Position among siblings |
 | `synonyms` | no | `text[]` | Alternative names/abbreviations indexed by search |
-| `population` | yes | `population` | Adult, paediatric or both (drives the adult/paediatric switch) |
+| `population` | yes | `population` | Adult, paediatric or both; decides the category (PO-5) of a topic that holds no values. Topics with values take their categories from the values (`technique`, else `ageGroup`) |
 | `wave` | yes | `wave` | Delivery wave (sequencing only) |
 | `status` | yes | `draft` · `in-review` · `published` | Editorial status; shown on the page (draft = "not yet clinically reviewed") |
 | `lastReviewed` | no | date `YYYY-MM-DD` | Date of the last SME review, shown on published pages |

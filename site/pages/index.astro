@@ -1,5 +1,6 @@
 ---
 import { withBase } from '../../core/site/base-path';
+import { CATEGORIES } from '../../core/population/category';
 import Search from '../components/Search.astro';
 import Base from '../layouts/Base.astro';
 import { getContent } from '../lib/content';
@@ -8,6 +9,7 @@ const { navigation } = getContent();
 const base = import.meta.env.BASE_URL;
 const visible = navigation.visibleRoots();
 const upcoming = navigation.roots().filter((root) => !navigation.isVisible(root.id));
+const missing = CATEGORIES.filter(({ id }) => !visible.some((root) => navigation.categories(root.id).includes(id)));
 ---
 
 <Base title="Valvia">
@@ -25,19 +27,30 @@ const upcoming = navigation.roots().filter((root) => !navigation.isVisible(root.
     </h2>
     <ul class="category-grid">
       {visible.map((root) => {
-        const count = navigation.visibleLeafCount(root.id);
         return (
-          <li data-population={root.population}>
+          <li data-categories={navigation.categories(root.id).join(' ')}>
             <a class="category-card" href={withBase(base, navigation.urlPath(root.id))}>
               <span class="category-card__title">{root.title}</span>
-              <span class="category-card__meta">
-                {count} {count === 1 ? 'topic' : 'topics'}
-              </span>
+              {CATEGORIES.map(({ id }) => {
+                const inCategory = navigation.leafCountIn(root.id, id);
+                return (
+                  inCategory > 0 && (
+                    <span class="category-card__meta" data-count-for={id}>
+                      {inCategory} {inCategory === 1 ? 'topic' : 'topics'}
+                    </span>
+                  )
+                );
+              })}
             </a>
           </li>
         );
       })}
     </ul>
+    {missing.map(({ id, label }) => (
+      <p class="category-notice" data-category-notice={id}>
+        No {label} values yet; this category is in preparation.
+      </p>
+    ))}
   </section>
 
   {upcoming.length > 0 && (

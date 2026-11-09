@@ -3,6 +3,8 @@
  * hidden), URL paths built from slugs, breadcrumbs. Framework-free; used by the Astro pages.
  */
 import type { LoadedTopic } from '../content/types';
+import { topicValues } from '../content/walk';
+import { categoriesOfPopulation, sortCategories, valueCategory, type Category } from '../population/category';
 
 export interface Navigation {
   roots: () => LoadedTopic[];
@@ -13,6 +15,10 @@ export interface Navigation {
   isVisible: (id: string) => boolean;
   hasContent: (id: string) => boolean;
   visibleLeafCount: (id: string) => number;
+  /** Categories (PO-5) of the values in this node and below; a leaf without values uses its population. */
+  categories: (id: string) => Category[];
+  /** Content leaves in this node and below that hold the category. */
+  leafCountIn: (id: string, category: Category) => number;
   ancestors: (id: string) => LoadedTopic[];
   /** Site-relative path without leading slash, e.g. `valvular-heart-disease/mitral-valve-disease/`. */
   urlPath: (id: string) => string;
@@ -43,6 +49,24 @@ export function buildNavigation(topics: ReadonlyMap<string, LoadedTopic>): Navig
     return total;
   };
   const isVisible = (id: string): boolean => topics.has(id) && leafCount(id) > 0;
+
+  const leafCategories = (topic: LoadedTopic): Category[] => {
+    const values = topicValues(topic);
+    return values.length > 0
+      ? sortCategories(values.map(({ value }) => valueCategory(value)))
+      : categoriesOfPopulation(topic.population);
+  };
+  const ownLeaves = (id: string): LoadedTopic[] => [
+    ...(hasContent(id) ? [get(id)] : []),
+    ...children(id).flatMap((child) => ownLeaves(child.id)),
+  ];
+  const categories = (id: string): Category[] => {
+    const leaves = ownLeaves(id);
+    if (leaves.length === 0) return categoriesOfPopulation(get(id).population);
+    return sortCategories(leaves.flatMap(leafCategories));
+  };
+  const leafCountIn = (id: string, category: Category): number =>
+    ownLeaves(id).filter((leaf) => leafCategories(leaf).includes(category)).length;
 
   const ancestors = (id: string): LoadedTopic[] => {
     const chain: LoadedTopic[] = [];
@@ -77,6 +101,8 @@ export function buildNavigation(topics: ReadonlyMap<string, LoadedTopic>): Navig
     isVisible,
     hasContent,
     visibleLeafCount: leafCount,
+    categories,
+    leafCountIn,
     ancestors,
     urlPath: (id) => [...ancestors(id), get(id)].map((t) => `${t.slug}/`).join(''),
   };

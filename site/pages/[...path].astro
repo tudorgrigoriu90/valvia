@@ -17,6 +17,7 @@ import { searchTerms } from '../../core/navigation/search-terms';
 import { reviewStatus } from '../../core/site/version';
 import { differingValues, leafView } from '../../core/view/leaf';
 import { getContent } from '../lib/content';
+import { CATEGORIES, sortCategories } from '../../core/population/category';
 
 export function getStaticPaths() {
   const { navigation } = getContent();
@@ -41,7 +42,10 @@ const children = navigation.visibleChildren(topic.id);
 const blocks = topic.blocks ?? [];
 const review = reviewStatus(topic);
 const sections = leafView(topic, bundle);
-const pageAgeGroups = new Set(sections.flatMap((s) => s.ageGroups));
+const pageCategories = sortCategories(sections.flatMap((s) => s.categories));
+const presentLabels = CATEGORIES.filter(({ id }) => pageCategories.includes(id)).map(({ label }) => label);
+const missingCategories =
+  pageCategories.length === 0 ? [] : CATEGORIES.filter(({ id }) => !pageCategories.includes(id));
 ---
 
 <Base title={topic.title}>
@@ -62,20 +66,15 @@ const pageAgeGroups = new Set(sections.flatMap((s) => s.ageGroups));
       </p>
     )}
     {children.length > 0 && <TopicList topics={children} />}
-    {pageAgeGroups.size > 0 && !pageAgeGroups.has('paediatric') && (
-      <p class="population-notice" data-population-notice="paediatric">
-        No paediatric values on this page yet. Switch to Adults to see the adult values.
+    {missingCategories.map(({ id, label }) => (
+      <p class="category-notice" data-category-notice={id}>
+        No {label} values on this page yet. Values here are for: {presentLabels.join(', ')}.
       </p>
-    )}
-    {pageAgeGroups.size > 0 && !pageAgeGroups.has('adult') && (
-      <p class="population-notice" data-population-notice="adult">
-        This page holds paediatric values. Switch to Children to see them.
-      </p>
-    )}
+    ))}
     {blocks.length > 0 && <SocietyFilter />}
     <JumpMenu blocks={blocks} />
     {sections.map((section) => {
-      const { block, history, noCurrentValue, ageGroups, comparisons } = section;
+      const { block, history, noCurrentValue, categories, comparisons } = section;
       const differing = differingValues(section);
       const heading = blockHeading(block);
       return (
@@ -83,7 +82,7 @@ const pageAgeGroups = new Set(sections.flatMap((s) => s.ageGroups));
           class="block"
           id={block.id}
           aria-labelledby={`${block.id}-heading`}
-          data-age-groups={ageGroups.length > 0 ? ageGroups.join(' ') : undefined}
+          data-categories={categories.length > 0 ? categories.join(' ') : undefined}
         >
           <h2 id={`${block.id}-heading`}>{heading}</h2>
           <SourceChips block={block} />

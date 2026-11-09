@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-19 PO-5, schema: value-level technique (TTE default, TEE, stress; TEE and |
-| Next up | CH-20: category switch Adults · Children · TEE · Stress echo |
+| Last completed | CH-20 PO-5, category switch: header switch Adults · Children · TEE · Stress  |
+| Next up | CH-21: TEE branch in the taxonomy; tag existing stress values |
 
 ## Next up: R0 sequence
 
@@ -160,7 +160,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-04.5.1 | Stable deep links to topics and parameter anchors | 1 | todo |  |
 | TS-04.5.2 | "Last reviewed" date and content version on every page | 1 | done |  |
 | TS-04.6.1 | Last 10 viewed topics on home screen (localStorage) | 2 | todo |  |
-| TS-04.7.1 | Adult / paediatric switch (global, persisted) | 2 | done |  |
+| TS-04.7.1 | Adult / paediatric switch (global, persisted) | 2 | done | Replaced by the four-category switch (PO-5, CH-20) |
 | TS-04.7.2 | "Previous recommendations" history view (source, year, superseded by) | 2 | done | E2E pending superseded content |
 | TS-04.7.3 | Modality badges (Echo / CT / CMR) | 1 | done |  |
 | TS-04.7.4 | Prosthetic valve picker (lookup only) | 3 | todo |  |
@@ -281,7 +281,7 @@ Order: one push each, top to bottom (TS-07.5.1 was finished locally first and sh
 | CH-17 | Plan update: record PO-4 to PO-6 and plan the tasks below | 0 | done |  |
 | CH-18 | PO-4, units as published: show every value in the unit the guideline prints (no conversion to house units, no "original on tap"); the unit layer is kept only to compare values across sources for discrepancy detection; update `CLAUDE.md` §12, `docs/units.md`, content guide, about page, E2E | 2 | done | Supersedes NFR-15 house units and TS-02.2.7 display conversion |
 | CH-19 | PO-5, schema: value-level `technique` (`TTE` default, `TEE`, `stress`; TEE and stress only with modality Echo); generated types; validation fixtures; content-model docs | 2 | done |  |
-| CH-20 | PO-5, category switch: header switch Adults · Children · TEE · Stress echo (replaces Adults/Children); values, sections, topic lists and notices follow the chosen category (TTE values by age group, TEE and stress values by technique); stored on the device; E2E at 360 px and desktop, axe | 3 | todo | Replaces the TS-04.7.1 switch |
+| CH-20 | PO-5, category switch: header switch Adults · Children · TEE · Stress echo (replaces Adults/Children); values, sections, topic lists and notices follow the chosen category (TTE values by age group, TEE and stress values by technique); stored on the device; E2E at 360 px and desktop, axe | 3 | done | Replaces the TS-04.7.1 switch |
 | CH-21 | PO-5, taxonomy: add a top-level "Transoesophageal echocardiography (TEE)" branch; tag existing stress values (low-flow AS dobutamine stress, diastolic stress test) with `technique: stress` | 1 | todo | Taxonomy change asked by the PO |
 | CH-22 | PO-6, content: abnormality grades (normal, mildly, moderately, severely abnormal) for chamber quantification where ASE/EACVI 2015 publishes them (LV size and volumes, LV mass, RV, LA/RA) | 2 | todo | LA volume and LVEF already graded |
 | CH-23 | PO-6, content: audit the other seeded leaves (right heart 2025, diastolic, strain, HCM, pericardial, prosthetic) for published mild/moderate/severe abnormality grades and add them | 2 | todo | Only where the source prints them; never derived |
@@ -389,3 +389,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-09 | TS-07.5.1 | Opt-in cookieless analytics (GoatCounter or Cloudflare via repository variable; validated, CSP admits only its origins; CSP moved to core/site/analytics.ts) and privacy page linked from every footer; E2E for link, no third-party script/cookies by default, axe | `TS-07.5.1: opt-in cookieless analytics and privacy notice` |
 | 2026-11-09 | CH-18 | Values shown with the number and unit printed in the guideline (PO-4): no display conversion or original popover; parameters published in two units get one row per unit; core/units converts only for comparisons (discrepancies, plausibility); docs, schema descriptions, about page, E2E | `CH-18: show values in the units printed in the guidelines` |
 | 2026-11-09 | CH-19 | Optional value field technique (TTE default, TEE, stress; TEE/stress only with modality Echo) in schema and generated types; discrepancies never compare across techniques; content-model docs | `CH-19: value-level technique (TTE, TEE, stress)` |
+| 2026-11-09 | CH-20 | Header switch Adults · Children · TEE · Stress echo (PO-5) replaces Adults/Children: values, sections, topic lists and category cards (with per-category counts) follow the chosen category; per-category notices on leaf and home pages; choice stored on the device (old paediatric choice honoured); core/population/category.ts at 100 %; E2E incl. 360 px and axe | `CH-20: category switch Adults, Children, TEE, Stress echo` |

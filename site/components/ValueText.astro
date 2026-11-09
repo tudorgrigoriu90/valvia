@@ -1,5 +1,6 @@
 ---
 import { modalityBadge } from '../../core/values/modality-badge';
+import { valueCategory } from '../../core/population/category';
 import { societiesOf } from '../../core/values/society';
 import { getContent } from '../lib/content';
 import type { TableValue } from '../../core/values/table';
@@ -16,7 +17,7 @@ const source = getContent().bundle.sources.get(entry.value.citation.source);
 const societies = societiesOf(source?.issuers ?? []).join(' ');
 ---
 
-<span class="value" data-age-group={entry.value.population.ageGroup} data-societies={societies}>
+<span class="value" data-value-category={valueCategory(entry.value)} data-societies={societies}>
   {text}
   {differs && (
     <span class="differs-marker" title="Differs between sources">
