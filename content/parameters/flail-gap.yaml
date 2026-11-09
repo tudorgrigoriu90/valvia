@@ -1,0 +1,6 @@
+id: flail-gap
+name: Mitral flail gap
+quantity: length
+unit: mm
+modalities: [Echo]
+synonyms: [flail leaflet, primary MR, TEER]

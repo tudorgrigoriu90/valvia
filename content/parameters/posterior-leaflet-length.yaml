@@ -1,0 +1,6 @@
+id: posterior-leaflet-length
+name: Posterior mitral leaflet length
+quantity: length
+unit: mm
+modalities: [Echo]
+synonyms: [leaflet length, grasping, TEER]

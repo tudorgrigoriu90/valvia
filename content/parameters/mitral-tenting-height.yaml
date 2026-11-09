@@ -1,0 +1,6 @@
+id: mitral-tenting-height
+name: Mitral tenting height
+quantity: length
+unit: mm
+modalities: [Echo]
+synonyms: [coaptation depth, tenting, secondary MR, TEER]

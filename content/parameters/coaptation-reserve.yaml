@@ -1,0 +1,6 @@
+id: coaptation-reserve
+name: Mitral coaptation reserve (length)
+quantity: length
+unit: mm
+modalities: [Echo]
+synonyms: [coaptation length, secondary MR, TEER]

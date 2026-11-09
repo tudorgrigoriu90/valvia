@@ -8,3 +8,482 @@ population: adult
 wave: W2
 status: draft
 seeAlso: [after-mitral-teer]
+blocks:
+  - id: anatomic-suitability
+    type: grading-table
+    tag: GRADE
+    title: 'Anatomic suitability for M-TEER: valve area, gradient, leaflet length'
+    grades: ['Optimal', 'Complex', 'Very complex', 'Likely prohibitive']
+    values:
+      - parameter: mitral-valve-area
+        context: feasibility
+        grade: Optimal
+        operator: '>'
+        value: 4
+        unit: cm²
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2026-m-teer-imaging
+          locator:
+            figure: '2'
+            page: '533'
+      - parameter: mitral-valve-area
+        context: feasibility
+        grade: Complex
+        operator: range
+        min: 3.5
+        max: 4
+        unit: cm²
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2026-m-teer-imaging
+          locator:
+            figure: '2'
+            page: '533'
+      - parameter: mitral-valve-area
+        context: feasibility
+        grade: Very complex
+        operator: range
+        min: 3
+        max: 3.5
+        unit: cm²
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2026-m-teer-imaging
+          locator:
+            figure: '2'
+            page: '533'
+      - parameter: mitral-valve-area
+        context: feasibility
+        grade: Likely prohibitive
+        operator: '<'
+        value: 3
+        unit: cm²
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2026-m-teer-imaging
+          locator:
+            figure: '2'
+            page: '533'
+      - parameter: mitral-mean-gradient
+        context: feasibility
+        grade: Likely prohibitive
+        operator: '>'
+        value: 5
+        unit: mmHg
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2026-m-teer-imaging
+          locator:
+            figure: '2'
+            page: '533'
+      - parameter: posterior-leaflet-length
+        context: feasibility
+        grade: Optimal
+        operator: '>'
+        value: 10
+        unit: mm
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2026-m-teer-imaging
+          locator:
+            figure: '2'
+            page: '533'
+      - parameter: posterior-leaflet-length
+        context: feasibility
+        grade: Complex
+        operator: range
+        min: 8
+        max: 10
+        unit: mm
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        caveats:
+          - Minimum leaflet length requirements are device specific.
+        citation:
+          source: ase-2026-m-teer-imaging
+          locator:
+            figure: '2'
+            page: '533'
+      - parameter: posterior-leaflet-length
+        context: feasibility
+        grade: Very complex
+        operator: range
+        min: 6
+        max: 8
+        unit: mm
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        caveats:
+          - Minimum leaflet length requirements are device specific.
+        citation:
+          source: ase-2026-m-teer-imaging
+          locator:
+            figure: '2'
+            page: '533'
+      - parameter: posterior-leaflet-length
+        context: feasibility
+        grade: Likely prohibitive
+        operator: '<'
+        value: 6
+        unit: mm
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        caveats:
+          - Minimum leaflet length requirements are device specific.
+        citation:
+          source: ase-2026-m-teer-imaging
+          locator:
+            figure: '2'
+            page: '533'
+  - id: anatomic-features
+    type: criteria-checklist
+    tag: FEAS
+    title: 'Anatomic suitability for M-TEER: other features'
+    criteria:
+      - text: 'Optimal: pathology in A2/P2; no calcification; chord-free grasping zone; normal leaflet mobility and thickness.'
+        category: favourable
+        citation:
+          source: ase-2026-m-teer-imaging
+          locator:
+            figure: '2'
+            page: '533'
+      - text: 'Complex: pathology in A1/P1 or A3/P3; annular calcification without leaflet involvement; minimal chords in the grasping zone; excessive or normal leaflet mobility and thickness.'
+        category: challenging
+        citation:
+          source: ase-2026-m-teer-imaging
+          locator:
+            figure: '2'
+            page: '533'
+      - text: "Very complex: pathology involving multiple scallops; leaflet calcification outside the grasping zone; annuloplasty ring, previous single-leaflet device attachment or HCM; excessive or slightly restrictive mobility, Barlow's disease or increased leaflet thickness."
+        category: challenging
+        citation:
+          source: ase-2026-m-teer-imaging
+          locator:
+            figure: '2'
+            page: '533'
+      - text: 'Likely prohibitive (consider transcatheter replacement or alternatives): cleft or perforation; endocarditis; severe leaflet calcification in the grasping zone; severely calcified subvalvular apparatus including chords; rheumatic thickening and leaflet restriction.'
+        category: unsuitable
+        citation:
+          source: ase-2026-m-teer-imaging
+          locator:
+            figure: '2'
+            page: '533'
+  - id: morphology-by-mechanism
+    type: grading-table
+    tag: GRADE
+    title: 'Morphology associated with procedural success, by MR mechanism'
+    grades: ['Optimal', 'Complex']
+    values:
+      - parameter: flail-width
+        context: feasibility
+        grade: Optimal
+        operator: '<'
+        value: 15
+        unit: mm
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        caveats:
+          - Primary MR.
+        citation:
+          source: ase-2026-m-teer-imaging
+          locator:
+            figure: '3'
+            page: '533'
+      - parameter: flail-width
+        context: feasibility
+        grade: Complex
+        operator: '>'
+        value: 15
+        unit: mm
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        caveats:
+          - Primary MR.
+        citation:
+          source: ase-2026-m-teer-imaging
+          locator:
+            figure: '3'
+            page: '533'
+      - parameter: flail-gap
+        context: feasibility
+        grade: Optimal
+        operator: '<'
+        value: 10
+        unit: mm
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        caveats:
+          - Primary MR.
+        citation:
+          source: ase-2026-m-teer-imaging
+          locator:
+            figure: '3'
+            page: '533'
+      - parameter: flail-gap
+        context: feasibility
+        grade: Complex
+        operator: '>'
+        value: 10
+        unit: mm
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        caveats:
+          - Primary MR.
+        citation:
+          source: ase-2026-m-teer-imaging
+          locator:
+            figure: '3'
+            page: '533'
+      - parameter: coaptation-reserve
+        context: feasibility
+        grade: Optimal
+        operator: '>'
+        value: 3
+        unit: mm
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        caveats:
+          - Ventricular secondary MR.
+        citation:
+          source: ase-2026-m-teer-imaging
+          locator:
+            figure: '3'
+            page: '533'
+      - parameter: coaptation-reserve
+        context: feasibility
+        grade: Complex
+        operator: '<'
+        value: 3
+        unit: mm
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        caveats:
+          - Ventricular secondary MR.
+        citation:
+          source: ase-2026-m-teer-imaging
+          locator:
+            figure: '3'
+            page: '533'
+      - parameter: mitral-tenting-height
+        context: feasibility
+        grade: Optimal
+        operator: '<'
+        value: 11
+        unit: mm
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        caveats:
+          - Ventricular secondary MR.
+        citation:
+          source: ase-2026-m-teer-imaging
+          locator:
+            figure: '3'
+            page: '533'
+      - parameter: mitral-tenting-height
+        context: feasibility
+        grade: Complex
+        operator: '>='
+        value: 11
+        unit: mm
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        caveats:
+          - Ventricular secondary MR.
+        citation:
+          source: ase-2026-m-teer-imaging
+          locator:
+            figure: '3'
+            page: '533'
+      - parameter: la-volume-index
+        context: feasibility
+        grade: Optimal
+        operator: '<'
+        value: 85
+        unit: mL/m²
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        caveats:
+          - Atrial secondary MR.
+        citation:
+          source: ase-2026-m-teer-imaging
+          locator:
+            figure: '3'
+            page: '533'
+      - parameter: la-volume-index
+        context: feasibility
+        grade: Complex
+        operator: '>'
+        value: 85
+        unit: mL/m²
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        caveats:
+          - Atrial secondary MR.
+        citation:
+          source: ase-2026-m-teer-imaging
+          locator:
+            figure: '3'
+            page: '533'
+  - id: before-deployment
+    type: threshold-list
+    tag: CRIT
+    title: Before device deployment
+    values:
+      - parameter: mitral-mean-gradient
+        context: diagnostic-criterion
+        operator: '<'
+        value: 5
+        unit: mmHg
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Desirable baseline transmitral gradient (heart rate 60–80 beats/min), to minimise the risk of mitral stenosis.'
+        citation:
+          source: ase-2026-m-teer-imaging
+          locator:
+            page: '532'
+      - parameter: mitral-valve-area
+        context: diagnostic-criterion
+        operator: '>='
+        value: 4.0
+        unit: cm²
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Desirable baseline MVA, ideally by 3D multiplanar planimetry at the leaflet tips.'
+        citation:
+          source: ase-2026-m-teer-imaging
+          locator:
+            page: '532'
+      - parameter: mitral-valve-area
+        context: diagnostic-criterion
+        operator: '<'
+        value: 3.5
+        unit: cm²
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Often a contraindication to TEER; 3.5–4.0 cm² may be feasible depending on body size, the number and location of devices and operator experience.'
+        citation:
+          source: ase-2026-m-teer-imaging
+          locator:
+            page: '532'
+      - parameter: mitral-mean-gradient
+        context: diagnostic-criterion
+        operator: '>'
+        value: 5.0
+        unit: mmHg
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Contraindication to screen for, unless believed to be secondary to MR.'
+        citation:
+          source: ase-2026-m-teer-imaging
+          locator:
+            page: '534'
+  - id: leaflet-length-by-device
+    type: note
+    tag: METH
+    title: Leaflet length by device
+    text: 'The anterior and posterior leaflet lengths should measure at least 6.0 mm for a MitraClip NT/NTW device, 9 mm for a MitraClip XT/XTW device and at least 8 mm for a PASCAL device.'
+    citation:
+      source: ase-2026-m-teer-imaging
+      locator:
+        page: '532'
+  - id: after-deployment
+    type: threshold-list
+    tag: CRIT
+    title: After device deployment
+    values:
+      - parameter: mitral-mean-gradient
+        context: diagnostic-criterion
+        operator: '<'
+        value: 5
+        unit: mmHg
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Residual gradient (CW Doppler); ideal, together with a residual MVA ≥ 2.0 cm². Interpret with heart rate and flow.'
+        citation:
+          source: ase-2026-m-teer-imaging
+          locator:
+            page: '547'
+      - parameter: mitral-valve-area
+        context: diagnostic-criterion
+        operator: '>='
+        value: 2.0
+        unit: cm²
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        caveats:
+          - Residual MVA by 3D multiplanar planimetry (sum of the orifices); MVA by pressure half-time is not recommended.
+        citation:
+          source: ase-2026-m-teer-imaging
+          locator:
+            page: '547'
+  - id: additional-device
+    type: note
+    tag: METH
+    title: Additional device
+    text: Deciding on another device weighs MR reduction against a rise in transmitral gradient; the goal is residual MR of mild or less with acceptably low gradients (below 5 mmHg in most cases). Many conventional MR indices are unreliable after TEER; use a multiparametric approach.
+    citation:
+      source: ase-2026-m-teer-imaging
+      locator:
+        page: '547–549'

@@ -1,0 +1,6 @@
+id: flail-width
+name: Mitral flail width
+quantity: length
+unit: mm
+modalities: [Echo]
+synonyms: [flail leaflet, primary MR, TEER]

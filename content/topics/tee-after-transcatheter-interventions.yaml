@@ -8,3 +8,66 @@ population: adult
 wave: W2
 status: draft
 seeAlso: [after-mitral-teer, prosthetic-aortic-valve-regurgitation-grading]
+blocks:
+  - id: residual-mr-vcw
+    type: threshold-list
+    tag: CRIT
+    title: Residual MR during mitral valve interventions
+    values:
+      - parameter: vena-contracta-width
+        context: diagnostic-criterion
+        operator: '>='
+        value: 0.7
+        unit: cm
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        caveats:
+          - Specific for severe MR; difficult with multiple small or very eccentric jets.
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '5'
+            page: '450'
+  - id: residual-mr-signs
+    type: criteria-checklist
+    tag: CRIT
+    title: Other TEE signs of residual MR severity
+    criteria:
+      - text: Systolic flow reversal in more than one pulmonary vein is specific for severe MR; an increase in forward systolic velocity after the intervention supports MR reduction.
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '5'
+            page: '450'
+      - text: A large flow convergence denotes significant residual MR; small or no flow convergence suggests mild MR.
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '5'
+            page: '450'
+      - text: 'A dense, triangular CW Doppler MR jet suggests severe MR.'
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '5'
+            page: '450'
+      - text: 'In sinus rhythm, A-wave-dominant mitral inflow excludes severe MR; a fall in mitral E velocity and VTI suggests MR reduction.'
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '5'
+            page: '450'
+      - text: 'A rise in LVOT velocity and VTI (deep transgastric view), new spontaneous echo contrast in the LA or a fall in LVEF after the intervention suggest MR reduction.'
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '5'
+            page: '450'
+      - text: 'EROA by PISA is not recommended after edge-to-edge repair: the device violates the hemispheric flow-convergence assumption.'
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '5'
+            page: '450'

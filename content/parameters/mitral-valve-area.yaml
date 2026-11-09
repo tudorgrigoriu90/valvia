@@ -1,0 +1,7 @@
+id: mitral-valve-area
+name: Mitral valve area
+abbreviation: MVA
+quantity: area
+unit: cm²
+modalities: [Echo]
+synonyms: [MVA, mitral orifice area, planimetry, 3D MPR]

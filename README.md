@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-26: PO-5, content: TEE, cardiac source of embolism (ASE 2016 guideline): L |
-| Next task | CH-27: TEE, regurgitation after transcatheter repair or replacement (ASE 2019) and M-TEER |
+| Last completed task | CH-27: PO-5, content: TEE, regurgitation after percutaneous valve repair or r |
+| Next task | CH-28: TEE screening before structural heart interventions (ASE) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
