@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-07.5.1 Cookieless analytics + privacy notice |
-| Next up | CH-18: values in the units printed in the guidelines (PO-4) |
+| Last completed | CH-18 PO-4, units as published: show every value in the unit the guideline p |
+| Next up | CH-19: value-level technique (TTE, TEE, stress) |
 
 ## Next up: R0 sequence
 
@@ -104,7 +104,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-02.2.4 | JSON Schema + generated TS types; plausibility checks (unit vs parameter, monotonic grades) | 3 | done | Generated types delivered in CH-4 |
 | TS-02.2.5 | Paediatric qualifiers: `ageGroup` (adult / paediatric), age band, BSA band, z-score reference (as published, no computation) | 1 | done |  |
 | TS-02.2.6 | Value-level `modality` (Echo / CT / CMR) | 1 | done |  |
-| TS-02.2.7 | Unit layer: store as published, display in house units (NFR-15), original on tap; exhaustive conversion tests | 2 | done | 100 % coverage; indexed-length and indexed-mass shown as published pending F4 |
+| TS-02.2.7 | Unit layer: store as published, display in house units (NFR-15), original on tap; exhaustive conversion tests | 2 | done | 100 % coverage; display conversion superseded by PO-4 (CH-18): values shown as published, conversion used only for comparisons |
 | TS-02.2.8 | Prosthetic valve catalogue schema: position, type, model, size → expected values with citation | 2 | todo |  |
 | TS-02.3.1 | Source schema incl. status, supersession, allowed-society check and `citedBy` for cited z-score datasets | 2 | done |  |
 | TS-02.3.2 | Per-value citation locator (table, figure, section, page) | 1 | done | Source existence is checked by the cross-file loader (planned) |
@@ -279,7 +279,7 @@ Order: one push each, top to bottom (TS-07.5.1 was finished locally first and sh
 | Key | Summary | SP | Status | Notes |
 |---|---|---|---|---|
 | CH-17 | Plan update: record PO-4 to PO-6 and plan the tasks below | 0 | done |  |
-| CH-18 | PO-4, units as published: show every value in the unit the guideline prints (no conversion to house units, no "original on tap"); the unit layer is kept only to compare values across sources for discrepancy detection; update `CLAUDE.md` §12, `docs/units.md`, content guide, about page, E2E | 2 | todo | Supersedes NFR-15 house units and TS-02.2.7 display conversion |
+| CH-18 | PO-4, units as published: show every value in the unit the guideline prints (no conversion to house units, no "original on tap"); the unit layer is kept only to compare values across sources for discrepancy detection; update `CLAUDE.md` §12, `docs/units.md`, content guide, about page, E2E | 2 | done | Supersedes NFR-15 house units and TS-02.2.7 display conversion |
 | CH-19 | PO-5, schema: value-level `technique` (`TTE` default, `TEE`, `stress`; TEE and stress only with modality Echo); generated types; validation fixtures; content-model docs | 2 | todo |  |
 | CH-20 | PO-5, category switch: header switch Adults · Children · TEE · Stress echo (replaces Adults/Children); values, sections, topic lists and notices follow the chosen category (TTE values by age group, TEE and stress values by technique); stored on the device; E2E at 360 px and desktop, axe | 3 | todo | Replaces the TS-04.7.1 switch |
 | CH-21 | PO-5, taxonomy: add a top-level "Transoesophageal echocardiography (TEE)" branch; tag existing stress values (low-flow AS dobutamine stress, diastolic stress test) with `technique: stress` | 1 | todo | Taxonomy change asked by the PO |
@@ -386,3 +386,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-04 | TS-02.1.3 | Redirects for renamed slugs: core/navigation/redirects computes old→new URLs for visible nodes and descendants; post-build step writes meta-refresh pages (canonical, noindex, strict CSP, visible link) | `TS-02.1.3: static redirects for renamed slugs` |
 | 2026-11-09 | CH-17 | Record PO-4 (units as published), PO-5 (Adults/Children/TEE/Stress echo categories), PO-6 (mild/moderate/severe abnormality grades) and plan CH-18 to CH-29; TS-08.2 domain note | `CH-17: plan units as published, TEE and stress categories, grades` |
 | 2026-11-09 | TS-07.5.1 | Opt-in cookieless analytics (GoatCounter or Cloudflare via repository variable; validated, CSP admits only its origins; CSP moved to core/site/analytics.ts) and privacy page linked from every footer; E2E for link, no third-party script/cookies by default, axe | `TS-07.5.1: opt-in cookieless analytics and privacy notice` |
+| 2026-11-09 | CH-18 | Values shown with the number and unit printed in the guideline (PO-4): no display conversion or original popover; parameters published in two units get one row per unit; core/units converts only for comparisons (discrepancies, plausibility); docs, schema descriptions, about page, E2E | `CH-18: show values in the units printed in the guidelines` |

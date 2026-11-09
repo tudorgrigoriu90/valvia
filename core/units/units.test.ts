@@ -4,11 +4,11 @@ import {
   allowedUnits,
   checkParameterUnit,
   convert,
-  displayUnit,
+  commonUnit,
   isUnitAllowed,
   QUANTITY_UNITS,
   shiftDecimal,
-  toDisplay,
+  toCommonUnit,
   type Unit,
 } from './units';
 
@@ -57,8 +57,8 @@ describe('quantity units (NFR-15, taxonomy 14.2)', () => {
     ['percent', '%'],
     ['indexed-length', undefined],
     ['velocity-time-integral', 'cm'],
-  ] as const)('house unit for %s is %s', (quantity, unit) => {
-    expect(QUANTITY_UNITS[quantity].display).toBe(unit);
+  ] as const)('comparison unit for %s is %s', (quantity, unit) => {
+    expect(QUANTITY_UNITS[quantity].common).toBe(unit);
   });
 
   it('allows cm/s and m/s for both blood-flow and tissue velocities', () => {
@@ -68,11 +68,7 @@ describe('quantity units (NFR-15, taxonomy 14.2)', () => {
 
   it('keeps velocity-time integrals in cm, as reported clinically (not converted to mm)', () => {
     expect(allowedUnits('velocity-time-integral')).toEqual(['cm']);
-    expect(toDisplay('velocity-time-integral', '60', 'cm')).toMatchObject({
-      value: '60',
-      unit: 'cm',
-      converted: false,
-    });
+    expect(toCommonUnit('velocity-time-integral', '60', 'cm')).toEqual({ value: '60', unit: 'cm' });
   });
 
   it('rejects units of a different quantity', () => {
@@ -81,9 +77,9 @@ describe('quantity units (NFR-15, taxonomy 14.2)', () => {
     expect(allowedUnits('indexed-mass')).toEqual(['g/m²', 'g/m^2.7']);
   });
 
-  it('displays in the house unit, or as published when the quantity has none (pending SME F4)', () => {
-    expect(displayUnit('area', 'mm²')).toBe('cm²');
-    expect(displayUnit('indexed-mass', 'g/m^2.7')).toBe('g/m^2.7');
+  it('compares in the common unit, or in the published unit when the quantity has none', () => {
+    expect(commonUnit('area', 'mm²')).toBe('cm²');
+    expect(commonUnit('indexed-mass', 'g/m^2.7')).toBe('g/m^2.7');
   });
 });
 
@@ -152,31 +148,21 @@ function scaleRatio(from: string, to: string): number {
   return (size[from] ?? 1) / (size[to] ?? 1);
 }
 
-describe('toDisplay', () => {
-  it('converts to the house unit and keeps the original for the "original on tap" popover', () => {
-    expect(toDisplay('area', '40', 'mm²')).toEqual({
-      value: '0.40',
-      unit: 'cm²',
-      converted: true,
-      original: { value: '40', unit: 'mm²' },
-    });
+describe('toCommonUnit (comparison across sources only; values are displayed as published, PO-4)', () => {
+  it('converts to the common unit of the quantity', () => {
+    expect(toCommonUnit('area', '40', 'mm²')).toEqual({ value: '0.40', unit: 'cm²' });
   });
 
-  it('marks values already in the house unit as not converted', () => {
-    expect(toDisplay('velocity-blood', '4.0', 'm/s')).toEqual({
-      value: '4.0',
-      unit: 'm/s',
-      converted: false,
-      original: { value: '4.0', unit: 'm/s' },
-    });
+  it('keeps values already in the common unit', () => {
+    expect(toCommonUnit('velocity-blood', '4.0', 'm/s')).toEqual({ value: '4.0', unit: 'm/s' });
   });
 
-  it('shows values as published when the quantity has no house unit', () => {
-    expect(toDisplay('indexed-mass', '115', 'g/m²')).toMatchObject({ value: '115', unit: 'g/m²', converted: false });
+  it('keeps the published unit when the quantity has no common unit', () => {
+    expect(toCommonUnit('indexed-mass', '115', 'g/m²')).toEqual({ value: '115', unit: 'g/m²' });
   });
 
   it('rejects a published unit that does not belong to the quantity', () => {
-    expect(() => toDisplay('area', '4', 'mm')).toThrow("unit 'mm' is not valid for quantity 'area'");
+    expect(() => toCommonUnit('area', '4', 'mm')).toThrow("unit 'mm' is not valid for quantity 'area'");
   });
 });
 
@@ -189,7 +175,7 @@ describe('checkParameterUnit', () => {
     modalities: ['Echo'],
   });
 
-  it('accepts a parameter whose unit is the house unit', () => {
+  it('accepts a parameter whose unit is the common unit', () => {
     expect(checkParameterUnit(parameter('area', 'cm²'))).toBeUndefined();
   });
 
@@ -199,13 +185,13 @@ describe('checkParameterUnit', () => {
     );
   });
 
-  it('rejects a parameter that is not displayed in the house unit', () => {
+  it('rejects a parameter whose unit is not the common unit used for comparisons', () => {
     expect(checkParameterUnit(parameter('length', 'cm'))).toBe(
-      "unit must be the house unit 'mm' for quantity 'length' (NFR-15)",
+      "unit must be the common unit 'mm' for quantity 'length' (used to compare values across sources)",
     );
   });
 
-  it('accepts any allowed unit when the quantity has no house unit', () => {
+  it('accepts any allowed unit when the quantity has no common unit', () => {
     expect(checkParameterUnit(parameter('indexed-mass', 'g/m^2.7'))).toBeUndefined();
   });
 });

@@ -22,7 +22,7 @@
       "$ref": "common.schema.json#/$defs/quantity"
     },
     "unit": {
-      "description": "Display unit of the parameter (house unit per NFR-15). Values may be published in another unit of the same quantity and are converted for display.",
+      "description": "Common unit of the parameter, used to compare values across sources (decision PO-4). Values keep and display their published unit, which may be another unit of the same quantity.",
       "$ref": "common.schema.json#/$defs/unit"
     },
     "modalities": {

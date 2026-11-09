@@ -1,7 +1,8 @@
 /**
  * Table models for value blocks (TS-04.3.1): grading tables (parameter/population rows × grade columns),
- * normal-range tables (parameter rows × population columns) and threshold lists. Values in display units,
- * published value kept for the "original" popover, caveats numbered as footnotes (TS-04.3.6).
+ * normal-range tables (parameter rows × population columns) and threshold lists. Values and units exactly as
+ * published (decision PO-4): a parameter published in two units gets one row per unit. Caveats are numbered as
+ * footnotes (TS-04.3.6).
  */
 import type { Parameter } from '../../schema/generated/parameter';
 import type { LoadedBlock, LoadedValue } from '../content/types';
@@ -12,9 +13,6 @@ import { populationLabel } from './population-label';
 export interface TableValue {
   /** Value without unit, e.g. '≥ 0.40' (the unit is shown in the row header). */
   text: string;
-  converted: boolean;
-  /** Published value with unit, e.g. '≥ 0.7 cm' (shown on tap when converted). */
-  original: string;
   /** 1-based footnote numbers of this value's caveats. */
   footnotes: number[];
   value: LoadedValue;
@@ -27,7 +25,7 @@ export interface TableRow {
   name: string;
   /** Population label for grading rows ('' when the value applies to the whole age group). */
   population: string;
-  /** Display unit; undefined for dimensionless values. */
+  /** Published unit; undefined for dimensionless values. */
   unit: Unit | undefined;
   /** One list of values per column. */
   cells: TableValue[][];
@@ -82,14 +80,11 @@ function prepare(
   if (parameter === undefined) return undefined;
   const display = displayNumbers(value, parameter);
   if (display === undefined) return undefined;
-  const published = value.operator === 'range' ? [value.published.min, value.published.max] : [value.published.value];
   return {
     parameter,
     unit: display.unit,
     entry: {
       text: valueText(value, display.numbers),
-      converted: display.converted,
-      original: `${valueText(value, published)}${unitSuffix(value.unit)}`,
       footnotes: footnotes.numbers(value.caveats),
       value,
     },
@@ -119,7 +114,7 @@ export function buildGradingTable(
     const prepared = prepare(value, parameters, footnotes);
     if (prepared === undefined) continue;
     const population = populationLabel(value.population);
-    const key = `${prepared.parameter.id}|${population}`;
+    const key = `${prepared.parameter.id}|${population}|${prepared.unit}`;
     const row = rows.get(key) ?? newRow(prepared.parameter, prepared.unit, population, block.grades.length);
     row.cells[column]?.push(prepared.entry);
     rows.set(key, row);
@@ -143,9 +138,10 @@ export function buildNormalRangeTable(
   }
   const rows = new Map<string, TableRow>();
   for (const { prepared, column } of placed) {
-    const row = rows.get(prepared.parameter.id) ?? newRow(prepared.parameter, prepared.unit, '', columns.length);
+    const key = `${prepared.parameter.id}|${prepared.unit}`;
+    const row = rows.get(key) ?? newRow(prepared.parameter, prepared.unit, '', columns.length);
     row.cells[column]?.push(prepared.entry);
-    rows.set(prepared.parameter.id, row);
+    rows.set(key, row);
   }
   return { columns, rows: [...rows.values()], footnotes: footnotes.list };
 }

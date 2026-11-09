@@ -264,11 +264,11 @@ describe('loadContent: content rules', () => {
     ]);
   });
 
-  it('reports parameter units that are not the house unit', () => {
+  it('reports parameter units that are not the common unit', () => {
     writeValidTree();
     write('parameters/eroa.yaml', PARAMETER.replace('unit: cm²', 'unit: mm²'));
     expect(problems()).toEqual([
-      "content/parameters/eroa.yaml:5 error parameter-unit unit must be the house unit 'cm²' for quantity 'area' (NFR-15)",
+      "content/parameters/eroa.yaml:5 error parameter-unit unit must be the common unit 'cm²' for quantity 'area' (used to compare values across sources)",
     ]);
   });
 

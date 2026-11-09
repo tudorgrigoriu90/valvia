@@ -20,7 +20,7 @@ export interface Parameter {
    */
   abbreviation?: string;
   /**
-   * Physical quantity of a parameter; decides the display unit (NFR-15) and which units a value may use.
+   * Physical quantity of a parameter; decides the common comparison unit and which units a value may use.
    */
   quantity:
     | 'dimensionless'
@@ -46,7 +46,7 @@ export interface Parameter {
     | 'angle'
     | 'age';
   /**
-   * Display unit of the parameter (house unit per NFR-15). Values may be published in another unit of the same quantity and are converted for display.
+   * Common unit of the parameter, used to compare values across sources (decision PO-4). Values keep and display their published unit, which may be another unit of the same quantity.
    */
   unit:
     | '1'

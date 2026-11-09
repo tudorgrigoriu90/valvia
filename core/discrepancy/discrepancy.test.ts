@@ -76,7 +76,7 @@ describe('detectDiscrepancies (TS-02.4.1)', () => {
     expect(detectDiscrepancies(bundle(topic('t', [value('esc'), ase])))).toEqual([]);
   });
 
-  it('flags different numbers from different current sources, side by side in display units', () => {
+  it('flags different numbers from different current sources, side by side as published', () => {
     const ase = value('ase', { unit: 'mm²', value: 30, published: { value: '30' } });
     expect(detectDiscrepancies(bundle(topic('t', [value('esc'), ase])))).toEqual([
       {
@@ -87,7 +87,7 @@ describe('detectDiscrepancies (TS-02.4.1)', () => {
         population: { ageGroup: 'adult' },
         entries: [
           { source: 'esc', topicId: 't', path: ['blocks', 0, 'values', 0], display: '≥ 0.40 cm²' },
-          { source: 'ase', topicId: 't', path: ['blocks', 0, 'values', 1], display: '≥ 0.30 cm²' },
+          { source: 'ase', topicId: 't', path: ['blocks', 0, 'values', 1], display: '≥ 30 mm²' },
         ],
       },
     ]);

@@ -1,25 +1,32 @@
-/** Display formatting of values (NFR-15): operator symbols, display units, published precision. */
+/** Display formatting of values: operator symbols, numbers and units exactly as published (decision PO-4). */
 import type { Parameter } from '../../schema/generated/parameter';
 import type { LoadedValue } from '../content/types';
-import { isUnitAllowed, toDisplay, type Unit } from '../units/units';
+import { isUnitAllowed, toCommonUnit, type Unit } from '../units/units';
 
 export const OPERATOR_SYMBOLS = { '<': '<', '<=': '≤', '>': '>', '>=': '≥', '=': '=' } as const;
 
-export interface DisplayNumbers {
+export interface Numbers {
   unit: Unit;
-  /** One number for single bounds, two (min, max) for ranges, as display-unit decimal strings. */
+  /** One number for single bounds, two (min, max) for ranges, as decimal strings. */
   numbers: string[];
-  converted: boolean;
 }
 
-export function displayNumbers(value: LoadedValue, parameter: Parameter): DisplayNumbers | undefined {
+const publishedTexts = (value: LoadedValue): string[] =>
+  (value.operator === 'range' ? [value.published.min, value.published.max] : [value.published.value]).map(
+    (text) => text ?? '',
+  );
+
+/** The numbers and unit to show: exactly as published. Undefined when the unit does not fit the parameter. */
+export function displayNumbers(value: LoadedValue, parameter: Parameter): Numbers | undefined {
   if (!isUnitAllowed(parameter.quantity, value.unit)) return undefined;
-  const texts = value.operator === 'range' ? [value.published.min, value.published.max] : [value.published.value];
-  const shown = texts.map((text) => toDisplay(parameter.quantity, text ?? '', value.unit));
-  const [first] = shown;
-  /* v8 ignore next */
-  if (first === undefined) return undefined;
-  return { unit: first.unit, numbers: shown.map((d) => d.value), converted: first.converted };
+  return { unit: value.unit, numbers: publishedTexts(value) };
+}
+
+/** The numbers in the common unit of the quantity, to compare values across sources (never displayed). */
+export function comparableNumbers(value: LoadedValue, parameter: Parameter): Numbers | undefined {
+  if (!isUnitAllowed(parameter.quantity, value.unit)) return undefined;
+  const common = publishedTexts(value).map((text) => toCommonUnit(parameter.quantity, text, value.unit));
+  return { unit: common[0]?.unit ?? value.unit, numbers: common.map((c) => c.value) };
 }
 
 /**

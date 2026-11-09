@@ -1,7 +1,7 @@
 # Content guide
 
 > **Purpose:** how to draft, cite and review clinical content so that any session can add a leaf from this guide alone.
-> **Audience:** Claude Code sessions, engineer, SME. **Last updated:** 2026-11-04
+> **Audience:** Claude Code sessions, engineer, SME. **Last updated:** 2026-11-09
 > **Reference:** field-by-field schema in [`content-model.md`](content-model.md); rules in [`CLAUDE.md`](../CLAUDE.md) §12.
 
 ## 1. Workflow
@@ -62,7 +62,7 @@ blocks:
         grade: Severe
         operator: ">="
         value: 0.40                   # exactly as published (0.40 stays 0.40)
-        unit: cm²                     # as published; converted for display
+        unit: cm²                     # as published; also displayed as published (PO-4)
         modality: Echo                # Echo | CT | CMR
         population: { ageGroup: adult }
         caveats: ["May be lower in secondary MR with an elliptical regurgitant orifice."]

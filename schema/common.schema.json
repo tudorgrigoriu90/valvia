@@ -90,7 +90,7 @@
       "enum": ["Echo", "CT", "CMR"]
     },
     "unit": {
-      "description": "Units as published in ESC/EACVI/ASE documents. '1' means dimensionless (ratios, scores). Display units follow NFR-15; conversions live in core/units.",
+      "description": "Units as published in ESC/EACVI/ASE documents. '1' means dimensionless (ratios, scores). Values are displayed in the published unit (decision PO-4); core/units converts only to compare values.",
       "enum": [
         "1",
         "%",
@@ -120,7 +120,7 @@
       ]
     },
     "quantity": {
-      "description": "Physical quantity of a parameter; decides the display unit (NFR-15) and which units a value may use.",
+      "description": "Physical quantity of a parameter; decides the common comparison unit and which units a value may use.",
       "enum": [
         "dimensionless",
         "ratio",
@@ -295,7 +295,7 @@
           "type": "boolean"
         },
         "unit": {
-          "description": "Unit as published (converted for display by core/units).",
+          "description": "Unit as published, also the unit displayed (decision PO-4).",
           "$ref": "#/$defs/unit"
         },
         "modality": {

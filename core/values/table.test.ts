@@ -57,17 +57,32 @@ describe('buildGradingTable (TS-04.3.1)', () => {
     expect(table.columns).toEqual(['Mild', 'Moderate', 'Severe']);
     expect(table.rows.map((r) => [r.label, r.name, r.unit])).toEqual([
       ['EROA', 'Effective regurgitant orifice area', 'cm²'],
-      ['VCW', 'Vena contracta width', 'mm'],
+      ['VCW', 'Vena contracta width', 'cm'],
     ]);
     expect(table.rows[0]?.cells.map((c) => c.map((v) => v.text))).toEqual([['< 0.20'], [], ['≥ 0.40']]);
   });
 
-  it('converts to the display unit and keeps the original for the popover', () => {
+  it('shows values in the unit printed in the source (PO-4)', () => {
     const table = buildGradingTable(
       block([value({ parameter: 'vcw', grade: 'Severe', operator: '>=', unit: 'cm', published: { value: '0.7' } })]),
       PARAMETERS,
     );
-    expect(table.rows[0]?.cells[2]?.[0]).toMatchObject({ text: '≥ 7', converted: true, original: '≥ 0.7 cm' });
+    expect(table.rows[0]?.unit).toBe('cm');
+    expect(table.rows[0]?.cells[2]?.[0]).toMatchObject({ text: '≥ 0.7' });
+  });
+
+  it('puts values of one parameter published in different units on separate rows', () => {
+    const table = buildGradingTable(
+      block([
+        value({ parameter: 'vcw', grade: 'Severe', operator: '>=', unit: 'cm', published: { value: '0.7' } }),
+        value({ parameter: 'vcw', grade: 'Severe', operator: '>=', unit: 'mm', published: { value: '7' } }),
+      ]),
+      PARAMETERS,
+    );
+    expect(table.rows.map((r) => [r.label, r.unit, r.cells[2]?.map((v) => v.text)])).toEqual([
+      ['VCW', 'cm', ['≥ 0.7']],
+      ['VCW', 'mm', ['≥ 7']],
+    ]);
   });
 
   it('formats ranges and keeps several values per cell in order', () => {
@@ -86,17 +101,17 @@ describe('buildGradingTable (TS-04.3.1)', () => {
           parameter: 'vcw',
           grade: 'Moderate',
           operator: 'range',
-          unit: 'mm',
-          published: { min: '3', max: '6.9' },
+          unit: 'cm',
+          published: { min: '0.3', max: '0.69' },
         }),
       ]),
       PARAMETERS,
     );
-    expect(table.rows[0]?.cells.map((c) => c.map((v) => v.text))).toEqual([[], ['3–6.9'], ['≥ 7', '> 8']]);
+    expect(table.rows[0]?.cells.map((c) => c.map((v) => v.text))).toEqual([[], ['0.3–0.69'], ['≥ 0.7', '> 0.8']]);
     expect(table.rows[0]?.cells[2]?.[1]?.value.caveats).toEqual(['Biplane.']);
   });
 
-  it('spells out exclusive range bounds in cells and originals', () => {
+  it('spells out exclusive range bounds as published', () => {
     const table = buildGradingTable(
       block([
         value({
@@ -110,7 +125,7 @@ describe('buildGradingTable (TS-04.3.1)', () => {
       ]),
       PARAMETERS,
     );
-    expect(table.rows[0]?.cells[1]?.[0]).toMatchObject({ text: '> 5.8 to ≤ 6.3', original: '> 0.58 to ≤ 0.63 cm' });
+    expect(table.rows[0]?.cells[1]?.[0]).toMatchObject({ text: '> 0.58 to ≤ 0.63' });
   });
 
   it('shows dimensionless rows without a unit', () => {
@@ -240,7 +255,7 @@ describe('buildNormalRangeTable', () => {
 });
 
 describe('buildThresholdList', () => {
-  it('lists each value with parameter, display text with unit, grade and population', () => {
+  it('lists each value with parameter, published text with unit, grade and population', () => {
     const list = buildThresholdList(
       {
         id: 't',
@@ -266,7 +281,7 @@ describe('buildThresholdList', () => {
         label: 'VCW',
         name: 'Vena contracta width',
         population: 'Male',
-        text: '≥ 7 mm',
+        text: '≥ 0.7 cm',
         footnotes: [1],
       }),
     ]);

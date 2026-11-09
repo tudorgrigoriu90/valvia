@@ -1,7 +1,8 @@
 /**
- * Unit layer (TS-02.2.7, NFR-15). Values are stored exactly as published; this module decides the display
- * (house) unit per quantity and converts with exact decimal-point shifts, never with floating-point
- * arithmetic, so a published "40 mm²" is shown as "0.40 cm²" with its original precision.
+ * Unit layer (TS-02.2.7). Values are stored and displayed exactly as published (decision PO-4). This module
+ * defines the units allowed per quantity and a common unit per quantity, used only to *compare* values from
+ * different sources (discrepancies, plausibility), converting with exact decimal-point shifts, never with
+ * floating-point arithmetic, so a published "40 mm²" compares equal to "0.40 cm²".
  * Safety-critical (hazard: wrong unit or conversion): 100 % coverage, exhaustive tests.
  */
 import type { Parameter } from '../../schema/generated/parameter';
@@ -12,33 +13,33 @@ export type Unit = Parameter['unit'];
 interface QuantityUnits {
   /** Units a value of this quantity may be published in. */
   units: readonly Unit[];
-  /** House display unit (NFR-15, taxonomy 14.2); undefined = show as published (pending SME F4). */
-  display: Unit | undefined;
+  /** Common unit for comparisons across sources; undefined = compare only values in the same unit. */
+  common: Unit | undefined;
 }
 
 export const QUANTITY_UNITS: Readonly<Record<Quantity, QuantityUnits>> = {
-  dimensionless: { units: ['1'], display: '1' },
-  ratio: { units: ['1'], display: '1' },
-  percent: { units: ['%'], display: '%' },
-  length: { units: ['mm', 'cm'], display: 'mm' },
-  'indexed-length': { units: ['mm/m²', 'cm/m²'], display: undefined },
-  area: { units: ['mm²', 'cm²'], display: 'cm²' },
-  'indexed-area': { units: ['cm²/m²'], display: 'cm²/m²' },
-  volume: { units: ['mL'], display: 'mL' },
-  'indexed-volume': { units: ['mL/m²'], display: 'mL/m²' },
-  mass: { units: ['g'], display: 'g' },
-  'indexed-mass': { units: ['g/m²', 'g/m^2.7'], display: undefined },
-  'velocity-blood': { units: ['m/s', 'cm/s'], display: 'm/s' },
-  'velocity-tissue': { units: ['cm/s', 'm/s'], display: 'cm/s' },
-  'velocity-time-integral': { units: ['cm'], display: 'cm' },
-  acceleration: { units: ['m/s²'], display: 'm/s²' },
-  pressure: { units: ['mmHg'], display: 'mmHg' },
-  time: { units: ['ms', 's'], display: 'ms' },
-  'heart-rate': { units: ['bpm'], display: 'bpm' },
-  'flow-rate': { units: ['mL/s'], display: 'mL/s' },
-  'calcium-score': { units: ['AU'], display: 'AU' },
-  angle: { units: ['°'], display: '°' },
-  age: { units: ['years'], display: 'years' },
+  dimensionless: { units: ['1'], common: '1' },
+  ratio: { units: ['1'], common: '1' },
+  percent: { units: ['%'], common: '%' },
+  length: { units: ['mm', 'cm'], common: 'mm' },
+  'indexed-length': { units: ['mm/m²', 'cm/m²'], common: undefined },
+  area: { units: ['mm²', 'cm²'], common: 'cm²' },
+  'indexed-area': { units: ['cm²/m²'], common: 'cm²/m²' },
+  volume: { units: ['mL'], common: 'mL' },
+  'indexed-volume': { units: ['mL/m²'], common: 'mL/m²' },
+  mass: { units: ['g'], common: 'g' },
+  'indexed-mass': { units: ['g/m²', 'g/m^2.7'], common: undefined },
+  'velocity-blood': { units: ['m/s', 'cm/s'], common: 'm/s' },
+  'velocity-tissue': { units: ['cm/s', 'm/s'], common: 'cm/s' },
+  'velocity-time-integral': { units: ['cm'], common: 'cm' },
+  acceleration: { units: ['m/s²'], common: 'm/s²' },
+  pressure: { units: ['mmHg'], common: 'mmHg' },
+  time: { units: ['ms', 's'], common: 'ms' },
+  'heart-rate': { units: ['bpm'], common: 'bpm' },
+  'flow-rate': { units: ['mL/s'], common: 'mL/s' },
+  'calcium-score': { units: ['AU'], common: 'AU' },
+  angle: { units: ['°'], common: '°' },
+  age: { units: ['years'], common: 'years' },
 };
 
 /** Convertible units: same family, size = 10^exponent base units. Units not listed only convert to themselves. */
@@ -84,8 +85,8 @@ export const allowedUnits = (quantity: Quantity): readonly Unit[] => QUANTITY_UN
 
 export const isUnitAllowed = (quantity: Quantity, unit: Unit): boolean => allowedUnits(quantity).includes(unit);
 
-export const displayUnit = (quantity: Quantity, publishedUnit: Unit): Unit =>
-  QUANTITY_UNITS[quantity].display ?? publishedUnit;
+export const commonUnit = (quantity: Quantity, publishedUnit: Unit): Unit =>
+  QUANTITY_UNITS[quantity].common ?? publishedUnit;
 
 /** Converts a published decimal string between two units of the same family. */
 export function convert(value: string, from: Unit, to: Unit): string {
@@ -98,36 +99,29 @@ export function convert(value: string, from: Unit, to: Unit): string {
   return shiftDecimal(value, source.exponent - target.exponent);
 }
 
-export interface DisplayValue {
+export interface CommonValue {
   value: string;
   unit: Unit;
-  /** True when the display differs from the published unit (UI shows the original on tap). */
-  converted: boolean;
-  original: { value: string; unit: Unit };
 }
 
-export function toDisplay(quantity: Quantity, value: string, publishedUnit: Unit): DisplayValue {
+/** Converts a published value to the common unit of its quantity, for comparisons only (never displayed). */
+export function toCommonUnit(quantity: Quantity, value: string, publishedUnit: Unit): CommonValue {
   if (!isUnitAllowed(quantity, publishedUnit)) {
     throw new Error(`unit '${publishedUnit}' is not valid for quantity '${quantity}'`);
   }
-  const unit = displayUnit(quantity, publishedUnit);
-  return {
-    value: convert(value, publishedUnit, unit),
-    unit,
-    converted: unit !== publishedUnit,
-    original: { value, unit: publishedUnit },
-  };
+  const unit = commonUnit(quantity, publishedUnit);
+  return { value: convert(value, publishedUnit, unit), unit };
 }
 
-/** Content rule: a parameter's unit must belong to its quantity and be the house unit when one is defined. */
+/** Content rule: a parameter's unit must belong to its quantity and be the common unit when one is defined. */
 export function checkParameterUnit(parameter: Parameter): string | undefined {
   const { quantity, unit } = parameter;
   if (!isUnitAllowed(quantity, unit)) {
     return `unit '${unit}' is not valid for quantity '${quantity}' (allowed: ${allowedUnits(quantity).join(', ')})`;
   }
-  const house = QUANTITY_UNITS[quantity].display;
-  if (house !== undefined && unit !== house) {
-    return `unit must be the house unit '${house}' for quantity '${quantity}' (NFR-15)`;
+  const common = QUANTITY_UNITS[quantity].common;
+  if (common !== undefined && unit !== common) {
+    return `unit must be the common unit '${common}' for quantity '${quantity}' (used to compare values across sources)`;
   }
   return undefined;
 }

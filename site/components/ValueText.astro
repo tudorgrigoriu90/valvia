@@ -17,14 +17,7 @@ const societies = societiesOf(source?.issuers ?? []).join(' ');
 ---
 
 <span class="value" data-age-group={entry.value.population.ageGroup} data-societies={societies}>
-  {entry.converted ? (
-    <details class="original">
-      <summary>{text}</summary>
-      <span class="original__body">Published as {entry.original}</span>
-    </details>
-  ) : (
-    text
-  )}
+  {text}
   {differs && (
     <span class="differs-marker" title="Differs between sources">
       ≠<span class="visually-hidden"> (differs between sources)</span>

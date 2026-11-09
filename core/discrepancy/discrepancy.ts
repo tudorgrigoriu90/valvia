@@ -1,19 +1,19 @@
 /**
  * Build-time discrepancy detection (TS-02.4.1, principle 2): values in the same topic for the same parameter,
- * population, grade, context and modality from different *current* sources that differ in operator or number (compared in display
- * units) are reported side by side. Never resolved by picking one. Safety-critical: 100 % coverage.
+ * population, grade, context and modality from different *current* sources that differ in operator or number (compared in a
+ * common unit) are reported side by side. Never resolved by picking one. Safety-critical: 100 % coverage.
  */
 import type { ContentBundle, LoadedValue } from '../content/types';
 import { topicValues } from '../content/walk';
 import type { PathSegment } from '../content/yaml';
-import { displayNumbers, formatValue } from '../values/format';
+import { comparableNumbers, formatValue } from '../values/format';
 import { stableKey } from '../values/topic-rules';
 
 export interface DiscrepancyEntry {
   source: string;
   topicId: string;
   path: PathSegment[];
-  /** Value as displayed, e.g. '≥ 0.40 cm²'. */
+  /** Value as published, e.g. '≥ 0.40 cm²'. */
   display: string;
 }
 
@@ -42,7 +42,7 @@ export function detectDiscrepancies(bundle: ContentBundle): Discrepancy[] {
       const parameter = bundle.parameters.get(value.parameter);
       const source = bundle.sources.get(value.citation.source);
       if (parameter === undefined || source?.status !== 'current') continue;
-      const numbers = displayNumbers(value, parameter);
+      const numbers = comparableNumbers(value, parameter);
       const display = formatValue(value, parameter);
       if (numbers === undefined || display === undefined) continue;
       const signature = [

@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-07.5.1: Cookieless analytics + privacy notice |
-| Next task | CH-18: values in the units printed in the guidelines (PO-4) |
+| Last completed task | CH-18: PO-4, units as published: show every value in the unit the guideline p |
+| Next task | CH-19: value-level technique (TTE, TEE, stress) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

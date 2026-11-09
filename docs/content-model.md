@@ -231,12 +231,12 @@ flowchart LR
     v["all values of all topics"] --> cur{"source status<br/>= current?"}
     cur -- no --> hist(["history only (TS-02.4.2)"])
     cur -- yes --> grp["group by topic + parameter + context<br/>+ grade + modality + population"]
-    grp --> cmp{"≥ 2 sources and<br/>operator or number differs<br/>(in display units)?"}
+    grp --> cmp{"≥ 2 sources and<br/>operator or number differs<br/>(in a common unit)?"}
     cmp -- yes --> flag(["Discrepancy: entries side by side<br/>'Differs by society' marker"])
     cmp -- no --> ok(["agreement"])
 ```
 
-- Numbers are compared after conversion to the display unit, so `40 mm²` and `0.40 cm²` agree.
+- Numbers are compared after conversion to a common unit, so `40 mm²` and `0.40 cm²` agree; each is shown as published.
 - Population qualifiers must match exactly (key order does not matter); different sexes, age bands or modalities are never compared.
 - Values are compared only within one topic: the same parameter has different thresholds for different conditions (e.g. vena contracta in MR vs TR).
 - Values from the same source are never compared with each other.
@@ -261,8 +261,8 @@ One file per parameter: `content/parameters/<id>.yaml`. Values reference a param
 | `id` | yes | `id` | e.g. `eroa` |
 | `name` | yes | `text` | Full name |
 | `abbreviation` | no | `text` | Shown in tables, indexed by search |
-| `quantity` | yes | `quantity` | Decides the display unit and the units values may use |
-| `unit` | yes | `unit` | Display (house) unit, NFR-15: lengths mm, areas cm², blood velocities m/s, tissue Doppler cm/s |
+| `quantity` | yes | `quantity` | Decides the common comparison unit and the units values may use |
+| `unit` | yes | `unit` | Common unit for comparisons across sources (lengths mm, areas cm², blood velocities m/s, tissue Doppler cm/s); values display their own published unit (PO-4) |
 | `modalities` | yes | `modality[]` (≥ 1) | Modalities in which it is measured |
 | `synonyms` | no | `text[]` | Search synonyms |
 | `method` | no | `longText` | View / method note and pitfalls |

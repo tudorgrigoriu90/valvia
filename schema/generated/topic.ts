@@ -67,7 +67,7 @@ export type Value = {
    */
   maxExclusive?: boolean;
   /**
-   * Unit as published (converted for display by core/units).
+   * Unit as published, also the unit displayed (decision PO-4).
    */
   unit:
     | '1'
@@ -151,7 +151,7 @@ export type Value = {
    */
   maxExclusive?: boolean;
   /**
-   * Unit as published (converted for display by core/units).
+   * Unit as published, also the unit displayed (decision PO-4).
    */
   unit:
     | '1'
@@ -235,7 +235,7 @@ export type Value = {
    */
   maxExclusive?: boolean;
   /**
-   * Unit as published (converted for display by core/units).
+   * Unit as published, also the unit displayed (decision PO-4).
    */
   unit:
     | '1'
@@ -319,7 +319,7 @@ export type Value = {
    */
   maxExclusive?: boolean;
   /**
-   * Unit as published (converted for display by core/units).
+   * Unit as published, also the unit displayed (decision PO-4).
    */
   unit:
     | '1'
@@ -403,7 +403,7 @@ export type Value = {
    */
   maxExclusive?: boolean;
   /**
-   * Unit as published (converted for display by core/units).
+   * Unit as published, also the unit displayed (decision PO-4).
    */
   unit:
     | '1'
@@ -487,7 +487,7 @@ export type Value = {
    */
   maxExclusive?: boolean;
   /**
-   * Unit as published (converted for display by core/units).
+   * Unit as published, also the unit displayed (decision PO-4).
    */
   unit:
     | '1'
@@ -571,7 +571,7 @@ export type Value = {
    */
   maxExclusive?: boolean;
   /**
-   * Unit as published (converted for display by core/units).
+   * Unit as published, also the unit displayed (decision PO-4).
    */
   unit:
     | '1'

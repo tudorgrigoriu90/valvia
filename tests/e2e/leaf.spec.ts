@@ -20,11 +20,12 @@ test('renders the quantitative grading table with grade columns and parameter ro
   await expect(eroa.getByRole('rowheader')).toContainText('cm²');
 });
 
-test('shows values in house units (vena contracta in mm)', async ({ page }) => {
+test('shows values in the unit printed in the guideline (vena contracta in cm, PO-4)', async ({ page }) => {
   await page.goto(LEAF);
   const vcw = page.getByRole('table', { name: 'Semiquantitative signs' }).getByRole('row', { name: /VCW/ });
-  await expect(vcw.getByRole('rowheader')).toContainText('mm');
-  await expect(vcw.getByRole('cell').nth(1)).toContainText('≥ 7');
+  await expect(vcw.getByRole('rowheader')).toContainText('cm');
+  await expect(vcw.getByRole('cell').nth(1)).toContainText('≥ 0.7');
+  await expect(page.locator('main details.original')).toHaveCount(0);
 });
 
 test('the table scrolls inside its own region on a 360 px screen, not the page', async ({ page }) => {
@@ -73,7 +74,7 @@ test('renders notes as text and algorithm references as links to the source', as
   await expect(page.locator('#algorithm')).toContainText('Figure 18');
 });
 
-// TS-04.3.3: source chips and original-unit popovers.
+// TS-04.3.3: source chips.
 
 test('each block shows its sources; tapping a chip reveals the full citation and DOI', async ({ page }) => {
   await page.goto(LEAF);
@@ -85,17 +86,6 @@ test('each block shows its sources; tapping a chip reveals the full citation and
     'href',
     'https://doi.org/10.1016/j.echo.2017.01.007',
   );
-});
-
-test('tapping a converted value shows the value and unit as published', async ({ page }) => {
-  await page.goto(LEAF);
-  const cell = page
-    .getByRole('table', { name: 'Semiquantitative signs' })
-    .getByRole('row', { name: /VCW/ })
-    .getByRole('cell')
-    .nth(1);
-  await cell.getByText('≥ 7', { exact: true }).click();
-  await expect(cell).toContainText('Published as ≥ 0.7 cm');
 });
 
 // TS-04.2.3: jump menu with section anchors.

@@ -519,31 +519,6 @@ main {
   color: var(--color-accent);
 }
 
-.original {
-  display: inline;
-}
-
-.original summary {
-  display: inline-block;
-  min-height: 24px;
-  line-height: 24px;
-  cursor: pointer;
-  list-style: none;
-  text-decoration: underline dotted;
-  text-underline-offset: 0.2em;
-}
-
-.original summary::-webkit-details-marker {
-  display: none;
-}
-
-.original__body {
-  display: block;
-  font-size: 0.8125rem;
-  color: var(--color-text-muted);
-  white-space: normal;
-}
-
 .search {
   margin: 0 0 var(--space-5);
 }
