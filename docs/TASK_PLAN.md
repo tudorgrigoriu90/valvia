@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-25 PO-5, content: stress echo in non-ischaemic heart disease (EACVI/ASE 2 |
-| Next up | CH-26: TEE, cardiac source of embolism (ASE 2016) |
+| Last completed | CH-26 PO-5, content: TEE, cardiac source of embolism (ASE 2016 guideline): L |
+| Next up | CH-27: TEE, regurgitation after transcatheter repair or replacement (ASE 2019) and M-TEER |
 
 ## Next up: R0 sequence
 
@@ -287,7 +287,7 @@ Order: one push each, top to bottom (TS-07.5.1 was finished locally first and sh
 | CH-23 | PO-6, content: audit the other seeded leaves (right heart 2025, diastolic, strain, HCM, pericardial, prosthetic) for published mild/moderate/severe abnormality grades and add them | 2 | done | Only RV diastolic rows missing (source conflict, SME question F7) |
 | CH-24 | PO-5, content: stress echo in ischaemic heart disease (ASE 2020 guideline) | 3 | done | Taxonomy 9.1 |
 | CH-25 | PO-5, content: stress echo in non-ischaemic heart disease (EACVI/ASE 2017 recommendations): valvular, diastolic, pulmonary pressure, HCM | 3 | done | Taxonomy 9.2–9.4 |
-| CH-26 | PO-5, content: TEE, cardiac source of embolism (ASE 2016 guideline): LAA, atrial septum, aortic atheroma | 2 | todo |  |
+| CH-26 | PO-5, content: TEE, cardiac source of embolism (ASE 2016 guideline): LAA, atrial septum, aortic atheroma | 2 | done |  |
 | CH-27 | PO-5, content: TEE, regurgitation after percutaneous valve repair or replacement (ASE 2019) and intraprocedural TEER imaging | 3 | todo |  |
 | CH-28 | PO-5, content: TEE screening before structural heart interventions (ASE) | 2 | todo | Only values the document publishes |
 | CH-30 | Strengthen the discrepancy test 'keeps different populations, grades, contexts and modalities apart': its overrides change `value` but not the published text that is compared, so it passes trivially | 0 | todo | Found during CH-19 |
@@ -395,3 +395,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-09 | CH-23 | Audit of all seeded sources for published mild/moderate/severe grades: right heart 2025 Table 1, prosthetic 2024 Tables 8/13/16/21, native regurgitation 2017 and stenosis tables already entered; strain, HCM, pericardial and diastolic documents publish none; RV diastolic rows of right heart Table 1 not entered (conflict with Table 6), SME question F7; F4 resolved by PO-4 | `CH-23: audit severity grades; flag RV diastolic grading for the SME` |
 | 2026-11-09 | CH-24 | Stress echo in ischaemic heart disease (ASE 2020, technique: stress): wall motion scoring by systolic thickening, WMSI note, scar criterion (≤ 6 mm), adequate stress (85% APMHR, 80% workload), risk by peak WMSI and RV WMSI, viability (contractile reserve in 4–5 segments); 7 parameters; E2E for the Stress echo category | `CH-24: stress echo in ischaemic heart disease (ASE 2020)` |
 | 2026-11-09 | CH-25 | Stress echo in non-ischaemic heart disease (EACVI/ASE 2017 JASE, technique: stress): low-flow AS (flow reserve, true vs pseudo-severe, projected AVA note, Figure 17 link), valvular cut-offs (Table 2), diastolic stress test (normal/abnormal, SPAP limits, adverse markers), new leaf 9.6 cardiomyopathies/HF (LVOT, ΔWMSI, ΔLVEF, B-lines, CFR); source re-registered as the JASE 2017 publication; 10 parameters | `CH-25: stress echo in non-ischaemic heart disease (EACVI/ASE 2017)` |
+| 2026-11-09 | CH-26 | TEE content from ASE 2016 cardiac source of embolism (technique: TEE): LAA peak flow velocity ≤ 27 cm/s + assessment note; aortic plaque ≥ 4 mm + views note; atrial septal aneurysm excursion ≥ 15 mm and large shunt > 20 bubbles; source registered from PubMed; 4 parameters; E2E for the TEE category | `CH-26: TEE values for cardiac sources of embolism (ASE 2016)` |

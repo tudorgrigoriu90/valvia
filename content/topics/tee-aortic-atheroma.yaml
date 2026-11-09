@@ -8,3 +8,33 @@ population: adult
 wave: W2
 status: draft
 seeAlso: [aortic-atheroma-grading]
+blocks:
+  - id: plaque-thickness
+    type: threshold-list
+    tag: PROG
+    title: Aortic plaque and cerebral embolism
+    values:
+      - parameter: aortic-plaque-thickness
+        context: prognostic-marker
+        operator: '>='
+        value: 4
+        unit: mm
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Plaque in the ascending aorta or aortic arch visualised by TEE; strongly correlated with cerebral embolic events. Complex (mobile, ulcerated) atheroma is also associated with embolism.'
+        citation:
+          source: ase-2016-cardiac-source-of-embolism
+          locator:
+            page: '29'
+  - id: views
+    type: note
+    tag: METH
+    title: Views and blind spot
+    text: 'Ascending aorta: midoesophageal long-axis (120–150°) and short-axis (30–60°) views; arch from upper oesophageal views; descending aorta in short and long axis. A short segment of the distal ascending aorta is a blind spot on TEE, and the abdominal aorta beyond the superior mesenteric artery cannot be seen; CT or MRI can fill these gaps.'
+    citation:
+      source: ase-2016-cardiac-source-of-embolism
+      locator:
+        page: '29'

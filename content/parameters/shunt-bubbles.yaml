@@ -1,0 +1,6 @@
+id: shunt-bubbles
+name: Bubbles crossing to the left atrium after agitated saline
+quantity: dimensionless
+unit: '1'
+modalities: [Echo]
+synonyms: [bubble study, right-to-left shunt, PFO shunt size, agitated saline contrast]

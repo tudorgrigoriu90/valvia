@@ -1,0 +1,6 @@
+id: aortic-plaque-thickness
+name: Aortic atheroma plaque thickness
+quantity: length
+unit: mm
+modalities: [Echo]
+synonyms: [aortic atheroma, aortic plaque, complex atheroma]

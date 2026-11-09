@@ -69,3 +69,13 @@ test('stress echo values appear under Stress echo only (CH-24 content)', async (
   await expect(page.getByRole('link', { name: /Stress echocardiography/ })).toBeVisible();
   await page.getByRole('button', { name: 'Adults' }).click();
 });
+
+test('TEE values appear under TEE only (CH-26 content)', async ({ page }) => {
+  await page.goto('./');
+  await page.getByRole('button', { name: 'TEE', exact: true }).click();
+  await page.getByRole('link', { name: /Transoesophageal echocardiography \(TEE\)/ }).click();
+  await page.getByRole('link', { name: /interatrial septum/ }).click();
+  await expect(page.locator('#septal-findings .threshold-list')).toBeVisible();
+  await page.getByRole('button', { name: 'Adults' }).click();
+  await expect(page.locator('#septal-findings .threshold-list')).toBeHidden();
+});

@@ -1,0 +1,8 @@
+id: laa-peak-flow-velocity
+name: LA appendage peak emptying flow velocity
+abbreviation: LAA velocity
+quantity: velocity-blood
+unit: m/s
+modalities: [Echo]
+synonyms: [LAA emptying velocity, left atrial appendage velocity, LAA flow]
+method: Pulsed Doppler with the sample volume about 1 cm into the LA appendage (TEE).

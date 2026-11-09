@@ -7,3 +7,40 @@ order: 1
 population: adult
 wave: W2
 status: draft
+blocks:
+  - id: septal-findings
+    type: threshold-list
+    tag: CRIT
+    title: Atrial septal aneurysm and shunt size
+    values:
+      - parameter: atrial-septal-excursion
+        context: diagnostic-criterion
+        operator: '>='
+        value: 15
+        unit: mm
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Atrial septal aneurysm: fixed displacement or mobile excursion of the fossa ovalis toward the right or left atrium, or a combined total excursion right and left, of 15 mm or more from the midline.'
+        citation:
+          source: ase-2016-cardiac-source-of-embolism
+          locator:
+            page: '30'
+      - parameter: shunt-bubbles
+        context: diagnostic-criterion
+        operator: '>'
+        value: 20
+        unit: '1'
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Large shunt: more than 20 bubbles crossing from the right to the left atrium. No shunt-size classification is universally accepted.'
+          - 'If TTE suggests a right-to-left shunt, TEE confirms a PFO and excludes other shunts.'
+        citation:
+          source: ase-2016-cardiac-source-of-embolism
+          locator:
+            page: '31'

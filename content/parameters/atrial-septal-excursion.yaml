@@ -1,0 +1,6 @@
+id: atrial-septal-excursion
+name: Fossa ovalis excursion from the midline
+quantity: length
+unit: mm
+modalities: [Echo]
+synonyms: [atrial septal aneurysm, ASA, interatrial septum]

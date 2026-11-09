@@ -8,3 +8,33 @@ population: adult
 wave: W2
 status: draft
 seeAlso: [la-laa-thrombus]
+blocks:
+  - id: laa-velocity
+    type: threshold-list
+    tag: PROG
+    title: LA appendage flow and thromboembolism
+    values:
+      - parameter: laa-peak-flow-velocity
+        context: prognostic-marker
+        operator: '<='
+        value: 27
+        unit: cm/s
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Associated with thromboembolic events in patients with atrial fibrillation (relative risk 1.7 in the cited trial substudy), as were LAA thrombus and aortic plaque.'
+        citation:
+          source: ase-2016-cardiac-source-of-embolism
+          locator:
+            page: '13'
+  - id: laa-assessment
+    type: note
+    tag: METH
+    title: Assessment
+    text: "Spontaneous echo contrast ('smoke') starts a continuum that progresses to sludge and thrombus. TEE is used to look for LA appendage thrombus, for example to guide cardioversion; 3D TEE adds perspective on appendage anatomy and helps tell real from artefactual masses."
+    citation:
+      source: ase-2016-cardiac-source-of-embolism
+      locator:
+        page: '10–13'
