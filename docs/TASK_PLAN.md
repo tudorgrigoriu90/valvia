@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-21 PO-5, taxonomy: add a top-level "Transoesophageal echocardiography (TE |
-| Next up | CH-22: chamber quantification abnormality grades (PO-6) |
+| Last completed | CH-22 PO-6, content: abnormality grades (normal, mildly, moderately, severel |
+| Next up | CH-23: audit other seeded leaves for published severity grades |
 
 ## Next up: R0 sequence
 
@@ -283,7 +283,7 @@ Order: one push each, top to bottom (TS-07.5.1 was finished locally first and sh
 | CH-19 | PO-5, schema: value-level `technique` (`TTE` default, `TEE`, `stress`; TEE and stress only with modality Echo); generated types; validation fixtures; content-model docs | 2 | done |  |
 | CH-20 | PO-5, category switch: header switch Adults · Children · TEE · Stress echo (replaces Adults/Children); values, sections, topic lists and notices follow the chosen category (TTE values by age group, TEE and stress values by technique); stored on the device; E2E at 360 px and desktop, axe | 3 | done | Replaces the TS-04.7.1 switch |
 | CH-21 | PO-5, taxonomy: add a top-level "Transoesophageal echocardiography (TEE)" branch; tag existing stress values (low-flow AS dobutamine stress, diastolic stress test) with `technique: stress` | 1 | done | No stress values existed to tag; stress content comes with CH-24/CH-25 |
-| CH-22 | PO-6, content: abnormality grades (normal, mildly, moderately, severely abnormal) for chamber quantification where ASE/EACVI 2015 publishes them (LV size and volumes, LV mass, RV, LA/RA) | 2 | todo | LA volume and LVEF already graded |
+| CH-22 | PO-6, content: abnormality grades (normal, mildly, moderately, severely abnormal) for chamber quantification where ASE/EACVI 2015 publishes them (LV size and volumes, LV mass, RV, LA/RA) | 2 | done | LA volume and LVEF already graded |
 | CH-23 | PO-6, content: audit the other seeded leaves (right heart 2025, diastolic, strain, HCM, pericardial, prosthetic) for published mild/moderate/severe abnormality grades and add them | 2 | todo | Only where the source prints them; never derived |
 | CH-24 | PO-5, content: stress echo in ischaemic heart disease (ASE 2020 guideline) | 3 | todo | Taxonomy 9.1 |
 | CH-25 | PO-5, content: stress echo in non-ischaemic heart disease (EACVI/ASE 2017 recommendations): valvular, diastolic, pulmonary pressure, HCM | 3 | todo | Taxonomy 9.2–9.4 |
@@ -391,3 +391,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-09 | CH-19 | Optional value field technique (TTE default, TEE, stress; TEE/stress only with modality Echo) in schema and generated types; discrepancies never compare across techniques; content-model docs | `CH-19: value-level technique (TTE, TEE, stress)` |
 | 2026-11-09 | CH-20 | Header switch Adults · Children · TEE · Stress echo (PO-5) replaces Adults/Children: values, sections, topic lists and category cards (with per-category counts) follow the chosen category; per-category notices on leaf and home pages; choice stored on the device (old paediatric choice honoured); core/population/category.ts at 100 %; E2E incl. 360 px and axe | `CH-20: category switch Adults, Children, TEE, Stress echo` |
 | 2026-11-09 | CH-21 | Taxonomy section 16 TEE (top-level node + 6 leaves: LAA, interatrial septum, aortic atheroma, residual regurgitation after transcatheter interventions, TEE guidance, structural screening) with cross-links; draft, hidden until populated; status E2E no longer hard-codes the root count | `CH-21: add the TEE branch to the taxonomy` |
+| 2026-11-09 | CH-22 | Abnormality grades (normal, mildly, moderately, severely abnormal) by sex from ASE/EACVI 2015 Supplemental Table 3 (p. 39.e8): LV diameters, indexed diameters, volumes, indexed volumes; wall thickness and LV mass (linear and 2D); new parameters lvedd-index, lvesd-index | `CH-22: add LV size and mass severity partitions (ASE/EACVI 2015)` |

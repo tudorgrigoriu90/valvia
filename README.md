@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-21: PO-5, taxonomy: add a top-level "Transoesophageal echocardiography (TE |
-| Next task | CH-22: chamber quantification abnormality grades (PO-6) |
+| Last completed task | CH-22: PO-6, content: abnormality grades (normal, mildly, moderately, severel |
+| Next task | CH-23: audit other seeded leaves for published severity grades |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

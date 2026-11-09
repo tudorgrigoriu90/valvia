@@ -217,6 +217,1148 @@ blocks:
           locator:
             table: '2'
             page: '7'
+  - id: severity-partitions
+    type: grading-table
+    tag: GRADE
+    title: Severity of LV enlargement by sex
+    grades: ['Normal range', 'Mildly abnormal', 'Moderately abnormal', 'Severely abnormal']
+    values:
+      - parameter: lvedd
+        context: grading
+        grade: Normal range
+        operator: range
+        min: 4.2
+        max: 5.8
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lvedd
+        context: grading
+        grade: Mildly abnormal
+        operator: range
+        min: 5.9
+        max: 6.3
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lvedd
+        context: grading
+        grade: Moderately abnormal
+        operator: range
+        min: 6.4
+        max: 6.8
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lvedd
+        context: grading
+        grade: Severely abnormal
+        operator: '>'
+        value: 6.8
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lvedd
+        context: grading
+        grade: Normal range
+        operator: range
+        min: 3.8
+        max: 5.2
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lvedd
+        context: grading
+        grade: Mildly abnormal
+        operator: range
+        min: 5.3
+        max: 5.6
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lvedd
+        context: grading
+        grade: Moderately abnormal
+        operator: range
+        min: 5.7
+        max: 6.1
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lvedd
+        context: grading
+        grade: Severely abnormal
+        operator: '>'
+        value: 6.1
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lvedd-index
+        context: grading
+        grade: Normal range
+        operator: range
+        min: 2.2
+        max: 3.0
+        unit: cm/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lvedd-index
+        context: grading
+        grade: Mildly abnormal
+        operator: range
+        min: 3.1
+        max: 3.3
+        unit: cm/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lvedd-index
+        context: grading
+        grade: Moderately abnormal
+        operator: range
+        min: 3.4
+        max: 3.6
+        unit: cm/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lvedd-index
+        context: grading
+        grade: Severely abnormal
+        operator: '>'
+        value: 3.6
+        unit: cm/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lvedd-index
+        context: grading
+        grade: Normal range
+        operator: range
+        min: 2.3
+        max: 3.1
+        unit: cm/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lvedd-index
+        context: grading
+        grade: Mildly abnormal
+        operator: range
+        min: 3.2
+        max: 3.4
+        unit: cm/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lvedd-index
+        context: grading
+        grade: Moderately abnormal
+        operator: range
+        min: 3.5
+        max: 3.7
+        unit: cm/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lvedd-index
+        context: grading
+        grade: Severely abnormal
+        operator: '>'
+        value: 3.7
+        unit: cm/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lvesd
+        context: grading
+        grade: Normal range
+        operator: range
+        min: 2.5
+        max: 4.0
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lvesd
+        context: grading
+        grade: Mildly abnormal
+        operator: range
+        min: 4.1
+        max: 4.3
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lvesd
+        context: grading
+        grade: Moderately abnormal
+        operator: range
+        min: 4.4
+        max: 4.5
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lvesd
+        context: grading
+        grade: Severely abnormal
+        operator: '>'
+        value: 4.5
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lvesd
+        context: grading
+        grade: Normal range
+        operator: range
+        min: 2.2
+        max: 3.5
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lvesd
+        context: grading
+        grade: Mildly abnormal
+        operator: range
+        min: 3.6
+        max: 3.8
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lvesd
+        context: grading
+        grade: Moderately abnormal
+        operator: range
+        min: 3.9
+        max: 4.1
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lvesd
+        context: grading
+        grade: Severely abnormal
+        operator: '>'
+        value: 4.1
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lvesd-index
+        context: grading
+        grade: Normal range
+        operator: range
+        min: 1.3
+        max: 2.1
+        unit: cm/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lvesd-index
+        context: grading
+        grade: Mildly abnormal
+        operator: range
+        min: 2.2
+        max: 2.3
+        unit: cm/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lvesd-index
+        context: grading
+        grade: Moderately abnormal
+        operator: range
+        min: 2.4
+        max: 2.5
+        unit: cm/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lvesd-index
+        context: grading
+        grade: Severely abnormal
+        operator: '>'
+        value: 2.5
+        unit: cm/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lvesd-index
+        context: grading
+        grade: Normal range
+        operator: range
+        min: 1.3
+        max: 2.1
+        unit: cm/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lvesd-index
+        context: grading
+        grade: Mildly abnormal
+        operator: range
+        min: 2.2
+        max: 2.3
+        unit: cm/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lvesd-index
+        context: grading
+        grade: Moderately abnormal
+        operator: range
+        min: 2.4
+        max: 2.6
+        unit: cm/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lvesd-index
+        context: grading
+        grade: Severely abnormal
+        operator: '>'
+        value: 2.6
+        unit: cm/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-edv
+        context: grading
+        grade: Normal range
+        operator: range
+        min: 62
+        max: 150
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-edv
+        context: grading
+        grade: Mildly abnormal
+        operator: range
+        min: 151
+        max: 174
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-edv
+        context: grading
+        grade: Moderately abnormal
+        operator: range
+        min: 175
+        max: 200
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-edv
+        context: grading
+        grade: Severely abnormal
+        operator: '>'
+        value: 200
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-edv
+        context: grading
+        grade: Normal range
+        operator: range
+        min: 46
+        max: 106
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-edv
+        context: grading
+        grade: Mildly abnormal
+        operator: range
+        min: 107
+        max: 120
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-edv
+        context: grading
+        grade: Moderately abnormal
+        operator: range
+        min: 121
+        max: 130
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-edv
+        context: grading
+        grade: Severely abnormal
+        operator: '>'
+        value: 130
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-edv-index
+        context: grading
+        grade: Normal range
+        operator: range
+        min: 34
+        max: 74
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-edv-index
+        context: grading
+        grade: Mildly abnormal
+        operator: range
+        min: 75
+        max: 89
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-edv-index
+        context: grading
+        grade: Moderately abnormal
+        operator: range
+        min: 90
+        max: 100
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-edv-index
+        context: grading
+        grade: Severely abnormal
+        operator: '>'
+        value: 100
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-edv-index
+        context: grading
+        grade: Normal range
+        operator: range
+        min: 29
+        max: 61
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-edv-index
+        context: grading
+        grade: Mildly abnormal
+        operator: range
+        min: 62
+        max: 70
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-edv-index
+        context: grading
+        grade: Moderately abnormal
+        operator: range
+        min: 71
+        max: 80
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-edv-index
+        context: grading
+        grade: Severely abnormal
+        operator: '>'
+        value: 80
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-esv
+        context: grading
+        grade: Normal range
+        operator: range
+        min: 21
+        max: 61
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-esv
+        context: grading
+        grade: Mildly abnormal
+        operator: range
+        min: 62
+        max: 73
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-esv
+        context: grading
+        grade: Moderately abnormal
+        operator: range
+        min: 74
+        max: 85
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-esv
+        context: grading
+        grade: Severely abnormal
+        operator: '>'
+        value: 85
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-esv
+        context: grading
+        grade: Normal range
+        operator: range
+        min: 14
+        max: 42
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-esv
+        context: grading
+        grade: Mildly abnormal
+        operator: range
+        min: 43
+        max: 55
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-esv
+        context: grading
+        grade: Moderately abnormal
+        operator: range
+        min: 56
+        max: 67
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-esv
+        context: grading
+        grade: Severely abnormal
+        operator: '>'
+        value: 67
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-esv-index
+        context: grading
+        grade: Normal range
+        operator: range
+        min: 11
+        max: 31
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-esv-index
+        context: grading
+        grade: Mildly abnormal
+        operator: range
+        min: 32
+        max: 38
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-esv-index
+        context: grading
+        grade: Moderately abnormal
+        operator: range
+        min: 39
+        max: 45
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-esv-index
+        context: grading
+        grade: Severely abnormal
+        operator: '>'
+        value: 45
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-esv-index
+        context: grading
+        grade: Normal range
+        operator: range
+        min: 8
+        max: 24
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-esv-index
+        context: grading
+        grade: Mildly abnormal
+        operator: range
+        min: 25
+        max: 32
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-esv-index
+        context: grading
+        grade: Moderately abnormal
+        operator: range
+        min: 33
+        max: 40
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
+      - parameter: lv-esv-index
+        context: grading
+        grade: Severely abnormal
+        operator: '>'
+        value: 40
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Suggested, experience-based partition values (guideline Appendix); interpret with caution.'
+        citation:
+          source: ase-eacvi-2015-chamber-quantification
+          locator:
+            table: 'Supplemental 3'
+            page: '39.e8'
   - id: method
     type: note
     tag: METH

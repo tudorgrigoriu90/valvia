@@ -1,0 +1,7 @@
+id: lvedd-index
+name: LV end-diastolic diameter indexed to BSA
+abbreviation: LVEDD/BSA
+quantity: indexed-length
+unit: cm/m²
+modalities: [Echo]
+synonyms: [indexed LVEDD, LVIDd index]

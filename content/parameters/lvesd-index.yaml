@@ -1,0 +1,7 @@
+id: lvesd-index
+name: LV end-systolic diameter indexed to BSA
+abbreviation: LVESD/BSA
+quantity: indexed-length
+unit: cm/m²
+modalities: [Echo]
+synonyms: [indexed LVESD, LVIDs index]
