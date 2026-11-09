@@ -7,3 +7,78 @@ order: 5
 population: adult
 wave: W2
 status: draft
+blocks:
+  - id: screening-criteria
+    type: threshold-list
+    tag: CRIT
+    title: Definitions and criteria used in TEE screening
+    values:
+      - parameter: mitral-leaflet-displacement
+        context: diagnostic-criterion
+        operator: '>='
+        value: 2
+        unit: mm
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Mitral valve prolapse: leaflet tissue extends 2 mm or more above the high points of the mitral annulus in systole. Describe timing, location (leaflet, scallop) and extent (flail width and gap).'
+        citation:
+          source: ase-2022-tee-screening-structural
+          locator:
+            page: '21'
+      - parameter: arch-end-diastolic-reversal-velocity
+        context: diagnostic-criterion
+        operator: '>'
+        value: 20
+        unit: cm/s
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        caveats:
+          - Holodiastolic flow reversal in the aortic arch (PW Doppler) with a high end-diastolic velocity suggests at least moderate AR; less specific with advanced age or concomitant disease.
+        citation:
+          source: ase-2022-tee-screening-structural
+          locator:
+            page: '17'
+      - parameter: tricuspid-septal-leaflet-displacement-index
+        context: diagnostic-criterion
+        operator: '>'
+        value: 8
+        unit: mm/m²
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        caveats:
+          - Ebstein anomaly; the displaced annulus and atrialised basal RV currently preclude transcatheter tricuspid annular repair or valve replacement.
+        citation:
+          source: ase-2022-tee-screening-structural
+          locator:
+            page: '47'
+      - parameter: atrial-septal-rim
+        context: diagnostic-criterion
+        operator: '<'
+        value: 5
+        unit: mm
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        caveats:
+          - Deficiency of specific rims around a secundum ASD may preclude device closure; measure all rims (TEE).
+        citation:
+          source: ase-2022-tee-screening-structural
+          locator:
+            page: '53'
+  - id: septal-evaluation
+    type: note
+    tag: METH
+    title: Interatrial septum before closure or transseptal access
+    text: 'Image the septum from 0° in 15° steps up to 120°. Defects larger than available devices and anomalous pulmonary venous connections may need surgery. Assess a PFO from the midoesophageal inflow-outflow view (45–60°) for size at both atrial ends, tunnel length and additional defects; use colour Doppler with a low Nyquist limit (below 40 cm/s) and, if needed, agitated saline with manoeuvres.'
+    citation:
+      source: ase-2022-tee-screening-structural
+      locator:
+        page: '53–54'

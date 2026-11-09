@@ -1,0 +1,6 @@
+id: mitral-leaflet-displacement
+name: Systolic mitral leaflet displacement above the annular high points
+quantity: length
+unit: mm
+modalities: [Echo]
+synonyms: [mitral valve prolapse, MVP, billowing]

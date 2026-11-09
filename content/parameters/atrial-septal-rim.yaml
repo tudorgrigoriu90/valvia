@@ -1,0 +1,6 @@
+id: atrial-septal-rim
+name: Atrial septal defect rim length
+quantity: length
+unit: mm
+modalities: [Echo]
+synonyms: [ASD rims, secundum ASD, device closure]

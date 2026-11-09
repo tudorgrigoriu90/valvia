@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-27 PO-5, content: TEE, regurgitation after percutaneous valve repair or r |
-| Next up | CH-28: TEE screening before structural heart interventions (ASE) |
+| Last completed | CH-28 PO-5, content: TEE screening before structural heart interventions (AS |
+| Next up | CH-29: custom domain checklist (valvia-echo.se) |
 
 ## Next up: R0 sequence
 
@@ -289,7 +289,7 @@ Order: one push each, top to bottom (TS-07.5.1 was finished locally first and sh
 | CH-25 | PO-5, content: stress echo in non-ischaemic heart disease (EACVI/ASE 2017 recommendations): valvular, diastolic, pulmonary pressure, HCM | 3 | done | Taxonomy 9.2–9.4 |
 | CH-26 | PO-5, content: TEE, cardiac source of embolism (ASE 2016 guideline): LAA, atrial septum, aortic atheroma | 2 | done |  |
 | CH-27 | PO-5, content: TEE, regurgitation after percutaneous valve repair or replacement (ASE 2019) and intraprocedural TEER imaging | 3 | done |  |
-| CH-28 | PO-5, content: TEE screening before structural heart interventions (ASE) | 2 | todo | Only values the document publishes |
+| CH-28 | PO-5, content: TEE screening before structural heart interventions (ASE) | 2 | done | Only values the document publishes |
 | CH-30 | Strengthen the discrepancy test 'keeps different populations, grades, contexts and modalities apart': its overrides change `value` but not the published text that is compared, so it passes trivially | 0 | todo | Found during CH-19 |
 | CH-29 | TS-08.2 checklist: custom domain `valvia-echo.se` (Loopia DNS → GitHub Pages, `VALVIA_SITE`/`VALVIA_BASE` variables) in `docs/ci-cd.md` | 0 | todo | Engineer performs the DNS change (`manual`) |
 
@@ -397,3 +397,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-09 | CH-25 | Stress echo in non-ischaemic heart disease (EACVI/ASE 2017 JASE, technique: stress): low-flow AS (flow reserve, true vs pseudo-severe, projected AVA note, Figure 17 link), valvular cut-offs (Table 2), diastolic stress test (normal/abnormal, SPAP limits, adverse markers), new leaf 9.6 cardiomyopathies/HF (LVOT, ΔWMSI, ΔLVEF, B-lines, CFR); source re-registered as the JASE 2017 publication; 10 parameters | `CH-25: stress echo in non-ischaemic heart disease (EACVI/ASE 2017)` |
 | 2026-11-09 | CH-26 | TEE content from ASE 2016 cardiac source of embolism (technique: TEE): LAA peak flow velocity ≤ 27 cm/s + assessment note; aortic plaque ≥ 4 mm + views note; atrial septal aneurysm excursion ≥ 15 mm and large shunt > 20 bubbles; source registered from PubMed; 4 parameters; E2E for the TEE category | `CH-26: TEE values for cardiac sources of embolism (ASE 2016)` |
 | 2026-11-09 | CH-27 | TEE content for transcatheter mitral interventions (technique: TEE): ASE 2026 M-TEER (anatomic suitability grades for MVA, gradient, posterior leaflet length; qualitative suitability checklist; morphology by MR mechanism; before/after deployment targets; leaflet length by device; additional-device note) and ASE 2019 Table 5 (VCW ≥ 0.7 cm, qualitative residual MR signs); 2 sources from PubMed; 6 parameters | `CH-27: TEE values for M-TEER and residual MR (ASE 2026, ASE 2019)` |
+| 2026-11-09 | CH-28 | TEE screening before structural interventions (ASE 2022, technique: TEE): mitral prolapse ≥ 2 mm, aortic arch end-diastolic reversal > 20 cm/s, Ebstein > 8 mm/m², ASD rim < 5 mm; septal evaluation note; source from PubMed; 4 parameters | `CH-28: TEE screening criteria before structural interventions (ASE 2022)` |

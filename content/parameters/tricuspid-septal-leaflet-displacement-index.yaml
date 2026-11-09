@@ -1,0 +1,6 @@
+id: tricuspid-septal-leaflet-displacement-index
+name: Apical displacement of the tricuspid septal leaflet indexed to BSA
+quantity: indexed-length
+unit: mm/m²
+modalities: [Echo]
+synonyms: [Ebstein anomaly, septal leaflet displacement]

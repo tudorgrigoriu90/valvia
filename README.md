@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-27: PO-5, content: TEE, regurgitation after percutaneous valve repair or r |
-| Next task | CH-28: TEE screening before structural heart interventions (ASE) |
+| Last completed task | CH-28: PO-5, content: TEE screening before structural heart interventions (AS |
+| Next task | CH-29: custom domain checklist (valvia-echo.se) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

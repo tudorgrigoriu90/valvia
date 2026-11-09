@@ -1,0 +1,6 @@
+id: arch-end-diastolic-reversal-velocity
+name: End-diastolic flow reversal velocity in the aortic arch
+quantity: velocity-blood
+unit: m/s
+modalities: [Echo]
+synonyms: [holodiastolic flow reversal, aortic regurgitation, TEE]
