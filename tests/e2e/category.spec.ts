@@ -58,3 +58,14 @@ test('the switch fits a 360 px screen without horizontal scrolling and passes ax
     .analyze();
   expect(results.violations.map((v) => v.id)).toEqual([]);
 });
+
+test('stress echo values appear under Stress echo only (CH-24 content)', async ({ page }) => {
+  await page.goto('stress-echocardiography/ischaemia-and-viability-criteria/');
+  await expect(page.getByRole('table', { name: 'Segmental wall motion score by systolic thickening' })).toBeHidden();
+  await expect(page.locator('[data-category-notice]:visible')).toContainText('Values here are for: Stress echo');
+  await page.getByRole('button', { name: 'Stress echo', exact: true }).click();
+  await expect(page.getByRole('table', { name: 'Segmental wall motion score by systolic thickening' })).toBeVisible();
+  await page.goto('./');
+  await expect(page.getByRole('link', { name: /Stress echocardiography/ })).toBeVisible();
+  await page.getByRole('button', { name: 'Adults' }).click();
+});

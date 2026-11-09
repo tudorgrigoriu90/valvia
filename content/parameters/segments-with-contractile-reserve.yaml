@@ -1,0 +1,6 @@
+id: segments-with-contractile-reserve
+name: Dysfunctional segments with contractile reserve
+quantity: dimensionless
+unit: '1'
+modalities: [Echo]
+synonyms: [viability, viable segments, contractile reserve, low-dose dobutamine]

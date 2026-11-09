@@ -1,0 +1,7 @@
+id: segmental-systolic-thickening
+name: Segmental systolic wall thickening
+quantity: percent
+unit: '%'
+modalities: [Echo]
+synonyms: [wall thickening, systolic thickening, regional wall motion score]
+method: Systolic increase in wall thickness of an LV segment, graded at rest and with stress (five-point wall motion score).

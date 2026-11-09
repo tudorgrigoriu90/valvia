@@ -7,3 +7,204 @@ order: 0
 population: adult
 wave: W2
 status: draft
+blocks:
+  - id: wall-motion-scoring
+    type: grading-table
+    tag: GRADE
+    title: Segmental wall motion score by systolic thickening
+    grades: ['Normal or hyperkinesis (score 1)', 'Hypokinesis (score 2)', 'Severe hypokinesis or akinesis (score 3)']
+    values:
+      - parameter: segmental-systolic-thickening
+        context: grading
+        grade: Normal or hyperkinesis (score 1)
+        operator: '>'
+        value: 50
+        unit: '%'
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2020-stress-echo-ischaemic
+          locator:
+            page: '11'
+      - parameter: segmental-systolic-thickening
+        context: grading
+        grade: Hypokinesis (score 2)
+        operator: '<'
+        value: 40
+        unit: '%'
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2020-stress-echo-ischaemic
+          locator:
+            page: '11'
+      - parameter: segmental-systolic-thickening
+        context: grading
+        grade: Severe hypokinesis or akinesis (score 3)
+        operator: '<'
+        value: 10
+        unit: '%'
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2020-stress-echo-ischaemic
+          locator:
+            page: '11'
+  - id: wall-motion-score-index
+    type: note
+    tag: METH
+    title: 'Scores 4 and 5, and the wall motion score index'
+    text: 'Dyskinesis (paradoxical systolic motion away from the LV centre) scores 4 and aneurysm (diastolic deformation) scores 5. The WMSI is the sum of the segment scores divided by the number of segments visualised, using the 16- or 17-segment model, at rest and with stress.'
+    citation:
+      source: ase-2020-stress-echo-ischaemic
+      locator:
+        page: '11'
+  - id: scar
+    type: threshold-list
+    tag: CRIT
+    title: Resting wall thickness indicating transmural infarction and scar
+    values:
+      - parameter: diastolic-wall-thickness
+        context: diagnostic-criterion
+        operator: '<='
+        value: 6
+        unit: mm
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Or diastolic wall thickness < 70% of that of normal segments.'
+        citation:
+          source: ase-2020-stress-echo-ischaemic
+          locator:
+            page: '11'
+  - id: adequacy
+    type: threshold-list
+    tag: CRIT
+    title: Adequate stress
+    values:
+      - parameter: target-heart-rate
+        context: diagnostic-criterion
+        operator: '>='
+        value: 85
+        unit: '%'
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Target heart rate for dobutamine stress (85% of the age-predicted maximum heart rate); some centres also stop exercise at this heart rate, although continuing to symptoms increases sensitivity.'
+        citation:
+          source: ase-2020-stress-echo-ischaemic
+          locator:
+            page: '8–9'
+      - parameter: predicted-workload
+        context: diagnostic-criterion
+        operator: '>='
+        value: 80
+        unit: '%'
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Exercise testing: failure to achieve at least 80% of the age- and sex-predicted workload may reduce sensitivity for ischaemia.'
+        citation:
+          source: ase-2020-stress-echo-ischaemic
+          locator:
+            page: '8'
+  - id: risk-stratification
+    type: threshold-list
+    tag: PROG
+    title: Risk stratification by peak stress wall motion
+    values:
+      - parameter: peak-wmsi
+        context: prognostic-marker
+        operator: '='
+        value: 1
+        unit: '1'
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Normal stress echocardiogram: benign prognosis (0.9%/year cardiac event rate) in the cited cohort.'
+        citation:
+          source: ase-2020-stress-echo-ischaemic
+          locator:
+            page: '21'
+      - parameter: peak-wmsi
+        context: prognostic-marker
+        operator: range
+        min: 1.1
+        max: 1.7
+        unit: '1'
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Intermediate risk (3.1%/year cardiac events) in the cited cohort.'
+        citation:
+          source: ase-2020-stress-echo-ischaemic
+          locator:
+            page: '21'
+      - parameter: peak-wmsi
+        context: prognostic-marker
+        operator: '>='
+        value: 1.7
+        unit: '1'
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - 'High risk (5.2%/year cardiac events) in the cited cohort.'
+        citation:
+          source: ase-2020-stress-echo-ischaemic
+          locator:
+            page: '21'
+      - parameter: peak-rv-wmsi
+        context: prognostic-marker
+        operator: '>'
+        value: 2
+        unit: '1'
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Three-segment RV model; event rates as high as 11.4% in the cited study.'
+        citation:
+          source: ase-2020-stress-echo-ischaemic
+          locator:
+            page: '22'
+  - id: viability
+    type: threshold-list
+    tag: PROG
+    title: Viability with low-dose dobutamine
+    values:
+      - parameter: segments-with-contractile-reserve
+        context: prognostic-marker
+        operator: range
+        min: 4
+        max: 5
+        unit: '1'
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Contractile reserve in 4 to 5 dysfunctional segments is the minimum amount of viable myocardium that predicts an EF improvement of 5% or more and improved outcomes with revascularisation.'
+          - Improvement in two adjacent segments is a more reliable sign of viability than slight improvement in an isolated segment.
+        citation:
+          source: ase-2020-stress-echo-ischaemic
+          locator:
+            page: '25'

@@ -1,0 +1,7 @@
+id: peak-rv-wmsi
+name: Peak stress RV wall motion score index
+abbreviation: Peak RV WMSI
+quantity: dimensionless
+unit: '1'
+modalities: [Echo]
+synonyms: [RV WMSI, right ventricular wall motion score index]

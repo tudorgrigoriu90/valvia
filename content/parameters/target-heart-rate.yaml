@@ -1,0 +1,7 @@
+id: target-heart-rate
+name: Heart rate achieved, % of age-predicted maximum
+abbreviation: Target HR
+quantity: percent
+unit: '%'
+modalities: [Echo]
+synonyms: [target heart rate, age-predicted maximum heart rate, APMHR]

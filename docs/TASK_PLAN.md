@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-23 PO-6, content: audit the other seeded leaves (right heart 2025, diasto |
-| Next up | CH-24: stress echo in ischaemic heart disease (ASE 2020) |
+| Last completed | CH-24 PO-5, content: stress echo in ischaemic heart disease (ASE 2020 guidel |
+| Next up | CH-25: stress echo in non-ischaemic heart disease (EACVI/ASE 2017) |
 
 ## Next up: R0 sequence
 
@@ -285,7 +285,7 @@ Order: one push each, top to bottom (TS-07.5.1 was finished locally first and sh
 | CH-21 | PO-5, taxonomy: add a top-level "Transoesophageal echocardiography (TEE)" branch; tag existing stress values (low-flow AS dobutamine stress, diastolic stress test) with `technique: stress` | 1 | done | No stress values existed to tag; stress content comes with CH-24/CH-25 |
 | CH-22 | PO-6, content: abnormality grades (normal, mildly, moderately, severely abnormal) for chamber quantification where ASE/EACVI 2015 publishes them (LV size and volumes, LV mass, RV, LA/RA) | 2 | done | LA volume and LVEF already graded |
 | CH-23 | PO-6, content: audit the other seeded leaves (right heart 2025, diastolic, strain, HCM, pericardial, prosthetic) for published mild/moderate/severe abnormality grades and add them | 2 | done | Only RV diastolic rows missing (source conflict, SME question F7) |
-| CH-24 | PO-5, content: stress echo in ischaemic heart disease (ASE 2020 guideline) | 3 | todo | Taxonomy 9.1 |
+| CH-24 | PO-5, content: stress echo in ischaemic heart disease (ASE 2020 guideline) | 3 | done | Taxonomy 9.1 |
 | CH-25 | PO-5, content: stress echo in non-ischaemic heart disease (EACVI/ASE 2017 recommendations): valvular, diastolic, pulmonary pressure, HCM | 3 | todo | Taxonomy 9.2–9.4 |
 | CH-26 | PO-5, content: TEE, cardiac source of embolism (ASE 2016 guideline): LAA, atrial septum, aortic atheroma | 2 | todo |  |
 | CH-27 | PO-5, content: TEE, regurgitation after percutaneous valve repair or replacement (ASE 2019) and intraprocedural TEER imaging | 3 | todo |  |
@@ -393,3 +393,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-09 | CH-21 | Taxonomy section 16 TEE (top-level node + 6 leaves: LAA, interatrial septum, aortic atheroma, residual regurgitation after transcatheter interventions, TEE guidance, structural screening) with cross-links; draft, hidden until populated; status E2E no longer hard-codes the root count | `CH-21: add the TEE branch to the taxonomy` |
 | 2026-11-09 | CH-22 | Abnormality grades (normal, mildly, moderately, severely abnormal) by sex from ASE/EACVI 2015 Supplemental Table 3 (p. 39.e8): LV diameters, indexed diameters, volumes, indexed volumes; wall thickness and LV mass (linear and 2D); new parameters lvedd-index, lvesd-index | `CH-22: add LV size and mass severity partitions (ASE/EACVI 2015)` |
 | 2026-11-09 | CH-23 | Audit of all seeded sources for published mild/moderate/severe grades: right heart 2025 Table 1, prosthetic 2024 Tables 8/13/16/21, native regurgitation 2017 and stenosis tables already entered; strain, HCM, pericardial and diastolic documents publish none; RV diastolic rows of right heart Table 1 not entered (conflict with Table 6), SME question F7; F4 resolved by PO-4 | `CH-23: audit severity grades; flag RV diastolic grading for the SME` |
+| 2026-11-09 | CH-24 | Stress echo in ischaemic heart disease (ASE 2020, technique: stress): wall motion scoring by systolic thickening, WMSI note, scar criterion (≤ 6 mm), adequate stress (85% APMHR, 80% workload), risk by peak WMSI and RV WMSI, viability (contractile reserve in 4–5 segments); 7 parameters; E2E for the Stress echo category | `CH-24: stress echo in ischaemic heart disease (ASE 2020)` |

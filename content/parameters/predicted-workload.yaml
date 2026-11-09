@@ -1,0 +1,6 @@
+id: predicted-workload
+name: Exercise workload achieved, % of age- and sex-predicted
+quantity: percent
+unit: '%'
+modalities: [Echo]
+synonyms: [workload, METs, exercise capacity]

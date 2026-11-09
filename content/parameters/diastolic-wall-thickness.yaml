@@ -1,0 +1,6 @@
+id: diastolic-wall-thickness
+name: Segmental end-diastolic wall thickness
+quantity: length
+unit: mm
+modalities: [Echo]
+synonyms: [thinned segment, scar, transmural infarction]

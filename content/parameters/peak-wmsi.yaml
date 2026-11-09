@@ -1,0 +1,8 @@
+id: peak-wmsi
+name: Peak stress LV wall motion score index
+abbreviation: Peak WMSI
+quantity: dimensionless
+unit: '1'
+modalities: [Echo]
+synonyms: [WMSI, wall motion score index, stress WMSI]
+method: Sum of segmental wall motion scores divided by the number of segments visualised.
