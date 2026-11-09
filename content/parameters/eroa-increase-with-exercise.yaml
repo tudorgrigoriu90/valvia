@@ -1,0 +1,7 @@
+id: eroa-increase-with-exercise
+name: Increase in EROA from rest to peak exercise
+abbreviation: ΔEROA
+quantity: area
+unit: cm²
+modalities: [Echo]
+synonyms: [dynamic mitral regurgitation, exercise MR]

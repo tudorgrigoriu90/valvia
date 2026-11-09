@@ -1,0 +1,7 @@
+id: aortic-mean-gradient-increase
+name: Increase in aortic mean gradient from rest to peak exercise
+abbreviation: ΔMPG
+quantity: pressure
+unit: mmHg
+modalities: [Echo]
+synonyms: [exercise AS, mean pressure gradient increase]

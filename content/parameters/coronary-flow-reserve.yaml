@@ -1,0 +1,7 @@
+id: coronary-flow-reserve
+name: Coronary flow reserve
+abbreviation: CFR
+quantity: ratio
+unit: '1'
+modalities: [Echo]
+synonyms: [CFR, LAD flow reserve, vasodilator stress]

@@ -8,3 +8,159 @@ population: adult
 wave: W2
 status: draft
 seeAlso: [diastolic-stress-echocardiography]
+blocks:
+  - id: normal-test
+    type: threshold-list
+    tag: CRIT
+    title: Normal diastolic exercise test
+    values:
+      - parameter: e-over-e-prime-septal
+        context: diagnostic-criterion
+        operator: '<'
+        value: 10
+        unit: '1'
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - At rest and with exercise.
+        citation:
+          source: eacvi-ase-2017-stress-echo-non-ischaemic
+          locator:
+            page: '111'
+      - parameter: tr-velocity
+        context: diagnostic-criterion
+        operator: '<'
+        value: 2.8
+        unit: m/s
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Peak TR velocity, at rest and with stress.'
+        citation:
+          source: eacvi-ase-2017-stress-echo-non-ischaemic
+          locator:
+            page: '111'
+  - id: abnormal-test
+    type: threshold-list
+    tag: CRIT
+    title: Abnormal diastolic exercise test
+    values:
+      - parameter: e-over-e-prime-average
+        context: diagnostic-criterion
+        operator: '>'
+        value: 14
+        unit: '1'
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Printed: a study is abnormal when the average E/e′ ratio is > 14 and the septal e′ velocity is < 7 cm/s at baseline.'
+        citation:
+          source: eacvi-ase-2017-stress-echo-non-ischaemic
+          locator:
+            page: '111'
+      - parameter: e-prime-septal
+        context: diagnostic-criterion
+        operator: '<'
+        value: 7
+        unit: cm/s
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - At baseline.
+        citation:
+          source: eacvi-ase-2017-stress-echo-non-ischaemic
+          locator:
+            page: '111'
+      - parameter: tr-velocity
+        context: diagnostic-criterion
+        operator: '>'
+        value: 3.1
+        unit: m/s
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - 'With exercise; usually indicates an abnormal response, but aerobically trained athletes can normally generate higher pressures.'
+        citation:
+          source: eacvi-ase-2017-stress-echo-non-ischaemic
+          locator:
+            page: '111'
+  - id: spap-limits
+    type: threshold-list
+    tag: CRIT
+    title: Upper normal SPAP
+    values:
+      - parameter: spap
+        context: normal-range
+        operator: '<'
+        value: 35
+        unit: mmHg
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - At rest. SPAP rises with age; consider age and the workload achieved.
+        citation:
+          source: eacvi-ase-2017-stress-echo-non-ischaemic
+          locator:
+            page: '111'
+      - parameter: spap
+        context: normal-range
+        operator: '<'
+        value: 43
+        unit: mmHg
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - With exercise. SPAP rises with age; consider age and the workload achieved.
+        citation:
+          source: eacvi-ase-2017-stress-echo-non-ischaemic
+          locator:
+            page: '111'
+  - id: adverse-outcome
+    type: threshold-list
+    tag: PROG
+    title: Markers of adverse outcome
+    values:
+      - parameter: e-over-e-prime-septal
+        context: prognostic-marker
+        operator: '>'
+        value: 13
+        unit: '1'
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - With exercise.
+        citation:
+          source: eacvi-ase-2017-stress-echo-non-ischaemic
+          locator:
+            page: '111'
+      - parameter: spap
+        context: prognostic-marker
+        operator: '>='
+        value: 50
+        unit: mmHg
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - Exercise-induced pulmonary hypertension.
+        citation:
+          source: eacvi-ase-2017-stress-echo-non-ischaemic
+          locator:
+            page: '111'

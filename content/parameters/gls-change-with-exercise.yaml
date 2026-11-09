@@ -1,0 +1,7 @@
+id: gls-change-with-exercise
+name: Change in LV global longitudinal strain from rest to peak exercise
+abbreviation: ΔGLS
+quantity: percent
+unit: '%'
+modalities: [Echo]
+synonyms: [contractile reserve, strain reserve]

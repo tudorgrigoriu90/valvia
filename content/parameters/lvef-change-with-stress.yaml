@@ -1,0 +1,7 @@
+id: lvef-change-with-stress
+name: Change in LVEF from rest to peak stress
+abbreviation: ΔLVEF
+quantity: percent
+unit: '%'
+modalities: [Echo]
+synonyms: [contractile reserve, LV functional reserve]

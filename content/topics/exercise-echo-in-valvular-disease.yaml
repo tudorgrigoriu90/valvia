@@ -7,3 +7,198 @@ order: 2
 population: adult
 wave: W2
 status: draft
+blocks:
+  - id: valvular-cut-offs
+    type: threshold-list
+    tag: CRIT
+    title: Cut-offs associated with clinical significance or outcome
+    values:
+      - parameter: eroa-increase-with-exercise
+        context: diagnostic-criterion
+        operator: range
+        min: 10
+        max: 13
+        unit: mm²
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Printed as ΔEROA ≥ 10–13 mm²: dynamic mitral regurgitation.'
+          - MR patients; exercise stress echo.
+        citation:
+          source: eacvi-ase-2017-stress-echo-non-ischaemic
+          locator:
+            table: '2'
+            page: '109'
+      - parameter: spap
+        context: diagnostic-criterion
+        operator: '>='
+        value: 60
+        unit: mmHg
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - Exercise-induced systolic pulmonary hypertension.
+          - Exercise stress echo.
+        citation:
+          source: eacvi-ase-2017-stress-echo-non-ischaemic
+          locator:
+            table: '2'
+            page: '109'
+      - parameter: lvef-change-with-stress
+        context: diagnostic-criterion
+        operator: range
+        min: 4
+        max: 5
+        unit: '%'
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Printed as ΔLVEF < 4–5%: inadequate contractile reserve in primary MR and AR.'
+          - Exercise stress echo.
+        citation:
+          source: eacvi-ase-2017-stress-echo-non-ischaemic
+          locator:
+            table: '2'
+            page: '109'
+      - parameter: gls-change-with-exercise
+        context: diagnostic-criterion
+        operator: '<'
+        value: 2
+        unit: '%'
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - Inadequate contractile reserve in primary MR.
+          - Exercise stress echo.
+        citation:
+          source: eacvi-ase-2017-stress-echo-non-ischaemic
+          locator:
+            table: '2'
+            page: '109'
+      - parameter: tapse
+        context: diagnostic-criterion
+        operator: '<'
+        value: 19
+        unit: mm
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - RV dysfunction in primary MR.
+          - Exercise stress echo.
+        citation:
+          source: eacvi-ase-2017-stress-echo-non-ischaemic
+          locator:
+            table: '2'
+            page: '109'
+      - parameter: mitral-mean-gradient
+        context: diagnostic-criterion
+        operator: '>'
+        value: 15
+        unit: mmHg
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Mitral stenosis: limited valve compliance or fixed stenosis.'
+          - Exercise stress echo.
+        citation:
+          source: eacvi-ase-2017-stress-echo-non-ischaemic
+          locator:
+            table: '2'
+            page: '109'
+      - parameter: mitral-mean-gradient
+        context: diagnostic-criterion
+        operator: '>'
+        value: 18
+        unit: mmHg
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Mitral stenosis: limited valve compliance or fixed stenosis.'
+          - Dobutamine stress echo.
+        citation:
+          source: eacvi-ase-2017-stress-echo-non-ischaemic
+          locator:
+            table: '2'
+            page: '109'
+      - parameter: aortic-mean-gradient-increase
+        context: diagnostic-criterion
+        operator: range
+        min: 18
+        max: 20
+        unit: mmHg
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Printed as ΔMPG > 18–20 mmHg: aortic stenosis, limited valve compliance or fixed stenosis.'
+          - Exercise stress echo.
+        citation:
+          source: eacvi-ase-2017-stress-echo-non-ischaemic
+          locator:
+            table: '2'
+            page: '109'
+      - parameter: mitral-mean-gradient
+        context: diagnostic-criterion
+        operator: '>'
+        value: 10
+        unit: mmHg
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Mitral valve prosthesis: prosthesis dysfunction or patient–prosthesis mismatch.'
+          - Exercise or dobutamine stress echo.
+        citation:
+          source: eacvi-ase-2017-stress-echo-non-ischaemic
+          locator:
+            table: '2'
+            page: '109'
+      - parameter: aortic-mean-gradient
+        context: diagnostic-criterion
+        operator: '>'
+        value: 20
+        unit: mmHg
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Aortic valve prosthesis: prosthesis dysfunction or patient–prosthesis mismatch.'
+          - Exercise or dobutamine stress echo.
+        citation:
+          source: eacvi-ase-2017-stress-echo-non-ischaemic
+          locator:
+            table: '2'
+            page: '109'
+      - parameter: mitral-mean-gradient-increase
+        context: diagnostic-criterion
+        operator: '>'
+        value: 7
+        unit: mmHg
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - Functional mitral stenosis after mitral valve repair.
+        citation:
+          source: eacvi-ase-2017-stress-echo-non-ischaemic
+          locator:
+            table: '2'
+            page: '109'

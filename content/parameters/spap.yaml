@@ -1,0 +1,7 @@
+id: spap
+name: Systolic pulmonary artery pressure
+abbreviation: SPAP
+quantity: pressure
+unit: mmHg
+modalities: [Echo]
+synonyms: [PASP, pulmonary artery systolic pressure, exercise pulmonary hypertension]

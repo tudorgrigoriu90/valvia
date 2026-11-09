@@ -199,6 +199,7 @@
 - 9.3 Exercise echo in valvular disease (MR, MS, AS, AR) `CRIT`
 - 9.4 Diastolic stress test → see 2.5
 - 9.5 Contrast echocardiography: indications `CRIT`
+- 9.6 Stress echo in cardiomyopathies, heart failure and the pulmonary circulation `CRIT` *(new, PO-5)*
 
 ## 10. Aortic disease (W2)
 

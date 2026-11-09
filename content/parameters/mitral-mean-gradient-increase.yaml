@@ -1,0 +1,7 @@
+id: mitral-mean-gradient-increase
+name: Increase in mitral mean gradient from rest to peak stress
+abbreviation: Δ mitral MPG
+quantity: pressure
+unit: mmHg
+modalities: [Echo]
+synonyms: [functional mitral stenosis, mitral repair]

@@ -1,0 +1,7 @@
+id: wmsi-change-with-stress
+name: Change in wall motion score index from rest to peak stress
+abbreviation: ΔWMSI
+quantity: dimensionless
+unit: '1'
+modalities: [Echo]
+synonyms: [contractile reserve, dilated cardiomyopathy]

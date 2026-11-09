@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-24: PO-5, content: stress echo in ischaemic heart disease (ASE 2020 guidel |
-| Next task | CH-25: stress echo in non-ischaemic heart disease (EACVI/ASE 2017) |
+| Last completed task | CH-25: PO-5, content: stress echo in non-ischaemic heart disease (EACVI/ASE 2 |
+| Next task | CH-26: TEE, cardiac source of embolism (ASE 2016) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

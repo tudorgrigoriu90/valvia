@@ -1,0 +1,7 @@
+id: stroke-volume-increase-with-stress
+name: Increase in stroke volume from rest to peak stress
+abbreviation: ΔSV
+quantity: percent
+unit: '%'
+modalities: [Echo]
+synonyms: [flow reserve, contractile reserve, stroke volume reserve]

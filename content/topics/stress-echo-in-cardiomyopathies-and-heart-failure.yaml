@@ -1,0 +1,98 @@
+id: stress-echo-in-cardiomyopathies-and-heart-failure
+ref: '9.6'
+slug: stress-echo-in-cardiomyopathies-and-heart-failure
+title: 'Stress echo in cardiomyopathies, heart failure and the pulmonary circulation'
+parent: stress-echocardiography
+order: 5
+population: adult
+wave: W2
+status: draft
+blocks:
+  - id: cut-offs
+    type: threshold-list
+    tag: CRIT
+    title: Cut-offs associated with clinical significance or outcome
+    values:
+      - parameter: lvot-peak-gradient
+        context: diagnostic-criterion
+        operator: '>'
+        value: 50
+        unit: mmHg
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - "Printed as 'LVOT gradient > 50 mmHg': intraventricular obstruction."
+        citation:
+          source: eacvi-ase-2017-stress-echo-non-ischaemic
+          locator:
+            table: '2'
+            page: '109'
+      - parameter: wmsi-change-with-stress
+        context: diagnostic-criterion
+        operator: '<'
+        value: 0.25
+        unit: '1'
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - Inadequate contractile reserve in dilated cardiomyopathy.
+          - Exercise or dobutamine stress echo.
+        citation:
+          source: eacvi-ase-2017-stress-echo-non-ischaemic
+          locator:
+            table: '2'
+            page: '109'
+      - parameter: lvef-change-with-stress
+        context: diagnostic-criterion
+        operator: '<'
+        value: 7.5
+        unit: '%'
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - Inadequate contractile reserve in patients with biventricular pacing and heart failure.
+          - Exercise or dobutamine stress echo.
+        citation:
+          source: eacvi-ase-2017-stress-echo-non-ischaemic
+          locator:
+            table: '2'
+            page: '109'
+      - parameter: b-lines
+        context: diagnostic-criterion
+        operator: '>'
+        value: 5
+        unit: '1'
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - Increase in B-lines (28-region chest scan).
+          - Exercise stress echo.
+        citation:
+          source: eacvi-ase-2017-stress-echo-non-ischaemic
+          locator:
+            table: '2'
+            page: '109'
+      - parameter: coronary-flow-reserve
+        context: diagnostic-criterion
+        operator: '<'
+        value: 2.0
+        unit: '1'
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - Reduced coronary flow reserve; vasodilator stress echo.
+        citation:
+          source: eacvi-ase-2017-stress-echo-non-ischaemic
+          locator:
+            table: '2'
+            page: '109'

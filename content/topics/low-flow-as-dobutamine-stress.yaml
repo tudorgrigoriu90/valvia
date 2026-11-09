@@ -8,3 +8,127 @@ population: adult
 wave: W2
 status: draft
 seeAlso: [classical-low-flow-low-gradient-as]
+blocks:
+  - id: flow-reserve
+    type: threshold-list
+    tag: CRIT
+    title: Flow (contractile) reserve
+    values:
+      - parameter: stroke-volume-increase-with-stress
+        context: diagnostic-criterion
+        operator: '<'
+        value: 20
+        unit: '%'
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - Inadequate flow reserve.
+          - Dobutamine stress echo.
+        citation:
+          source: eacvi-ase-2017-stress-echo-non-ischaemic
+          locator:
+            table: '2'
+            page: '109'
+  - id: true-vs-pseudo-severe
+    type: threshold-list
+    tag: CRIT
+    title: True-severe vs pseudo-severe AS at peak dobutamine stress
+    values:
+      - parameter: aortic-mean-gradient
+        context: diagnostic-criterion
+        operator: '>='
+        value: 40
+        unit: mmHg
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - 'True-severe AS: mean gradient ≥ 40 mmHg or peak aortic jet velocity ≥ 4 m/s, with an AVA < 1.0 cm².'
+        citation:
+          source: eacvi-ase-2017-stress-echo-non-ischaemic
+          locator:
+            page: '120'
+      - parameter: av-peak-velocity
+        context: diagnostic-criterion
+        operator: '>='
+        value: 4
+        unit: m/s
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - 'True-severe AS: mean gradient ≥ 40 mmHg or peak aortic jet velocity ≥ 4 m/s, with an AVA < 1.0 cm².'
+        citation:
+          source: eacvi-ase-2017-stress-echo-non-ischaemic
+          locator:
+            page: '120'
+      - parameter: aortic-valve-area
+        context: diagnostic-criterion
+        operator: '<'
+        value: 1.0
+        unit: cm²
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - 'True-severe AS, together with the gradient or velocity criterion.'
+          - Some studies suggest raising the peak stress AVA cut-point from 1.0 to 1.2 cm².
+        citation:
+          source: eacvi-ase-2017-stress-echo-non-ischaemic
+          locator:
+            page: '120–121'
+      - parameter: aortic-mean-gradient
+        context: diagnostic-criterion
+        operator: '<'
+        value: 40
+        unit: mmHg
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Pseudo-severe AS: peak stress mean gradient < 40 mmHg and peak stress AVA > 1.0 cm².'
+        citation:
+          source: eacvi-ase-2017-stress-echo-non-ischaemic
+          locator:
+            page: '120'
+      - parameter: aortic-valve-area
+        context: diagnostic-criterion
+        operator: '>'
+        value: 1.0
+        unit: cm²
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Pseudo-severe AS: peak stress mean gradient < 40 mmHg and peak stress AVA > 1.0 cm².'
+        citation:
+          source: eacvi-ase-2017-stress-echo-non-ischaemic
+          locator:
+            page: '120'
+  - id: projected-ava
+    type: note
+    tag: METH
+    title: When dobutamine stress remains inconclusive
+    text: 'If the gradient stays below 40 mmHg and the AVA below 1.0 cm² at peak stress, the guideline uses the projected AVA at a normal flow rate (250 mL/s), or the aortic valve calcium score by CT. A projected AVA below 1 cm² indicates severe stenosis; the estimate may not be reliable when flow increases by less than 20%.'
+    citation:
+      source: eacvi-ase-2017-stress-echo-non-ischaemic
+      locator:
+        figure: '17'
+        page: '121'
+  - id: lflg-algorithm
+    type: algorithm-reference
+    tag: ALG
+    title: 'Interpretation of dobutamine stress echo in low-flow, low-gradient AS with reduced LVEF'
+    citation:
+      source: eacvi-ase-2017-stress-echo-non-ischaemic
+      locator:
+        figure: '17'
+        page: '121'
+    url: 'https://doi.org/10.1016/j.echo.2016.10.016'

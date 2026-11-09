@@ -1,0 +1,6 @@
+id: b-lines
+name: B-lines on lung ultrasound (28-region chest scan)
+quantity: dimensionless
+unit: '1'
+modalities: [Echo]
+synonyms: [lung comets, pulmonary congestion, lung ultrasound]
