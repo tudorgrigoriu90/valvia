@@ -1,0 +1,10 @@
+id: tee-left-atrial-appendage
+ref: '16.1'
+slug: tee-left-atrial-appendage
+title: 'TEE: LA appendage (thrombus, spontaneous echo contrast, emptying velocities)'
+parent: transoesophageal-echocardiography
+order: 0
+population: adult
+wave: W2
+status: draft
+seeAlso: [la-laa-thrombus]

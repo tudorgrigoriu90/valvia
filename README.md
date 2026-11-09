@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-20: PO-5, category switch: header switch Adults · Children · TEE · Stress  |
-| Next task | CH-21: TEE branch in the taxonomy; tag existing stress values |
+| Last completed task | CH-21: PO-5, taxonomy: add a top-level "Transoesophageal echocardiography (TE |
+| Next task | CH-22: chamber quantification abnormality grades (PO-6) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-20 PO-5, category switch: header switch Adults · Children · TEE · Stress  |
-| Next up | CH-21: TEE branch in the taxonomy; tag existing stress values |
+| Last completed | CH-21 PO-5, taxonomy: add a top-level "Transoesophageal echocardiography (TE |
+| Next up | CH-22: chamber quantification abnormality grades (PO-6) |
 
 ## Next up: R0 sequence
 
@@ -282,7 +282,7 @@ Order: one push each, top to bottom (TS-07.5.1 was finished locally first and sh
 | CH-18 | PO-4, units as published: show every value in the unit the guideline prints (no conversion to house units, no "original on tap"); the unit layer is kept only to compare values across sources for discrepancy detection; update `CLAUDE.md` §12, `docs/units.md`, content guide, about page, E2E | 2 | done | Supersedes NFR-15 house units and TS-02.2.7 display conversion |
 | CH-19 | PO-5, schema: value-level `technique` (`TTE` default, `TEE`, `stress`; TEE and stress only with modality Echo); generated types; validation fixtures; content-model docs | 2 | done |  |
 | CH-20 | PO-5, category switch: header switch Adults · Children · TEE · Stress echo (replaces Adults/Children); values, sections, topic lists and notices follow the chosen category (TTE values by age group, TEE and stress values by technique); stored on the device; E2E at 360 px and desktop, axe | 3 | done | Replaces the TS-04.7.1 switch |
-| CH-21 | PO-5, taxonomy: add a top-level "Transoesophageal echocardiography (TEE)" branch; tag existing stress values (low-flow AS dobutamine stress, diastolic stress test) with `technique: stress` | 1 | todo | Taxonomy change asked by the PO |
+| CH-21 | PO-5, taxonomy: add a top-level "Transoesophageal echocardiography (TEE)" branch; tag existing stress values (low-flow AS dobutamine stress, diastolic stress test) with `technique: stress` | 1 | done | No stress values existed to tag; stress content comes with CH-24/CH-25 |
 | CH-22 | PO-6, content: abnormality grades (normal, mildly, moderately, severely abnormal) for chamber quantification where ASE/EACVI 2015 publishes them (LV size and volumes, LV mass, RV, LA/RA) | 2 | todo | LA volume and LVEF already graded |
 | CH-23 | PO-6, content: audit the other seeded leaves (right heart 2025, diastolic, strain, HCM, pericardial, prosthetic) for published mild/moderate/severe abnormality grades and add them | 2 | todo | Only where the source prints them; never derived |
 | CH-24 | PO-5, content: stress echo in ischaemic heart disease (ASE 2020 guideline) | 3 | todo | Taxonomy 9.1 |
@@ -390,3 +390,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-09 | CH-18 | Values shown with the number and unit printed in the guideline (PO-4): no display conversion or original popover; parameters published in two units get one row per unit; core/units converts only for comparisons (discrepancies, plausibility); docs, schema descriptions, about page, E2E | `CH-18: show values in the units printed in the guidelines` |
 | 2026-11-09 | CH-19 | Optional value field technique (TTE default, TEE, stress; TEE/stress only with modality Echo) in schema and generated types; discrepancies never compare across techniques; content-model docs | `CH-19: value-level technique (TTE, TEE, stress)` |
 | 2026-11-09 | CH-20 | Header switch Adults · Children · TEE · Stress echo (PO-5) replaces Adults/Children: values, sections, topic lists and category cards (with per-category counts) follow the chosen category; per-category notices on leaf and home pages; choice stored on the device (old paediatric choice honoured); core/population/category.ts at 100 %; E2E incl. 360 px and axe | `CH-20: category switch Adults, Children, TEE, Stress echo` |
+| 2026-11-09 | CH-21 | Taxonomy section 16 TEE (top-level node + 6 leaves: LAA, interatrial septum, aortic atheroma, residual regurgitation after transcatheter interventions, TEE guidance, structural screening) with cross-links; draft, hidden until populated; status E2E no longer hard-codes the root count | `CH-21: add the TEE branch to the taxonomy` |

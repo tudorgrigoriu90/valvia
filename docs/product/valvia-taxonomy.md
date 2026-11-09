@@ -243,6 +243,18 @@
 - 15.4 Paediatric pulmonary hypertension `CRIT`
 - 15.5 Paediatric cardiomyopathies (incl. HCM thresholds in children) `CRIT`
 
+## 16. Transoesophageal echocardiography (TEE) (new, decision PO-5)
+
+Added 9 Nov 2026 by the product owner: TEE and stress echo are main categories next to adults and children. Values
+measured by TEE carry `technique: TEE`; stress values (section 9) carry `technique: stress`.
+
+- 16.1 LA appendage: thrombus, spontaneous echo contrast, emptying velocities `CRIT` → also 12.2
+- 16.2 Interatrial septum: PFO, atrial septal aneurysm `CRIT`
+- 16.3 Aortic atheroma `GRADE` → also 12.4
+- 16.4 Residual regurgitation after transcatheter repair or replacement `GRADE` → also 4.5.1, 4.2.3
+- 16.5 Intraprocedural guidance of mitral TEER `CRIT` → also 4.5.1
+- 16.6 Screening before structural heart interventions `FEAS`
+
 ---
 
 ## Appendix A: Source registry (candidates, to verify)

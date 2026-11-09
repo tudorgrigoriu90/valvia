@@ -1,0 +1,10 @@
+id: tee-after-transcatheter-interventions
+ref: '16.4'
+slug: tee-after-transcatheter-interventions
+title: 'TEE: residual regurgitation after transcatheter repair or replacement'
+parent: transoesophageal-echocardiography
+order: 3
+population: adult
+wave: W2
+status: draft
+seeAlso: [after-mitral-teer, prosthetic-aortic-valve-regurgitation-grading]

@@ -1,0 +1,10 @@
+id: tee-aortic-atheroma
+ref: '16.3'
+slug: tee-aortic-atheroma
+title: 'TEE: aortic atheroma'
+parent: transoesophageal-echocardiography
+order: 2
+population: adult
+wave: W2
+status: draft
+seeAlso: [aortic-atheroma-grading]
