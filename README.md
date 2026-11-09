@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-02.1.3: Stable ID & URL policy; static redirect pages on slug rename |
-| Next task | TS-07.5.1: privacy notice |
+| Last completed task | CH-17: Plan update: record PO-4 to PO-6 and plan the tasks below |
+| Next task | TS-07.5.1: cookieless analytics + privacy notice |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

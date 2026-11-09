@@ -2,7 +2,7 @@
 
 > **Purpose:** single source of truth for task status and the push log. Updated in **every push** (see `CLAUDE.md` §9).
 > **Audience:** Claude Code sessions, software engineer, product owner.
-> **Last updated:** 2026-11-04
+> **Last updated:** 2026-11-09
 > **Task details and acceptance criteria:** [`product/valvia-backlog.md`](product/valvia-backlog.md)
 
 Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `dropped` (with reason) · `manual` (engineer task; Claude prepares checklists and verifies where possible).
@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-02.1.3 Stable ID & URL policy; static redirect pages on slug rename |
-| Next up | TS-07.5.1: privacy notice |
+| Last completed | CH-17 Plan update: record PO-4 to PO-6 and plan the tasks below |
+| Next up | TS-07.5.1: cookieless analytics + privacy notice |
 
 ## Next up: R0 sequence
 
@@ -220,7 +220,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | Key | Summary | SP | Status | Notes |
 |---|---|---|---|---|
 | TS-08.1 | Create public repo `valvia`; enable GitHub Pages (source: GitHub Actions); enable secret scanning + push protection | 1 | manual | Pages enabled (Source: GitHub Actions) and `gh-pages` deleted 2026-11-02; secret scanning/push protection still to confirm |
-| TS-08.2 | Check name availability (domain, EUIPO trademark search); buy domain; DNS; custom domain on Pages; enforce HTTPS | 1 | manual |  |
+| TS-08.2 | Check name availability (domain, EUIPO trademark search); buy domain; DNS; custom domain on Pages; enforce HTTPS | 1 | manual | Domain `valvia-echo.se` bought at Loopia (2026-11-09); checklist in CH-29 |
 | TS-08.3 | Install Claude Code GitHub Action; add credentials as repo secret; set spending limit | 1 | manual |  |
 | TS-08.4 | SME onboarding: GitHub account with 2FA, GitHub mobile app, notification settings, 15-min walkthrough of a sample PR | 1 | manual |  |
 | TS-08.5 | Analytics account + uptime monitor (free tiers) | 1 | manual |  |
@@ -269,6 +269,28 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-12.3 | Digest email via free email tier (e.g. Resend), one-click unsubscribe, batching | 3 | todo |  |
 | TS-12.4 | In-app "updated since your last visit" badge | 2 | todo |  |
 | TS-12.5 | Optional web push (stretch) | 3 | todo |  |
+
+## Change request 2026-11-09 (decisions PO-4 to PO-6)
+
+The product owner asked on 2026-11-09 for three changes ([decision log](decisions/README.md)). All topics are still `status: draft`
+and none has been SME-reviewed, so the content parts belong to the initial seed (PO-3) and are pushed to `main`.
+Order: one push each, top to bottom (TS-07.5.1 was finished locally first and ships right after the plan update).
+
+| Key | Summary | SP | Status | Notes |
+|---|---|---|---|---|
+| CH-17 | Plan update: record PO-4 to PO-6 and plan the tasks below | 0 | done |  |
+| CH-18 | PO-4, units as published: show every value in the unit the guideline prints (no conversion to house units, no "original on tap"); the unit layer is kept only to compare values across sources for discrepancy detection; update `CLAUDE.md` §12, `docs/units.md`, content guide, about page, E2E | 2 | todo | Supersedes NFR-15 house units and TS-02.2.7 display conversion |
+| CH-19 | PO-5, schema: value-level `technique` (`TTE` default, `TEE`, `stress`; TEE and stress only with modality Echo); generated types; validation fixtures; content-model docs | 2 | todo |  |
+| CH-20 | PO-5, category switch: header switch Adults · Children · TEE · Stress echo (replaces Adults/Children); values, sections, topic lists and notices follow the chosen category (TTE values by age group, TEE and stress values by technique); stored on the device; E2E at 360 px and desktop, axe | 3 | todo | Replaces the TS-04.7.1 switch |
+| CH-21 | PO-5, taxonomy: add a top-level "Transoesophageal echocardiography (TEE)" branch; tag existing stress values (low-flow AS dobutamine stress, diastolic stress test) with `technique: stress` | 1 | todo | Taxonomy change asked by the PO |
+| CH-22 | PO-6, content: abnormality grades (normal, mildly, moderately, severely abnormal) for chamber quantification where ASE/EACVI 2015 publishes them (LV size and volumes, LV mass, RV, LA/RA) | 2 | todo | LA volume and LVEF already graded |
+| CH-23 | PO-6, content: audit the other seeded leaves (right heart 2025, diastolic, strain, HCM, pericardial, prosthetic) for published mild/moderate/severe abnormality grades and add them | 2 | todo | Only where the source prints them; never derived |
+| CH-24 | PO-5, content: stress echo in ischaemic heart disease (ASE 2020 guideline) | 3 | todo | Taxonomy 9.1 |
+| CH-25 | PO-5, content: stress echo in non-ischaemic heart disease (EACVI/ASE 2017 recommendations): valvular, diastolic, pulmonary pressure, HCM | 3 | todo | Taxonomy 9.2–9.4 |
+| CH-26 | PO-5, content: TEE, cardiac source of embolism (ASE 2016 guideline): LAA, atrial septum, aortic atheroma | 2 | todo |  |
+| CH-27 | PO-5, content: TEE, regurgitation after percutaneous valve repair or replacement (ASE 2019) and intraprocedural TEER imaging | 3 | todo |  |
+| CH-28 | PO-5, content: TEE screening before structural heart interventions (ASE) | 2 | todo | Only values the document publishes |
+| CH-29 | TS-08.2 checklist: custom domain `valvia-echo.se` (Loopia DNS → GitHub Pages, `VALVIA_SITE`/`VALVIA_BASE` variables) in `docs/ci-cd.md` | 0 | todo | Engineer performs the DNS change (`manual`) |
 
 ## Push log
 
@@ -362,3 +384,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-04 | TS-04.3.5 | Society filter (All / ESC/EACVI / ASE) on leaf pages, persisted on the device with try/catch; values tagged with society groups from source issuers (joint documents count for both) | `TS-04.3.5: society filter` |
 | 2026-11-04 | TS-04.3.4 | Leaf view maps values to topic discrepancies: ≠ marker (text + screen-reader label) on differing values and a 'Differs between sources' side-by-side panel per block; no value preferred | `TS-04.3.4: discrepancy marker and side-by-side comparison` |
 | 2026-11-04 | TS-02.1.3 | Redirects for renamed slugs: core/navigation/redirects computes old→new URLs for visible nodes and descendants; post-build step writes meta-refresh pages (canonical, noindex, strict CSP, visible link) | `TS-02.1.3: static redirects for renamed slugs` |
+| 2026-11-09 | CH-17 | Record PO-4 (units as published), PO-5 (Adults/Children/TEE/Stress echo categories), PO-6 (mild/moderate/severe abnormality grades) and plan CH-18 to CH-29; TS-08.2 domain note | `CH-17: plan units as published, TEE and stress categories, grades` |
