@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-31: Fix: E2E tests hard-coded the /valvia/ base path; CI red once VALVIA_B |
-| Next task | Remaining backlog: TS-07.3.1 hazard log |
+| Last completed task | CH-32: Plan update: content batch 2026-11-10 |
+| Next task | CH-33: rheumatic heart disease (ASE 2023) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

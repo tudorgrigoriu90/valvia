@@ -2,7 +2,7 @@
 
 > **Purpose:** single source of truth for task status and the push log. Updated in **every push** (see `CLAUDE.md` §9).
 > **Audience:** Claude Code sessions, software engineer, product owner.
-> **Last updated:** 2026-11-09
+> **Last updated:** 2026-11-10
 > **Task details and acceptance criteria:** [`product/valvia-backlog.md`](product/valvia-backlog.md)
 
 Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `dropped` (with reason) · `manual` (engineer task; Claude prepares checklists and verifies where possible).
@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-31 Fix: E2E tests hard-coded the /valvia/ base path; CI red once VALVIA_B |
-| Next up | Remaining backlog: TS-07.3.1 hazard log |
+| Last completed | CH-32 Plan update: content batch 2026-11-10 |
+| Next up | CH-33: rheumatic heart disease (ASE 2023) |
 
 ## Next up: R0 sequence
 
@@ -294,6 +294,27 @@ Order: one push each, top to bottom (TS-07.5.1 was finished locally first and sh
 | CH-31 | Fix: E2E tests hard-coded the `/valvia/` base path; CI red once `VALVIA_BASE=/` was set for the custom domain | 0 | done | Found on CI run of CH-30 |
 | CH-29 | TS-08.2 checklist: custom domain `valvia-echo.se` (Loopia DNS → GitHub Pages, `VALVIA_SITE`/`VALVIA_BASE` variables) in `docs/ci-cd.md` | 0 | done | Engineer performs the DNS change (`manual`) |
 
+## Content batch 2026-11-10 (ASE documents for the empty categories)
+
+The product owner asked for more content (2026-11-10). Initial seed rules apply (PO-3: `status: draft`, values only from
+documents read in the session, one subcategory per push). Order: Children first (the category is still empty), then
+the empty adult categories. ESC/EACVI-only documents still wait for PDFs supplied by a person.
+
+| Key | Summary | SP | Status | Notes |
+|---|---|---|---|---|
+| CH-32 | Plan update: content batch 2026-11-10 | 0 | done |  |
+| CH-33 | Content: rheumatic heart disease (ASE 2023 guideline): echo criteria in children and adults | 2 | todo | Children + valves |
+| CH-34 | Content: targeted neonatal echocardiography (ASE 2024): neonatal cut-offs | 2 | todo | Children (15.x) |
+| CH-35 | Content: cardiac surveillance in paediatric cancer (ASE 2023) | 2 | todo | Children + cardio-oncology |
+| CH-36 | Content: thoracic aorta in adults (ASE/EACVI 2015): normal dimensions and thresholds | 2 | todo | Aortic disease (10.x) |
+| CH-37 | Content: repaired tetralogy of Fallot (ASE 2014) | 2 | todo | Congenital (8.x) |
+| CH-38 | Content: transposition of the great arteries (ASE 2016) | 2 | todo | Congenital (8.x) |
+| CH-39 | Content: ASD and PFO (ASE 2015) | 1 | todo | Congenital (8.x) + TEE |
+| CH-40 | Content: adult cancer therapy (ASE/EACVI 2014) | 2 | todo | Cardio-oncology (11.x); check overlap with ASE 2025 strain |
+| CH-41 | Content: echocardiography in adult hypertension (ASE/EACVI 2015) | 1 | todo |  |
+| CH-42 | Content: LVAD assessment (ASE 2015) | 2 | todo | Heart failure |
+| CH-43 | Content: young adult competitive athletes (ASE 2020) | 1 | todo | Special populations |
+
 ## Push log
 
 One row per push (newest last). Content PRs are logged when opened and when merged.
@@ -402,3 +423,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-09 | CH-29 | Custom domain checklist for valvia-echo.se in docs/ci-cd.md: GitHub domain verification, Loopia DNS records (verified live), Pages custom domain + HTTPS, VALVIA_SITE/VALVIA_BASE variables, checks; diagram | `CH-29: document the valvia-echo.se custom domain setup` |
 | 2026-11-09 | CH-30 | Discrepancy separation test now changes the published text that is compared, with a control case and one case per field (population, sex, grade, context, modality); mutation check: dropping modality from the grouping key now fails the test | `CH-30: make the discrepancy separation test meaningful` |
 | 2026-11-09 | CH-31 | E2E (manifest, icon, search URL) and Lighthouse URLs derive the base path from VALVIA_BASE instead of hard-coding /valvia/; CI was red once VALVIA_BASE=/ was set for valvia-echo.se. Verified: 112 E2E pass and Lighthouse budgets pass with VALVIA_BASE=/; default base still verified | `CH-31: derive the base path in E2E and Lighthouse from VALVIA_BASE` |
+| 2026-11-10 | CH-32 | Plan the 2026-11-10 content batch: 11 ASE documents (RHD, neonatal, paediatric oncology, thoracic aorta, rTOF, TGA, ASD/PFO, adult cancer therapy, hypertension, LVAD, athletes), Children first | `CH-32: plan the next content batch (Children first)` |
