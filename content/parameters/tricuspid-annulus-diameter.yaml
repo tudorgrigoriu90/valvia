@@ -1,0 +1,6 @@
+id: tricuspid-annulus-diameter
+name: Tricuspid valve annulus diameter
+quantity: length
+unit: mm
+modalities: [Echo]
+synonyms: [tricuspid annulus, TV annulus, RV remodelling]

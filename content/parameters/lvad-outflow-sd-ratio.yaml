@@ -1,0 +1,7 @@
+id: lvad-outflow-sd-ratio
+name: LVAD outflow cannula peak systolic/diastolic velocity ratio
+abbreviation: Outflow S/D ratio
+quantity: ratio
+unit: '1'
+modalities: [Echo]
+synonyms: [LVAD aortic regurgitation, outflow graft Doppler]

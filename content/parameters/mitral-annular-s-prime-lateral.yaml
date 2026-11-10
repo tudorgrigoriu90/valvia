@@ -1,0 +1,7 @@
+id: mitral-annular-s-prime-lateral
+name: Lateral mitral annular systolic velocity
+abbreviation: Lateral s′
+quantity: velocity-tissue
+unit: cm/s
+modalities: [Echo]
+synonyms: [s prime, mitral s′, tissue Doppler systolic velocity]

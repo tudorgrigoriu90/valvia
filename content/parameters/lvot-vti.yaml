@@ -1,0 +1,7 @@
+id: lvot-vti
+name: LVOT velocity-time integral
+abbreviation: LVOT VTI
+quantity: velocity-time-integral
+unit: cm
+modalities: [Echo]
+synonyms: [stroke distance, LVOT VTI, cardiac output]

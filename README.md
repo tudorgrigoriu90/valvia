@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-41: Content: echocardiography in adult hypertension (ASE/EACVI 2015) |
-| Next task | CH-42: LVAD assessment (ASE 2015) |
+| Last completed task | CH-42: Content: LVAD and temporary mechanical support (ASE 2024 update; the 2 |
+| Next task | CH-43: young adult competitive athletes (ASE 2020) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

@@ -1,0 +1,270 @@
+id: left-ventricular-assist-devices
+ref: '6.10'
+slug: left-ventricular-assist-devices
+title: 'LVAD and temporary mechanical circulatory support'
+parent: cardiomyopathies-and-heart-failure
+order: 9
+population: adult
+wave: W2
+status: draft
+blocks:
+  - id: pre-implant
+    type: threshold-list
+    tag: PROG
+    title: Before durable LVAD implantation
+    values:
+      - parameter: lvef
+        context: diagnostic-criterion
+        operator: '<'
+        value: 25
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Documenting LVEF < 25% remains part of the US Centers for Medicare and Medicaid Services selection conditions for LVAD implantation.'
+        citation:
+          source: ase-2024-lvad-tmcs
+          locator:
+            page: '823–824'
+      - parameter: lvedd
+        context: prognostic-marker
+        operator: '<'
+        value: 5.5
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Small LV: one of the six risk factors for mortality after HeartMate 3 implantation (HM3 risk score); adds technical difficulty and risk of right heart failure and suction events.'
+        citation:
+          source: ase-2024-lvad-tmcs
+          locator:
+            page: '823–824'
+      - parameter: tricuspid-annulus-diameter
+        context: prognostic-marker
+        operator: '>='
+        value: 41
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Pre-LVAD TV annulus diameter, a surrogate of RV remodelling; associated with late right ventricular failure in one study.'
+        citation:
+          source: ase-2024-lvad-tmcs
+          locator:
+            page: '823'
+  - id: ar-on-support
+    type: threshold-list
+    tag: CRIT
+    title: Aortic regurgitation during continuous-flow LVAD support
+    values:
+      - parameter: lvad-outflow-sd-ratio
+        context: diagnostic-criterion
+        operator: '<'
+        value: 5.0
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Moderate or greater AR (regurgitant fraction ≥ 30%); single-centre observation. A diastolic acceleration of outflow-cannula flow > 49.0 cm/s² is the companion criterion (unit not stored).'
+        citation:
+          source: ase-2024-lvad-tmcs
+          locator:
+            page: '843'
+  - id: unloading
+    type: threshold-list
+    tag: CRIT
+    title: Excessive unloading or suction
+    values:
+      - parameter: lvedd
+        context: diagnostic-criterion
+        operator: '<'
+        value: 3
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Typically LV internal diameter < 3 cm, with leftward septal shift: excessive ventricular unloading or suction event; may reflect RV failure or a pump speed too high for loading conditions.'
+        citation:
+          source: ase-2024-lvad-tmcs
+          locator:
+            table: '5'
+            page: '859'
+  - id: lvad-recovery
+    type: threshold-list
+    tag: CRIT
+    title: Myocardial recovery on LVAD support (turndown study)
+    values:
+      - parameter: lvedd
+        context: diagnostic-criterion
+        operator: '<'
+        value: 60
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'At low support (net zero flow; 6,000 rpm for 15 min with HeartMate II, 4,000 rpm with HeartMate 3), with normal filling pressure and cardiac output.'
+        citation:
+          source: ase-2024-lvad-tmcs
+          locator:
+            page: '851–852'
+      - parameter: lvesd
+        context: diagnostic-criterion
+        operator: '<'
+        value: 50
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'At low support, as above.'
+        citation:
+          source: ase-2024-lvad-tmcs
+          locator:
+            page: '851–852'
+      - parameter: lvef
+        context: diagnostic-criterion
+        operator: '>'
+        value: 45
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'At low support, as above; and peak oxygen consumption > 16 mL/kg/min.'
+        citation:
+          source: ase-2024-lvad-tmcs
+          locator:
+            page: '851–852'
+  - id: tmcs-weaning
+    type: threshold-list
+    tag: CRIT
+    title: Weaning temporary mechanical circulatory support
+    values:
+      - parameter: lvot-vti
+        context: diagnostic-criterion
+        operator: '>='
+        value: 12
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Evidence of myocardial recovery at low inotropic, vasopressor and device support maintained over several hours.'
+        citation:
+          source: ase-2024-lvad-tmcs
+          locator:
+            page: '851'
+      - parameter: lvef
+        context: diagnostic-criterion
+        operator: '>'
+        value: 25
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Temporary support weaning, as above.'
+        citation:
+          source: ase-2024-lvad-tmcs
+          locator:
+            page: '851'
+      - parameter: mitral-annular-s-prime-lateral
+        context: diagnostic-criterion
+        operator: '>='
+        value: 6
+        unit: cm/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - "Printed as '≥ 6 cm'; lateral mitral annular systolic velocity. Temporary support weaning."
+        citation:
+          source: ase-2024-lvad-tmcs
+          locator:
+            page: '851'
+  - id: ecmo-weaning
+    type: threshold-list
+    tag: CRIT
+    title: Predictors of successful weaning from VA ECMO
+    values:
+      - parameter: lvef
+        context: diagnostic-criterion
+        operator: range
+        min: 20
+        max: 25
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Printed as LVEF ≥ 20%–25%.'
+        citation:
+          source: ase-2024-lvad-tmcs
+          locator:
+            page: '852'
+      - parameter: lvot-vti
+        context: diagnostic-criterion
+        operator: '>='
+        value: 10
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2024-lvad-tmcs
+          locator:
+            page: '852'
+      - parameter: mitral-annular-s-prime-lateral
+        context: diagnostic-criterion
+        operator: '>='
+        value: 6
+        unit: cm/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2024-lvad-tmcs
+          locator:
+            page: '852'
+      - parameter: rv-free-wall-strain
+        context: diagnostic-criterion
+        operator: '<'
+        value: -10.9
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Printed with sign: RV free wall strain < −10.9%.'
+        citation:
+          source: ase-2024-lvad-tmcs
+          locator:
+            page: '852'
+      - parameter: rv-ejection-fraction
+        context: diagnostic-criterion
+        operator: '>'
+        value: 24.6
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2024-lvad-tmcs
+          locator:
+            page: '852'
+  - id: lvad-exam
+    type: note
+    tag: METH
+    title: During every LVAD examination
+    text: 'Note the device type and speed (also annotated on screen), the study type (surveillance, problem solving, speed change, recovery), device alarms and blood pressure; during the study watch for excessive unloading or suction (small LV, septal shift) and stop speed-change testing on a change in clinical status or a device alarm.'
+    citation:
+      source: ase-2024-lvad-tmcs
+      locator:
+        table: '5'
+        page: '858–859'

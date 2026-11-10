@@ -168,6 +168,7 @@
 - 6.7 Hypertensive heart disease: LVH thresholds `CRIT`
 - 6.8 Athlete's heart vs cardiomyopathy (grey zone) `NORM`
 - 6.9 Takotsubo, Fabry, sarcoidosis `CRIT`
+- 6.10 LVAD and temporary mechanical circulatory support `CRIT` `PROG` *(new, 10 Nov 2026)*
 
 ## 7. Pericardial disease (W1)
 
