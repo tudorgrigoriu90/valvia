@@ -7,3 +7,106 @@ order: 7
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: athlete-thresholds
+    type: threshold-list
+    tag: CRIT
+    title: 'Young adult competitive athletes: findings that suggest pathology'
+    values:
+      - parameter: max-lv-wall-thickness
+        context: diagnostic-criterion
+        operator: '>'
+        value: 15
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Should raise suspicion of pathology and prompt testing for an explanatory cardiomyopathy. Exercise-induced remodelling can produce 13–15 mm in athletes in high isotonic/high isometric sports, with large body size or of Afro-Caribbean descent.'
+        citation:
+          source: ase-2020-young-athletes
+          locator:
+            page: '530'
+      - parameter: aortic-root-diameter
+        context: diagnostic-criterion
+        operator: '>='
+        value: 40
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - Aortic sinus or ascending aorta; uncommon in young athletes. Larger dimensions should prompt consideration of aortic pathology and gated CTA or CMR.
+        citation:
+          source: ase-2020-young-athletes
+          locator:
+            page: '533'
+      - parameter: aortic-root-diameter
+        context: diagnostic-criterion
+        operator: '>='
+        value: 34
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - Aortic sinus or ascending aorta; uncommon in young athletes. Larger dimensions should prompt consideration of aortic pathology and gated CTA or CMR.
+        citation:
+          source: ase-2020-young-athletes
+          locator:
+            page: '533'
+      - parameter: ascending-aorta-diameter
+        context: diagnostic-criterion
+        operator: '>='
+        value: 40
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - As for the aortic sinus.
+        citation:
+          source: ase-2020-young-athletes
+          locator:
+            page: '533'
+      - parameter: ascending-aorta-diameter
+        context: diagnostic-criterion
+        operator: '>='
+        value: 34
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - As for the aortic sinus.
+        citation:
+          source: ase-2020-young-athletes
+          locator:
+            page: '533'
+      - parameter: compacted-layer-thickness
+        context: diagnostic-criterion
+        operator: '<'
+        value: 5
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Hypertrabeculation with a very thin compacted layer, marked systolic impairment, LGE on CMR or other suggestive features requires full evaluation for noncompaction cardiomyopathy; physiological hypertrabeculation usually has preserved function.'
+        citation:
+          source: ase-2020-young-athletes
+          locator:
+            page: '538'
+  - id: athlete-nomograms
+    type: note
+    tag: METH
+    title: Interpreting dimensions in athletes
+    text: 'Exercise-induced cardiac remodelling depends on sport type, sex, ethnicity and duration of training. Adult nomograms and paediatric z-scores were not designed for competitive athletes; consider age, sex and height when interpreting aortic dimensions.'
+    citation:
+      source: ase-2020-young-athletes
+      locator:
+        page: '533'

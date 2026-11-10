@@ -1,0 +1,6 @@
+id: compacted-layer-thickness
+name: Compacted myocardial layer thickness
+quantity: length
+unit: mm
+modalities: [Echo, CMR]
+synonyms: [noncompaction, hypertrabeculation, compacted layer]
