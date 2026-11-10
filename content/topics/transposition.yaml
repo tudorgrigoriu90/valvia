@@ -7,3 +7,107 @@ order: 9
 population: both
 wave: W2
 status: draft
+blocks:
+  - id: after-arterial-switch
+    type: threshold-list
+    tag: CRIT
+    title: After the arterial switch operation
+    values:
+      - parameter: branch-pa-peak-velocity
+        context: normal-range
+        operator: '<'
+        value: 2
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Within normal limits across the branch pulmonary arteries after the arterial switch; higher velocities may require intervention. Estimate RV pressure from the TR jet.
+        citation:
+          source: ase-2016-transposition
+          locator:
+            page: '587'
+      - parameter: branch-pa-peak-velocity
+        context: normal-range
+        operator: '<'
+        value: 2
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - Within normal limits across the branch pulmonary arteries after the arterial switch; higher velocities may require intervention. Estimate RV pressure from the TR jet.
+        citation:
+          source: ase-2016-transposition
+          locator:
+            page: '587'
+  - id: systemic-rv
+    type: threshold-list
+    tag: CRIT
+    title: Systemic right ventricle after the atrial switch operation
+    values:
+      - parameter: rv-fractional-area-change
+        context: diagnostic-criterion
+        operator: '<'
+        value: 33
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Identified a CMR RV EF < 50% (sensitivity 77%, specificity 58%) in the cited study; FAC correlates only weakly with CMR RV EF.'
+        citation:
+          source: ase-2016-transposition
+          locator:
+            page: '595'
+      - parameter: rv-fractional-area-change
+        context: diagnostic-criterion
+        operator: '<'
+        value: 33
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - 'Identified a CMR RV EF < 50% (sensitivity 77%, specificity 58%) in the cited study; FAC correlates only weakly with CMR RV EF.'
+        citation:
+          source: ase-2016-transposition
+          locator:
+            page: '595'
+      - parameter: rv-global-longitudinal-strain
+        context: diagnostic-criterion
+        operator: '>'
+        value: -14
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Printed: worse than −14%. Predicted RV EF < 45% (specificity 90%, sensitivity 83%) in the cited study.'
+        citation:
+          source: ase-2016-transposition
+          locator:
+            page: '595'
+      - parameter: rv-global-longitudinal-strain
+        context: diagnostic-criterion
+        operator: '>'
+        value: -14
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - 'Printed: worse than −14%. Predicted RV EF < 45% (specificity 90%, sensitivity 83%) in the cited study.'
+        citation:
+          source: ase-2016-transposition
+          locator:
+            page: '595'
+  - id: systemic-rv-tr
+    type: note
+    tag: METH
+    title: Interpretation with tricuspid regurgitation
+    text: 'TAPSE, fractional area change and tissue Doppler velocities of the systemic right ventricle are all influenced by tricuspid regurgitation, which can increase annular motion and fractional area change and falsely suggest good function. CMR may be needed when RV dysfunction is suspected.'
+    citation:
+      source: ase-2016-transposition
+      locator:
+        page: '595'

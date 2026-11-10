@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-37: Content: repaired tetralogy of Fallot (ASE 2014) |
-| Next task | CH-38: transposition of the great arteries (ASE 2016) |
+| Last completed task | CH-38: Content: transposition of the great arteries (ASE 2016) |
+| Next task | CH-39: ASD and PFO (ASE 2015) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

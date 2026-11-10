@@ -1,0 +1,6 @@
+id: branch-pa-peak-velocity
+name: Branch pulmonary artery peak Doppler velocity
+quantity: velocity-blood
+unit: m/s
+modalities: [Echo]
+synonyms: [branch pulmonary artery stenosis, arterial switch, LeCompte]
