@@ -7,3 +7,65 @@ order: 3
 population: both
 wave: W2
 status: draft
+blocks:
+  - id: asa
+    type: threshold-list
+    tag: CRIT
+    title: Atrial septal aneurysm
+    values:
+      - parameter: atrial-septal-excursion
+        context: diagnostic-criterion
+        operator: '>'
+        value: 10
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Excursion of septal tissue from the plane of the atrial septum into one atrium; or a total excursion > 15 mm.'
+        citation:
+          source: ase-2015-asd-pfo
+          locator:
+            page: '917'
+      - parameter: atrial-septal-excursion
+        context: diagnostic-criterion
+        operator: '>'
+        value: 10
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - 'Excursion of septal tissue from the plane of the atrial septum into one atrium; or a total excursion > 15 mm.'
+        citation:
+          source: ase-2015-asd-pfo
+          locator:
+            page: '917'
+      - parameter: atrial-septal-excursion
+        context: diagnostic-criterion
+        operator: '>'
+        value: 15
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Total excursion (right and left).
+        citation:
+          source: ase-2015-asd-pfo
+          locator:
+            page: '917'
+      - parameter: atrial-septal-excursion
+        context: diagnostic-criterion
+        operator: '>'
+        value: 15
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - Total excursion (right and left).
+        citation:
+          source: ase-2015-asd-pfo
+          locator:
+            page: '917'

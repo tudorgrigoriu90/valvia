@@ -1,0 +1,6 @@
+id: asd-diameter
+name: Atrial septal defect diameter
+quantity: length
+unit: mm
+modalities: [Echo]
+synonyms: [ASD size, secundum ASD, defect diameter]

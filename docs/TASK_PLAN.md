@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-38 Content: transposition of the great arteries (ASE 2016) |
-| Next up | CH-39: ASD and PFO (ASE 2015) |
+| Last completed | CH-39 Content: ASD and PFO (ASE 2015) |
+| Next up | CH-40: adult cancer therapy (ASE/EACVI 2014) |
 
 ## Next up: R0 sequence
 
@@ -309,7 +309,7 @@ the empty adult categories. ESC/EACVI-only documents still wait for PDFs supplie
 | CH-36 | Content: thoracic aorta in adults (ASE/EACVI 2015): normal dimensions and thresholds | 2 | done | Aortic disease (10.x) |
 | CH-37 | Content: repaired tetralogy of Fallot (ASE 2014) | 2 | done | Congenital (8.x) |
 | CH-38 | Content: transposition of the great arteries (ASE 2016) | 2 | done | Congenital (8.x) |
-| CH-39 | Content: ASD and PFO (ASE 2015) | 1 | todo | Congenital (8.x) + TEE |
+| CH-39 | Content: ASD and PFO (ASE 2015) | 1 | done | Congenital (8.x) + TEE |
 | CH-40 | Content: adult cancer therapy (ASE/EACVI 2014) | 2 | todo | Cardio-oncology (11.x); check overlap with ASE 2025 strain |
 | CH-41 | Content: echocardiography in adult hypertension (ASE/EACVI 2015) | 1 | todo |  |
 | CH-42 | Content: LVAD assessment (ASE 2015) | 2 | todo | Heart failure |
@@ -430,3 +430,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-10 | CH-36 | Thoracic aorta (ASE/EACVI 2015): aortic root ULN by sex and age band (Tables 1–2, BSA 2.0/1.7 m² with the published adjustment as caveat), CT/MRI upper limits (badged), age/sex/athlete note; atheroma severity grading (Table 26) with complex-atheroma note; 6 parameters | `CH-36: normal aortic dimensions and atheroma grading (ASE/EACVI 2015)` |
 | 2026-11-10 | CH-37 | Repaired tetralogy of Fallot (ASE 2014): RVOT obstruction grading (velocity/gradient), Doppler predictors of severe/significant PR (jet ≥ 50% annulus, ratio > 0.7, PR index < 0.77, PHT < 100 ms) for adults and children, free-PR note, CMR surveillance triggers (RV EDVi ≥ 150, increase > 25 mL/m², RV EF ≤ 48% or ≥ 6% fall, badged CMR) and interval note; 4 parameters | `CH-37: repaired tetralogy of Fallot criteria (ASE 2014)` |
 | 2026-11-10 | CH-38 | Transposition of the great arteries (ASE 2016): branch PA peak velocity < 2 m/s after the arterial switch, systemic RV after the atrial switch (FAC < 33% for CMR RV EF < 50%; RV GLS worse than −14% for RV EF < 45%), TR interpretation note; adults and children | `CH-38: transposition criteria after arterial and atrial switch (ASE 2016)` |
+| 2026-11-10 | CH-39 | ASD and PFO (ASE/SCAI 2015): ASD rims ≥ 5 mm favourable and < 5 mm deficient (TEE), small ASD < 5 mm without RV enlargement or PH needs no closure, TTE/TEE note; atrial septal aneurysm (> 10 mm, total > 15 mm) in the PFO leaf; adults and children | `CH-39: ASD rims, small ASD and atrial septal aneurysm (ASE 2015)` |

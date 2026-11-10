@@ -7,3 +7,109 @@ order: 2
 population: both
 wave: W2
 status: draft
+blocks:
+  - id: rims
+    type: threshold-list
+    tag: CRIT
+    title: Rims before transcatheter closure of a secundum ASD
+    values:
+      - parameter: atrial-septal-rim
+        context: diagnostic-criterion
+        operator: '>='
+        value: 5
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Favourable for transcatheter closure. Assess all six rims (aortic, superior vena cava, right upper pulmonary vein, posterior, inferior vena cava, AV valve) before closure.'
+        citation:
+          source: ase-2015-asd-pfo
+          locator:
+            page: '939'
+      - parameter: atrial-septal-rim
+        context: diagnostic-criterion
+        operator: '>='
+        value: 5
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - 'Favourable for transcatheter closure. Assess all six rims (aortic, superior vena cava, right upper pulmonary vein, posterior, inferior vena cava, AV valve) before closure.'
+        citation:
+          source: ase-2015-asd-pfo
+          locator:
+            page: '939'
+      - parameter: atrial-septal-rim
+        context: diagnostic-criterion
+        operator: '<'
+        value: 5
+        unit: mm
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Deficient rim: less than 5 mm in multiple sequential views (at least three related multiplane views in 15° steps); may complicate transcatheter closure.'
+        citation:
+          source: ase-2015-asd-pfo
+          locator:
+            page: '925'
+      - parameter: atrial-septal-rim
+        context: diagnostic-criterion
+        operator: '<'
+        value: 5
+        unit: mm
+        modality: Echo
+        technique: TEE
+        population:
+          ageGroup: paediatric
+        caveats:
+          - 'Deficient rim: less than 5 mm in multiple sequential views (at least three related multiplane views in 15° steps); may complicate transcatheter closure.'
+        citation:
+          source: ase-2015-asd-pfo
+          locator:
+            page: '925'
+  - id: small-asd
+    type: threshold-list
+    tag: INTV
+    title: Closure
+    values:
+      - parameter: asd-diameter
+        context: intervention-threshold
+        operator: '<'
+        value: 5
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Small ASD without RV enlargement or pulmonary hypertension: closure not required. ASDs with RA and RV enlargement are closed regardless of symptoms (ACC/AHA, as quoted).'
+        citation:
+          source: ase-2015-asd-pfo
+          locator:
+            page: '942'
+      - parameter: asd-diameter
+        context: intervention-threshold
+        operator: '<'
+        value: 5
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - 'Small ASD without RV enlargement or pulmonary hypertension: closure not required. ASDs with RA and RV enlargement are closed regardless of symptoms (ACC/AHA, as quoted).'
+        citation:
+          source: ase-2015-asd-pfo
+          locator:
+            page: '942'
+  - id: tte-vs-tee
+    type: note
+    tag: METH
+    title: TTE or TEE
+    text: 'TTE is usually adequate in small children, including for rim assessment; in larger children and adults TTE is often inadequate for rims and TEE is recommended, and it should be performed in all adults evaluated for transcatheter or surgical closure.'
+    citation:
+      source: ase-2015-asd-pfo
+      locator:
+        page: '917, 939'
