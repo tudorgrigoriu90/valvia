@@ -1,0 +1,7 @@
+id: la-to-aorta-ratio
+name: Left atrium to aorta ratio
+abbreviation: LA/Ao
+quantity: ratio
+unit: '1'
+modalities: [Echo]
+synonyms: [LA:Ao, PDA, pulmonary overcirculation, neonate]

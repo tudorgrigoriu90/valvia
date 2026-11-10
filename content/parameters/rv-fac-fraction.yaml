@@ -1,0 +1,8 @@
+id: rv-fac-fraction
+name: RV fractional area change (as a fraction)
+abbreviation: RV FAC
+quantity: ratio
+unit: '1'
+modalities: [Echo]
+synonyms: [FAC, RV systolic function, neonate]
+method: Published as a fraction (0.35 = 35%).

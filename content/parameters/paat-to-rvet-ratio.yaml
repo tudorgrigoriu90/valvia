@@ -1,0 +1,7 @@
+id: paat-to-rvet-ratio
+name: Pulmonary artery acceleration time to RV ejection time ratio
+abbreviation: PAAT/RVET
+quantity: ratio
+unit: '1'
+modalities: [Echo]
+synonyms: [PAAT, pulmonary vascular resistance, neonate]

@@ -1,0 +1,7 @@
+id: lv-systolic-eccentricity-index
+name: LV end-systolic eccentricity index
+abbreviation: Systolic EI
+quantity: ratio
+unit: '1'
+modalities: [Echo]
+synonyms: [eccentricity index, septal flattening, pulmonary hypertension, neonate]

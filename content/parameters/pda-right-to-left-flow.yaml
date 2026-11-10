@@ -1,0 +1,6 @@
+id: pda-right-to-left-flow
+name: Right-to-left share of transductal systolic flow
+quantity: percent
+unit: '%'
+modalities: [Echo]
+synonyms: [PDA shunt direction, suprasystemic pulmonary pressure, neonate]

@@ -1,0 +1,185 @@
+id: neonatal-targeted-echocardiography
+ref: '15.6'
+slug: neonatal-targeted-echocardiography
+title: 'Neonates: targeted neonatal echocardiography (NICU)'
+parent: paediatric-echocardiography
+order: 5
+population: paediatric
+wave: W2
+status: draft
+blocks:
+  - id: normal-values
+    type: normal-range-table
+    tag: NORM
+    title: Normal values used in targeted neonatal echocardiography
+    values:
+      - parameter: lvef
+        context: normal-range
+        operator: range
+        min: 55
+        max: 70
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - Simpson biplane.
+          - Neonates in the NICU.
+        citation:
+          source: ase-2024-targeted-neonatal-echo
+          locator:
+            table: '3'
+            page: '178'
+      - parameter: lv-fractional-shortening
+        context: normal-range
+        operator: range
+        min: 30
+        max: 45
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - Neonates in the NICU.
+        citation:
+          source: ase-2024-targeted-neonatal-echo
+          locator:
+            table: '3'
+            page: '178'
+      - parameter: la-to-aorta-ratio
+        context: normal-range
+        operator: '<'
+        value: 1.5
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - Neonates in the NICU.
+        citation:
+          source: ase-2024-targeted-neonatal-echo
+          locator:
+            table: '3'
+            page: '179'
+      - parameter: rv-fac-fraction
+        context: normal-range
+        operator: '>='
+        value: 0.35
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - RV three-chamber and RV four-chamber views.
+          - Neonates in the NICU.
+        citation:
+          source: ase-2024-targeted-neonatal-echo
+          locator:
+            table: '3'
+            page: '179'
+      - parameter: lv-systolic-eccentricity-index
+        context: normal-range
+        operator: '<='
+        value: 1.3
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - Neonates in the NICU.
+        citation:
+          source: ase-2024-targeted-neonatal-echo
+          locator:
+            table: '3'
+            page: '180'
+      - parameter: rvet-to-paat-ratio
+        context: normal-range
+        operator: '<'
+        value: 4
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - Pulmonary vascular resistance index; may be expressed as RVET/PAAT or PAAT/RVET.
+          - Neonates in the NICU.
+        citation:
+          source: ase-2024-targeted-neonatal-echo
+          locator:
+            table: '3'
+            page: '180'
+      - parameter: paat-to-rvet-ratio
+        context: normal-range
+        operator: '<'
+        value: 0.25
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - Pulmonary vascular resistance index; may be expressed as RVET/PAAT or PAAT/RVET.
+          - Neonates in the NICU.
+        citation:
+          source: ase-2024-targeted-neonatal-echo
+          locator:
+            table: '3'
+            page: '180'
+      - parameter: branch-pa-diastolic-velocity
+        context: normal-range
+        operator: '<'
+        value: 0.3
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - Normal diastolic velocity (high parasternal view); branch PA diastolic velocity may be used as an alternative marker of the ductal shunt.
+          - Neonates in the NICU.
+        citation:
+          source: ase-2024-targeted-neonatal-echo
+          locator:
+            table: '3'
+            page: '181'
+  - id: gestational-age
+    type: note
+    tag: METH
+    title: Gestational-age dependent measurements
+    text: 'Mitral E, A and E/A and TAPSE are gestational-age dependent; left and right ventricular outputs are normally 150–300 mL/min/kg. Aortic diastolic flow is normally absent, and coeliac and superior mesenteric artery flow antegrade throughout diastole.'
+    citation:
+      source: ase-2024-targeted-neonatal-echo
+      locator:
+        table: '3'
+        page: '178–180'
+  - id: pulmonary-hemodynamics
+    type: threshold-list
+    tag: CRIT
+    title: Pulmonary haemodynamics
+    values:
+      - parameter: pda-right-to-left-flow
+        context: diagnostic-criterion
+        operator: '>='
+        value: 60
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - 'Pulmonary artery pressure may be considered suprasystemic when 60% or more of transductal systolic flow is right to left.'
+        citation:
+          source: ase-2024-targeted-neonatal-echo
+          locator:
+            page: '177'
+      - parameter: pulmonary-vein-velocity
+        context: diagnostic-criterion
+        operator: '>'
+        value: 1.0
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - 'High pulmonary vein velocity: appraisal of all visualised pulmonary veins is mandatory in studies for bronchopulmonary dysplasia-associated pulmonary hypertension, with timely referral to a paediatric cardiologist.'
+        citation:
+          source: ase-2024-targeted-neonatal-echo
+          locator:
+            page: '188'

@@ -1,0 +1,7 @@
+id: lv-fractional-shortening
+name: LV fractional shortening
+abbreviation: FS
+quantity: percent
+unit: '%'
+modalities: [Echo]
+synonyms: [shortening fraction, FS, M-mode]

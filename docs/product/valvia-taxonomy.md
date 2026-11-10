@@ -116,6 +116,8 @@
   - 3.6.2 Imaging-related surgical thresholds (vegetation size, embolic risk) `INTV`
   - 3.6.3 TTE / TEE indications (incl. role of CT / PET-CT as defined in ESC criteria) `CRIT`
 
+- 3.7 Rheumatic heart disease: echocardiographic criteria (children and adults) `CRIT` *(new, 10 Nov 2026)*
+
 ## 4. Prosthetic valves & valve interventions (W1; 4.1 in W2)
 
 - **4.1 Prosthetic valve reference values by model and size** (W2) `NORM`
@@ -243,6 +245,7 @@
 - 15.3 Ventricular systolic & diastolic function in children `NORM`
 - 15.4 Paediatric pulmonary hypertension `CRIT`
 - 15.5 Paediatric cardiomyopathies (incl. HCM thresholds in children) `CRIT`
+- 15.6 Neonates: targeted neonatal echocardiography (NICU) `NORM` `CRIT` *(new, 10 Nov 2026)*
 
 ## 16. Transoesophageal echocardiography (TEE) (new, decision PO-5)
 

@@ -1,0 +1,6 @@
+id: branch-pa-diastolic-velocity
+name: Branch pulmonary artery diastolic flow velocity
+quantity: velocity-blood
+unit: m/s
+modalities: [Echo]
+synonyms: [PDA, ductal shunt, pulmonary overcirculation, neonate]

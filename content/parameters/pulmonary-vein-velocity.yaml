@@ -1,0 +1,6 @@
+id: pulmonary-vein-velocity
+name: Pulmonary vein flow velocity
+quantity: velocity-blood
+unit: m/s
+modalities: [Echo]
+synonyms: [pulmonary vein stenosis, bronchopulmonary dysplasia, neonate]
