@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-32: Plan update: content batch 2026-11-10 |
-| Next task | CH-33: rheumatic heart disease (ASE 2023) |
+| Last completed task | CH-33: Content: rheumatic heart disease (ASE 2023 guideline): echo criteria i |
+| Next task | CH-34: targeted neonatal echocardiography (ASE 2024) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

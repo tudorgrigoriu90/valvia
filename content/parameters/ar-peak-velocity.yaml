@@ -1,0 +1,6 @@
+id: ar-peak-velocity
+name: Peak aortic regurgitant jet velocity (CW Doppler)
+quantity: velocity-blood
+unit: m/s
+modalities: [Echo]
+synonyms: [AR velocity, pathological AR, rheumatic carditis]

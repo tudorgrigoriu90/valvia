@@ -79,3 +79,14 @@ test('TEE values appear under TEE only (CH-26 content)', async ({ page }) => {
   await page.getByRole('button', { name: 'Adults' }).click();
   await expect(page.locator('#septal-findings .threshold-list')).toBeHidden();
 });
+
+test('children see paediatric values, e.g. rheumatic carditis criteria (CH-33 content)', async ({ page }) => {
+  await page.goto('./');
+  await page.getByRole('button', { name: 'Children', exact: true }).click();
+  await page.getByRole('link', { name: /Valvular heart disease/ }).click();
+  await page.getByRole('link', { name: /Rheumatic heart disease/ }).click();
+  const carditis = page.locator('#carditis .threshold-list');
+  await expect(carditis.locator('[data-value-category="paediatric"]').first()).toBeVisible();
+  await expect(carditis.locator('[data-value-category="adult"]').first()).toBeHidden();
+  await page.getByRole('button', { name: 'Adults' }).click();
+});

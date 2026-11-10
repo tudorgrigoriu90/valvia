@@ -7,3 +7,199 @@ order: 0
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: ms-severity
+    type: grading-table
+    tag: GRADE
+    title: Classification of mitral stenosis severity
+    grades: ['Progressive (mild)', 'Progressive (moderate)', 'Severe']
+    values:
+      - parameter: mitral-valve-area
+        context: grading
+        grade: Progressive (mild)
+        operator: '>'
+        value: 2.5
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2023-rheumatic-heart-disease
+          locator:
+            table: '1'
+            page: '8'
+      - parameter: mitral-valve-area
+        context: grading
+        grade: Progressive (moderate)
+        operator: range
+        min: 1.6
+        max: 2.5
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Printed as 2.5–1.6 cm².
+        citation:
+          source: ase-2023-rheumatic-heart-disease
+          locator:
+            table: '1'
+            page: '8'
+      - parameter: mitral-valve-area
+        context: grading
+        grade: Severe
+        operator: '<='
+        value: 1.5
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2023-rheumatic-heart-disease
+          locator:
+            table: '1'
+            page: '8'
+      - parameter: pressure-half-time
+        context: grading
+        grade: Progressive (mild)
+        operator: '<'
+        value: 100
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2023-rheumatic-heart-disease
+          locator:
+            table: '1'
+            page: '8'
+      - parameter: pressure-half-time
+        context: grading
+        grade: Progressive (moderate)
+        operator: range
+        min: 100
+        max: 149
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2023-rheumatic-heart-disease
+          locator:
+            table: '1'
+            page: '8'
+      - parameter: pressure-half-time
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 150
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2023-rheumatic-heart-disease
+          locator:
+            table: '1'
+            page: '8'
+      - parameter: mitral-mean-gradient
+        context: grading
+        grade: Progressive (mild)
+        operator: '<'
+        value: 5
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - At a heart rate of 60–80 beats per minute.
+        citation:
+          source: ase-2023-rheumatic-heart-disease
+          locator:
+            table: '1'
+            page: '8'
+      - parameter: mitral-mean-gradient
+        context: grading
+        grade: Progressive (moderate)
+        operator: range
+        min: 5
+        max: 9
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - At a heart rate of 60–80 beats per minute.
+        citation:
+          source: ase-2023-rheumatic-heart-disease
+          locator:
+            table: '1'
+            page: '8'
+      - parameter: mitral-mean-gradient
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 10
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - At a heart rate of 60–80 beats per minute.
+        citation:
+          source: ase-2023-rheumatic-heart-disease
+          locator:
+            table: '1'
+            page: '8'
+      - parameter: spap
+        context: grading
+        grade: Progressive (mild)
+        operator: '<'
+        value: 30
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2023-rheumatic-heart-disease
+          locator:
+            table: '1'
+            page: '8'
+      - parameter: spap
+        context: grading
+        grade: Progressive (moderate)
+        operator: range
+        min: 30
+        max: 49
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2023-rheumatic-heart-disease
+          locator:
+            table: '1'
+            page: '8'
+      - parameter: spap
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 50
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2023-rheumatic-heart-disease
+          locator:
+            table: '1'
+            page: '8'
+  - id: ms-method
+    type: note
+    tag: METH
+    title: Measurement
+    text: Planimetry at the leaflet tips is the preferred method for the anatomic valve area (3D multiplanar guidance if needed; avoid excessive gain). Note rhythm and heart rate with Doppler; trace the mid-diastolic slope when the pressure half-time profile is bimodal. Pressure half-time is unreliable with significant MR and immediately after balloon valvotomy.
+    citation:
+      source: ase-2023-rheumatic-heart-disease
+      locator:
+        page: '8–9'

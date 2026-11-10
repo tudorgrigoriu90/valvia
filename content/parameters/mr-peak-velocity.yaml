@@ -1,0 +1,6 @@
+id: mr-peak-velocity
+name: Peak mitral regurgitant jet velocity (CW Doppler)
+quantity: velocity-blood
+unit: m/s
+modalities: [Echo]
+synonyms: [MR velocity, pathological MR, rheumatic carditis]

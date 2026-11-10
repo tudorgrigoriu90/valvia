@@ -1,0 +1,157 @@
+id: rheumatic-heart-disease-criteria
+ref: '3.7'
+slug: rheumatic-heart-disease-criteria
+title: 'Rheumatic heart disease: echocardiographic criteria'
+parent: valvular-heart-disease
+order: 6
+population: both
+wave: W1
+status: draft
+seeAlso: [rheumatic-ms-severity-grading]
+blocks:
+  - id: carditis
+    type: threshold-list
+    tag: CRIT
+    title: Pathological regurgitation suggesting rheumatic carditis
+    values:
+      - parameter: mr-peak-velocity
+        context: diagnostic-criterion
+        operator: '>'
+        value: 3
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Pansystolic MR seen in more than one view, in at-risk populations.'
+          - The jet must produce a complete CW Doppler spectral waveform.
+        citation:
+          source: ase-2023-rheumatic-heart-disease
+          locator:
+            page: '6'
+      - parameter: mr-peak-velocity
+        context: diagnostic-criterion
+        operator: '>'
+        value: 3
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - 'Pansystolic MR seen in more than one view, in at-risk populations.'
+          - The jet must produce a complete CW Doppler spectral waveform.
+        citation:
+          source: ase-2023-rheumatic-heart-disease
+          locator:
+            page: '6'
+      - parameter: ar-peak-velocity
+        context: diagnostic-criterion
+        operator: '>'
+        value: 3
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Pandiastolic AR seen in more than one view, in at-risk populations.'
+          - The jet must produce a complete CW Doppler spectral waveform.
+        citation:
+          source: ase-2023-rheumatic-heart-disease
+          locator:
+            page: '6'
+      - parameter: ar-peak-velocity
+        context: diagnostic-criterion
+        operator: '>'
+        value: 3
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - 'Pandiastolic AR seen in more than one view, in at-risk populations.'
+          - The jet must produce a complete CW Doppler spectral waveform.
+        citation:
+          source: ase-2023-rheumatic-heart-disease
+          locator:
+            page: '6'
+  - id: children-trace
+    type: note
+    tag: METH
+    title: Children
+    text: 'Trace physiological regurgitation can be seen in all valves of healthy children. More than trace MR or AR in a child should be considered pathological and may indicate rheumatic carditis or RHD, once non-rheumatic causes are excluded.'
+    citation:
+      source: ase-2023-rheumatic-heart-disease
+      locator:
+        page: '6'
+  - id: pathological-mr
+    type: threshold-list
+    tag: CRIT
+    title: Pathological mitral regurgitation
+    values:
+      - parameter: mr-jet-length
+        context: diagnostic-criterion
+        operator: '>='
+        value: 2
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'In at least one view; together with a holosystolic jet in at least two views and a peak velocity ≥ 3 m/s.'
+          - Jet length and velocity do not necessarily reflect severity.
+        citation:
+          source: ase-2023-rheumatic-heart-disease
+          locator:
+            page: '11'
+      - parameter: mr-jet-length
+        context: diagnostic-criterion
+        operator: '>='
+        value: 2
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - 'In at least one view; together with a holosystolic jet in at least two views and a peak velocity ≥ 3 m/s.'
+          - Jet length and velocity do not necessarily reflect severity.
+        citation:
+          source: ase-2023-rheumatic-heart-disease
+          locator:
+            page: '11'
+      - parameter: mr-peak-velocity
+        context: diagnostic-criterion
+        operator: '>='
+        value: 3
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Peak MR velocity; together with a holosystolic jet in at least two views and a jet length ≥ 2 cm in at least one view.'
+        citation:
+          source: ase-2023-rheumatic-heart-disease
+          locator:
+            page: '11'
+      - parameter: mr-peak-velocity
+        context: diagnostic-criterion
+        operator: '>='
+        value: 3
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - 'Peak MR velocity; together with a holosystolic jet in at least two views and a jet length ≥ 2 cm in at least one view.'
+        citation:
+          source: ase-2023-rheumatic-heart-disease
+          locator:
+            page: '11'
+  - id: morphology
+    type: note
+    tag: METH
+    title: Morphology
+    text: 'Rheumatic MR is pathological MR with at least two morphological features of a rheumatic mitral valve (e.g. leaflet thickening, commissural fusion, restricted leaflet motion, chordal thickening) in the absence of other causes. Measure leaflet thickness with tissue harmonics off, as harmonics increase apparent thickness. Grade MR severity as for native valvular regurgitation.'
+    citation:
+      source: ase-2023-rheumatic-heart-disease
+      locator:
+        page: '6, 11–12'

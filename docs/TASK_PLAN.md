@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-32 Plan update: content batch 2026-11-10 |
-| Next up | CH-33: rheumatic heart disease (ASE 2023) |
+| Last completed | CH-33 Content: rheumatic heart disease (ASE 2023 guideline): echo criteria i |
+| Next up | CH-34: targeted neonatal echocardiography (ASE 2024) |
 
 ## Next up: R0 sequence
 
@@ -303,7 +303,7 @@ the empty adult categories. ESC/EACVI-only documents still wait for PDFs supplie
 | Key | Summary | SP | Status | Notes |
 |---|---|---|---|---|
 | CH-32 | Plan update: content batch 2026-11-10 | 0 | done |  |
-| CH-33 | Content: rheumatic heart disease (ASE 2023 guideline): echo criteria in children and adults | 2 | todo | Children + valves |
+| CH-33 | Content: rheumatic heart disease (ASE 2023 guideline): echo criteria in children and adults | 2 | done | Children + valves |
 | CH-34 | Content: targeted neonatal echocardiography (ASE 2024): neonatal cut-offs | 2 | todo | Children (15.x) |
 | CH-35 | Content: cardiac surveillance in paediatric cancer (ASE 2023) | 2 | todo | Children + cardio-oncology |
 | CH-36 | Content: thoracic aorta in adults (ASE/EACVI 2015): normal dimensions and thresholds | 2 | todo | Aortic disease (10.x) |
@@ -424,3 +424,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-09 | CH-30 | Discrepancy separation test now changes the published text that is compared, with a control case and one case per field (population, sex, grade, context, modality); mutation check: dropping modality from the grouping key now fails the test | `CH-30: make the discrepancy separation test meaningful` |
 | 2026-11-09 | CH-31 | E2E (manifest, icon, search URL) and Lighthouse URLs derive the base path from VALVIA_BASE instead of hard-coding /valvia/; CI was red once VALVIA_BASE=/ was set for valvia-echo.se. Verified: 112 E2E pass and Lighthouse budgets pass with VALVIA_BASE=/; default base still verified | `CH-31: derive the base path in E2E and Lighthouse from VALVIA_BASE` |
 | 2026-11-10 | CH-32 | Plan the 2026-11-10 content batch: 11 ASE documents (RHD, neonatal, paediatric oncology, thoracic aorta, rTOF, TGA, ASD/PFO, adult cancer therapy, hypertension, LVAD, athletes), Children first | `CH-32: plan the next content batch (Children first)` |
+| 2026-11-10 | CH-33 | Rheumatic heart disease (ASE 2023): MS severity Table 1 (MVA, PHT, mean gradient, SPAP) in the rheumatic MS leaf; new leaf 3.7 with carditis criteria (MR/AR > 3 m/s) and pathological MR (jet ≥ 2 cm, ≥ 3 m/s) for adults and children, children's trace-regurgitation note, morphology note; first Children values; E2E for the Children category | `CH-33: rheumatic heart disease criteria and MS grading (ASE 2023)` |

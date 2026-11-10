@@ -1,0 +1,6 @@
+id: mr-jet-length
+name: Mitral regurgitant colour jet length
+quantity: length
+unit: mm
+modalities: [Echo]
+synonyms: [pathological MR, rheumatic heart disease, jet length]
