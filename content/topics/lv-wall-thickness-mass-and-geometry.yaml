@@ -1106,3 +1106,404 @@ blocks:
       locator:
         figure: '6'
         page: '17'
+  - id: severity-height-rwt
+    type: grading-table
+    tag: GRADE
+    title: 'Severity of LV hypertrophy by sex: mass indexed to height^2.7 and relative wall thickness'
+    grades: ['Normal range', 'Mildly abnormal', 'Moderately abnormal', 'Severely abnormal']
+    values:
+      - parameter: lv-mass-height-index
+        context: grading
+        grade: Normal range
+        operator: range
+        min: 18
+        max: 44
+        unit: g/m^2.7
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - Linear method.
+        citation:
+          source: eacvi-ase-2015-hypertension
+          locator:
+            table: '3'
+            page: '735'
+      - parameter: lv-mass-height-index
+        context: grading
+        grade: Mildly abnormal
+        operator: range
+        min: 45
+        max: 51
+        unit: g/m^2.7
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - Linear method.
+        citation:
+          source: eacvi-ase-2015-hypertension
+          locator:
+            table: '3'
+            page: '735'
+      - parameter: lv-mass-height-index
+        context: grading
+        grade: Moderately abnormal
+        operator: range
+        min: 52
+        max: 58
+        unit: g/m^2.7
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - Linear method.
+        citation:
+          source: eacvi-ase-2015-hypertension
+          locator:
+            table: '3'
+            page: '735'
+      - parameter: lv-mass-height-index
+        context: grading
+        grade: Severely abnormal
+        operator: '>='
+        value: 59
+        unit: g/m^2.7
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - Linear method.
+        citation:
+          source: eacvi-ase-2015-hypertension
+          locator:
+            table: '3'
+            page: '735'
+      - parameter: lv-mass-height-index
+        context: grading
+        grade: Normal range
+        operator: range
+        min: 20
+        max: 48
+        unit: g/m^2.7
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - Linear method.
+        citation:
+          source: eacvi-ase-2015-hypertension
+          locator:
+            table: '3'
+            page: '735'
+      - parameter: lv-mass-height-index
+        context: grading
+        grade: Mildly abnormal
+        operator: range
+        min: 49
+        max: 55
+        unit: g/m^2.7
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - Linear method.
+        citation:
+          source: eacvi-ase-2015-hypertension
+          locator:
+            table: '3'
+            page: '735'
+      - parameter: lv-mass-height-index
+        context: grading
+        grade: Moderately abnormal
+        operator: range
+        min: 56
+        max: 63
+        unit: g/m^2.7
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - Linear method.
+        citation:
+          source: eacvi-ase-2015-hypertension
+          locator:
+            table: '3'
+            page: '735'
+      - parameter: lv-mass-height-index
+        context: grading
+        grade: Severely abnormal
+        operator: '>='
+        value: 64
+        unit: g/m^2.7
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - Linear method.
+        citation:
+          source: eacvi-ase-2015-hypertension
+          locator:
+            table: '3'
+            page: '735'
+      - parameter: relative-wall-thickness
+        context: grading
+        grade: Normal range
+        operator: range
+        min: 0.22
+        max: 0.42
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - "Labelled 'cm' in the source; RWT is a dimensionless ratio. Linear method."
+        citation:
+          source: eacvi-ase-2015-hypertension
+          locator:
+            table: '3'
+            page: '735'
+      - parameter: relative-wall-thickness
+        context: grading
+        grade: Mildly abnormal
+        operator: range
+        min: 0.43
+        max: 0.47
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - "Labelled 'cm' in the source; RWT is a dimensionless ratio. Linear method."
+        citation:
+          source: eacvi-ase-2015-hypertension
+          locator:
+            table: '3'
+            page: '735'
+      - parameter: relative-wall-thickness
+        context: grading
+        grade: Moderately abnormal
+        operator: range
+        min: 0.48
+        max: 0.52
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - "Labelled 'cm' in the source; RWT is a dimensionless ratio. Linear method."
+        citation:
+          source: eacvi-ase-2015-hypertension
+          locator:
+            table: '3'
+            page: '735'
+      - parameter: relative-wall-thickness
+        context: grading
+        grade: Severely abnormal
+        operator: '>='
+        value: 0.53
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - "Labelled 'cm' in the source; RWT is a dimensionless ratio. Linear method."
+        citation:
+          source: eacvi-ase-2015-hypertension
+          locator:
+            table: '3'
+            page: '735'
+      - parameter: relative-wall-thickness
+        context: grading
+        grade: Normal range
+        operator: range
+        min: 0.24
+        max: 0.42
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - "Labelled 'cm' in the source; RWT is a dimensionless ratio. Linear method."
+        citation:
+          source: eacvi-ase-2015-hypertension
+          locator:
+            table: '3'
+            page: '735'
+      - parameter: relative-wall-thickness
+        context: grading
+        grade: Mildly abnormal
+        operator: range
+        min: 0.43
+        max: 0.46
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - "Labelled 'cm' in the source; RWT is a dimensionless ratio. Linear method."
+        citation:
+          source: eacvi-ase-2015-hypertension
+          locator:
+            table: '3'
+            page: '735'
+      - parameter: relative-wall-thickness
+        context: grading
+        grade: Moderately abnormal
+        operator: range
+        min: 0.47
+        max: 0.51
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - "Labelled 'cm' in the source; RWT is a dimensionless ratio. Linear method."
+        citation:
+          source: eacvi-ase-2015-hypertension
+          locator:
+            table: '3'
+            page: '735'
+      - parameter: relative-wall-thickness
+        context: grading
+        grade: Severely abnormal
+        operator: '>='
+        value: 0.52
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - "Labelled 'cm' in the source; RWT is a dimensionless ratio. Linear method."
+        citation:
+          source: eacvi-ase-2015-hypertension
+          locator:
+            table: '3'
+            page: '735'
+  - id: lvm-3d-european
+    type: normal-range-table
+    tag: NORM
+    title: 'LV mass index by 3D echocardiography: European reference'
+    values:
+      - parameter: lv-mass-index-3d
+        context: normal-range
+        operator: range
+        min: 57
+        max: 97
+        unit: g/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - Mean 77 g/m².
+          - European normal population.
+        citation:
+          source: eacvi-ase-2015-hypertension
+          locator:
+            table: '2'
+            page: '734'
+      - parameter: lv-mass-index-3d
+        context: normal-range
+        operator: range
+        min: 58
+        max: 90
+        unit: g/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - Mean 74 g/m².
+          - European normal population.
+        citation:
+          source: eacvi-ase-2015-hypertension
+          locator:
+            table: '2'
+            page: '734'
+  - id: lvm-3d-japanese
+    type: normal-range-table
+    tag: NORM
+    title: 'LV mass index by 3D echocardiography: Japanese reference'
+    values:
+      - parameter: lv-mass-index-3d
+        context: normal-range
+        operator: range
+        min: 40
+        max: 88
+        unit: g/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - Mean 64 g/m².
+          - Japanese normal population.
+        citation:
+          source: eacvi-ase-2015-hypertension
+          locator:
+            table: '2'
+            page: '734'
+      - parameter: lv-mass-index-3d
+        context: normal-range
+        operator: range
+        min: 34
+        max: 78
+        unit: g/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - Mean 56 g/m².
+          - Japanese normal population.
+        citation:
+          source: eacvi-ase-2015-hypertension
+          locator:
+            table: '2'
+            page: '734'
+  - id: geometry-classes
+    type: criteria-checklist
+    tag: CRIT
+    title: Classical description of LV geometry (2D-directed M-mode)
+    criteria:
+      - text: 'Normal: LV mass index ≤ 115 g/m² (men) or ≤ 95 g/m² (women) and RWT < 0.42.'
+        citation:
+          source: eacvi-ase-2015-hypertension
+          locator:
+            table: '5'
+            page: '736'
+      - text: 'Concentric remodelling: LV mass index ≤ 115 g/m² (men) or ≤ 95 g/m² (women) and RWT > 0.42.'
+        citation:
+          source: eacvi-ase-2015-hypertension
+          locator:
+            table: '5'
+            page: '736'
+      - text: 'Concentric hypertrophy: LV mass index > 115 g/m² (men) or > 95 g/m² (women) and RWT > 0.42.'
+        citation:
+          source: eacvi-ase-2015-hypertension
+          locator:
+            table: '5'
+            page: '736'
+      - text: 'Eccentric hypertrophy: LV mass index > 115 g/m² (men) or > 95 g/m² (women) and RWT < 0.42.'
+        citation:
+          source: eacvi-ase-2015-hypertension
+          locator:
+            table: '5'
+            page: '736'

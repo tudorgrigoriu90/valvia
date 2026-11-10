@@ -1,0 +1,7 @@
+id: lv-mass-height-index
+name: LV mass indexed to height^2.7
+abbreviation: LVM/height^2.7
+quantity: indexed-mass
+unit: g/m^2.7
+modalities: [Echo]
+synonyms: [LV mass index, height indexation, LVH, hypertension]

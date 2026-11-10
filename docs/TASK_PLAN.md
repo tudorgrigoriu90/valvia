@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-40 Content: adult cancer therapy (ASE/EACVI 2014) |
-| Next up | CH-41: echocardiography in adult hypertension (ASE/EACVI 2015) |
+| Last completed | CH-41 Content: echocardiography in adult hypertension (ASE/EACVI 2015) |
+| Next up | CH-42: LVAD assessment (ASE 2015) |
 
 ## Next up: R0 sequence
 
@@ -311,7 +311,7 @@ the empty adult categories. ESC/EACVI-only documents still wait for PDFs supplie
 | CH-38 | Content: transposition of the great arteries (ASE 2016) | 2 | done | Congenital (8.x) |
 | CH-39 | Content: ASD and PFO (ASE 2015) | 1 | done | Congenital (8.x) + TEE |
 | CH-40 | Content: adult cancer therapy (ASE/EACVI 2014) | 2 | done | Cardio-oncology (11.x); check overlap with ASE 2025 strain |
-| CH-41 | Content: echocardiography in adult hypertension (ASE/EACVI 2015) | 1 | todo |  |
+| CH-41 | Content: echocardiography in adult hypertension (ASE/EACVI 2015) | 1 | done |  |
 | CH-42 | Content: LVAD assessment (ASE 2015) | 2 | todo | Heart failure |
 | CH-43 | Content: young adult competitive athletes (ASE 2020) | 1 | todo | Special populations |
 
@@ -432,3 +432,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-10 | CH-38 | Transposition of the great arteries (ASE 2016): branch PA peak velocity < 2 m/s after the arterial switch, systemic RV after the atrial switch (FAC < 33% for CMR RV EF < 50%; RV GLS worse than −14% for RV EF < 45%), TR interpretation note; adults and children | `CH-38: transposition criteria after arterial and atrial switch (ASE 2016)` |
 | 2026-11-10 | CH-39 | ASD and PFO (ASE/SCAI 2015): ASD rims ≥ 5 mm favourable and < 5 mm deficient (TEE), small ASD < 5 mm without RV enlargement or PH needs no closure, TTE/TEE note; atrial septal aneurysm (> 10 mm, total > 15 mm) in the PFO leaf; adults and children | `CH-39: ASD rims, small ASD and atrial septal aneurysm (ASE 2015)` |
 | 2026-11-10 | CH-40 | Adult cancer therapy (ASE/EACVI 2014 consensus, JASE version): CTRCD as LVEF decrease > 10 points to < 53%, GLS relative reduction > 15% very likely abnormal and < 8% not significant, with confirmation caveats; shown alongside the ASE 2025 strain threshold (different context) | `CH-40: CTRCD definition and GLS change (ASE/EACVI 2014)` |
+| 2026-11-10 | CH-41 | Hypertension (EACVI/ASE 2015, JASE version): LV mass/height^2.7 and RWT severity grades by sex (Table 3, RWT stored as a ratio with the source's 'cm' label as caveat), 3D LV mass index references (European, Japanese), LV geometry classes (Table 5); 2 parameters | `CH-41: LV mass/height^2.7, RWT grades and geometry (EACVI/ASE 2015)` |

@@ -1,0 +1,7 @@
+id: lv-mass-index-3d
+name: LV mass index by 3D echocardiography
+abbreviation: 3D LVMi
+quantity: indexed-mass
+unit: g/m²
+modalities: [Echo]
+synonyms: [3D LV mass, LVH]
