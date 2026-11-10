@@ -4,6 +4,26 @@ slug: baseline-and-surveillance-echo-parameters
 title: Baseline and surveillance echo parameters
 parent: cardio-oncology
 order: 0
-population: adult
+population: both
 wave: W2
 status: draft
+blocks:
+  - id: children-la-volume
+    type: normal-range-table
+    tag: NORM
+    title: 'Children treated with anthracyclines: LA volume'
+    values:
+      - parameter: la-volume-index
+        context: normal-range
+        operator: '<'
+        value: 34
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - Biplane method; LA volume indexed to BSA is relatively stable during growth and may reflect chronically raised LV filling pressure. Foreshortening can underestimate it in young children.
+        citation:
+          source: ase-2023-paediatric-cancer-surveillance
+          locator:
+            page: '1244'

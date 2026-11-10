@@ -4,7 +4,7 @@ slug: ctrcd-definitions
 title: 'Cancer therapy-related cardiac dysfunction: LVEF and GLS definitions'
 parent: cardio-oncology
 order: 1
-population: adult
+population: both
 wave: W2
 status: draft
 blocks:
@@ -36,3 +36,110 @@ blocks:
       source: ase-2025-strain
       locator:
         page: '1000'
+  - id: children-lv-function
+    type: grading-table
+    tag: GRADE
+    title: 'Children during and after cancer treatment: LV function'
+    grades: ['Normal', 'Borderline', 'Abnormal']
+    values:
+      - parameter: lvef
+        context: grading
+        grade: Normal
+        operator: '>='
+        value: 55
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - Biplane method of disks (area-length if apical 2-chamber views are limited; 3D preferable in adolescents).
+        citation:
+          source: ase-2023-paediatric-cancer-surveillance
+          locator:
+            page: '1241'
+      - parameter: lvef
+        context: grading
+        grade: Borderline
+        operator: range
+        min: 50
+        max: 54
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - Confirm with a second echocardiogram within 1–2 weeks (during treatment) or within 6 months (after treatment); consider CMR.
+        citation:
+          source: ase-2023-paediatric-cancer-surveillance
+          locator:
+            page: '1241'
+      - parameter: lvef
+        context: grading
+        grade: Abnormal
+        operator: '<'
+        value: 50
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - Cardio-oncology consultation recommended; reassess within 1–2 weeks or confirm with another modality.
+        citation:
+          source: ase-2023-paediatric-cancer-surveillance
+          locator:
+            page: '1241'
+      - parameter: lv-gls
+        context: grading
+        grade: Normal
+        operator: '<='
+        value: -18
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - 'Printed: values equal to or more negative than −18%. Use one vendor or vendor-neutral software for serial follow-up.'
+        citation:
+          source: ase-2023-paediatric-cancer-surveillance
+          locator:
+            page: '1243'
+      - parameter: lv-gls
+        context: grading
+        grade: Borderline
+        operator: range
+        min: -17
+        max: -16
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - 'Printed: −16% to −17%.'
+        citation:
+          source: ase-2023-paediatric-cancer-surveillance
+          locator:
+            page: '1243'
+      - parameter: lv-gls
+        context: grading
+        grade: Abnormal
+        operator: '>'
+        value: -16
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - 'Printed: less negative than −16%. If LVEF > 55% but GLS > −18%, more frequent follow-up could be considered; the predictive value of an early GLS decrease with preserved EF is uncertain.'
+        citation:
+          source: ase-2023-paediatric-cancer-surveillance
+          locator:
+            page: '1243'
+  - id: children-ef-not-fs
+    type: note
+    tag: METH
+    title: 'Children: use EF, not FS'
+    text: Fractional shortening (and M-mode EF) should not be used to follow children treated for cancer; each laboratory should use a single EF method for serial studies and state it in the report.
+    citation:
+      source: ase-2023-paediatric-cancer-surveillance
+      locator:
+        page: '1241'

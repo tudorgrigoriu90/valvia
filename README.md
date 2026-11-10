@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-34: Content: targeted neonatal echocardiography (ASE 2024): neonatal cut-o |
-| Next task | CH-35: cardiac surveillance in paediatric cancer (ASE 2023) |
+| Last completed task | CH-35: Content: cardiac surveillance in paediatric cancer (ASE 2023) |
+| Next task | CH-36: thoracic aorta in adults (ASE/EACVI 2015) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
