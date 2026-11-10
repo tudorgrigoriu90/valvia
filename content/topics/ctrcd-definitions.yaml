@@ -143,3 +143,64 @@ blocks:
       source: ase-2023-paediatric-cancer-surveillance
       locator:
         page: '1241'
+  - id: ctrcd-2014
+    type: threshold-list
+    tag: CRIT
+    title: 'Adults: CTRCD definition and GLS change (2014 consensus)'
+    values:
+      - parameter: lvef-decrease-from-baseline
+        context: diagnostic-criterion
+        operator: '>'
+        value: 10
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Percentage points, to a value < 53% (normal reference value for 2D echocardiography); confirm with repeated imaging.'
+        citation:
+          source: ase-eacvi-2014-cancer-therapy
+          locator:
+            page: '912'
+      - parameter: lvef
+        context: diagnostic-criterion
+        operator: '<'
+        value: 53
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Together with a decrease of > 10 percentage points from baseline.'
+        citation:
+          source: ase-eacvi-2014-cancer-therapy
+          locator:
+            page: '912'
+      - parameter: gls-relative-decline
+        context: diagnostic-criterion
+        operator: '>'
+        value: 15
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Relative reduction from baseline: very likely abnormal; confirm with a repeat study 2–3 weeks later. Use the same vendor-specific machine for follow-up.'
+        citation:
+          source: ase-eacvi-2014-cancer-therapy
+          locator:
+            page: '924, 931'
+      - parameter: gls-relative-decline
+        context: diagnostic-criterion
+        operator: '<'
+        value: 8
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Relative reduction from baseline that appears not to be of clinical significance.
+        citation:
+          source: ase-eacvi-2014-cancer-therapy
+          locator:
+            page: '924, 931'

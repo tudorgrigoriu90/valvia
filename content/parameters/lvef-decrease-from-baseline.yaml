@@ -1,0 +1,6 @@
+id: lvef-decrease-from-baseline
+name: Decrease in LVEF from baseline (percentage points)
+quantity: percent
+unit: '%'
+modalities: [Echo]
+synonyms: [LVEF decline, CTRCD, cardiotoxicity]

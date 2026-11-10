@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-39: Content: ASD and PFO (ASE 2015) |
-| Next task | CH-40: adult cancer therapy (ASE/EACVI 2014) |
+| Last completed task | CH-40: Content: adult cancer therapy (ASE/EACVI 2014) |
+| Next task | CH-41: echocardiography in adult hypertension (ASE/EACVI 2015) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
