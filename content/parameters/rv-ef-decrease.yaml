@@ -1,0 +1,6 @@
+id: rv-ef-decrease
+name: Decrease in RV ejection fraction between studies
+quantity: percent
+unit: '%'
+modalities: [Echo, CMR]
+synonyms: [progressive RV dysfunction, tetralogy of Fallot]

@@ -1,0 +1,6 @@
+id: rv-edv-index-increase
+name: Increase in RV end-diastolic volume index between studies
+quantity: indexed-volume
+unit: mL/m²
+modalities: [Echo, CMR]
+synonyms: [progressive RV dilatation, tetralogy of Fallot]

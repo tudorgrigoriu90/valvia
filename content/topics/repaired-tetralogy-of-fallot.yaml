@@ -7,3 +7,471 @@ order: 7
 population: both
 wave: W2
 status: draft
+blocks:
+  - id: rvot-obstruction
+    type: grading-table
+    tag: GRADE
+    title: Residual RVOT obstruction
+    grades: ['Mild', 'Moderate', 'Severe']
+    values:
+      - parameter: pulmonary-peak-velocity
+        context: grading
+        grade: Mild
+        operator: '<'
+        value: 3
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - With normal cardiac output; peak instantaneous gradient across the RVOT or pulmonary valve.
+        citation:
+          source: ase-2014-repaired-tetralogy
+          locator:
+            page: '115'
+      - parameter: pulmonary-peak-velocity
+        context: grading
+        grade: Mild
+        operator: '<'
+        value: 3
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - With normal cardiac output; peak instantaneous gradient across the RVOT or pulmonary valve.
+        citation:
+          source: ase-2014-repaired-tetralogy
+          locator:
+            page: '115'
+      - parameter: pulmonary-peak-velocity
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 3
+        max: 4
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - With normal cardiac output; peak instantaneous gradient across the RVOT or pulmonary valve.
+        citation:
+          source: ase-2014-repaired-tetralogy
+          locator:
+            page: '115'
+      - parameter: pulmonary-peak-velocity
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 3
+        max: 4
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - With normal cardiac output; peak instantaneous gradient across the RVOT or pulmonary valve.
+        citation:
+          source: ase-2014-repaired-tetralogy
+          locator:
+            page: '115'
+      - parameter: pulmonary-peak-velocity
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 4
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - With normal cardiac output; peak instantaneous gradient across the RVOT or pulmonary valve.
+        citation:
+          source: ase-2014-repaired-tetralogy
+          locator:
+            page: '115'
+      - parameter: pulmonary-peak-velocity
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 4
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - With normal cardiac output; peak instantaneous gradient across the RVOT or pulmonary valve.
+        citation:
+          source: ase-2014-repaired-tetralogy
+          locator:
+            page: '115'
+      - parameter: pulmonary-peak-gradient
+        context: grading
+        grade: Mild
+        operator: '<'
+        value: 36
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - With normal cardiac output; peak instantaneous gradient across the RVOT or pulmonary valve.
+        citation:
+          source: ase-2014-repaired-tetralogy
+          locator:
+            page: '115'
+      - parameter: pulmonary-peak-gradient
+        context: grading
+        grade: Mild
+        operator: '<'
+        value: 36
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - With normal cardiac output; peak instantaneous gradient across the RVOT or pulmonary valve.
+        citation:
+          source: ase-2014-repaired-tetralogy
+          locator:
+            page: '115'
+      - parameter: pulmonary-peak-gradient
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 36
+        max: 64
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - With normal cardiac output; peak instantaneous gradient across the RVOT or pulmonary valve.
+        citation:
+          source: ase-2014-repaired-tetralogy
+          locator:
+            page: '115'
+      - parameter: pulmonary-peak-gradient
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 36
+        max: 64
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - With normal cardiac output; peak instantaneous gradient across the RVOT or pulmonary valve.
+        citation:
+          source: ase-2014-repaired-tetralogy
+          locator:
+            page: '115'
+      - parameter: pulmonary-peak-gradient
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 64
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - With normal cardiac output; peak instantaneous gradient across the RVOT or pulmonary valve.
+        citation:
+          source: ase-2014-repaired-tetralogy
+          locator:
+            page: '115'
+      - parameter: pulmonary-peak-gradient
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 64
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - With normal cardiac output; peak instantaneous gradient across the RVOT or pulmonary valve.
+        citation:
+          source: ase-2014-repaired-tetralogy
+          locator:
+            page: '115'
+  - id: severe-pr
+    type: threshold-list
+    tag: CRIT
+    title: Doppler predictors of significant or severe pulmonary regurgitation
+    values:
+      - parameter: pr-jet-width-percent-annulus
+        context: diagnostic-criterion
+        operator: '>='
+        value: 50
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Predicts severe PR together with diastolic flow reversal in the main or branch pulmonary arteries (colour or pulsed Doppler).
+        citation:
+          source: ase-2014-repaired-tetralogy
+          locator:
+            page: '115'
+      - parameter: pr-jet-width-percent-annulus
+        context: diagnostic-criterion
+        operator: '>='
+        value: 50
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - Predicts severe PR together with diastolic flow reversal in the main or branch pulmonary arteries (colour or pulsed Doppler).
+        citation:
+          source: ase-2014-repaired-tetralogy
+          locator:
+            page: '115'
+      - parameter: pr-jet-width-to-annulus
+        context: diagnostic-criterion
+        operator: '>'
+        value: 0.7
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Used by others to identify a CMR PR fraction ≥ 40%.'
+        citation:
+          source: ase-2014-repaired-tetralogy
+          locator:
+            page: '115'
+      - parameter: pr-jet-width-to-annulus
+        context: diagnostic-criterion
+        operator: '>'
+        value: 0.7
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - 'Used by others to identify a CMR PR fraction ≥ 40%.'
+        citation:
+          source: ase-2014-repaired-tetralogy
+          locator:
+            page: '115'
+      - parameter: pr-index
+        context: diagnostic-criterion
+        operator: '<'
+        value: 0.77
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - "PR duration / diastole duration; high sensitivity and specificity for a CMR PR fraction > 25% ('significant')."
+        citation:
+          source: ase-2014-repaired-tetralogy
+          locator:
+            page: '115'
+      - parameter: pr-index
+        context: diagnostic-criterion
+        operator: '<'
+        value: 0.77
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - "PR duration / diastole duration; high sensitivity and specificity for a CMR PR fraction > 25% ('significant')."
+        citation:
+          source: ase-2014-repaired-tetralogy
+          locator:
+            page: '115'
+      - parameter: pressure-half-time
+        context: diagnostic-criterion
+        operator: '<'
+        value: 100
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - PR pressure half-time; good sensitivity and specificity for severe PR.
+        citation:
+          source: ase-2014-repaired-tetralogy
+          locator:
+            page: '115–116'
+      - parameter: pressure-half-time
+        context: diagnostic-criterion
+        operator: '<'
+        value: 100
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - PR pressure half-time; good sensitivity and specificity for severe PR.
+        citation:
+          source: ase-2014-repaired-tetralogy
+          locator:
+            page: '115–116'
+  - id: pr-pitfall
+    type: note
+    tag: METH
+    title: Wide-open pulmonary regurgitation
+    text: "With 'free' PR the flow is laminar and low-velocity, so colour Doppler can miss the jet; a short deceleration time with a long period of no or antegrade late-diastolic flow usually indicates severe PR."
+    citation:
+      source: ase-2014-repaired-tetralogy
+      locator:
+        page: '115'
+  - id: cmr-surveillance
+    type: threshold-list
+    tag: INTV
+    title: CMR every 12 months instead of 36 months (from age 10)
+    values:
+      - parameter: rv-edv-index
+        context: intervention-threshold
+        operator: '>='
+        value: 150
+        unit: mL/m²
+        modality: CMR
+        population:
+          ageGroup: adult
+        caveats:
+          - Moderate RV dilatation.
+        citation:
+          source: ase-2014-repaired-tetralogy
+          locator:
+            table: '6'
+            page: '135'
+      - parameter: rv-edv-index
+        context: intervention-threshold
+        operator: '>='
+        value: 150
+        unit: mL/m²
+        modality: CMR
+        population:
+          ageGroup: paediatric
+          ageBand:
+            min: 10
+            unit: years
+            label: '10–19 years'
+        caveats:
+          - Moderate RV dilatation.
+        citation:
+          source: ase-2014-repaired-tetralogy
+          locator:
+            table: '6'
+            page: '135'
+      - parameter: rv-edv-index-increase
+        context: intervention-threshold
+        operator: '>'
+        value: 25
+        unit: mL/m²
+        modality: CMR
+        population:
+          ageGroup: adult
+        caveats:
+          - Progressive RV dilatation.
+        citation:
+          source: ase-2014-repaired-tetralogy
+          locator:
+            table: '6'
+            page: '135'
+      - parameter: rv-edv-index-increase
+        context: intervention-threshold
+        operator: '>'
+        value: 25
+        unit: mL/m²
+        modality: CMR
+        population:
+          ageGroup: paediatric
+          ageBand:
+            min: 10
+            unit: years
+            label: '10–19 years'
+        caveats:
+          - Progressive RV dilatation.
+        citation:
+          source: ase-2014-repaired-tetralogy
+          locator:
+            table: '6'
+            page: '135'
+      - parameter: rv-ejection-fraction
+        context: intervention-threshold
+        operator: '<='
+        value: 48
+        unit: '%'
+        modality: CMR
+        population:
+          ageGroup: adult
+        caveats:
+          - RV dysfunction.
+        citation:
+          source: ase-2014-repaired-tetralogy
+          locator:
+            table: '6'
+            page: '135'
+      - parameter: rv-ejection-fraction
+        context: intervention-threshold
+        operator: '<='
+        value: 48
+        unit: '%'
+        modality: CMR
+        population:
+          ageGroup: paediatric
+          ageBand:
+            min: 10
+            unit: years
+            label: '10–19 years'
+        caveats:
+          - RV dysfunction.
+        citation:
+          source: ase-2014-repaired-tetralogy
+          locator:
+            table: '6'
+            page: '135'
+      - parameter: rv-ef-decrease
+        context: intervention-threshold
+        operator: '>='
+        value: 6
+        unit: '%'
+        modality: CMR
+        population:
+          ageGroup: adult
+        caveats:
+          - Decrease in RV EF (progressive dysfunction).
+        citation:
+          source: ase-2014-repaired-tetralogy
+          locator:
+            table: '6'
+            page: '135'
+      - parameter: rv-ef-decrease
+        context: intervention-threshold
+        operator: '>='
+        value: 6
+        unit: '%'
+        modality: CMR
+        population:
+          ageGroup: paediatric
+          ageBand:
+            min: 10
+            unit: years
+            label: '10–19 years'
+        caveats:
+          - Decrease in RV EF (progressive dysfunction).
+        citation:
+          source: ase-2014-repaired-tetralogy
+          locator:
+            table: '6'
+            page: '135'
+  - id: surveillance
+    type: note
+    tag: METH
+    title: Surveillance intervals
+    text: 'Echocardiography every 12 months up to age 9 and every 24 months from age 10; CMR every 36 months in stable patients from age 10 (not routinely before), every 12 months with the thresholds above.'
+    citation:
+      source: ase-2014-repaired-tetralogy
+      locator:
+        table: '6'
+        page: '135'

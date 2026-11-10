@@ -3,5 +3,5 @@ name: RV end-diastolic volume indexed to BSA
 abbreviation: RV EDVi
 quantity: indexed-volume
 unit: mL/m²
-modalities: [Echo]
+modalities: [Echo, CMR]
 method: 3D echocardiography.

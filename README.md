@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-36: Content: thoracic aorta in adults (ASE/EACVI 2015): normal dimensions  |
-| Next task | CH-37: repaired tetralogy of Fallot (ASE 2014) |
+| Last completed task | CH-37: Content: repaired tetralogy of Fallot (ASE 2014) |
+| Next task | CH-38: transposition of the great arteries (ASE 2016) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
