@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-35: Content: cardiac surveillance in paediatric cancer (ASE 2023) |
-| Next task | CH-36: thoracic aorta in adults (ASE/EACVI 2015) |
+| Last completed task | CH-36: Content: thoracic aorta in adults (ASE/EACVI 2015): normal dimensions  |
+| Next task | CH-37: repaired tetralogy of Fallot (ASE 2014) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

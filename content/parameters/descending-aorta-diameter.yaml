@@ -1,0 +1,6 @@
+id: descending-aorta-diameter
+name: Descending thoracic aorta diameter
+quantity: length
+unit: mm
+modalities: [Echo, CT, CMR]
+synonyms: [descending aorta, thoracic aorta]

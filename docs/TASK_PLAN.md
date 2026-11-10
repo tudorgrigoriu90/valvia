@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-35 Content: cardiac surveillance in paediatric cancer (ASE 2023) |
-| Next up | CH-36: thoracic aorta in adults (ASE/EACVI 2015) |
+| Last completed | CH-36 Content: thoracic aorta in adults (ASE/EACVI 2015): normal dimensions  |
+| Next up | CH-37: repaired tetralogy of Fallot (ASE 2014) |
 
 ## Next up: R0 sequence
 
@@ -306,7 +306,7 @@ the empty adult categories. ESC/EACVI-only documents still wait for PDFs supplie
 | CH-33 | Content: rheumatic heart disease (ASE 2023 guideline): echo criteria in children and adults | 2 | done | Children + valves |
 | CH-34 | Content: targeted neonatal echocardiography (ASE 2024): neonatal cut-offs | 2 | done | Children (15.x) |
 | CH-35 | Content: cardiac surveillance in paediatric cancer (ASE 2023) | 2 | done | Children + cardio-oncology |
-| CH-36 | Content: thoracic aorta in adults (ASE/EACVI 2015): normal dimensions and thresholds | 2 | todo | Aortic disease (10.x) |
+| CH-36 | Content: thoracic aorta in adults (ASE/EACVI 2015): normal dimensions and thresholds | 2 | done | Aortic disease (10.x) |
 | CH-37 | Content: repaired tetralogy of Fallot (ASE 2014) | 2 | todo | Congenital (8.x) |
 | CH-38 | Content: transposition of the great arteries (ASE 2016) | 2 | todo | Congenital (8.x) |
 | CH-39 | Content: ASD and PFO (ASE 2015) | 1 | todo | Congenital (8.x) + TEE |
@@ -427,3 +427,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-10 | CH-33 | Rheumatic heart disease (ASE 2023): MS severity Table 1 (MVA, PHT, mean gradient, SPAP) in the rheumatic MS leaf; new leaf 3.7 with carditis criteria (MR/AR > 3 m/s) and pathological MR (jet ≥ 2 cm, ≥ 3 m/s) for adults and children, children's trace-regurgitation note, morphology note; first Children values; E2E for the Children category | `CH-33: rheumatic heart disease criteria and MS grading (ASE 2023)` |
 | 2026-11-10 | CH-34 | Targeted neonatal echocardiography (ASE 2024): new leaf 15.6 with neonatal normal values from Table 3 (LVEF, FS, LA/Ao, RV FAC, systolic EI, RVET/PAAT, PAAT/RVET, branch PA diastolic velocity), GA-dependent note, suprasystemic PAP (≥ 60% right-to-left ductal flow) and pulmonary vein velocity > 1.0 m/s; 9 parameters; taxonomy doc lists 3.7 and 15.6 | `CH-34: neonatal normal values and haemodynamics (ASE 2024 TNE)` |
 | 2026-11-10 | CH-35 | Paediatric cancer surveillance (ASE 2023): children's LVEF (≥ 55 / 50–54 / < 50%) and GLS (≤ −18 / −17 to −16 / > −16%) grading with follow-up caveats in the CTRCD leaf, EF-not-FS note, LA volume index < 34 mL/m² for children after anthracyclines; both leaves now population both | `CH-35: children's LV function grading in cancer surveillance (ASE 2023)` |
+| 2026-11-10 | CH-36 | Thoracic aorta (ASE/EACVI 2015): aortic root ULN by sex and age band (Tables 1–2, BSA 2.0/1.7 m² with the published adjustment as caveat), CT/MRI upper limits (badged), age/sex/athlete note; atheroma severity grading (Table 26) with complex-atheroma note; 6 parameters | `CH-36: normal aortic dimensions and atheroma grading (ASE/EACVI 2015)` |

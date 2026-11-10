@@ -1,0 +1,6 @@
+id: ascending-aorta-diameter
+name: Ascending aorta diameter
+quantity: length
+unit: mm
+modalities: [Echo, CT, CMR]
+synonyms: [ascending aorta, tubular aorta, aortic aneurysm]

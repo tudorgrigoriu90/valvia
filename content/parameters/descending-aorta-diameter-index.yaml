@@ -1,0 +1,6 @@
+id: descending-aorta-diameter-index
+name: Descending thoracic aorta diameter indexed to BSA
+quantity: indexed-length
+unit: cm/m²
+modalities: [Echo, CT, CMR]
+synonyms: [indexed descending aorta]

@@ -1,0 +1,6 @@
+id: abdominal-aorta-diameter
+name: Upper abdominal aorta diameter
+quantity: length
+unit: mm
+modalities: [Echo, CT, CMR]
+synonyms: [abdominal aorta]

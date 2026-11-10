@@ -1,0 +1,6 @@
+id: aortic-root-diameter
+name: Aortic root diameter at the sinuses of Valsalva
+quantity: length
+unit: mm
+modalities: [Echo, CT, CMR]
+synonyms: [aortic root, sinuses of Valsalva, SoV, aortic dilatation]

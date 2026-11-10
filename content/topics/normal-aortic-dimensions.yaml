@@ -8,3 +8,371 @@ population: adult
 wave: W2
 status: draft
 seeAlso: [aortic-root-and-ascending-aorta]
+blocks:
+  - id: aortic-root-by-age
+    type: normal-range-table
+    tag: NORM
+    title: 'Aortic root at the sinuses: upper limit of normal by sex and age'
+    values:
+      - parameter: aortic-root-diameter
+        context: normal-range
+        operator: '<='
+        value: 3.7
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+          ageBand:
+            min: 15
+            unit: years
+            label: '15–29 years'
+            max: 30
+        caveats:
+          - 'Upper limit of normal (95% CI) for a BSA of 2.0 m²; add 0.5 mm per 0.1 m² BSA above 2.0 m², subtract 0.5 mm per 0.1 m² below.'
+        citation:
+          source: ase-eacvi-2015-thoracic-aorta
+          locator:
+            table: '1'
+            page: '123'
+      - parameter: aortic-root-diameter
+        context: normal-range
+        operator: '<='
+        value: 3.8
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+          ageBand:
+            min: 30
+            unit: years
+            label: '30–39 years'
+            max: 40
+        caveats:
+          - 'Upper limit of normal (95% CI) for a BSA of 2.0 m²; add 0.5 mm per 0.1 m² BSA above 2.0 m², subtract 0.5 mm per 0.1 m² below.'
+        citation:
+          source: ase-eacvi-2015-thoracic-aorta
+          locator:
+            table: '1'
+            page: '123'
+      - parameter: aortic-root-diameter
+        context: normal-range
+        operator: '<='
+        value: 3.9
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+          ageBand:
+            min: 40
+            unit: years
+            label: '40–49 years'
+            max: 50
+        caveats:
+          - 'Upper limit of normal (95% CI) for a BSA of 2.0 m²; add 0.5 mm per 0.1 m² BSA above 2.0 m², subtract 0.5 mm per 0.1 m² below.'
+        citation:
+          source: ase-eacvi-2015-thoracic-aorta
+          locator:
+            table: '1'
+            page: '123'
+      - parameter: aortic-root-diameter
+        context: normal-range
+        operator: '<='
+        value: 4.0
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+          ageBand:
+            min: 50
+            unit: years
+            label: '50–59 years'
+            max: 60
+        caveats:
+          - 'Upper limit of normal (95% CI) for a BSA of 2.0 m²; add 0.5 mm per 0.1 m² BSA above 2.0 m², subtract 0.5 mm per 0.1 m² below.'
+        citation:
+          source: ase-eacvi-2015-thoracic-aorta
+          locator:
+            table: '1'
+            page: '123'
+      - parameter: aortic-root-diameter
+        context: normal-range
+        operator: '<='
+        value: 4.1
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+          ageBand:
+            min: 60
+            unit: years
+            label: '60–69 years'
+            max: 70
+        caveats:
+          - 'Upper limit of normal (95% CI) for a BSA of 2.0 m²; add 0.5 mm per 0.1 m² BSA above 2.0 m², subtract 0.5 mm per 0.1 m² below.'
+        citation:
+          source: ase-eacvi-2015-thoracic-aorta
+          locator:
+            table: '1'
+            page: '123'
+      - parameter: aortic-root-diameter
+        context: normal-range
+        operator: '<='
+        value: 4.2
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+          ageBand:
+            min: 70
+            unit: years
+            label: '≥ 70 years'
+        caveats:
+          - 'Upper limit of normal (95% CI) for a BSA of 2.0 m²; add 0.5 mm per 0.1 m² BSA above 2.0 m², subtract 0.5 mm per 0.1 m² below.'
+        citation:
+          source: ase-eacvi-2015-thoracic-aorta
+          locator:
+            table: '1'
+            page: '123'
+      - parameter: aortic-root-diameter
+        context: normal-range
+        operator: '<='
+        value: 3.3
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+          ageBand:
+            min: 15
+            unit: years
+            label: '15–29 years'
+            max: 30
+        caveats:
+          - 'Upper limit of normal (95% CI) for a BSA of 1.7 m²; add 0.5 mm per 0.1 m² BSA above 1.7 m², subtract 0.5 mm per 0.1 m² below.'
+        citation:
+          source: ase-eacvi-2015-thoracic-aorta
+          locator:
+            table: '2'
+            page: '123'
+      - parameter: aortic-root-diameter
+        context: normal-range
+        operator: '<='
+        value: 3.4
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+          ageBand:
+            min: 30
+            unit: years
+            label: '30–39 years'
+            max: 40
+        caveats:
+          - 'Upper limit of normal (95% CI) for a BSA of 1.7 m²; add 0.5 mm per 0.1 m² BSA above 1.7 m², subtract 0.5 mm per 0.1 m² below.'
+        citation:
+          source: ase-eacvi-2015-thoracic-aorta
+          locator:
+            table: '2'
+            page: '123'
+      - parameter: aortic-root-diameter
+        context: normal-range
+        operator: '<='
+        value: 3.6
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+          ageBand:
+            min: 40
+            unit: years
+            label: '40–49 years'
+            max: 50
+        caveats:
+          - 'Upper limit of normal (95% CI) for a BSA of 1.7 m²; add 0.5 mm per 0.1 m² BSA above 1.7 m², subtract 0.5 mm per 0.1 m² below.'
+        citation:
+          source: ase-eacvi-2015-thoracic-aorta
+          locator:
+            table: '2'
+            page: '123'
+      - parameter: aortic-root-diameter
+        context: normal-range
+        operator: '<='
+        value: 3.6
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+          ageBand:
+            min: 50
+            unit: years
+            label: '50–59 years'
+            max: 60
+        caveats:
+          - 'Upper limit of normal (95% CI) for a BSA of 1.7 m²; add 0.5 mm per 0.1 m² BSA above 1.7 m², subtract 0.5 mm per 0.1 m² below.'
+        citation:
+          source: ase-eacvi-2015-thoracic-aorta
+          locator:
+            table: '2'
+            page: '123'
+      - parameter: aortic-root-diameter
+        context: normal-range
+        operator: '<='
+        value: 3.7
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+          ageBand:
+            min: 60
+            unit: years
+            label: '60–69 years'
+            max: 70
+        caveats:
+          - 'Upper limit of normal (95% CI) for a BSA of 1.7 m²; add 0.5 mm per 0.1 m² BSA above 1.7 m², subtract 0.5 mm per 0.1 m² below.'
+        citation:
+          source: ase-eacvi-2015-thoracic-aorta
+          locator:
+            table: '2'
+            page: '123'
+      - parameter: aortic-root-diameter
+        context: normal-range
+        operator: '<='
+        value: 3.9
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+          ageBand:
+            min: 70
+            unit: years
+            label: '≥ 70 years'
+        caveats:
+          - 'Upper limit of normal (95% CI) for a BSA of 1.7 m²; add 0.5 mm per 0.1 m² BSA above 1.7 m², subtract 0.5 mm per 0.1 m² below.'
+        citation:
+          source: ase-eacvi-2015-thoracic-aorta
+          locator:
+            table: '2'
+            page: '123'
+  - id: ct-mri-limits
+    type: normal-range-table
+    tag: NORM
+    title: Upper limits of normal by CT and MRI
+    values:
+      - parameter: aortic-root-diameter
+        context: normal-range
+        operator: '<='
+        value: 3.7
+        unit: cm
+        modality: CT
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Aortic root at the sinuses; ECG-gated CT, double-oblique short axis.'
+        citation:
+          source: ase-eacvi-2015-thoracic-aorta
+          locator:
+            page: '123'
+      - parameter: ascending-aorta-diameter
+        context: normal-range
+        operator: '<='
+        value: 3.6
+        unit: cm
+        modality: CT
+        population:
+          ageGroup: adult
+        caveats:
+          - ECG-gated CT.
+        citation:
+          source: ase-eacvi-2015-thoracic-aorta
+          locator:
+            page: '123'
+      - parameter: descending-aorta-diameter
+        context: normal-range
+        operator: '<='
+        value: 2.5
+        unit: cm
+        modality: CT
+        population:
+          ageGroup: adult
+        caveats:
+          - ECG-gated CT.
+        citation:
+          source: ase-eacvi-2015-thoracic-aorta
+          locator:
+            page: '123'
+      - parameter: ascending-aorta-diameter-index
+        context: normal-range
+        operator: '<='
+        value: 2.1
+        unit: cm/m²
+        modality: CT
+        population:
+          ageGroup: adult
+        caveats:
+          - Large non-contrast gated CT study (mean 1.8 ± 0.2 cm/m²).
+        citation:
+          source: ase-eacvi-2015-thoracic-aorta
+          locator:
+            page: '123'
+      - parameter: descending-aorta-diameter-index
+        context: normal-range
+        operator: '<='
+        value: 1.8
+        unit: cm/m²
+        modality: CT
+        population:
+          ageGroup: adult
+        caveats:
+          - Large non-contrast gated CT study (mean 1.4 ± 0.2 cm/m²).
+        citation:
+          source: ase-eacvi-2015-thoracic-aorta
+          locator:
+            page: '123'
+      - parameter: descending-aorta-diameter
+        context: normal-range
+        operator: '<='
+        value: 2.5
+        unit: cm
+        modality: CMR
+        population:
+          ageGroup: adult
+        caveats:
+          - MRI of axially oriented aortic segments.
+        citation:
+          source: ase-eacvi-2015-thoracic-aorta
+          locator:
+            page: '123'
+      - parameter: abdominal-aorta-diameter
+        context: normal-range
+        operator: '<='
+        value: 2.0
+        unit: cm
+        modality: CMR
+        population:
+          ageGroup: adult
+        caveats:
+          - Upper abdominal aorta; MRI.
+        citation:
+          source: ase-eacvi-2015-thoracic-aorta
+          locator:
+            page: '123'
+  - id: growth-with-age
+    type: note
+    tag: METH
+    title: 'Age, sex and body size'
+    text: 'Aortic root and ascending aortic diameters increase with age and body size; root diameters increase by about 0.9 mm per decade in men and 0.7 mm per decade in women. Endurance and strength training enlarge the root only slightly, so marked enlargement in an athlete suggests disease.'
+    citation:
+      source: ase-eacvi-2015-thoracic-aorta
+      locator:
+        page: '122–123'
