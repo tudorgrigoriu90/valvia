@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-62: Content 14.1 glossary leaf using the generated block |
-| Next task | CH-63: units conventions and about-the-sources notes |
+| Last completed task | CH-63: Content 14.2 units and indexation conventions and 14.4 about the sourc |
+| Next task | CH-64: key formulas leaf |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

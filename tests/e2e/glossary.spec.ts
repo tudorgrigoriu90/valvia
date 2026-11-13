@@ -21,3 +21,13 @@ test('is reachable from the reference category and has no accessibility violatio
   const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze();
   expect(results.violations).toEqual([]);
 });
+
+// CH-63 (taxonomy 14.2, 14.4): how values are shown and where they come from.
+test('explains units, indexation and sources on their reference leaves', async ({ page }) => {
+  await page.goto('reference-and-methodology/units-and-indexation-conventions/');
+  await expect(page.getByRole('heading', { name: 'Values exactly as published' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Body surface area' })).toBeVisible();
+  await page.goto('reference-and-methodology/about-the-sources/');
+  await expect(page.getByRole('heading', { name: 'When societies disagree' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Previous recommendations', exact: true })).toBeVisible();
+});

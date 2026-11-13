@@ -7,3 +7,24 @@ order: 3
 population: both
 wave: W1
 status: draft
+blocks:
+  - id: sources
+    type: note
+    tag: METH
+    title: Which documents are used
+    text: 'Only documents of the European Society of Cardiology (including the European Association of Cardiovascular Imaging) and of the American Society of Echocardiography are used, plus paediatric reference datasets that one of these documents cites. Each value names its society, document, year and the table, figure, section or page it comes from, with a link to the document.'
+  - id: disagreements
+    type: note
+    tag: METH
+    title: When societies disagree
+    text: 'When current documents give different numbers for the same parameter, population, grade and technique, all of them are shown side by side and marked; Valvia never picks one.'
+  - id: previous
+    type: note
+    tag: METH
+    title: Previous recommendations
+    text: 'When a newer document replaces an older one, the older values are not deleted: they move to "Previous recommendations" under the current values, with the year and the document that replaced them.'
+  - id: review-status
+    type: note
+    tag: METH
+    title: Review status and corrections
+    text: 'Pages marked "Not yet clinically reviewed" were transcribed but not yet checked by the clinical reviewer. New documents and published corrections of the cited documents are checked for every week, and every change to a value is reviewed before it is published.'

@@ -7,3 +7,23 @@ order: 1
 population: both
 wave: W1
 status: draft
+blocks:
+  - id: as-published
+    type: note
+    tag: METH
+    title: Values exactly as published
+    text: 'Every value is shown with the number and the unit printed in the cited document (decision PO-4); Valvia never converts a value for display. When two documents use different units for the same parameter (for example cm and mm), each value keeps its own unit. Units are converted only behind the scenes, to detect when current documents disagree.'
+  - id: indexation
+    type: note
+    tag: METH
+    title: Indexed values
+    text: 'Values indexed to body size (for example mL/m², g/m², g/m^2.7 or g/m) are shown with the indexation the document uses. Different indexations are never compared with each other, and absolute and indexed values are separate parameters.'
+  - id: body-surface-area
+    type: note
+    tag: METH
+    title: Body surface area
+    text: 'Valvia does not calculate body surface area or index measurements: it shows reference values only. For patients with congenital heart disease, ASE advises against the DuBois and DuBois formula because it does not cover the ranges of ages and body sizes encountered, and suggests an appropriate formula such as Haycock.'
+    citation:
+      source: ase-2014-repaired-tetralogy
+      locator:
+        page: '120'
