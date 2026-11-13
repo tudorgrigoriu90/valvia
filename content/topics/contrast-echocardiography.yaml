@@ -7,3 +7,63 @@ order: 4
 population: adult
 wave: W2
 status: draft
+blocks:
+  - id: uea-indications
+    type: threshold-list
+    tag: CRIT
+    title: When to use an ultrasound enhancing agent for LV opacification
+    values:
+      - parameter: nonvisualised-lv-segments
+        context: diagnostic-criterion
+        operator: '>='
+        value: 2
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Routine resting studies: use an ultrasound enhancing agent when two or more LV segments cannot be visualised adequately for LVEF and regional wall motion, or when the indication requires accurate wall motion analysis (COR I, LOE A).'
+        citation:
+          source: ase-2018-ultrasound-enhancing-agents
+          locator:
+            page: '249'
+      - parameter: nonvisualised-lv-segments
+        context: diagnostic-criterion
+        operator: '>='
+        value: 2
+        unit: '1'
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Stress echocardiography: enhancement when two or more segments are not adequately visualised, beginning at rest and repeated at peak stress.'
+        citation:
+          source: ase-2018-ultrasound-enhancing-agents
+          locator:
+            page: '252'
+  - id: uea-recommendations
+    type: criteria-checklist
+    tag: CRIT
+    title: Key recommendations
+    criteria:
+      - text: 'Use enhancement in all patients in whom quantitative LVEF is important to prognosis or management, with very-low or low mechanical index imaging (COR I).'
+        citation:
+          source: ase-2018-ultrasound-enhancing-agents
+          locator:
+            page: '249'
+      - text: A brief (5–10 frame) high mechanical index (0.8–1.2) flash can clear the myocardium of contrast and improve endocardial border delineation for volumes and EF (COR IIa).
+        citation:
+          source: ase-2018-ultrasound-enhancing-agents
+          locator:
+            page: '249'
+      - text: 'Enhanced LV volumes are typically larger than unenhanced ones: apply the 2015 chamber quantification normal ranges with caution; the normal LVEF range does not appear different.'
+        citation:
+          source: ase-2018-ultrasound-enhancing-agents
+          locator:
+            page: '249'
+      - text: 'Give a continuous infusion or a low-volume (≤ 0.5 mL) bolus with a slow (10–20 s) saline flush, with very-low mechanical index imaging, to limit apical bubble destruction and basal attenuation.'
+        citation:
+          source: ase-2018-ultrasound-enhancing-agents
+          locator:
+            page: '249'

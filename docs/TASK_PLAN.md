@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-56 Content: paediatric z-scores and HCM in children (15.x) |
-| Next up | CH-57: contrast echocardiography (ASE 2018 UEA) |
+| Last completed | CH-57 Content: contrast echocardiography (9.5) from ASE 2018 UEA update |
+| Next up | Remaining leaves need ESC/EACVI documents; next: TS-07.3.1 hazard log |
 
 ## Next up: R0 sequence
 
@@ -336,7 +336,7 @@ subcategory from a document already downloaded from asecho.org; leaves that need
 | CH-55 | Content: coarctation and acute aortic syndromes (8.6, 10.3) from ASE/EACVI 2015 aorta | 1 | done |  |
 | CH-56 | Content: paediatric z-scores and HCM in children (15.x) | 1 | done |  |
 | CH-58 | Units and quantities for values printed in mm/mmHg (RV–PA coupling), Wood units (PVR), g/m (LV mass/height), cm/s² (accelerations) and mL/min/kg (indexed flow) | 1 | done | Needed by CH-45 and earlier deferred values |
-| CH-57 | Content: contrast echocardiography (9.5) from ASE 2018 UEA update | 1 | todo |  |
+| CH-57 | Content: contrast echocardiography (9.5) from ASE 2018 UEA update | 1 | done |  |
 
 ## Push log
 
@@ -471,3 +471,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-13 | CH-54 | Cardiomyopathies: HFrEF LVEF < 40% and GLS abnormal/borderline as stage B HF marker (6.1), apical sparing ratio > 2 for amyloidosis and strain-pattern note (6.5), ARVC RV strain patterns note (6.4) from ASE 2025 strain; LVH thresholds by sex in g/m² and g/m^2.7 (6.7) from EACVI/ASE 2015 hypertension; 1 parameter | `CH-54: HF strain markers, amyloid apical sparing, LVH thresholds` |
 | 2026-11-13 | CH-55 | Acute aortic syndromes (ASE/EACVI 2015): dissection definitions (Table 7), IMH wall thickness > 0.5 cm with Table 11 features, TTE/TEE note (10.3); coarctation key points (Table 25, 8.6); 1 parameter | `CH-55: aortic dissection, IMH and coarctation criteria (ASE/EACVI 2015)` |
 | 2026-11-13 | CH-56 | Paediatric: z-score normal limits (−2 to +2) and z-score model note (ASE 2024 paediatric TTE, registered from PubMed via E-utilities) in 15.1; HCM in children (wall thickness z > 2) and phenocopy note (ASE 2022 HCM) in 15.5; 2 parameters | `CH-56: paediatric z-score limits and HCM in children` |
+| 2026-11-13 | CH-57 | Contrast echocardiography (ASE 2018 UEA update, registered from PubMed via E-utilities): ≥ 2 non-visualised LV segments as the indication at rest and during stress (technique: stress), key recommendations (quantitative LVEF, flash, volumes caveat, injection technique); 1 parameter | `CH-57: contrast echo indications (ASE 2018)` |

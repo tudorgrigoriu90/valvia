@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-56: Content: paediatric z-scores and HCM in children (15.x) |
-| Next task | CH-57: contrast echocardiography (ASE 2018 UEA) |
+| Last completed task | CH-57: Content: contrast echocardiography (9.5) from ASE 2018 UEA update |
+| Next task | Remaining leaves need ESC/EACVI documents; next: TS-07.3.1 hazard log |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

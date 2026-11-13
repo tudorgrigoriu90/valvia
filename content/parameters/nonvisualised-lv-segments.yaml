@@ -1,0 +1,6 @@
+id: nonvisualised-lv-segments
+name: LV segments not adequately visualised
+quantity: dimensionless
+unit: '1'
+modalities: [Echo]
+synonyms: [contrast echocardiography, ultrasound enhancing agent, UEA, LV opacification]
