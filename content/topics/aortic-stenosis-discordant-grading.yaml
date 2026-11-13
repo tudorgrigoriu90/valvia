@@ -7,3 +7,46 @@ order: 3
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: flow-status
+    type: threshold-list
+    tag: CRIT
+    title: Flow status in discordant grading
+    values:
+      - parameter: stroke-volume-index
+        context: normal-range
+        operator: '>='
+        value: 35
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Normal flow.
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            page: '387'
+      - parameter: stroke-volume-index
+        context: diagnostic-criterion
+        operator: '<'
+        value: 35
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Low flow.
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            page: '387'
+  - id: stepwise
+    type: note
+    tag: METH
+    title: Stepwise approach
+    text: 'When AVA indicates severe but velocity and gradient moderate AS: exclude measurement errors (especially LVOT underestimation), then define flow status. With normal flow (SVi ≥ 35 mL/m²) severe AS is very unlikely even if AVA is < 1 cm². With low flow, further evaluation depends on LVEF: low-dose dobutamine stress when reduced, the Table 5 criteria including the CT calcium score when preserved.'
+    citation:
+      source: eacvi-ase-2017-aortic-stenosis
+      locator:
+        page: '387'

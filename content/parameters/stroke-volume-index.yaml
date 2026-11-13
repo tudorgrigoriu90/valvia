@@ -1,0 +1,7 @@
+id: stroke-volume-index
+name: Stroke volume index
+abbreviation: SVi
+quantity: indexed-volume
+unit: mL/m²
+modalities: [Echo, CMR]
+synonyms: [SVi, low flow, stroke volume indexed to BSA]

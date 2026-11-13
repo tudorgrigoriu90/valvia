@@ -1,0 +1,6 @@
+id: aortic-valve-calcium-score
+name: Aortic valve calcium score (Agatston)
+quantity: calcium-score
+unit: AU
+modalities: [CT]
+synonyms: [calcium score, MSCT, Agatston, aortic valve calcification]

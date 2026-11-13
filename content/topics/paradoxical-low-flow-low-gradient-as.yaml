@@ -7,3 +7,184 @@ order: 2
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: definition
+    type: threshold-list
+    tag: CRIT
+    title: 'Paradoxical low-flow, low-gradient AS'
+    values:
+      - parameter: stroke-volume-index
+        context: diagnostic-criterion
+        operator: '<'
+        value: 35
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Low flow despite normal ejection fraction, with AVA < 1.0 cm² and mean gradient < 40 mmHg.'
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            page: '385'
+  - id: likelihood
+    type: threshold-list
+    tag: CRIT
+    title: 'Criteria that increase the likelihood of severe AS (AVA < 1.0 cm², mean gradient < 40 mmHg, preserved EF)'
+    values:
+      - parameter: aortic-mean-gradient
+        context: diagnostic-criterion
+        operator: range
+        min: 30
+        max: 40
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Measured when the patient is normotensive.
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            table: '5'
+            page: '385'
+      - parameter: aortic-valve-area
+        context: diagnostic-criterion
+        operator: '<='
+        value: 0.8
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            table: '5'
+            page: '385'
+      - parameter: stroke-volume-index
+        context: diagnostic-criterion
+        operator: '<'
+        value: 35
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Low flow confirmed by techniques other than standard Doppler (LVOT by 3D TEE or MSCT; CMR; invasive data).
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            table: '5'
+            page: '385'
+      - parameter: aortic-valve-calcium-score
+        context: diagnostic-criterion
+        operator: '>='
+        value: 2000
+        unit: AU
+        modality: CT
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - Severe AS likely.
+          - 'Calcium score by multislice CT, Agatston method (arbitrary units).'
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            table: '5'
+            page: '385'
+      - parameter: aortic-valve-calcium-score
+        context: diagnostic-criterion
+        operator: '>='
+        value: 1200
+        unit: AU
+        modality: CT
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - Severe AS likely.
+          - 'Calcium score by multislice CT, Agatston method (arbitrary units).'
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            table: '5'
+            page: '385'
+      - parameter: aortic-valve-calcium-score
+        context: diagnostic-criterion
+        operator: '>='
+        value: 3000
+        unit: AU
+        modality: CT
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - Severe AS very likely.
+          - 'Calcium score by multislice CT, Agatston method (arbitrary units).'
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            table: '5'
+            page: '385'
+      - parameter: aortic-valve-calcium-score
+        context: diagnostic-criterion
+        operator: '>='
+        value: 1600
+        unit: AU
+        modality: CT
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - Severe AS very likely.
+          - 'Calcium score by multislice CT, Agatston method (arbitrary units).'
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            table: '5'
+            page: '385'
+      - parameter: aortic-valve-calcium-score
+        context: diagnostic-criterion
+        operator: '<'
+        value: 1600
+        unit: AU
+        modality: CT
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - Severe AS unlikely.
+          - 'Calcium score by multislice CT, Agatston method (arbitrary units).'
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            table: '5'
+            page: '385'
+      - parameter: aortic-valve-calcium-score
+        context: diagnostic-criterion
+        operator: '<'
+        value: 800
+        unit: AU
+        modality: CT
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - Severe AS unlikely.
+          - 'Calcium score by multislice CT, Agatston method (arbitrary units).'
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            table: '5'
+            page: '385'
+  - id: clinical-criteria
+    type: note
+    tag: METH
+    title: Clinical and qualitative criteria
+    text: 'Also supportive: physical findings of severe AS, typical symptoms without other explanation, age > 70 years, LV hypertrophy (consider hypertension) and reduced longitudinal LV function without other explanation.'
+    citation:
+      source: eacvi-ase-2017-aortic-stenosis
+      locator:
+        table: '5'
+        page: '385'

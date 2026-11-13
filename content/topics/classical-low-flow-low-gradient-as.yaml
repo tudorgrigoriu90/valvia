@@ -7,3 +7,142 @@ order: 1
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: definition
+    type: threshold-list
+    tag: CRIT
+    title: 'Definition: low-flow, low-gradient AS with reduced ejection fraction'
+    values:
+      - parameter: aortic-valve-area
+        context: diagnostic-criterion
+        operator: '<'
+        value: 1.0
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Effective AVA.
+          - 'All four criteria together define classical low-flow, low-gradient AS.'
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            page: '384'
+      - parameter: aortic-mean-gradient
+        context: diagnostic-criterion
+        operator: '<'
+        value: 40
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'All four criteria together define classical low-flow, low-gradient AS.'
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            page: '384'
+      - parameter: lvef
+        context: diagnostic-criterion
+        operator: '<'
+        value: 50
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'All four criteria together define classical low-flow, low-gradient AS.'
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            page: '384'
+      - parameter: stroke-volume-index
+        context: diagnostic-criterion
+        operator: '<'
+        value: 35
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'All four criteria together define classical low-flow, low-gradient AS.'
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            page: '384'
+  - id: dse
+    type: threshold-list
+    tag: CRIT
+    title: Low-dose dobutamine stress echocardiography
+    values:
+      - parameter: aortic-valve-area
+        context: diagnostic-criterion
+        operator: '>'
+        value: 1.0
+        unit: cm²
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Final effective AVA > 1.0 cm² suggests that the stenosis is not severe (pseudo-severe AS).'
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            page: '385'
+      - parameter: av-peak-velocity
+        context: diagnostic-criterion
+        operator: '>='
+        value: 4
+        unit: m/s
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Severe AS, provided the valve area does not exceed 1.0 cm² at any flow rate.'
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            page: '385'
+      - parameter: aortic-mean-gradient
+        context: diagnostic-criterion
+        operator: range
+        min: 30
+        max: 40
+        unit: mmHg
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Printed as a mean gradient > 30–40 mmHg: severe AS, provided the valve area does not exceed 1.0 cm² at any flow rate.'
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            page: '385'
+      - parameter: stroke-volume-increase-with-stress
+        context: diagnostic-criterion
+        operator: '>'
+        value: 20
+        unit: '%'
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - Contractile (flow) reserve; its absence predicts high surgical mortality and poor long-term outcome.
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            page: '384–385'
+  - id: dse-protocol
+    type: note
+    tag: METH
+    title: Protocol
+    text: 'Low dose: start at 2.5 or 5 µg/kg/min and increase every 3–5 minutes to a maximum of 10–20 µg/kg/min, under medical supervision. Stop at a positive result, when heart rate rises > 10–20 bpm over baseline or exceeds 100 bpm, or with symptoms, a fall in blood pressure or significant arrhythmia.'
+    citation:
+      source: eacvi-ase-2017-aortic-stenosis
+      locator:
+        table: '4'
+        page: '384'

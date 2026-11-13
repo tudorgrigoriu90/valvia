@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-47: Content: diastolic special populations, HFpEF and diastolic stress (2. |
-| Next task | CH-48: aortic stenosis sub-leaves (EACVI/ASE 2017) |
+| Last completed task | CH-48: Content: aortic stenosis sub-leaves (3.1.1.2–3.1.1.5) from EACVI/ASE 2 |
+| Next task | CH-49: MR/TR mechanism and secondary MR (ASE 2017) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

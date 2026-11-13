@@ -7,3 +7,45 @@ order: 4
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: decision-markers
+    type: threshold-list
+    tag: INTV
+    title: Prognostic markers considered to impact the decision for surgery
+    values:
+      - parameter: av-peak-velocity
+        context: intervention-threshold
+        operator: '>'
+        value: 5.5
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            page: '389'
+      - parameter: aortic-mean-gradient-increase
+        context: intervention-threshold
+        operator: '>'
+        value: 20
+        unit: mmHg
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - Increase in mean pressure gradient with exercise.
+        citation:
+          source: eacvi-ase-2017-aortic-stenosis
+          locator:
+            page: '389'
+  - id: rapid-progression
+    type: note
+    tag: METH
+    title: Rapid progression
+    text: 'Severe valve calcification combined with a rapid increase in peak transvalvular velocity of 0.3 m/s per year or more is also considered. Other prognostic markers: LVEF, excessive LV hypertrophy, abnormal longitudinal function (GLS) and pulmonary hypertension.'
+    citation:
+      source: eacvi-ase-2017-aortic-stenosis
+      locator:
+        page: '389'
