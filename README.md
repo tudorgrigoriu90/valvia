@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-08.6: Runbooks: content update, emergency rollback, rotating secrets |
-| Next task | TS-08.8: go-live checklist |
+| Last completed task | TS-08.8: Go-live checklist |
+| Next task | TS-02.4.3: shared fixture tests for agreement, disagreement, superseded |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
@@ -79,7 +79,7 @@ Read [`CLAUDE.md`](CLAUDE.md) first. In short:
 - [Content policy](docs/safety/content-policy.md)
 - [EU MDR qualification memo](docs/safety/mdr-qualification.md)
 - [CI/CD](docs/ci-cd.md)
-- [Runbooks](docs/runbooks/README.md): content update, emergency rollback, secret rotation
+- [Runbooks](docs/runbooks/README.md): content update, emergency rollback, secret rotation, [go-live checklist](docs/runbooks/go-live-checklist.md)
 - [Decision log](docs/decisions/README.md)
 - [Product backlog](docs/product/valvia-backlog.md)
 - [Content taxonomy](docs/product/valvia-taxonomy.md)

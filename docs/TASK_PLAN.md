@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-08.6 Runbooks: content update, emergency rollback, rotating secrets |
-| Next up | TS-08.8: go-live checklist |
+| Last completed | TS-08.8 Go-live checklist |
+| Next up | TS-02.4.3: shared fixture tests for agreement, disagreement, superseded |
 
 ## Next up: R0 sequence
 
@@ -226,7 +226,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-08.5 | Analytics account + uptime monitor (free tiers) | 1 | manual |  |
 | TS-08.6 | Runbooks: content update, emergency rollback, rotating secrets | 2 | done |  |
 | TS-08.7 | Closed beta (SME + 3–5 colleagues), feedback collection, triage | 3 | todo |  |
-| TS-08.8 | Go-live checklist | 2 | todo |  |
+| TS-08.8 | Go-live checklist | 2 | done |  |
 
 ### EP-09: User accounts (v2)
 
@@ -329,7 +329,7 @@ subcategory from a document already downloaded from asecho.org; leaves that need
 | CH-48 | Content: aortic stenosis sub-leaves (3.1.1.2–3.1.1.5) from EACVI/ASE 2017 | 2 | done |  |
 | CH-49 | Content: MR/TR mechanism and secondary MR (3.2.1, 3.3.1) from ASE 2017 native regurgitation | 2 | done |  |
 | CH-50 | Content: regurgitation after transcatheter interventions (4.5) from ASE 2019 | 2 | done |  |
-| CH-51 | Content: prosthetic reference values by model and size (4.1) from ASE 2024 appendix | 3 | blocked | Values are mean ± SD per model and size: needs the catalogue schema (TS-02.2.8) and the copyright assessment of appendix tables (TS-07.2.1) first |
+| CH-51 | Content: prosthetic reference values by model and size (4.1) from ASE 2024 appendix | 3 | blocked | Values are mean ± SD per model and size: needs the catalogue schema (TS-02.2.8) and, per the copyright assessment (TS-07.2.1), permission from Elsevier/ASE requested by the engineer |
 | CH-52 | Content: masses and thrombus (12.1–12.3) from ASE 2016 embolism | 1 | done |  |
 | CH-53 | Content: endocarditis (3.6) from ASE 2016 embolism | 1 | done |  |
 | CH-54 | Content: cardiomyopathies (6.x) from ASE 2025 strain and others | 2 | done |  |
@@ -337,6 +337,12 @@ subcategory from a document already downloaded from asecho.org; leaves that need
 | CH-56 | Content: paediatric z-scores and HCM in children (15.x) | 1 | done |  |
 | CH-58 | Units and quantities for values printed in mm/mmHg (RV–PA coupling), Wood units (PVR), g/m (LV mass/height), cm/s² (accelerations) and mL/min/kg (indexed flow) | 1 | done | Needed by CH-45 and earlier deferred values |
 | CH-57 | Content: contrast echocardiography (9.5) from ASE 2018 UEA update | 1 | done |  |
+
+## Go-live follow-ups (found in TS-08.8)
+
+| Key | Summary | SP | Status | Notes |
+|---|---|---|---|---|
+| CH-59 | Search-engine indexing: `noindex` only on draft topics and pages that list them; published topics indexable; sitemap | 1 | todo | Today every page is `noindex` (PO-3); do once the first topics are published |
 
 ## Push log
 
@@ -477,3 +483,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-13 | TS-07.2.2 | Content policy: 9 rules (society sources only, facts not expression, own-format tables, no figures, notes in own words, cite and link, no calculation, gaps visible, bulk tables need clearance) | `TS-07.2.2: content policy` |
 | 2026-11-13 | TS-07.1.1 | EU MDR qualification memo: MDCG 2019-11 steps applied (no patient data, no computation → not MDSW, provisional), assessor points incl. z-score references, controls and change gate, features that would reopen qualification; external review required before go-live | `TS-07.1.1: EU MDR qualification memo` |
 | 2026-11-13 | TS-08.6 | Runbooks: content update (seed vs content PR flow, supersession, errata), emergency rollback (revert commit/PR, redeploy last good run, unpublish, checks; also closes TS-06.4.3), secret rotation (credential inventory, routine rotation, leak response, offboarding) | `TS-08.6: runbooks for content update, rollback and secrets` |
+| 2026-11-13 | TS-08.8 | Go-live checklist: regulatory/legal, content (SME review, audit), automated gates (ticked), manual QA, security, operations, launch day, first two weeks; owners per item; CH-59 added for indexing published topics | `TS-08.8: go-live checklist` |
