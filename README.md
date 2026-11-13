@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-57: Content: contrast echocardiography (9.5) from ASE 2018 UEA update |
-| Next task | Remaining leaves need ESC/EACVI documents; next: TS-07.3.1 hazard log |
+| Last completed task | TS-07.3.1: Hazard log (wrong value, wrong unit or conversion, missing indexation, |
+| Next task | TS-07.2.2: content policy |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
@@ -74,6 +74,7 @@ Read [`CLAUDE.md`](CLAUDE.md) first. In short:
 - [Content model reference](docs/content-model.md)
 - [Units and conversions](docs/units.md)
 - [Testing guide](docs/testing.md)
+- [Hazard log](docs/safety/hazard-log.md)
 - [CI/CD](docs/ci-cd.md)
 - [Decision log](docs/decisions/README.md)
 - [Product backlog](docs/product/valvia-backlog.md)

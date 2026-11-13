@@ -172,6 +172,7 @@ docs/
 ├── units.md                # units as published; comparison conversions
 ├── content-guide.md        # how to model, cite and review content (FT-03.0)
 ├── runbooks/               # content update, emergency rollback, secret rotation, release
+├── safety/                # hazard log (TS-07.3.1) and compliance memos
 └── onboarding.md           # engineer / SME / new-session onboarding
 ```
 
