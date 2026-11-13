@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-02.2.8 Prosthetic valve catalogue schema: position, type, model, size → expec |
-| Next up | TS-04.7.4: prosthetic valve picker |
+| Last completed | TS-05.2.2 System fonts, SVG-only icons; analytics beacon is the only third-party |
+| Next up | TS-06.1.4: source-watcher state and deduplication |
 
 ## Next up: R0 sequence
 
@@ -163,7 +163,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-04.7.1 | Adult / paediatric switch (global, persisted) | 2 | done | Replaced by the four-category switch (PO-5, CH-20) |
 | TS-04.7.2 | "Previous recommendations" history view (source, year, superseded by) | 2 | done | E2E pending superseded content |
 | TS-04.7.3 | Modality badges (Echo / CT / CMR) | 1 | done |  |
-| TS-04.7.4 | Prosthetic valve picker (lookup only) | 3 | todo |  |
+| TS-04.7.4 | Prosthetic valve picker (lookup only) | 3 | blocked | Catalogue schema ready (TS-02.2.8); the picker needs catalogue data to be built and tested against, which waits for publisher permission (CH-51) |
 
 ### EP-05: Mobile, performance & offline (MVP)
 
@@ -171,7 +171,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 |---|---|---|---|---|
 | TS-05.1.1 | Breakpoints (360 / 768 / 1024) + real-device test matrix (iOS Safari, Android Chrome) | 3 | todo |  |
 | TS-05.2.1 | Lighthouse CI budgets (LCP, JS weight, CLS) as blocking checks | 2 | done | LCP blocking after CH-15 |
-| TS-05.2.2 | System fonts, SVG-only icons; analytics beacon is the only third-party script | 1 | todo |  |
+| TS-05.2.2 | System fonts, SVG-only icons; analytics beacon is the only third-party script | 1 | done |  |
 | TS-05.3.1 | Web app manifest ("Valvia"), icons, installability | 1 | done | PNG icon sizes can be added if a store or older browser needs them |
 | TS-05.3.2 | Service worker precaching all content pages + search index | 3 | done |  |
 | TS-05.3.3 | Update prompt + content version display | 2 | done |  |
@@ -492,3 +492,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-13 | TS-06.4.1 | What's new page generated at build time from the Git history of content/: latest 50 content changes (date, commit or pull request link, subject, linked topics, sources/parameters touched); footer link; CI checks out full history | `TS-06.4.1: What's new page from content Git history` |
 | 2026-11-13 | TS-06.4.2 | Content audit trail: workflow on merged content PRs records merge time, approvers (latest review per reviewer), merger, sources and topics in CHANGELOG.md (bot push to main); untrusted PR data via files; merges without approval flagged; seed commits referenced via Git history / What's new | `TS-06.4.2: content audit trail in CHANGELOG from merged PRs` |
 | 2026-11-13 | TS-02.2.8 | Prosthetic valve catalogue schema: one file per model and position (position, type, model, labelled sizes) with expected values as published (mean ± SD, mean only, median (IQR), threshold), population and citation; loader, cross-file rules, published number text; docs | `TS-02.2.8: prosthetic valve catalogue schema, rules and loader` |
+| 2026-11-13 | TS-05.2.2 | Third-party guard E2E: every request on home, a leaf, About and What's new is same-origin, no web fonts, no raster images, system font stack, SVG-only icons in head and manifest; TS-04.7.4 marked blocked (needs catalogue data, CH-51) | `TS-05.2.2: guard system fonts, SVG icons and same-origin requests` |

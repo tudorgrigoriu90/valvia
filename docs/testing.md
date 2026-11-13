@@ -22,6 +22,7 @@ flowchart LR
 |---|---|---|---|
 | Unit / integration | `npm test` (`npm run test:watch` while developing) | next to the code: `foo.ts` + `foo.test.ts` | Node environment, deterministic, no network |
 | E2E | `npm run test:e2e` | `tests/e2e/` | Runs against the production build served by `tests/e2e/static-server.ts` at `/valvia/` (mirrors GitHub Pages: directory index, `404.html`); build first |
+| Third-party guard | part of `npm run test:e2e` | `tests/e2e/assets.spec.ts` | TS-05.2.2: every request same-origin (the opt-in analytics beacon is off in test builds), no web fonts, system font stack, SVG-only icons and images |
 | Internal links | `npm run check:links` (add `-- --site` after a build) | `pipeline/links/` | Markdown relative links + heading anchors; built pages stay under the base path and resolve to built files/ids. External URLs are not checked (offline, deterministic) |
 | Content validation | `npm run validate:content` | `/content` | YAML syntax, schema, file names, integrity, source allowlist, units, plausibility |
 
