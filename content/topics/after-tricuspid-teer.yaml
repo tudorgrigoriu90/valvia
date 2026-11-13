@@ -7,3 +7,216 @@ order: 1
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: residual-tr
+    type: grading-table
+    tag: GRADE
+    title: Proposed grading of residual TR after tricuspid valve interventions
+    grades: ['Mild', 'Moderate', 'Severe']
+    values:
+      - parameter: vena-contracta-width
+        context: grading
+        grade: Mild
+        operator: '<'
+        value: 0.3
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Nyquist limit > 50–60 cm/s. Severe: ≥ 0.7 cm or two or more moderate jets.'
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '9'
+            page: '467'
+      - parameter: vena-contracta-width
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 0.3
+        max: 0.69
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Nyquist limit > 50–60 cm/s. Severe: ≥ 0.7 cm or two or more moderate jets.'
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '9'
+            page: '467'
+      - parameter: vena-contracta-width
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 0.7
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Nyquist limit > 50–60 cm/s. Severe: ≥ 0.7 cm or two or more moderate jets.'
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '9'
+            page: '467'
+      - parameter: pisa-radius
+        context: grading
+        grade: Mild
+        operator: '<='
+        value: 0.5
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Not well validated; best after interventions that leave the valve intact; baseline shift to 25–35 cm/s.
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '9'
+            page: '467'
+      - parameter: pisa-radius
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 0.6
+        max: 0.9
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Not well validated; best after interventions that leave the valve intact; baseline shift to 25–35 cm/s.
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '9'
+            page: '467'
+      - parameter: pisa-radius
+        context: grading
+        grade: Severe
+        operator: '>'
+        value: 0.9
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Not well validated; best after interventions that leave the valve intact; baseline shift to 25–35 cm/s.
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '9'
+            page: '467'
+      - parameter: eroa
+        context: grading
+        grade: Mild
+        operator: '<'
+        value: 0.20
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - '2D PISA EROA is not suitable after edge-to-edge repair (multiple jets, non-hemispheric flow convergence).'
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '9'
+            page: '467'
+      - parameter: eroa
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 0.20
+        max: 0.39
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - '2D PISA EROA is not suitable after edge-to-edge repair (multiple jets, non-hemispheric flow convergence).'
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '9'
+            page: '467'
+      - parameter: eroa
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 0.40
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - '2D PISA EROA is not suitable after edge-to-edge repair (multiple jets, non-hemispheric flow convergence).'
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '9'
+            page: '467'
+      - parameter: regurgitant-volume
+        context: grading
+        grade: Mild
+        operator: '<'
+        value: 30
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Cut-offs need further validation.
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '9'
+            page: '467'
+      - parameter: regurgitant-volume
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 30
+        max: 44
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Cut-offs need further validation.
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '9'
+            page: '467'
+      - parameter: regurgitant-volume
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 45
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Cut-offs need further validation.
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '9'
+            page: '467'
+  - id: residual-tr-note
+    type: note
+    tag: METH
+    title: Qualitative signs
+    text: 'Colour jet area, flow convergence, CW Doppler density and shape, tricuspid inflow and hepatic vein flow (systolic reversal = severe) complete the assessment; RV and RA size are no longer reliable after the intervention.'
+    citation:
+      source: ase-2019-regurgitation-after-percutaneous-interventions
+      locator:
+        table: '9'
+        page: '467'

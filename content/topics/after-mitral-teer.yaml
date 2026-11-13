@@ -7,3 +7,297 @@ order: 0
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: residual-mr
+    type: grading-table
+    tag: GRADE
+    title: Residual MR after transcatheter mitral valve interventions (TTE or TEE)
+    grades: ['Mild', 'Moderate', 'Severe']
+    values:
+      - parameter: vena-contracta-width
+        context: grading
+        grade: Mild
+        operator: '<='
+        value: 0.3
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Mild and moderate: single jet. Severe: any jet, or two or more moderate jets.'
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '7'
+            page: '457'
+      - parameter: vena-contracta-width
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 0.4
+        max: 0.6
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Mild and moderate: single jet. Severe: any jet, or two or more moderate jets.'
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '7'
+            page: '457'
+      - parameter: vena-contracta-width
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 0.7
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Mild and moderate: single jet. Severe: any jet, or two or more moderate jets.'
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '7'
+            page: '457'
+      - parameter: vena-contracta-area
+        context: grading
+        grade: Mild
+        operator: '<'
+        value: 0.2
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Mild and moderate: single jet. Severe: any jet, or two or more moderate jets.'
+          - '3D planimetry by colour Doppler; needs further validation.'
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '7'
+            page: '457'
+      - parameter: vena-contracta-area
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 0.2
+        max: 0.39
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Mild and moderate: single jet. Severe: any jet, or two or more moderate jets.'
+          - '3D planimetry by colour Doppler; needs further validation.'
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '7'
+            page: '457'
+      - parameter: vena-contracta-area
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 0.4
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Mild and moderate: single jet. Severe: any jet, or two or more moderate jets.'
+          - '3D planimetry by colour Doppler; needs further validation.'
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '7'
+            page: '457'
+      - parameter: eroa
+        context: grading
+        grade: Mild
+        operator: '<'
+        value: 0.2
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Not recommended after edge-to-edge repair or in paravalvular regurgitation.
+          - By PISA.
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '7'
+            page: '457'
+      - parameter: eroa
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 0.2
+        max: 0.39
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Not recommended after edge-to-edge repair or in paravalvular regurgitation.
+          - By PISA.
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '7'
+            page: '457'
+      - parameter: eroa
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 0.4
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Not recommended after edge-to-edge repair or in paravalvular regurgitation.
+          - By PISA.
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '7'
+            page: '457'
+      - parameter: regurgitant-volume
+        context: grading
+        grade: Mild
+        operator: '<'
+        value: 30
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Total stroke volume from LV volumes (3D, preferably contrast). Severe may be lower in low-flow states.'
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '7'
+            page: '457'
+      - parameter: regurgitant-volume
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 30
+        max: 59
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Total stroke volume from LV volumes (3D, preferably contrast). Severe may be lower in low-flow states.'
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '7'
+            page: '457'
+      - parameter: regurgitant-volume
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 60
+        unit: mL
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Total stroke volume from LV volumes (3D, preferably contrast). Severe may be lower in low-flow states.'
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '7'
+            page: '457'
+      - parameter: regurgitant-fraction
+        context: grading
+        grade: Mild
+        operator: '<'
+        value: 30
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '7'
+            page: '457'
+      - parameter: regurgitant-fraction
+        context: grading
+        grade: Moderate
+        operator: range
+        min: 30
+        max: 49
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '7'
+            page: '457'
+      - parameter: regurgitant-fraction
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 50
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '7'
+            page: '457'
+      - parameter: pisa-radius
+        context: grading
+        grade: Mild
+        operator: '<='
+        value: 0.3
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Flow convergence small (mild) or large (severe) at a Nyquist limit of 25–40 cm/s.
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '7'
+            page: '457'
+      - parameter: pisa-radius
+        context: grading
+        grade: Severe
+        operator: '>='
+        value: 1
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Flow convergence small (mild) or large (severe) at a Nyquist limit of 25–40 cm/s.
+        citation:
+          source: ase-2019-regurgitation-after-percutaneous-interventions
+          locator:
+            table: '7'
+            page: '457'
+  - id: residual-mr-integrative
+    type: note
+    tag: METH
+    title: Integrative approach
+    text: 'No single parameter suffices: weigh device position and stability, LA and LV size change from baseline, colour jets (number, eccentricity), flow convergence, pulmonary vein flow (systolic reversal = severe) and the CW Doppler signal, and interpret for body size and haemodynamics.'
+    citation:
+      source: ase-2019-regurgitation-after-percutaneous-interventions
+      locator:
+        table: '7'
+        page: '457'

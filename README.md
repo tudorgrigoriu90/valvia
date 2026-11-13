@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-49: Content: MR/TR mechanism and secondary MR (3.2.1, 3.3.1) from ASE 2017 |
-| Next task | CH-50: regurgitation after transcatheter interventions (ASE 2019) |
+| Last completed task | CH-50: Content: regurgitation after transcatheter interventions (4.5) from AS |
+| Next task | CH-51: prosthetic reference values by model and size (ASE 2024) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
