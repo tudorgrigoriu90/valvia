@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-67 Show taxonomy cross-links: See also lists and pointer pages for empty  |
-| Next up | CH-59: search-engine indexing (when topics are published) |
+| Last completed | TS-06.2.3 Source acquisition: download open-access PDF, else request attachment  |
+| Next up | CH-59 when topics are published; remaining tasks need the user |
 
 ## Next up: R0 sequence
 
@@ -188,7 +188,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-06.1.5 | Errata/corrigendum detection for registered sources (Crossref update relations) | 3 | done |  |
 | TS-06.2.1 | Issue per candidate with metadata and mapped affected topics | 3 | done |  |
 | TS-06.2.2 | Claude Code GitHub Action triggered by `new-source` label; prompt references `CLAUDE.md` content rules; monthly spending cap | 3 | blocked | Needs the Claude credential as a repository secret (TS-08.3, manual) |
-| TS-06.2.3 | Source acquisition: download open-access PDF, else request attachment in the issue | 2 | todo |  |
+| TS-06.2.3 | Source acquisition: download open-access PDF, else request attachment in the issue | 2 | done |  |
 | TS-06.2.4 | Clinical change-summary generator for the PR body | 3 | done |  |
 | TS-06.3.1 | Content PR template with reviewer checklist ("values match source", "population/units correct", "discrepancies labelled", "history correct") | 1 | done | The content PR template (TS-01.2.5) has the reviewer checklist; wording updated for PO-4 in TS-06.2.4 |
 | TS-06.3.2 | Enable auto-merge on content PRs once approved and green | 1 | manual | Repository setting "Allow auto-merge" plus the main ruleset (TS-01.3.5) by the engineer |
@@ -528,3 +528,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-13 | TS-05.1.1 | Breakpoint E2E at 360/768/1024 px (no horizontal page scroll, tables scroll in their own region, switches ≥ 44 px) found and fixed 36 px category and society switch buttons; real-device matrix (iOS Safari, Android Chrome, tablet, desktop browsers) documented as a manual pre-go-live check | `TS-05.1.1: breakpoint checks and 44 px category and society switches` |
 | 2026-11-13 | CH-66 | Plan sync: FT-03.x rows show seeded/total leaves and what each gap needs (mostly ESC/EACVI documents); FT-03.8 blocked on permission; TS-06.3.1 done (template checklist), TS-06.3.2/06.3.6 manual, TS-06.2.2/06.3.4 blocked on the Claude credential, TS-07.4.2 in progress | `CH-66: sync content feature status and EP-06 blockers in the plan` |
 | 2026-11-13 | CH-67 | Taxonomy cross-links shown: See also on topic pages (visible targets, never pointer pages) and pointer pages ('Covered under') for empty leaves whose cross-link leads to content (1.5, 3.2.1.9, 8.11, 8.12, 13.2); pointers do not count as content; Special populations now has a page; topic-list counts only on nodes with children | `CH-67: show taxonomy cross-links and pointer pages` |
+| 2026-11-13 | TS-06.2.3 | Source acquisition: PubMed candidates carry the article's own PMC id; issues link the free PMC full text or ask for the PDF to be attached (no PDFs stored in the repo); elink pubmed_pmc_refs (citing articles) deliberately not used | `TS-06.2.3: link free full text or request the PDF in watcher issues` |

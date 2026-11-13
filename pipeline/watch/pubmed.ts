@@ -104,11 +104,14 @@ export function parseEsummary(json: unknown): Candidate[] {
     if (!isSummary(summary)) throw new Error(`unexpected esummary response: record ${uid}`);
     if ((summary.pubtype ?? []).some((type) => NOT_GUIDANCE.has(type))) return [];
     const doi = summary.articleids?.find((id) => id.idtype === 'doi')?.value;
+    // 'pmc' is the article's own PubMed Central id; never use elink's pubmed_pmc_refs (articles citing it).
+    const pmcid = summary.articleids?.find((id) => id.idtype === 'pmc')?.value;
     return [
       {
         origin: 'pubmed',
         pmid: summary.uid,
         doi,
+        pmcid,
         journal: summary.source,
         date: isoDate(summary),
         title: summary.title,

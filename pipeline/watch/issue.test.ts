@@ -134,6 +134,20 @@ describe('candidateIssue', () => {
     expect(issue.body).toContain('| Page | <https://www.asecho.org/guideline/x/> |');
   });
 
+  it('links free full text in PubMed Central when available (TS-06.2.3)', () => {
+    const issue = candidateIssue({ ...NEW_DOC, pmcid: 'PMC13314027' }, CONTEXT);
+    expect(issue.body).toContain(
+      '| Full text | [PMC13314027](https://pmc.ncbi.nlm.nih.gov/articles/PMC13314027/) (free) |',
+    );
+    expect(issue.body).toContain('2. Read the free full text linked above');
+  });
+
+  it('asks for the PDF when no free full text is known', () => {
+    const issue = candidateIssue(NEW_DOC, CONTEXT);
+    expect(issue.body).not.toContain('| Full text |');
+    expect(issue.body).toContain('2. Attach the PDF to this issue');
+  });
+
   it('keeps issue titles within GitHub limits', () => {
     expect(candidateIssue({ ...NEW_DOC, title: 'x'.repeat(400) }, CONTEXT).title.length).toBeLessThanOrEqual(256);
   });

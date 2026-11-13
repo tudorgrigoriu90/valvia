@@ -68,6 +68,12 @@ other personal data.
 | Topics to check | Topics citing those sources | Topics citing the corrected source |
 | Next steps | Check it is ESC/EACVI or ASE, attach the PDF or open-access link, add `new-source` to start drafting | Compare the notice with the values, content PR if a value changes |
 
+**Getting the document (TS-06.2.3).** PDFs are never downloaded into the repository (copyright, public repo). When
+PubMed lists the article's **own** PubMed Central id (`articleids` type `pmc`), the issue links the free full text and
+asks to read it there; otherwise it asks for the PDF to be attached (ESC/EACVI PDFs on academic.oup.com must be fetched
+by a person). PubMed's `elink` `pubmed_pmc_refs` is deliberately not used: it lists articles that *cite* the document,
+not the document itself. Page-watcher candidates link the society page, which usually links the full text.
+
 The watcher never adds `new-source` itself: drafting (TS-06.2.2) starts only after a person has triaged the issue.
 Titles and journal names are untrusted: line breaks are flattened, HTML escaped and `@` broken with a zero-width space so
 an external title cannot mention anyone. The similarity match is a hint for triage, not a decision.
@@ -121,4 +127,5 @@ valve stenosis ×2). The first scheduled run opens these as issues; each needs a
 | TS-06.1.5 | Errata detection (Crossref) | done |
 | TS-06.2.1 | Issue per candidate | done |
 | TS-06.1.1 | Weekly workflow with failure notification | done |
+| TS-06.2.3 | Free full-text link or PDF request in each issue | done |
 | TS-06.1.3 | Page-change watchers | done |

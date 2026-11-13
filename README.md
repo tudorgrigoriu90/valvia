@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-67: Show taxonomy cross-links: See also lists and pointer pages for empty  |
-| Next task | CH-59: search-engine indexing (when topics are published) |
+| Last completed task | TS-06.2.3: Source acquisition: download open-access PDF, else request attachment  |
+| Next task | CH-59 when topics are published; remaining tasks need the user |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

@@ -12,6 +12,8 @@ export interface Candidate {
   date: string;
   pmid?: string | undefined;
   doi?: string | undefined;
+  /** PubMed Central id of the article itself (free full text), when PubMed lists one (TS-06.2.3). */
+  pmcid?: string | undefined;
   /** Document page found by a page watcher (TS-06.1.3). */
   url?: string | undefined;
   /** Set for an erratum, correction or retraction of a registered source (TS-06.1.5). */

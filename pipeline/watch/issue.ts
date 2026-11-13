@@ -107,6 +107,9 @@ export function candidateIssue(candidate: Candidate, context: IssueContext): Iss
       : [`| PMID | [${candidate.pmid}](https://pubmed.ncbi.nlm.nih.gov/${candidate.pmid}/) |`]),
     ...(candidate.doi === undefined ? [] : [`| DOI | [${candidate.doi}](https://doi.org/${candidate.doi}) |`]),
     ...(candidate.url === undefined ? [] : [`| Page | <${candidate.url}> |`]),
+    ...(candidate.pmcid === undefined
+      ? []
+      : [`| Full text | [${candidate.pmcid}](https://pmc.ncbi.nlm.nih.gov/articles/${candidate.pmcid}/) (free) |`]),
   ];
   const topics = affectedTopics(candidate, context);
   const related = candidate.updates === undefined ? relatedSources(candidate, context.sources) : [];
@@ -130,7 +133,9 @@ export function candidateIssue(candidate: Candidate, context: IssueContext): Iss
           '### Next steps',
           '',
           '1. Only ESC (incl. EACVI) and ASE documents are used (`CLAUDE.md` §12): close this issue otherwise.',
-          '2. Attach the PDF (ESC/EACVI) or link the open-access full text (ASE).',
+          candidate.pmcid === undefined
+            ? '2. Attach the PDF to this issue, or link the free full text if the society publishes one (ESC/EACVI PDFs must be downloaded by a person).'
+            : '2. Read the free full text linked above; attach the publisher PDF if page numbers must match the citation.',
           '3. Add the label `new-source` to start drafting; content changes go through a content PR approved by the SME.',
         ].join('\n')
       : [

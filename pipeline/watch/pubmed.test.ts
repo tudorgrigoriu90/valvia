@@ -89,6 +89,26 @@ describe('parsing', () => {
     expect(() => parseEsummary('x')).toThrow(/esummary/);
   });
 
+  it('reads the PubMed Central id of the article itself (free full text), when PubMed lists one', () => {
+    const json = {
+      result: {
+        uids: ['7'],
+        '7': {
+          uid: '7',
+          title: 'T',
+          source: 'Eur Heart J',
+          sortpubdate: '2026/03/01 00:00',
+          articleids: [
+            { idtype: 'pubmed', value: '7' },
+            { idtype: 'pmc', value: 'PMC13314027' },
+            { idtype: 'pmcid', value: 'pmc-id: PMC13314027;' },
+          ],
+        },
+      },
+    };
+    expect(parseEsummary(json)[0]?.pmcid).toBe('PMC13314027');
+  });
+
   it('keeps a record without DOI and falls back to the year when the sort date is missing', () => {
     const json = {
       result: {
