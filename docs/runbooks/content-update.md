@@ -50,7 +50,7 @@ sequenceDiagram
    locator) as a comment generated from the YAML diff and updates it on every push. Run it locally with
    `git worktree add /tmp/base main && npx tsx pipeline/summary/cli.ts /tmp/base .`. Keep the PR to one subcategory
    and data only.
-7. **Review:** a PR idle for 7 days gets a reminder comment and one open for 14 days the `review-overdue` label
+7. **Review** (SME: [quick guide](../sme-quick-guide.md)): a PR idle for 7 days gets a reminder comment and one open for 14 days the `review-overdue` label
    (daily job, TS-06.3.3). CI must be green; the verification run (when available, TS-06.3.4) is advisory. **Only the SME approves
    and merges.** Claude Code never approves or merges a content PR.
 8. **After merge:** CI deploys `main` (about 5 min). Check the live page: the value, the citation and the footer

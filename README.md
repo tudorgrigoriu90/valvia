@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-06.3.3: Stale-PR reminder and escalation job |
-| Next task | TS-06.3.5: SME quick guide |
+| Last completed task | TS-06.3.5: SME quick guide (1 page): reviewing a content PR in the GitHub mobile  |
+| Next task | FT-03.19: reference and methodology leaves |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
@@ -79,6 +79,7 @@ Read [`CLAUDE.md`](CLAUDE.md) first. In short:
 - [Content policy](docs/safety/content-policy.md)
 - [EU MDR qualification memo](docs/safety/mdr-qualification.md)
 - [CI/CD](docs/ci-cd.md)
+- [SME quick guide](docs/sme-quick-guide.md): reviewing a content PR on a phone
 - [Content audit log](CHANGELOG.md): approver, merger and time of every merged content PR
 - [Source watchers](docs/source-watchers.md): weekly detection of new and corrected documents (EP-06)
 - [Runbooks](docs/runbooks/README.md): content update, emergency rollback, secret rotation, [go-live checklist](docs/runbooks/go-live-checklist.md)
