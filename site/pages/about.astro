@@ -1,4 +1,5 @@
 ---
+import { REPOSITORY } from '../../core/site/report';
 import { withBase } from '../../core/site/base-path';
 import Base from '../layouts/Base.astro';
 
@@ -49,8 +50,9 @@ const base = import.meta.env.BASE_URL;
 
     <h2 id="report">Report a problem</h2>
     <p>
-      If a value looks wrong, please report it with the page and the source location:
-      <a href="https://github.com/tudorgrigoriu90/valvia/issues/new" rel="noopener" target="_blank">
+      If a value looks wrong, use the <strong>Report a problem</strong> link under the section, or report it with the
+      page and the source location:
+      <a href={`https://github.com/${REPOSITORY}/issues/new?template=value-problem.yml`} rel="noopener" target="_blank">
         open an issue on GitHub<span class="visually-hidden"> (opens in a new tab)</span>
       </a>
       .

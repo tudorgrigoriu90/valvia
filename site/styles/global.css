@@ -1012,3 +1012,16 @@ html[data-society='ase'] .value:not([data-societies~='ase']) {
   font-size: 0.8125rem;
   color: var(--color-text-muted);
 }
+
+/* TS-06.5.1: report link under each section. */
+.report-link {
+  margin: var(--space-3) 0 0;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.report-link a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch-target);
+}

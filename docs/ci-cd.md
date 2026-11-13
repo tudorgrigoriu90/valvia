@@ -40,6 +40,10 @@ flowchart LR
   repository variable: `VALVIA_GOATCOUNTER` (GoatCounter site code, e.g. `valvia`) or `VALVIA_CF_BEACON_TOKEN` (Cloudflare Web Analytics token).
   The build adds the beacon script and its origins to the CSP (`core/site/analytics.ts`), and the privacy page names the provider.
   A malformed value or both variables at once fail the build.
+- **Report-a-problem e-mail fallback (TS-06.5.1):** optional repository variable `VALVIA_CONTACT_EMAIL` (a plain address the
+  maintainers read). When set, every section's "Report a problem" link is followed by "or by e-mail" (`mailto:` with the
+  page link prefilled); a malformed address fails the build. The GitHub issue form
+  ([`.github/ISSUE_TEMPLATE/value-problem.yml`](../.github/ISSUE_TEMPLATE/value-problem.yml)) is always linked.
 - The deploy job alone has `pages: write` and `id-token: write`; it runs only after `verify` succeeds on `main`, one at a time (`pages-deploy` concurrency group, never cancelled mid-deploy).
 - No `gh-pages` branch exists; GitHub stores deployments itself. `404.html` is served for unknown URLs.
 - Deploy time target: < 5 min from push (FT-01.3).

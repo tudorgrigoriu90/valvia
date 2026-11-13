@@ -123,3 +123,17 @@ test('parameter deep links jump to the first row of that parameter (TS-04.5.1)',
     await page.locator('[id^="p-"]').evaluateAll((els) => new Set(els.map((el) => el.id)).size),
   );
 });
+
+test('each section links to a prefilled issue form to report a problem (TS-06.5.1)', async ({ page }) => {
+  await page.goto(LEAF);
+  const section = page.locator('section.block').first();
+  const sectionId = await section.getAttribute('id');
+  const link = section.getByRole('link', { name: /^Report a problem with .+ on GitHub/ });
+  const href = await link.getAttribute('href');
+  expect(href).not.toBeNull();
+  const url = new URL(href ?? '');
+  expect(url.pathname).toBe('/tudorgrigoriu90/valvia/issues/new');
+  expect(url.searchParams.get('template')).toBe('value-problem.yml');
+  expect(url.searchParams.get('page')).toMatch(new RegExp(`${LEAF}#${String(sectionId)}$`));
+  expect(url.searchParams.get('title')).toMatch(/^Value problem: Primary MR/);
+});

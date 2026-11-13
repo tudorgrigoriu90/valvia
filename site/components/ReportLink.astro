@@ -1,0 +1,29 @@
+---
+/** "Report a problem" link per section (TS-06.5.1): prefilled GitHub issue form, e-mail fallback when configured. */
+import { contactEmail, reportIssueUrl, reportMailto, type ReportContext } from '../../core/site/report';
+
+interface Props {
+  topic: string;
+  section: string;
+  anchor: string;
+}
+const { topic, section, anchor } = Astro.props;
+const pageUrl = new URL(`#${anchor}`, Astro.url).href;
+const context: ReportContext = { pageUrl, topic, section };
+const email = contactEmail(process.env);
+---
+
+<p class="report-link" data-pagefind-ignore>
+  <a href={reportIssueUrl(context)} rel="noopener" target="_blank">
+    Report a problem<span class="visually-hidden">{` with ${section}`}</span> on GitHub
+    <span class="visually-hidden">{' (opens in a new tab)'}</span>
+  </a>
+  {email !== undefined && (
+    <>
+      {' or '}
+      <a href={reportMailto(email, context)}>
+        by e-mail<span class="visually-hidden">{` (${section})`}</span>
+      </a>
+    </>
+  )}
+</p>

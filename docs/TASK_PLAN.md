@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-04.6.1 Last 10 viewed topics on home screen (localStorage) |
-| Next up | TS-06.5.1: report-an-issue link per value |
+| Last completed | TS-06.5.1 "Report an issue" link per value: prefilled GitHub issue form, with a  |
+| Next up | TS-06.4.2: changelog and audit trail |
 
 ## Next up: R0 sequence
 
@@ -199,7 +199,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-06.4.1 | Auto-generated "What's new" page from merged content PRs | 3 | todo |  |
 | TS-06.4.2 | Audit trail: approver, timestamp, source recorded in CHANGELOG + Git history | 1 | todo |  |
 | TS-06.4.3 | Rollback runbook (revert PR → redeploy) | 1 | done | Delivered as [`docs/runbooks/emergency-rollback.md`](runbooks/emergency-rollback.md) in TS-08.6 |
-| TS-06.5.1 | "Report an issue" link per value: prefilled GitHub issue form, with a `mailto:` fallback for users without GitHub | 2 | todo |  |
+| TS-06.5.1 | "Report an issue" link per value: prefilled GitHub issue form, with a `mailto:` fallback for users without GitHub | 2 | done |  |
 
 ### EP-07: Quality, compliance & legal (MVP)
 
@@ -488,3 +488,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-13 | TS-04.1.3 | Society badges on source chips: issuers as text + tone colour (ESC family, ASE, joint with double border, other), accessible description, ≥ 7:1 contrast in both themes; unit + E2E tests | `TS-04.1.3: society badges with text label and tone colour` |
 | 2026-11-13 | TS-04.5.1 | Parameter deep links: <leaf>#p-<parameter id> targets the first table row or list item of that parameter in page order (stable ids), highlighted on arrival; topic URLs already stable via slugs and redirect pages | `TS-04.5.1: parameter deep-link anchors on leaf pages` |
 | 2026-11-13 | TS-04.6.1 | Recently viewed: last 10 leaf topics on the home page, newest first, stored device-locally (valvia.recent, try/catch, untrusted data validated as safe paths and plain titles), Clear button, hidden when empty or without JS; privacy page and architecture updated | `TS-04.6.1: recently viewed topics on the home page` |
+| 2026-11-13 | TS-06.5.1 | Report a problem link under every section: GitHub issue form (value-problem.yml, label content-issue) prefilled with title and section URL; optional mailto fallback via VALVIA_CONTACT_EMAIL (validated, off by default); About and privacy pages updated | `TS-06.5.1: report-a-problem link per section with issue form` |

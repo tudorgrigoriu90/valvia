@@ -1,0 +1,47 @@
+# TS-06.5.1: opened from the "Report a problem" link under each section of a Valvia page (fields prefilled by URL).
+name: Problem with a value
+description: A value, unit, population or source on Valvia looks wrong or outdated.
+title: 'Value problem: '
+labels: [content-issue]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for checking. This issue is **public**: do not include patient data.
+        The engineer triages it; wrong values are corrected through a reviewed content pull request.
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      description: Link to the page section (filled in when you use the link on Valvia).
+      placeholder: https://valvia-echo.se/…
+    validations:
+      required: true
+  - type: input
+    id: value
+    attributes:
+      label: Which value
+      description: Parameter, population and grade, as shown on the page.
+      placeholder: e.g. EROA, adults, severe
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is wrong
+      options:
+        - Number differs from the source
+        - Unit
+        - Population (age group, sex, rhythm, …)
+        - Source or locator (table, figure, page)
+        - Superseded by a newer document
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: What the source says and where (document, table, figure or page).
+    validations:
+      required: true

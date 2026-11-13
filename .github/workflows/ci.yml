@@ -23,6 +23,8 @@ env:
   # Cookieless analytics (TS-07.5.1), off unless one is set (TS-08.5): GoatCounter site code or Cloudflare token.
   VALVIA_GOATCOUNTER: ${{ vars.VALVIA_GOATCOUNTER }}
   VALVIA_CF_BEACON_TOKEN: ${{ vars.VALVIA_CF_BEACON_TOKEN }}
+  # Optional e-mail fallback for "Report a problem" (TS-06.5.1); off unless set.
+  VALVIA_CONTACT_EMAIL: ${{ vars.VALVIA_CONTACT_EMAIL }}
 
 jobs:
   verify:

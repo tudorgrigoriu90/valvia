@@ -8,6 +8,7 @@ import JumpMenu from '../components/JumpMenu.astro';
 import SocietyFilter from '../components/SocietyFilter.astro';
 import Comparisons from '../components/Comparisons.astro';
 import PreviousRecommendations from '../components/PreviousRecommendations.astro';
+import ReportLink from '../components/ReportLink.astro';
 import SourceChips from '../components/SourceChips.astro';
 import ThresholdList from '../components/ThresholdList.astro';
 import TopicList from '../components/TopicList.astro';
@@ -102,6 +103,7 @@ const missingCategories =
           {block.type === 'algorithm-reference' && <AlgorithmReference block={block} />}
           <Comparisons comparisons={comparisons} />
           <PreviousRecommendations items={history} />
+          <ReportLink topic={topic.title} section={heading} anchor={block.id} />
         </section>
       );
     })}

@@ -58,6 +58,6 @@ sequenceDiagram
 
 - **Publisher erratum** to a registered source: correct the affected values in a content PR; add the erratum DOI to the
   source's `notes`; the PR summary names the erratum.
-- **Transcription error found by a user** (report-an-issue link): reproduce against the PDF, then a content PR with the
+- **Transcription error found by a user** ("Report a problem" link → issue labelled `content-issue`, or the e-mail fallback): reproduce against the PDF, then a content PR with the
   page and table in the summary. If the wrong value could change a clinical decision (hazard log severity S3), roll back
   first.

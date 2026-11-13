@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-04.6.1: Last 10 viewed topics on home screen (localStorage) |
-| Next task | TS-06.5.1: report-an-issue link per value |
+| Last completed task | TS-06.5.1: "Report an issue" link per value: prefilled GitHub issue form, with a  |
+| Next task | TS-06.4.2: changelog and audit trail |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
