@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-07.1.1 EU MDR qualification memo (MDCG 2019-11 reasoning), incl. paediatric z |
-| Next up | TS-08.6: runbooks |
+| Last completed | TS-08.6 Runbooks: content update, emergency rollback, rotating secrets |
+| Next up | TS-08.8: go-live checklist |
 
 ## Next up: R0 sequence
 
@@ -198,7 +198,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-06.3.6 | Claude clinical-reviewer persona (built and maintained by the engineer with SME input): echocardiography-expert review prompt and checklist, run as the verification run on every content PR; second reviewer, advisory only, never approves | 2 | todo |  |
 | TS-06.4.1 | Auto-generated "What's new" page from merged content PRs | 3 | todo |  |
 | TS-06.4.2 | Audit trail: approver, timestamp, source recorded in CHANGELOG + Git history | 1 | todo |  |
-| TS-06.4.3 | Rollback runbook (revert PR → redeploy) | 1 | todo |  |
+| TS-06.4.3 | Rollback runbook (revert PR → redeploy) | 1 | done | Delivered as [`docs/runbooks/emergency-rollback.md`](runbooks/emergency-rollback.md) in TS-08.6 |
 | TS-06.5.1 | "Report an issue" link per value: prefilled GitHub issue form, with a `mailto:` fallback for users without GitHub | 2 | todo |  |
 
 ### EP-07: Quality, compliance & legal (MVP)
@@ -224,7 +224,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-08.3 | Install Claude Code GitHub Action; add credentials as repo secret; set spending limit | 1 | manual |  |
 | TS-08.4 | SME onboarding: GitHub account with 2FA, GitHub mobile app, notification settings, 15-min walkthrough of a sample PR | 1 | manual |  |
 | TS-08.5 | Analytics account + uptime monitor (free tiers) | 1 | manual |  |
-| TS-08.6 | Runbooks: content update, emergency rollback, rotating secrets | 2 | todo |  |
+| TS-08.6 | Runbooks: content update, emergency rollback, rotating secrets | 2 | done |  |
 | TS-08.7 | Closed beta (SME + 3–5 colleagues), feedback collection, triage | 3 | todo |  |
 | TS-08.8 | Go-live checklist | 2 | todo |  |
 
@@ -476,3 +476,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-13 | TS-07.2.1 | Copyright assessment: value-level transcription in own format is low risk; near-complete appendix tables (prosthetic catalogue) and full z-score datasets need permission; whom to ask; draft permission request | `TS-07.2.1: copyright assessment and permission-request guidance` |
 | 2026-11-13 | TS-07.2.2 | Content policy: 9 rules (society sources only, facts not expression, own-format tables, no figures, notes in own words, cite and link, no calculation, gaps visible, bulk tables need clearance) | `TS-07.2.2: content policy` |
 | 2026-11-13 | TS-07.1.1 | EU MDR qualification memo: MDCG 2019-11 steps applied (no patient data, no computation → not MDSW, provisional), assessor points incl. z-score references, controls and change gate, features that would reopen qualification; external review required before go-live | `TS-07.1.1: EU MDR qualification memo` |
+| 2026-11-13 | TS-08.6 | Runbooks: content update (seed vs content PR flow, supersession, errata), emergency rollback (revert commit/PR, redeploy last good run, unpublish, checks; also closes TS-06.4.3), secret rotation (credential inventory, routine rotation, leak response, offboarding) | `TS-08.6: runbooks for content update, rollback and secrets` |

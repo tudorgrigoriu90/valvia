@@ -88,6 +88,8 @@ If the deploy job fails with a Pages configuration error, check this setting fir
 
 ## When CI is red on `main`
 
+For a wrong value or broken site already live, follow the [emergency rollback runbook](runbooks/emergency-rollback.md).
+
 1. Reproduce locally with `npm run verify` (or the failing step's script).
 2. Fix test-first; the fix is the next push and gets its own entry in the task plan push log.
 3. Artefacts (`coverage`, `playwright-report`) are attached to the workflow run for diagnosis.
