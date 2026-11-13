@@ -1,8 +1,8 @@
 # Content guide
 
 > **Purpose:** how to draft, cite and review clinical content so that any session can add a leaf from this guide alone.
-> **Audience:** Claude Code sessions, engineer, SME. **Last updated:** 2026-11-09
-> **Reference:** field-by-field schema in [`content-model.md`](content-model.md); rules in [`CLAUDE.md`](../CLAUDE.md) §12.
+> **Audience:** Claude Code sessions, engineer, SME. **Last updated:** 2026-11-13
+> **Reference:** field-by-field schema in [`content-model.md`](content-model.md); rules in [`CLAUDE.md`](../CLAUDE.md) §12 and the [content policy](safety/content-policy.md).
 
 ## 1. Workflow
 

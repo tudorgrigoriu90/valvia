@@ -172,7 +172,7 @@ docs/
 ├── units.md                # units as published; comparison conversions
 ├── content-guide.md        # how to model, cite and review content (FT-03.0)
 ├── runbooks/               # content update, emergency rollback, secret rotation, release
-├── safety/                # hazard log (TS-07.3.1) and compliance memos
+├── safety/                # hazard log, copyright assessment, content policy, compliance memos
 └── onboarding.md           # engineer / SME / new-session onboarding
 ```
 
@@ -274,7 +274,7 @@ Applies to every content PR and every piece of code that handles content.
   current sources → flagged at build time and shown side by side. Never resolve a disagreement by picking one.
 - **Algorithms:** `ALG` blocks link to the source; never redraw a flowchart.
 - **No calculation:** no calculators, no patient z-scores, no risk scores computed for a patient.
-- **Copyright:** own-format tables, no copied figures, always cite and link.
+- **Copyright:** own-format tables, no copied figures, always cite and link ([content policy](docs/safety/content-policy.md)).
 - **Stable IDs:** node IDs never change; slug renames generate a static redirect page.
 - **Schema changes:** follow [`schema/README.md`](schema/README.md); run `npm run gen:types` and commit `schema/generated/` with the schema.
 - **Gaps:** show "no society-endorsed value" instead of an empty table.
