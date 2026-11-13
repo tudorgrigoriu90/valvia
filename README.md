@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-06.1.2: PubMed E-utilities / Crossref queries: EHJ, EHJ-CI, JASE (+ ESC journa |
-| Next task | TS-06.1.5: errata detection for registered sources |
+| Last completed task | TS-06.1.5: Errata/corrigendum detection for registered sources (Crossref update r |
+| Next task | TS-06.2.1: one issue per candidate |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

@@ -12,6 +12,8 @@ export interface Candidate {
   date: string;
   pmid?: string | undefined;
   doi?: string | undefined;
+  /** Set for an erratum, correction or retraction of a registered source (TS-06.1.5). */
+  updates?: { source: string; kind: string } | undefined;
 }
 
 export interface WatchState {
