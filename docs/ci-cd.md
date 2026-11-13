@@ -45,6 +45,7 @@ flowchart LR
   page link prefilled); a malformed address fails the build. The GitHub issue form
   ([`.github/ISSUE_TEMPLATE/value-problem.yml`](../.github/ISSUE_TEMPLATE/value-problem.yml)) is always linked.
 - The deploy job alone has `pages: write` and `id-token: write`; it runs only after `verify` succeeds on `main`, one at a time (`pages-deploy` concurrency group, never cancelled mid-deploy).
+- The verify job checks out **full history** (`fetch-depth: 0`): the What's new page lists the latest content commits from `git log -- content/` (TS-06.4.1). A shallow clone builds, but the page then says no changes are recorded.
 - No `gh-pages` branch exists; GitHub stores deployments itself. `404.html` is served for unknown URLs.
 - Deploy time target: < 5 min from push (FT-01.3).
 

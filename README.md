@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-06.5.1: "Report an issue" link per value: prefilled GitHub issue form, with a  |
-| Next task | TS-06.4.2: changelog and audit trail |
+| Last completed task | TS-06.4.1: Auto-generated "What's new" page from merged content PRs |
+| Next task | TS-06.4.2: audit trail |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

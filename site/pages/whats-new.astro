@@ -1,0 +1,63 @@
+---
+/** What's new (TS-06.4.1): the latest content changes, generated from Git history at build time. */
+import { contentChanges, parseGitLog } from '../../core/changelog/changelog';
+import { withBase } from '../../core/site/base-path';
+import { REPOSITORY } from '../../core/site/report';
+import Base from '../layouts/Base.astro';
+import { getContent } from '../lib/content';
+import { contentGitLog } from '../lib/git-log';
+
+const { bundle, navigation } = getContent();
+const base = import.meta.env.BASE_URL;
+const visible = new Set(navigation.visibleNodes().map((topic) => topic.id));
+const changes = contentChanges(parseGitLog(contentGitLog()), visible);
+const titleOf = (id: string): string => bundle.topics.get(id)?.title ?? id;
+const plural = (count: number, word: string): string => `${String(count)} ${word}${count === 1 ? '' : 's'}`;
+---
+
+<Base title="What's new" description="The latest changes to Valvia content.">
+  <h1>What's new</h1>
+  <p class="lead">
+    The latest {changes.length > 0 ? String(changes.length) : ''} changes to clinical content, newest first. Every
+    change is recorded in the public Git history.
+  </p>
+  {changes.length === 0 && <p class="gap">No content changes are recorded in this build.</p>}
+  <ol class="changes">
+    {changes.map((change) => (
+      <li class="change">
+        <p class="change__meta">
+          <time datetime={change.date}>{change.date}</time> ·
+          {change.pullRequest !== undefined ? (
+            <a href={`https://github.com/${REPOSITORY}/pull/${String(change.pullRequest)}`} rel="noopener">
+              pull request #{change.pullRequest}
+            </a>
+          ) : (
+            <a href={`https://github.com/${REPOSITORY}/commit/${change.sha}`} rel="noopener">
+              commit {change.sha}
+            </a>
+          )}
+        </p>
+        <p class="change__subject">{change.subject}</p>
+        {change.topics.length > 0 && (
+          <ul class="change__topics">
+            {change.topics.map((id) => (
+              <li>
+                <a href={withBase(base, navigation.urlPath(id))}>{titleOf(id)}</a>
+              </li>
+            ))}
+          </ul>
+        )}
+        {change.sources.length + change.parameters.length > 0 && (
+          <p class="change__extra">
+            {[
+              change.sources.length > 0 ? `${plural(change.sources.length, 'source')} registered or updated` : '',
+              change.parameters.length > 0 ? `${plural(change.parameters.length, 'parameter')} defined or updated` : '',
+            ]
+              .filter((part) => part !== '')
+              .join(' · ')}
+          </p>
+        )}
+      </li>
+    ))}
+  </ol>
+</Base>
