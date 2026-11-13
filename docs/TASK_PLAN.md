@@ -2,7 +2,7 @@
 
 > **Purpose:** single source of truth for task status and the push log. Updated in **every push** (see `CLAUDE.md` §9).
 > **Audience:** Claude Code sessions, software engineer, product owner.
-> **Last updated:** 2026-11-10
+> **Last updated:** 2026-11-13
 > **Task details and acceptance criteria:** [`product/valvia-backlog.md`](product/valvia-backlog.md)
 
 Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `dropped` (with reason) · `manual` (engineer task; Claude prepares checklists and verifies where possible).
@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-43 Content: young adult competitive athletes (ASE 2020) |
-| Next up | Remaining backlog: TS-07.3.1 hazard log |
+| Last completed | CH-44 Plan update: content batch 2026-11-13 |
+| Next up | CH-45: PH and right heart from ASE 2025 |
 
 ## Next up: R0 sequence
 
@@ -315,6 +315,28 @@ the empty adult categories. ESC/EACVI-only documents still wait for PDFs supplie
 | CH-42 | Content: LVAD and temporary mechanical support (ASE 2024 update; the 2015 document is superseded) | 2 | done | Heart failure |
 | CH-43 | Content: young adult competitive athletes (ASE 2020) | 1 | done | Special populations |
 
+## Content batch 2026-11-13 (empty leaves from documents already obtained)
+
+The product owner asked to continue until nothing is left (2026-11-13). Initial seed rules (PO-3). Each push fills one
+subcategory from a document already downloaded from asecho.org; leaves that need ESC/EACVI-only documents stay empty.
+
+| Key | Summary | SP | Status | Notes |
+|---|---|---|---|---|
+| CH-44 | Plan update: content batch 2026-11-13 | 0 | done |  |
+| CH-45 | Content: PH and right heart (5.x) from ASE 2025 right heart: PH definitions, echo probability, RV–PA coupling | 2 | todo |  |
+| CH-46 | Content: IVC and RA pressure (1.6) from ASE 2025 right heart | 1 | todo |  |
+| CH-47 | Content: diastolic special populations, HFpEF and diastolic stress (2.3–2.5) from ASE 2025 diastolic | 2 | todo |  |
+| CH-48 | Content: aortic stenosis sub-leaves (3.1.1.2–3.1.1.5) from EACVI/ASE 2017 | 2 | todo |  |
+| CH-49 | Content: MR/TR mechanism and secondary MR (3.2.1, 3.3.1) from ASE 2017 native regurgitation | 2 | todo |  |
+| CH-50 | Content: regurgitation after transcatheter interventions (4.5) from ASE 2019 | 2 | todo |  |
+| CH-51 | Content: prosthetic reference values by model and size (4.1) from ASE 2024 appendix | 3 | todo | May need TS-02.2.8 first |
+| CH-52 | Content: masses and thrombus (12.1–12.3) from ASE 2016 embolism | 1 | todo |  |
+| CH-53 | Content: endocarditis (3.6) from ASE 2016 embolism | 1 | todo |  |
+| CH-54 | Content: cardiomyopathies (6.x) from ASE 2025 strain and others | 2 | todo |  |
+| CH-55 | Content: coarctation and acute aortic syndromes (8.6, 10.3) from ASE/EACVI 2015 aorta | 1 | todo |  |
+| CH-56 | Content: paediatric z-scores and HCM in children (15.x) | 1 | todo |  |
+| CH-57 | Content: contrast echocardiography (9.5) from ASE 2018 UEA update | 1 | todo |  |
+
 ## Push log
 
 One row per push (newest last). Content PRs are logged when opened and when merged.
@@ -435,3 +457,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-10 | CH-41 | Hypertension (EACVI/ASE 2015, JASE version): LV mass/height^2.7 and RWT severity grades by sex (Table 3, RWT stored as a ratio with the source's 'cm' label as caveat), 3D LV mass index references (European, Japanese), LV geometry classes (Table 5); 2 parameters | `CH-41: LV mass/height^2.7, RWT grades and geometry (EACVI/ASE 2015)` |
 | 2026-11-10 | CH-42 | LVAD and temporary mechanical support (ASE 2024, which updates the 2015 document): new leaf 6.10 with pre-implant risk markers (LVEF < 25%, LVIDd < 5.5 cm, TV annulus ≥ 41 mm), AR on support (outflow S/D < 5.0), excessive unloading (LV < 3 cm), recovery on LVAD, TMCS and VA ECMO weaning criteria, examination note; 4 parameters | `CH-42: LVAD and temporary mechanical support criteria (ASE 2024)` |
 | 2026-11-10 | CH-43 | Young adult competitive athletes (ASE 2020): LV wall thickness > 15 mm suggests pathology (13–15 mm possible with exercise remodelling), aortic sinus/ascending aorta ≥ 40 mm (men) / ≥ 34 mm (women) uncommon → CTA/CMR, compacted layer < 5 mm with hypertrabeculation, nomogram note; 1 parameter | `CH-43: athlete's heart thresholds (ASE 2020)` |
+| 2026-11-13 | CH-44 | Plan the 2026-11-13 content batch (CH-45 to CH-57): empty leaves fillable from ASE documents already obtained | `CH-44: plan the remaining content from obtained documents` |

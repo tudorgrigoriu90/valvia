@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-43: Content: young adult competitive athletes (ASE 2020) |
-| Next task | Remaining backlog: TS-07.3.1 hazard log |
+| Last completed task | CH-44: Plan update: content batch 2026-11-13 |
+| Next task | CH-45: PH and right heart from ASE 2025 |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
