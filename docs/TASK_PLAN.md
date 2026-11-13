@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-64 Content 14.3 key formulas transcribed from documents read in the sessi |
-| Next up | TS-00.2: decision log completion |
+| Last completed | TS-00.2 Record SME decisions in /docs/decisions (✅ answers received 2 Nov 2026 |
+| Next up | TS-05.1.1: breakpoint checks |
 
 ## Next up: R0 sequence
 
@@ -50,7 +50,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | Key | Summary | SP | Status | Notes |
 |---|---|---|---|---|
 | TS-00.1 | Taxonomy validation with SME | 2 | in progress | SME answers applied (taxonomy v0.3); F2–F5 open |
-| TS-00.2 | Record SME decisions in `/docs/decisions` (✅ answers received 2 Nov 2026; F1 answered: z-score datasets cited by ESC/ASE included; follow-ups F2–F5 open) | 1 | todo |  |
+| TS-00.2 | Record SME decisions in `/docs/decisions` (✅ answers received 2 Nov 2026; F1 answered: z-score datasets cited by ESC/ASE included; follow-ups F2–F5 open) | 1 | done | Decision log: PO, SME-1 to SME-11, open questions, implementation decisions to confirm |
 | TS-00.3 | Competitor scan (ESC Pocket Guidelines app, ASE app, others); define differentiation | 2 | todo |  |
 | TS-00.4 | Confirm delivery waves (all content P1) and success metrics | 1 | todo |  |
 | TS-00.5 | Agree emergency-rollback rule with SME (engineer may revert, never add or change values) | 1 | todo |  |
@@ -522,3 +522,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-13 | CH-62 | Content 14.1: the glossary leaf shows the generated parameter list (every registered parameter with abbreviation, name, synonyms, unit, modalities); Reference & methodology now visible; E2E incl. axe | `CH-62: add the 14.1 glossary leaf` |
 | 2026-11-13 | CH-63 | Content 14.2 (values exactly as published, indexed values, BSA: Valvia computes none; ASE rTOF advice against DuBois in CHD, cited p. 120) and 14.4 (which documents, disagreements side by side, previous recommendations, review status and weekly correction checks) as notes | `CH-63: add the units and about-the-sources reference leaves` |
 | 2026-11-13 | CH-64 | Content 14.3 key formulas as printed: AS mean gradient, continuity and simplified continuity equation, velocity ratio, % stroke work loss (EACVI/ASE 2017 Table 2, p. 376); SV at an annulus, volumetric RVol/RF/EROA, PISA RFlow/EROA/RVol (ASE 2017 native regurgitation pp. 311–312); display-only note; FT-03.19 done | `CH-64: add the key formulas reference leaf` |
+| 2026-11-13 | TS-00.2 | Decision log completed: SME decisions SME-1 to SME-11 with where each is implemented, open SME questions F2/F3/F5/F7/F8 with current handling, and implementation decisions IMP-1 to IMP-5 for the product owner to confirm | `TS-00.2: complete the decision log` |

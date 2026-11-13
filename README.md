@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-64: Content 14.3 key formulas transcribed from documents read in the sessi |
-| Next task | TS-00.2: decision log completion |
+| Last completed task | TS-00.2: Record SME decisions in /docs/decisions (✅ answers received 2 Nov 2026 |
+| Next task | TS-05.1.1: breakpoint checks |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
