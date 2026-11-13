@@ -14,7 +14,7 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-07.3.1: Hazard log (wrong value, wrong unit or conversion, missing indexation, |
+| Last completed task | TS-07.2.1: Copyright assessment: numeric values vs reproduced tables (incl. prost |
 | Next task | TS-07.2.2: content policy |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
@@ -75,6 +75,7 @@ Read [`CLAUDE.md`](CLAUDE.md) first. In short:
 - [Units and conversions](docs/units.md)
 - [Testing guide](docs/testing.md)
 - [Hazard log](docs/safety/hazard-log.md)
+- [Copyright assessment](docs/safety/copyright-assessment.md)
 - [CI/CD](docs/ci-cd.md)
 - [Decision log](docs/decisions/README.md)
 - [Product backlog](docs/product/valvia-backlog.md)

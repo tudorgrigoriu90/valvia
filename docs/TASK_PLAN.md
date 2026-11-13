@@ -12,7 +12,7 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-07.3.1 Hazard log (wrong value, wrong unit or conversion, missing indexation, |
+| Last completed | TS-07.2.1 Copyright assessment: numeric values vs reproduced tables (incl. prost |
 | Next up | TS-07.2.2: content policy |
 
 ## Next up: R0 sequence
@@ -207,7 +207,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 |---|---|---|---|---|
 | TS-07.1.1 | EU MDR qualification memo (MDCG 2019-11 reasoning), incl. paediatric z-score references shown as published without patient computation; external review if unclear | 3 | todo |  |
 | TS-07.1.2 | Intended-use statement + disclaimer ("verify against the original guideline") | 1 | done | Legal wording to be reviewed with the MDR memo (TS-07.1.1) |
-| TS-07.2.1 | Copyright assessment: numeric values vs reproduced tables (incl. prosthetic model/size tables from guideline appendices); algorithms linked only; request permissions from ESC (OUP) / ASE (Elsevier) where needed | 3 | todo |  |
+| TS-07.2.1 | Copyright assessment: numeric values vs reproduced tables (incl. prosthetic model/size tables from guideline appendices); algorithms linked only; request permissions from ESC (OUP) / ASE (Elsevier) where needed | 3 | done |  |
 | TS-07.2.2 | Content policy: own-format tables, no copied figures, always cite and link | 1 | todo |  |
 | TS-07.3.1 | Hazard log (wrong value, wrong unit or conversion, missing indexation, adult value shown for a child, superseded value shown as current, wrong population) + mitigations | 2 | done |  |
 | TS-07.3.2 | Pre-release content audit per wave: 100 % of values verified by the verification run and approved; SME spot-checks a random 10 % sample against the PDFs | 3 | todo |  |
@@ -473,3 +473,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-13 | CH-56 | Paediatric: z-score normal limits (−2 to +2) and z-score model note (ASE 2024 paediatric TTE, registered from PubMed via E-utilities) in 15.1; HCM in children (wall thickness z > 2) and phenocopy note (ASE 2022 HCM) in 15.5; 2 parameters | `CH-56: paediatric z-score limits and HCM in children` |
 | 2026-11-13 | CH-57 | Contrast echocardiography (ASE 2018 UEA update, registered from PubMed via E-utilities): ≥ 2 non-visualised LV segments as the indication at rest and during stress (technique: stress), key recommendations (quantitative LVEF, flash, volumes caveat, injection technique); 1 parameter | `CH-57: contrast echo indications (ASE 2018)` |
 | 2026-11-13 | TS-07.3.1 | Hazard log (docs/safety/hazard-log.md): 14 hazards (wrong value, unit, indexation, adult/child, qualifiers, superseded, hidden disagreement, TEE/stress, modality, draft status, offline staleness, citation, non-society source, calculation) with severity, controls, linked verification and residual risk | `TS-07.3.1: hazard log with controls and verification` |
+| 2026-11-13 | TS-07.2.1 | Copyright assessment: value-level transcription in own format is low risk; near-complete appendix tables (prosthetic catalogue) and full z-score datasets need permission; whom to ask; draft permission request | `TS-07.2.1: copyright assessment and permission-request guidance` |
