@@ -39,7 +39,7 @@ value** and acting on it. Every hazard below is about that path.
 | H11 | **Stale content offline** after an update | Service worker keeps an old version | S2 | Pages network-first; "New content available" prompt; content version and build date in every footer | [`pwa.spec.ts`](../../tests/e2e/pwa.spec.ts), [`register-sw.ts`](../../site/scripts/register-sw.ts) | L1 |
 | H12 | **Value attributed to the wrong source or location** | Citation or locator wrong | S2 | Every value cites a registered source and a locator; source chips show the full citation and DOI | [`registry-rules.test.ts`](../../core/sources/registry-rules.test.ts), [`leaf.spec.ts`](../../tests/e2e/leaf.spec.ts) | L2 |
 | H13 | **Non-society source** used | A value from a paper or manufacturer chart | S2 | Allowlist of societies in the registry rules; CI rejects other issuers | [`registry-rules.test.ts`](../../core/sources/registry-rules.test.ts) | L1 |
-| H14 | **Calculation mistaken for guidance** | A score or z-score computed for a patient | S3 | No calculators by design: scores (Wilkins, H2FPEF) and z-score limits are shown as definitions only | Product rule (`CLAUDE.md` §12); no calculation code exists | L1 |
+| H14 | **Calculation mistaken for guidance** | A score or z-score computed for a patient | S3 | No calculators by design: scores (Wilkins, H2FPEF) and z-score limits are shown as definitions only; change gate in the [MDR memo](mdr-qualification.md) §4 | Product rule (`CLAUDE.md` §12); no calculation code exists | L1 |
 
 ## Open items
 

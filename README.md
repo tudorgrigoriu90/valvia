@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-07.2.2: Content policy: own-format tables, no copied figures, always cite and  |
-| Next task | TS-07.1.1: MDR qualification memo |
+| Last completed task | TS-07.1.1: EU MDR qualification memo (MDCG 2019-11 reasoning), incl. paediatric z |
+| Next task | TS-08.6: runbooks |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
@@ -77,6 +77,7 @@ Read [`CLAUDE.md`](CLAUDE.md) first. In short:
 - [Hazard log](docs/safety/hazard-log.md)
 - [Copyright assessment](docs/safety/copyright-assessment.md)
 - [Content policy](docs/safety/content-policy.md)
+- [EU MDR qualification memo](docs/safety/mdr-qualification.md)
 - [CI/CD](docs/ci-cd.md)
 - [Decision log](docs/decisions/README.md)
 - [Product backlog](docs/product/valvia-backlog.md)

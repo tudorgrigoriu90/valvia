@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-07.2.2 Content policy: own-format tables, no copied figures, always cite and  |
-| Next up | TS-07.1.1: MDR qualification memo |
+| Last completed | TS-07.1.1 EU MDR qualification memo (MDCG 2019-11 reasoning), incl. paediatric z |
+| Next up | TS-08.6: runbooks |
 
 ## Next up: R0 sequence
 
@@ -205,7 +205,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 
 | Key | Summary | SP | Status | Notes |
 |---|---|---|---|---|
-| TS-07.1.1 | EU MDR qualification memo (MDCG 2019-11 reasoning), incl. paediatric z-score references shown as published without patient computation; external review if unclear | 3 | todo |  |
+| TS-07.1.1 | EU MDR qualification memo (MDCG 2019-11 reasoning), incl. paediatric z-score references shown as published without patient computation; external review if unclear | 3 | done |  |
 | TS-07.1.2 | Intended-use statement + disclaimer ("verify against the original guideline") | 1 | done | Legal wording to be reviewed with the MDR memo (TS-07.1.1) |
 | TS-07.2.1 | Copyright assessment: numeric values vs reproduced tables (incl. prosthetic model/size tables from guideline appendices); algorithms linked only; request permissions from ESC (OUP) / ASE (Elsevier) where needed | 3 | done |  |
 | TS-07.2.2 | Content policy: own-format tables, no copied figures, always cite and link | 1 | done |  |
@@ -475,3 +475,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-13 | TS-07.3.1 | Hazard log (docs/safety/hazard-log.md): 14 hazards (wrong value, unit, indexation, adult/child, qualifiers, superseded, hidden disagreement, TEE/stress, modality, draft status, offline staleness, citation, non-society source, calculation) with severity, controls, linked verification and residual risk | `TS-07.3.1: hazard log with controls and verification` |
 | 2026-11-13 | TS-07.2.1 | Copyright assessment: value-level transcription in own format is low risk; near-complete appendix tables (prosthetic catalogue) and full z-score datasets need permission; whom to ask; draft permission request | `TS-07.2.1: copyright assessment and permission-request guidance` |
 | 2026-11-13 | TS-07.2.2 | Content policy: 9 rules (society sources only, facts not expression, own-format tables, no figures, notes in own words, cite and link, no calculation, gaps visible, bulk tables need clearance) | `TS-07.2.2: content policy` |
+| 2026-11-13 | TS-07.1.1 | EU MDR qualification memo: MDCG 2019-11 steps applied (no patient data, no computation → not MDSW, provisional), assessor points incl. z-score references, controls and change gate, features that would reopen qualification; external review required before go-live | `TS-07.1.1: EU MDR qualification memo` |
