@@ -7,3 +7,27 @@ order: 0
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: tr-aetiology
+    type: criteria-checklist
+    tag: CRIT
+    title: Aetiology of TR
+    criteria:
+      - text: 'Primary, acquired: degenerative or myxomatous, rheumatic, endocarditis, carcinoid, endomyocardial fibrosis, toxins, trauma, iatrogenic (pacing leads, RV biopsy), other (e.g. ischaemic papillary muscle rupture).'
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '12'
+            page: '346'
+      - text: 'Primary, congenital: Ebstein anomaly, TV dysplasia, tethering with a perimembranous ventricular septal aneurysm, repaired tetralogy of Fallot, congenitally corrected transposition, other (giant right atrium).'
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '12'
+            page: '346'
+      - text: 'Secondary (functional): left heart disease (LV dysfunction or valve disease); RV dysfunction (ischaemia, volume overload, cardiomyopathy); pulmonary hypertension (chronic lung disease, pulmonary thromboembolism, left-to-right shunt); right atrial abnormalities (atrial fibrillation).'
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '12'
+            page: '346'

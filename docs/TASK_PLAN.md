@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-48 Content: aortic stenosis sub-leaves (3.1.1.2–3.1.1.5) from EACVI/ASE 2 |
-| Next up | CH-49: MR/TR mechanism and secondary MR (ASE 2017) |
+| Last completed | CH-49 Content: MR/TR mechanism and secondary MR (3.2.1, 3.3.1) from ASE 2017 |
+| Next up | CH-50: regurgitation after transcatheter interventions (ASE 2019) |
 
 ## Next up: R0 sequence
 
@@ -327,7 +327,7 @@ subcategory from a document already downloaded from asecho.org; leaves that need
 | CH-46 | Content: IVC and RA pressure (1.6) from ASE 2025 right heart | 1 | done |  |
 | CH-47 | Content: diastolic special populations, HFpEF and diastolic stress (2.3–2.5) from ASE 2025 diastolic | 2 | done |  |
 | CH-48 | Content: aortic stenosis sub-leaves (3.1.1.2–3.1.1.5) from EACVI/ASE 2017 | 2 | done |  |
-| CH-49 | Content: MR/TR mechanism and secondary MR (3.2.1, 3.3.1) from ASE 2017 native regurgitation | 2 | todo |  |
+| CH-49 | Content: MR/TR mechanism and secondary MR (3.2.1, 3.3.1) from ASE 2017 native regurgitation | 2 | done |  |
 | CH-50 | Content: regurgitation after transcatheter interventions (4.5) from ASE 2019 | 2 | todo |  |
 | CH-51 | Content: prosthetic reference values by model and size (4.1) from ASE 2024 appendix | 3 | todo | May need TS-02.2.8 first |
 | CH-52 | Content: masses and thrombus (12.1–12.3) from ASE 2016 embolism | 1 | todo |  |
@@ -464,3 +464,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-13 | CH-46 | IVC and RA pressure (ASE 2025 right heart): RAP 3/8/15/20 mmHg from IVC size and collapse (Table 4) as a checklist with values; IVC ≤ 2.1 cm in ventilated patients; 1 parameter | `CH-46: RA pressure from IVC size and collapse (ASE 2025)` |
 | 2026-11-13 | CH-47 | Diastolic function (ASE 2025): special populations Table 7 (AF, sinus tachycardia, HCM, restrictive, PH, MS, MR, MAC, LVAD, transplant; 10 blocks); HFpEF echo components (Table 8, ESC criteria as summarised), H2FPEF score definition, HFpEF algorithm link; diastolic exercise echo criteria (technique: stress); 9 parameters | `CH-47: diastolic special populations, HFpEF and exercise criteria (ASE 2025)` |
 | 2026-11-13 | CH-48 | Aortic stenosis sub-leaves (EACVI/ASE 2017): classical LFLG definition, low-dose DSE criteria (technique: stress) and protocol note; paradoxical LFLG with Table 5 criteria incl. CT calcium score by sex; discordant grading flow status (SVi 35) and stepwise note; asymptomatic severe AS decision markers (> 5.5 m/s, exercise gradient rise > 20 mmHg) and progression note; 2 parameters | `CH-48: low-flow, discordant and asymptomatic AS criteria (EACVI/ASE 2017)` |
+| 2026-11-13 | CH-49 | MR/TR mechanism and secondary MR (ASE 2017 native regurgitation): MVP ≥ 2 mm (PLAX), MR aetiology checklist (Table 5), mechanism note; secondary MR EROA ≥ 0.4 and ≥ 0.3 cm² (2D PISA) with considerations note; TR aetiology checklist (Table 12) | `CH-49: MR/TR aetiology, MVP and secondary MR EROA (ASE 2017)` |

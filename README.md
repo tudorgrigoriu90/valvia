@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-48: Content: aortic stenosis sub-leaves (3.1.1.2–3.1.1.5) from EACVI/ASE 2 |
-| Next task | CH-49: MR/TR mechanism and secondary MR (ASE 2017) |
+| Last completed task | CH-49: Content: MR/TR mechanism and secondary MR (3.2.1, 3.3.1) from ASE 2017 |
+| Next task | CH-50: regurgitation after transcatheter interventions (ASE 2019) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

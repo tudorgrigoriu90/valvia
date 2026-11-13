@@ -7,3 +7,46 @@ order: 4
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: secondary-eroa
+    type: threshold-list
+    tag: CRIT
+    title: Severe secondary MR by EROA
+    values:
+      - parameter: eroa
+        context: diagnostic-criterion
+        operator: '>='
+        value: 0.4
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'EROA ≥ 0.4 cm² still denotes severe MR.'
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            page: '334'
+      - parameter: eroa
+        context: diagnostic-criterion
+        operator: '>='
+        value: 0.3
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'By 2D PISA, an EROA ≥ 0.3 cm² may still be likely severe MR: the orifice is often semilunar or elliptical and EROA varies with LV size and LVEF.'
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            page: '334'
+  - id: secondary-considerations
+    type: note
+    tag: METH
+    title: Grading secondary MR
+    text: 'Total forward stroke volume may be reduced, so regurgitant volume is usually lower than in primary MR (below 60 mL can be severe if total stroke volume is reduced). Adjunctive signs are often abnormal from the cardiomyopathy itself (blunted pulmonary venous flow); systolic flow reversal remains specific when present. Secondary MR is dynamic: consider volume status and blood pressure. Otherwise grade with the integrative approach for chronic MR.'
+    citation:
+      source: ase-2017-native-regurgitation
+      locator:
+        page: '334'

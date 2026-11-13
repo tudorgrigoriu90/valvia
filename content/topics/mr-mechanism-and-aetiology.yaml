@@ -7,3 +7,55 @@ order: 0
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: mvp
+    type: threshold-list
+    tag: CRIT
+    title: Mitral valve prolapse
+    values:
+      - parameter: mitral-leaflet-displacement
+        context: diagnostic-criterion
+        operator: '>='
+        value: 2
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Systolic displacement of a mitral leaflet into the LA from the mitral annular plane, ideally in the parasternal long-axis view (apical long-axis if parasternal windows are poor). Do not diagnose MVP in apical four- or two-chamber views.'
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            page: '319'
+  - id: aetiology
+    type: criteria-checklist
+    tag: CRIT
+    title: Aetiology of primary and secondary MR
+    criteria:
+      - text: 'Primary MR (leaflet abnormality): myxomatous MVP (prolapse, flail, ruptured or elongated chordae); degenerative (calcification, thickening); infectious (vegetations, perforation, aneurysm); inflammatory (rheumatic, collagen vascular disease, radiation, drugs); congenital (cleft leaflet, parachute MV).'
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '5'
+            page: '319'
+      - text: 'Secondary MR (ventricular remodelling): ischaemic (coronary artery disease) or non-ischaemic cardiomyopathy.'
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '5'
+            page: '319'
+      - text: 'Secondary MR from annular dilatation: atrial fibrillation, restrictive cardiomyopathy.'
+        citation:
+          source: ase-2017-native-regurgitation
+          locator:
+            table: '5'
+            page: '319'
+  - id: mechanism
+    type: note
+    tag: METH
+    title: Mechanism
+    text: "Describe the mechanism by the Carpentier classification. Fibroelastic deficiency is focal with thin leaflets; Barlow's disease is diffuse thickening and redundancy of both leaflets and chordae. MR from prolapse is often mid-to-late systolic: single-frame colour methods taken at maximal MR overestimate its severity."
+    citation:
+      source: ase-2017-native-regurgitation
+      locator:
+        page: '318–319'
