@@ -119,6 +119,21 @@ describe('candidateIssue', () => {
     expect(issue.body).not.toContain('| DOI |');
   });
 
+  it('links the society page for a document found by a page watcher', () => {
+    const issue = candidateIssue(
+      {
+        origin: 'page',
+        url: 'https://www.asecho.org/guideline/x/',
+        title: 'X',
+        journal: 'ASE website',
+        date: '2026-11-20',
+      },
+      CONTEXT,
+    );
+    expect(issue.title).toBe('New document: X (ASE website, 2026)');
+    expect(issue.body).toContain('| Page | <https://www.asecho.org/guideline/x/> |');
+  });
+
   it('keeps issue titles within GitHub limits', () => {
     expect(candidateIssue({ ...NEW_DOC, title: 'x'.repeat(400) }, CONTEXT).title.length).toBeLessThanOrEqual(256);
   });

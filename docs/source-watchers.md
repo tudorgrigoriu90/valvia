@@ -72,13 +72,30 @@ The watcher never adds `new-source` itself: drafting (TS-06.2.2) starts only aft
 Titles and journal names are untrusted: line breaks are flattened, HTML escaped and `@` broken with a zero-width space so
 an external title cannot mention anyone. The similarity match is a hint for triage, not a decision.
 
+## Page watchers (TS-06.1.3)
+
+[`pages.ts`](../pipeline/watch/pages.ts) reads the society guideline pages for links to individual documents and reports
+links not seen before (key `url:<address>` in the state file):
+
+| Page | Document links |
+|---|---|
+| ASE guidelines (`asecho.org/guidelines-search/`) | `https://www.asecho.org/guideline/<slug>/` |
+| ESC guidelines (`escardio.org/…/all-esc-practice-guidelines/`) | `/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/<slug>/` |
+
+The first time a page is watched its current links are recorded as a **baseline** and not reported (36 links on
+2026-11-13: 5 ASE, 31 ESC). Duplicate anchors of one link are merged and the most descriptive text is kept as the title
+(e.g. ESC's "Read 2026 ESC Guidelines on …" button). A page with **no** matching link fails the run, since that means the
+layout changed or the request was blocked, and the failure issue says so; update the pattern in `WATCHED_PAGES`.
+EACVI has no stable list page: its documents appear in EHJ-CI and are caught by the PubMed query. Each page also gets a
+hash of its link set in `pages`, which shows in the state diff when a page's list changed.
+
 ## Weekly workflow (TS-06.1.1)
 
 [`source-watch.yml`](../.github/workflows/source-watch.yml) runs on Mondays at 05:17 UTC and on demand
 (*Actions → Source watch → Run workflow*):
 
 1. `npx tsx pipeline/watch/cli.ts <dir>` ([`watch.ts`](../pipeline/watch/watch.ts)): PubMed for the window since the last
-   run (14 days on the first run), Crossref errata for every registered DOI, deduplication, one rendered issue per new
+   run (14 days on the first run), Crossref errata for every registered DOI, the watched society pages, deduplication, one rendered issue per new
    candidate in `<dir>/issues.json`, updated `pipeline/watch/state.json`.
 2. Creates the labels if missing and opens the issues with `gh issue create` (titles and bodies passed as files and
    quoted variables, never `${{ }}` expressions).
@@ -104,4 +121,4 @@ valve stenosis ×2). The first scheduled run opens these as issues; each needs a
 | TS-06.1.5 | Errata detection (Crossref) | done |
 | TS-06.2.1 | Issue per candidate | done |
 | TS-06.1.1 | Weekly workflow with failure notification | done |
-| TS-06.1.3 | Page-change watchers | planned |
+| TS-06.1.3 | Page-change watchers | done |

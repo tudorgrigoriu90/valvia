@@ -7,6 +7,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { hasErrors, loadContent } from '../../core/content/loader';
 import { normaliseBase } from '../../core/site/base-path';
+import { WATCHED_PAGES } from './pages';
 import { parseState, serializeState } from './state';
 import { issueContext, registeredDois, runWatch, sourcesWithDoi } from './watch';
 
@@ -29,21 +30,24 @@ const pause = (ms: number): Promise<void> =>
     setTimeout(done, ms);
   });
 
-/** GET JSON with a generic User-Agent (no personal data); retries rate limits and server errors. */
-async function fetchJson(url: string): Promise<unknown> {
+/** GET with a generic User-Agent (no personal data); retries rate limits and server errors. */
+async function get(url: string, accept: string): Promise<Response> {
   for (let attempt = 1; ; attempt += 1) {
-    const response = await fetch(url, {
-      headers: { 'User-Agent': 'valvia-source-watcher', Accept: 'application/json' },
-    });
-    if (response.ok) return response.json();
+    const response = await fetch(url, { headers: { 'User-Agent': 'valvia-source-watcher', Accept: accept } });
+    if (response.ok) return response;
     const retryable = response.status === 429 || response.status >= 500;
     if (!retryable || attempt === 3) throw new Error(`${String(response.status)} from ${new URL(url).host}`);
     await pause(attempt * 5000);
   }
 }
 
+const fetchJson = async (url: string): Promise<unknown> => (await get(url, 'application/json')).json();
+const fetchText = async (url: string): Promise<string> => (await get(url, 'text/html')).text();
+
 const result = await runWatch({
   fetchJson,
+  fetchText,
+  watchedPages: WATCHED_PAGES,
   state,
   today,
   context: issueContext(bundle, site),

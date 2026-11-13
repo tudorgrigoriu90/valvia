@@ -12,6 +12,8 @@ export interface Candidate {
   date: string;
   pmid?: string | undefined;
   doi?: string | undefined;
+  /** Document page found by a page watcher (TS-06.1.3). */
+  url?: string | undefined;
   /** Set for an erratum, correction or retraction of a registered source (TS-06.1.5). */
   updates?: { source: string; kind: string } | undefined;
 }
@@ -32,6 +34,7 @@ export function candidateKeys(candidate: Candidate): string[] {
   const keys: string[] = [];
   if (candidate.pmid !== undefined) keys.push(`pmid:${candidate.pmid}`);
   if (candidate.doi !== undefined) keys.push(`doi:${candidate.doi.toLowerCase()}`);
+  if (candidate.url !== undefined) keys.push(`url:${candidate.url}`);
   return keys;
 }
 

@@ -106,6 +106,7 @@ export function candidateIssue(candidate: Candidate, context: IssueContext): Iss
       ? []
       : [`| PMID | [${candidate.pmid}](https://pubmed.ncbi.nlm.nih.gov/${candidate.pmid}/) |`]),
     ...(candidate.doi === undefined ? [] : [`| DOI | [${candidate.doi}](https://doi.org/${candidate.doi}) |`]),
+    ...(candidate.url === undefined ? [] : [`| Page | <${candidate.url}> |`]),
   ];
   const topics = affectedTopics(candidate, context);
   const related = candidate.updates === undefined ? relatedSources(candidate, context.sources) : [];

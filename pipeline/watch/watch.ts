@@ -8,6 +8,7 @@ import { buildNavigation } from '../../core/navigation/tree';
 import { blockCitations } from '../../core/values/citations';
 import { fetchErrata, type RegisteredSource } from './errata';
 import { candidateIssue, type Issue, type IssueContext, type TopicLink } from './issue';
+import { fetchPageCandidates, type FetchText, type WatchedPage } from './pages';
 import { fetchPubmedCandidates, type FetchJson } from './pubmed';
 import { markSeen, newCandidates, type WatchState } from './state';
 
@@ -45,6 +46,8 @@ export function issueContext(bundle: ContentBundle, siteUrl: string): IssueConte
 
 export interface WatchOptions {
   fetchJson: FetchJson;
+  fetchText: FetchText;
+  watchedPages: readonly WatchedPage[];
   state: WatchState;
   /** Today's date (YYYY-MM-DD, UTC). */
   today: string;
@@ -55,13 +58,16 @@ export interface WatchOptions {
 
 export async function runWatch(options: WatchOptions): Promise<{ issues: Issue[]; state: WatchState }> {
   const { since, until } = watchWindow(options.state, options.today);
+  const pages = await fetchPageCandidates(options.fetchText, options.watchedPages, options.state, options.today);
   const found = [
     ...(await fetchPubmedCandidates(options.fetchJson, since, until)),
     ...(await fetchErrata(options.fetchJson, options.sourcesWithDoi)),
+    ...pages.report,
   ];
   const fresh = newCandidates(found, options.state, options.registry);
+  const seen = markSeen(markSeen(options.state, pages.baseline, options.today), fresh, options.today);
   return {
     issues: fresh.map((candidate) => candidateIssue(candidate, options.context)),
-    state: markSeen(options.state, fresh, options.today),
+    state: { ...seen, pages: { ...options.state.pages, ...pages.pages } },
   };
 }

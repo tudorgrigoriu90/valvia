@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { loadContent } from '../../core/content/loader';
+import { WATCHED_PAGES } from './pages';
 import { EMPTY_STATE, markSeen, type Candidate } from './state';
 import { issueContext, registeredDois, runWatch, sourcesWithDoi as withDoi, watchWindow } from './watch';
 
@@ -53,10 +54,23 @@ describe('runWatch', () => {
     if (url.includes('esummary')) return Promise.resolve(json('esummary.json'));
     return Promise.resolve(json('crossref-updates.json'));
   };
+  const fetchText = (url: string): Promise<string> =>
+    Promise.resolve(
+      readFileSync(
+        join(
+          import.meta.dirname,
+          '__fixtures__',
+          url.includes('asecho') ? 'ase-guidelines.html' : 'esc-guidelines.html',
+        ),
+        'utf8',
+      ),
+    );
+  const pageOptions = { fetchText, watchedPages: WATCHED_PAGES };
 
   it('returns one issue per new candidate and the updated state', async () => {
     const result = await runWatch({
       fetchJson,
+      ...pageOptions,
       state: EMPTY_STATE,
       today: '2026-11-13',
       context: issueContext(bundle, SITE),
@@ -70,7 +84,9 @@ describe('runWatch', () => {
       'Erratum to fixture-esc-2021',
     ]);
     expect(result.state.lastRun).toBe('2026-11-13');
-    expect(Object.keys(result.state.seen)).toHaveLength(6);
+    expect(Object.keys(result.state.seen).filter((key) => !key.startsWith('url:'))).toHaveLength(6);
+    expect(Object.keys(result.state.seen).filter((key) => key.startsWith('url:')).length).toBeGreaterThan(5);
+    expect(Object.keys(result.state.pages)).toHaveLength(2);
     const erratum = result.issues[2];
     expect(erratum?.body).toContain('[Fixture leaf](https://valvia-echo.se/fixture-root/fixture-leaf/)');
   });
@@ -78,6 +94,7 @@ describe('runWatch', () => {
   it('reports nothing twice: a second run with the saved state opens no issues', async () => {
     const options = {
       fetchJson,
+      ...pageOptions,
       today: '2026-11-13',
       context: issueContext(bundle, SITE),
       registry: new Set<string>(),
@@ -93,6 +110,7 @@ describe('runWatch', () => {
     const seenOne: Candidate = { origin: 'pubmed', pmid: '42547112', title: 't', journal: 'j', date: '2026' };
     const result = await runWatch({
       fetchJson,
+      ...pageOptions,
       state: markSeen(EMPTY_STATE, [seenOne], '2026-11-06'),
       today: '2026-11-13',
       context: issueContext(bundle, SITE),

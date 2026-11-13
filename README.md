@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-06.1.1: Scheduled GitHub Action (weekly) with failure notification |
-| Next task | TS-06.1.3: page-change watchers |
+| Last completed task | TS-06.1.3: Page-change watchers: ESC guideline list, EACVI recommendations page,  |
+| Next task | TS-06.2.4: clinical change-summary generator for content PRs |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
