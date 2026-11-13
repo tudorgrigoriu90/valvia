@@ -1,0 +1,14 @@
+{
+  "header": {
+    "type": "esearch",
+    "version": "0.3"
+  },
+  "esearchresult": {
+    "count": "83",
+    "retmax": "3",
+    "retstart": "0",
+    "idlist": ["42547112", "42242827", "42070896"],
+    "translationset": [],
+    "querytranslation": "\"J Am Soc Echocardiogr\"[Journal] AND \"guideline\"[Publication Type]"
+  }
+}

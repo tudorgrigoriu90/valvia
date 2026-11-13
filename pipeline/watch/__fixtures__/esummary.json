@@ -1,0 +1,62 @@
+{
+  "header": {
+    "type": "esummary",
+    "version": "0.3"
+  },
+  "result": {
+    "uids": ["42547112", "42242827", "99999901"],
+    "42547112": {
+      "uid": "42547112",
+      "pubdate": "2026 Aug",
+      "source": "J Am Soc Echocardiogr",
+      "fulljournalname": "Journal of the American Society of Echocardiography : official publication of the American Society of Echocardiography",
+      "title": "Guidelines for the Prevention of Work-Related Musculoskeletal Disorders for Cardiac Sonographers: Recommendations from the American Society of Echocardiography.",
+      "pubtype": ["Journal Article", "Practice Guideline"],
+      "sortpubdate": "2026/08/01 00:00",
+      "articleids": [
+        {
+          "idtype": "pubmed",
+          "value": "42547112"
+        },
+        {
+          "idtype": "doi",
+          "value": "10.1016/j.echo.2026.04.018"
+        }
+      ]
+    },
+    "42242827": {
+      "uid": "42242827",
+      "pubdate": "2026 Jun",
+      "source": "J Am Soc Echocardiogr",
+      "fulljournalname": "Journal of the American Society of Echocardiography : official publication of the American Society of Echocardiography",
+      "title": "Guidelines for the Intraprocedural Imaging for Mitral Valve Transcatheter Edge-to-Edge Repair (M-TEER): Recommendations from the American Society of Echocardiography.",
+      "pubtype": ["Journal Article", "Practice Guideline"],
+      "sortpubdate": "2026/06/01 00:00",
+      "articleids": [
+        {
+          "idtype": "pubmed",
+          "value": "42242827"
+        },
+        {
+          "idtype": "doi",
+          "value": "10.1016/j.echo.2026.03.003"
+        }
+      ]
+    },
+    "99999901": {
+      "uid": "99999901",
+      "pubdate": "2026 Jul",
+      "source": "J Am Soc Echocardiogr",
+      "fulljournalname": "Fixture journal",
+      "title": "Fixture: comment on a guideline.",
+      "pubtype": ["Comment", "Journal Article"],
+      "sortpubdate": "2026/07/01 00:00",
+      "articleids": [
+        {
+          "idtype": "pubmed",
+          "value": "99999901"
+        }
+      ]
+    }
+  }
+}

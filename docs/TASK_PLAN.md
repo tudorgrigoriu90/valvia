@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-06.1.4 Deduplication and state (JSON state file in repo) |
-| Next up | TS-06.1.2: PubMed queries for new society documents |
+| Last completed | TS-06.1.2 PubMed E-utilities / Crossref queries: EHJ, EHJ-CI, JASE (+ ESC journa |
+| Next up | TS-06.1.5: errata detection for registered sources |
 
 ## Next up: R0 sequence
 
@@ -182,7 +182,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | Key | Summary | SP | Status | Notes |
 |---|---|---|---|---|
 | TS-06.1.1 | Scheduled GitHub Action (weekly) with failure notification | 1 | todo |  |
-| TS-06.1.2 | PubMed E-utilities / Crossref queries: EHJ, EHJ-CI, JASE (+ ESC journals for paediatric/CHD); guideline / recommendation / consensus types; echo keywords | 5 | todo |  |
+| TS-06.1.2 | PubMed E-utilities / Crossref queries: EHJ, EHJ-CI, JASE (+ ESC journals for paediatric/CHD); guideline / recommendation / consensus types; echo keywords | 5 | done |  |
 | TS-06.1.3 | Page-change watchers: ESC guideline list, EACVI recommendations page, ASE guidelines page | 3 | todo |  |
 | TS-06.1.4 | Deduplication and state (JSON state file in repo) | 2 | done |  |
 | TS-06.1.5 | Errata/corrigendum detection for registered sources (Crossref update relations) | 3 | todo |  |
@@ -494,3 +494,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-13 | TS-02.2.8 | Prosthetic valve catalogue schema: one file per model and position (position, type, model, labelled sizes) with expected values as published (mean ± SD, mean only, median (IQR), threshold), population and citation; loader, cross-file rules, published number text; docs | `TS-02.2.8: prosthetic valve catalogue schema, rules and loader` |
 | 2026-11-13 | TS-05.2.2 | Third-party guard E2E: every request on home, a leaf, About and What's new is same-origin, no web fonts, no raster images, system font stack, SVG-only icons in head and manifest; TS-04.7.4 marked blocked (needs catalogue data, CH-51) | `TS-05.2.2: guard system fonts, SVG icons and same-origin requests` |
 | 2026-11-13 | TS-06.1.4 | Source-watcher state and deduplication: candidates keyed by PMID and DOI, dropped when seen before, already registered or duplicated in the batch; state file with first-seen dates, page hashes and last run as sorted JSON; malformed state stops the run | `TS-06.1.4: source-watcher state file and deduplication` |
+| 2026-11-13 | TS-06.1.2 | PubMed watcher: E-utilities query (ESC/ASE journals × guideline-type × echo/imaging, records added in the watch window, anonymous tool=valvia), shape-checked parsing into candidates with PMID, DOI, journal and ISO date; comments/editorials/letters/errata dropped; fetch injected for tests | `TS-06.1.2: PubMed query for new society imaging documents` |

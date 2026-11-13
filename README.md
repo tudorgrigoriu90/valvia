@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-06.1.4: Deduplication and state (JSON state file in repo) |
-| Next task | TS-06.1.2: PubMed queries for new society documents |
+| Last completed task | TS-06.1.2: PubMed E-utilities / Crossref queries: EHJ, EHJ-CI, JASE (+ ESC journa |
+| Next task | TS-06.1.5: errata detection for registered sources |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

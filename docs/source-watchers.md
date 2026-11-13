@@ -24,12 +24,30 @@ deduplicated nor cited.
 The file is sorted JSON so weekly changes are small diffs. A malformed file stops the run with an error instead of
 starting over, which would re-report every document ever seen. To re-report something, delete its keys from `seen`.
 
+## PubMed query (TS-06.1.2)
+
+[`pubmed.ts`](../pipeline/watch/pubmed.ts) asks NCBI E-utilities (anonymous: `tool=valvia`, no API key, no e-mail) for
+records **added to PubMed** (`datetype=edat`) since the last run that match all three groups:
+
+| Group | Terms |
+|---|---|
+| Journal (NLM abbreviation) | `J Am Soc Echocardiogr`, `Eur Heart J`, `Eur Heart J Cardiovasc Imaging`, `Eur J Heart Fail` |
+| Document type | Practice Guideline / Guideline / Consensus Development Conference [pt]; title words guideline\*, recommendation\*, consensus, "position statement", "position paper", "standardized definitions" |
+| Topic | echocardiogra\* [tiab], imaging [ti], "cardiac ultrasound" [tiab] |
+
+Title words are included because new records often get their publication type only weeks later. This favours recall:
+a check on 2026-01-01 → 2026-11-13 returned 22 records, including the ASE M-TEER and sonographer guidelines and EACVI
+clinical consensus statements, but also studies *about* guidelines. Those are closed during triage; missing a society
+document would cost more. Comments, editorials, letters, news and published errata are dropped (errata come from the
+Crossref watcher). Responses of an unexpected shape fail the run. Tests use trimmed real E-utilities responses in
+`pipeline/watch/__fixtures__/` (one synthetic comment record, marked as such).
+
 ## Status
 
 | Task | Part | Status |
 |---|---|---|
 | TS-06.1.4 | State file and deduplication | done |
-| TS-06.1.2 | PubMed queries | planned |
+| TS-06.1.2 | PubMed queries | done |
 | TS-06.1.5 | Errata detection (Crossref) | planned |
 | TS-06.2.1 | Issue per candidate | planned |
 | TS-06.1.1 | Weekly workflow with failure notification | planned |
