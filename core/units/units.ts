@@ -32,7 +32,7 @@ export const QUANTITY_UNITS: Readonly<Record<Quantity, QuantityUnits>> = {
   'velocity-blood': { units: ['m/s', 'cm/s'], common: 'm/s' },
   'velocity-tissue': { units: ['cm/s', 'm/s'], common: 'cm/s' },
   'velocity-time-integral': { units: ['cm'], common: 'cm' },
-  acceleration: { units: ['m/s²'], common: 'm/s²' },
+  acceleration: { units: ['m/s²', 'cm/s²'], common: 'm/s²' },
   pressure: { units: ['mmHg'], common: 'mmHg' },
   time: { units: ['ms', 's'], common: 'ms' },
   'heart-rate': { units: ['bpm'], common: 'bpm' },
@@ -40,6 +40,10 @@ export const QUANTITY_UNITS: Readonly<Record<Quantity, QuantityUnits>> = {
   'calcium-score': { units: ['AU'], common: 'AU' },
   angle: { units: ['°'], common: '°' },
   age: { units: ['years'], common: 'years' },
+  'coupling-ratio': { units: ['mm/mmHg'], common: 'mm/mmHg' },
+  'vascular-resistance': { units: ['WU'], common: 'WU' },
+  'mass-per-height': { units: ['g/m'], common: 'g/m' },
+  'indexed-flow-rate': { units: ['mL/min/kg'], common: 'mL/min/kg' },
 };
 
 /** Convertible units: same family, size = 10^exponent base units. Units not listed only convert to themselves. */
@@ -54,6 +58,8 @@ const SCALES: Partial<Record<Unit, { family: string; exponent: number }>> = {
   s: { family: 'time', exponent: 3 },
   'mm/m²': { family: 'indexed-length', exponent: 0 },
   'cm/m²': { family: 'indexed-length', exponent: 1 },
+  'cm/s²': { family: 'acceleration', exponent: 0 },
+  'm/s²': { family: 'acceleration', exponent: 2 },
 };
 
 const PLAIN_DECIMAL = /^(-?)(\d+)(?:\.(\d+))?$/;

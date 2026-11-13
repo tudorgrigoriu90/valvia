@@ -61,6 +61,20 @@ describe('quantity units (NFR-15, taxonomy 14.2)', () => {
     expect(QUANTITY_UNITS[quantity].common).toBe(unit);
   });
 
+  it.each([
+    ['coupling-ratio', 'mm/mmHg'],
+    ['vascular-resistance', 'WU'],
+    ['mass-per-height', 'g/m'],
+    ['indexed-flow-rate', 'mL/min/kg'],
+  ] as const)('supports %s in %s, as published (CH-58)', (quantity, unit) => {
+    expect(allowedUnits(quantity)).toEqual([unit]);
+    expect(commonUnit(quantity, unit)).toBe(unit);
+  });
+
+  it('allows accelerations published in cm/s² as well as m/s²', () => {
+    expect(allowedUnits('acceleration')).toEqual(['m/s²', 'cm/s²']);
+  });
+
   it('allows cm/s and m/s for both blood-flow and tissue velocities', () => {
     expect(isUnitAllowed('velocity-blood', 'cm/s')).toBe(true);
     expect(isUnitAllowed('velocity-tissue', 'm/s')).toBe(true);
@@ -95,6 +109,8 @@ describe('convert', () => {
     ['160', 'ms', 's', '0.160'],
     ['2.75', 'cm/m²', 'mm/m²', '27.5'],
     ['1.2', 'cm²', 'cm²', '1.2'],
+    ['49.0', 'cm/s²', 'm/s²', '0.490'],
+    ['0.5', 'm/s²', 'cm/s²', '50'],
   ])('converts %s %s to %s', (value, from, to, expected) => {
     expect(convert(value, from, to)).toBe(expected);
   });
@@ -144,6 +160,8 @@ function scaleRatio(from: string, to: string): number {
     s: 1000,
     'mm/m²': 1,
     'cm/m²': 10,
+    'cm/s²': 1,
+    'm/s²': 100,
   };
   return (size[from] ?? 1) / (size[to] ?? 1);
 }

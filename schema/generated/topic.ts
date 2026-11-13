@@ -84,17 +84,22 @@ export type Value = {
     | 'g'
     | 'g/m²'
     | 'g/m^2.7'
+    | 'g/m'
     | 'm/s'
     | 'cm/s'
     | 'm/s²'
+    | 'cm/s²'
     | 'mmHg'
     | 'ms'
     | 's'
     | 'bpm'
     | 'mL/s'
+    | 'mL/min/kg'
     | 'AU'
     | '°'
-    | 'years';
+    | 'years'
+    | 'mm/mmHg'
+    | 'WU';
   /**
    * Modality the value was defined for (Echo, CT or CMR); CT/CMR values are badged (SME decision 4). Must be one of the parameter's modalities.
    */
@@ -172,17 +177,22 @@ export type Value = {
     | 'g'
     | 'g/m²'
     | 'g/m^2.7'
+    | 'g/m'
     | 'm/s'
     | 'cm/s'
     | 'm/s²'
+    | 'cm/s²'
     | 'mmHg'
     | 'ms'
     | 's'
     | 'bpm'
     | 'mL/s'
+    | 'mL/min/kg'
     | 'AU'
     | '°'
-    | 'years';
+    | 'years'
+    | 'mm/mmHg'
+    | 'WU';
   /**
    * Modality the value was defined for (Echo, CT or CMR); CT/CMR values are badged (SME decision 4). Must be one of the parameter's modalities.
    */
@@ -260,17 +270,22 @@ export type Value = {
     | 'g'
     | 'g/m²'
     | 'g/m^2.7'
+    | 'g/m'
     | 'm/s'
     | 'cm/s'
     | 'm/s²'
+    | 'cm/s²'
     | 'mmHg'
     | 'ms'
     | 's'
     | 'bpm'
     | 'mL/s'
+    | 'mL/min/kg'
     | 'AU'
     | '°'
-    | 'years';
+    | 'years'
+    | 'mm/mmHg'
+    | 'WU';
   /**
    * Modality the value was defined for (Echo, CT or CMR); CT/CMR values are badged (SME decision 4). Must be one of the parameter's modalities.
    */
@@ -348,17 +363,22 @@ export type Value = {
     | 'g'
     | 'g/m²'
     | 'g/m^2.7'
+    | 'g/m'
     | 'm/s'
     | 'cm/s'
     | 'm/s²'
+    | 'cm/s²'
     | 'mmHg'
     | 'ms'
     | 's'
     | 'bpm'
     | 'mL/s'
+    | 'mL/min/kg'
     | 'AU'
     | '°'
-    | 'years';
+    | 'years'
+    | 'mm/mmHg'
+    | 'WU';
   /**
    * Modality the value was defined for (Echo, CT or CMR); CT/CMR values are badged (SME decision 4). Must be one of the parameter's modalities.
    */
@@ -436,17 +456,22 @@ export type Value = {
     | 'g'
     | 'g/m²'
     | 'g/m^2.7'
+    | 'g/m'
     | 'm/s'
     | 'cm/s'
     | 'm/s²'
+    | 'cm/s²'
     | 'mmHg'
     | 'ms'
     | 's'
     | 'bpm'
     | 'mL/s'
+    | 'mL/min/kg'
     | 'AU'
     | '°'
-    | 'years';
+    | 'years'
+    | 'mm/mmHg'
+    | 'WU';
   /**
    * Modality the value was defined for (Echo, CT or CMR); CT/CMR values are badged (SME decision 4). Must be one of the parameter's modalities.
    */
@@ -524,17 +549,22 @@ export type Value = {
     | 'g'
     | 'g/m²'
     | 'g/m^2.7'
+    | 'g/m'
     | 'm/s'
     | 'cm/s'
     | 'm/s²'
+    | 'cm/s²'
     | 'mmHg'
     | 'ms'
     | 's'
     | 'bpm'
     | 'mL/s'
+    | 'mL/min/kg'
     | 'AU'
     | '°'
-    | 'years';
+    | 'years'
+    | 'mm/mmHg'
+    | 'WU';
   /**
    * Modality the value was defined for (Echo, CT or CMR); CT/CMR values are badged (SME decision 4). Must be one of the parameter's modalities.
    */
@@ -612,17 +642,22 @@ export type Value = {
     | 'g'
     | 'g/m²'
     | 'g/m^2.7'
+    | 'g/m'
     | 'm/s'
     | 'cm/s'
     | 'm/s²'
+    | 'cm/s²'
     | 'mmHg'
     | 'ms'
     | 's'
     | 'bpm'
     | 'mL/s'
+    | 'mL/min/kg'
     | 'AU'
     | '°'
-    | 'years';
+    | 'years'
+    | 'mm/mmHg'
+    | 'WU';
   /**
    * Modality the value was defined for (Echo, CT or CMR); CT/CMR values are badged (SME decision 4). Must be one of the parameter's modalities.
    */

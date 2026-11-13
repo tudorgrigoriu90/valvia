@@ -12,7 +12,7 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-44 Plan update: content batch 2026-11-13 |
+| Last completed | CH-58 Units and quantities for values printed in mm/mmHg (RV–PA coupling), W |
 | Next up | CH-45: PH and right heart from ASE 2025 |
 
 ## Next up: R0 sequence
@@ -335,6 +335,7 @@ subcategory from a document already downloaded from asecho.org; leaves that need
 | CH-54 | Content: cardiomyopathies (6.x) from ASE 2025 strain and others | 2 | todo |  |
 | CH-55 | Content: coarctation and acute aortic syndromes (8.6, 10.3) from ASE/EACVI 2015 aorta | 1 | todo |  |
 | CH-56 | Content: paediatric z-scores and HCM in children (15.x) | 1 | todo |  |
+| CH-58 | Units and quantities for values printed in mm/mmHg (RV–PA coupling), Wood units (PVR), g/m (LV mass/height), cm/s² (accelerations) and mL/min/kg (indexed flow) | 1 | done | Needed by CH-45 and earlier deferred values |
 | CH-57 | Content: contrast echocardiography (9.5) from ASE 2018 UEA update | 1 | todo |  |
 
 ## Push log
@@ -458,3 +459,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-10 | CH-42 | LVAD and temporary mechanical support (ASE 2024, which updates the 2015 document): new leaf 6.10 with pre-implant risk markers (LVEF < 25%, LVIDd < 5.5 cm, TV annulus ≥ 41 mm), AR on support (outflow S/D < 5.0), excessive unloading (LV < 3 cm), recovery on LVAD, TMCS and VA ECMO weaning criteria, examination note; 4 parameters | `CH-42: LVAD and temporary mechanical support criteria (ASE 2024)` |
 | 2026-11-10 | CH-43 | Young adult competitive athletes (ASE 2020): LV wall thickness > 15 mm suggests pathology (13–15 mm possible with exercise remodelling), aortic sinus/ascending aorta ≥ 40 mm (men) / ≥ 34 mm (women) uncommon → CTA/CMR, compacted layer < 5 mm with hypertrabeculation, nomogram note; 1 parameter | `CH-43: athlete's heart thresholds (ASE 2020)` |
 | 2026-11-13 | CH-44 | Plan the 2026-11-13 content batch (CH-45 to CH-57): empty leaves fillable from ASE documents already obtained | `CH-44: plan the remaining content from obtained documents` |
+| 2026-11-13 | CH-58 | Schema and unit layer support values printed in mm/mmHg (coupling-ratio), WU (vascular-resistance), g/m (mass-per-height), mL/min/kg (indexed-flow-rate) and cm/s² (acceleration, exact shift to m/s²); generated types; units doc; tests | `CH-58: add units for coupling ratio, Wood units, g/m, cm/s², mL/min/kg` |

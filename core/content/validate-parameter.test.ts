@@ -34,12 +34,12 @@ describe('validateContentFile(parameter) (TS-02.2.1)', () => {
     [
       'unit: cm²',
       'unit: cm2',
-      "unit must be one of: 1, %, mm, cm, mm/m², cm/m², mm², cm², cm²/m², mL, mL/m², g, g/m², g/m^2.7, m/s, cm/s, m/s², mmHg, ms, s, bpm, mL/s, AU, °, years (got 'cm2')",
+      "unit must be one of: 1, %, mm, cm, mm/m², cm/m², mm², cm², cm²/m², mL, mL/m², g, g/m², g/m^2.7, g/m, m/s, cm/s, m/s², cm/s², mmHg, ms, s, bpm, mL/s, mL/min/kg, AU, °, years, mm/mmHg, WU (got 'cm2')",
     ],
     [
       'quantity: area',
       'quantity: surface',
-      "quantity must be one of: dimensionless, ratio, percent, length, indexed-length, area, indexed-area, volume, indexed-volume, mass, indexed-mass, velocity-blood, velocity-tissue, velocity-time-integral, acceleration, pressure, time, heart-rate, flow-rate, calcium-score, angle, age (got 'surface')",
+      "quantity must be one of: dimensionless, ratio, percent, length, indexed-length, area, indexed-area, volume, indexed-volume, mass, indexed-mass, velocity-blood, velocity-tissue, velocity-time-integral, acceleration, pressure, time, heart-rate, flow-rate, calcium-score, angle, age, coupling-ratio, vascular-resistance, mass-per-height, indexed-flow-rate (got 'surface')",
     ],
     ['abbreviation: EROA', 'abbreviation: ""', 'abbreviation must not be empty'],
   ])('rejects %s replaced by %s', (from, to, message) => {

@@ -110,17 +110,22 @@
         "g",
         "g/m²",
         "g/m^2.7",
+        "g/m",
         "m/s",
         "cm/s",
         "m/s²",
+        "cm/s²",
         "mmHg",
         "ms",
         "s",
         "bpm",
         "mL/s",
+        "mL/min/kg",
         "AU",
         "°",
-        "years"
+        "years",
+        "mm/mmHg",
+        "WU"
       ]
     },
     "quantity": {
@@ -147,7 +152,11 @@
         "flow-rate",
         "calcium-score",
         "angle",
-        "age"
+        "age",
+        "coupling-ratio",
+        "vascular-resistance",
+        "mass-per-height",
+        "indexed-flow-rate"
       ]
     },
     "populationQualifiers": {

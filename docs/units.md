@@ -1,7 +1,7 @@
 # Units
 
 > **Purpose:** how values are stored, displayed and compared (decision PO-4, TS-02.2.7, CH-18).
-> **Audience:** engineer, Claude Code sessions, SME. **Last updated:** 2026-11-09 | **Code:** [`core/units/units.ts`](../core/units/units.ts) (100 % coverage)
+> **Audience:** engineer, Claude Code sessions, SME. **Last updated:** 2026-11-13 | **Code:** [`core/units/units.ts`](../core/units/units.ts) (100 % coverage)
 
 ## Rules
 
@@ -43,7 +43,12 @@ flowchart LR
 | `time` | ms, s | ms |
 | `percent` (strain, EF) | % | % |
 | `ratio`, `dimensionless` | 1 | 1 |
-| `acceleration`, `heart-rate`, `flow-rate`, `calcium-score`, `angle`, `age` | m/s², bpm, mL/s, AU, °, years | same |
+| `acceleration` | m/s², cm/s² | m/s² |
+| `heart-rate`, `flow-rate`, `calcium-score`, `angle`, `age` | bpm, mL/s, AU, °, years | same |
+| `coupling-ratio` (e.g. TAPSE/PASP) | mm/mmHg | mm/mmHg |
+| `vascular-resistance` | WU (Wood units) | WU |
+| `mass-per-height` (LV mass/height) | g/m | g/m |
+| `indexed-flow-rate` (e.g. neonatal ventricular output) | mL/min/kg | mL/min/kg |
 
 ## Content rules
 

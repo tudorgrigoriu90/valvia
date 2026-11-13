@@ -44,7 +44,11 @@ export interface Parameter {
     | 'flow-rate'
     | 'calcium-score'
     | 'angle'
-    | 'age';
+    | 'age'
+    | 'coupling-ratio'
+    | 'vascular-resistance'
+    | 'mass-per-height'
+    | 'indexed-flow-rate';
   /**
    * Common unit of the parameter, used to compare values across sources (decision PO-4). Values keep and display their published unit, which may be another unit of the same quantity.
    */
@@ -63,17 +67,22 @@ export interface Parameter {
     | 'g'
     | 'g/m²'
     | 'g/m^2.7'
+    | 'g/m'
     | 'm/s'
     | 'cm/s'
     | 'm/s²'
+    | 'cm/s²'
     | 'mmHg'
     | 'ms'
     | 's'
     | 'bpm'
     | 'mL/s'
+    | 'mL/min/kg'
     | 'AU'
     | '°'
-    | 'years';
+    | 'years'
+    | 'mm/mmHg'
+    | 'WU';
   /**
    * Modalities in which the parameter is measured; each value names one of them.
    *
