@@ -7,3 +7,14 @@ order: 3
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: rv-strain-patterns
+    type: note
+    tag: METH
+    title: RV free wall strain
+    text: 'RV free wall longitudinal strain can detect early regional RV dysfunction before conventional echocardiography. Three deformation patterns are described: type I normal; type II delayed onset of shortening, reduced peak strain and mild post-systolic shortening; type III systolic stretching with large post-systolic shortening. RV mechanical dispersion can stratify arrhythmic risk, though its evidence base is smaller than for the left ventricle.'
+    citation:
+      source: ase-2025-strain
+      locator:
+        figure: '12–13'
+        page: '1004–1005'

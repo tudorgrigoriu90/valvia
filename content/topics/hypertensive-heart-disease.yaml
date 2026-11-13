@@ -7,3 +7,79 @@ order: 6
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: lvh-thresholds
+    type: threshold-list
+    tag: CRIT
+    title: LV hypertrophy
+    values:
+      - parameter: lv-mass-index
+        context: diagnostic-criterion
+        operator: '>'
+        value: 95
+        unit: g/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - 'Upper limits of the ASE chamber quantification normal ranges, as stated in the hypertension recommendations.'
+        citation:
+          source: eacvi-ase-2015-hypertension
+          locator:
+            page: '731'
+      - parameter: lv-mass-index
+        context: diagnostic-criterion
+        operator: '>'
+        value: 115
+        unit: g/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - As above.
+        citation:
+          source: eacvi-ase-2015-hypertension
+          locator:
+            page: '731'
+      - parameter: lv-mass-height-index
+        context: diagnostic-criterion
+        operator: '>'
+        value: 44
+        unit: g/m^2.7
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - Printed as g/ht^2.7.
+        citation:
+          source: eacvi-ase-2015-hypertension
+          locator:
+            page: '731'
+      - parameter: lv-mass-height-index
+        context: diagnostic-criterion
+        operator: '>'
+        value: 48
+        unit: g/m^2.7
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - Printed as g/ht^2.7.
+        citation:
+          source: eacvi-ase-2015-hypertension
+          locator:
+            page: '731'
+  - id: geometry-link
+    type: note
+    tag: METH
+    title: Geometry and severity
+    text: 'LV geometry (normal, concentric remodelling, concentric or eccentric hypertrophy) and the mild-to-severe grades of LV mass are in the LV wall thickness, mass and geometry topic.'
+    citation:
+      source: eacvi-ase-2015-hypertension
+      locator:
+        table: '3, 5'
+        page: '735–736'

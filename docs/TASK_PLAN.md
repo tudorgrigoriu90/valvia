@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-53 Content: endocarditis (3.6) from ASE 2016 embolism |
-| Next up | CH-54: cardiomyopathies (ASE 2025 strain and others) |
+| Last completed | CH-54 Content: cardiomyopathies (6.x) from ASE 2025 strain and others |
+| Next up | CH-55: coarctation and acute aortic syndromes (ASE/EACVI 2015 aorta) |
 
 ## Next up: R0 sequence
 
@@ -332,7 +332,7 @@ subcategory from a document already downloaded from asecho.org; leaves that need
 | CH-51 | Content: prosthetic reference values by model and size (4.1) from ASE 2024 appendix | 3 | blocked | Values are mean ± SD per model and size: needs the catalogue schema (TS-02.2.8) and the copyright assessment of appendix tables (TS-07.2.1) first |
 | CH-52 | Content: masses and thrombus (12.1–12.3) from ASE 2016 embolism | 1 | done |  |
 | CH-53 | Content: endocarditis (3.6) from ASE 2016 embolism | 1 | done |  |
-| CH-54 | Content: cardiomyopathies (6.x) from ASE 2025 strain and others | 2 | todo |  |
+| CH-54 | Content: cardiomyopathies (6.x) from ASE 2025 strain and others | 2 | done |  |
 | CH-55 | Content: coarctation and acute aortic syndromes (8.6, 10.3) from ASE/EACVI 2015 aorta | 1 | todo |  |
 | CH-56 | Content: paediatric z-scores and HCM in children (15.x) | 1 | todo |  |
 | CH-58 | Units and quantities for values printed in mm/mmHg (RV–PA coupling), Wood units (PVR), g/m (LV mass/height), cm/s² (accelerations) and mL/min/kg (indexed flow) | 1 | done | Needed by CH-45 and earlier deferred values |
@@ -468,3 +468,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-13 | CH-50 | Regurgitation after transcatheter interventions (ASE 2019): residual MR grading after transcatheter MV interventions (Table 7: VCW, VCA, EROA, RVol, RF, PISA radius) with integrative note in 4.5.1; residual TR grading after tricuspid interventions (Table 9: VC, PISA radius, EROA, RVol) with qualitative note in 4.5.2 | `CH-50: residual MR and TR grading after transcatheter repair (ASE 2019)` |
 | 2026-11-13 | CH-52 | Masses and thrombus (ASE 2016 embolism): LV thrombus and LA/LAA thrombus recommendations (recommended / potentially useful / not recommended) and timing note; small valve masses (Lambl's excrescences ≤ 2 mm × 3–10 mm, papillary fibroelastoma < 20 mm, Libman-Sacks 1–4 mm); CH-51 marked blocked | `CH-52: thrombus and small-mass criteria (ASE 2016)` |
 | 2026-11-13 | CH-53 | Endocarditis (ASE 2016 embolism): vegetation/abscess features (Table 5) and TTE vs TEE note (Table 4) in 3.6.1; vegetation size > 10 mm and > 15 mm with embolic predictors (Table 6) in 3.6.2; TTE/TEE recommendations in 3.6.3; 1 parameter | `CH-53: endocarditis features, vegetation size and TTE/TEE use (ASE 2016)` |
+| 2026-11-13 | CH-54 | Cardiomyopathies: HFrEF LVEF < 40% and GLS abnormal/borderline as stage B HF marker (6.1), apical sparing ratio > 2 for amyloidosis and strain-pattern note (6.5), ARVC RV strain patterns note (6.4) from ASE 2025 strain; LVH thresholds by sex in g/m² and g/m^2.7 (6.7) from EACVI/ASE 2015 hypertension; 1 parameter | `CH-54: HF strain markers, amyloid apical sparing, LVH thresholds` |

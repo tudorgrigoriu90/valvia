@@ -7,3 +7,33 @@ order: 4
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: apical-sparing
+    type: threshold-list
+    tag: CRIT
+    title: Strain pattern suggesting cardiac amyloidosis
+    values:
+      - parameter: apical-sparing-ratio
+        context: diagnostic-criterion
+        operator: '>'
+        value: 2
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Apical sparing of regional longitudinal strain: mean apical strain more than 2 times the mean of the rest of the heart, in patients with increased LV mass, points towards possible cardiac amyloidosis.'
+        citation:
+          source: ase-2025-strain
+          locator:
+            page: '996'
+  - id: strain-patterns
+    type: note
+    tag: METH
+    title: Other strain patterns
+    text: 'Regional patterns help the aetiological diagnosis of increased LV mass: septal impairment in classical HCM, apical impairment in apical HCM, predominantly basal-to-mid impairment in hypertensive heart disease and prominent apical sparing in amyloidosis; end-stage renal disease can mimic relative apical sparing.'
+    citation:
+      source: ase-2025-strain
+      locator:
+        figure: '6'
+        page: '996'

@@ -7,3 +7,61 @@ order: 0
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: hf-strain
+    type: threshold-list
+    tag: CRIT
+    title: LVEF and global longitudinal strain in heart failure
+    values:
+      - parameter: lvef
+        context: diagnostic-criterion
+        operator: '<'
+        value: 40
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'HF with reduced ejection fraction (HFrEF), as defined in the document.'
+        citation:
+          source: ase-2025-strain
+          locator:
+            page: '996'
+      - parameter: lv-gls
+        context: diagnostic-criterion
+        operator: '>'
+        value: -16
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Printed: abnormal GLS, less negative than 16%. With other echocardiographic abnormalities, a marker of stage B heart failure.'
+        citation:
+          source: ase-2025-strain
+          locator:
+            page: '996'
+      - parameter: lv-gls
+        context: diagnostic-criterion
+        operator: range
+        min: -18
+        max: -16
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Printed: borderline GLS, 16% to 18%. With other echocardiographic abnormalities, a marker of stage B heart failure.'
+        citation:
+          source: ase-2025-strain
+          locator:
+            page: '996'
+  - id: gls-screening
+    type: note
+    tag: METH
+    title: Screening
+    text: GLS is not advised for screening stage A heart failure; it may help to recognise and monitor treatment of stage B. Report GLS in patients with increased LV mass.
+    citation:
+      source: ase-2025-strain
+      locator:
+        page: '996'

@@ -1,0 +1,7 @@
+id: apical-sparing-ratio
+name: Relative apical sparing ratio of longitudinal strain
+quantity: ratio
+unit: '1'
+modalities: [Echo]
+synonyms: [apical sparing, cardiac amyloidosis, bull's-eye, cherry on top]
+method: Mean apical longitudinal strain divided by the mean of the basal and mid segments.
