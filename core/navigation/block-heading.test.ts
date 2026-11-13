@@ -14,6 +14,7 @@ describe('blockHeading (TS-04.2.3)', () => {
     ['criteria-checklist', 'Criteria'],
     ['note', 'Note'],
     ['algorithm-reference', 'Algorithm'],
+    ['parameter-glossary', 'Parameters and abbreviations'],
   ] as const)('falls back to a readable heading for %s blocks', (type, heading) => {
     expect(blockHeading({ id: 'some-id', type } as LoadedBlock)).toBe(heading);
   });

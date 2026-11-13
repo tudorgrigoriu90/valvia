@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-65: Fix the page reference in F8 (journal p. 120, not 'p. 8 of the PDF') |
-| Next task | CH-61: parameter-glossary block type |
+| Last completed task | CH-61: parameter-glossary block type: lists every registered parameter (abbre |
+| Next task | CH-62: content 14.1 glossary leaf |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

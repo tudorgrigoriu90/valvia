@@ -24,6 +24,8 @@ function citationsOf(block: LoadedBlock): Citation[] {
       return block.citation === undefined ? [] : [block.citation];
     case 'algorithm-reference':
       return [block.citation];
+    case 'parameter-glossary':
+      return [];
   }
 }
 

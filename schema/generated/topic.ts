@@ -11,7 +11,13 @@ export type Block = {
    * Block type.
    */
   type:
-    'grading-table' | 'normal-range-table' | 'threshold-list' | 'criteria-checklist' | 'note' | 'algorithm-reference';
+    | 'grading-table'
+    | 'normal-range-table'
+    | 'threshold-list'
+    | 'criteria-checklist'
+    | 'note'
+    | 'algorithm-reference'
+    | 'parameter-glossary';
 } & (
   | GradingTableBlock
   | NormalRangeTableBlock
@@ -19,6 +25,7 @@ export type Block = {
   | CriteriaChecklistBlock
   | NoteBlock
   | AlgorithmReferenceBlock
+  | ParameterGlossaryBlock
 );
 /**
  * One published number (or range) for a parameter, with who it applies to and where it comes from (TS-02.2.2). Stored exactly as published.
@@ -1026,4 +1033,22 @@ export interface AlgorithmReferenceBlock {
    * Direct https link to the algorithm, when available.
    */
   url?: string;
+}
+/**
+ * Generated list of every registered parameter (abbreviation, name, synonyms, unit, modalities) for the glossary leaf (CH-61). Holds no values: the list comes from content/parameters, so it cannot drift.
+ */
+export interface ParameterGlossaryBlock {
+  /**
+   * Stable identifier: lowercase kebab-case, never changed or reused (ADR 0003).
+   */
+  id: string;
+  type: 'parameter-glossary';
+  /**
+   * Taxonomy content tag.
+   */
+  tag: 'METH';
+  /**
+   * Non-empty single-line text.
+   */
+  title?: string;
 }

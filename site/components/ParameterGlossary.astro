@@ -1,0 +1,23 @@
+---
+/** Generated parameter glossary (CH-61): every registered parameter, alphabetically, from content/parameters. */
+import { glossaryEntries } from '../../core/values/glossary';
+import { getContent } from '../lib/content';
+
+const { bundle } = getContent();
+const entries = glossaryEntries(bundle.parameters);
+---
+
+<dl class="glossary">
+  {entries.map((entry) => (
+    <div class="glossary__entry" id={`g-${entry.id}`}>
+      <dt>{entry.term}</dt>
+      <dd>
+        {entry.name !== undefined && <span class="glossary__name">{entry.name}</span>}
+        {entry.synonyms.length > 0 && <span class="glossary__synonyms">Also: {entry.synonyms.join(', ')}</span>}
+        <span class="glossary__meta">
+          {[entry.unit === undefined ? 'no unit' : entry.unit, ...entry.modalities].join(' · ')}
+        </span>
+      </dd>
+    </div>
+  ))}
+</dl>

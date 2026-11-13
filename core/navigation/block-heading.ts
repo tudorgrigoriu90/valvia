@@ -8,6 +8,7 @@ const DEFAULTS: Readonly<Record<LoadedBlock['type'], string>> = {
   'criteria-checklist': 'Criteria',
   note: 'Note',
   'algorithm-reference': 'Algorithm',
+  'parameter-glossary': 'Parameters and abbreviations',
 };
 
 export const blockHeading = (block: LoadedBlock): string => block.title ?? DEFAULTS[block.type];

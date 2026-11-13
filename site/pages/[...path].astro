@@ -5,6 +5,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CriteriaChecklist from '../components/CriteriaChecklist.astro';
 import GradingTable from '../components/GradingTable.astro';
 import JumpMenu from '../components/JumpMenu.astro';
+import ParameterGlossary from '../components/ParameterGlossary.astro';
 import SocietyFilter from '../components/SocietyFilter.astro';
 import Comparisons from '../components/Comparisons.astro';
 import PreviousRecommendations from '../components/PreviousRecommendations.astro';
@@ -101,6 +102,7 @@ const missingCategories =
           {block.type === 'criteria-checklist' && <CriteriaChecklist block={block} />}
           {block.type === 'note' && <p class="note">{block.text}</p>}
           {block.type === 'algorithm-reference' && <AlgorithmReference block={block} />}
+          {block.type === 'parameter-glossary' && <ParameterGlossary />}
           <Comparisons comparisons={comparisons} />
           <PreviousRecommendations items={history} />
           <ReportLink topic={topic.title} section={heading} anchor={block.id} />

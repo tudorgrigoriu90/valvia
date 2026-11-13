@@ -616,6 +616,29 @@
         }
       }
     },
+    "parameterGlossaryBlock": {
+      "description": "Generated list of every registered parameter (abbreviation, name, synonyms, unit, modalities) for the glossary leaf (CH-61). Holds no values: the list comes from content/parameters, so it cannot drift.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "tag"],
+      "properties": {
+        "id": {
+          "description": "Anchor id of the block, unique within the topic (deep links, jump menu).",
+          "$ref": "#/$defs/id"
+        },
+        "type": {
+          "const": "parameter-glossary"
+        },
+        "tag": {
+          "description": "Taxonomy content tag.",
+          "enum": ["METH"]
+        },
+        "title": {
+          "description": "Heading shown above the block.",
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
     "block": {
       "description": "A content block on a leaf topic (TS-02.2.3). The type selects the block shape.",
       "type": "object",
@@ -629,7 +652,8 @@
             "threshold-list",
             "criteria-checklist",
             "note",
-            "algorithm-reference"
+            "algorithm-reference",
+            "parameter-glossary"
           ]
         }
       },
@@ -654,6 +678,9 @@
         },
         {
           "$ref": "#/$defs/algorithmReferenceBlock"
+        },
+        {
+          "$ref": "#/$defs/parameterGlossaryBlock"
         }
       ]
     }

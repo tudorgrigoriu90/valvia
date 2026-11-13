@@ -76,7 +76,7 @@ url: https://academic.oup.com/eurheartj
 
   it('names the allowed types for an unknown block type', () => {
     expect(messages('id: x\ntype: chart\ntag: NORM\n')).toEqual([
-      "2: type must be one of: grading-table, normal-range-table, threshold-list, criteria-checklist, note, algorithm-reference (got 'chart')",
+      "2: type must be one of: grading-table, normal-range-table, threshold-list, criteria-checklist, note, algorithm-reference, parameter-glossary (got 'chart')",
     ]);
   });
 
@@ -106,6 +106,14 @@ url: https://academic.oup.com/eurheartj
     expect(messages('id: method\ntype: note\ntag: GRADE\ntext: x\n')).toEqual([
       "3: tag must be one of: METH, CRIT (got 'GRADE')",
     ]);
+  });
+
+  it('accepts a generated parameter glossary and rejects values or text on it (CH-61)', () => {
+    expect(messages('id: glossary\ntype: parameter-glossary\ntag: METH\ntitle: Parameters\n')).toEqual([]);
+    expect(messages('id: glossary\ntype: parameter-glossary\ntag: METH\ntext: x\n')).toEqual([
+      "4: unknown property 'text'",
+    ]);
+    expect(messages('id: glossary\ntype: parameter-glossary\ntag: GRADE\n').join('\n')).toContain('tag');
   });
 
   it('rejects algorithm references without a citation (always link to the source, never redraw)', () => {

@@ -179,6 +179,7 @@ Leaf topics hold `blocks:` in display order. The `type` selects the block shape 
 | `criteria-checklist` | FEAS · CRIT | `criteria[]`: `text`, optional `category` (favourable · challenging · unsuitable), optional `values`, `citation` | Checklist |
 | `note` | METH · CRIT | `text`, optional `citation` | Paragraph |
 | `algorithm-reference` | ALG | `title`, `citation`, optional https `url` | Link to the source algorithm (never redrawn) |
+| `parameter-glossary` | METH | optional `title`; no values | Generated list of every registered parameter (abbreviation, name, synonyms, comparison unit, modalities) from `content/parameters` (CH-61); used by the 14.1 glossary leaf |
 
 Every block has `id` (anchor, unique within the topic), `type`, `tag` and an optional `title`.
 
