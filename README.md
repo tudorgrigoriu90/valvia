@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-00.2: Record SME decisions in /docs/decisions (✅ answers received 2 Nov 2026 |
-| Next task | TS-05.1.1: breakpoint checks |
+| Last completed task | TS-05.1.1: Breakpoints (360 / 768 / 1024) + real-device test matrix (iOS Safari,  |
+| Next task | TS-06.2.3: source acquisition |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

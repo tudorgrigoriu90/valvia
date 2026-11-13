@@ -42,6 +42,22 @@ Reports: terminal summary, `coverage/index.html`, `coverage/lcov.info`. Exclusio
 Playwright is pinned to the version whose Chromium is installed in the cloud environment (1.63.0).
 On a local machine run `npx playwright install chromium` once.
 
+## Breakpoints and real devices (TS-05.1.1)
+
+The layout is fluid (no width media queries). `tests/e2e/breakpoints.spec.ts` checks it at **360, 768 and 1024 px** on the
+home page, two leaves, the glossary and the status page: no horizontal page scroll, wide tables scroll inside their own
+region, and the category and society switches are at least 44 px tall (`--touch-target`).
+
+Emulation does not replace real devices. Before go-live (and after layout changes) the engineer runs this matrix by hand
+and records the result in the [go-live checklist](runbooks/go-live-checklist.md):
+
+| Device | Browser | Check |
+|---|---|---|
+| iPhone (current and previous iOS) | Safari | Home, one leaf per category, search, category switch, dark mode, add to home screen, offline after one visit |
+| Android phone (current Chrome) | Chrome | Same, plus the "New content available" prompt after a deploy |
+| iPad or Android tablet (768 px) | Safari / Chrome | Tables readable without pinch-zoom; jump menu |
+| Desktop (1024 px and wider) | Chrome, Edge, Firefox, Safari (last 2 versions, NFR-13) | Layout, keyboard navigation, focus visible |
+
 ## Writing tests
 
 - Test behaviour through public functions; name tests as specifications.

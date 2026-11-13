@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-00.2 Record SME decisions in /docs/decisions (✅ answers received 2 Nov 2026 |
-| Next up | TS-05.1.1: breakpoint checks |
+| Last completed | TS-05.1.1 Breakpoints (360 / 768 / 1024) + real-device test matrix (iOS Safari,  |
+| Next up | TS-06.2.3: source acquisition |
 
 ## Next up: R0 sequence
 
@@ -169,7 +169,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 
 | Key | Summary | SP | Status | Notes |
 |---|---|---|---|---|
-| TS-05.1.1 | Breakpoints (360 / 768 / 1024) + real-device test matrix (iOS Safari, Android Chrome) | 3 | todo |  |
+| TS-05.1.1 | Breakpoints (360 / 768 / 1024) + real-device test matrix (iOS Safari, Android Chrome) | 3 | done |  |
 | TS-05.2.1 | Lighthouse CI budgets (LCP, JS weight, CLS) as blocking checks | 2 | done | LCP blocking after CH-15 |
 | TS-05.2.2 | System fonts, SVG-only icons; analytics beacon is the only third-party script | 1 | done |  |
 | TS-05.3.1 | Web app manifest ("Valvia"), icons, installability | 1 | done | PNG icon sizes can be added if a store or older browser needs them |
@@ -523,3 +523,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-13 | CH-63 | Content 14.2 (values exactly as published, indexed values, BSA: Valvia computes none; ASE rTOF advice against DuBois in CHD, cited p. 120) and 14.4 (which documents, disagreements side by side, previous recommendations, review status and weekly correction checks) as notes | `CH-63: add the units and about-the-sources reference leaves` |
 | 2026-11-13 | CH-64 | Content 14.3 key formulas as printed: AS mean gradient, continuity and simplified continuity equation, velocity ratio, % stroke work loss (EACVI/ASE 2017 Table 2, p. 376); SV at an annulus, volumetric RVol/RF/EROA, PISA RFlow/EROA/RVol (ASE 2017 native regurgitation pp. 311–312); display-only note; FT-03.19 done | `CH-64: add the key formulas reference leaf` |
 | 2026-11-13 | TS-00.2 | Decision log completed: SME decisions SME-1 to SME-11 with where each is implemented, open SME questions F2/F3/F5/F7/F8 with current handling, and implementation decisions IMP-1 to IMP-5 for the product owner to confirm | `TS-00.2: complete the decision log` |
+| 2026-11-13 | TS-05.1.1 | Breakpoint E2E at 360/768/1024 px (no horizontal page scroll, tables scroll in their own region, switches ≥ 44 px) found and fixed 36 px category and society switch buttons; real-device matrix (iOS Safari, Android Chrome, tablet, desktop browsers) documented as a manual pre-go-live check | `TS-05.1.1: breakpoint checks and 44 px category and society switches` |
