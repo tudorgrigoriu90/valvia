@@ -72,6 +72,29 @@ The watcher never adds `new-source` itself: drafting (TS-06.2.2) starts only aft
 Titles and journal names are untrusted: line breaks are flattened, HTML escaped and `@` broken with a zero-width space so
 an external title cannot mention anyone. The similarity match is a hint for triage, not a decision.
 
+## Weekly workflow (TS-06.1.1)
+
+[`source-watch.yml`](../.github/workflows/source-watch.yml) runs on Mondays at 05:17 UTC and on demand
+(*Actions → Source watch → Run workflow*):
+
+1. `npx tsx pipeline/watch/cli.ts <dir>` ([`watch.ts`](../pipeline/watch/watch.ts)): PubMed for the window since the last
+   run (14 days on the first run), Crossref errata for every registered DOI, deduplication, one rendered issue per new
+   candidate in `<dir>/issues.json`, updated `pipeline/watch/state.json`.
+2. Creates the labels if missing and opens the issues with `gh issue create` (titles and bodies passed as files and
+   quoted variables, never `${{ }}` expressions).
+3. Commits the state file to `main` as `github-actions[bot]` (`CH-watch: source watcher state <date>`).
+4. On any failure: opens a `watcher-failure` issue with the run link, or comments on the open one. Issues are opened
+   before the state is committed, so a failed commit can repeat issues next week but never loses one.
+
+Requests carry only a generic `User-Agent: valvia-source-watcher`, no e-mail or account. Run it locally with
+`npx tsx pipeline/watch/cli.ts /tmp/watch` (it rewrites `pipeline/watch/state.json`; discard that change unless you mean
+to keep it). The `main` ruleset (TS-01.3.5) must let `github-actions[bot]` push, as for the content audit.
+
+**Dry run on 2026-11-13:** no new PubMed documents in the 14-day window, and 10 erratum/correction notices for 7
+registered sources (ASE 2019 post-intervention regurgitation, ASE 2022 TEE screening, ASE 2023 rheumatic heart disease,
+ASE 2024 neonatal TnECHO, ASE 2025 right heart, ASE 2026 M-TEER, ASE/EACVI 2015 chamber quantification ×2, EAE/ASE 2009
+valve stenosis ×2). The first scheduled run opens these as issues; each needs a check against the seeded values.
+
 ## Status
 
 | Task | Part | Status |
@@ -80,5 +103,5 @@ an external title cannot mention anyone. The similarity match is a hint for tria
 | TS-06.1.2 | PubMed queries | done |
 | TS-06.1.5 | Errata detection (Crossref) | done |
 | TS-06.2.1 | Issue per candidate | done |
-| TS-06.1.1 | Weekly workflow with failure notification | planned |
+| TS-06.1.1 | Weekly workflow with failure notification | done |
 | TS-06.1.3 | Page-change watchers | planned |

@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-06.2.1 Issue per candidate with metadata and mapped affected topics |
-| Next up | TS-06.1.1: weekly watcher workflow with failure notification |
+| Last completed | TS-06.1.1 Scheduled GitHub Action (weekly) with failure notification |
+| Next up | TS-06.1.3: page-change watchers |
 
 ## Next up: R0 sequence
 
@@ -181,7 +181,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 
 | Key | Summary | SP | Status | Notes |
 |---|---|---|---|---|
-| TS-06.1.1 | Scheduled GitHub Action (weekly) with failure notification | 1 | todo |  |
+| TS-06.1.1 | Scheduled GitHub Action (weekly) with failure notification | 1 | done |  |
 | TS-06.1.2 | PubMed E-utilities / Crossref queries: EHJ, EHJ-CI, JASE (+ ESC journals for paediatric/CHD); guideline / recommendation / consensus types; echo keywords | 5 | done |  |
 | TS-06.1.3 | Page-change watchers: ESC guideline list, EACVI recommendations page, ASE guidelines page | 3 | todo |  |
 | TS-06.1.4 | Deduplication and state (JSON state file in repo) | 2 | done |  |
@@ -497,3 +497,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-13 | TS-06.1.2 | PubMed watcher: E-utilities query (ESC/ASE journals × guideline-type × echo/imaging, records added in the watch window, anonymous tool=valvia), shape-checked parsing into candidates with PMID, DOI, journal and ISO date; comments/editorials/letters/errata dropped; fetch injected for tests | `TS-06.1.2: PubMed query for new society imaging documents` |
 | 2026-11-13 | TS-06.1.5 | Errata detection: Crossref 'updates' relations for every registered DOI become candidates linked to the source (kind: erratum/correction/retraction), deduplicated through the state file; first run reports historical notices by design | `TS-06.1.5: detect errata and corrections of registered sources` |
 | 2026-11-13 | TS-06.2.1 | Issue per watcher candidate: title, metadata table with PubMed/DOI links, registered sources it may update (title similarity) or corrects (errata), topics to check with links, next steps; labels source-candidate (+ erratum); untrusted titles sanitised (no mentions, no HTML) | `TS-06.2.1: render one triage issue per source candidate` |
+| 2026-11-13 | TS-06.1.1 | Weekly source-watch workflow (Mondays + manual): runWatch (PubMed window since last run, Crossref errata, dedupe, issues, state), opens one issue per candidate, commits the state as the bot, opens/comments a watcher-failure issue on failure; CLI with retrying fetch and generic User-Agent | `TS-06.1.1: weekly source-watch workflow with failure notification` |
