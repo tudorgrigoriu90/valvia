@@ -14,6 +14,10 @@ export interface Navigation {
   visibleNodes: () => LoadedTopic[];
   isVisible: (id: string) => boolean;
   hasContent: (id: string) => boolean;
+  /** Visible cross-link targets (`seeAlso`) of a topic, in the order listed (CH-67). */
+  seeAlso: (id: string) => LoadedTopic[];
+  /** For an empty leaf whose cross-links lead to topics with content: those topics (a pointer page, CH-67). */
+  pointerTargets: (id: string) => LoadedTopic[];
   visibleLeafCount: (id: string) => number;
   /** Categories (PO-5) of the values in this node and below; a leaf without values uses its population. */
   categories: (id: string) => Category[];
@@ -48,7 +52,15 @@ export function buildNavigation(topics: ReadonlyMap<string, LoadedTopic>): Navig
     leafCounts.set(id, total);
     return total;
   };
-  const isVisible = (id: string): boolean => topics.has(id) && leafCount(id) > 0;
+  const contentVisible = (id: string): boolean => topics.has(id) && leafCount(id) > 0;
+  const pointerTargets = (id: string): LoadedTopic[] => {
+    const topic = topics.get(id);
+    if (topic === undefined || hasContent(id) || children(id).length > 0) return [];
+    return (topic.seeAlso ?? []).filter(contentVisible).map(get);
+  };
+  const hasPointer = (id: string): boolean =>
+    pointerTargets(id).length > 0 || children(id).some((child) => hasPointer(child.id));
+  const isVisible = (id: string): boolean => contentVisible(id) || (topics.has(id) && hasPointer(id));
 
   const leafCategories = (topic: LoadedTopic): Category[] => {
     const values = topicValues(topic);
@@ -100,6 +112,9 @@ export function buildNavigation(topics: ReadonlyMap<string, LoadedTopic>): Navig
     visibleNodes,
     isVisible,
     hasContent,
+    seeAlso: (id) =>
+      (get(id).seeAlso ?? []).filter((target) => isVisible(target) && pointerTargets(target).length === 0).map(get),
+    pointerTargets,
     visibleLeafCount: leafCount,
     categories,
     leafCountIn,

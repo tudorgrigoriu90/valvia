@@ -31,7 +31,7 @@ test('category pages only list children that have content', async ({ page }) => 
 });
 
 test('nodes without content have no page', async ({ request }) => {
-  const response = await request.get('special-populations/');
+  const response = await request.get('special-populations/pregnancy/');
   expect(response.status()).toBe(404);
 });
 

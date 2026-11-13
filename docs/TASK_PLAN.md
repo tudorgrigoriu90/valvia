@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-66 Plan sync: content feature status per leaf, EP-06 tasks that need the  |
-| Next up | TS-06.2.3: open-access link for new documents |
+| Last completed | CH-67 Show taxonomy cross-links: See also lists and pointer pages for empty  |
+| Next up | CH-59: search-engine indexing (when topics are published) |
 
 ## Next up: R0 sequence
 
@@ -136,7 +136,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | FT-03.15 | 10 Aortic disease (W2) | 3 | in progress | 2/3 leaves seeded as draft, SME review pending; 10.2 needs an ESC document |
 | FT-03.16 | 11 Cardio-oncology (W2) | 3 | in progress | 2/2 leaves seeded as draft, SME review pending |
 | FT-03.17 | 12 Cardiac masses & embolic sources (W2) | 3 | in progress | 4/4 leaves seeded as draft, SME review pending |
-| FT-03.18 | 13 Special populations (W2) | 3 | todo | 0/3 leaves; needs ESC documents (pregnancy, athletes partly in ASE 2020) |
+| FT-03.18 | 13 Special populations (W2) | 3 | todo | 0/3 leaves with own values; 13.2 Athletes points to 6.8 (pointer page, CH-67); 13.1 pregnancy needs the ESC 2025 pregnancy PDF; 13.3 points to 1.8, which is still empty |
 | FT-03.19 | 14 Reference & methodology (glossary, units, DuBois BSA, formulas) (W1) | 2 | done | CH-60 to CH-64; BSA convention open as SME question F8 |
 
 ### EP-04: Navigation & lookup UX (MVP)
@@ -350,6 +350,7 @@ cannot drift; the other leaves are short notes, and formulas only from documents
 | CH-62 | Content 14.1 glossary leaf using the generated block | 1 | done | Needs CH-61 |
 | CH-63 | Content 14.2 units and indexation conventions and 14.4 about the sources (notes) | 1 | done | BSA wording waits for F8 |
 | CH-66 | Plan sync: content feature status per leaf, EP-06 tasks that need the Claude credential or settings | 0 | done |  |
+| CH-67 | Show taxonomy cross-links: See also lists and pointer pages for empty leaves that point to a topic with content | 1 | done | Found while syncing FT-03.18: `seeAlso` was stored but never shown |
 | CH-65 | Fix the page reference in F8 (journal p. 120, not 'p. 8 of the PDF') | 0 | done |  |
 | CH-64 | Content 14.3 key formulas transcribed from documents read in the session (rendered-page check) | 2 | done |  |
 
@@ -526,3 +527,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-13 | TS-00.2 | Decision log completed: SME decisions SME-1 to SME-11 with where each is implemented, open SME questions F2/F3/F5/F7/F8 with current handling, and implementation decisions IMP-1 to IMP-5 for the product owner to confirm | `TS-00.2: complete the decision log` |
 | 2026-11-13 | TS-05.1.1 | Breakpoint E2E at 360/768/1024 px (no horizontal page scroll, tables scroll in their own region, switches ≥ 44 px) found and fixed 36 px category and society switch buttons; real-device matrix (iOS Safari, Android Chrome, tablet, desktop browsers) documented as a manual pre-go-live check | `TS-05.1.1: breakpoint checks and 44 px category and society switches` |
 | 2026-11-13 | CH-66 | Plan sync: FT-03.x rows show seeded/total leaves and what each gap needs (mostly ESC/EACVI documents); FT-03.8 blocked on permission; TS-06.3.1 done (template checklist), TS-06.3.2/06.3.6 manual, TS-06.2.2/06.3.4 blocked on the Claude credential, TS-07.4.2 in progress | `CH-66: sync content feature status and EP-06 blockers in the plan` |
+| 2026-11-13 | CH-67 | Taxonomy cross-links shown: See also on topic pages (visible targets, never pointer pages) and pointer pages ('Covered under') for empty leaves whose cross-link leads to content (1.5, 3.2.1.9, 8.11, 8.12, 13.2); pointers do not count as content; Special populations now has a page; topic-list counts only on nodes with children | `CH-67: show taxonomy cross-links and pointer pages` |

@@ -23,7 +23,8 @@ rename a URL by changing `slug` and adding the old one to `formerSlugs`.
   and for the old URLs of all descendants (`pipeline/redirects`).
 - `population`: root 8 (congenital) and 14 (reference) are `both`, root 15 (paediatric) is `paediatric`, all others `adult`.
 - `wave` comes from the root (4.1 is W2).
-- Cross-links (→) are `seeAlso`.
+- Cross-links (→) are `seeAlso`: listed under "See also" on the page; an empty leaf with a cross-link to a topic with
+  content is shown as a pointer page instead of being hidden (CH-67).
 - Every node is `status: draft`; nodes without blocks are hidden on the site until content is added.
 
 ## Source registry

@@ -18,7 +18,7 @@ const base = import.meta.env.BASE_URL;
       <li data-categories={navigation.categories(topic.id).join(' ')}>
         <a href={withBase(base, navigation.urlPath(topic.id))}>
           <span class="topic-list__title">{topic.title}</span>
-          {!navigation.hasContent(topic.id) && (
+          {!navigation.hasContent(topic.id) && navigation.children(topic.id).length > 0 && (
             <span class="topic-list__meta">
               {count} {count === 1 ? 'topic' : 'topics'}
             </span>

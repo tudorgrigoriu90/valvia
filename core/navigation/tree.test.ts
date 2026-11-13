@@ -103,3 +103,52 @@ describe('buildNavigation (TS-04.2.2)', () => {
     expect(() => nav.urlPath('missing')).toThrow("unknown topic 'missing'");
   });
 });
+
+describe('cross-links (CH-67)', () => {
+  const linked = buildNavigation(
+    new Map(
+      [
+        node('cardio', null, 1),
+        node('athlete-heart', 'cardio', 0, { blocks: NOTE, seeAlso: ['athletes'] }),
+        node('special', null, 2),
+        node('athletes', 'special', 0, { seeAlso: ['athlete-heart'] }),
+        node('elderly', 'special', 1, { seeAlso: ['nowhere-yet'] }),
+        node('nowhere-yet', 'cardio', 1),
+        node('valves', null, 3),
+        node('bicuspid', 'valves', 0, { seeAlso: ['nowhere-yet', 'athlete-heart', 'missing'] }),
+      ].map((t) => [t.id, t]),
+    ),
+  );
+
+  it('shows an empty leaf whose cross-link points to a topic with content, as a pointer', () => {
+    expect(linked.pointerTargets('athletes').map((t) => t.id)).toEqual(['athlete-heart']);
+    expect(linked.isVisible('athletes')).toBe(true);
+    expect(linked.isVisible('special')).toBe(true);
+    expect(linked.visibleChildren('special').map((t) => t.id)).toEqual(['athletes']);
+  });
+
+  it('keeps leaves hidden whose cross-links lead nowhere visible', () => {
+    expect(linked.pointerTargets('elderly')).toEqual([]);
+    expect(linked.isVisible('elderly')).toBe(false);
+  });
+
+  it('lists only visible, known cross-link targets', () => {
+    expect(linked.seeAlso('bicuspid').map((t) => t.id)).toEqual(['athlete-heart']);
+    expect(linked.seeAlso('athlete-heart')).toEqual([]);
+  });
+
+  it('never lists a pointer page under see also (it would only point back)', () => {
+    expect(linked.isVisible('athletes')).toBe(true);
+    expect(linked.seeAlso('athlete-heart').map((t) => t.id)).not.toContain('athletes');
+  });
+
+  it('does not count pointers as content (status, leaf counts, search)', () => {
+    expect(linked.hasContent('athletes')).toBe(false);
+    expect(linked.visibleLeafCount('special')).toBe(0);
+    expect(linked.leafCountIn('special', 'adult')).toBe(0);
+  });
+
+  it('does not make a topic with content a pointer', () => {
+    expect(linked.pointerTargets('athlete-heart')).toEqual([]);
+  });
+});

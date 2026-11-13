@@ -13,12 +13,13 @@ test('shows root categories with content as cards that open the category', async
   await expect(page.getByRole('heading', { level: 1, name: 'Valvular heart disease' })).toBeVisible();
 });
 
-test('lists categories without content as in preparation, without links', async ({ page }) => {
+test('shows a category whose only page is a cross-link pointer as a card (CH-67)', async ({ page }) => {
   await page.goto('./');
-  const upcoming = page.getByRole('region', { name: 'In preparation' });
-  // Stays empty until ESC documents are supplied (no ASE source covers it).
-  await expect(upcoming).toContainText('Special populations');
-  await expect(upcoming.getByRole('link')).toHaveCount(0);
+  // Special populations has no values of its own; its Athletes leaf points to 6.8, so the category has a page.
+  const categories = page.getByRole('region', { name: 'Categories' });
+  await expect(categories.getByRole('link', { name: /Special populations/ })).toBeVisible();
+  // Every root has at least one page since 2026-11-13, so nothing is listed as in preparation.
+  await expect(page.getByRole('region', { name: 'In preparation' })).toHaveCount(0);
 });
 
 test('reaches a leaf in 3 taps or fewer from home for the populated tree', async ({ page }) => {

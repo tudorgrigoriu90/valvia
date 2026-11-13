@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-66: Plan sync: content feature status per leaf, EP-06 tasks that need the  |
-| Next task | TS-06.2.3: open-access link for new documents |
+| Last completed task | CH-67: Show taxonomy cross-links: See also lists and pointer pages for empty  |
+| Next task | CH-59: search-engine indexing (when topics are published) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

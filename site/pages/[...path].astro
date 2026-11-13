@@ -42,6 +42,8 @@ const context = navigation
   .map((node) => node.title)
   .join(' › ');
 const children = navigation.visibleChildren(topic.id);
+const pointers = navigation.pointerTargets(topic.id);
+const related = navigation.seeAlso(topic.id);
 const blocks = topic.blocks ?? [];
 const review = reviewStatus(topic);
 const sections = leafView(topic, bundle);
@@ -72,6 +74,13 @@ const missingCategories =
       </p>
     )}
     {children.length > 0 && <TopicList topics={children} />}
+    {pointers.length > 0 && (
+      <section class="pointer" aria-labelledby="pointer-heading">
+        <h2 id="pointer-heading">Covered under</h2>
+        <p>This topic has no values of its own; they are shown on:</p>
+        <TopicList topics={pointers} />
+      </section>
+    )}
     {missingCategories.map(({ id, label }) => (
       <p class="category-notice" data-category-notice={id}>
         No {label} values on this page yet. Values here are for: {presentLabels.join(', ')}.
@@ -109,5 +118,11 @@ const missingCategories =
         </section>
       );
     })}
+    {related.length > 0 && pointers.length === 0 && (
+      <nav class="see-also" aria-labelledby="see-also-heading">
+        <h2 id="see-also-heading">See also</h2>
+        <TopicList topics={related} />
+      </nav>
+    )}
   </article>
 </Base>
