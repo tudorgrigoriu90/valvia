@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-50: Content: regurgitation after transcatheter interventions (4.5) from AS |
-| Next task | CH-51: prosthetic reference values by model and size (ASE 2024) |
+| Last completed task | CH-52: Content: masses and thrombus (12.1–12.3) from ASE 2016 embolism |
+| Next task | CH-53: endocarditis (ASE 2016) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

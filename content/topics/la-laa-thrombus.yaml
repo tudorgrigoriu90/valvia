@@ -7,3 +7,27 @@ order: 1
 population: adult
 wave: W2
 status: draft
+blocks:
+  - id: la-thrombus-recs
+    type: criteria-checklist
+    tag: CRIT
+    title: Echocardiography for suspected LA or LAA thrombus
+    criteria:
+      - text: 'Recommended: TTE to assess LA size, LV size and function, and causes of atrial fibrillation and other stroke risk factors. TEE is superior for LAA anatomy and function, e.g. before cardioversion, ablation or LAA closure.'
+        category: favourable
+        citation:
+          source: ase-2016-cardiac-source-of-embolism
+          locator:
+            page: '14'
+      - text: 'Potentially useful: contrast echocardiography to detect LA and LAA thrombi and tell avascular thrombi from vascular tumours; 3D echocardiography for LA and LAA size and morphology.'
+        category: challenging
+        citation:
+          source: ase-2016-cardiac-source-of-embolism
+          locator:
+            page: '14'
+      - text: Not recommended when the results will not guide therapeutic decisions.
+        category: unsuitable
+        citation:
+          source: ase-2016-cardiac-source-of-embolism
+          locator:
+            page: '14'

@@ -7,3 +7,36 @@ order: 0
 population: adult
 wave: W2
 status: draft
+blocks:
+  - id: lv-thrombus-recs
+    type: criteria-checklist
+    tag: CRIT
+    title: Echocardiography for suspected LV thrombus
+    criteria:
+      - text: 'Recommended: TTE in patients with conditions predisposing to LV thrombus (myocardial infarction, non-ischaemic cardiomyopathy). TTE is typically superior to TEE for LV apical thrombus.'
+        category: favourable
+        citation:
+          source: ase-2016-cardiac-source-of-embolism
+          locator:
+            page: '16'
+      - text: 'Potentially useful: contrast echocardiography (microbubble agents) to detect LV thrombi and to tell avascular thrombi from vascular tumours; 3D echocardiography for a more precise assessment.'
+        category: challenging
+        citation:
+          source: ase-2016-cardiac-source-of-embolism
+          locator:
+            page: '16'
+      - text: Not recommended when the results will not guide therapeutic decisions.
+        category: unsuitable
+        citation:
+          source: ase-2016-cardiac-source-of-embolism
+          locator:
+            page: '16'
+  - id: lv-thrombus-timing
+    type: note
+    tag: METH
+    title: Timing after myocardial infarction
+    text: 'LV thrombi can form as early as 24 hours after an acute myocardial infarction; most (90%) form within 14 days.'
+    citation:
+      source: ase-2016-cardiac-source-of-embolism
+      locator:
+        page: '14'

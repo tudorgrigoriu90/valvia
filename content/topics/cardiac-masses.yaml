@@ -7,3 +7,24 @@ order: 2
 population: adult
 wave: W2
 status: draft
+blocks:
+  - id: small-valve-masses
+    type: criteria-checklist
+    tag: CRIT
+    title: Small valve-related masses
+    criteria:
+      - text: "Valvular strands and Lambl's excrescences: filiform structures with undulating motion, width ≤ 2 mm and length about 3–10 mm, at the line of leaflet closure; usually multiple, left-sided (atrial side of the MV, ventricular side of the aortic valve)."
+        citation:
+          source: ase-2016-cardiac-source-of-embolism
+          locator:
+            page: '21'
+      - text: "Papillary fibroelastoma: mobile tumour with a dense central stalk and frond-like extensions ('sea anemone'), usually < 20 mm (mean 8–9 mm), solitary in > 90%; left-sided mobile tumours with stalks are strongly associated with embolism. Sensitivity about 62% for TTE and 77% for TEE."
+        citation:
+          source: ase-2016-cardiac-source-of-embolism
+          locator:
+            page: '27'
+      - text: 'Libman-Sacks (verrucous) endocarditis: usually small (1–4 mm) rounded verrucae without valve destruction, typically on the free edges of the mitral leaflets; seen in up to 43% of patients with systemic lupus on TEE.'
+        citation:
+          source: ase-2016-cardiac-source-of-embolism
+          locator:
+            page: '19'
