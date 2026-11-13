@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-05.1.1 Breakpoints (360 / 768 / 1024) + real-device test matrix (iOS Safari,  |
-| Next up | TS-06.2.3: source acquisition |
+| Last completed | CH-66 Plan sync: content feature status per leaf, EP-06 tasks that need the  |
+| Next up | TS-06.2.3: open-access link for new documents |
 
 ## Next up: R0 sequence
 
@@ -119,24 +119,24 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 |---|---|---|---|---|
 | TS-03.0.1 | Content YAML templates + content guide (modelling, citing, units, history, modality, paediatric values) | 2 | done |  |
 | TS-03.0.2 | Content status page (per node: draft / in review / published; wave) | 2 | done |  |
-| FT-03.1 | 1 Chamber size & function (W1) | 8 | in progress | Chamber, LV/RV/LA strain done |
-| FT-03.2 | 2 Diastolic function & filling pressures (W1) | 5 | in progress | Diastolic (ASE 2025): 2.1 and 2.2 done; special populations and HFpEF pending |
-| FT-03.3 | 3.1 VHD: aortic valve (incl. TAVI considerations, AR TAVI) (W1) | 10 | in progress | AR and AS grading done (ASE/EACVI); intervention thresholds and TAVI pending ESC |
-| FT-03.4 | 3.2 VHD: mitral valve (primary/secondary MR, TEER feasibility, repair likelihood, MS, MAC) (W1) | 10 | in progress | Primary MR (ASE 2017) done; ESC/EACVI and CMR values pending document access |
-| FT-03.5 | 3.3–3.5 VHD: tricuspid, pulmonary, multiple & mixed (W1) | 5 | in progress | TR, PR, TS, PS done (ASE) |
-| FT-03.6 | 3.6 VHD: infective endocarditis (W1) | 3 | todo |  |
-| FT-03.7 | 4.2–4.6 Prosthetic valves & valve interventions (grading, PPM, post-repair, BVD) (W1) | 8 | in progress | Prosthetic grading (ASE 2024) done; reference values by model (4.1) pending |
-| FT-03.8 | 4.1 Prosthetic valve reference values by model and size (W2) | 8 | todo |  |
-| FT-03.9 | 5 Pulmonary hypertension & right heart (W1) | 6 | in progress | Right heart (ASE 2025) done; PH probability and ESC/ERS 2022 pending |
-| FT-03.10 | 6 Cardiomyopathies & heart failure (W1) | 8 | in progress | HCM (ASE 2022) done; other cardiomyopathies pending ESC 2023 |
-| FT-03.11 | 7 Pericardial disease (W1) | 3 | in progress | Pericardial (ASE 2013): 7.1-7.3 done; 7.4 pending ESC 2025 |
-| FT-03.12 | 8 Congenital heart disease, paediatric & adult (W2) | 10 | todo |  |
-| FT-03.13 | 15 Paediatric echocardiography (normal values, function, PH, cardiomyopathies) (W2) | 8 | todo |  |
-| FT-03.14 | 9 Stress echocardiography (W2) | 5 | todo |  |
-| FT-03.15 | 10 Aortic disease (W2) | 3 | todo |  |
-| FT-03.16 | 11 Cardio-oncology (W2) | 3 | todo |  |
-| FT-03.17 | 12 Cardiac masses & embolic sources (W2) | 3 | todo |  |
-| FT-03.18 | 13 Special populations (W2) | 3 | todo |  |
+| FT-03.1 | 1 Chamber size & function (W1) | 8 | in progress | 9/12 leaves seeded as draft, SME review pending; 1.1.4, 1.5, 1.8 need ESC/EACVI documents |
+| FT-03.2 | 2 Diastolic function & filling pressures (W1) | 5 | in progress | 5/5 leaves seeded as draft, SME review pending |
+| FT-03.3 | 3.1 VHD: aortic valve (incl. TAVI considerations, AR TAVI) (W1) | 10 | in progress | 6/10 leaves seeded as draft, SME review pending; 3.1.1.6, 3.1.2.2, 3.1.2.3, 3.1.3 need ESC/EACVI documents |
+| FT-03.4 | 3.2 VHD: mitral valve (primary/secondary MR, TEER feasibility, repair likelihood, MS, MAC) (W1) | 10 | in progress | 5/14 leaves seeded as draft, SME review pending; nine leaves (e.g. TEER feasibility, MS, MAC) need ESC/EACVI documents |
+| FT-03.5 | 3.3–3.5 VHD: tricuspid, pulmonary, multiple & mixed (W1) | 5 | in progress | 5/8 leaves seeded as draft, SME review pending; 3.3.3, 3.3.4, 3.5 need ESC/EACVI documents |
+| FT-03.6 | 3.6 VHD: infective endocarditis (W1) | 3 | in progress | 4/4 leaves seeded as draft, SME review pending (incl. 3.7 rheumatic) |
+| FT-03.7 | 4.2–4.6 Prosthetic valves & valve interventions (grading, PPM, post-repair, BVD) (W1) | 8 | in progress | 9/12 leaves seeded as draft, SME review pending; 4.2.4, 4.5.3, 4.6 need ESC/EACVI documents |
+| FT-03.8 | 4.1 Prosthetic valve reference values by model and size (W2) | 8 | blocked | 0/5 leaves; catalogue schema done (TS-02.2.8); data waits for publisher permission (CH-51) |
+| FT-03.9 | 5 Pulmonary hypertension & right heart (W1) | 6 | in progress | 4/7 leaves seeded as draft, SME review pending; 5.5–5.7 need ESC/ERS documents |
+| FT-03.10 | 6 Cardiomyopathies & heart failure (W1) | 8 | in progress | 10/13 leaves seeded as draft, SME review pending; 6.3, 6.6, 6.9 need ESC documents |
+| FT-03.11 | 7 Pericardial disease (W1) | 3 | in progress | 3/4 leaves seeded as draft, SME review pending; 7.4 needs ESC 2025 |
+| FT-03.12 | 8 Congenital heart disease, paediatric & adult (W2) | 10 | in progress | 5/15 leaves seeded as draft, SME review pending; ten leaves need ESC/ASE CHD documents not yet obtained |
+| FT-03.13 | 15 Paediatric echocardiography (normal values, function, PH, cardiomyopathies) (W2) | 8 | in progress | 3/6 leaves seeded as draft, SME review pending; 15.2–15.4 need cited z-score datasets or ESC documents |
+| FT-03.14 | 9 Stress echocardiography (W2) | 5 | in progress | 6/6 leaves seeded as draft, SME review pending |
+| FT-03.15 | 10 Aortic disease (W2) | 3 | in progress | 2/3 leaves seeded as draft, SME review pending; 10.2 needs an ESC document |
+| FT-03.16 | 11 Cardio-oncology (W2) | 3 | in progress | 2/2 leaves seeded as draft, SME review pending |
+| FT-03.17 | 12 Cardiac masses & embolic sources (W2) | 3 | in progress | 4/4 leaves seeded as draft, SME review pending |
+| FT-03.18 | 13 Special populations (W2) | 3 | todo | 0/3 leaves; needs ESC documents (pregnancy, athletes partly in ASE 2020) |
 | FT-03.19 | 14 Reference & methodology (glossary, units, DuBois BSA, formulas) (W1) | 2 | done | CH-60 to CH-64; BSA convention open as SME question F8 |
 
 ### EP-04: Navigation & lookup UX (MVP)
@@ -187,15 +187,15 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-06.1.4 | Deduplication and state (JSON state file in repo) | 2 | done |  |
 | TS-06.1.5 | Errata/corrigendum detection for registered sources (Crossref update relations) | 3 | done |  |
 | TS-06.2.1 | Issue per candidate with metadata and mapped affected topics | 3 | done |  |
-| TS-06.2.2 | Claude Code GitHub Action triggered by `new-source` label; prompt references `CLAUDE.md` content rules; monthly spending cap | 3 | todo |  |
+| TS-06.2.2 | Claude Code GitHub Action triggered by `new-source` label; prompt references `CLAUDE.md` content rules; monthly spending cap | 3 | blocked | Needs the Claude credential as a repository secret (TS-08.3, manual) |
 | TS-06.2.3 | Source acquisition: download open-access PDF, else request attachment in the issue | 2 | todo |  |
 | TS-06.2.4 | Clinical change-summary generator for the PR body | 3 | done |  |
-| TS-06.3.1 | Content PR template with reviewer checklist ("values match source", "population/units correct", "discrepancies labelled", "history correct") | 1 | todo |  |
-| TS-06.3.2 | Enable auto-merge on content PRs once approved and green | 1 | todo |  |
+| TS-06.3.1 | Content PR template with reviewer checklist ("values match source", "population/units correct", "discrepancies labelled", "history correct") | 1 | done | The content PR template (TS-01.2.5) has the reviewer checklist; wording updated for PO-4 in TS-06.2.4 |
+| TS-06.3.2 | Enable auto-merge on content PRs once approved and green | 1 | manual | Repository setting "Allow auto-merge" plus the main ruleset (TS-01.3.5) by the engineer |
 | TS-06.3.3 | Stale-PR reminder and escalation job | 2 | done |  |
-| TS-06.3.4 | Verification run: fresh Claude context re-reads the source and compares every changed value; required status check; the SME can override a false mismatch with a PR comment | 3 | todo |  |
+| TS-06.3.4 | Verification run: fresh Claude context re-reads the source and compares every changed value; required status check; the SME can override a false mismatch with a PR comment | 3 | blocked | Needs the Claude credential (TS-08.3) and the reviewer persona (TS-06.3.6) |
 | TS-06.3.5 | SME quick guide (1 page): reviewing a content PR in the GitHub mobile app | 1 | done |  |
-| TS-06.3.6 | Claude clinical-reviewer persona (built and maintained by the engineer with SME input): echocardiography-expert review prompt and checklist, run as the verification run on every content PR; second reviewer, advisory only, never approves | 2 | todo |  |
+| TS-06.3.6 | Claude clinical-reviewer persona (built and maintained by the engineer with SME input): echocardiography-expert review prompt and checklist, run as the verification run on every content PR; second reviewer, advisory only, never approves | 2 | manual | Engineer with SME input |
 | TS-06.4.1 | Auto-generated "What's new" page from merged content PRs | 3 | done |  |
 | TS-06.4.2 | Audit trail: approver, timestamp, source recorded in CHANGELOG + Git history | 1 | done |  |
 | TS-06.4.3 | Rollback runbook (revert PR → redeploy) | 1 | done | Delivered as [`docs/runbooks/emergency-rollback.md`](runbooks/emergency-rollback.md) in TS-08.6 |
@@ -212,7 +212,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-07.3.1 | Hazard log (wrong value, wrong unit or conversion, missing indexation, adult value shown for a child, superseded value shown as current, wrong population) + mitigations | 2 | done |  |
 | TS-07.3.2 | Pre-release content audit per wave: 100 % of values verified by the verification run and approved; SME spot-checks a random 10 % sample against the PDFs | 3 | todo |  |
 | TS-07.4.1 | Manual screen-reader pass (VoiceOver, TalkBack) | 2 | todo |  |
-| TS-07.4.2 | Playwright E2E at mobile viewport (browse, search, compare, history, adult/paediatric switch, prosthetic picker, offline) | 3 | todo |  |
+| TS-07.4.2 | Playwright E2E at mobile viewport (browse, search, compare, history, adult/paediatric switch, prosthetic picker, offline) | 3 | in progress | Browse, search, category switch, offline, breakpoints covered at 360 px; compare and history have no real data yet (fixture tests TS-02.4.3); picker blocked (TS-04.7.4) |
 | TS-07.5.1 | Cookieless analytics + privacy notice | 1 | done |  |
 
 ### EP-08: Engineer setup, release & operations (MVP)
@@ -349,6 +349,7 @@ cannot drift; the other leaves are short notes, and formulas only from documents
 | CH-61 | `parameter-glossary` block type: lists every registered parameter (abbreviation, name, synonyms, quantity unit) | 1 | done |  |
 | CH-62 | Content 14.1 glossary leaf using the generated block | 1 | done | Needs CH-61 |
 | CH-63 | Content 14.2 units and indexation conventions and 14.4 about the sources (notes) | 1 | done | BSA wording waits for F8 |
+| CH-66 | Plan sync: content feature status per leaf, EP-06 tasks that need the Claude credential or settings | 0 | done |  |
 | CH-65 | Fix the page reference in F8 (journal p. 120, not 'p. 8 of the PDF') | 0 | done |  |
 | CH-64 | Content 14.3 key formulas transcribed from documents read in the session (rendered-page check) | 2 | done |  |
 
@@ -524,3 +525,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-13 | CH-64 | Content 14.3 key formulas as printed: AS mean gradient, continuity and simplified continuity equation, velocity ratio, % stroke work loss (EACVI/ASE 2017 Table 2, p. 376); SV at an annulus, volumetric RVol/RF/EROA, PISA RFlow/EROA/RVol (ASE 2017 native regurgitation pp. 311–312); display-only note; FT-03.19 done | `CH-64: add the key formulas reference leaf` |
 | 2026-11-13 | TS-00.2 | Decision log completed: SME decisions SME-1 to SME-11 with where each is implemented, open SME questions F2/F3/F5/F7/F8 with current handling, and implementation decisions IMP-1 to IMP-5 for the product owner to confirm | `TS-00.2: complete the decision log` |
 | 2026-11-13 | TS-05.1.1 | Breakpoint E2E at 360/768/1024 px (no horizontal page scroll, tables scroll in their own region, switches ≥ 44 px) found and fixed 36 px category and society switch buttons; real-device matrix (iOS Safari, Android Chrome, tablet, desktop browsers) documented as a manual pre-go-live check | `TS-05.1.1: breakpoint checks and 44 px category and society switches` |
+| 2026-11-13 | CH-66 | Plan sync: FT-03.x rows show seeded/total leaves and what each gap needs (mostly ESC/EACVI documents); FT-03.8 blocked on permission; TS-06.3.1 done (template checklist), TS-06.3.2/06.3.6 manual, TS-06.2.2/06.3.4 blocked on the Claude credential, TS-07.4.2 in progress | `CH-66: sync content feature status and EP-06 blockers in the plan` |

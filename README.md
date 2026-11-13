@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-05.1.1: Breakpoints (360 / 768 / 1024) + real-device test matrix (iOS Safari,  |
-| Next task | TS-06.2.3: source acquisition |
+| Last completed task | CH-66: Plan sync: content feature status per leaf, EP-06 tasks that need the  |
+| Next task | TS-06.2.3: open-access link for new documents |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
