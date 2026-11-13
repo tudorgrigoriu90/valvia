@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-06.2.4: Clinical change-summary generator for the PR body |
-| Next task | TS-06.3.3: stale content PR reminder |
+| Last completed task | TS-06.3.3: Stale-PR reminder and escalation job |
+| Next task | TS-06.3.5: SME quick guide |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

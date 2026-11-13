@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-06.2.4 Clinical change-summary generator for the PR body |
-| Next up | TS-06.3.3: stale content PR reminder |
+| Last completed | TS-06.3.3 Stale-PR reminder and escalation job |
+| Next up | TS-06.3.5: SME quick guide |
 
 ## Next up: R0 sequence
 
@@ -192,7 +192,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-06.2.4 | Clinical change-summary generator for the PR body | 3 | done |  |
 | TS-06.3.1 | Content PR template with reviewer checklist ("values match source", "population/units correct", "discrepancies labelled", "history correct") | 1 | todo |  |
 | TS-06.3.2 | Enable auto-merge on content PRs once approved and green | 1 | todo |  |
-| TS-06.3.3 | Stale-PR reminder and escalation job | 2 | todo |  |
+| TS-06.3.3 | Stale-PR reminder and escalation job | 2 | done |  |
 | TS-06.3.4 | Verification run: fresh Claude context re-reads the source and compares every changed value; required status check; the SME can override a false mismatch with a PR comment | 3 | todo |  |
 | TS-06.3.5 | SME quick guide (1 page): reviewing a content PR in the GitHub mobile app | 1 | todo |  |
 | TS-06.3.6 | Claude clinical-reviewer persona (built and maintained by the engineer with SME input): echocardiography-expert review prompt and checklist, run as the verification run on every content PR; second reviewer, advisory only, never approves | 2 | todo |  |
@@ -500,3 +500,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-13 | TS-06.1.1 | Weekly source-watch workflow (Mondays + manual): runWatch (PubMed window since last run, Crossref errata, dedupe, issues, state), opens one issue per candidate, commits the state as the bot, opens/comments a watcher-failure issue on failure; CLI with retrying fetch and generic User-Agent | `TS-06.1.1: weekly source-watch workflow with failure notification` |
 | 2026-11-13 | TS-06.1.3 | Page watchers for the ASE and ESC guideline lists: document links matched per page, new links reported as candidates (url key), first run records a baseline instead of reporting, duplicate anchors merged with the best title, a page with no document link fails the run; integrated into the weekly run and issues (Page row) | `TS-06.1.3: watch the ASE and ESC guideline pages for new documents` |
 | 2026-11-13 | TS-06.2.4 | Clinical change summary for content PRs: base vs head content compared value by value (identity: topic, block, parameter, context, grade, technique, modality, population, source); added/removed/changed rows in the PR template columns, topic status and source registry changes; workflow posts one sticky comment per PR; PR template updated (PO-4 wording) | `TS-06.2.4: generate the clinical change summary for content PRs` |
+| 2026-11-13 | TS-06.3.3 | Stale content PR job (daily): content/source PRs idle 7 days get a reminder comment, PRs open 14 days get the review-overdue label once with an escalation comment; drafts and code branches ignored; pure decision logic + thin workflow | `TS-06.3.3: remind and escalate stale content PRs` |
