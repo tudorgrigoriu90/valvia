@@ -7,3 +7,33 @@ order: 4
 population: paediatric
 wave: W2
 status: draft
+blocks:
+  - id: hcm-children
+    type: threshold-list
+    tag: CRIT
+    title: Hypertrophic cardiomyopathy in children
+    values:
+      - parameter: lv-wall-thickness-z-score
+        context: diagnostic-criterion
+        operator: '>'
+        value: 2
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - 'Because of somatic growth no single cut-off applies across ages and sizes; hypertrophy is diagnosed at a z score > 2.'
+        citation:
+          source: ase-2022-hcm
+          locator:
+            page: '535'
+  - id: phenocopies-children
+    type: note
+    tag: METH
+    title: Phenocopies
+    text: An abnormal increase in LV wall thickness in childhood is uncommon and should prompt consideration of phenocopies (e.g. Danon disease with massive concentric LVH) or double gene mutations; hypertrophy usually accelerates in adolescence.
+    citation:
+      source: ase-2022-hcm
+      locator:
+        table: '1'
+        page: '535'

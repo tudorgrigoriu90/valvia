@@ -1,0 +1,7 @@
+id: measurement-z-score
+name: Z score of a cardiac measurement
+quantity: dimensionless
+unit: '1'
+modalities: [Echo]
+synonyms: [z-score, Z score, standard deviation score, paediatric normal values]
+method: Number of standard deviations from the size-adjusted mean (Valvia does not calculate z-scores).

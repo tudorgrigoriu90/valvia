@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-55: Content: coarctation and acute aortic syndromes (8.6, 10.3) from ASE/E |
-| Next task | CH-56: paediatric z-scores and HCM in children |
+| Last completed task | CH-56: Content: paediatric z-scores and HCM in children (15.x) |
+| Next task | CH-57: contrast echocardiography (ASE 2018 UEA) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

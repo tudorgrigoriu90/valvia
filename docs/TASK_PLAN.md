@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-55 Content: coarctation and acute aortic syndromes (8.6, 10.3) from ASE/E |
-| Next up | CH-56: paediatric z-scores and HCM in children |
+| Last completed | CH-56 Content: paediatric z-scores and HCM in children (15.x) |
+| Next up | CH-57: contrast echocardiography (ASE 2018 UEA) |
 
 ## Next up: R0 sequence
 
@@ -334,7 +334,7 @@ subcategory from a document already downloaded from asecho.org; leaves that need
 | CH-53 | Content: endocarditis (3.6) from ASE 2016 embolism | 1 | done |  |
 | CH-54 | Content: cardiomyopathies (6.x) from ASE 2025 strain and others | 2 | done |  |
 | CH-55 | Content: coarctation and acute aortic syndromes (8.6, 10.3) from ASE/EACVI 2015 aorta | 1 | done |  |
-| CH-56 | Content: paediatric z-scores and HCM in children (15.x) | 1 | todo |  |
+| CH-56 | Content: paediatric z-scores and HCM in children (15.x) | 1 | done |  |
 | CH-58 | Units and quantities for values printed in mm/mmHg (RV–PA coupling), Wood units (PVR), g/m (LV mass/height), cm/s² (accelerations) and mL/min/kg (indexed flow) | 1 | done | Needed by CH-45 and earlier deferred values |
 | CH-57 | Content: contrast echocardiography (9.5) from ASE 2018 UEA update | 1 | todo |  |
 
@@ -470,3 +470,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-13 | CH-53 | Endocarditis (ASE 2016 embolism): vegetation/abscess features (Table 5) and TTE vs TEE note (Table 4) in 3.6.1; vegetation size > 10 mm and > 15 mm with embolic predictors (Table 6) in 3.6.2; TTE/TEE recommendations in 3.6.3; 1 parameter | `CH-53: endocarditis features, vegetation size and TTE/TEE use (ASE 2016)` |
 | 2026-11-13 | CH-54 | Cardiomyopathies: HFrEF LVEF < 40% and GLS abnormal/borderline as stage B HF marker (6.1), apical sparing ratio > 2 for amyloidosis and strain-pattern note (6.5), ARVC RV strain patterns note (6.4) from ASE 2025 strain; LVH thresholds by sex in g/m² and g/m^2.7 (6.7) from EACVI/ASE 2015 hypertension; 1 parameter | `CH-54: HF strain markers, amyloid apical sparing, LVH thresholds` |
 | 2026-11-13 | CH-55 | Acute aortic syndromes (ASE/EACVI 2015): dissection definitions (Table 7), IMH wall thickness > 0.5 cm with Table 11 features, TTE/TEE note (10.3); coarctation key points (Table 25, 8.6); 1 parameter | `CH-55: aortic dissection, IMH and coarctation criteria (ASE/EACVI 2015)` |
+| 2026-11-13 | CH-56 | Paediatric: z-score normal limits (−2 to +2) and z-score model note (ASE 2024 paediatric TTE, registered from PubMed via E-utilities) in 15.1; HCM in children (wall thickness z > 2) and phenocopy note (ASE 2022 HCM) in 15.5; 2 parameters | `CH-56: paediatric z-score limits and HCM in children` |

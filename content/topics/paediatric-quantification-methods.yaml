@@ -7,3 +7,34 @@ order: 0
 population: paediatric
 wave: W2
 status: draft
+blocks:
+  - id: z-score-limits
+    type: normal-range-table
+    tag: NORM
+    title: Normal limits as z scores
+    values:
+      - parameter: measurement-z-score
+        context: normal-range
+        operator: range
+        min: -2
+        max: 2
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: paediatric
+        caveats:
+          - A z score of +2 or −2 (two SDs above or below the size-adjusted mean) is usually taken as the threshold for normal in children. Valvia does not calculate z scores.
+        citation:
+          source: ase-2024-paediatric-tte
+          locator:
+            page: '127'
+  - id: z-score-models
+    type: note
+    tag: METH
+    title: Choosing a z-score model
+    text: 'Published models (e.g. Pediatric Heart Network, Boston, Italy, Detroit) can give different z scores for the same measurement, especially for small structures such as coronary arteries: use the same model to follow growth in a patient. Normal references extrapolate poorly to premature babies, obese children (adiposity distorts the BSA relationship) and congenital heart disease.'
+    citation:
+      source: ase-2024-paediatric-tte
+      locator:
+        table: '12'
+        page: '127, 145'

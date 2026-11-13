@@ -1,0 +1,6 @@
+id: lv-wall-thickness-z-score
+name: LV wall thickness z score
+quantity: dimensionless
+unit: '1'
+modalities: [Echo]
+synonyms: [paediatric HCM, LV hypertrophy in children, z-score]
