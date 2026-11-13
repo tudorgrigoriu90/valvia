@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-06.3.5: SME quick guide (1 page): reviewing a content PR in the GitHub mobile  |
-| Next task | FT-03.19: reference and methodology leaves |
+| Last completed task | CH-60: Plan update: methodology leaves; SME question F8 (BSA formula) |
+| Next task | CH-61: parameter-glossary block type |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

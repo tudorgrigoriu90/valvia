@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-06.3.5 SME quick guide (1 page): reviewing a content PR in the GitHub mobile  |
-| Next up | FT-03.19: reference and methodology leaves |
+| Last completed | CH-60 Plan update: methodology leaves; SME question F8 (BSA formula) |
+| Next up | CH-61: parameter-glossary block type |
 
 ## Next up: R0 sequence
 
@@ -338,6 +338,19 @@ subcategory from a document already downloaded from asecho.org; leaves that need
 | CH-58 | Units and quantities for values printed in mm/mmHg (RV–PA coupling), Wood units (PVR), g/m (LV mass/height), cm/s² (accelerations) and mL/min/kg (indexed flow) | 1 | done | Needed by CH-45 and earlier deferred values |
 | CH-57 | Content: contrast echocardiography (9.5) from ASE 2018 UEA update | 1 | done |  |
 
+## Methodology leaves (FT-03.19, 2026-11-13)
+
+Root 14 *Reference & methodology* has four empty leaves. The glossary is generated from the parameter registry so it
+cannot drift; the other leaves are short notes, and formulas only from documents read in the session (PO-3 seed).
+
+| Key | Summary | SP | Status | Notes |
+|---|---|---|---|---|
+| CH-60 | Plan update: methodology leaves; SME question F8 (BSA formula) | 0 | done |  |
+| CH-61 | `parameter-glossary` block type: lists every registered parameter (abbreviation, name, synonyms, quantity unit) | 1 | todo |  |
+| CH-62 | Content 14.1 glossary leaf using the generated block | 1 | todo | Needs CH-61 |
+| CH-63 | Content 14.2 units and indexation conventions and 14.4 about the sources (notes) | 1 | todo | BSA wording waits for F8 |
+| CH-64 | Content 14.3 key formulas transcribed from documents read in the session (rendered-page check) | 2 | todo |  |
+
 ## Go-live follow-ups (found in TS-08.8)
 
 | Key | Summary | SP | Status | Notes |
@@ -502,3 +515,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-13 | TS-06.2.4 | Clinical change summary for content PRs: base vs head content compared value by value (identity: topic, block, parameter, context, grade, technique, modality, population, source); added/removed/changed rows in the PR template columns, topic status and source registry changes; workflow posts one sticky comment per PR; PR template updated (PO-4 wording) | `TS-06.2.4: generate the clinical change summary for content PRs` |
 | 2026-11-13 | TS-06.3.3 | Stale content PR job (daily): content/source PRs idle 7 days get a reminder comment, PRs open 14 days get the review-overdue label once with an escalation comment; drafts and code branches ignored; pure decision logic + thin workflow | `TS-06.3.3: remind and escalate stale content PRs` |
 | 2026-11-13 | TS-06.3.5 | SME quick guide (1 page): notification, summary comment, row-by-row check against the source (number, operator, unit, population, technique, locator, discrepancies, history), approve / request changes / merge in the GitHub app, what happens after merge, reminders, review status PRs, emergency path | `TS-06.3.5: one-page SME quick guide for reviewing content PRs` |
+| 2026-11-13 | CH-60 | Plan update: methodology leaves (FT-03.19) as CH-61 to CH-64; SME question F8: the taxonomy's DuBois BSA convention vs the ASE 2014 rTOF advice not to use DuBois in congenital heart disease | `CH-60: plan methodology leaves and add SME question F8` |
