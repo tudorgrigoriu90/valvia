@@ -14,7 +14,7 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-60: Plan update: methodology leaves; SME question F8 (BSA formula) |
+| Last completed task | CH-65: Fix the page reference in F8 (journal p. 120, not 'p. 8 of the PDF') |
 | Next task | CH-61: parameter-glossary block type |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
