@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-61 parameter-glossary block type: lists every registered parameter (abbre |
-| Next up | CH-62: content 14.1 glossary leaf |
+| Last completed | CH-62 Content 14.1 glossary leaf using the generated block |
+| Next up | CH-63: units conventions and about-the-sources notes |
 
 ## Next up: R0 sequence
 
@@ -347,7 +347,7 @@ cannot drift; the other leaves are short notes, and formulas only from documents
 |---|---|---|---|---|
 | CH-60 | Plan update: methodology leaves; SME question F8 (BSA formula) | 0 | done |  |
 | CH-61 | `parameter-glossary` block type: lists every registered parameter (abbreviation, name, synonyms, quantity unit) | 1 | done |  |
-| CH-62 | Content 14.1 glossary leaf using the generated block | 1 | todo | Needs CH-61 |
+| CH-62 | Content 14.1 glossary leaf using the generated block | 1 | done | Needs CH-61 |
 | CH-63 | Content 14.2 units and indexation conventions and 14.4 about the sources (notes) | 1 | todo | BSA wording waits for F8 |
 | CH-65 | Fix the page reference in F8 (journal p. 120, not 'p. 8 of the PDF') | 0 | done |  |
 | CH-64 | Content 14.3 key formulas transcribed from documents read in the session (rendered-page check) | 2 | todo |  |
@@ -519,3 +519,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-13 | CH-60 | Plan update: methodology leaves (FT-03.19) as CH-61 to CH-64; SME question F8: the taxonomy's DuBois BSA convention vs the ASE 2014 rTOF advice not to use DuBois in congenital heart disease | `CH-60: plan methodology leaves and add SME question F8` |
 | 2026-11-13 | CH-65 | F8 now cites the ASE 2014 rTOF statement on DuBois at JASE 2014;27:111-41, p. 120 (the earlier 'p. 8 of the PDF' was not checked and wrong) | `CH-65: fix the page reference of SME question F8` |
 | 2026-11-13 | CH-61 | parameter-glossary block type: schema (METH, no values), generated TS types, glossary model sorted by abbreviation or name with synonyms, comparison unit and modalities, definition-list component with anchors g-<parameter id>, default heading | `CH-61: add a generated parameter-glossary block type` |
+| 2026-11-13 | CH-62 | Content 14.1: the glossary leaf shows the generated parameter list (every registered parameter with abbreviation, name, synonyms, unit, modalities); Reference & methodology now visible; E2E incl. axe | `CH-62: add the 14.1 glossary leaf` |

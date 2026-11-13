@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-61: parameter-glossary block type: lists every registered parameter (abbre |
-| Next task | CH-62: content 14.1 glossary leaf |
+| Last completed task | CH-62: Content 14.1 glossary leaf using the generated block |
+| Next task | CH-63: units conventions and about-the-sources notes |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

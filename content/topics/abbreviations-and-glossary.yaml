@@ -7,3 +7,8 @@ order: 0
 population: both
 wave: W1
 status: draft
+blocks:
+  - id: parameters
+    type: parameter-glossary
+    tag: METH
+    title: Parameters and abbreviations
