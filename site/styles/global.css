@@ -31,6 +31,9 @@
   --color-warning-border: #e6c65c;
   --color-ok-text: #1d6b33;
   --color-danger-text: #a3231b;
+  --color-society-esc: #9b1c2e;
+  --color-society-ase: #1f4e9c;
+  --color-society-joint: #5b3b8c;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -48,6 +51,9 @@
     --color-warning-border: #7a5d00;
     --color-ok-text: #7ad694;
     --color-danger-text: #ff9a91;
+    --color-society-esc: #ff9aa8;
+    --color-society-ase: #9cc2ff;
+    --color-society-joint: #cdb0ff;
   }
 }
 
@@ -516,7 +522,22 @@ main {
   padding: 0 var(--space-1);
   border-radius: 0.25rem;
   border: 1px solid currentColor;
-  color: var(--color-accent);
+  color: var(--color-text-muted);
+}
+
+/* TS-04.1.3: tone colours (AA on the chip surface in both themes); the issuer text carries the meaning. */
+.society-badge[data-tone='esc'] {
+  color: var(--color-society-esc);
+}
+
+.society-badge[data-tone='ase'] {
+  color: var(--color-society-ase);
+}
+
+.society-badge[data-tone='joint'] {
+  color: var(--color-society-joint);
+  border-style: double;
+  border-width: 3px;
 }
 
 .search {

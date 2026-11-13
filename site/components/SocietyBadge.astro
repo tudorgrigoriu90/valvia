@@ -1,0 +1,13 @@
+---
+/** Society badge (TS-04.1.3): issuers as text plus a tone colour (ESC family, ASE, joint); never colour alone. */
+import { societyBadge } from '../../core/values/society';
+
+interface Props {
+  issuers: readonly string[];
+}
+const badge = societyBadge(Astro.props.issuers);
+---
+
+<span class="society-badge" data-tone={badge.tone} role="img" aria-label={badge.description}>
+  {badge.label}
+</span>

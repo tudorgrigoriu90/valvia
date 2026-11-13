@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-02.4.3 Unit tests with fixtures (agreement, disagreement, superseded) |
-| Next up | TS-04.1.3: society badges |
+| Last completed | TS-04.1.3 Society badges (ESC, EACVI, ASE, joint) with text label + colour |
+| Next up | TS-04.5.1: deep links to parameter anchors |
 
 ## Next up: R0 sequence
 
@@ -145,7 +145,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 |---|---|---|---|---|
 | TS-04.1.1 | Mobile-first clickable prototype: home, category list, leaf page, compare view, history, search | 3 | todo |  |
 | TS-04.1.2 | Design tokens, light/dark theme, system font stack, Valvia wordmark and icon | 2 | done | Wordmark/icon included; society badges are TS-04.1.3 |
-| TS-04.1.3 | Society badges (ESC, EACVI, ASE, joint) with text label + colour | 1 | todo |  |
+| TS-04.1.3 | Society badges (ESC, EACVI, ASE, joint) with text label + colour | 1 | done |  |
 | TS-04.2.1 | Home: grid of root categories + search bar | 2 | done | Search bar deferred to TS-04.4.2 |
 | TS-04.2.2 | Drill-down list pages with breadcrumbs | 3 | done |  |
 | TS-04.2.3 | Leaf page with section anchors and "jump to" menu | 3 | done |  |
@@ -485,3 +485,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-13 | TS-08.6 | Runbooks: content update (seed vs content PR flow, supersession, errata), emergency rollback (revert commit/PR, redeploy last good run, unpublish, checks; also closes TS-06.4.3), secret rotation (credential inventory, routine rotation, leak response, offboarding) | `TS-08.6: runbooks for content update, rollback and secrets` |
 | 2026-11-13 | TS-08.8 | Go-live checklist: regulatory/legal, content (SME review, audit), automated gates (ticked), manual QA, security, operations, launch day, first two weeks; owners per item; CH-59 added for indexing published topics | `TS-08.8: go-live checklist` |
 | 2026-11-13 | TS-02.4.3 | Shared fixture content tree (fictional values) through loader, discrepancy detection, history and leaf view: agreement across units, disagreement shown side by side, different populations not compared, superseded value in history only | `TS-02.4.3: end-to-end fixture tests for agreement, disagreement, superseded` |
+| 2026-11-13 | TS-04.1.3 | Society badges on source chips: issuers as text + tone colour (ESC family, ASE, joint with double border, other), accessible description, ≥ 7:1 contrast in both themes; unit + E2E tests | `TS-04.1.3: society badges with text label and tone colour` |

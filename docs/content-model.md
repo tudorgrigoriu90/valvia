@@ -290,7 +290,7 @@ One file per source: `content/sources/<id>.yaml`. Every value cites a source id 
 | `id` | yes | `id` | e.g. `esc-eacts-2025-vhd` |
 | `title` | yes | `text` | Full title |
 | `shortTitle` | no | `text` | Label for source chips |
-| `issuers` | yes | acronym[] (≥ 1) | Issuing societies, e.g. `[ESC, EACTS]` |
+| `issuers` | yes | acronym[] (≥ 1) | Issuing societies, e.g. `[ESC, EACTS]`, in the order printed on the document; shown as the society badge (below) |
 | `type` | yes | enum | `guideline` · `recommendation` · `consensus-statement` · `position-statement` · `focused-update` · `standardized-definitions` · `z-score-dataset` |
 | `year` | yes | integer 1990–2100 | Publication year |
 | `journal` | no | `text` | Journal |
@@ -300,6 +300,14 @@ One file per source: `content/sources/<id>.yaml`. Every value cites a source id 
 | `supersededBy` | when superseded | `id` | Successor document |
 | `citedBy` | for z-score datasets | `id[]` | Registered ESC/ASE documents citing the dataset |
 | `notes` | no | `longText` | Maintainer notes |
+
+### Society badges (`core/values/society.ts`, TS-04.1.3)
+
+Every source chip starts with a badge: the issuers as text (`ESC/EACTS`, `ASE`, `ASE/EACVI`) and a tone colour, so
+the badge never relies on colour (NFR-09). Tones: **ESC family** (ESC, EACVI, EAE and other ESC associations), **ASE**,
+**joint** (an ESC-family society and ASE; also a double border) and **other** (cited z-score datasets). Screen readers
+hear a description such as "Joint document issued by ASE and EACVI". Colours are tokens in `site/styles/global.css`
+(≥ 7:1 contrast on the chip in light and dark mode).
 
 ### Registry rules (`core/sources/registry-rules.ts`, 100 % coverage)
 

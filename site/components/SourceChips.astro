@@ -2,6 +2,7 @@
 import type { LoadedBlock } from '../../core/content/types';
 import { blockCitations } from '../../core/values/citations';
 import { getContent } from '../lib/content';
+import SocietyBadge from './SocietyBadge.astro';
 
 interface Props {
   block: LoadedBlock;
@@ -20,9 +21,7 @@ const citations = blockCitations(block);
         <details class="source-chip">
           <summary>
             <span class="visually-hidden">Source: </span>
-            {source.issuers.map((issuer) => (
-              <span class="society-badge">{issuer}</span>
-            ))}
+            <SocietyBadge issuers={source.issuers} />
             <span>
               {source.shortTitle ?? source.title} · {locators.join('; ')}
             </span>
