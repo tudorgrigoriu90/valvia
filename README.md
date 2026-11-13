@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-05.2.2: System fonts, SVG-only icons; analytics beacon is the only third-party |
-| Next task | TS-06.1.4: source-watcher state and deduplication |
+| Last completed task | TS-06.1.4: Deduplication and state (JSON state file in repo) |
+| Next task | TS-06.1.2: PubMed queries for new society documents |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
@@ -80,6 +80,7 @@ Read [`CLAUDE.md`](CLAUDE.md) first. In short:
 - [EU MDR qualification memo](docs/safety/mdr-qualification.md)
 - [CI/CD](docs/ci-cd.md)
 - [Content audit log](CHANGELOG.md): approver, merger and time of every merged content PR
+- [Source watchers](docs/source-watchers.md): weekly detection of new and corrected documents (EP-06)
 - [Runbooks](docs/runbooks/README.md): content update, emergency rollback, secret rotation, [go-live checklist](docs/runbooks/go-live-checklist.md)
 - [Decision log](docs/decisions/README.md)
 - [Product backlog](docs/product/valvia-backlog.md)

@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-05.2.2 System fonts, SVG-only icons; analytics beacon is the only third-party |
-| Next up | TS-06.1.4: source-watcher state and deduplication |
+| Last completed | TS-06.1.4 Deduplication and state (JSON state file in repo) |
+| Next up | TS-06.1.2: PubMed queries for new society documents |
 
 ## Next up: R0 sequence
 
@@ -184,7 +184,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-06.1.1 | Scheduled GitHub Action (weekly) with failure notification | 1 | todo |  |
 | TS-06.1.2 | PubMed E-utilities / Crossref queries: EHJ, EHJ-CI, JASE (+ ESC journals for paediatric/CHD); guideline / recommendation / consensus types; echo keywords | 5 | todo |  |
 | TS-06.1.3 | Page-change watchers: ESC guideline list, EACVI recommendations page, ASE guidelines page | 3 | todo |  |
-| TS-06.1.4 | Deduplication and state (JSON state file in repo) | 2 | todo |  |
+| TS-06.1.4 | Deduplication and state (JSON state file in repo) | 2 | done |  |
 | TS-06.1.5 | Errata/corrigendum detection for registered sources (Crossref update relations) | 3 | todo |  |
 | TS-06.2.1 | Issue per candidate with metadata and mapped affected topics | 3 | todo |  |
 | TS-06.2.2 | Claude Code GitHub Action triggered by `new-source` label; prompt references `CLAUDE.md` content rules; monthly spending cap | 3 | todo |  |
@@ -493,3 +493,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-13 | TS-06.4.2 | Content audit trail: workflow on merged content PRs records merge time, approvers (latest review per reviewer), merger, sources and topics in CHANGELOG.md (bot push to main); untrusted PR data via files; merges without approval flagged; seed commits referenced via Git history / What's new | `TS-06.4.2: content audit trail in CHANGELOG from merged PRs` |
 | 2026-11-13 | TS-02.2.8 | Prosthetic valve catalogue schema: one file per model and position (position, type, model, labelled sizes) with expected values as published (mean ± SD, mean only, median (IQR), threshold), population and citation; loader, cross-file rules, published number text; docs | `TS-02.2.8: prosthetic valve catalogue schema, rules and loader` |
 | 2026-11-13 | TS-05.2.2 | Third-party guard E2E: every request on home, a leaf, About and What's new is same-origin, no web fonts, no raster images, system font stack, SVG-only icons in head and manifest; TS-04.7.4 marked blocked (needs catalogue data, CH-51) | `TS-05.2.2: guard system fonts, SVG icons and same-origin requests` |
+| 2026-11-13 | TS-06.1.4 | Source-watcher state and deduplication: candidates keyed by PMID and DOI, dropped when seen before, already registered or duplicated in the batch; state file with first-seen dates, page hashes and last run as sorted JSON; malformed state stops the run | `TS-06.1.4: source-watcher state file and deduplication` |
