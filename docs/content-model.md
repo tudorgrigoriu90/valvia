@@ -2,7 +2,7 @@
 
 > **Purpose:** field-by-field reference of the content schemas and how content is validated.
 > **Audience:** engineer, Claude Code sessions drafting content, SME (for review context).
-> **Last updated:** 2026-11-02 | **Source of truth:** [`/schema`](../schema/README.md) (this page explains it)
+> **Last updated:** 2026-11-13 | **Source of truth:** [`/schema`](../schema/README.md) (this page explains it)
 
 ## Validation pipeline
 
@@ -163,6 +163,11 @@ status: draft
 ```
 
 ## Content blocks (`$defs/block`, TS-02.2.3)
+
+**Anchors and deep links (TS-04.2.3, TS-04.5.1).** Each block renders as a section with `id` = block id, so
+`<leaf URL>#<block id>` links to a section. `<leaf URL>#p-<parameter id>` (e.g. `#p-eroa`) links to the first table
+row or list item showing that parameter, in page order (`core/navigation/anchors.ts`); the target row is highlighted.
+Block ids must therefore never start with `p-`. Topic URLs stay valid after slug renames through redirect pages.
 
 Leaf topics hold `blocks:` in display order. The `type` selects the block shape (Ajv discriminator), so errors only come from the selected shape.
 

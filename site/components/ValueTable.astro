@@ -1,5 +1,6 @@
 ---
 import type { LoadedValue } from '../../core/content/types';
+import { rowAnchors } from '../../core/navigation/anchors';
 import type { ValueTable } from '../../core/values/table';
 import Footnotes from './Footnotes.astro';
 import ValueText from './ValueText.astro';
@@ -9,8 +10,14 @@ interface Props {
   label: string;
   blockId: string;
   differing?: ReadonlySet<LoadedValue>;
+  anchors?: ReadonlyMap<string, string>;
 }
-const { table, label, blockId, differing = new Set<LoadedValue>() } = Astro.props;
+const { table, label, blockId, differing = new Set<LoadedValue>(), anchors = new Map<string, string>() } = Astro.props;
+const rowIds = rowAnchors(
+  table.rows.map((row) => row.parameter.id),
+  blockId,
+  anchors,
+);
 ---
 
 <div class="table-scroll" role="region" aria-label={`${label} (scrollable table)`} tabindex="0">
@@ -24,8 +31,8 @@ const { table, label, blockId, differing = new Set<LoadedValue>() } = Astro.prop
       </tr>
     </thead>
     <tbody>
-      {table.rows.map((row) => (
-        <tr>
+      {table.rows.map((row, index) => (
+        <tr id={rowIds[index]}>
           <th scope="row">
             <abbr title={row.name}>{row.label}</abbr>
             {row.population !== '' && <span class="population">{row.population}</span>}

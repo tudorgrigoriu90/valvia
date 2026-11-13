@@ -275,7 +275,8 @@ Applies to every content PR and every piece of code that handles content.
 - **Algorithms:** `ALG` blocks link to the source; never redraw a flowchart.
 - **No calculation:** no calculators, no patient z-scores, no risk scores computed for a patient.
 - **Copyright:** own-format tables, no copied figures, always cite and link ([content policy](docs/safety/content-policy.md)).
-- **Stable IDs:** node IDs never change; slug renames generate a static redirect page.
+- **Stable IDs:** node and parameter IDs never change; slug renames generate a static redirect page. Deep links
+  `<leaf URL>#p-<parameter id>` jump to the first row of a parameter (TS-04.5.1), so block ids never start with `p-`.
 - **Schema changes:** follow [`schema/README.md`](schema/README.md); run `npm run gen:types` and commit `schema/generated/` with the schema.
 - **Gaps:** show "no society-endorsed value" instead of an empty table.
 - Claude drafts content only from a source document supplied in the task; it never fills values from memory.

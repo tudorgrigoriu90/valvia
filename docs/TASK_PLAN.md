@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-04.1.3 Society badges (ESC, EACVI, ASE, joint) with text label + colour |
-| Next up | TS-04.5.1: deep links to parameter anchors |
+| Last completed | TS-04.5.1 Stable deep links to topics and parameter anchors |
+| Next up | TS-04.6.1: recently viewed topics |
 
 ## Next up: R0 sequence
 
@@ -157,7 +157,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-04.3.6 | Caveats/footnotes rendering (e.g. "not valid in AF") | 1 | done |  |
 | TS-04.4.1 | Pagefind index incl. synonyms, abbreviations and valve models | 3 | done | Valve model names join with the prosthetic catalogue (TS-02.2.8) |
 | TS-04.4.2 | Instant search UI (mobile keyboard friendly) | 2 | done |  |
-| TS-04.5.1 | Stable deep links to topics and parameter anchors | 1 | todo |  |
+| TS-04.5.1 | Stable deep links to topics and parameter anchors | 1 | done |  |
 | TS-04.5.2 | "Last reviewed" date and content version on every page | 1 | done |  |
 | TS-04.6.1 | Last 10 viewed topics on home screen (localStorage) | 2 | todo |  |
 | TS-04.7.1 | Adult / paediatric switch (global, persisted) | 2 | done | Replaced by the four-category switch (PO-5, CH-20) |
@@ -486,3 +486,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-13 | TS-08.8 | Go-live checklist: regulatory/legal, content (SME review, audit), automated gates (ticked), manual QA, security, operations, launch day, first two weeks; owners per item; CH-59 added for indexing published topics | `TS-08.8: go-live checklist` |
 | 2026-11-13 | TS-02.4.3 | Shared fixture content tree (fictional values) through loader, discrepancy detection, history and leaf view: agreement across units, disagreement shown side by side, different populations not compared, superseded value in history only | `TS-02.4.3: end-to-end fixture tests for agreement, disagreement, superseded` |
 | 2026-11-13 | TS-04.1.3 | Society badges on source chips: issuers as text + tone colour (ESC family, ASE, joint with double border, other), accessible description, ≥ 7:1 contrast in both themes; unit + E2E tests | `TS-04.1.3: society badges with text label and tone colour` |
+| 2026-11-13 | TS-04.5.1 | Parameter deep links: <leaf>#p-<parameter id> targets the first table row or list item of that parameter in page order (stable ids), highlighted on arrival; topic URLs already stable via slugs and redirect pages | `TS-04.5.1: parameter deep-link anchors on leaf pages` |

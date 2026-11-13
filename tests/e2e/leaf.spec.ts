@@ -112,3 +112,14 @@ test('leaf pages state their review status and the footer shows the content vers
   await expect(page.locator('.review-status')).toHaveText('Draft: not yet clinically reviewed');
   await expect(page.getByRole('contentinfo')).toContainText(/Content version \S+ · built \d{4}-\d{2}-\d{2}/);
 });
+
+test('parameter deep links jump to the first row of that parameter (TS-04.5.1)', async ({ page }) => {
+  await page.goto(`${LEAF}#p-eroa`);
+  const row = page.locator('#p-eroa');
+  await expect(row).toHaveCount(1);
+  await expect(row.getByRole('rowheader')).toContainText('EROA');
+  await expect(row).toBeInViewport();
+  expect(await page.locator('[id^="p-"]').evaluateAll((els) => els.length)).toBe(
+    await page.locator('[id^="p-"]').evaluateAll((els) => new Set(els.map((el) => el.id)).size),
+  );
+});

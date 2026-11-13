@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-04.1.3: Society badges (ESC, EACVI, ASE, joint) with text label + colour |
-| Next task | TS-04.5.1: deep links to parameter anchors |
+| Last completed task | TS-04.5.1: Stable deep links to topics and parameter anchors |
+| Next task | TS-04.6.1: recently viewed topics |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

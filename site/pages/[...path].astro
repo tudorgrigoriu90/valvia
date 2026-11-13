@@ -12,6 +12,7 @@ import SourceChips from '../components/SourceChips.astro';
 import ThresholdList from '../components/ThresholdList.astro';
 import TopicList from '../components/TopicList.astro';
 import Base from '../layouts/Base.astro';
+import { parameterAnchorBlocks } from '../../core/navigation/anchors';
 import { blockHeading } from '../../core/navigation/block-heading';
 import { searchTerms } from '../../core/navigation/search-terms';
 import { reviewStatus } from '../../core/site/version';
@@ -42,6 +43,7 @@ const children = navigation.visibleChildren(topic.id);
 const blocks = topic.blocks ?? [];
 const review = reviewStatus(topic);
 const sections = leafView(topic, bundle);
+const anchors = parameterAnchorBlocks(sections.filter((s) => !s.noCurrentValue).map((s) => s.block));
 const pageCategories = sortCategories(sections.flatMap((s) => s.categories));
 const presentLabels = CATEGORIES.filter(({ id }) => pageCategories.includes(id)).map(({ label }) => label);
 const missingCategories =
@@ -88,10 +90,10 @@ const missingCategories =
           <SourceChips block={block} />
           {noCurrentValue && <p class="gap">No current society-endorsed value.</p>}
           {!noCurrentValue && (block.type === 'grading-table' || block.type === 'normal-range-table') && (
-            <GradingTable block={block} label={heading} differing={differing} />
+            <GradingTable block={block} label={heading} differing={differing} anchors={anchors} />
           )}
           {!noCurrentValue && block.type === 'threshold-list' && (
-            <ThresholdList block={block} label={heading} differing={differing} />
+            <ThresholdList block={block} label={heading} differing={differing} anchors={anchors} />
           )}
           {block.type === 'criteria-checklist' && <CriteriaChecklist block={block} />}
           {block.type === 'note' && <p class="note">{block.text}</p>}

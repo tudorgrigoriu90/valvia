@@ -1,5 +1,6 @@
 ---
 import type { LoadedBlock, LoadedValue } from '../../core/content/types';
+import { rowAnchors } from '../../core/navigation/anchors';
 import { buildThresholdList } from '../../core/values/table';
 import { getContent } from '../lib/content';
 import Footnotes from './Footnotes.astro';
@@ -9,15 +10,21 @@ interface Props {
   block: Extract<LoadedBlock, { type: 'threshold-list' }>;
   label: string;
   differing?: ReadonlySet<LoadedValue>;
+  anchors?: ReadonlyMap<string, string>;
 }
-const { block, label, differing = new Set<LoadedValue>() } = Astro.props;
+const { block, label, differing = new Set<LoadedValue>(), anchors = new Map<string, string>() } = Astro.props;
 const { bundle } = getContent();
 const list = buildThresholdList(block, bundle.parameters);
+const itemIds = rowAnchors(
+  list.items.map((item) => item.value.parameter),
+  block.id,
+  anchors,
+);
 ---
 
 <ul class="threshold-list">
-  {list.items.map((item) => (
-    <li>
+  {list.items.map((item, index) => (
+    <li id={itemIds[index]}>
       <span class="threshold-list__parameter">
         <abbr title={item.name}>{item.label}</abbr>
         {item.population !== '' && <span class="population">{item.population}</span>}
