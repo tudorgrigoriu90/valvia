@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-46: Content: IVC and RA pressure (1.6) from ASE 2025 right heart |
-| Next task | CH-47: diastolic special populations, HFpEF, diastolic stress (ASE 2025) |
+| Last completed task | CH-47: Content: diastolic special populations, HFpEF and diastolic stress (2. |
+| Next task | CH-48: aortic stenosis sub-leaves (EACVI/ASE 2017) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

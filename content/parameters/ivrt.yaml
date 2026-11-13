@@ -1,0 +1,7 @@
+id: ivrt
+name: Isovolumic relaxation time
+abbreviation: IVRT
+quantity: time
+unit: ms
+modalities: [Echo]
+synonyms: [IVRT, isovolumetric relaxation time]

@@ -1,0 +1,6 @@
+id: pulmonary-vein-d-deceleration-time
+name: Deceleration time of pulmonary venous diastolic velocity
+quantity: time
+unit: ms
+modalities: [Echo]
+synonyms: [pulmonary vein D wave, atrial fibrillation]

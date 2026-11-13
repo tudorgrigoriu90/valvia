@@ -1,0 +1,7 @@
+id: e-srivr-ratio
+name: Mitral E velocity to isovolumic relaxation strain rate ratio
+abbreviation: E/SRIVR
+quantity: length
+unit: mm
+modalities: [Echo]
+synonyms: [SRIVR, strain rate, cardiac transplant]

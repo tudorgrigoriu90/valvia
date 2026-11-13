@@ -8,3 +8,103 @@ population: adult
 wave: W1
 status: draft
 seeAlso: [diastolic-stress-test]
+blocks:
+  - id: abnormal-test
+    type: threshold-list
+    tag: CRIT
+    title: Definitely abnormal test (increased LV filling pressure)
+    values:
+      - parameter: e-over-e-prime-average
+        context: diagnostic-criterion
+        operator: '>='
+        value: 14
+        unit: '1'
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Average E/e′ ≥ 14 or septal E/e′ ≥ 15, and peak TR velocity > 3.2 m/s.'
+          - Diastolic exercise echocardiography.
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            page: '556'
+      - parameter: e-over-e-prime-septal
+        context: diagnostic-criterion
+        operator: '>='
+        value: 15
+        unit: '1'
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Or average E/e′ ≥ 14; together with peak TR velocity > 3.2 m/s.'
+          - Diastolic exercise echocardiography.
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            page: '556'
+      - parameter: tr-velocity
+        context: diagnostic-criterion
+        operator: '>'
+        value: 3.2
+        unit: m/s
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - Together with the E/e′ criterion.
+          - Diastolic exercise echocardiography.
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            page: '556'
+  - id: normal-test
+    type: threshold-list
+    tag: CRIT
+    title: Normal test
+    values:
+      - parameter: e-over-e-prime-average
+        context: diagnostic-criterion
+        operator: '<'
+        value: 10
+        unit: '1'
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Average (or septal) E/e′ < 10 and peak TR velocity < 2.8 m/s.'
+          - Diastolic exercise echocardiography.
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            page: '556'
+      - parameter: tr-velocity
+        context: diagnostic-criterion
+        operator: '<'
+        value: 2.8
+        unit: m/s
+        modality: Echo
+        technique: stress
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Together with E/e′ < 10.'
+          - Diastolic exercise echocardiography.
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            page: '556'
+  - id: interpretation
+    type: note
+    tag: METH
+    title: Interpretation
+    text: 'HFpEF is likely when E/e′ is > 14 and peak TR velocity is > 2.8 but < 3.2 m/s; it is not supported by an E/e′ < 14 even if TR velocity rises above 3.2 m/s. Be cautious with an isolated rise in TR velocity: normal subjects can increase it with higher pulmonary blood flow.'
+    citation:
+      source: ase-2025-diastolic-function
+      locator:
+        page: '556'

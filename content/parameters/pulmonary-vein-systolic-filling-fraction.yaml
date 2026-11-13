@@ -1,0 +1,6 @@
+id: pulmonary-vein-systolic-filling-fraction
+name: Pulmonary vein systolic filling fraction
+quantity: percent
+unit: '%'
+modalities: [Echo]
+synonyms: [pulmonary venous S fraction, sinus tachycardia]

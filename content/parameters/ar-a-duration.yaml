@@ -1,0 +1,7 @@
+id: ar-a-duration
+name: Pulmonary vein Ar duration minus mitral A duration
+abbreviation: Ar–A
+quantity: time
+unit: ms
+modalities: [Echo]
+synonyms: [Ar-A, atrial reversal duration, LVEDP]

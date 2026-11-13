@@ -1,0 +1,7 @@
+id: ivrt-te-e-prime-ratio
+name: IVRT to T(E–e′) ratio
+abbreviation: IVRT/TE-e′
+quantity: ratio
+unit: '1'
+modalities: [Echo]
+synonyms: [TE-e', time interval between E and e' onset]

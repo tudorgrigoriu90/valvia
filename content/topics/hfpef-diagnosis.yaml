@@ -7,3 +7,182 @@ order: 3
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: hfpef-echo
+    type: threshold-list
+    tag: CRIT
+    title: Echocardiographic components of the HFpEF definition
+    values:
+      - parameter: lvef
+        context: diagnostic-criterion
+        operator: '>='
+        value: 50
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Both ACC/AHA/HFSA and ESC definitions, with symptoms and/or signs of HF.'
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '8'
+            page: '564'
+      - parameter: la-volume-index
+        context: diagnostic-criterion
+        operator: '>'
+        value: 34
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - ESC definition of HFpEF as summarised in the ASE document (Table 8).
+          - Key structural abnormality.
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '8'
+            page: '564'
+      - parameter: lv-mass-index
+        context: diagnostic-criterion
+        operator: '>='
+        value: 115
+        unit: g/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: male
+        caveats:
+          - ESC definition of HFpEF as summarised in the ASE document (Table 8).
+          - Key structural abnormality (men).
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '8'
+            page: '564'
+      - parameter: lv-mass-index
+        context: diagnostic-criterion
+        operator: '>='
+        value: 95
+        unit: g/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+          sex: female
+        caveats:
+          - ESC definition of HFpEF as summarised in the ASE document (Table 8).
+          - Key structural abnormality (women).
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '8'
+            page: '564'
+      - parameter: e-over-e-prime-average
+        context: diagnostic-criterion
+        operator: '>='
+        value: 13
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - ESC definition of HFpEF as summarised in the ASE document (Table 8).
+          - Key functional abnormality.
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '8'
+            page: '564'
+      - parameter: e-prime-average
+        context: diagnostic-criterion
+        operator: '<'
+        value: 9
+        unit: cm/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - ESC definition of HFpEF as summarised in the ASE document (Table 8).
+          - 'Key functional abnormality: mean of septal and lateral e′.'
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '8'
+            page: '564'
+  - id: h2fpef
+    type: criteria-checklist
+    tag: CRIT
+    title: H2FPEF score (definition; Valvia does not calculate it)
+    criteria:
+      - text: 'Heavy: body mass index > 30 kg/m² (2 points).'
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            page: '565'
+      - text: 'Hypertensive: two or more antihypertensive medications (1 point).'
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            page: '565'
+      - text: 'Atrial fibrillation, paroxysmal or persistent (3 points).'
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            page: '565'
+      - text: 'PH: Doppler-estimated PASP > 35 mmHg (1 point).'
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            page: '565'
+        values:
+          - parameter: spap
+            context: diagnostic-criterion
+            operator: '>'
+            value: 35
+            unit: mmHg
+            modality: Echo
+            population:
+              ageGroup: adult
+            citation:
+              source: ase-2025-diastolic-function
+              locator:
+                page: '565'
+      - text: 'Elder: age > 60 years (1 point).'
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            page: '565'
+      - text: 'Filling pressure: septal E/e′ > 9 (1 point).'
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            page: '565'
+        values:
+          - parameter: e-over-e-prime-septal
+            context: diagnostic-criterion
+            operator: '>'
+            value: 9
+            unit: '1'
+            modality: Echo
+            population:
+              ageGroup: adult
+            citation:
+              source: ase-2025-diastolic-function
+              locator:
+                page: '565'
+      - text: 'Score 0–9: 0–2 low probability; 2–5 intermediate (40–80% likelihood); > 5 high probability of HFpEF.'
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            page: '565'
+  - id: hfpef-algorithm
+    type: algorithm-reference
+    tag: ALG
+    title: Algorithm for HFpEF diagnosis
+    citation:
+      source: ase-2025-diastolic-function
+      locator:
+        figure: '9'
+        page: '564'
+    url: 'https://doi.org/10.1016/j.echo.2025.03.011'

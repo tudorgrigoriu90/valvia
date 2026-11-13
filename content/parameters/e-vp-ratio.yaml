@@ -1,0 +1,7 @@
+id: e-vp-ratio
+name: Mitral E to colour M-mode flow propagation velocity ratio
+abbreviation: E/Vp
+quantity: ratio
+unit: '1'
+modalities: [Echo]
+synonyms: [Vp, flow propagation velocity]

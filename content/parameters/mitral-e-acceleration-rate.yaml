@@ -1,0 +1,6 @@
+id: mitral-e-acceleration-rate
+name: Peak acceleration rate of mitral E velocity
+quantity: acceleration
+unit: m/s²
+modalities: [Echo]
+synonyms: [E acceleration, atrial fibrillation]

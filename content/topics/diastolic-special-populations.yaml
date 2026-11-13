@@ -7,3 +7,710 @@ order: 2
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: af
+    type: threshold-list
+    tag: CRIT
+    title: 'Atrial fibrillation: indicators of elevated LV filling pressure'
+    values:
+      - parameter: mitral-e-deceleration-time
+        context: diagnostic-criterion
+        operator: '<'
+        value: 160
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - In patients with depressed LVEF.
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: mitral-e-acceleration-rate
+        context: diagnostic-criterion
+        operator: '>='
+        value: 1900
+        unit: cm/s²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Peak acceleration rate of mitral E velocity (printed 1,900 cm/s²).'
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: ivrt
+        context: diagnostic-criterion
+        operator: '<='
+        value: 65
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: pulmonary-vein-d-deceleration-time
+        context: diagnostic-criterion
+        operator: '<='
+        value: 220
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: e-vp-ratio
+        context: diagnostic-criterion
+        operator: '>='
+        value: 1.4
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: e-over-e-prime-septal
+        context: diagnostic-criterion
+        operator: '>='
+        value: 11
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: tr-velocity
+        context: diagnostic-criterion
+        operator: '>'
+        value: 2.8
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+  - id: sinus-tachycardia
+    type: threshold-list
+    tag: CRIT
+    title: Sinus tachycardia
+    values:
+      - parameter: ivrt
+        context: diagnostic-criterion
+        operator: '<='
+        value: 70
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Specific (79%).'
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: pulmonary-vein-systolic-filling-fraction
+        context: diagnostic-criterion
+        operator: '<='
+        value: 40
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Specific (88%).'
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: e-over-e-prime-average
+        context: diagnostic-criterion
+        operator: '>'
+        value: 14
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'High specificity, low sensitivity. A predominant early filling pattern with depressed LVEF also suggests raised pressure; after premature beats, fused E and A may separate.'
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+  - id: hcm
+    type: threshold-list
+    tag: CRIT
+    title: Hypertrophic cardiomyopathy
+    values:
+      - parameter: e-over-e-prime-average
+        context: diagnostic-criterion
+        operator: '>'
+        value: 14
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: ar-a-duration
+        context: diagnostic-criterion
+        operator: '>='
+        value: 30
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: tr-velocity
+        context: diagnostic-criterion
+        operator: '>'
+        value: 2.8
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: la-volume-index
+        context: diagnostic-criterion
+        operator: '>'
+        value: 34
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - LA maximum volume index.
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+  - id: restrictive
+    type: threshold-list
+    tag: CRIT
+    title: Restrictive cardiomyopathy
+    values:
+      - parameter: e-over-e-prime-average
+        context: diagnostic-criterion
+        operator: '>'
+        value: 14
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: mitral-e-deceleration-time
+        context: diagnostic-criterion
+        operator: '<'
+        value: 140
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Specific but not sensitive indicator of elevated LV filling pressure.
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: mitral-e-a-ratio
+        context: diagnostic-criterion
+        operator: '>'
+        value: 2.5
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Specific but not sensitive indicator of elevated LV filling pressure.
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: ivrt
+        context: diagnostic-criterion
+        operator: '<'
+        value: 50
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Specific but not sensitive indicator of elevated LV filling pressure.
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+  - id: ph
+    type: threshold-list
+    tag: CRIT
+    title: 'Pulmonary hypertension: post- vs precapillary'
+    values:
+      - parameter: mitral-e-a-ratio
+        context: diagnostic-criterion
+        operator: '>='
+        value: 2
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Favours postcapillary PH.
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: mitral-e-a-ratio
+        context: diagnostic-criterion
+        operator: '<='
+        value: 0.8
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Favours precapillary PH.
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: e-over-e-prime-lateral
+        context: diagnostic-criterion
+        operator: '>'
+        value: 13
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'When E/A is > 0.8 but < 2: lateral E/e′ > 13, LA maximum volume index > 34 mL/m² and LA reservoir strain < 18% favour postcapillary PH.'
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: la-volume-index
+        context: diagnostic-criterion
+        operator: '>'
+        value: 34
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'With E/A > 0.8 but < 2, favours postcapillary PH (with the other two criteria).'
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: la-reservoir-strain
+        context: diagnostic-criterion
+        operator: '<'
+        value: 18
+        unit: '%'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'With E/A > 0.8 but < 2, favours postcapillary PH (with the other two criteria).'
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+  - id: mitral-stenosis
+    type: threshold-list
+    tag: CRIT
+    title: Mitral stenosis
+    values:
+      - parameter: ivrt
+        context: diagnostic-criterion
+        operator: '<'
+        value: 60
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Specific but not sensitive indicator of elevated LV filling pressure.
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: mitral-a-velocity
+        context: diagnostic-criterion
+        operator: '>'
+        value: 1.5
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: ivrt-te-e-prime-ratio
+        context: diagnostic-criterion
+        operator: '<'
+        value: 4.2
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+  - id: mitral-regurgitation
+    type: threshold-list
+    tag: CRIT
+    title: Mitral regurgitation
+    values:
+      - parameter: ivrt
+        context: diagnostic-criterion
+        operator: '<'
+        value: 60
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Specific but not sensitive indicator of elevated LV filling pressure.
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: ar-a-duration
+        context: diagnostic-criterion
+        operator: '>='
+        value: 30
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: ivrt-te-e-prime-ratio
+        context: diagnostic-criterion
+        operator: '<'
+        value: 5.6
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: e-over-e-prime-average
+        context: diagnostic-criterion
+        operator: '>'
+        value: 14
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - In patients with depressed EF.
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+  - id: mac
+    type: threshold-list
+    tag: CRIT
+    title: Moderate or severe mitral annular calcification
+    values:
+      - parameter: mitral-e-a-ratio
+        context: diagnostic-criterion
+        operator: '<'
+        value: 0.8
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - LV filling pressure normal.
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: mitral-e-a-ratio
+        context: diagnostic-criterion
+        operator: '>'
+        value: 1.8
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - LV filling pressure elevated.
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: ivrt
+        context: diagnostic-criterion
+        operator: '>='
+        value: 80
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'With E/A > 0.8 but < 1.8: filling pressure normal.'
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: ivrt
+        context: diagnostic-criterion
+        operator: '<'
+        value: 80
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'With E/A > 0.8 but < 1.8: filling pressure elevated.'
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+  - id: lvad
+    type: threshold-list
+    tag: CRIT
+    title: LV assist device
+    values:
+      - parameter: mitral-e-a-ratio
+        context: diagnostic-criterion
+        operator: '>'
+        value: 2
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: rap
+        context: diagnostic-criterion
+        operator: '>'
+        value: 10
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: spap
+        context: diagnostic-criterion
+        operator: '>'
+        value: 40
+        unit: mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: e-over-e-prime-average
+        context: diagnostic-criterion
+        operator: '>'
+        value: 14
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Or septal E/e′ ≥ 15.'
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: e-over-e-prime-septal
+        context: diagnostic-criterion
+        operator: '>='
+        value: 15
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: la-volume-index
+        context: diagnostic-criterion
+        operator: '>'
+        value: 33
+        unit: mL/m²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'LA maximum volume index. Interatrial septum position also helps: LAP = RAP if neutral, about 5 mmHg higher if it bulges right, 5 mmHg lower if it bulges left.'
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+  - id: transplant
+    type: threshold-list
+    tag: CRIT
+    title: Cardiac transplant recipients
+    values:
+      - parameter: e-over-e-prime-average
+        context: diagnostic-criterion
+        operator: '<'
+        value: 7
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Normal LV filling pressures.
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: e-over-e-prime-average
+        context: diagnostic-criterion
+        operator: '>'
+        value: 14
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Elevated LV filling pressures.
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: e-srivr-ratio
+        context: diagnostic-criterion
+        operator: '<='
+        value: 200
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'For E/e′ between 7 and 14: mitral E / SRIVR (strain rate during isovolumic relaxation, three apical views) ≤ 200 cm is normal.'
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: e-srivr-ratio
+        context: diagnostic-criterion
+        operator: '>'
+        value: 200
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'For E/e′ between 7 and 14: > 200 cm denotes elevated filling pressure.'
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: tr-velocity
+        context: diagnostic-criterion
+        operator: '<='
+        value: 2.8
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'If SRIVR cannot be measured: normal filling pressure.'
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'
+      - parameter: tr-velocity
+        context: diagnostic-criterion
+        operator: '>'
+        value: 2.8
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'If SRIVR cannot be measured: elevated filling pressure.'
+        citation:
+          source: ase-2025-diastolic-function
+          locator:
+            table: '7'
+            page: '557'

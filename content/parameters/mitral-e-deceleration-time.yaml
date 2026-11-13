@@ -1,0 +1,7 @@
+id: mitral-e-deceleration-time
+name: Mitral E-wave deceleration time
+abbreviation: DT
+quantity: time
+unit: ms
+modalities: [Echo]
+synonyms: [deceleration time, DT, restrictive filling]
