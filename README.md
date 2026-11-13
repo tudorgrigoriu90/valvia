@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-63: Content 14.2 units and indexation conventions and 14.4 about the sourc |
-| Next task | CH-64: key formulas leaf |
+| Last completed task | CH-64: Content 14.3 key formulas transcribed from documents read in the sessi |
+| Next task | TS-00.2: decision log completion |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

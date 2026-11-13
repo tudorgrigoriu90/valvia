@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-63 Content 14.2 units and indexation conventions and 14.4 about the sourc |
-| Next up | CH-64: key formulas leaf |
+| Last completed | CH-64 Content 14.3 key formulas transcribed from documents read in the sessi |
+| Next up | TS-00.2: decision log completion |
 
 ## Next up: R0 sequence
 
@@ -137,7 +137,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | FT-03.16 | 11 Cardio-oncology (W2) | 3 | todo |  |
 | FT-03.17 | 12 Cardiac masses & embolic sources (W2) | 3 | todo |  |
 | FT-03.18 | 13 Special populations (W2) | 3 | todo |  |
-| FT-03.19 | 14 Reference & methodology (glossary, units, DuBois BSA, formulas) (W1) | 2 | todo |  |
+| FT-03.19 | 14 Reference & methodology (glossary, units, DuBois BSA, formulas) (W1) | 2 | done | CH-60 to CH-64; BSA convention open as SME question F8 |
 
 ### EP-04: Navigation & lookup UX (MVP)
 
@@ -350,7 +350,7 @@ cannot drift; the other leaves are short notes, and formulas only from documents
 | CH-62 | Content 14.1 glossary leaf using the generated block | 1 | done | Needs CH-61 |
 | CH-63 | Content 14.2 units and indexation conventions and 14.4 about the sources (notes) | 1 | done | BSA wording waits for F8 |
 | CH-65 | Fix the page reference in F8 (journal p. 120, not 'p. 8 of the PDF') | 0 | done |  |
-| CH-64 | Content 14.3 key formulas transcribed from documents read in the session (rendered-page check) | 2 | todo |  |
+| CH-64 | Content 14.3 key formulas transcribed from documents read in the session (rendered-page check) | 2 | done |  |
 
 ## Go-live follow-ups (found in TS-08.8)
 
@@ -521,3 +521,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-13 | CH-61 | parameter-glossary block type: schema (METH, no values), generated TS types, glossary model sorted by abbreviation or name with synonyms, comparison unit and modalities, definition-list component with anchors g-<parameter id>, default heading | `CH-61: add a generated parameter-glossary block type` |
 | 2026-11-13 | CH-62 | Content 14.1: the glossary leaf shows the generated parameter list (every registered parameter with abbreviation, name, synonyms, unit, modalities); Reference & methodology now visible; E2E incl. axe | `CH-62: add the 14.1 glossary leaf` |
 | 2026-11-13 | CH-63 | Content 14.2 (values exactly as published, indexed values, BSA: Valvia computes none; ASE rTOF advice against DuBois in CHD, cited p. 120) and 14.4 (which documents, disagreements side by side, previous recommendations, review status and weekly correction checks) as notes | `CH-63: add the units and about-the-sources reference leaves` |
+| 2026-11-13 | CH-64 | Content 14.3 key formulas as printed: AS mean gradient, continuity and simplified continuity equation, velocity ratio, % stroke work loss (EACVI/ASE 2017 Table 2, p. 376); SV at an annulus, volumetric RVol/RF/EROA, PISA RFlow/EROA/RVol (ASE 2017 native regurgitation pp. 311–312); display-only note; FT-03.19 done | `CH-64: add the key formulas reference leaf` |

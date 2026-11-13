@@ -31,3 +31,11 @@ test('explains units, indexation and sources on their reference leaves', async (
   await expect(page.getByRole('heading', { name: 'When societies disagree' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Previous recommendations', exact: true })).toBeVisible();
 });
+
+// CH-64 (taxonomy 14.3): key formulas, shown as published (no calculator).
+test('lists key formulas with their sources and offers no calculator', async ({ page }) => {
+  await page.goto('reference-and-methodology/key-formulas/');
+  await expect(page.getByText('AVA = CSA(LVOT) × VTI(LVOT) / VTI(AV)')).toBeVisible();
+  await expect(page.getByText('EROA = (6.28 × r² × Va) / peak V(regurgitant jet)')).toBeVisible();
+  await expect(page.locator('input, select, textarea')).toHaveCount(0);
+});

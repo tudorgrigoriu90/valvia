@@ -7,3 +7,46 @@ order: 2
 population: both
 wave: W1
 status: draft
+blocks:
+  - id: display-only
+    type: note
+    tag: METH
+    title: Shown, not calculated
+    text: 'Formulas are shown as printed in the cited documents so that methods can be checked; Valvia has no calculator and computes nothing for a patient. Read the cited section for measurement conditions and pitfalls.'
+  - id: aortic-stenosis
+    type: note
+    tag: METH
+    title: Aortic stenosis
+    text: 'Mean gradient: ΔP = Σ 4v² / N. Continuity equation: AVA = CSA(LVOT) × VTI(LVOT) / VTI(AV). Simplified continuity equation: AVA = CSA(LVOT) × V(LVOT) / V(AV). Velocity ratio: VR = V(LVOT) / V(AV). LV stroke work loss: %SWL = ΔP / (ΔP + SBP) × 100.'
+    citation:
+      source: eacvi-ase-2017-aortic-stenosis
+      locator:
+        table: '2'
+        page: '376'
+  - id: stroke-volume
+    type: note
+    tag: METH
+    title: Stroke volume at an annulus
+    text: 'SV = CSA × VTI = (π d² / 4) × VTI = 0.785 × d² × VTI, with d the annulus diameter in cm, VTI by pulsed Doppler at the annulus in cm and SV in mL.'
+    citation:
+      source: ase-2017-native-regurgitation
+      locator:
+        page: '311'
+  - id: volumetric
+    type: note
+    tag: METH
+    title: Regurgitant volume and fraction (volumetric methods)
+    text: 'Pulsed Doppler method: RVol = SV(regurgitant valve) − SV(competent valve); RF = RVol / SV(regurgitant valve); EROA = RVol / VTI(regurgitant jet), with the jet VTI by continuous-wave Doppler. Volumetric method: SV(LV) = end-diastolic LV volume − end-systolic LV volume; RVol = SV(LV) − SV(forward).'
+    citation:
+      source: ase-2017-native-regurgitation
+      locator:
+        page: 311–312
+  - id: pisa
+    type: note
+    tag: METH
+    title: PISA (flow convergence) method
+    text: 'RFlow = 2π r² × Va; EROA = (6.28 × r² × Va) / peak V(regurgitant jet); RVol = EROA × VTI(regurgitant jet). r is the PISA radius at the aliasing velocity Va; r and VTI in cm, velocities in cm/s, EROA in cm².'
+    citation:
+      source: ase-2017-native-regurgitation
+      locator:
+        page: '312'
