@@ -106,7 +106,7 @@ describe('loadContent', () => {
   it('reports a YAML file with an unknown folder kind only once as a warning', () => {
     write('misc/x.yaml', 'a: 1\n');
     expect(problems()).toEqual([
-      'content/misc/x.yaml:1 warning unknown-folder files in content/misc/ are not loaded (expected sources, parameters, topics)',
+      'content/misc/x.yaml:1 warning unknown-folder files in content/misc/ are not loaded (expected sources, parameters, topics, prosthetics)',
     ]);
   });
 
@@ -278,5 +278,51 @@ describe('loadContent: content rules', () => {
     expect(problems()).toEqual([
       'content/topics/primary-mr-grading.yaml:19 error value-sign value (-0.4) must not be negative for area',
     ]);
+  });
+});
+
+describe('loadContent: prosthetic valve catalogue (TS-02.2.8)', () => {
+  const PROSTHETIC = `id: aortic-example
+name: Example
+position: aortic
+type: transcatheter
+sizes:
+  - size: '23'
+    values:
+      - parameter: eroa
+        statistic: mean-sd
+        mean: 1.40
+        sd: 0.30
+        unit: cm²
+        modality: Echo
+        population: { ageGroup: adult }
+        citation: { source: esc-2025-vhd, locator: { table: A1 } }
+`;
+
+  it('loads prosthetic valves into the bundle with the published text of their numbers', () => {
+    writeValidTree();
+    write('prosthetics/aortic-example.yaml', PROSTHETIC);
+    const { bundle, problems: found, fileCount } = loadContent(root);
+    expect(found).toEqual([]);
+    expect(fileCount).toBe(5);
+    const value = bundle.prosthetics.get('aortic-example')?.sizes[0]?.values[0];
+    expect(value?.mean).toBe(1.4);
+    expect(value?.published).toEqual({ mean: '1.40', sd: '0.30' });
+  });
+
+  it('reports catalogue rule findings at the value line', () => {
+    writeValidTree();
+    write('prosthetics/aortic-example.yaml', PROSTHETIC.replace('parameter: eroa', 'parameter: eoa'));
+    expect(problems()).toEqual([
+      "content/prosthetics/aortic-example.yaml:8 error value-reference unknown parameter 'eoa'",
+    ]);
+  });
+
+  it('does not load a prosthetic file that fails the schema, and reports it', () => {
+    writeValidTree();
+    write('prosthetics/aortic-example.yaml', PROSTHETIC.replace('position: aortic', 'position: apical'));
+    const result = loadContent(root);
+    expect(result.bundle.prosthetics.size).toBe(0);
+    expect(result.problems.map((p) => p.rule)).toEqual(['schema']);
   });
 });

@@ -6,15 +6,17 @@
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
 import type { Parameter } from '../../schema/generated/parameter';
+import type { ProstheticValve } from '../../schema/generated/prosthetic';
 import type { SourceDocument } from '../../schema/generated/source';
 import type { TopicNode } from '../../schema/generated/topic';
+import { checkProsthetic } from '../prosthetics/rules';
 import { checkSourceRegistry } from '../sources/registry-rules';
 import { checkParameterUnit } from '../units/units';
 import { checkTopicValues, valuesOf } from '../values/topic-rules';
 import { checkIntegrity } from './integrity';
 import type { Problem } from './problem';
 import type { ContentKind } from './schemas';
-import type { ContentBundle, LoadedTopic, PublishedNumbers } from './types';
+import type { ContentBundle, LoadedProsthetic, LoadedTopic, PublishedNumbers, PublishedStatistics } from './types';
 import { validateContentFile } from './validate-file';
 import type { ParsedYaml, PathSegment } from './yaml';
 
@@ -23,6 +25,7 @@ export const CONTENT_FOLDERS: Readonly<Record<string, ContentKind>> = {
   sources: 'source',
   parameters: 'parameter',
   topics: 'topic',
+  prosthetics: 'prosthetic',
 };
 
 interface Entity<T> {
@@ -71,16 +74,40 @@ function publishedNumbers(entity: Entity<TopicNode>): LoadedTopic {
   return entity.data as LoadedTopic;
 }
 
+const STATISTICS = ['mean', 'sd', 'median', 'q1', 'q3', 'value'] as const;
+
+function publishedStatistics(entity: Entity<ProstheticValve>): LoadedProsthetic {
+  entity.data.sizes.forEach((size, sizeIndex) => {
+    size.values.forEach((value, valueIndex) => {
+      const published: PublishedStatistics = {};
+      for (const field of STATISTICS) {
+        const number = value[field];
+        if (number === undefined) continue;
+        const path = ['sizes', sizeIndex, 'values', valueIndex, field];
+        published[field] = entity.parsed.sourceText(path) ?? String(number);
+      }
+      Object.assign(value, { published });
+    });
+  });
+  return entity.data as unknown as LoadedProsthetic;
+}
+
 export function loadContent(root: string, contentDir = 'content'): LoadResult {
   const problems: Problem[] = [];
   const entities = {
     source: [] as Entity<SourceDocument>[],
     parameter: [] as Entity<Parameter>[],
     topic: [] as Entity<TopicNode>[],
+    prosthetic: [] as Entity<ProstheticValve>[],
   };
   const directory = join(root, contentDir);
   let fileCount = 0;
-  const invalid = { topic: new Set<string>(), parameter: new Set<string>(), source: new Set<string>() };
+  const invalid = {
+    topic: new Set<string>(),
+    parameter: new Set<string>(),
+    source: new Set<string>(),
+    prosthetic: new Set<string>(),
+  };
 
   if (existsSync(directory)) {
     for (const folder of readdirSync(directory).sort()) {
@@ -147,7 +174,14 @@ export function loadContent(root: string, contentDir = 'content'): LoadResult {
     }
   }
 
+  for (const entity of entities.prosthetic) {
+    for (const finding of checkProsthetic(entity.data, parameters, sources, invalidIds)) {
+      problems.push(at(entity, finding.path, 'error', finding.rule, finding.message));
+    }
+  }
+
   const topics = new Map(entities.topic.map((e) => [e.data.id, publishedNumbers(e)]));
+  const prosthetics = new Map(entities.prosthetic.map((e) => [e.data.id, publishedStatistics(e)]));
   problems.sort((a, b) => a.file.localeCompare(b.file) || a.line - b.line || a.column - b.column);
-  return { bundle: { topics, parameters, sources }, problems, fileCount };
+  return { bundle: { topics, parameters, sources, prosthetics }, problems, fileCount };
 }

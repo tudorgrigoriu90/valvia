@@ -42,7 +42,7 @@ const topic = (blocks: LoadedBlock[]): LoadedTopic => ({
   status: 'draft',
   blocks,
 });
-const bundle: ContentBundle = { topics: new Map(), parameters: PARAMS, sources: SOURCES };
+const bundle: ContentBundle = { topics: new Map(), parameters: PARAMS, sources: SOURCES, prosthetics: new Map() };
 
 describe('leafView (TS-04.7.2)', () => {
   it('separates current values from previous recommendations per block', () => {

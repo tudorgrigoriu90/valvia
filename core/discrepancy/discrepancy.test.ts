@@ -64,6 +64,7 @@ const bundle = (...topics: LoadedTopic[]): ContentBundle => ({
   topics: new Map(topics.map((t) => [t.id, t])),
   parameters: PARAMETERS,
   sources: SOURCES,
+  prosthetics: new Map(),
 });
 
 describe('detectDiscrepancies (TS-02.4.1)', () => {

@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-06.4.2: Audit trail: approver, timestamp, source recorded in CHANGELOG + Git h |
-| Next task | TS-02.2.8: prosthetic valve catalogue schema |
+| Last completed task | TS-02.2.8: Prosthetic valve catalogue schema: position, type, model, size → expec |
+| Next task | TS-04.7.4: prosthetic valve picker |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

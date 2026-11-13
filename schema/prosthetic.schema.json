@@ -1,0 +1,229 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://valvia.invalid/schema/prosthetic.schema.json",
+  "title": "ProstheticValve",
+  "description": "Expected (normal) Doppler values of one prosthetic valve model in one position, by labelled size (TS-02.2.8). One file per model and position: content/prosthetics/<id>.yaml. Values are stored as published (mean ± SD, median (IQR), mean only, or a threshold); nothing is computed for a patient.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "position", "type", "sizes"],
+  "properties": {
+    "id": {
+      "description": "Stable id, conventionally <position>-<model>, e.g. 'aortic-sapien-3'.",
+      "$ref": "common.schema.json#/$defs/id"
+    },
+    "name": {
+      "description": "Model name as printed in the source table, e.g. 'SAPIEN 3' or 'Abbott Trifecta'.",
+      "$ref": "common.schema.json#/$defs/text"
+    },
+    "position": {
+      "description": "Implant position.",
+      "enum": ["aortic", "mitral", "tricuspid", "pulmonary"]
+    },
+    "type": {
+      "description": "Prosthesis type, used for the picker's second step.",
+      "enum": [
+        "mechanical",
+        "bioprosthetic-stented",
+        "bioprosthetic-stentless",
+        "homograft",
+        "valved-conduit",
+        "transcatheter"
+      ]
+    },
+    "typeLabel": {
+      "description": "Type wording printed in the source, when more specific than the enum, e.g. 'Bileaflet' or 'Stented pericardial bioprosthesis'.",
+      "$ref": "common.schema.json#/$defs/text"
+    },
+    "aliases": {
+      "description": "Other names of the same model indexed by search, e.g. earlier trade names.",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common.schema.json#/$defs/text"
+      }
+    },
+    "sizes": {
+      "description": "Labelled sizes in the order printed, each with its expected values.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/size"
+      }
+    }
+  },
+  "$defs": {
+    "size": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["size", "values"],
+      "properties": {
+        "size": {
+          "description": "Labelled size as printed; plain numbers are millimetres, e.g. '23', '16 (#20)', '12-22', 'All sizes'.",
+          "$ref": "common.schema.json#/$defs/text"
+        },
+        "values": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/expectedValue"
+          }
+        }
+      }
+    },
+    "expectedValue": {
+      "description": "One published expected value for one parameter at one size.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["parameter", "statistic", "unit", "modality", "population", "citation"],
+      "properties": {
+        "parameter": {
+          "description": "Id of the parameter (content/parameters/<id>.yaml).",
+          "$ref": "common.schema.json#/$defs/id"
+        },
+        "statistic": {
+          "description": "How the source reports the value: mean-sd (mean ± SD), mean (no SD reported), median-iqr (median with interquartile range) or threshold (operator + value, e.g. '< 15').",
+          "enum": ["mean-sd", "mean", "median-iqr", "threshold"]
+        },
+        "mean": {
+          "type": "number"
+        },
+        "sd": {
+          "type": "number",
+          "minimum": 0
+        },
+        "median": {
+          "type": "number"
+        },
+        "q1": {
+          "description": "Lower end of the published interquartile range.",
+          "type": "number"
+        },
+        "q3": {
+          "description": "Upper end of the published interquartile range.",
+          "type": "number"
+        },
+        "operator": {
+          "enum": ["<", "<=", ">", ">="]
+        },
+        "value": {
+          "type": "number"
+        },
+        "unit": {
+          "description": "Unit as published, also the unit displayed (decision PO-4).",
+          "$ref": "common.schema.json#/$defs/unit"
+        },
+        "modality": {
+          "$ref": "common.schema.json#/$defs/modality"
+        },
+        "setting": {
+          "description": "Implant setting when the source separates it, e.g. 'valve-in-valve' or 'native aortic stenosis'.",
+          "$ref": "common.schema.json#/$defs/text"
+        },
+        "population": {
+          "$ref": "common.schema.json#/$defs/populationQualifiers"
+        },
+        "caveats": {
+          "description": "Footnotes printed with the value, e.g. 'Limited data, no SD reported.'",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "common.schema.json#/$defs/longText"
+          }
+        },
+        "citation": {
+          "$ref": "common.schema.json#/$defs/citation"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "statistic": {
+                "const": "mean-sd"
+              }
+            },
+            "required": ["statistic"]
+          },
+          "then": {
+            "required": ["mean", "sd"],
+            "properties": {
+              "median": false,
+              "q1": false,
+              "q3": false,
+              "operator": false,
+              "value": false,
+              "mean": true,
+              "sd": true
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "statistic": {
+                "const": "mean"
+              }
+            },
+            "required": ["statistic"]
+          },
+          "then": {
+            "required": ["mean"],
+            "properties": {
+              "sd": false,
+              "median": false,
+              "q1": false,
+              "q3": false,
+              "operator": false,
+              "value": false,
+              "mean": true
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "statistic": {
+                "const": "median-iqr"
+              }
+            },
+            "required": ["statistic"]
+          },
+          "then": {
+            "required": ["median", "q1", "q3"],
+            "properties": {
+              "mean": false,
+              "sd": false,
+              "operator": false,
+              "value": false,
+              "median": true,
+              "q1": true,
+              "q3": true
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "statistic": {
+                "const": "threshold"
+              }
+            },
+            "required": ["statistic"]
+          },
+          "then": {
+            "required": ["operator", "value"],
+            "properties": {
+              "mean": false,
+              "sd": false,
+              "median": false,
+              "q1": false,
+              "q3": false,
+              "operator": true,
+              "value": true
+            }
+          }
+        }
+      ]
+    }
+  }
+}

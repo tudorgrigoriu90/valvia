@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-06.4.2 Audit trail: approver, timestamp, source recorded in CHANGELOG + Git h |
-| Next up | TS-02.2.8: prosthetic valve catalogue schema |
+| Last completed | TS-02.2.8 Prosthetic valve catalogue schema: position, type, model, size → expec |
+| Next up | TS-04.7.4: prosthetic valve picker |
 
 ## Next up: R0 sequence
 
@@ -105,7 +105,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-02.2.5 | Paediatric qualifiers: `ageGroup` (adult / paediatric), age band, BSA band, z-score reference (as published, no computation) | 1 | done |  |
 | TS-02.2.6 | Value-level `modality` (Echo / CT / CMR) | 1 | done |  |
 | TS-02.2.7 | Unit layer: store as published, display in house units (NFR-15), original on tap; exhaustive conversion tests | 2 | done | 100 % coverage; display conversion superseded by PO-4 (CH-18): values shown as published, conversion used only for comparisons |
-| TS-02.2.8 | Prosthetic valve catalogue schema: position, type, model, size → expected values with citation | 2 | todo |  |
+| TS-02.2.8 | Prosthetic valve catalogue schema: position, type, model, size → expected values with citation | 2 | done |  |
 | TS-02.3.1 | Source schema incl. status, supersession, allowed-society check and `citedBy` for cited z-score datasets | 2 | done |  |
 | TS-02.3.2 | Per-value citation locator (table, figure, section, page) | 1 | done | Source existence is checked by the cross-file loader (planned) |
 | TS-02.3.3 | Seed registry from taxonomy Appendix A (content PR, SME verifies) | 2 | done | Initial seed per PO-3; values only from documents read in full |
@@ -329,7 +329,7 @@ subcategory from a document already downloaded from asecho.org; leaves that need
 | CH-48 | Content: aortic stenosis sub-leaves (3.1.1.2–3.1.1.5) from EACVI/ASE 2017 | 2 | done |  |
 | CH-49 | Content: MR/TR mechanism and secondary MR (3.2.1, 3.3.1) from ASE 2017 native regurgitation | 2 | done |  |
 | CH-50 | Content: regurgitation after transcatheter interventions (4.5) from ASE 2019 | 2 | done |  |
-| CH-51 | Content: prosthetic reference values by model and size (4.1) from ASE 2024 appendix | 3 | blocked | Values are mean ± SD per model and size: needs the catalogue schema (TS-02.2.8) and, per the copyright assessment (TS-07.2.1), permission from Elsevier/ASE requested by the engineer |
+| CH-51 | Content: prosthetic reference values by model and size (4.1) from ASE 2024 appendix | 3 | blocked | Values are mean ± SD per model and size: catalogue schema done (TS-02.2.8); per the copyright assessment (TS-07.2.1) it waits for permission from Elsevier/ASE, requested by the engineer |
 | CH-52 | Content: masses and thrombus (12.1–12.3) from ASE 2016 embolism | 1 | done |  |
 | CH-53 | Content: endocarditis (3.6) from ASE 2016 embolism | 1 | done |  |
 | CH-54 | Content: cardiomyopathies (6.x) from ASE 2025 strain and others | 2 | done |  |
@@ -491,3 +491,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-13 | TS-06.5.1 | Report a problem link under every section: GitHub issue form (value-problem.yml, label content-issue) prefilled with title and section URL; optional mailto fallback via VALVIA_CONTACT_EMAIL (validated, off by default); About and privacy pages updated | `TS-06.5.1: report-a-problem link per section with issue form` |
 | 2026-11-13 | TS-06.4.1 | What's new page generated at build time from the Git history of content/: latest 50 content changes (date, commit or pull request link, subject, linked topics, sources/parameters touched); footer link; CI checks out full history | `TS-06.4.1: What's new page from content Git history` |
 | 2026-11-13 | TS-06.4.2 | Content audit trail: workflow on merged content PRs records merge time, approvers (latest review per reviewer), merger, sources and topics in CHANGELOG.md (bot push to main); untrusted PR data via files; merges without approval flagged; seed commits referenced via Git history / What's new | `TS-06.4.2: content audit trail in CHANGELOG from merged PRs` |
+| 2026-11-13 | TS-02.2.8 | Prosthetic valve catalogue schema: one file per model and position (position, type, model, labelled sizes) with expected values as published (mean ± SD, mean only, median (IQR), threshold), population and citation; loader, cross-file rules, published number text; docs | `TS-02.2.8: prosthetic valve catalogue schema, rules and loader` |

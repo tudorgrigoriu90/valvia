@@ -20,7 +20,13 @@ export interface ValueFinding {
   message: string;
 }
 
-const CAN_BE_NEGATIVE: ReadonlySet<Quantity> = new Set(['percent', 'ratio', 'dimensionless', 'angle', 'acceleration']);
+export const CAN_BE_NEGATIVE: ReadonlySet<Quantity> = new Set([
+  'percent',
+  'ratio',
+  'dimensionless',
+  'angle',
+  'acceleration',
+]);
 
 export interface LocatedValue {
   value: Value;

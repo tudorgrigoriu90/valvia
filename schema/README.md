@@ -9,6 +9,7 @@ Field reference: [`docs/content-model.md`](../docs/content-model.md).
 | `topic.schema.json` | Taxonomy node | `TopicNode` in `generated/topic.ts` |
 | `source.schema.json` | Source document (registry) | `SourceDocument` in `generated/source.ts` |
 | `parameter.schema.json` | Measured parameter | `Parameter` in `generated/parameter.ts` |
+| `prosthetic.schema.json` | Prosthetic valve model in one position with expected values by size (TS-02.2.8) | `ProstheticValve` in `generated/prosthetic.ts` |
 
 ## Changing a schema
 

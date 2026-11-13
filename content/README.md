@@ -8,7 +8,7 @@ This README is documentation; YAML files are data.
 | `sources/` | Source document (ESC / EACVI / ASE, cited z-score dataset) | `<source-id>.yaml` |
 | `parameters/` | Measured parameter | `<parameter-id>.yaml` |
 | `topics/` | Taxonomy node; leaves hold content blocks and values | `<node-id>.yaml` |
-| `prosthetics/` | Prosthetic valve reference catalogue (W2) | `<catalogue-id>.yaml` |
+| `prosthetics/` | Prosthetic valve model in one position, with expected values by labelled size (W2, schema TS-02.2.8; entries need publisher permission first, see the [copyright assessment](../docs/safety/copyright-assessment.md)) | `<position>-<model>.yaml` |
 
 Schemas: [`/schema`](../schema/README.md). Modelling rules: [ADR 0003](../docs/adr/0003-content-as-code.md) and `CLAUDE.md` §12.
 

@@ -104,6 +104,9 @@ erDiagram
     PARAMETER ||--o{ VALUE : "measured as"
     SOURCE ||--o{ VALUE : "cited by (with locator)"
     SOURCE |o--o| SOURCE : "supersededBy / citedBy"
+    PROSTHETIC_VALVE ||--o{ EXPECTED_VALUE : "by labelled size"
+    PARAMETER ||--o{ EXPECTED_VALUE : "measured as"
+    SOURCE ||--o{ EXPECTED_VALUE : "cited by"
 
     TOPIC_NODE {
         string id "stable, never changes"

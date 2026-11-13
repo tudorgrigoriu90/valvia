@@ -286,6 +286,55 @@ method: PISA method, apical 4-chamber zoom; single frame at peak regurgitant vel
 
 Unit/quantity consistency (e.g. `quantity: area` with `unit: cm²`) is enforced by the unit layer: see [`units.md`](units.md).
 
+## Prosthetic valve (`prosthetic.schema.json`, TS-02.2.8)
+
+One file per model **and position**: `content/prosthetics/<position>-<model>.yaml`. It feeds the prosthetic picker
+(TS-04.7.4: position → type → model → size → expected values). Values are stored as the source prints them; nothing is
+computed for a patient. Entering the ASE 2024 appendix tables waits for publisher permission
+([copyright assessment](safety/copyright-assessment.md), CH-51).
+
+| Field | Required | Type | Meaning |
+|---|---|---|---|
+| `id` | yes | `id` | e.g. `aortic-sapien-3` |
+| `name` | yes | `text` | Model name as printed, e.g. `SAPIEN 3` |
+| `position` | yes | `aortic` · `mitral` · `tricuspid` · `pulmonary` | Implant position |
+| `type` | yes | `mechanical` · `bioprosthetic-stented` · `bioprosthetic-stentless` · `homograft` · `valved-conduit` · `transcatheter` | Picker step 2 |
+| `typeLabel` | no | `text` | More specific printed type, e.g. `Bileaflet` |
+| `aliases` | no | `text[]` | Other names, indexed by search |
+| `sizes[]` | yes (≥ 1) | object | `size` (label as printed; plain numbers are mm, e.g. `23`, `16 (#20)`, `12-22`, `All sizes`) and `values[]` (≥ 1) |
+
+Each expected value has `parameter`, `statistic`, `unit`, `modality`, `population`, `citation` and optionally `setting`
+(e.g. `valve-in-valve`) and `caveats`. The statistic decides the number fields (schema `if/then`):
+
+| `statistic` | Numbers | Printed as |
+|---|---|---|
+| `mean-sd` | `mean`, `sd` (≥ 0) | 1.45 ± 0.26 |
+| `mean` | `mean` (no SD reported) | 8 |
+| `median-iqr` | `median`, `q1`, `q3` | 7 (6–9) |
+| `threshold` | `operator` (`<` `<=` `>` `>=`), `value` | < 2.5 |
+
+Rules (`core/prosthetics/rules.ts`, run by the loader): parameter and source exist; unit fits the parameter quantity;
+modality fits the parameter; no negative numbers for quantities that cannot be negative; `q1 ≤ median ≤ q3`; each size
+label once. The loader keeps the published text of every number (`1.40` stays `1.40`).
+
+```yaml
+id: aortic-example-valve
+name: Example Valve
+position: aortic
+type: transcatheter
+sizes:
+  - size: '23'
+    values:
+      - parameter: eoa
+        statistic: mean-sd
+        mean: 1.45
+        sd: 0.26
+        unit: cm²
+        modality: Echo
+        population: { ageGroup: adult }
+        citation: { source: ase-2024-prosthetic, locator: { table: A1 } }
+```
+
 ## Source document (`source.schema.json`, TS-02.3.1)
 
 One file per source: `content/sources/<id>.yaml`. Every value cites a source id plus a locator.
