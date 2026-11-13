@@ -7,3 +7,120 @@ order: 5
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: rap-from-ivc
+    type: criteria-checklist
+    tag: CRIT
+    title: Estimated RA pressure from IVC size and collapse
+    criteria:
+      - text: 'RAP 3 mmHg (range 0–5): IVC ≤ 21 mm and ≥ 50% inspiratory collapse.'
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '4'
+            page: '161'
+        values:
+          - parameter: ivc-diameter
+            context: diagnostic-criterion
+            operator: '<='
+            value: 21
+            unit: mm
+            modality: Echo
+            population:
+              ageGroup: adult
+            citation:
+              source: ase-2025-right-heart
+              locator:
+                table: '4'
+                page: '161'
+          - parameter: ivc-collapse
+            context: diagnostic-criterion
+            operator: '>='
+            value: 50
+            unit: '%'
+            modality: Echo
+            population:
+              ageGroup: adult
+            citation:
+              source: ase-2025-right-heart
+              locator:
+                table: '4'
+                page: '161'
+      - text: 'RAP 8 mmHg (range 5–10): IVC ≤ 21 mm with < 50% collapse, or IVC > 21 mm with ≥ 50% collapse (indeterminate; integrate secondary indices).'
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '4'
+            page: '161'
+      - text: 'RAP 15 mmHg (range 10–20): IVC > 21 mm and < 50% collapse.'
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '4'
+            page: '161'
+        values:
+          - parameter: ivc-diameter
+            context: diagnostic-criterion
+            operator: '>'
+            value: 21
+            unit: mm
+            modality: Echo
+            population:
+              ageGroup: adult
+            citation:
+              source: ase-2025-right-heart
+              locator:
+                table: '4'
+                page: '161'
+          - parameter: ivc-collapse
+            context: diagnostic-criterion
+            operator: '<'
+            value: 50
+            unit: '%'
+            modality: Echo
+            population:
+              ageGroup: adult
+            citation:
+              source: ase-2025-right-heart
+              locator:
+                table: '4'
+                page: '161'
+      - text: 'RAP 20 mmHg: IVC > 25 mm with < 50% collapse, dilated hepatic veins and spontaneous echo contrast or colour-flow reflux (markedly raised RAP, severe TR or impaired venous return).'
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '4'
+            page: '161'
+        values:
+          - parameter: ivc-diameter
+            context: diagnostic-criterion
+            operator: '>'
+            value: 25
+            unit: mm
+            modality: Echo
+            population:
+              ageGroup: adult
+            citation:
+              source: ase-2025-right-heart
+              locator:
+                table: '4'
+                page: '161'
+  - id: ivc-special
+    type: threshold-list
+    tag: CRIT
+    title: Special situations
+    values:
+      - parameter: ivc-diameter
+        context: diagnostic-criterion
+        operator: '<='
+        value: 2.1
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Positive-pressure ventilation: collapse cannot be used; an IVC ≤ 2.1 cm in an intubated patient accurately identifies RAP < 10 mmHg. Report a specific RAP value; if uncertain, use 8 mmHg.'
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            page: '160'

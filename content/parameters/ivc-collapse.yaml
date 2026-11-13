@@ -1,0 +1,6 @@
+id: ivc-collapse
+name: Inspiratory IVC collapse (sniff or quiet respiration)
+quantity: percent
+unit: '%'
+modalities: [Echo]
+synonyms: [IVC collapsibility, caval index, RA pressure]

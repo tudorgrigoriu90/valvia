@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | CH-45 Content: PH and right heart (5.x) from ASE 2025 right heart: PH defini |
-| Next up | CH-46: IVC and RA pressure (ASE 2025) |
+| Last completed | CH-46 Content: IVC and RA pressure (1.6) from ASE 2025 right heart |
+| Next up | CH-47: diastolic special populations, HFpEF, diastolic stress (ASE 2025) |
 
 ## Next up: R0 sequence
 
@@ -324,7 +324,7 @@ subcategory from a document already downloaded from asecho.org; leaves that need
 |---|---|---|---|---|
 | CH-44 | Plan update: content batch 2026-11-13 | 0 | done |  |
 | CH-45 | Content: PH and right heart (5.x) from ASE 2025 right heart: PH definitions, echo probability, RV–PA coupling | 2 | done |  |
-| CH-46 | Content: IVC and RA pressure (1.6) from ASE 2025 right heart | 1 | todo |  |
+| CH-46 | Content: IVC and RA pressure (1.6) from ASE 2025 right heart | 1 | done |  |
 | CH-47 | Content: diastolic special populations, HFpEF and diastolic stress (2.3–2.5) from ASE 2025 diastolic | 2 | todo |  |
 | CH-48 | Content: aortic stenosis sub-leaves (3.1.1.2–3.1.1.5) from EACVI/ASE 2017 | 2 | todo |  |
 | CH-49 | Content: MR/TR mechanism and secondary MR (3.2.1, 3.3.1) from ASE 2017 native regurgitation | 2 | todo |  |
@@ -461,3 +461,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-13 | CH-44 | Plan the 2026-11-13 content batch (CH-45 to CH-57): empty leaves fillable from ASE documents already obtained | `CH-44: plan the remaining content from obtained documents` |
 | 2026-11-13 | CH-58 | Schema and unit layer support values printed in mm/mmHg (coupling-ratio), WU (vascular-resistance), g/m (mass-per-height), mL/min/kg (indexed-flow-rate) and cm/s² (acceleration, exact shift to m/s²); generated types; units doc; tests | `CH-58: add units for coupling ratio, Wood units, g/m, cm/s², mL/min/kg` |
 | 2026-11-13 | CH-45 | PH and right heart (ASE 2025 right heart): haemodynamic PH definitions as a note (5.1), abnormal RVSP and supporting signs for pre- vs postcapillary PH from Table 8 (5.2), TAPSE/PASP normal, uncoupling and PAH thresholds in mm/mmHg (5.3); 4 parameters | `CH-45: PH definitions, echo signs and TAPSE/PASP (ASE 2025)` |
+| 2026-11-13 | CH-46 | IVC and RA pressure (ASE 2025 right heart): RAP 3/8/15/20 mmHg from IVC size and collapse (Table 4) as a checklist with values; IVC ≤ 2.1 cm in ventilated patients; 1 parameter | `CH-46: RA pressure from IVC size and collapse (ASE 2025)` |
