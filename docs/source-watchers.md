@@ -56,6 +56,22 @@ found two erratum notices (2016) for the ASE/EACVI 2015 chamber quantification d
 the fixture in `pipeline/watch/__fixtures__/crossref-updates.json` is that real response. Requests carry no e-mail or
 other personal data.
 
+## Issues (TS-06.2.1)
+
+[`issue.ts`](../pipeline/watch/issue.ts) renders one issue per new candidate:
+
+| | New document | Erratum / correction / retraction |
+|---|---|---|
+| Title | `New document: <title> (<journal>, <year>)` | `Erratum to <source id>: <title> (<journal>, <year>)` |
+| Labels | `source-candidate` | `source-candidate`, `erratum` |
+| Sources | Registered sources with similar titles (≥ 2 shared content words and Jaccard ≥ 0.4, top 3): possibly superseded | The corrected source |
+| Topics to check | Topics citing those sources | Topics citing the corrected source |
+| Next steps | Check it is ESC/EACVI or ASE, attach the PDF or open-access link, add `new-source` to start drafting | Compare the notice with the values, content PR if a value changes |
+
+The watcher never adds `new-source` itself: drafting (TS-06.2.2) starts only after a person has triaged the issue.
+Titles and journal names are untrusted: line breaks are flattened, HTML escaped and `@` broken with a zero-width space so
+an external title cannot mention anyone. The similarity match is a hint for triage, not a decision.
+
 ## Status
 
 | Task | Part | Status |
@@ -63,6 +79,6 @@ other personal data.
 | TS-06.1.4 | State file and deduplication | done |
 | TS-06.1.2 | PubMed queries | done |
 | TS-06.1.5 | Errata detection (Crossref) | done |
-| TS-06.2.1 | Issue per candidate | planned |
+| TS-06.2.1 | Issue per candidate | done |
 | TS-06.1.1 | Weekly workflow with failure notification | planned |
 | TS-06.1.3 | Page-change watchers | planned |

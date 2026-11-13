@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-06.1.5: Errata/corrigendum detection for registered sources (Crossref update r |
-| Next task | TS-06.2.1: one issue per candidate |
+| Last completed task | TS-06.2.1: Issue per candidate with metadata and mapped affected topics |
+| Next task | TS-06.1.1: weekly watcher workflow with failure notification |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
