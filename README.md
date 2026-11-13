@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-06.1.3: Page-change watchers: ESC guideline list, EACVI recommendations page,  |
-| Next task | TS-06.2.4: clinical change-summary generator for content PRs |
+| Last completed task | TS-06.2.4: Clinical change-summary generator for the PR body |
+| Next task | TS-06.3.3: stale content PR reminder |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

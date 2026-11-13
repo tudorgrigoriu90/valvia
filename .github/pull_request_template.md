@@ -6,6 +6,8 @@ Branch: content/<node-id>-<short-slug> or source/<source-id>. Base: main.
 
 ## Clinical change summary
 
+<!-- The "Content summary" check posts this table, generated from the YAML diff, as a comment and updates it on every push (TS-06.2.4). Summarise the intent here; the generated comment lists every value. -->
+
 | Topic | Parameter | Population | Society / source | Old value | New value | Locator |
 |---|---|---|---|---|---|---|
 | | | | | | | |
@@ -19,7 +21,7 @@ Branch: content/<node-id>-<short-slug> or source/<source-id>. Base: main.
 
 - [ ] Values match the source document (number, operator, unit)
 - [ ] Population and qualifiers are correct (adult/paediatric, sex, age/BSA band, rhythm)
-- [ ] Units are as published; converted display values are correct
+- [ ] Units are exactly as published (values are never converted for display, decision PO-4)
 - [ ] Modality is correct (Echo / CT / CMR)
 - [ ] Discrepancies between current sources are shown side by side, not resolved
 - [ ] Superseded values appear under "Previous recommendations"

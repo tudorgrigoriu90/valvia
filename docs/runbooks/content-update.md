@@ -45,8 +45,11 @@ sequenceDiagram
 4. **Values:** edit the topic's YAML blocks. Every value has a citation with a locator, a population with `ageGroup`,
    a `modality`, and the number and unit exactly as published. Check image tables and ≥/≤ signs on the rendered page.
 5. **Check locally:** `npm run validate:content` (schema, registry, plausibility, discrepancies), then `npm run verify`.
-6. **Commit and open the PR** with `main` as base. The body starts with the clinical change summary table
-   (parameter, population, society, old → new, locator); keep the PR to one subcategory and data only.
+6. **Commit and open the PR** with `main` as base. The body starts with the clinical change summary; the
+   *Content summary* check posts the full value-by-value table (topic, parameter, population, society, old → new,
+   locator) as a comment generated from the YAML diff and updates it on every push. Run it locally with
+   `git worktree add /tmp/base main && npx tsx pipeline/summary/cli.ts /tmp/base .`. Keep the PR to one subcategory
+   and data only.
 7. **Review:** CI must be green; the verification run (when available, TS-06.3.4) is advisory. **Only the SME approves
    and merges.** Claude Code never approves or merges a content PR.
 8. **After merge:** CI deploys `main` (about 5 min). Check the live page: the value, the citation and the footer

@@ -9,6 +9,7 @@
 |---|---|---|---|---|
 | CI | [`ci.yml`](../.github/workflows/ci.yml) job `verify` | push to `main`, every PR, manual | Same gate as `npm run verify` | TS-01.3.1 |
 | Source watch | [`source-watch.yml`](../.github/workflows/source-watch.yml) | Mondays 05:17 UTC, manual | New society documents (PubMed) and errata of registered sources (Crossref) → one issue each; commits `pipeline/watch/state.json`; failures open a `watcher-failure` issue ([source watchers](source-watchers.md)) | TS-06.1.1 |
+| Content summary | [`content-summary.yml`](../.github/workflows/content-summary.yml) | content PRs (opened, pushed) | Compares the PR's content with its base and posts the value-by-value clinical change summary as one comment, updated on every push, and in the job summary (`pipeline/summary`) | TS-06.2.4 |
 | Content audit | [`content-audit.yml`](../.github/workflows/content-audit.yml) | a merged PR to `main` that changes `content/**` | Adds the PR's merge time, approvers (latest review per reviewer), merger, sources and topics to [`CHANGELOG.md`](../CHANGELOG.md) and pushes it to `main` as `github-actions[bot]`; untrusted PR data passes through files, never the shell (`pipeline/audit`) | TS-06.4.2 |
 | Deploy | [`ci.yml`](../.github/workflows/ci.yml) job `deploy` | green `verify` on push to `main` | GitHub Actions Pages deployment of `dist/` ([ADR 0005](adr/0005-pages-actions-deploy-no-previews.md)) | TS-01.3.2 |
 

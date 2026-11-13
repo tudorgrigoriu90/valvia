@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-06.1.3 Page-change watchers: ESC guideline list, EACVI recommendations page,  |
-| Next up | TS-06.2.4: clinical change-summary generator for content PRs |
+| Last completed | TS-06.2.4 Clinical change-summary generator for the PR body |
+| Next up | TS-06.3.3: stale content PR reminder |
 
 ## Next up: R0 sequence
 
@@ -189,7 +189,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-06.2.1 | Issue per candidate with metadata and mapped affected topics | 3 | done |  |
 | TS-06.2.2 | Claude Code GitHub Action triggered by `new-source` label; prompt references `CLAUDE.md` content rules; monthly spending cap | 3 | todo |  |
 | TS-06.2.3 | Source acquisition: download open-access PDF, else request attachment in the issue | 2 | todo |  |
-| TS-06.2.4 | Clinical change-summary generator for the PR body | 3 | todo |  |
+| TS-06.2.4 | Clinical change-summary generator for the PR body | 3 | done |  |
 | TS-06.3.1 | Content PR template with reviewer checklist ("values match source", "population/units correct", "discrepancies labelled", "history correct") | 1 | todo |  |
 | TS-06.3.2 | Enable auto-merge on content PRs once approved and green | 1 | todo |  |
 | TS-06.3.3 | Stale-PR reminder and escalation job | 2 | todo |  |
@@ -499,3 +499,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-13 | TS-06.2.1 | Issue per watcher candidate: title, metadata table with PubMed/DOI links, registered sources it may update (title similarity) or corrects (errata), topics to check with links, next steps; labels source-candidate (+ erratum); untrusted titles sanitised (no mentions, no HTML) | `TS-06.2.1: render one triage issue per source candidate` |
 | 2026-11-13 | TS-06.1.1 | Weekly source-watch workflow (Mondays + manual): runWatch (PubMed window since last run, Crossref errata, dedupe, issues, state), opens one issue per candidate, commits the state as the bot, opens/comments a watcher-failure issue on failure; CLI with retrying fetch and generic User-Agent | `TS-06.1.1: weekly source-watch workflow with failure notification` |
 | 2026-11-13 | TS-06.1.3 | Page watchers for the ASE and ESC guideline lists: document links matched per page, new links reported as candidates (url key), first run records a baseline instead of reporting, duplicate anchors merged with the best title, a page with no document link fails the run; integrated into the weekly run and issues (Page row) | `TS-06.1.3: watch the ASE and ESC guideline pages for new documents` |
+| 2026-11-13 | TS-06.2.4 | Clinical change summary for content PRs: base vs head content compared value by value (identity: topic, block, parameter, context, grade, technique, modality, population, source); added/removed/changed rows in the PR template columns, topic status and source registry changes; workflow posts one sticky comment per PR; PR template updated (PO-4 wording) | `TS-06.2.4: generate the clinical change summary for content PRs` |
