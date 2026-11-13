@@ -1,0 +1,67 @@
+# Content audit trail (TS-06.4.2, NFR-06): when a pull request that changes /content is merged, record its approvers,
+# merger, merge time, sources and topics in CHANGELOG.md on main. PR data comes from the GitHub API and is treated as
+# untrusted: it is passed through files, never interpolated into shell commands.
+name: Content audit
+
+on:
+  pull_request:
+    types: [closed]
+    branches: [main]
+    paths: ['content/**']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: content-audit
+  cancel-in-progress: false
+
+jobs:
+  record:
+    name: Record merged content PR
+    if: ${{ github.event.pull_request.merged == true }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch pull request, reviews and files
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          gh api "repos/$REPOSITORY/pulls/$PR_NUMBER" > "$RUNNER_TEMP/pr.json"
+          gh api --paginate --slurp "repos/$REPOSITORY/pulls/$PR_NUMBER/reviews" | jq 'add // []' > "$RUNNER_TEMP/reviews.json"
+          gh api --paginate --slurp "repos/$REPOSITORY/pulls/$PR_NUMBER/files" | jq 'add // []' > "$RUNNER_TEMP/files.json"
+
+      - name: Add the audit row to CHANGELOG.md
+        run: npx tsx pipeline/audit/cli.ts "$RUNNER_TEMP/pr.json" "$RUNNER_TEMP/reviews.json" "$RUNNER_TEMP/files.json"
+
+      - name: Commit and push
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          if git diff --quiet -- CHANGELOG.md; then echo "nothing to record"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add CHANGELOG.md
+          git commit -m "CH-audit: record content PR #$PR_NUMBER in CHANGELOG"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep $((attempt * 10))
+          done
+          exit 1

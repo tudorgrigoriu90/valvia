@@ -76,7 +76,8 @@ Rules:
 - The verification run (Claude clinical-reviewer persona) is a required check. It is advisory:
   it can block, never approve.
 - **Only the SME approves content.** Claude Code never approves, merges or force-merges a content PR,
-  and never pushes data directly to `main`.
+  and never pushes data directly to `main`. Each merge is recorded automatically in [`CHANGELOG.md`](CHANGELOG.md)
+  (audit trail, TS-06.4.2); never edit its rows by hand.
 - Emergency exception (engineer only): revert a published content change via the admin bypass.
   A revert only removes content; corrections go through a normal content PR.
 

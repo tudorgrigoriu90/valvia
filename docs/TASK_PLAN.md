@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-06.4.1 Auto-generated "What's new" page from merged content PRs |
-| Next up | TS-06.4.2: audit trail |
+| Last completed | TS-06.4.2 Audit trail: approver, timestamp, source recorded in CHANGELOG + Git h |
+| Next up | TS-02.2.8: prosthetic valve catalogue schema |
 
 ## Next up: R0 sequence
 
@@ -197,7 +197,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-06.3.5 | SME quick guide (1 page): reviewing a content PR in the GitHub mobile app | 1 | todo |  |
 | TS-06.3.6 | Claude clinical-reviewer persona (built and maintained by the engineer with SME input): echocardiography-expert review prompt and checklist, run as the verification run on every content PR; second reviewer, advisory only, never approves | 2 | todo |  |
 | TS-06.4.1 | Auto-generated "What's new" page from merged content PRs | 3 | done |  |
-| TS-06.4.2 | Audit trail: approver, timestamp, source recorded in CHANGELOG + Git history | 1 | todo |  |
+| TS-06.4.2 | Audit trail: approver, timestamp, source recorded in CHANGELOG + Git history | 1 | done |  |
 | TS-06.4.3 | Rollback runbook (revert PR → redeploy) | 1 | done | Delivered as [`docs/runbooks/emergency-rollback.md`](runbooks/emergency-rollback.md) in TS-08.6 |
 | TS-06.5.1 | "Report an issue" link per value: prefilled GitHub issue form, with a `mailto:` fallback for users without GitHub | 2 | done |  |
 
@@ -490,3 +490,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-13 | TS-04.6.1 | Recently viewed: last 10 leaf topics on the home page, newest first, stored device-locally (valvia.recent, try/catch, untrusted data validated as safe paths and plain titles), Clear button, hidden when empty or without JS; privacy page and architecture updated | `TS-04.6.1: recently viewed topics on the home page` |
 | 2026-11-13 | TS-06.5.1 | Report a problem link under every section: GitHub issue form (value-problem.yml, label content-issue) prefilled with title and section URL; optional mailto fallback via VALVIA_CONTACT_EMAIL (validated, off by default); About and privacy pages updated | `TS-06.5.1: report-a-problem link per section with issue form` |
 | 2026-11-13 | TS-06.4.1 | What's new page generated at build time from the Git history of content/: latest 50 content changes (date, commit or pull request link, subject, linked topics, sources/parameters touched); footer link; CI checks out full history | `TS-06.4.1: What's new page from content Git history` |
+| 2026-11-13 | TS-06.4.2 | Content audit trail: workflow on merged content PRs records merge time, approvers (latest review per reviewer), merger, sources and topics in CHANGELOG.md (bot push to main); untrusted PR data via files; merges without approval flagged; seed commits referenced via Git history / What's new | `TS-06.4.2: content audit trail in CHANGELOG from merged PRs` |

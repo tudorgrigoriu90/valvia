@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-06.4.1: Auto-generated "What's new" page from merged content PRs |
-| Next task | TS-06.4.2: audit trail |
+| Last completed task | TS-06.4.2: Audit trail: approver, timestamp, source recorded in CHANGELOG + Git h |
+| Next task | TS-02.2.8: prosthetic valve catalogue schema |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start
@@ -79,6 +79,7 @@ Read [`CLAUDE.md`](CLAUDE.md) first. In short:
 - [Content policy](docs/safety/content-policy.md)
 - [EU MDR qualification memo](docs/safety/mdr-qualification.md)
 - [CI/CD](docs/ci-cd.md)
+- [Content audit log](CHANGELOG.md): approver, merger and time of every merged content PR
 - [Runbooks](docs/runbooks/README.md): content update, emergency rollback, secret rotation, [go-live checklist](docs/runbooks/go-live-checklist.md)
 - [Decision log](docs/decisions/README.md)
 - [Product backlog](docs/product/valvia-backlog.md)

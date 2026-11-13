@@ -52,7 +52,9 @@ sequenceDiagram
 8. **After merge:** CI deploys `main` (about 5 min). Check the live page: the value, the citation and the footer
    content version (short commit SHA). If the SME reviewed the whole topic, a follow-up content PR sets
    `status: published` and `lastReviewed: <date>`.
-9. **Log:** the task plan push log records the PR when opened and when merged.
+9. **Log:** the task plan push log records the PR when opened and when merged. The merge itself is recorded
+   automatically in [`CHANGELOG.md`](../../CHANGELOG.md) (approvers, merger, time, sources, topics; TS-06.4.2); a
+   row showing **none** under "Approved by" means a merge without approval and must be investigated.
 
 ## Errata and corrections
 

@@ -8,13 +8,14 @@
 | Workflow | File | Trigger | Purpose | Backlog |
 |---|---|---|---|---|
 | CI | [`ci.yml`](../.github/workflows/ci.yml) job `verify` | push to `main`, every PR, manual | Same gate as `npm run verify` | TS-01.3.1 |
+| Content audit | [`content-audit.yml`](../.github/workflows/content-audit.yml) | a merged PR to `main` that changes `content/**` | Adds the PR's merge time, approvers (latest review per reviewer), merger, sources and topics to [`CHANGELOG.md`](../CHANGELOG.md) and pushes it to `main` as `github-actions[bot]`; untrusted PR data passes through files, never the shell (`pipeline/audit`) | TS-06.4.2 |
 | Deploy | [`ci.yml`](../.github/workflows/ci.yml) job `deploy` | green `verify` on push to `main` | GitHub Actions Pages deployment of `dist/` ([ADR 0005](adr/0005-pages-actions-deploy-no-previews.md)) | TS-01.3.2 |
 
 Pull requests: the `verify` job attaches the built site as artifact `site-pr-N` (14 days). No hosted previews.
 
 CI also runs **Lighthouse budgets** ([`lighthouserc.cjs`](../lighthouserc.cjs), TS-05.2.1) on the home page and two leaf pages at mobile settings: performance score ≥ 0.95, LCP ≤ 1.5 s, CLS ≤ 0.1 and JavaScript ≤ 50 KB are all blocking. Run locally with `CHROME_PATH=/opt/pw-browsers/chromium npm run lighthouse` after a build.
 
-Planned: content path guard.
+Planned: content path guard. When the `main` ruleset is set up (TS-01.3.5), allow `github-actions[bot]` to push (bypass list), or the content audit cannot record merged PRs.
 
 ## CI pipeline
 
