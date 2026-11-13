@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-54: Content: cardiomyopathies (6.x) from ASE 2025 strain and others |
-| Next task | CH-55: coarctation and acute aortic syndromes (ASE/EACVI 2015 aorta) |
+| Last completed task | CH-55: Content: coarctation and acute aortic syndromes (8.6, 10.3) from ASE/E |
+| Next task | CH-56: paediatric z-scores and HCM in children |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

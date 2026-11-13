@@ -7,3 +7,69 @@ order: 2
 population: adult
 wave: W2
 status: draft
+blocks:
+  - id: dissection-signs
+    type: criteria-checklist
+    tag: CRIT
+    title: 'Aortic dissection: echocardiographic definitions'
+    criteria:
+      - text: 'Dissection flap: a flap dividing two lumens, with motion independent of the aortic wall, seen in more than one view and distinct from reverberation artefacts.'
+        citation:
+          source: ase-eacvi-2015-thoracic-aorta
+          locator:
+            table: '7'
+            page: '140'
+      - text: 'True lumen: systolic expansion and diastolic collapse, systolic jet directed away from the lumen, no spontaneous contrast, forward systolic flow.'
+        citation:
+          source: ase-eacvi-2015-thoracic-aorta
+          locator:
+            table: '7'
+            page: '140'
+      - text: 'False lumen: diastolic diameter increase, spontaneous contrast and/or thrombus, reversed, delayed or absent flow.'
+        citation:
+          source: ase-eacvi-2015-thoracic-aorta
+          locator:
+            table: '7'
+            page: '140'
+      - text: 'Entry tear: disruption of flap continuity with fluttering or ruptured intimal borders; colour flow through the tear.'
+        citation:
+          source: ase-eacvi-2015-thoracic-aorta
+          locator:
+            table: '7'
+            page: '140'
+      - text: 'Complications to look for: aortic regurgitation (mechanism and severity), coronary or side-branch involvement (flap into the ostium, absent flow, new wall motion abnormality), pericardial or pleural effusion, tamponade.'
+        citation:
+          source: ase-eacvi-2015-thoracic-aorta
+          locator:
+            table: '7'
+            page: '140'
+  - id: imh
+    type: threshold-list
+    tag: CRIT
+    title: Intramural haematoma
+    values:
+      - parameter: aortic-wall-thickness
+        context: diagnostic-criterion
+        operator: '>'
+        value: 0.5
+        unit: cm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Crescentic or concentric thickening of the aortic wall, without a dissection flap or double channel; preserved, smooth luminal shape; echolucent areas and central displacement of intimal calcium may be present.'
+        citation:
+          source: ase-eacvi-2015-thoracic-aorta
+          locator:
+            table: '11'
+            page: '149–150'
+  - id: tte-tee
+    type: note
+    tag: METH
+    title: TTE and TEE
+    text: 'TTE (sensitivity about 85% with contrast in recent data) can be the initial test, particularly in the emergency room, but a negative TTE does not exclude type A dissection and is less sensitive for type B; TEE has a sensitivity approaching 100%. Intramural haematoma thickness and maximal aortic diameter predict progression.'
+    citation:
+      source: ase-eacvi-2015-thoracic-aorta
+      locator:
+        table: '12'
+        page: '140, 150'

@@ -7,3 +7,39 @@ order: 6
 population: both
 wave: W2
 status: draft
+blocks:
+  - id: coarctation-points
+    type: criteria-checklist
+    tag: CRIT
+    title: 'Coarctation of the aorta: key points'
+    criteria:
+      - text: 'Discrete narrowing just distal to the left subclavian artery; about 50% of patients with coarctation have a bicuspid aortic valve (< 10% of patients with a BAV have coarctation).'
+        citation:
+          source: ase-eacvi-2015-thoracic-aorta
+          locator:
+            table: '25'
+            page: '163'
+      - text: 'Doppler: systolic flow acceleration and gradient that persists into diastole.'
+        citation:
+          source: ase-eacvi-2015-thoracic-aorta
+          locator:
+            table: '25'
+            page: '163'
+      - text: 'TTE often images the arch and proximal descending aorta poorly; by TEE the Doppler beam is nearly perpendicular to flow, so gradients are hard to obtain.'
+        citation:
+          source: ase-eacvi-2015-thoracic-aorta
+          locator:
+            table: '25'
+            page: '163'
+      - text: 'CT and MRI best define the site, degree of obstruction and collaterals; MRI phase-contrast can quantify the gradient and collateral flow.'
+        citation:
+          source: ase-eacvi-2015-thoracic-aorta
+          locator:
+            table: '25'
+            page: '163'
+      - text: 'Pseudocoarctation: high, elongated arch with kinking but no luminal narrowing and no enlarged collateral arteries.'
+        citation:
+          source: ase-eacvi-2015-thoracic-aorta
+          locator:
+            table: '25'
+            page: '163'

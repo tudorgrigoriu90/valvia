@@ -1,0 +1,6 @@
+id: aortic-wall-thickness
+name: Aortic wall thickness
+quantity: length
+unit: mm
+modalities: [Echo, CT, CMR]
+synonyms: [intramural haematoma, IMH, aortic wall]
