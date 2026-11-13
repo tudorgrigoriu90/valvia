@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-52: Content: masses and thrombus (12.1–12.3) from ASE 2016 embolism |
-| Next task | CH-53: endocarditis (ASE 2016) |
+| Last completed task | CH-53: Content: endocarditis (3.6) from ASE 2016 embolism |
+| Next task | CH-54: cardiomyopathies (ASE 2025 strain and others) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

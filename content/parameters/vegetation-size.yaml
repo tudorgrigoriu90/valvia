@@ -1,0 +1,6 @@
+id: vegetation-size
+name: Vegetation size (maximal length)
+quantity: length
+unit: mm
+modalities: [Echo]
+synonyms: [vegetation, infective endocarditis, embolic risk]

@@ -7,3 +7,60 @@ order: 1
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: vegetation-size
+    type: threshold-list
+    tag: INTV
+    title: Vegetation size
+    values:
+      - parameter: vegetation-size
+        context: intervention-threshold
+        operator: '>'
+        value: 10
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Early surgery has a class IIb recommendation for vegetations > 10 mm in the treatment guidelines quoted, regardless of clinical embolism; > 10 mm with severe mobility independently predicted new embolism after antibiotics.'
+        citation:
+          source: ase-2016-cardiac-source-of-embolism
+          locator:
+            page: '19'
+      - parameter: vegetation-size
+        context: prognostic-marker
+        operator: '>'
+        value: 15
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Independent predictor of death; highly mobile vegetations > 15 mm (pedunculated, prolapsing across the coaptation plane) may benefit from early surgery. Sizes were mostly measured by multiplane TEE.'
+        citation:
+          source: ase-2016-cardiac-source-of-embolism
+          locator:
+            page: '19'
+  - id: embolic-predictors
+    type: criteria-checklist
+    tag: CRIT
+    title: Predictors of systemic embolism and stroke
+    criteria:
+      - text: 'Echocardiographic: vegetations visible by both TTE and TEE; abscess; highly mobile vegetation; vegetation size > 10–15 mm; mitral (especially anterior leaflet) or bivalvular endocarditis.'
+        citation:
+          source: ase-2016-cardiac-source-of-embolism
+          locator:
+            table: '6'
+            page: '18–19'
+      - text: 'Other: fungal, Staphylococcus aureus or Streptococcus bovis endocarditis; the risk of stroke falls after 1–2 weeks of antibiotics.'
+        citation:
+          source: ase-2016-cardiac-source-of-embolism
+          locator:
+            table: '6'
+            page: '18–19'
+      - text: Recurrent embolism with persistent vegetations is a class IIa indication for surgery (as quoted).
+        citation:
+          source: ase-2016-cardiac-source-of-embolism
+          locator:
+            table: '6'
+            page: '18–19'

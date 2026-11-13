@@ -7,3 +7,43 @@ order: 0
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: vegetation-features
+    type: criteria-checklist
+    tag: CRIT
+    title: Echocardiographic features of vegetations and abscesses
+    criteria:
+      - text: 'Vegetation: grey-scale, myocardial echo texture (healed vegetations more echogenic); highly variable size; usually amorphous, shaggy or lobulated; on the atrial side of AV valves and the ventricular side of the aortic valve; high-frequency, oscillating or chaotic motion independent of the valve.'
+        citation:
+          source: ase-2016-cardiac-source-of-embolism
+          locator:
+            table: '5'
+            page: '17'
+      - text: 'Associated findings: valvular regurgitation, mycotic aneurysm, valve destruction.'
+        citation:
+          source: ase-2016-cardiac-source-of-embolism
+          locator:
+            table: '5'
+            page: '17'
+      - text: "Differential diagnosis: non-infective vegetations, papillary fibroelastoma, valvular strands or Lambl's excrescences, calcification with mobile components; with prostheses also thrombus, subvalvular remnants and microcavitations of mechanical valves."
+        citation:
+          source: ase-2016-cardiac-source-of-embolism
+          locator:
+            table: '5'
+            page: '17'
+      - text: 'Abscess: echolucent or heterogeneous space or tissue thickening, usually paravalvular (most often aortic), possibly with fistula or pseudoaneurysm (typically of the aortic root).'
+        citation:
+          source: ase-2016-cardiac-source-of-embolism
+          locator:
+            table: '5'
+            page: '17'
+  - id: tte-tee-performance
+    type: note
+    tag: METH
+    title: TTE and TEE
+    text: TTE has low sensitivity but high specificity for endocarditis and defines haemodynamic consequences; TEE has high sensitivity and specificity and shows the anatomic detail of vegetations and perivalvular complications. The two are complementary.
+    citation:
+      source: ase-2016-cardiac-source-of-embolism
+      locator:
+        table: '4'
+        page: '17'

@@ -7,3 +7,27 @@ order: 2
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: ie-recommendations
+    type: criteria-checklist
+    tag: CRIT
+    title: Echocardiography in suspected endocarditis
+    criteria:
+      - text: 'TTE: initial evaluation with positive blood cultures or a new murmur; re-evaluation when at high risk of progression or complications or after a clinical change; haemodynamic consequences (regurgitation, shunts or fistulas, chamber size and function); at the end of antimicrobial therapy as a baseline.'
+        citation:
+          source: ase-2016-cardiac-source-of-embolism
+          locator:
+            page: '19'
+        category: favourable
+      - text: 'TEE: to diagnose endocarditis and complications when clinical suspicion is intermediate or high, even with a negative TTE; first line when complications (abscess, fistula, perforation) or prosthetic valve endocarditis are suspected; re-evaluation at high risk or after a clinical change; repeat after about 7 days if suspicion remains high despite a negative TEE.'
+        citation:
+          source: ase-2016-cardiac-source-of-embolism
+          locator:
+            page: '19'
+        category: favourable
+      - text: 'Not recommended: transient fever without bacteraemia or new murmur; transient bacteraemia with a non-typical organism or a documented non-intravascular source; routine surveillance of uncomplicated endocarditis when imaging will not change management.'
+        citation:
+          source: ase-2016-cardiac-source-of-embolism
+          locator:
+            page: '19'
+        category: unsuitable
