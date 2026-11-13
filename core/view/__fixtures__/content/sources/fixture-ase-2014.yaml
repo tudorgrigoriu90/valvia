@@ -1,0 +1,8 @@
+id: fixture-ase-2014
+title: 'Fixture ASE 2014'
+shortTitle: 'Fixture ASE 2014'
+issuers: [ASE]
+type: guideline
+year: 2014
+status: superseded
+supersededBy: fixture-ase-2021

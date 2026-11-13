@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | TS-08.8: Go-live checklist |
-| Next task | TS-02.4.3: shared fixture tests for agreement, disagreement, superseded |
+| Last completed task | TS-02.4.3: Unit tests with fixtures (agreement, disagreement, superseded) |
+| Next task | TS-04.1.3: society badges |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

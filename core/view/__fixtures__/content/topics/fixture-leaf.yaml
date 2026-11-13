@@ -1,0 +1,102 @@
+# Fictional values for tests only (TS-02.4.3); not clinical content.
+id: fixture-leaf
+slug: fixture-leaf
+title: Fixture leaf
+parent: fixture-root
+order: 1
+population: adult
+wave: W1
+status: draft
+blocks:
+  - id: agreement
+    type: grading-table
+    tag: GRADE
+    grades: [moderate, severe]
+    values:
+      - parameter: fixture-vc
+        context: grading
+        grade: severe
+        operator: '>='
+        value: 7
+        unit: mm
+        modality: Echo
+        population: { ageGroup: adult }
+        citation: { source: fixture-esc-2021, locator: { table: '1' } }
+      - parameter: fixture-vc
+        context: grading
+        grade: severe
+        operator: '>='
+        value: 0.7
+        unit: cm
+        modality: Echo
+        population: { ageGroup: adult }
+        citation: { source: fixture-ase-2021, locator: { table: '1' } }
+  - id: disagreement
+    type: grading-table
+    tag: GRADE
+    grades: [moderate, severe]
+    values:
+      - parameter: fixture-eroa
+        context: grading
+        grade: severe
+        operator: '>='
+        value: 0.40
+        unit: cm²
+        modality: Echo
+        population: { ageGroup: adult }
+        citation: { source: fixture-esc-2021, locator: { table: '1' } }
+      - parameter: fixture-eroa
+        context: grading
+        grade: severe
+        operator: '>='
+        value: 0.30
+        unit: cm²
+        modality: Echo
+        population: { ageGroup: adult }
+        citation: { source: fixture-ase-2021, locator: { table: '1' } }
+  - id: population
+    type: grading-table
+    tag: GRADE
+    grades: [moderate, severe]
+    values:
+      - parameter: fixture-eroa
+        context: grading
+        grade: severe
+        operator: '>='
+        value: 0.50
+        unit: cm²
+        modality: Echo
+        population: { ageGroup: adult, sex: male }
+        citation: { source: fixture-esc-2021, locator: { table: '1' } }
+      - parameter: fixture-eroa
+        context: grading
+        grade: severe
+        operator: '>='
+        value: 0.45
+        unit: cm²
+        modality: Echo
+        population: { ageGroup: adult, sex: female }
+        citation: { source: fixture-ase-2021, locator: { table: '1' } }
+  - id: superseded
+    type: grading-table
+    tag: GRADE
+    grades: [moderate, severe]
+    values:
+      - parameter: fixture-eroa
+        context: grading
+        grade: moderate
+        operator: '>='
+        value: 0.35
+        unit: cm²
+        modality: Echo
+        population: { ageGroup: adult }
+        citation: { source: fixture-ase-2014, locator: { table: '1' } }
+      - parameter: fixture-eroa
+        context: grading
+        grade: moderate
+        operator: '>='
+        value: 0.20
+        unit: cm²
+        modality: Echo
+        population: { ageGroup: adult }
+        citation: { source: fixture-ase-2021, locator: { table: '1' } }

@@ -1,0 +1,6 @@
+id: fixture-eroa
+name: Effective regurgitant orifice area
+abbreviation: EROA
+quantity: area
+unit: cm²
+modalities: [Echo]

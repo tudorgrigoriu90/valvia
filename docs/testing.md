@@ -1,7 +1,7 @@
 # Testing guide
 
 > **Purpose:** how Valvia is tested, how to run the tests and what the gates are.
-> **Audience:** engineer, Claude Code sessions. **Last updated:** 2026-11-02
+> **Audience:** engineer, Claude Code sessions. **Last updated:** 2026-11-13
 
 Valvia is built test-first (TDD, `CLAUDE.md` §5). Every push runs the full local gate:
 
@@ -46,4 +46,11 @@ On a local machine run `npx playwright install chromium` once.
 - Test behaviour through public functions; name tests as specifications.
 - Table-driven tests (`it.each`) for conversions, schema rules and grading boundaries.
 - Fixtures live in `__fixtures__/` folders next to the tests that use them.
+- **Shared scenario fixtures (TS-02.4.3):** [`core/view/__fixtures__/content/`](../core/view/__fixtures__/content/) is a
+  small content tree with **fictional** values (three sources, one superseded; two parameters; one leaf). It goes through
+  the real loader, discrepancy detection, history logic and leaf view in
+  [`fixtures.test.ts`](../core/view/fixtures.test.ts): agreement across units (7 mm vs 0.7 cm, not flagged),
+  disagreement (0.40 vs 0.30 cm², flagged and shown side by side), different populations (not compared) and a superseded
+  value (moved to previous recommendations with its successor, never compared). Extend it when a new rule touches these
+  paths, and keep its values obviously fictional.
 - A bug fix starts with a failing test that reproduces it.

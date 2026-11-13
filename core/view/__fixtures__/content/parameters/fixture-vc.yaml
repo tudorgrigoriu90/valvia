@@ -1,0 +1,6 @@
+id: fixture-vc
+name: Vena contracta width
+abbreviation: VC
+quantity: length
+unit: mm
+modalities: [Echo]

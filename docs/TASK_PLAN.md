@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-08.8 Go-live checklist |
-| Next up | TS-02.4.3: shared fixture tests for agreement, disagreement, superseded |
+| Last completed | TS-02.4.3 Unit tests with fixtures (agreement, disagreement, superseded) |
+| Next up | TS-04.1.3: society badges |
 
 ## Next up: R0 sequence
 
@@ -111,7 +111,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-02.3.3 | Seed registry from taxonomy Appendix A (content PR, SME verifies) | 2 | done | Initial seed per PO-3; values only from documents read in full |
 | TS-02.4.1 | Build-time discrepancy detection | 3 | done | 100 % coverage |
 | TS-02.4.2 | Supersession → history data (current vs previous recommendations) | 2 | done |  |
-| TS-02.4.3 | Unit tests with fixtures (agreement, disagreement, superseded) | 2 | todo |  |
+| TS-02.4.3 | Unit tests with fixtures (agreement, disagreement, superseded) | 2 | done |  |
 
 ### EP-03: Clinical content production (MVP)
 
@@ -484,3 +484,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-13 | TS-07.1.1 | EU MDR qualification memo: MDCG 2019-11 steps applied (no patient data, no computation → not MDSW, provisional), assessor points incl. z-score references, controls and change gate, features that would reopen qualification; external review required before go-live | `TS-07.1.1: EU MDR qualification memo` |
 | 2026-11-13 | TS-08.6 | Runbooks: content update (seed vs content PR flow, supersession, errata), emergency rollback (revert commit/PR, redeploy last good run, unpublish, checks; also closes TS-06.4.3), secret rotation (credential inventory, routine rotation, leak response, offboarding) | `TS-08.6: runbooks for content update, rollback and secrets` |
 | 2026-11-13 | TS-08.8 | Go-live checklist: regulatory/legal, content (SME review, audit), automated gates (ticked), manual QA, security, operations, launch day, first two weeks; owners per item; CH-59 added for indexing published topics | `TS-08.8: go-live checklist` |
+| 2026-11-13 | TS-02.4.3 | Shared fixture content tree (fictional values) through loader, discrepancy detection, history and leaf view: agreement across units, disagreement shown side by side, different populations not compared, superseded value in history only | `TS-02.4.3: end-to-end fixture tests for agreement, disagreement, superseded` |
