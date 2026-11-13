@@ -35,3 +35,28 @@ test('home has no detectable accessibility violations', async ({ page }) => {
   const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze();
   expect(results.violations.map((v) => v.id)).toEqual([]);
 });
+
+test('lists recently viewed topics on the home page, newest first, and can clear them (TS-04.6.1)', async ({
+  page,
+}) => {
+  await page.goto('./');
+  await expect(page.getByRole('heading', { name: 'Recently viewed' })).toBeHidden();
+  await page.goto('valvular-heart-disease/mitral-valve-disease/mitral-regurgitation/primary-mr-severity-grading/');
+  await page.goto('chamber-size-and-function/left-atrium/');
+  await page.goto('./');
+  const recent = page.getByRole('region', { name: 'Recently viewed' });
+  await expect(recent.getByRole('link')).toHaveText([
+    'Left atrium',
+    'Primary MR: severity grading (incl. CMR quantification)',
+  ]);
+  expect(
+    (await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze()).violations,
+  ).toEqual([]);
+  await recent.getByRole('link', { name: 'Left atrium' }).click();
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Left atrium');
+  await page.goto('./');
+  await page.getByRole('button', { name: 'Clear' }).click();
+  await expect(recent).toBeHidden();
+  await page.reload();
+  await expect(page.getByRole('heading', { name: 'Recently viewed' })).toBeHidden();
+});

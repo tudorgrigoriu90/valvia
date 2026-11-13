@@ -964,3 +964,51 @@ html[data-society='ase'] .value:not([data-societies~='ase']) {
   background: var(--color-warning-bg);
   color: var(--color-warning-text);
 }
+
+/* TS-04.6.1: recently viewed topics on the home page (device-local). */
+.recent {
+  margin: 0 0 var(--space-5);
+}
+
+.recent__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.recent h2 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.recent__clear {
+  min-height: var(--touch-target);
+  min-width: var(--touch-target);
+  padding: 0 var(--space-3);
+  font: inherit;
+  color: var(--color-accent);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.recent ol {
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.recent li a {
+  display: flex;
+  align-items: center;
+  min-height: var(--touch-target);
+  padding: 0 var(--space-1);
+}
+
+.recent__note {
+  margin: var(--space-1) 0 0;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}

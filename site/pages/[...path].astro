@@ -55,6 +55,8 @@ const missingCategories =
   <article
     data-pagefind-body={indexed ? '' : undefined}
     data-pagefind-meta={indexed ? `context:${context}` : undefined}
+    data-recent-path={blocks.length > 0 ? navigation.urlPath(topic.id) : undefined}
+    data-recent-title={blocks.length > 0 ? topic.title : undefined}
   >
     <h1 data-pagefind-meta="title">{topic.title}</h1>
     {blocks.length > 0 && (

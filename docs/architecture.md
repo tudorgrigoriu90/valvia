@@ -2,7 +2,7 @@
 
 > **Purpose:** how Valvia is built, deployed and updated, for maintenance and onboarding.
 > **Audience:** software engineer, Claude Code sessions, new contributors.
-> **Last updated:** 2026-11-02 | **Status:** target architecture; decisions recorded in [`adr/`](adr/README.md).
+> **Last updated:** 2026-11-13 | **Status:** target architecture; decisions recorded in [`adr/`](adr/README.md).
 > **Source:** backlog §2 ([`product/valvia-backlog.md`](product/valvia-backlog.md)).
 
 ## 1. Principles
@@ -12,6 +12,9 @@
 - **Every value has a source:** society, document, year, locator, DOI.
 - **Lookup, not calculation:** no calculators or patient-specific scores in v1.
 - **Near-zero cost:** GitHub (public repo, Pages, Actions) plus a domain.
+- **Device-local state only:** preferences and history live in `localStorage`, every access wrapped in `try/catch`,
+  and the site works without them. Keys: `valvia.category` (category switch, PO-5), `valvia.society` (society filter,
+  TS-04.3.5), `valvia.recent` (last 10 viewed topics, TS-04.6.1; read back only as safe site paths and plain text).
 
 ## 2. System context
 

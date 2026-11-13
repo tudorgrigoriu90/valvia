@@ -12,8 +12,8 @@ Status values: `todo` · `in progress` · `done` · `blocked` (with reason) · `
 | | |
 |---|---|
 | Release in progress | **R0: Walking skeleton** |
-| Last completed | TS-04.5.1 Stable deep links to topics and parameter anchors |
-| Next up | TS-04.6.1: recently viewed topics |
+| Last completed | TS-04.6.1 Last 10 viewed topics on home screen (localStorage) |
+| Next up | TS-06.5.1: report-an-issue link per value |
 
 ## Next up: R0 sequence
 
@@ -159,7 +159,7 @@ Consequences: TS-01.2.5 needs only a content PR template; TS-01.3.5 ruleset must
 | TS-04.4.2 | Instant search UI (mobile keyboard friendly) | 2 | done |  |
 | TS-04.5.1 | Stable deep links to topics and parameter anchors | 1 | done |  |
 | TS-04.5.2 | "Last reviewed" date and content version on every page | 1 | done |  |
-| TS-04.6.1 | Last 10 viewed topics on home screen (localStorage) | 2 | todo |  |
+| TS-04.6.1 | Last 10 viewed topics on home screen (localStorage) | 2 | done |  |
 | TS-04.7.1 | Adult / paediatric switch (global, persisted) | 2 | done | Replaced by the four-category switch (PO-5, CH-20) |
 | TS-04.7.2 | "Previous recommendations" history view (source, year, superseded by) | 2 | done | E2E pending superseded content |
 | TS-04.7.3 | Modality badges (Echo / CT / CMR) | 1 | done |  |
@@ -487,3 +487,4 @@ One row per push (newest last). Content PRs are logged when opened and when merg
 | 2026-11-13 | TS-02.4.3 | Shared fixture content tree (fictional values) through loader, discrepancy detection, history and leaf view: agreement across units, disagreement shown side by side, different populations not compared, superseded value in history only | `TS-02.4.3: end-to-end fixture tests for agreement, disagreement, superseded` |
 | 2026-11-13 | TS-04.1.3 | Society badges on source chips: issuers as text + tone colour (ESC family, ASE, joint with double border, other), accessible description, ≥ 7:1 contrast in both themes; unit + E2E tests | `TS-04.1.3: society badges with text label and tone colour` |
 | 2026-11-13 | TS-04.5.1 | Parameter deep links: <leaf>#p-<parameter id> targets the first table row or list item of that parameter in page order (stable ids), highlighted on arrival; topic URLs already stable via slugs and redirect pages | `TS-04.5.1: parameter deep-link anchors on leaf pages` |
+| 2026-11-13 | TS-04.6.1 | Recently viewed: last 10 leaf topics on the home page, newest first, stored device-locally (valvia.recent, try/catch, untrusted data validated as safe paths and plain titles), Clear button, hidden when empty or without JS; privacy page and architecture updated | `TS-04.6.1: recently viewed topics on the home page` |

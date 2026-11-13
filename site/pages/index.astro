@@ -21,6 +21,17 @@ const missing = CATEGORIES.filter(({ id }) => !visible.some((root) => navigation
 
   <Search />
 
+  <section class="recent" data-recent hidden aria-labelledby="recent-heading">
+    <div class="recent__header">
+      <h2 id="recent-heading">Recently viewed</h2>
+      <button type="button" class="recent__clear" data-recent-clear>
+        Clear
+      </button>
+    </div>
+    <ol></ol>
+    <p class="recent__note">Stored on this device only.</p>
+  </section>
+
   <section aria-labelledby="categories-heading">
     <h2 id="categories-heading" class="visually-hidden">
       Categories
