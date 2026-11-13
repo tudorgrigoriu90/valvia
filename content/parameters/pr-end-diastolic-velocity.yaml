@@ -1,0 +1,6 @@
+id: pr-end-diastolic-velocity
+name: End-diastolic pulmonary regurgitant velocity
+quantity: velocity-blood
+unit: m/s
+modalities: [Echo]
+synonyms: [PR end-diastolic velocity, PA diastolic pressure]

@@ -1,0 +1,7 @@
+id: rv-lv-ratio
+name: RV to LV basal diameter ratio
+abbreviation: RV/LV
+quantity: ratio
+unit: '1'
+modalities: [Echo]
+synonyms: [RV/LV ratio, RV dilatation]

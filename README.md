@@ -14,8 +14,8 @@ Live site: <https://tudorgrigoriu90.github.io/valvia/>
 | | |
 |---|---|
 | Release | R0: Walking skeleton |
-| Last completed task | CH-58: Units and quantities for values printed in mm/mmHg (RV–PA coupling), W |
-| Next task | CH-45: PH and right heart from ASE 2025 |
+| Last completed task | CH-45: Content: PH and right heart (5.x) from ASE 2025 right heart: PH defini |
+| Next task | CH-46: IVC and RA pressure (ASE 2025) |
 | Full plan | [`docs/TASK_PLAN.md`](docs/TASK_PLAN.md) |
 
 ## Quick start

@@ -7,3 +7,54 @@ order: 2
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: tapse-pasp
+    type: threshold-list
+    tag: CRIT
+    title: TAPSE/PASP ratio (RV–PA coupling)
+    values:
+      - parameter: tapse-pasp-ratio
+        context: normal-range
+        operator: range
+        min: 0.5
+        max: 0.7
+        unit: mm/mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Range generally found in healthy individuals; varies with age, sex and method.'
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            page: '152'
+      - parameter: tapse-pasp-ratio
+        context: prognostic-marker
+        operator: range
+        min: 0.3
+        max: 0.4
+        unit: mm/mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'In PH, associated with RV–PA uncoupling (validated by pressure–volume loops) and increased mortality.'
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            page: '152'
+      - parameter: tapse-pasp-ratio
+        context: diagnostic-criterion
+        operator: '<'
+        value: 0.55
+        unit: mm/mmHg
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Feature of precapillary PAH (group 1).
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '8'
+            page: '173'

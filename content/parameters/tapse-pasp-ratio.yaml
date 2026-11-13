@@ -1,0 +1,7 @@
+id: tapse-pasp-ratio
+name: TAPSE to PASP ratio
+abbreviation: TAPSE/PASP
+quantity: coupling-ratio
+unit: mm/mmHg
+modalities: [Echo]
+synonyms: [RV-PA coupling, TAPSE/sPAP, TAPSE/RVSP]

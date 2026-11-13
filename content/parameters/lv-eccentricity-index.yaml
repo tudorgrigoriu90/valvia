@@ -1,0 +1,7 @@
+id: lv-eccentricity-index
+name: LV eccentricity index
+abbreviation: LVEI
+quantity: ratio
+unit: '1'
+modalities: [Echo]
+synonyms: [eccentricity index, septal flattening, D-shaped LV]

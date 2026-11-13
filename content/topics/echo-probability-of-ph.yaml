@@ -7,3 +7,190 @@ order: 1
 population: adult
 wave: W1
 status: draft
+blocks:
+  - id: abnormal-rvsp
+    type: threshold-list
+    tag: CRIT
+    title: Abnormal RV systolic pressure
+    values:
+      - parameter: tr-velocity
+        context: diagnostic-criterion
+        operator: '>='
+        value: 2.9
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Abnormal RVSP: peak TR velocity ≥ 2.9 m/s, or ≥ 2.8 m/s with two adjunctive echo signs.'
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '8'
+            page: '174'
+      - parameter: tr-velocity
+        context: diagnostic-criterion
+        operator: '>='
+        value: 2.8
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Abnormal only with two adjunctive echo signs of PH.
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '8'
+            page: '174'
+  - id: adjunctive-signs
+    type: threshold-list
+    tag: CRIT
+    title: Echo signs supporting precapillary PH (group 1)
+    values:
+      - parameter: rvot-acceleration-time
+        context: diagnostic-criterion
+        operator: '<='
+        value: 105
+        unit: ms
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '8'
+            page: '173'
+      - parameter: pr-end-diastolic-velocity
+        context: diagnostic-criterion
+        operator: '>='
+        value: 2.2
+        unit: m/s
+        modality: Echo
+        population:
+          ageGroup: adult
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '8'
+            page: '173'
+      - parameter: ra-area
+        context: diagnostic-criterion
+        operator: '>='
+        value: 19
+        unit: cm²
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Dilated RA.
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '8'
+            page: '173'
+      - parameter: rv-lv-ratio
+        context: diagnostic-criterion
+        operator: '>'
+        value: 1
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Dilated right heart.
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '8'
+            page: '173'
+      - parameter: lv-eccentricity-index
+        context: diagnostic-criterion
+        operator: '>'
+        value: 1.1
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Septal flattening in systole ± diastole depending on haemodynamics.
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '8'
+            page: '173'
+      - parameter: pa-diameter
+        context: diagnostic-criterion
+        operator: '>'
+        value: 25
+        unit: mm
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Dilated pulmonary artery.
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '8'
+            page: '173'
+      - parameter: e-over-e-prime-average
+        context: diagnostic-criterion
+        operator: '<'
+        value: 8
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Printed: normal mitral E/e′ ratio (< 8) in precapillary PAH.'
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '8'
+            page: '173'
+  - id: postcapillary
+    type: threshold-list
+    tag: CRIT
+    title: Features of postcapillary PH (group 2)
+    values:
+      - parameter: e-over-e-prime-average
+        context: diagnostic-criterion
+        operator: '>'
+        value: 14
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - 'Pathological mitral E/e′ ratio; typically ≥ grade 2 LV diastolic dysfunction with a dilated LA.'
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '8'
+            page: '173–174'
+      - parameter: lv-eccentricity-index
+        context: diagnostic-criterion
+        operator: '<'
+        value: 1.2
+        unit: '1'
+        modality: Echo
+        population:
+          ageGroup: adult
+        caveats:
+          - Normal LV eccentricity index in group 2.
+        citation:
+          source: ase-2025-right-heart
+          locator:
+            table: '8'
+            page: '173–174'
+  - id: phenotypes
+    type: note
+    tag: METH
+    title: Phenotypes overlap
+    text: 'Echo phenotypes can be combined and change with disease stage, duration and comorbidities. Group 3 (lung disease) and group 4 (chronic thromboembolic) PH share precapillary features; difficult windows in lung disease can be improved with subcostal views.'
+    citation:
+      source: ase-2025-right-heart
+      locator:
+        table: '8'
+        page: '174'
